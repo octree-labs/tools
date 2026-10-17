@@ -8,5 +8,5 @@ export const config = {
   // - api routes
   // - _next (Next.js internals)
   // - static files (with extensions)
-  matcher: ['/((?!api|_next|.*\\..*).*)']
+  matcher: ['/((?!api|_next|opengraph-image|.*\\..*).*)']
 };

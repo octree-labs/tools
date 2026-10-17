@@ -1,6 +1,6 @@
 import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
-import { generateAlternates } from '@/lib/seo';
+import { generateAlternates, withDefaultOgImage } from '@/lib/seo';
 
 /**
  * Maps tool URL slugs to their translation keys in messages files.
@@ -51,7 +51,7 @@ const localeToOgLocale: Record<string, string> = {
  * For other locales: uses translated title/description from messages files
  * while preserving keywords and other metadata from the defaults.
  */
-export async function generateToolMetadata(
+async function generateToolMetadataBase(
   locale: string,
   toolSlug: string,
   defaultMetadata: Metadata
@@ -106,4 +106,12 @@ export async function generateToolMetadata(
       alternates,
     };
   }
+}
+
+export async function generateToolMetadata(
+  locale: string,
+  toolSlug: string,
+  defaultMetadata: Metadata
+): Promise<Metadata> {
+  return withDefaultOgImage(await generateToolMetadataBase(locale, toolSlug, defaultMetadata));
 }

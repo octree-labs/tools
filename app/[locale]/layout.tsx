@@ -10,7 +10,7 @@ import { NextIntlClientProvider, hasLocale } from 'next-intl';
 import { getMessages, setRequestLocale, getTranslations } from 'next-intl/server';
 import { routing } from '@/src/i18n/routing';
 import { notFound } from 'next/navigation';
-import { generateAlternates } from '@/lib/seo';
+import { DEFAULT_OG_IMAGES, generateAlternates, localizedPath, toLanguageTag } from '@/lib/seo';
 
 type Props = {
   children: React.ReactNode;
@@ -74,15 +74,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title,
       description,
-      url: 'https://tools.useoctree.com',
+      url: localizedPath('', locale),
       siteName: 'Octree LaTeX Tools',
       locale: localeToOgLocale[locale] || 'en_US',
       type: "website",
+      images: DEFAULT_OG_IMAGES,
     },
     twitter: {
       card: 'summary_large_image',
       title,
       description,
+      images: DEFAULT_OG_IMAGES,
     },
     robots: {
       index: true,
@@ -155,7 +157,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   };
 
   return (
-    <html lang={locale}>
+    <html lang={toLanguageTag(locale)}>
       <body className={satoshi.className}>
         <script
           type="application/ld+json"
