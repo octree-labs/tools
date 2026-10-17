@@ -715,6 +715,18 @@ async function generateMetadataBase({
       'computational linguistics template',
       'acl 2026 paper template',
     ],
+    'apa-title-page': [
+      'apa title page template',
+      'apa format title page',
+      'apa title page format',
+      'apa 7 title page',
+      'apa 7 title page template',
+      'apa title page latex',
+      'apa cover page template',
+      'apa student title page',
+      'apa7 latex template',
+      'latex apa title page',
+    ],
   };
 
   const specificKeywords = keywordMap[slug] || [

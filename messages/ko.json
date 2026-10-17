@@ -453,6 +453,7 @@
     "cvpr-2026": { "title": "CVPR 2026", "description": "CVPR 2026 컴퓨터 비전 학회 논문 템플릿" },
     "aaai-2026": { "title": "AAAI 2026", "description": "AAAI 2026 학회 논문 템플릿 (7페이지 제한)" },
     "obituary": { "title": "부고", "description": "장식 테두리가 있는 우아한 추모 템플릿" },
+    "apa-title-page": { "title": "APA 표지", "description": "과목, 담당 교수, 제출일 항목이 포함된 APA 7판 학생용 표지 템플릿" },
     "eccv-2026": { "title": "ECCV 2026", "description": "ECCV 2026 유럽 컴퓨터 비전 학회 논문 템플릿" },
     "icra-2026": { "title": "ICRA 2026", "description": "IEEE ICRA 2026 로보틱스 학회 논문 템플릿" },
     "acm-chi-2026": { "title": "ACM CHI 2026", "description": "ACM CHI 2026 공식 제출 템플릿 (단일 열 형식)" },

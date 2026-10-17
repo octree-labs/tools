@@ -693,6 +693,10 @@
       "title": "死亡記事",
       "description": "装飾的な枠付きのエレガントな追悼テンプレート"
     },
+    "apa-title-page": {
+      "title": "APA 表紙",
+      "description": "コース名・担当教員・提出日の欄を備えた APA 第7版 学生用表紙テンプレート"
+    },
     "eccv-2026": {
       "title": "ECCV 2026",
       "description": "ECCV 2026欧州コンピュータビジョン会議論文テンプレート"

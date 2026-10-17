@@ -453,6 +453,7 @@
     "cvpr-2026": { "title": "CVPR 2026", "description": "CVPR 2026 computer vision conferentieartikelsjabloon" },
     "aaai-2026": { "title": "AAAI 2026", "description": "AAAI 2026 conferentieartikelsjabloon met 7-paginalimiet" },
     "obituary": { "title": "Overlijdensbericht", "description": "Elegant herdenkingsoverlijdensberichtsjabloon met decoratieve rand" },
+    "apa-title-page": { "title": "APA-titelpagina", "description": "APA-titelpagina (7e editie) voor studenten met vak, docent en inleverdatum" },
     "eccv-2026": { "title": "ECCV 2026", "description": "ECCV 2026 Europese Computer Vision Conferentie artikelsjabloon" },
     "icra-2026": { "title": "ICRA 2026", "description": "IEEE ICRA 2026 robotica conferentieartikelsjabloon" },
     "acm-chi-2026": { "title": "ACM CHI 2026", "description": "Officieel ACM CHI 2026 inzendingssjabloon in enkelkoloms formaat" },

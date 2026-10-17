@@ -619,6 +619,10 @@
         "title": "Obituario",
         "description": "Elegante plantilla de obituario conmemorativo con borde decorativo"
       },
+      "apa-title-page": {
+        "title": "Portada APA",
+        "description": "Portada APA 7ª edición para estudiantes con curso, profesor y fecha de entrega"
+      },
       "eccv-2026": {
         "title": "ECCV 2026",
         "description": "Plantilla de artículo para conferencia europea ECCV 2026 de visión por computadora"

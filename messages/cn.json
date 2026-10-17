@@ -691,6 +691,10 @@
         "title": "讣告",
         "description": "带装饰边框的优雅纪念讣告模板"
       },
+      "apa-title-page": {
+        "title": "APA 标题页",
+        "description": "包含课程、教师和截止日期字段的 APA 第7版学生标题页模板"
+      },
       "eccv-2026": {
         "title": "ECCV 2026",
         "description": "ECCV 2026欧洲计算机视觉会议论文模板"
