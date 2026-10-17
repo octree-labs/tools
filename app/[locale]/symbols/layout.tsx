@@ -61,7 +61,7 @@ function SymbolsLayoutContent({
             <div className="bg-gradient-to-b from-gray-100 to-gray-50 pt-16 pb-12">
                 <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="relative flex items-center justify-center mb-6">
-                        {pathname !== "/symbols" && !pathname?.match(/^\/[a-z]{2,3}\/symbols$/) && (
+                        {segment !== null && (
                             <Link
                                 href="/symbols"
                                 className="absolute left-0 inline-flex items-center gap-2 text-gray-500 hover:text-gray-900 transition-colors text-sm"

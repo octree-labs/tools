@@ -6,6 +6,8 @@ export const contentType = 'image/png';
 
 // Default social preview for every page on tools.useoctree.com. Pages had
 // og:image missing entirely, so shares on X/LinkedIn/Slack rendered bare.
+// Lives outside [locale] (and is excluded from the i18n middleware) so the
+// URL is /opengraph-image for every locale with no redirect.
 export default function OpenGraphImage() {
   return new ImageResponse(
     (
