@@ -7,6 +7,7 @@ import Link from "next/link";
 import { templates } from "@/lib/templates";
 import { openInOctree } from "@/lib/open-in-octree";
 import { getTemplateJsonLd } from "@/lib/json-ld";
+import { getTemplateGuide } from "@/lib/template-guides";
 import { OctreeCTA } from "@/components/OctreeCTA";
 import { Button } from "@/components/ui/button";
 import { useTranslations } from "next-intl";
@@ -102,6 +103,7 @@ export default function TemplatePage({
   const translatedDescription = getTemplateDescription(slug, template.description);
   const tags = getTags(template.title, template.category);
   const abstract = abstracts[slug] || translatedDescription;
+  const Guide = getTemplateGuide(slug);
 
   return (
     <>
@@ -214,6 +216,12 @@ export default function TemplatePage({
               </div>
             </div>
           </div>
+
+          {Guide && (
+            <section className="mt-16 pt-12 border-t border-gray-200 max-w-3xl">
+              <Guide />
+            </section>
+          )}
         </div>
 
         {/* Call to Action */}

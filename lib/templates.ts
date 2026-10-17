@@ -6457,6 +6457,9 @@ Answer: \reveal{q6}{30-60\% (roughly one-third to one-half)}
     slug: "jakes-resume",
     previewUrl: "/templates/jakes-resume.pdf",
     category: "Resume & CV",
+    seoTitle: "Jake's Resume LaTeX Template | Free Download, Preview & Guide",
+    seoDescription:
+      "Jake's Resume is the free, MIT-licensed LaTeX resume template by Jake Gutierrez. Preview the PDF, open it in Octree, and learn how to customize it and pass ATS.",
     code: String.raw`%-------------------------
 % Resume in Latex
 % Author : Jake Gutierrez
