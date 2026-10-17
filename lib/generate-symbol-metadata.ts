@@ -1,50 +1,8 @@
 import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
-import { generateAlternates } from '@/lib/seo';
+import { generateAlternates, withDefaultOgImage } from '@/lib/seo';
 
-/**
- * Maps symbol URL slugs to their translation keys in messages files.
- * e.g., 'set-theory' -> 'setTheory' (matches metadata.symbols.setTheory in messages/*.json)
- */
-const slugToTranslationKey: Record<string, string> = {
-  'math': 'math',
-  'greek': 'greek',
-  'arrows': 'arrows',
-  'brackets': 'brackets',
-  'calculus': 'calculus',
-  'set-theory': 'setTheory',
-  'logic': 'logic',
-  'relations': 'relations',
-  'operators': 'operators',
-  'linear-algebra': 'linearAlgebra',
-  'geometry': 'geometry',
-  'probability': 'probability',
-  'physics': 'physics',
-  'chemistry': 'chemistry',
-  'computer-science': 'computerScience',
-  'functions': 'functions',
-  'number-theory': 'numberTheory',
-  'accents': 'accents',
-  'boolean': 'boolean',
-  'summation': 'summation',
-  'trigonometry': 'trigonometry',
-  'topology': 'topology',
-  'finance': 'finance',
-  'machine-learning': 'machineLearning',
-  'latin': 'latin',
-  'complex': 'complex',
-  'graph-theory': 'graphTheory',
-  'combinatorics': 'combinatorics',
-  'special-functions': 'specialFunctions',
-  'tensors': 'tensors',
-  'differential-geometry': 'differentialGeometry',
-  'modal-logic': 'modalLogic',
-  'game-theory': 'gameTheory',
-  'order': 'order',
-  'optimization': 'optimization',
-  'quantifiers': 'quantifiers',
-  'units': 'units',
-};
+import { symbolSlugToTranslationKey as slugToTranslationKey } from '@/lib/symbol-categories';
 
 const localeToOgLocale: Record<string, string> = {
   en: 'en_US',
@@ -71,7 +29,7 @@ const localeToOgLocale: Record<string, string> = {
  * For other locales: uses translated title/description from messages files
  * while preserving keywords and other metadata from the defaults.
  */
-export async function generateSymbolMetadata(
+async function generateSymbolMetadataBase(
   locale: string,
   symbolSlug: string,
   defaultMetadata: Metadata
@@ -127,4 +85,12 @@ export async function generateSymbolMetadata(
       alternates,
     };
   }
+}
+
+export async function generateSymbolMetadata(
+  locale: string,
+  symbolSlug: string,
+  defaultMetadata: Metadata
+): Promise<Metadata> {
+  return withDefaultOgImage(await generateSymbolMetadataBase(locale, symbolSlug, defaultMetadata));
 }

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations } from 'next-intl/server';
-import { generateAlternates } from '@/lib/seo';
+import { generateAlternates, withDefaultOgImage } from '@/lib/seo';
 
 const localeToOgLocale: Record<string, string> = {
   en: 'en_US', es: 'es_ES', fr: 'fr_FR', pt: 'pt_BR', cn: 'zh_CN',
@@ -152,7 +152,7 @@ const defaultMetadata: Metadata = {
   },
 };
 
-export async function generateMetadata({
+async function generateMetadataBase({
   params,
 }: {
   params: Promise<{ locale: string }>;
@@ -296,3 +296,7 @@ export default function TemplatesLayout({
   );
 }
 
+
+export async function generateMetadata(args: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  return withDefaultOgImage(await generateMetadataBase(args));
+}

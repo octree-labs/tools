@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next'
 import { templates as templateList } from '@/lib/templates'
 import { LOCALES, DEFAULT_LOCALE } from '@/lib/i18n/config'
+import { toLanguageTag } from '@/lib/seo'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://tools.useoctree.com'
@@ -82,7 +83,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const getAlternates = (path: string) => ({
     languages: Object.fromEntries(
       LOCALES.map(locale => [
-        locale,
+        toLanguageTag(locale),
         getLocalizedUrl(path, locale)
       ])
     )

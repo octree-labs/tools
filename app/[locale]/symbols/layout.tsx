@@ -2,7 +2,8 @@
 
 import { Suspense } from "react";
 import Link from "next/link";
-import { useRouter, useSearchParams, usePathname } from "next/navigation";
+import { useRouter, useSearchParams, usePathname, useSelectedLayoutSegment } from "next/navigation";
+import { symbolSlugToTranslationKey } from "@/lib/symbol-categories";
 import { useTranslations } from 'next-intl';
 
 import { Search, ArrowLeft } from "lucide-react";
@@ -44,13 +45,23 @@ function SymbolsLayoutContent({
 }) {
     const pathname = usePathname();
     const t = useTranslations('symbols');
+    // Category pages get their own h1 ("Greek Symbols") instead of sharing the
+    // generic hub heading across all 37 categories.
+    const segment = useSelectedLayoutSegment();
+    const categoryKey = segment ? symbolSlugToTranslationKey[segment] : undefined;
+    const heading = categoryKey && t.has(`categories.${categoryKey}.title`)
+        ? t(`categories.${categoryKey}.title`)
+        : t('title');
+    const subheading = categoryKey && t.has(`categories.${categoryKey}.description`)
+        ? t(`categories.${categoryKey}.description`)
+        : t('description');
 
     return (
         <div className="min-h-screen bg-gray-50">
             <div className="bg-gradient-to-b from-gray-100 to-gray-50 pt-16 pb-12">
                 <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="relative flex items-center justify-center mb-6">
-                        {pathname !== "/symbols" && !pathname?.match(/^\/[a-z]{2}\/symbols$/) && (
+                        {pathname !== "/symbols" && !pathname?.match(/^\/[a-z]{2,3}\/symbols$/) && (
                             <Link
                                 href="/symbols"
                                 className="absolute left-0 inline-flex items-center gap-2 text-gray-500 hover:text-gray-900 transition-colors text-sm"
@@ -91,10 +102,10 @@ function SymbolsLayoutContent({
                     </div>
 
                     <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4 text-center">
-                        {t('title')}
+                        {heading}
                     </h1>
                     <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto text-center">
-                        {t('description')}
+                        {subheading}
                     </p>
 
                     <div className="max-w-xl mx-auto">

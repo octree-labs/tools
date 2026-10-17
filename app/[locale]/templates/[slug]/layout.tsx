@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { templates } from '@/lib/templates';
-import { generateAlternates } from '@/lib/seo';
+import { generateAlternates, withDefaultOgImage } from '@/lib/seo';
 
 /**
  * Locale-specific title formats for template pages.
@@ -71,7 +71,7 @@ export function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({
+async function generateMetadataBase({
   params,
 }: {
   params: Promise<{ slug: string; locale: string }>;
@@ -800,3 +800,9 @@ export default async function TemplateLayout({
   );
 }
 
+
+export async function generateMetadata(args: {
+  params: Promise<{ slug: string; locale: string }>;
+}): Promise<Metadata> {
+  return withDefaultOgImage(await generateMetadataBase(args));
+}
