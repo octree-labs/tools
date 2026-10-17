@@ -20,6 +20,10 @@ export interface Template {
   previewUrl: string;
   code: string;
   category: TemplateCategory;
+  /** Optional English-only <title> override for the template page (targets a specific search term). */
+  seoTitle?: string;
+  /** Optional English-only meta description override for the template page. */
+  seoDescription?: string;
 }
 
 export const templateCategories: { name: TemplateCategory | "All Templates"; count?: number }[] = [
@@ -3190,6 +3194,9 @@ The PI has extensive experience in [area] with [number] publications and \$[amou
     slug: "letter-of-recommendation",
     previewUrl: "/templates/letter-of-recommendation.pdf",
     category: "Letters",
+    seoTitle: "Letter of Recommendation Template (LaTeX) | Free Download & Preview",
+    seoDescription:
+      "Free letter of recommendation template in LaTeX for professors, advisors and managers. Ready-to-fill academic, research and character sections. Preview the PDF and download instantly.",
     code: String.raw`\documentclass[11pt]{letter}
 \usepackage[margin=1in]{geometry}
 \usepackage{hyperref}
