@@ -494,6 +494,7 @@
       "cvpr-2026": { "title": "CVPR 2026", "description": "Modelo de artigo para conferência CVPR 2026 de visão computacional" },
       "aaai-2026": { "title": "AAAI 2026", "description": "Modelo de artigo para conferência AAAI 2026 com limite de 7 páginas" },
       "obituary": { "title": "Obituário", "description": "Elegante modelo de obituário memorial com borda decorativa" },
+      "apa-title-page": { "title": "Página de Título APA", "description": "Página de título APA 7ª edição para estudantes com curso, professor e data de entrega" },
       "eccv-2026": { "title": "ECCV 2026", "description": "Modelo de artigo para conferência europeia ECCV 2026 de visão computacional" },
       "icra-2026": { "title": "ICRA 2026", "description": "Modelo de artigo para conferência IEEE ICRA 2026 de robótica" },
       "acm-chi-2026": { "title": "ACM CHI 2026", "description": "Modelo oficial de submissão ACM CHI 2026 em formato de uma coluna" },

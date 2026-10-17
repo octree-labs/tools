@@ -453,6 +453,7 @@
     "cvpr-2026": { "title": "CVPR 2026", "description": "Mẫu bài báo hội nghị thị giác máy tính CVPR 2026" },
     "aaai-2026": { "title": "AAAI 2026", "description": "Mẫu bài báo hội nghị AAAI 2026 với giới hạn 7 trang" },
     "obituary": { "title": "Cáo phó", "description": "Mẫu cáo phó tưởng niệm trang nhã với viền trang trí" },
+    "apa-title-page": { "title": "Trang bìa APA", "description": "Trang bìa APA phiên bản 7 dành cho sinh viên với các mục môn học, giảng viên và hạn nộp" },
     "eccv-2026": { "title": "ECCV 2026", "description": "Mẫu bài báo Hội nghị Thị giác Máy tính Châu Âu ECCV 2026" },
     "icra-2026": { "title": "ICRA 2026", "description": "Mẫu bài báo hội nghị robot IEEE ICRA 2026" },
     "acm-chi-2026": { "title": "ACM CHI 2026", "description": "Mẫu nộp ACM CHI 2026 chính thức định dạng một cột" },

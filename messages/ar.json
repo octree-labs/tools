@@ -494,6 +494,7 @@
       "cvpr-2026": { "title": "CVPR 2026", "description": "قالب ورقة مؤتمر CVPR 2026 للرؤية الحاسوبية" },
       "aaai-2026": { "title": "AAAI 2026", "description": "قالب ورقة مؤتمر AAAI 2026 بحد 7 صفحات" },
       "obituary": { "title": "نعي", "description": "قالب نعي تذكاري أنيق بإطار زخرفي" },
+      "apa-title-page": { "title": "صفحة عنوان APA", "description": "صفحة عنوان APA الإصدار السابع للطلاب مع حقول المقرر والمدرّس وتاريخ التسليم" },
       "eccv-2026": { "title": "ECCV 2026", "description": "قالب ورقة مؤتمر ECCV 2026 الأوروبي للرؤية الحاسوبية" },
       "icra-2026": { "title": "ICRA 2026", "description": "قالب ورقة مؤتمر IEEE ICRA 2026 للروبوتات" },
       "acm-chi-2026": { "title": "ACM CHI 2026", "description": "قالب تقديم ACM CHI 2026 الرسمي بتنسيق عمود واحد" },

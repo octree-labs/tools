@@ -693,6 +693,10 @@
       "title": "Obituary",
       "description": "Elegant memorial obituary template with decorative border"
     },
+    "apa-title-page": {
+      "title": "APA Title Page",
+      "description": "APA 7th edition student title page with course, instructor and due date fields"
+    },
     "eccv-2026": {
       "title": "ECCV 2026",
       "description": "ECCV 2026 European Conference on Computer Vision paper template"

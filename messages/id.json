@@ -693,6 +693,10 @@
       "title": "Obituari",
       "description": "Templat obituari memorial elegan dengan bingkai dekoratif"
     },
+    "apa-title-page": {
+      "title": "Halaman Judul APA",
+      "description": "Halaman judul APA edisi ke-7 untuk mahasiswa dengan kolom mata kuliah, dosen, dan tanggal pengumpulan"
+    },
     "eccv-2026": {
       "title": "ECCV 2026",
       "description": "Templat makalah Konferensi Eropa Computer Vision ECCV 2026"

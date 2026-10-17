@@ -6632,6 +6632,72 @@ Answer: \reveal{q6}{30-60\% (roughly one-third to one-half)}
 %-------------------------------------------
 \end{document}`,
   },
+  {
+    id: 72,
+    title: "APA Title Page",
+    description: "APA 7th edition student title page with course, instructor and due date fields",
+    slug: "apa-title-page",
+    previewUrl: "/templates/apa-title-page.pdf",
+    category: "Academic",
+    seoTitle: "APA Title Page Template (7th Edition) | Free LaTeX Download & Preview",
+    seoDescription:
+      "Free APA title page template in LaTeX (APA 7 student format). Correct APA format title page with title, author, course, instructor and due date. Download free.",
+    code: String.raw`% APA 7th Edition Title Page (Student Paper)
+% ------------------------------------------
+% This template uses the apa7 class in STUDENT mode (stu), which produces
+% the title page required for coursework: title, author, affiliation,
+% course, instructor and due date, plus the running page number.
+%
+% To switch to the PROFESSIONAL (manuscript) title page instead:
+%   1. Change the class option  stu  to  man
+%   2. Add a running head:        \shorttitle{SHORT TITLE IN CAPS}
+%   3. Replace \author / \authorsaffiliations with the multi-author forms:
+%        \authorsnames[1,2]{First Author, Second Author}
+%        \authorsaffiliations{{Department, University One},
+%                             {Department, University Two}}
+%   4. Add an author note:        \authornote{Correspondence: ...}
+%   5. Remove \course, \professor and \duedate (student-only fields)
+%   6. Optionally add \abstract{...} and \keywords{...} before \begin{document}
+
+\documentclass[stu,12pt,donotrepeattitle,floatsintext]{apa7}
+
+\usepackage[american]{babel}
+\usepackage{csquotes}
+
+% --- Title page fields (student mode) ---
+\title{The Effect of Sleep Duration on Memory Consolidation in Undergraduates}
+\author{First Last}
+\authorsaffiliations{{Department of Psychology, Example University}}
+\course{PSY 101: Introduction to Psychology}
+\professor{Dr. Jane Smith}
+\duedate{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+Begin your paper here. In APA 7th edition student papers the body starts on a new page after the title page, is double spaced, and uses a 12-point font with one-inch margins on all sides. Replace this placeholder text with your introduction, which should state the research problem, summarize relevant prior work, and end with the purpose or hypotheses of the current paper.
+
+\subsection{Background}
+
+Use second-level headings to organize the introduction into subsections. Cite sources in the text using author--date format, for example (Author, 2023), and list every cited work in the reference list at the end of the paper.
+
+\section{Method}
+
+Describe the participants, materials, and procedure in enough detail that another researcher could replicate the study.
+
+\section{Results}
+
+Report the findings, including descriptive statistics and the results of any inferential tests.
+
+\section{Discussion}
+
+Interpret the results in light of the hypotheses, note limitations, and suggest directions for future research.
+
+\end{document}`,
+  },
 
 ];
 
