@@ -89,10 +89,17 @@ async function generateMetadataBase({
   const titleFormat = templateTitleFormats[locale] || templateTitleFormats['en'];
   const descFormat = templateDescriptionFormats[locale] || templateDescriptionFormats['en'];
 
-  const title = titleFormat.replace('{name}', template.title);
-  const description = descFormat
-    .replace('{name}', template.title)
-    .replace('{desc}', template.description);
+  // English pages may carry a hand-written title/description that targets the
+  // head search term (e.g. "letter of recommendation template"); other locales
+  // keep their translated formats.
+  const title =
+    locale === 'en' && template.seoTitle
+      ? template.seoTitle
+      : titleFormat.replace('{name}', template.title);
+  const description =
+    locale === 'en' && template.seoDescription
+      ? template.seoDescription
+      : descFormat.replace('{name}', template.title).replace('{desc}', template.description);
 
   // SEO-optimized keywords based on search volume data
   const keywordMap: Record<string, string[]> = {
@@ -412,6 +419,7 @@ async function generateMetadataBase({
       'project proposal latex template',
     ],
     'letter-of-recommendation': [
+      'letter of recommendation template',
       'letter of recommendation latex',
       'recommendation letter template',
       'academic recommendation letter',
