@@ -16,7 +16,7 @@ const faq: GuideFaqItem[] = [
   {
     question: "Is Jake's Resume ATS friendly?",
     answer:
-      "Yes. Jake's Resume is a single-column document built on the standard article class, with no graphics, text boxes, or multi-column layouts in the text flow. It compiles to a PDF with selectable, Unicode-mapped text (via \\pdfgentounicode=1 and glyphtounicode), uses conventional section names like Education, Experience, Projects and Technical Skills, and keeps the page header and footer empty, so applicant tracking systems parse it reliably.",
+      "Yes. Jake's Resume is a single-column document built on the standard article class, with no graphics, text boxes, or multi-column layouts in the text flow. It compiles to a PDF with selectable, Unicode-mapped text (via \\pdfgentounicode=1 and glyphtounicode), uses conventional section names like Education, Experience, Projects and Technical Skills, and keeps the page header and footer empty, so applicant tracking systems parse it well in practice.",
   },
   {
     question: "Is Jake's Resume free to use?",
@@ -48,7 +48,7 @@ export default function JakesResumeGuide() {
         Jake&apos;s Resume is a free LaTeX resume template written by Jake Gutierrez and
         published on GitHub under the MIT license. It started as a cleanup of Sourabh
         Bajaj&apos;s earlier <GuideCode>sb2nov/resume</GuideCode> template and has since
-        become one of the most-used resume templates on Overleaf and GitHub. If you have
+        become one of the most widely used resume templates on Overleaf and GitHub. If you have
         looked at a software engineering resume from a university career fair in the last
         few years, there is a good chance it was built on this template. The sample
         document on Overleaf uses the placeholder name &quot;Jake Ryan&quot;, which is why
@@ -183,10 +183,10 @@ export default function JakesResumeGuide() {
         </li>
         <li>
           <strong>Change margins.</strong> The margins are set with the{" "}
-          <GuideCode>\addtolength</GuideCode> lines near the top. Increasing{" "}
-          <GuideCode>\textwidth</GuideCode> or <GuideCode>\textheight</GuideCode> by a further
-          0.1in to 0.2in buys a few extra lines; going past about 0.5in margins starts to
-          look crowded.
+          <GuideCode>\addtolength</GuideCode> lines near the top. Adding{" "}
+          <GuideCode>\addtolength{"{"}\textheight{"}"}{"{"}0.2in{"}"}</GuideCode> (with a matching{" "}
+          <GuideCode>\addtolength{"{"}\topmargin{"}"}{"{"}-0.1in{"}"}</GuideCode>) buys a few extra
+          lines; the template already sits at 0.5in margins, so do not go much tighter.
         </li>
         <li>
           <strong>Change font size.</strong> Edit the class option:{" "}
@@ -230,7 +230,7 @@ export default function JakesResumeGuide() {
         <li>
           Do not put content in tables or graphics in the text flow. The{" "}
           <GuideCode>tabular*</GuideCode> inside <GuideCode>\resumeSubheading</GuideCode> is a
-          one-row alignment helper and extracts fine; a multi-row table of skills does not.
+          two-row alignment helper and extracts fine; a multi-row table of skills does not.
         </li>
         <li>
           Keep text selectable. Never paste a screenshot of a section, and keep{" "}
@@ -351,7 +351,7 @@ latexmk -pdf resume.tex`}</GuidePre>
             <>
               <GuideCode>article</GuideCode> + <GuideCode>geometry</GuideCode>
             </>,
-            "Sections for publications, teaching, grants and talks",
+            "Sections for publications, teaching and awards",
           ],
         ]}
       />
