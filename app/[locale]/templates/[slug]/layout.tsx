@@ -581,7 +581,11 @@ async function generateMetadataBase({
     ],
     'jakes-resume': [
       "jake's resume",
+      'jakes resume',
       "jake's resume template",
+      "jake's resume latex",
+      'jake resume template overleaf',
+      'jakes resume github',
       'jake resume template',
       'jakes resume template latex',
       'jake ryan resume',
