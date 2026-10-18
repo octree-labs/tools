@@ -1097,7 +1097,10 @@
     "feature2": "画像をアップロードしてシームレスにLaTeXに変換",
     "feature3": "論文の執筆とフォーマットに即座にサポートを取得",
     "useInOctree": "Octreeで使用",
-    "learnMore": "詳細を見る"
+    "learnMore": "詳細を見る",
+    "resultReadyHint": "LaTeX の準備ができました。Octree で AI を使って編集・コンパイル・エラー修正ができます（無料）。",
+    "openResultInOctree": "Octree で開いて編集・コンパイル",
+    "editTemplateWithAI": "このテンプレートを AI で編集（無料）"
   },
   "metadata": {
     "site": {

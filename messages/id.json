@@ -1097,7 +1097,10 @@
     "feature2": "Unggah gambar dan konversi ke LaTeX dengan mulus",
     "feature3": "Dapatkan bantuan instan untuk menulis dan memformat makalah penelitian",
     "useInOctree": "Gunakan di Octree",
-    "learnMore": "Pelajari Lebih Lanjut"
+    "learnMore": "Pelajari Lebih Lanjut",
+    "resultReadyHint": "LaTeX Anda sudah siap. Edit, kompilasi, dan perbaiki kesalahan dengan AI di Octree, gratis.",
+    "openResultInOctree": "Buka di Octree untuk mengedit dan mengompilasi",
+    "editTemplateWithAI": "Edit templat ini dengan AI, gratis"
   },
   "metadata": {
     "site": {

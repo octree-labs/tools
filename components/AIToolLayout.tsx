@@ -4,7 +4,6 @@ import { useState, useCallback, useEffect } from 'react';
 import { Upload, Code2, Eye, Loader2, Download, ChevronDown, ArrowLeft } from 'lucide-react';
 import { DM_Sans } from 'next/font/google';
 import { cn } from '@/lib/utils';
-import { OctreeLogo } from '@/components/icons/octree-logo';
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { loader } from '@monaco-editor/react';
@@ -13,7 +12,8 @@ import {
   latexTokenProvider,
   registerLatexCompletions,
 } from '@/lib/editor-config';
-import { openInOctree } from '@/lib/open-in-octree';
+import { readCompileError, compileLogOf } from '@/lib/compile-error';
+import { ResultBar } from '@/components/ResultBar';
 import { CompileErrorModal } from '@/components/CompileErrorModal';
 import { OctreeCTA } from '@/components/OctreeCTA';
 import { useTranslations } from 'next-intl';
@@ -64,6 +64,7 @@ export default function AIToolLayout({
   const [isTableFile, setIsTableFile] = useState(false);
   const [fileType, setFileType] = useState<string>('math');
   const [compileError, setCompileError] = useState<string>('');
+  const [compileLog, setCompileLog] = useState<string>('');
   const [showCompileErrorModal, setShowCompileErrorModal] = useState(false);
   const [latestLatexDocument, setLatestLatexDocument] = useState<string>('');
 
@@ -147,16 +148,7 @@ export default function AIToolLayout({
       });
 
       if (!response.ok) {
-        let message = t('failedToCompile');
-        try {
-          const data = await response.json();
-          if (data?.error) {
-            message = data.error;
-          }
-        } catch {
-          // ignore parse errors
-        }
-        throw new Error(message);
+        throw await readCompileError(response, t('failedToCompile'));
       }
 
       const data = await response.json();
@@ -169,6 +161,7 @@ export default function AIToolLayout({
       const fallbackMessage =
         err instanceof Error ? err.message : t('failedToCompile');
       setCompileError(fallbackMessage);
+      setCompileLog(compileLogOf(err));
       setShowCompileErrorModal(true);
     } finally {
       setIsCompiling(false);
@@ -637,15 +630,7 @@ export default function AIToolLayout({
 
                                {/* Action Buttons */}
                    {latexCode && !isProcessing && (
-                     <div className="mt-2 flex gap-3">
-                       <button
-                         onClick={() => openInOctree({ latex: latexCode, title: title, source: 'tools:ai' })}
-                         className="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-gray-900 text-base font-medium rounded-lg border border-gray-200 hover:bg-gray-50 transition-colors shadow-sm"
-                       >
-                         <OctreeLogo className="h-5 w-5" />
-                         {tCommon('openInOctree')}
-                       </button>
-                       
+                     <ResultBar latex={latexCode} tool={analyticsTool} title={`${title} result`}>
                        <div className="relative">
                          <button
                            onClick={() => setShowExportMenu(!showExportMenu)}
@@ -679,7 +664,7 @@ export default function AIToolLayout({
                            </div>
                          )}
                        </div>
-                     </div>
+                     </ResultBar>
                    )}
           </div>
         </div>
@@ -694,9 +679,10 @@ export default function AIToolLayout({
       <CompileErrorModal
         isOpen={showCompileErrorModal}
         errorMessage={compileError}
+        errorLog={compileLog}
         latex={latestLatexDocument || latexCode}
         onClose={() => setShowCompileErrorModal(false)}
-        source="tools:ai"
+        source={`tools:${analyticsTool}`}
         title={title}
       />
     </>

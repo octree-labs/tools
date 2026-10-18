@@ -1,12 +1,13 @@
 "use client";
 
 import { use, useState, useEffect } from "react";
-import { ArrowLeft, Code, FileText } from "lucide-react";
+import { ArrowLeft, Code, FileText, Sparkles } from "lucide-react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { templates } from "@/lib/templates";
 import { openInOctree } from "@/lib/open-in-octree";
 import { EVENTS, track } from "@/lib/analytics";
+import { useCtaImpression } from "@/hooks/use-cta-impression";
 import { getTemplateJsonLd } from "@/lib/json-ld";
 import { getTemplateGuide } from "@/lib/template-guides";
 import { OctreeCTA } from "@/components/OctreeCTA";
@@ -57,6 +58,7 @@ export default function TemplatePage({
   const t = useTranslations('templates');
   const tTemplatesList = useTranslations('templatesList');
   const tCategories = useTranslations('categories');
+  const tCta = useTranslations('cta');
   
   const [mounted, setMounted] = useState(false);
   const [showSource, setShowSource] = useState(false);
@@ -64,6 +66,10 @@ export default function TemplatePage({
   const template = templates.find((t) => t.slug === slug);
 
   useEffect(() => setMounted(true), []);
+
+  // One impression per template view covers both "Open as Template" and the
+  // edit line under the preview; they share the tools:templates:<slug> source.
+  const ctaRef = useCtaImpression<HTMLDivElement>(`tools:templates:${slug}`, Boolean(template));
 
   useEffect(() => {
     if (!template) return;
@@ -220,6 +226,27 @@ export default function TemplatePage({
                       <span className="text-gray-400">Loading preview...</span>
                     </div>
                   )}
+                </div>
+                <div
+                  ref={ctaRef}
+                  data-cta-placement={`tools:templates:${slug}`}
+                  className="mt-3 flex items-center justify-center"
+                >
+                  <button
+                    type="button"
+                    onClick={() =>
+                      openInOctree({
+                        latex: template.code,
+                        title: translatedTitle,
+                        source: "tools:templates",
+                        templateSlug: slug,
+                      })
+                    }
+                    className="inline-flex items-center gap-2 text-sm font-medium text-blue-600 hover:text-blue-700 hover:underline underline-offset-4"
+                  >
+                    <Sparkles className="h-4 w-4" />
+                    {tCta('editTemplateWithAI')}
+                  </button>
                 </div>
               </div>
             </div>

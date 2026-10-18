@@ -947,7 +947,10 @@
       "feature2": "Sube una imagen y conviértela a LaTeX sin problemas",
       "feature3": "Obtén asistencia instantánea para escribir y formatear artículos de investigación",
       "useInOctree": "Usar en Octree",
-      "learnMore": "Más Información"
+      "learnMore": "Más Información",
+      "resultReadyHint": "Tu LaTeX está listo. Edita, compila y corrige errores con IA en Octree, gratis.",
+      "openResultInOctree": "Abrir en Octree para editar y compilar",
+      "editTemplateWithAI": "Edita esta plantilla con IA, gratis"
     },
     "metadata": {
       "site": {

@@ -1097,7 +1097,10 @@
     "feature2": "Muat naik imej dan tukar ke LaTeX dengan lancar",
     "feature3": "Dapatkan bantuan segera untuk menulis dan memformat kertas penyelidikan",
     "useInOctree": "Gunakan di Octree",
-    "learnMore": "Ketahui Lebih Lanjut"
+    "learnMore": "Ketahui Lebih Lanjut",
+    "resultReadyHint": "LaTeX anda sudah sedia. Edit, kompil dan betulkan ralat dengan AI di Octree, percuma.",
+    "openResultInOctree": "Buka di Octree untuk mengedit dan mengkompil",
+    "editTemplateWithAI": "Edit templat ini dengan AI, percuma"
   },
   "metadata": {
     "site": {

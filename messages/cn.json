@@ -949,7 +949,10 @@
       "feature2": "上传图片并无缝转换为 LaTeX",
       "feature3": "获得撰写和格式化研究论文的即时帮助",
       "useInOctree": "在 Octree 中使用",
-      "learnMore": "了解更多"
+      "learnMore": "了解更多",
+      "resultReadyHint": "您的 LaTeX 已准备好。在 Octree 中用 AI 编辑、编译并修复错误，免费。",
+      "openResultInOctree": "在 Octree 中打开以编辑和编译",
+      "editTemplateWithAI": "用 AI 编辑此模板，免费"
     },
     "metadata": {
       "site": {

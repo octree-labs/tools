@@ -1097,7 +1097,10 @@
     "feature2": "Bild hochladen und nahtlos in LaTeX konvertieren",
     "feature3": "Sofortige Unterstützung beim Schreiben und Formatieren von Forschungsarbeiten erhalten",
     "useInOctree": "In Octree verwenden",
-    "learnMore": "Mehr erfahren"
+    "learnMore": "Mehr erfahren",
+    "resultReadyHint": "Dein LaTeX ist fertig. Bearbeite, kompiliere und behebe Fehler mit KI in Octree, kostenlos.",
+    "openResultInOctree": "In Octree öffnen, um zu bearbeiten und zu kompilieren",
+    "editTemplateWithAI": "Diese Vorlage mit KI bearbeiten, kostenlos"
   },
   "metadata": {
     "site": {

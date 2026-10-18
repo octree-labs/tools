@@ -1097,7 +1097,10 @@
     "feature2": "Upload image and convert it to LaTeX seamlessly",
     "feature3": "Get instant assistance with writing and formatting research papers",
     "useInOctree": "Use in Octree",
-    "learnMore": "Learn More"
+    "learnMore": "Learn More",
+    "resultReadyHint": "Your LaTeX is ready. Edit, compile and fix errors with AI in Octree, free.",
+    "openResultInOctree": "Open in Octree to edit and compile",
+    "editTemplateWithAI": "Edit this template with AI, free"
   },
   "metadata": {
     "site": {

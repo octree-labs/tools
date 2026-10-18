@@ -11,6 +11,7 @@ export const EVENTS = {
   TEMPLATE_DOWNLOADED: 'template_downloaded',
   CONVERTER_USED: 'converter_used',
   SYMBOL_COPIED: 'symbol_copied',
+  CTA_IMPRESSION: 'cta_impression',
 } as const;
 
 export type EventName = (typeof EVENTS)[keyof typeof EVENTS];
@@ -40,4 +41,13 @@ export const BEFORE_NAVIGATION: CaptureOptions = { send_instantly: true, transpo
 /** One helper for every converter/generator: called at its success and failure points. */
 export function trackConverterUsed(tool: string, success: boolean) {
   track(EVENTS.CONVERTER_USED, { tool, success });
+}
+
+/**
+ * A conversion CTA became visible. `placement` equals the `source` its click
+ * sends with open_in_octree_clicked, so conversion per placement is
+ * open_in_octree_clicked / cta_impression grouped by that string.
+ */
+export function trackCtaImpression(placement: string) {
+  track(EVENTS.CTA_IMPRESSION, { placement });
 }

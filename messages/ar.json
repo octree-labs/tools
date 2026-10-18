@@ -698,7 +698,10 @@
       "feature2": "ارفع صورة وحولها إلى LaTeX بسلاسة",
       "feature3": "احصل على مساعدة فورية في كتابة وتنسيق أوراق البحث",
       "useInOctree": "استخدم في Octree",
-      "learnMore": "اعرف المزيد"
+      "learnMore": "اعرف المزيد",
+      "resultReadyHint": "ملف LaTeX جاهز. حرّر وترجم وأصلح الأخطاء بالذكاء الاصطناعي في Octree مجانًا.",
+      "openResultInOctree": "افتح في Octree للتحرير والترجمة",
+      "editTemplateWithAI": "حرّر هذا القالب بالذكاء الاصطناعي مجانًا"
     },
     "metadata": {
       "site": {
