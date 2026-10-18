@@ -745,6 +745,22 @@
   "symbols": {
     "title": "LaTeXシンボル",
     "description": "LaTeXドキュメント用の一般的な数学演算子とギリシャ文字を参照。",
+    "intro": {
+      "heading": "A copy-paste LaTeX symbols reference",
+      "coverage": "This reference covers 37 categories of LaTeX symbols, from Greek letters, arrows, operators and relations to set theory, calculus, physics, chemistry, finance and machine learning notation. Every entry shows the rendered glyph next to the LaTeX command that produces it, with a one-click copy button, so you can paste the command straight into your document instead of hunting through package manuals.",
+      "mathMode": "Most symbols only work in math mode. Wrap them in dollar signs for inline math, as in $\\alpha \\leq \\beta$, or place them in an equation environment for display math. A few symbols, such as the degree sign or the section mark, also have text-mode commands; the symbol page says which mode each command needs.",
+      "packages": "The LaTeX kernel defines the basic operators and Greek letters, but many popular symbols live in packages. Load amssymb for extra relations, arrows and blackboard-bold letters such as \\mathbb R, amsmath for aligned equations and \\operatorname, mathtools for \\coloneqq and paired delimiters, textcomp for text-mode symbols such as the euro and degree signs, and siunitx for units and numbers with correct spacing. When a command needs one of these packages, add the matching \\usepackage line to your preamble.",
+      "popularLabel": "Most searched categories:",
+      "guidesLabel": "Deeper guides on the Octree blog:",
+      "guides": {
+        "greaterLess": "Greater than and less than symbols",
+        "notEqual": "Not equal sign",
+        "plusMinus": "Plus-minus symbol",
+        "infinity": "Infinity symbol",
+        "degree": "Degree symbol",
+        "realNumbers": "Real numbers symbol (blackboard bold)"
+      }
+    },
     "searchPlaceholder": "シンボルを検索...",
     "searchResults": "検索結果",
     "symbolsFound": "{count}件のシンボルが見つかりました",
