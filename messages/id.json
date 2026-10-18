@@ -813,6 +813,10 @@
     "neurips-2027": {
       "title": "NeurIPS 2027",
       "description": "Pracetak satu kolom bergaya NeurIPS 2027 dengan blok penulis, abstrak, bagian, dan daftar periksa makalah"
+    },
+    "ats-resume": {
+      "title": "Templat Resume Ramah ATS",
+      "description": "Resume satu kolom berteks polos yang dibaca dengan benar oleh sistem pelacakan pelamar: judul standar, tanpa tabel, ikon, atau kolom"
     }
   },
   "symbols": {

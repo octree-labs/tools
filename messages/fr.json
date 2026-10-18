@@ -803,6 +803,10 @@
       "neurips-2027": {
         "title": "NeurIPS 2027",
         "description": "Prépublication à une colonne au style NeurIPS 2027 avec bloc d'auteurs, résumé, sections et liste de contrôle"
+    },
+      "ats-resume": {
+        "title": "Modèle de CV Compatible ATS",
+        "description": "CV en une colonne et texte brut que les systèmes de suivi des candidatures lisent correctement : titres standard, sans tableaux, icônes ni colonnes"
       }
     },
     "symbols": {

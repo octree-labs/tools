@@ -563,7 +563,8 @@
       "ieee-conference": { "title": "Artigo de conferência IEEE", "description": "Formato oficial de conferência IEEEtran com blocos de autores, resumo, termos de índice, equação, tabela, figura e referências" },
       "jfm-paper": { "title": "Artigo JFM", "description": "Artigo no estilo do Journal of Fluid Mechanics com cabeçalhos, citações autor-ano, resumo, palavras-chave e seções finais" },
       "aaai-2027": { "title": "AAAI 2027", "description": "Artigo em duas colunas no estilo do kit de autor AAAI 2027 com bloco de título, cabeçalho de resumo em negrito e referências autor-ano" },
-      "neurips-2027": { "title": "NeurIPS 2027", "description": "Preprint em coluna única no estilo NeurIPS 2027 com bloco de autores, resumo, seções e checklist do artigo" }
+      "neurips-2027": { "title": "NeurIPS 2027", "description": "Preprint em coluna única no estilo NeurIPS 2027 com bloco de autores, resumo, seções e checklist do artigo" },
+      "ats-resume": { "title": "Modelo de Currículo Compatível com ATS", "description": "Currículo de coluna única em texto simples que os sistemas de triagem de candidatos leem corretamente: títulos padrão, sem tabelas, ícones ou colunas" }
     },
     "symbols": {
     "title": "Símbolos LaTeX",

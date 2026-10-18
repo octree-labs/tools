@@ -813,6 +813,10 @@
     "neurips-2027": {
       "title": "NeurIPS 2027",
       "description": "Preprint a una colonna nello stile NeurIPS 2027 con blocco autori, abstract, sezioni e checklist dell'articolo"
+    },
+    "ats-resume": {
+      "title": "Modello di Curriculum Compatibile ATS",
+      "description": "Curriculum a colonna singola in testo semplice che i sistemi di tracciamento candidati leggono correttamente: titoli standard, senza tabelle, icone o colonne"
     }
   },
   "symbols": {

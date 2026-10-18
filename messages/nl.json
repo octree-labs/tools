@@ -522,7 +522,8 @@
     "ieee-conference": { "title": "IEEE-conferentiepaper", "description": "Officieel IEEEtran-conferentieformaat met auteursblokken, abstract, index terms, vergelijking, tabel, figuur en referenties" },
     "jfm-paper": { "title": "JFM-artikel", "description": "Artikel in de stijl van het Journal of Fluid Mechanics met kopregels, auteur-jaarcitaties, abstract, trefwoorden en slotgedeelte" },
     "aaai-2027": { "title": "AAAI 2027", "description": "Tweekoloms paper in de stijl van de AAAI 2027-auteurskit met titelblok, vette abstractkop en auteur-jaarreferenties" },
-    "neurips-2027": { "title": "NeurIPS 2027", "description": "Eenkoloms preprint in NeurIPS 2027-stijl met auteursblok, abstract, secties en paperchecklist" }
+    "neurips-2027": { "title": "NeurIPS 2027", "description": "Eenkoloms preprint in NeurIPS 2027-stijl met auteursblok, abstract, secties en paperchecklist" },
+    "ats-resume": { "title": "ATS-vriendelijk Cv-sjabloon", "description": "Cv in één kolom en platte tekst dat sollicitantvolgsystemen foutloos lezen: standaardkoppen, geen tabellen, pictogrammen of kolommen" }
   },
   "symbols": {
     "title": "LaTeX Symbolen",
