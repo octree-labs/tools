@@ -16,7 +16,7 @@ const faq: GuideFaqItem[] = [
   {
     question: "What goes on an APA 7 student title page?",
     answer:
-      "Five things, centred in the upper half of the page: the paper title in bold title case, the author's name, the department and university, the course number and name, the instructor's name, and the assignment due date, each on its own double-spaced line. A page number sits in the top right corner. Student papers do not have a running head or an author note. This template fills all of these fields through \\title, \\author, \\authorsaffiliations, \\course, \\professor and \\duedate.",
+      "Six things, centred in the upper half of the page: the paper title in bold title case, the author's name, the department and university, the course number and name, the instructor's name, and the assignment due date, each on its own double-spaced line. A page number sits in the top right corner. Student papers do not have a running head or an author note. This template fills all of these fields through \\title, \\author, \\authorsaffiliations, \\course, \\professor and \\duedate.",
   },
   {
     question: "What is the difference between a student and a professional APA title page?",
@@ -26,7 +26,7 @@ const faq: GuideFaqItem[] = [
   {
     question: "Does APA 7 require Times New Roman?",
     answer:
-      "No. APA 7 accepts several fonts, including 12-point Times New Roman, 11-point Calibri or Arial, 11-point Georgia and 10-point Lucida Sans Unicode, as long as the same font is used throughout. The apa7 class leaves the default LaTeX font in student and manuscript modes. If your instructor expects Times, add \\usepackage{newtxtext} to the preamble; the class already sets 12pt and double spacing.",
+      "No. APA 7 accepts several fonts, including 12-point Times New Roman, 11-point Calibri or Arial, 11-point Georgia and 10-point Lucida Sans Unicode, as long as the same font is used throughout. The apa7 class uses Latin Modern by default LaTeX font in student and manuscript modes. If your instructor expects Times, add \\usepackage{newtxtext} to the preamble; the class already sets 12pt and double spacing.",
   },
   {
     question: "How do I add APA references to this template?",
@@ -126,7 +126,7 @@ export default function ApaTitlePageGuide() {
         pair is the argument and each inner pair is one affiliation, so several
         affiliations are written as{" "}
         <GuideCode>{"{{Dept A, Uni A}, {Dept B, Uni B}}"}</GuideCode>. APA asks for the
-        title to be concise, no more than about 12 words, in title case; the class makes
+        title to be concise (APA 7 sets no word limit), in title case; the class makes
         it bold and centred automatically. <GuideCode>\duedate{"{\\today}"}</GuideCode>{" "}
         prints the compile date; replace it with a literal date such as{" "}
         <GuideCode>March 3, 2026</GuideCode> so the PDF does not change every time you
@@ -202,9 +202,10 @@ export default function ApaTitlePageGuide() {
           class formats the &quot;Table 1&quot; label and italic title per APA.
         </li>
         <li>
-          <strong>Spacing.</strong> Double spacing is the default. Do not add{" "}
-          <GuideCode>setspace</GuideCode>; if your instructor allows single spacing, the
-          class understands <GuideCode>\singlespacing</GuideCode> inside the body.
+          <strong>Spacing.</strong> Double spacing is the default (the class sets{" "}
+          <GuideCode>\linespread</GuideCode> itself). If your instructor allows single
+          spacing, load <GuideCode>setspace</GuideCode> and use{" "}
+          <GuideCode>\singlespacing</GuideCode> inside the body.
         </li>
       </GuideUl>
 
@@ -217,7 +218,7 @@ export default function ApaTitlePageGuide() {
           it.
         </li>
         <li>
-          <strong>&quot;Package csquotes Error: No style for language&quot;</strong> or
+          <strong>&quot;Package csquotes Warning: No style for language&quot;</strong> or
           warnings about <GuideCode>babel</GuideCode>. Keep the two package lines in the
           template; <GuideCode>biblatex-apa</GuideCode> needs{" "}
           <GuideCode>csquotes</GuideCode>, and <GuideCode>csquotes</GuideCode> needs a
@@ -226,8 +227,9 @@ export default function ApaTitlePageGuide() {
         <li>
           <strong>&quot;Undefined control sequence \authorsnames&quot;.</strong> Your
           copy of <GuideCode>apa7</GuideCode> predates the multi-author commands (added in
-          version 1.0, 2020). Update the package, or use the older{" "}
-          <GuideCode>\authors</GuideCode>/<GuideCode>\affiliations</GuideCode> pair.
+          version 2.01, July 2020). Update the package, or use the older{" "}
+          <GuideCode>\author</GuideCode>/<GuideCode>\affiliation</GuideCode> pair (now
+          deprecated, with a warning).
         </li>
         <li>
           <strong>Empty or missing reference list.</strong> Biber has not been run. Compile

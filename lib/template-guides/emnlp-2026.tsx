@@ -59,8 +59,8 @@ export default function Emnlp2026Guide() {
         before planning around them.
       </GuideP>
       <GuideP>
-        This EMNLP 2026 LaTeX template is a paper skeleton in the ACL style: two
-        columns, 11pt Times, US letter paper, with abstract, numbered sections, an
+        This EMNLP 2026 LaTeX template is a paper skeleton approximating the ACL style:
+        two columns, 11pt Times, with abstract, numbered sections, an
         equation, a <GuideCode>booktabs</GuideCode> results table, a figure placeholder,
         and the unnumbered Limitations, Ethics Statement and Acknowledgments sections
         the venue expects. It compiles anywhere with standard packages, so you can start
@@ -70,9 +70,9 @@ export default function Emnlp2026Guide() {
       <GuideH2 id="format">The EMNLP submission format</GuideH2>
       <GuideUl>
         <li>
-          <strong>Layout:</strong> two columns, 11pt Times Roman, letter paper, one-inch
-          top and bottom margins and 0.75in side margins, exactly as produced by the
-          official <GuideCode>acl.sty</GuideCode>.
+          <strong>Layout:</strong> two columns, 11pt Times Roman. The official{" "}
+          <GuideCode>acl.sty</GuideCode> uses A4 paper, 2.5cm margins and a 0.6cm column
+          gap; this skeleton approximates that look with standard packages.
         </li>
         <li>
           <strong>Length:</strong> long papers up to eight pages of content, short papers
@@ -101,7 +101,7 @@ export default function Emnlp2026Guide() {
         </GuideLink>
         . They are distributed separately, so this skeleton emulates their look instead:{" "}
         <GuideCode>\documentclass[11pt,twocolumn,letterpaper]{"{article}"}</GuideCode>,{" "}
-        <GuideCode>geometry</GuideCode> with the ACL margins and a 0.25in column gap,{" "}
+        <GuideCode>geometry</GuideCode> with ACL-like margins and column gap (the real acl.sty: A4, 2.5cm, 0.6cm),{" "}
         <GuideCode>newtxtext</GuideCode>/<GuideCode>newtxmath</GuideCode> for Times,{" "}
         <GuideCode>titlesec</GuideCode> for the ACL heading sizes,{" "}
         <GuideCode>natbib</GuideCode> with round brackets, <GuideCode>microtype</GuideCode>{" "}
@@ -266,7 +266,7 @@ pdflatex paper.tex
           [
             <strong key="e">EMNLP 2026</strong>,
             "ACL / ARR (emulated)",
-            "Two columns, 11pt Times, letter",
+            "Two columns, 11pt Times, A4 (acl.sty)",
             "Limitations (mandatory), Ethics Statement (optional)",
           ],
           [

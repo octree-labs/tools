@@ -31,7 +31,7 @@ const faq: GuideFaqItem[] = [
   {
     question: "How do I insert a scanned signature?",
     answer:
-      "Put the image in the \\signature argument: \\signature{\\includegraphics[height=1.2cm]{signature.png}\\\\Professor Name\\\\Title\\\\Department}. The letter class leaves vertical space after \\closing for a handwritten signature by default; with an image, you can remove that gap by setting \\longindentation=0pt and adjusting \\medskipamount, or leave it and sign by hand.",
+      "Put the image in the \\signature argument: \\signature{\\includegraphics[height=1.2cm]{signature.png}\\\\Professor Name\\\\Title\\\\Department}. The letter class leaves vertical space after \\closing for a handwritten signature by default; with an image, you can shrink that gap with a negative \vspace at the start of the \signature argument (\longindentation only moves the block horizontally).",
   },
   {
     question: "Should a recommendation letter be dated and addressed to a person?",
@@ -49,7 +49,7 @@ export default function LetterOfRecommendationGuide() {
         of view of a professor or supervisor recommending a student for a graduate
         program. It uses the standard <GuideCode>letter</GuideCode> document class at 11pt
         with one-inch margins from <GuideCode>geometry</GuideCode> and{" "}
-        <GuideCode>hyperref</GuideCode> for a clickable email address. The body is organised
+        <GuideCode>hyperref</GuideCode> (loaded but unused; the email is plain text). The body is organised
         under four bold run-in headings, Academic Excellence, Research Capabilities,
         Personal Qualities and Recommendation, with placeholder text that tells you what
         kind of evidence belongs in each. Fill in the names, dates and examples, compile,
@@ -120,7 +120,7 @@ export default function LetterOfRecommendationGuide() {
         takes the <em>recipient&apos;s</em> address as its argument and prints it at the
         left above the salutation. <GuideCode>\opening{"{Dear Members of the Admissions Committee,}"}</GuideCode>{" "}
         prints the salutation and starts the body. Both commands are required: a letter
-        without <GuideCode>\opening</GuideCode> produces an error.
+        without <GuideCode>\opening</GuideCode> silently drops the address, date and salutation.
       </GuideP>
       <GuideH3>Body paragraphs</GuideH3>
       <GuideP>
@@ -195,9 +195,9 @@ export default function LetterOfRecommendationGuide() {
         </li>
         <li>
           <strong>Contact details.</strong> <GuideCode>\telephone{"{...}"}</GuideCode> is
-          available, though with the default <GuideCode>letter</GuideCode> class it only
-          appears if you also use <GuideCode>\makelabels</GuideCode>; it is simpler to
-          include the phone number in <GuideCode>\address</GuideCode>.
+          available, but the default <GuideCode>letter</GuideCode> class prints it only
+          when <GuideCode>\address</GuideCode> is empty; it is simpler to include the
+          phone number in <GuideCode>\address</GuideCode>.
         </li>
         <li>
           <strong>Font and size.</strong> Change <GuideCode>11pt</GuideCode> to{" "}
@@ -234,8 +234,8 @@ export default function LetterOfRecommendationGuide() {
           lines.
         </li>
         <li>
-          <strong>Sender address on the left instead of the right.</strong> You wrote{" "}
-          <GuideCode>\address</GuideCode> inside the letter environment, after{" "}
+          <strong>Sender address missing, only the date shown.</strong> You left{" "}
+          <GuideCode>\address</GuideCode> empty or defined it after{" "}
           <GuideCode>\opening</GuideCode>. Keep it in the preamble as the template does.
         </li>
         <li>

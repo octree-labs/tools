@@ -50,7 +50,7 @@ export default function HarvardResumeGuide() {
         widely circulated &quot;Resumes and Cover Letters&quot; guide and the one most
         finance, consulting and law recruiters have seen thousands of times. What makes a
         resume &quot;Harvard format&quot; is restraint: one page, black text, a centred
-        name, a single line of contact details, and four sections in a fixed order,
+        name, a single line of contact details, and, in the sample resume from Harvard's guide, four sections in this order:
         Education, Experience, Leadership &amp; Activities, and Skills &amp; Interests. Every
         entry has the organisation and location on one line, the role and dates on the
         next, and a few short bullets that begin with an action verb and end with a
@@ -95,7 +95,7 @@ export default function HarvardResumeGuide() {
       <GuideP>
         Name in <GuideCode>\LARGE\bfseries\scshape</GuideCode>, then one line with city and
         ZIP, email, phone and a LinkedIn URL separated by vertical bars. Harvard&apos;s
-        guide suggests a single line; two are acceptable if you add a portfolio or
+        guide's sample uses a single line; two are acceptable if you add a portfolio or
         GitHub link. Use a personal or university email you check daily.
       </GuideP>
       <GuideH3>Education</GuideH3>
@@ -111,7 +111,7 @@ export default function HarvardResumeGuide() {
       <GuideH3>Experience</GuideH3>
       <GuideP>
         Internships, research assistantships and part-time jobs in reverse chronological
-        order. Harvard&apos;s guide is explicit about bullets: start each with a strong
+        order. Harvard&apos;s guide gives the same advice on bullets: start each with a strong
         verb in the past tense (Built, Analyzed, Led, Designed, Negotiated), name the
         tools or methods, and quantify the outcome. Compare &quot;Helped with financial
         models&quot; with the sample&apos;s &quot;Built discounted cash flow and
@@ -130,7 +130,7 @@ export default function HarvardResumeGuide() {
       <GuideP>
         Three bullets: Technical (software, programming languages, statistical tools),
         Languages (with proficiency level), and Interests. The interests line is
-        deliberate: Harvard&apos;s guide recommends two or three specific interests as a
+        deliberate: Harvard&apos;s sample lists two or three specific interests as a
         conversation starter, so &quot;sourdough baking, chess&quot; is better than
         &quot;reading, travel&quot;.
       </GuideP>
