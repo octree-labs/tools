@@ -1,6 +1,6 @@
 "use client";
 
-import { Suspense } from "react";
+import { Suspense, type ReactNode } from "react";
 import { SymbolCard } from "@/components/SymbolCard";
 import { useSearchParams } from "next/navigation";
 import { useTranslations } from 'next-intl';
@@ -9,9 +9,15 @@ import { SymbolItem } from "@/lib/symbols";
 interface SymbolCategoryPageProps {
     symbols: SymbolItem[];
     categoryKey: string;
+    /**
+     * Optional editorial intro (see lib/symbol-intros) rendered above the
+     * grid. It is passed in from the server page so it is part of the static
+     * HTML; it is only hidden on the client while a search query is active.
+     */
+    intro?: ReactNode;
 }
 
-function SymbolCategoryContent({ symbols, categoryKey }: SymbolCategoryPageProps) {
+function SymbolCategoryContent({ symbols, categoryKey }: Omit<SymbolCategoryPageProps, "intro">) {
     const searchParams = useSearchParams();
     const searchQuery = searchParams.get("q") || "";
     const t = useTranslations('symbols');
@@ -49,10 +55,26 @@ function SymbolCategoryContent({ symbols, categoryKey }: SymbolCategoryPageProps
     );
 }
 
-export default function SymbolCategoryPage({ symbols, categoryKey }: SymbolCategoryPageProps) {
+// useSearchParams opts its Suspense subtree out of prerendering, so the intro
+// is rendered as the boundary's fallback (static HTML) and this gate only
+// removes it on the client when the user is searching.
+function IntroGate({ intro }: { intro: ReactNode }) {
+    const searchParams = useSearchParams();
+    if (searchParams.get("q")) return null;
+    return <>{intro}</>;
+}
+
+export default function SymbolCategoryPage({ symbols, categoryKey, intro }: SymbolCategoryPageProps) {
     return (
-        <Suspense fallback={<div>Loading...</div>}>
-            <SymbolCategoryContent symbols={symbols} categoryKey={categoryKey} />
-        </Suspense>
+        <>
+            {intro && (
+                <Suspense fallback={intro}>
+                    <IntroGate intro={intro} />
+                </Suspense>
+            )}
+            <Suspense fallback={<div>Loading...</div>}>
+                <SymbolCategoryContent symbols={symbols} categoryKey={categoryKey} />
+            </Suspense>
+        </>
     );
 }

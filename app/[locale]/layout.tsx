@@ -70,6 +70,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description,
     keywords: keywords.split(', '),
     metadataBase: new URL('https://tools.useoctree.com'),
+    // Root-path alternates: only correct for the homepage. Every nested
+    // segment (symbols hub + categories, templates list + [slug], tools) must
+    // override `alternates` with its own path, otherwise it inherits the
+    // homepage canonical/hreflang set. See lib/seo.ts and the metadata helpers.
     alternates: generateAlternates('', locale),
     openGraph: {
       title,
