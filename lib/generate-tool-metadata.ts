@@ -24,6 +24,9 @@ const slugToTranslationKey: Record<string, string> = {
   'mermaid-to-latex': 'mermaidToLatex',
   'latex-word-counter': 'latexWordCounter',
   'arxiv-to-latex': 'arxivToLatex',
+  'latex-to-png': 'latexToPng',
+  'latex-to-word': 'latexToWord',
+  'latex-converter': 'latexConverter',
 };
 
 const localeToOgLocale: Record<string, string> = {

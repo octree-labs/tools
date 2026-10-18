@@ -33,7 +33,23 @@ export async function POST(request: NextRequest) {
     if (!response.ok) {
       const errorText = await response.text();
       console.error('Compilation failed:', errorText);
-      throw new Error('Compilation failed');
+      // The compile server answers failures with JSON: { error, message, log, stdout, stderr }.
+      let message = 'Failed to compile LaTeX';
+      let log: string | undefined;
+      try {
+        const parsed = JSON.parse(errorText);
+        if (typeof parsed?.message === 'string' && parsed.message.trim()) message = parsed.message;
+        else if (typeof parsed?.error === 'string' && parsed.error.trim()) message = parsed.error;
+        log = [parsed?.log, parsed?.stdout, parsed?.stderr].find(
+          (v): v is string => typeof v === 'string' && v.trim().length > 0
+        );
+      } catch {
+        // Non-JSON error body; keep the generic message.
+      }
+      return NextResponse.json(
+        { success: false, error: message, log },
+        { status: response.status >= 400 ? response.status : 500 }
+      );
     }
 
     const pdfArrayBuffer = await response.arrayBuffer();
