@@ -817,6 +817,10 @@
     "ats-resume": {
       "title": "ATS-freundliche Lebenslauf-Vorlage",
       "description": "Einspaltiger Klartext-Lebenslauf, den Bewerbermanagementsysteme sauber auslesen: Standardüberschriften, keine Tabellen, Icons oder Spalten"
+    },
+    "mla-works-cited": {
+      "title": "MLA Works-Cited-Seite",
+      "description": "Works-Cited-Seite nach MLA 9 mit Kopfzeile, doppeltem Zeilenabstand, hängendem Einzug und acht Beispieleinträgen"
     }
   },
   "symbols": {

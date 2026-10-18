@@ -817,6 +817,10 @@
     "ats-resume": {
       "title": "Templat Resume Mesra ATS",
       "description": "Resume satu lajur berteks biasa yang dibaca dengan betul oleh sistem penjejakan pemohon: tajuk standard, tanpa jadual, ikon atau lajur"
+    },
+    "mla-works-cited": {
+      "title": "Halaman Works Cited MLA",
+      "description": "Halaman works cited format MLA 9 dengan pengepala, langkau dua baris, inden gantung dan lapan contoh entri"
     }
   },
   "symbols": {

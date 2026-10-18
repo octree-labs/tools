@@ -817,6 +817,10 @@
     "ats-resume": {
       "title": "Modello di Curriculum Compatibile ATS",
       "description": "Curriculum a colonna singola in testo semplice che i sistemi di tracciamento candidati leggono correttamente: titoli standard, senza tabelle, icone o colonne"
+    },
+    "mla-works-cited": {
+      "title": "Pagina Opere citate MLA",
+      "description": "Pagina delle opere citate in formato MLA 9 con intestazione, interlinea doppia, rientro sporgente e otto voci di esempio"
     }
   },
   "symbols": {

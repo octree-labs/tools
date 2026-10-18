@@ -817,6 +817,10 @@
     "ats-resume": {
       "title": "ATS-Friendly Resume Template",
       "description": "Single-column plain-text resume that applicant tracking systems parse cleanly: standard headings, no tables, icons or columns"
+    },
+    "mla-works-cited": {
+      "title": "MLA Works Cited Page",
+      "description": "MLA 9 works cited page with running header, double spacing, hanging indent and eight sample entries"
     }
   },
   "symbols": {

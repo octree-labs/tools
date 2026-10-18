@@ -821,6 +821,18 @@ async function generateMetadataBase({
       'plain text resume template',
       'resume template that passes ats',
     ],
+    'mla-works-cited': [
+      'mla works cited page',
+      'works cited page',
+      'mla works cited',
+      'works cited mla format',
+      'mla works cited template',
+      'works cited page template',
+      'mla works cited latex',
+      'latex works cited',
+      'mla 9 works cited',
+      'works cited format',
+    ],
   };
 
   const specificKeywords = keywordMap[slug] || [
