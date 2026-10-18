@@ -10,6 +10,7 @@ export default function TableToLatex() {
     <AIToolLayout
       title={t('title')}
       description={t('subtitle')}
+      analyticsTool="table-to-latex"
       apiEndpoint="/api/convert-table"
       inputLabel={t('inputLabel')}
       outputLabel={t('outputLabel')}

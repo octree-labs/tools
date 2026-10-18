@@ -27,6 +27,7 @@ import { useTranslations, useLocale } from "next-intl";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import type { Locale } from "@/lib/i18n/config";
 import { Button } from "@/components/ui/button";
+import { trackConverterUsed } from "@/lib/analytics";
 
 const Editor = dynamic(() => import("@monaco-editor/react"), { ssr: false });
 const PDFPreview = dynamic(() => import("@/components/PDFPreview"), {
@@ -128,7 +129,9 @@ export default function MarkdownToLatex() {
         accumulatedText += chunk;
         setLatexCode(accumulatedText);
       }
+      trackConverterUsed('markdown-to-latex', true);
     } catch (err) {
+      trackConverterUsed('markdown-to-latex', false);
       setError(t("failedToConvert"));
       console.error(err);
     } finally {

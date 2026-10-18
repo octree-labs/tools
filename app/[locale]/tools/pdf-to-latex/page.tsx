@@ -10,6 +10,7 @@ export default function PdfToLatex() {
     <AIToolLayout
       title={t('title')}
       description={t('subtitle')}
+      analyticsTool="pdf-to-latex"
       apiEndpoint="/api/convert"
       inputLabel={t('inputLabel')}
       outputLabel={t('outputLabel')}

@@ -6,6 +6,7 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 import { templates } from "@/lib/templates";
 import { openInOctree } from "@/lib/open-in-octree";
+import { EVENTS, track } from "@/lib/analytics";
 import { getTemplateJsonLd } from "@/lib/json-ld";
 import { getTemplateGuide } from "@/lib/template-guides";
 import { OctreeCTA } from "@/components/OctreeCTA";
@@ -63,6 +64,11 @@ export default function TemplatePage({
   const template = templates.find((t) => t.slug === slug);
 
   useEffect(() => setMounted(true), []);
+
+  useEffect(() => {
+    if (!template) return;
+    track(EVENTS.TEMPLATE_VIEWED, { slug: template.slug, category: template.category });
+  }, [template]);
 
   // Helper to get translated template title/description with fallback
   const getTemplateTitle = (templateSlug: string, fallback: string) => {
@@ -131,6 +137,7 @@ export default function TemplatePage({
                       latex: template.code,
                       title: translatedTitle,
                       source: "tools:templates",
+                      templateSlug: slug,
                     })
                   }
                 >
@@ -146,6 +153,7 @@ export default function TemplatePage({
                 <Link
                   href={template.previewUrl}
                   target="_blank"
+                  onClick={() => track(EVENTS.TEMPLATE_DOWNLOADED, { slug })}
                   className="inline-flex items-center gap-2 px-5 py-2.5 bg-white text-gray-700 text-sm font-medium rounded-lg border border-gray-300 hover:bg-gray-50 transition-colors"
                 >
                   <FileText className="h-4 w-4" />

@@ -3,6 +3,7 @@
 import { Copy, Check } from "lucide-react";
 import { useState } from "react";
 import KatexPreview from "./KatexPreview";
+import { EVENTS, track } from "@/lib/analytics";
 
 interface SymbolCardProps {
     latex: string;
@@ -15,6 +16,7 @@ export function SymbolCard({ latex, name }: SymbolCardProps) {
     const copyToClipboard = async () => {
         try {
             await navigator.clipboard.writeText(latex);
+            track(EVENTS.SYMBOL_COPIED, { latex });
             setCopied(true);
             setTimeout(() => setCopied(false), 2000);
         } catch (err) {

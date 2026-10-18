@@ -1,10 +1,23 @@
+import { BEFORE_NAVIGATION, EVENTS, track } from '@/lib/analytics';
+
 export interface OpenInOctreeOptions {
   latex: string;
   title?: string;
   source?: string;
+  /** Set by template pages so the app can attribute the draft to a specific template. */
+  templateSlug?: string;
 }
 
-export async function openInOctree({ latex, title, source }: OpenInOctreeOptions) {
+export async function openInOctree({ latex, title, source, templateSlug }: OpenInOctreeOptions) {
+  // Template pages get a per-template source (tools:templates:<slug>); every other caller keeps its own.
+  const resolvedSource = templateSlug ? `tools:templates:${templateSlug}` : source || '';
+
+  // Fired before the form POST below navigates away; never awaited.
+  track(
+    EVENTS.OPEN_IN_OCTREE_CLICKED,
+    { source: resolvedSource, title: title || 'Imported from Tools', template_slug: templateSlug },
+    BEFORE_NAVIGATION,
+  );
 
   // Submit a top-level form POST to avoid CORS and carry large payloads
   const postDraft = () => {
@@ -27,7 +40,7 @@ export async function openInOctree({ latex, title, source }: OpenInOctreeOptions
     const sourceInput = document.createElement('input');
     sourceInput.type = 'hidden';
     sourceInput.name = 'source';
-    sourceInput.value = source || '';
+    sourceInput.value = resolvedSource;
     form.appendChild(sourceInput);
 
     document.body.appendChild(form);

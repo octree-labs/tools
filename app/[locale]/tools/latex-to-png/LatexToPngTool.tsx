@@ -15,6 +15,7 @@ import {
 import { Button } from '@/components/ui/button';
 import { OctreeCTA } from '@/components/OctreeCTA';
 import { useTranslations } from 'next-intl';
+import { trackConverterUsed } from '@/lib/analytics';
 
 const Editor = dynamic(() => import('@monaco-editor/react'), { ssr: false });
 
@@ -139,19 +140,23 @@ export default function LatexToPngTool() {
       if (!response.ok || !data.pdf) {
         setError(data.error || tTools('failedToCompile'));
         setLog(data.log || '');
+        trackConverterUsed('latex-to-png', false);
         return;
       }
 
       try {
         const rendered = await renderFirstPageToPng(base64ToBytes(data.pdf), dpi, transparent);
         setResult(rendered);
+        trackConverterUsed('latex-to-png', true);
       } catch (renderError) {
         console.error('PNG render error:', renderError);
         setError(t('renderFailed'));
+        trackConverterUsed('latex-to-png', false);
       }
     } catch (err) {
       console.error('Conversion error:', err);
       setError(tTools('failedToCompile'));
+      trackConverterUsed('latex-to-png', false);
     } finally {
       setIsConverting(false);
     }

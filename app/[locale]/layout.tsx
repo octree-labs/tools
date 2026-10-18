@@ -4,6 +4,7 @@ import "../globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ClientBootstrap from "@/components/ClientBootstrap";
+import { PostHogProvider } from "@/components/providers/posthog";
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { NextIntlClientProvider, hasLocale } from 'next-intl';
@@ -161,10 +162,12 @@ export default async function LocaleLayout({ children, params }: Props) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <NextIntlClientProvider locale={locale} messages={messages}>
-          <ClientBootstrap />
-          <Header />
-          {children}
-          <Footer />
+          <PostHogProvider>
+            <ClientBootstrap />
+            <Header />
+            {children}
+            <Footer />
+          </PostHogProvider>
           <Analytics />
           <SpeedInsights />
         </NextIntlClientProvider>
