@@ -1,4 +1,4 @@
-import { EVENTS, track } from '@/lib/analytics';
+import { BEFORE_NAVIGATION, EVENTS, track } from '@/lib/analytics';
 
 export interface OpenInOctreeOptions {
   latex: string;
@@ -12,11 +12,12 @@ export async function openInOctree({ latex, title, source, templateSlug }: OpenI
   // Template pages get a per-template source (tools:templates:<slug>); every other caller keeps its own.
   const resolvedSource = templateSlug ? `tools:templates:${templateSlug}` : source || '';
 
-  track(EVENTS.OPEN_IN_OCTREE_CLICKED, {
-    source: resolvedSource,
-    title: title || 'Imported from Tools',
-    template_slug: templateSlug,
-  });
+  // Fired before the form POST below navigates away; never awaited.
+  track(
+    EVENTS.OPEN_IN_OCTREE_CLICKED,
+    { source: resolvedSource, title: title || 'Imported from Tools', template_slug: templateSlug },
+    BEFORE_NAVIGATION,
+  );
 
   // Submit a top-level form POST to avoid CORS and carry large payloads
   const postDraft = () => {
