@@ -140,13 +140,6 @@ export default async function LocaleLayout({ children, params }: Props) {
       name: 'Octree',
       url: 'https://useoctree.com',
     },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.9',
-      ratingCount: '312',
-      bestRating: '5',
-      worstRating: '1',
-    },
     featureList: [
       'AI-powered handwritten math to LaTeX converter',
       'PDF to LaTeX converter',
