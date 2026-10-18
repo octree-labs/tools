@@ -90,6 +90,25 @@ test('links keep their href', () => {
   assert.equal(p.type === 'paragraph' && p.runs[1].href, 'https://example.com');
 });
 
+test('unsafe link schemes are dropped, http(s) and mailto are kept', () => {
+  const [p] = htmlToBlocks(
+    '<p><a href="javascript:alert(1)">js</a> <a href="mailto:a@b.c">m</a> <a href=" HTTP://x.y ">h</a></p>'
+  );
+  if (p.type !== 'paragraph') throw new Error('expected paragraph');
+  assert.equal(p.runs.find((r) => r.text === 'js')?.href, undefined);
+  assert.equal(p.runs.find((r) => r.text === 'm')?.href, 'mailto:a@b.c');
+  assert.equal(p.runs.find((r) => r.text === 'h')?.href, 'HTTP://x.y');
+});
+
+test('pathologically deep nesting does not throw', async () => {
+  const html = '<div>'.repeat(3000) + '<p>deep <b>' + '<i>'.repeat(3000) + 'text' + '</i>'.repeat(3000) + '</b></p>' + '</div>'.repeat(3000);
+  const blocks = htmlToBlocks(html);
+  assert.ok(blocks.length >= 1);
+  assert.match(blocks.map(text).join(' '), /deep/);
+  const buffer = await htmlToDocx(html);
+  assert.equal(buffer.subarray(0, 2).toString('latin1'), 'PK');
+});
+
 test('line breaks and preformatted blocks', () => {
   const blocks = htmlToBlocks('<p>line one<br>line two</p><pre>a = 1\nb = 2</pre>');
   assert.equal(text(blocks[0]), 'line one\nline two');

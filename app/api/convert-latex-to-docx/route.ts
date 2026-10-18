@@ -5,6 +5,8 @@ export const runtime = 'nodejs';
 export const maxDuration = 60;
 
 const MAX_INPUT_CHARS = 60_000;
+// Leave headroom under maxDuration for building the .docx and sending it.
+const OPENAI_TIMEOUT_MS = 45_000;
 const OPENAI_BASE_URL = (process.env.OPENAI_BASE_URL || 'https://api.openai.com/v1').replace(/\/$/, '');
 
 const SYSTEM_PROMPT = `You convert LaTeX source into clean, semantic HTML that will be turned into a Microsoft Word document.
@@ -60,6 +62,7 @@ export async function POST(request: NextRequest) {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${apiKey}`,
       },
+      signal: AbortSignal.timeout(OPENAI_TIMEOUT_MS),
       body: JSON.stringify({
         model: 'gpt-4o-mini',
         temperature: 0,
@@ -81,10 +84,25 @@ export async function POST(request: NextRequest) {
     }
 
     const data = await response.json();
-    html = data?.choices?.[0]?.message?.content ?? '';
+    const choice = data?.choices?.[0];
+    html = typeof choice?.message?.content === 'string' ? choice.message.content : '';
+    if (choice?.finish_reason === 'length') {
+      return NextResponse.json(
+        { error: 'The document is too long to convert in one go. Split it into smaller parts and try again.' },
+        { status: 413 }
+      );
+    }
   } catch (error) {
     console.error('LaTeX to Word conversion error:', error);
-    return NextResponse.json({ error: 'Could not reach the AI conversion service.' }, { status: 502 });
+    const timedOut = error instanceof Error && error.name === 'TimeoutError';
+    return NextResponse.json(
+      {
+        error: timedOut
+          ? 'The AI conversion step timed out. Try a shorter document.'
+          : 'Could not reach the AI conversion service.',
+      },
+      { status: timedOut ? 504 : 502 }
+    );
   }
 
   // Strip a Markdown code fence if the model wrapped its output anyway.

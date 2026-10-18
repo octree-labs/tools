@@ -58,6 +58,35 @@ const INLINE_TAGS = new Set([
 
 const SKIP_TAGS = new Set(['script', 'style', 'head', 'title', 'meta', 'link', 'noscript', 'template']);
 
+/** Nesting deeper than this is flattened to text instead of recursing further. */
+const MAX_DEPTH = 256;
+
+/**
+ * Text content of a subtree, collected iteratively. node-html-parser's own
+ * `.text` getter recurses, so it cannot be used on pathologically deep input.
+ */
+function flattenText(node: Node): string {
+  const parts: string[] = [];
+  const stack: Node[] = [node];
+  while (stack.length) {
+    const n = stack.pop()!;
+    if (isText(n)) {
+      parts.push(n.text);
+      continue;
+    }
+    if (!isElement(n) || SKIP_TAGS.has(tagOf(n))) continue;
+    for (let i = n.childNodes.length - 1; i >= 0; i--) stack.push(n.childNodes[i]);
+  }
+  return parts.join('');
+}
+
+/** Only keep link targets Word can open safely (no javascript:, data:, file: ...). */
+function safeHref(href: string | undefined): string | undefined {
+  if (!href) return undefined;
+  const trimmed = href.trim();
+  return /^(https?:\/\/|mailto:)/i.test(trimmed) ? trimmed : undefined;
+}
+
 const HEADING_TAGS: Record<string, HeadingLevelNumber> = {
   h1: 1, h2: 2, h3: 3, h4: 4, h5: 5, h6: 6,
 };
@@ -112,7 +141,7 @@ function trimRuns(runs: Run[]): Run[] {
 function collectRuns(node: Node, style: RunStyle, preformatted = false): Run[] {
   const runs: Run[] = [];
 
-  const visit = (n: Node, s: RunStyle) => {
+  const visit = (n: Node, s: RunStyle, depth: number) => {
     if (isText(n)) {
       const text = preformatted ? n.text : normalizeInline(n.text);
       if (text) runs.push({ text, ...s });
@@ -121,6 +150,11 @@ function collectRuns(node: Node, style: RunStyle, preformatted = false): Run[] {
     if (!isElement(n)) return;
     const tag = tagOf(n);
     if (SKIP_TAGS.has(tag)) return;
+    if (depth > MAX_DEPTH) {
+      const text = preformatted ? flattenText(n) : normalizeInline(flattenText(n));
+      if (text) runs.push({ text, ...s });
+      return;
+    }
 
     if (tag === 'br') {
       runs.push({ text: '', break: true, ...s });
@@ -159,7 +193,7 @@ function collectRuns(node: Node, style: RunStyle, preformatted = false): Run[] {
         next = { ...s, subScript: true };
         break;
       case 'a': {
-        const href = n.getAttribute('href');
+        const href = safeHref(n.getAttribute('href'));
         next = href ? { ...s, href } : s;
         break;
       }
@@ -172,15 +206,16 @@ function collectRuns(node: Node, style: RunStyle, preformatted = false): Run[] {
     if (!INLINE_TAGS.has(tag) && tag !== '' && runs.length > 0 && !preformatted) {
       runs.push({ text: '', break: true, ...s });
     }
-    for (const child of n.childNodes) visit(child, next);
+    for (const child of n.childNodes) visit(child, next, depth + 1);
   };
 
-  for (const child of node.childNodes) visit(child, style);
+  for (const child of node.childNodes) visit(child, style, 0);
   return trimRuns(runs);
 }
 
 interface WalkContext {
   blocks: Block[];
+  depth: number;
   listLevel: number;
   listId: number;
   nextListId: () => number;
@@ -199,6 +234,13 @@ function walk(node: Node, ctx: WalkContext): void {
 
   const tag = tagOf(node);
   if (SKIP_TAGS.has(tag)) return;
+
+  if (ctx.depth > MAX_DEPTH) {
+    // Pathologically deep markup: flatten whatever is left to a paragraph.
+    const runs = trimRuns([{ text: normalizeInline(flattenText(node)) }]);
+    if (runs.length) ctx.blocks.push({ type: 'paragraph', runs, indent: ctx.indent || undefined });
+    return;
+  }
 
   if (tag in HEADING_TAGS) {
     const runs = collectRuns(node, {});
@@ -242,7 +284,7 @@ function walk(node: Node, ctx: WalkContext): void {
       ctx.blocks.push({ type: 'list-item', ordered, level: ctx.listLevel, runs, listId });
       for (const child of li.childNodes) {
         if (isElement(child) && (tagOf(child) === 'ul' || tagOf(child) === 'ol')) {
-          walk(child, { ...ctx, listLevel: Math.min(ctx.listLevel + 1, 8) });
+          walk(child, { ...ctx, listLevel: Math.min(ctx.listLevel + 1, 8), depth: ctx.depth + 1 });
         }
       }
     }
@@ -279,7 +321,7 @@ function walk(node: Node, ctx: WalkContext): void {
   }
 
   if (tag === 'blockquote') {
-    for (const child of node.childNodes) walk(child, { ...ctx, indent: true });
+    for (const child of node.childNodes) walk(child, { ...ctx, indent: true, depth: ctx.depth + 1 });
     return;
   }
 
@@ -303,16 +345,20 @@ function walk(node: Node, ctx: WalkContext): void {
     if (runs.length) ctx.blocks.push({ type: 'paragraph', runs, align: 'center' });
     return;
   }
-  for (const child of node.childNodes) walk(child, ctx);
+  const inner = { ...ctx, depth: ctx.depth + 1 };
+  for (const child of node.childNodes) walk(child, inner);
 }
 
 /** Parse an HTML fragment (or full document) into a flat list of blocks. */
 export function htmlToBlocks(html: string): Block[] {
   const root = parse(html, { blockTextElements: { script: true, style: true, pre: true } });
-  const body = root.querySelector('body') ?? root;
+  // querySelector recurses through the whole tree; only look for <body> when
+  // the input is a full document so deeply nested fragments cannot overflow it.
+  const body = (/<body[\s>]/i.test(html) ? root.querySelector('body') : null) ?? root;
   let counter = 0;
   const ctx: WalkContext = {
     blocks: [],
+    depth: 0,
     listLevel: 0,
     listId: 0,
     nextListId: () => ++counter,
