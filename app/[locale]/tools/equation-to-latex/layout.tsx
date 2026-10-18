@@ -1,18 +1,24 @@
 import type { Metadata } from "next";
 import { generateToolMetadata } from '@/lib/generate-tool-metadata';
 
+const title = "Equation to LaTeX Converter – Convert Math & Handwritten Equations to LaTeX";
+const description =
+  "Free equation to LaTeX converter. Type a math equation or upload a photo, screenshot or handwritten equation and get clean LaTeX code with a live preview. No sign-up.";
+
 const defaultMetadata: Metadata = {
-  title: "Equation to LaTeX Converter - Convert Math to LaTeX | Free Online Tool",
-  description: "Convert mathematical equations to LaTeX code instantly. Enter text descriptions or upload images of equations to generate clean LaTeX code. Free online equation converter with live preview.",
+  title,
+  description,
   keywords: [
+    "equation to latex converter",
     "equation to LaTeX",
+    "math equation to latex",
+    "convert equation to latex",
+    "handwritten equation to latex",
     "math to LaTeX converter",
+    "image to LaTeX",
+    "screenshot to latex",
     "equation converter",
     "LaTeX equation generator",
-    "math equation LaTeX",
-    "convert equation to LaTeX",
-    "image to LaTeX",
-    "handwritten equation to LaTeX",
     "free LaTeX converter",
     "online equation converter",
     "latex equation editor",
@@ -26,12 +32,9 @@ const defaultMetadata: Metadata = {
     "derivative latex",
     "summation latex",
   ],
-  alternates: {
-    canonical: '/tools/equation-to-latex',
-  },
   openGraph: {
-    title: "Equation to LaTeX Converter - Convert Math to LaTeX",
-    description: "Convert mathematical equations to LaTeX code instantly from text or images",
+    title,
+    description,
     url: 'https://tools.useoctree.com/tools/equation-to-latex',
     siteName: 'Octree LaTeX Tools',
     locale: 'en_US',
@@ -39,8 +42,8 @@ const defaultMetadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Equation to LaTeX Converter - Convert Math to LaTeX",
-    description: "Convert mathematical equations to LaTeX code instantly from text or images",
+    title,
+    description,
   },
 };
 

@@ -29,3 +29,28 @@ export const getTemplateJsonLd = (
   };
 };
 
+
+export interface FaqJsonLdItem {
+  question: string;
+  answer: string;
+}
+
+/** schema.org FAQPage markup for a list of question/answer pairs. */
+export const getFaqJsonLd = (items: FaqJsonLdItem[]) => {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: { "@type": "Answer", text: item.answer },
+    })),
+  };
+};
+
+/**
+ * Serialises JSON-LD for a <script type="application/ld+json"> tag, escaping
+ * `<` so user-visible text can never close the script element.
+ */
+export const serializeJsonLd = (data: unknown): string =>
+  JSON.stringify(data).replace(/</g, "\\u003c");

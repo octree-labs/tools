@@ -309,7 +309,7 @@
     },
     "equationToLatex": {
       "title": "Equation to LaTeX Converter",
-      "subtitle": "Convert mathematical expressions to LaTeX from text descriptions or images",
+      "subtitle": "Convert any math equation to LaTeX: type it, paste a screenshot, or upload a photo of a handwritten equation",
       "inputLabel": "Equation Description or Image",
       "inputHint": "Describe your equation in plain text or upload an image",
       "placeholder": "Example: quadratic formula, integral of x squared from 0 to 1, sum of n from 1 to infinity of 1 over n squared...",
@@ -1040,9 +1040,9 @@
         "keywords": "math to LaTeX, convert math to LaTeX, math expression to LaTeX, formula to LaTeX, math converter, equation converter, math notation LaTeX, mathematical expression converter"
       },
       "equationToLatex": {
-        "title": "Equation to LaTeX Converter - Free Online Tool",
-        "description": "Convert mathematical equations to LaTeX code instantly. Type your equation and get LaTeX.",
-        "keywords": "equation to LaTeX, convert equation to LaTeX, math equation converter, equation editor LaTeX, formula to LaTeX, mathematical equation LaTeX, equation notation"
+        "title": "Equation to LaTeX Converter – Convert Math & Handwritten Equations to LaTeX",
+        "description": "Free equation to LaTeX converter. Type a math equation or upload a photo, screenshot or handwritten equation and get clean LaTeX code with a live preview. No sign-up.",
+        "keywords": "equation to latex converter, equation to LaTeX, math equation to latex, convert equation to latex, handwritten equation to latex, image to LaTeX, screenshot to latex, equation editor LaTeX, formula to LaTeX, mathematical equation LaTeX"
       },
       "tikzGenerator": {
         "title": "TikZ Diagram Generator - AI-Powered LaTeX Graphics",

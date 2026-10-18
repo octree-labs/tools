@@ -1,6 +1,6 @@
 "use client";
 
-import { Suspense, useState } from "react";
+import { Suspense } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useTranslations } from 'next-intl';
@@ -47,14 +47,6 @@ import {
 } from "lucide-react";
 import { SymbolCard } from "@/components/SymbolCard";
 import {
-    Pagination,
-    PaginationContent,
-    PaginationItem,
-    PaginationLink,
-    PaginationNext,
-    PaginationPrevious,
-} from "@/components/ui/pagination";
-import {
     mathSymbols,
     greekSymbols,
     arrowSymbols,
@@ -93,8 +85,6 @@ import {
     modalSymbols,
     gameTheorySymbols,
 } from "@/lib/symbols";
-
-const ITEMS_PER_PAGE = 12;
 
 interface CategoryItem {
     href: string;
@@ -265,127 +255,83 @@ function SymbolsIntroGate() {
     return <SymbolsIntro />;
 }
 
+// Every category card, rendered without client-side pagination. The hub used
+// to show 12 cards per page behind useState, inside the same Suspense boundary
+// as the search results, so the prerendered HTML held none of the 37 category
+// links. The grid now has no dependency on useSearchParams and doubles as the
+// static fallback below, so crawlers see every link.
+function CategoryGrid() {
+    const t = useTranslations('symbols');
+
+    return (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto pb-12">
+            {categories.map((category) => {
+                const Icon = category.icon;
+                return (
+                    <Link
+                        key={category.href}
+                        href={category.href}
+                        className="group flex flex-col bg-white border border-gray-200 rounded-xl p-6 hover:shadow-md hover:border-gray-300 transition-all duration-200 h-full"
+                    >
+                        <div className="flex items-start justify-between mb-4">
+                            <Icon className="size-6 text-gray-900" />
+                        </div>
+                        <h3 className="text-base font-semibold text-gray-900 mb-2">
+                            {t(`categories.${category.key}.title`)}
+                        </h3>
+                        <p className="text-sm text-gray-500 mb-4 line-clamp-2 flex-grow">
+                            {t(`categories.${category.key}.description`)}
+                        </p>
+                        <span className="inline-flex items-center text-blue-600 text-sm font-medium transition-all w-fit">
+                            {t('viewSymbols')}
+                            <span className="w-0 overflow-hidden transition-all duration-200 group-hover:w-6 group-hover:ml-1">
+                                <ArrowRight className="size-4 opacity-0 transition-opacity duration-200 group-hover:opacity-100" />
+                            </span>
+                        </span>
+                    </Link>
+                );
+            })}
+        </div>
+    );
+}
+
 function SymbolsContent() {
     const searchParams = useSearchParams();
     const searchQuery = searchParams.get("q") || "";
-    const [currentPage, setCurrentPage] = useState(1);
     const t = useTranslations('symbols');
 
-    // If there's a search query, show filtered symbols
-    if (searchQuery) {
-        const filteredSymbols = uniqueSymbols.filter((symbol) =>
-            symbol.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            symbol.latex.toLowerCase().includes(searchQuery.toLowerCase())
-        );
-
-        return (
-            <>
-                <div className="flex items-center justify-between mb-6">
-                    <h2 className="text-lg font-semibold text-gray-900">
-                        {t('searchResults')}
-                    </h2>
-                    <span className="text-sm text-gray-500">
-                        {filteredSymbols.length} {filteredSymbols.length === 1 ? 'symbol' : 'symbols'} found
-                    </span>
-                </div>
-
-                {filteredSymbols.length > 0 ? (
-                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 pb-12">
-                        {filteredSymbols.map((symbol) => (
-                            <SymbolCard key={symbol.latex} latex={symbol.latex} name={symbol.name} />
-                        ))}
-                    </div>
-                ) : (
-                    <div className="text-center py-12">
-                        <p className="text-gray-500">
-                            {t('noSymbolsFound')} &quot;{searchQuery}&quot;
-                        </p>
-                    </div>
-                )}
-            </>
-        );
+    // No query: show the category grid (identical to the static fallback).
+    if (!searchQuery) {
+        return <CategoryGrid />;
     }
 
-    // Pagination for categories
-    const totalPages = Math.ceil(categories.length / ITEMS_PER_PAGE);
-    const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-    const endIndex = startIndex + ITEMS_PER_PAGE;
-    const paginatedCategories = categories.slice(startIndex, endIndex);
+    const filteredSymbols = uniqueSymbols.filter((symbol) =>
+        symbol.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        symbol.latex.toLowerCase().includes(searchQuery.toLowerCase())
+    );
 
-    // Otherwise show category cards with pagination
     return (
         <>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-                {paginatedCategories.map((category) => {
-                    const Icon = category.icon;
-                    return (
-                        <Link
-                            key={category.href}
-                            href={category.href}
-                            className="group flex flex-col bg-white border border-gray-200 rounded-xl p-6 hover:shadow-md hover:border-gray-300 transition-all duration-200 h-full"
-                        >
-                            <div className="flex items-start justify-between mb-4">
-                                <Icon className="size-6 text-gray-900" />
-                            </div>
-                            <h3 className="text-base font-semibold text-gray-900 mb-2">
-                                {t(`categories.${category.key}.title`)}
-                            </h3>
-                            <p className="text-sm text-gray-500 mb-4 line-clamp-2 flex-grow">
-                                {t(`categories.${category.key}.description`)}
-                            </p>
-                            <span className="inline-flex items-center text-blue-600 text-sm font-medium transition-all w-fit">
-                                {t('viewSymbols')}
-                                <span className="w-0 overflow-hidden transition-all duration-200 group-hover:w-6 group-hover:ml-1">
-                                    <ArrowRight className="size-4 opacity-0 transition-opacity duration-200 group-hover:opacity-100" />
-                                </span>
-                            </span>
-                        </Link>
-                    );
-                })}
+            <div className="flex items-center justify-between mb-6">
+                <h2 className="text-lg font-semibold text-gray-900">
+                    {t('searchResults')}
+                </h2>
+                <span className="text-sm text-gray-500">
+                    {filteredSymbols.length} {filteredSymbols.length === 1 ? 'symbol' : 'symbols'} found
+                </span>
             </div>
 
-            {totalPages > 1 && (
-                <div className="mt-12 flex justify-center pb-12">
-                    <Pagination>
-                        <PaginationContent>
-                            <PaginationItem>
-                                <PaginationPrevious
-                                    onClick={() =>
-                                        currentPage > 1 && setCurrentPage(currentPage - 1)
-                                    }
-                                    className={
-                                        currentPage === 1
-                                            ? "pointer-events-none opacity-50"
-                                            : "cursor-pointer"
-                                    }
-                                />
-                            </PaginationItem>
-                            {[...Array(totalPages)].map((_, i) => (
-                                <PaginationItem key={i + 1}>
-                                    <PaginationLink
-                                        onClick={() => setCurrentPage(i + 1)}
-                                        isActive={currentPage === i + 1}
-                                        className="cursor-pointer"
-                                    >
-                                        {i + 1}
-                                    </PaginationLink>
-                                </PaginationItem>
-                            ))}
-                            <PaginationItem>
-                                <PaginationNext
-                                    onClick={() =>
-                                        currentPage < totalPages &&
-                                        setCurrentPage(currentPage + 1)
-                                    }
-                                    className={
-                                        currentPage === totalPages
-                                            ? "pointer-events-none opacity-50"
-                                            : "cursor-pointer"
-                                    }
-                                />
-                            </PaginationItem>
-                        </PaginationContent>
-                    </Pagination>
+            {filteredSymbols.length > 0 ? (
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 pb-12">
+                    {filteredSymbols.map((symbol) => (
+                        <SymbolCard key={symbol.latex} latex={symbol.latex} name={symbol.name} />
+                    ))}
+                </div>
+            ) : (
+                <div className="text-center py-12">
+                    <p className="text-gray-500">
+                        {t('noSymbolsFound')} &quot;{searchQuery}&quot;
+                    </p>
                 </div>
             )}
         </>
@@ -398,7 +344,7 @@ export default function SymbolsPage() {
             <Suspense fallback={<SymbolsIntro />}>
                 <SymbolsIntroGate />
             </Suspense>
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<CategoryGrid />}>
                 <SymbolsContent />
             </Suspense>
         </>
