@@ -50,7 +50,7 @@ export default function HarvardResumeGuide() {
         widely circulated &quot;Resumes and Cover Letters&quot; guide and the one most
         finance, consulting and law recruiters have seen thousands of times. What makes a
         resume &quot;Harvard format&quot; is restraint: one page, black text, a centred
-        name, a single line of contact details, and, in the sample resume from Harvard's guide, four sections in this order:
+        name, a single line of contact details, and, in the sample resume from Harvard&apos;s guide, four sections in this order:
         Education, Experience, Leadership &amp; Activities, and Skills &amp; Interests. Every
         entry has the organisation and location on one line, the role and dates on the
         next, and a few short bullets that begin with an action verb and end with a
@@ -95,7 +95,7 @@ export default function HarvardResumeGuide() {
       <GuideP>
         Name in <GuideCode>\LARGE\bfseries\scshape</GuideCode>, then one line with city and
         ZIP, email, phone and a LinkedIn URL separated by vertical bars. Harvard&apos;s
-        guide's sample uses a single line; two are acceptable if you add a portfolio or
+        guide&apos;s sample uses a single line; two are acceptable if you add a portfolio or
         GitHub link. Use a personal or university email you check daily.
       </GuideP>
       <GuideH3>Education</GuideH3>

@@ -31,7 +31,7 @@ const faq: GuideFaqItem[] = [
   {
     question: "How do I insert a scanned signature?",
     answer:
-      "Put the image in the \\signature argument: \\signature{\\includegraphics[height=1.2cm]{signature.png}\\\\Professor Name\\\\Title\\\\Department}. The letter class leaves vertical space after \\closing for a handwritten signature by default; with an image, you can shrink that gap with a negative \vspace at the start of the \signature argument (\longindentation only moves the block horizontally).",
+      "Put the image in the \\signature argument: \\signature{\\includegraphics[height=1.2cm]{signature.png}\\\\Professor Name\\\\Title\\\\Department}. The letter class leaves vertical space after \\closing for a handwritten signature by default; with an image, you can shrink that gap with a negative \\vspace at the start of the \\signature argument (\\longindentation only moves the block horizontally).",
   },
   {
     question: "Should a recommendation letter be dated and addressed to a person?",
