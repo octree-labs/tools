@@ -9046,4 +9046,106 @@ platform or infrastructure team.
 \end{document}`,
   },
 
+  {
+    id: 82,
+    title: "MLA Works Cited Page",
+    description: "MLA 9 works cited page with running header, double spacing, hanging indent and eight sample entries",
+    slug: "mla-works-cited",
+    previewUrl: "/templates/mla-works-cited.pdf",
+    category: "Academic",
+    seoTitle: "MLA Works Cited Page LaTeX Template | Free Download",
+    seoDescription:
+      "Free MLA works cited page template in LaTeX (MLA 9): 1-inch margins, double spacing, hanging indent, running header and eight correctly formatted entries.",
+    code: String.raw`% MLA 9 Works Cited Page
+% ----------------------
+% A standalone works cited page that follows the MLA Handbook, 9th edition:
+%   - letter paper, 1-inch margins on all sides
+%   - 12-point Times-style text, double spaced throughout
+%   - running header with your last name and the page number, top right
+%   - the heading "Works Cited" centered, not bold, not underlined
+%   - every entry flush left with a 0.5-inch hanging indent
+%   - entries alphabetised by the first element (author, or title if no author)
+%   - text left-aligned (not justified) with automatic hyphenation off, as the
+%     MLA asks; URLs break only after punctuation such as / and .
+%
+% Write each entry with \entry{...}. Put titles of self-contained works
+% (books, films, websites, journals) in \textit{...} and titles of works
+% inside a container (articles, chapters, web pages) in “curly quotation marks”.
+% MLA 9 drops http:// and https:// from URLs; a DOI is written as
+% https://doi.org/... in full.
+%
+% To append this page to an essay instead of compiling it on its own, copy
+% everything between \begin{document} and \end{document} to the end of your
+% paper after a \newpage. If you compile it separately but it follows, say,
+% a seven-page essay, uncomment the \setcounter{page}{8} line below.
+%
+% Prefer automated citations? biblatex has an MLA style:
+%   \usepackage[style=mla,backend=biber]{biblatex}
+%   \addbibresource{refs.bib}   ...   \printbibliography[title={Works Cited}]
+% (install biblatex-mla; compile with biber in between pdflatex runs).
+
+\documentclass[12pt,letterpaper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in,headheight=15pt,headsep=21pt]{geometry}
+\usepackage{newtxtext}      % Times-like 12 pt text font (MLA asks for a legible serif such as Times New Roman)
+\usepackage{setspace}       % double spacing
+\usepackage{fancyhdr}       % running header: Last name + page number
+\usepackage[hidelinks]{hyperref}   % also loads url, which lets URLs break after / . _ etc.
+\urlstyle{same}             % URLs and DOIs in the body font, not typewriter
+
+% --- Your last name, printed in the running header ---
+\newcommand{\lastname}{Smith}
+
+% --- Page layout ---
+\doublespacing
+\raggedright               % MLA: do not justify the right margin
+\hyphenpenalty=10000       % MLA: turn automatic hyphenation off
+\frenchspacing             % single space after periods, as in a word processor
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\lastname\ \thepage}
+\renewcommand{\headrulewidth}{0pt}
+% \setcounter{page}{8}      % uncomment if this page follows a 7-page essay
+
+% --- One works cited entry: flush left, 0.5 in hanging indent ---
+\newcommand{\entry}[1]{%
+  \par\noindent\hangindent=0.5in\hangafter=1 #1\par}
+
+\begin{document}
+
+{\centering Works Cited\par}   % plain text, same size as the body; \centering adds no extra space
+
+% Entries go in alphabetical order by the first word (ignore A, An, The).
+
+% Book with an editor
+\entry{Austen, Jane. \textit{Pride and Prejudice}. Edited by Pat Rogers, Cambridge UP, 2006.}
+
+% Chapter or essay in an edited book
+\entry{Butler, Judith. “Performative Acts and Gender Constitution: An Essay in Phenomenology and Feminist Theory.” \textit{Performing Feminisms: Feminist Critical Theory and Theatre}, edited by Sue-Ellen Case, Johns Hopkins UP, 1990, pp. 270--82.}
+
+% Translated book
+\entry{Calvino, Italo. \textit{Invisible Cities}. Translated by William Weaver, Harcourt, 1974.}
+
+% Journal article with a DOI
+\entry{Kirschenbaum, Matthew G. “What Is Digital Humanities and What's It Doing in English Departments?” \textit{ADE Bulletin}, no.\ 150, 2010, pp. 55--61, \url{https://doi.org/10.1632/ade.150.55}.}
+
+% Newspaper article read online
+\entry{Manjoo, Farhad. “It's Time to Panic about Privacy.” \textit{The New York Times}, 10 Apr. 2019, \url{www.nytimes.com/interactive/2019/04/10/opinion/internet-data-privacy.html}.}
+
+% Journal article from a print issue
+\entry{Moretti, Franco. “Conjectures on World Literature.” \textit{New Left Review}, no.\ 1, Jan.--Feb. 2000, pp. 54--68.}
+
+% Film (no author: alphabetise by title)
+\entry{\textit{Parasite}. Directed by Bong Joon-ho, CJ Entertainment, 2019.}
+
+% Page on a website with an organisation as author and an access date
+\entry{Purdue Online Writing Lab. “MLA Formatting and Style Guide.” \textit{Purdue OWL}, Purdue U, \url{owl.purdue.edu/owl/research_and_citation/mla_style/mla_formatting_and_style_guide/mla_formatting_and_style_guide.html}. Accessed 18 Oct. 2026.}
+
+\end{document}`,
+  },
+
 ];

@@ -807,6 +807,10 @@
       "ats-resume": {
         "title": "Modèle de CV Compatible ATS",
         "description": "CV en une colonne et texte brut que les systèmes de suivi des candidatures lisent correctement : titres standard, sans tableaux, icônes ni colonnes"
+      },
+      "mla-works-cited": {
+        "title": "Page Works Cited MLA",
+        "description": "Page de références (works cited) au format MLA 9 avec en-tête, double interligne, retrait négatif et huit entrées d'exemple"
       }
     },
     "symbols": {

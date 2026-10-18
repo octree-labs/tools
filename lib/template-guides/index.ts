@@ -11,6 +11,7 @@ import IeeeConferenceGuide from "./ieee-conference";
 import JfmPaperGuide from "./jfm-paper";
 import JakesResumeGuide from "./jakes-resume";
 import LetterOfRecommendationGuide from "./letter-of-recommendation";
+import MlaWorksCitedGuide from "./mla-works-cited";
 import Neurips2027Guide from "./neurips-2027";
 
 /**
@@ -33,6 +34,7 @@ const templateGuides: Record<string, ComponentType> = {
   "jfm-paper": JfmPaperGuide,
   "jakes-resume": JakesResumeGuide,
   "letter-of-recommendation": LetterOfRecommendationGuide,
+  "mla-works-cited": MlaWorksCitedGuide,
   "neurips-2027": Neurips2027Guide,
 };
 

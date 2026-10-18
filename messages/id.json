@@ -817,6 +817,10 @@
     "ats-resume": {
       "title": "Templat Resume Ramah ATS",
       "description": "Resume satu kolom berteks polos yang dibaca dengan benar oleh sistem pelacakan pelamar: judul standar, tanpa tabel, ikon, atau kolom"
+    },
+    "mla-works-cited": {
+      "title": "Halaman Works Cited MLA",
+      "description": "Halaman works cited format MLA 9 dengan header, spasi ganda, indentasi gantung, dan delapan contoh entri"
     }
   },
   "symbols": {

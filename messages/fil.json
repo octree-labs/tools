@@ -817,6 +817,10 @@
     "ats-resume": {
       "title": "ATS-Friendly Resume Template",
       "description": "Single-column na plain-text resume na malinis na nababasa ng applicant tracking systems: standard na headings, walang tables, icons o columns"
+    },
+    "mla-works-cited": {
+      "title": "MLA Works Cited Page",
+      "description": "Pahina ng works cited sa format na MLA 9 na may running header, double spacing, hanging indent at walong halimbawang entry"
     }
   },
   "symbols": {

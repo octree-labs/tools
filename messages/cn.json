@@ -815,6 +815,10 @@
       "ats-resume": {
         "title": "ATS 友好简历模板",
         "description": "单栏纯文本简历，求职者追踪系统可准确解析：标准标题，无表格、图标或分栏"
+      },
+      "mla-works-cited": {
+        "title": "MLA 引用作品页",
+        "description": "符合 MLA 第9版的引用作品页：页眉、双倍行距、悬挂缩进和八条示例条目"
       }
     },
     "symbols": {

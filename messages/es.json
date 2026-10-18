@@ -731,6 +731,10 @@
       "ats-resume": {
         "title": "Plantilla de Currículum Compatible con ATS",
         "description": "Currículum de una columna en texto plano que los sistemas de seguimiento de candidatos leen sin errores: títulos estándar, sin tablas, iconos ni columnas"
+      },
+      "mla-works-cited": {
+        "title": "Página de obras citadas MLA",
+        "description": "Página de obras citadas en formato MLA 9 con encabezado, doble espacio, sangría francesa y ocho entradas de ejemplo"
       }
     },
     "toolsList": {
