@@ -60,6 +60,8 @@
   },
   "templates": {
     "title": "無料LaTeXツール＆テンプレート",
+    "conferenceDeadlinesPrompt": "学会に投稿予定ですか？",
+    "conferenceDeadlinesLink": "AI・CS 学会の投稿締切ページを見る",
     "description": "学術論文、プレゼンテーション、履歴書などのプロフェッショナルなLaTeXテンプレート。",
     "allTemplates": "すべてのテンプレート",
     "noTemplatesFound": "検索に一致するテンプレートが見つかりません。",

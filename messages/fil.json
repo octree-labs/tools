@@ -60,6 +60,8 @@
   },
   "templates": {
     "title": "Libreng LaTeX Tools at Templates",
+    "conferenceDeadlinesPrompt": "Magsusumite sa isang kumperensya?",
+    "conferenceDeadlinesLink": "Tingnan ang pahina ng mga deadline ng kumperensya sa AI at CS.",
     "description": "Propesyonal na LaTeX templates para sa mga academic papers, presentations, resumes, at iba pa.",
     "allTemplates": "Lahat ng Templates",
     "noTemplatesFound": "Walang nahanap na template na tumutugma sa iyong paghahanap.",

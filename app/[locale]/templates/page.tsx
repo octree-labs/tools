@@ -195,14 +195,13 @@ export default function TemplatesPage() {
               {t('description')}
             </p>
             <p className="text-sm text-gray-500 mb-8">
-              Submitting to a conference?{" "}
+              {t('conferenceDeadlinesPrompt')}{" "}
               <Link
                 href="/conference-deadlines"
                 className="text-blue-600 hover:text-blue-700 underline underline-offset-2"
               >
-                See the AI and CS conference deadlines page
+                {t('conferenceDeadlinesLink')}
               </Link>
-              .
             </p>
 
 

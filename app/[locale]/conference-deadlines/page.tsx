@@ -11,9 +11,9 @@ import { generateAlternates, withDefaultOgImage } from "@/lib/seo";
  */
 
 const PAGE_PATH = "/conference-deadlines";
-const TITLE = "AI and CS Conference Deadlines 2026–2027 with LaTeX Templates";
+const TITLE = "AI and CS Conference Deadlines 2026–2027 | LaTeX Templates";
 const DESCRIPTION =
-  "Typical submission windows for NeurIPS, ICML, ICLR, AAAI, ACL, EMNLP, CVPR, ICCV, ECCV, KDD, SIGIR, ICASSP and INTERSPEECH, each with a free LaTeX template to start your paper.";
+  "Typical submission windows for NeurIPS, ICML, ICLR, AAAI, ACL, EMNLP, CVPR, KDD, SIGIR, ICASSP and INTERSPEECH, with a free LaTeX template for each.";
 
 export async function generateMetadata({
   params,
@@ -59,7 +59,7 @@ interface Venue {
   submission: string;
   held: string;
   template: { slug: string; label: string; note?: string };
-  site: { href: string; label: string };
+  sites: { href: string; label: string }[];
 }
 
 const venues: Venue[] = [
@@ -69,7 +69,7 @@ const venues: Venue[] = [
     submission: "Abstract early/mid May, full paper about one week later",
     held: "December",
     template: { slug: "neurips-2027", label: "NeurIPS 2027" },
-    site: { href: "https://neurips.cc/", label: "neurips.cc" },
+    sites: [{ href: "https://neurips.cc/", label: "neurips.cc" }],
   },
   {
     name: "ICML",
@@ -81,7 +81,7 @@ const venues: Venue[] = [
       label: "NeurIPS 2027",
       note: "ICML ships its own icml style; this is the closest starting point",
     },
-    site: { href: "https://icml.cc/", label: "icml.cc" },
+    sites: [{ href: "https://icml.cc/", label: "icml.cc" }],
   },
   {
     name: "ICLR",
@@ -93,15 +93,15 @@ const venues: Venue[] = [
       label: "NeurIPS 2027",
       note: "ICLR uses a single-column style descended from the NeurIPS one",
     },
-    site: { href: "https://iclr.cc/", label: "iclr.cc" },
+    sites: [{ href: "https://iclr.cc/", label: "iclr.cc" }],
   },
   {
     name: "AAAI",
     area: "Artificial intelligence",
     submission: "August",
-    held: "February",
+    held: "January / February",
     template: { slug: "aaai-2027", label: "AAAI 2027" },
-    site: { href: "https://aaai.org/", label: "aaai.org" },
+    sites: [{ href: "https://aaai.org/", label: "aaai.org" }],
   },
   {
     name: "ACL",
@@ -109,7 +109,7 @@ const venues: Venue[] = [
     submission: "ACL Rolling Review cycles; main commitment deadline around February",
     held: "July / August",
     template: { slug: "emnlp-2026", label: "EMNLP 2026 (ACL style)" },
-    site: { href: "https://www.aclweb.org/", label: "aclweb.org" },
+    sites: [{ href: "https://www.aclweb.org/", label: "aclweb.org" }],
   },
   {
     name: "EMNLP",
@@ -117,7 +117,7 @@ const venues: Venue[] = [
     submission: "Around June (via ACL Rolling Review)",
     held: "November / December",
     template: { slug: "emnlp-2026", label: "EMNLP 2026" },
-    site: { href: "https://www.aclweb.org/", label: "aclweb.org" },
+    sites: [{ href: "https://2026.emnlp.org/", label: "2026.emnlp.org" }],
   },
   {
     name: "CVPR",
@@ -129,7 +129,7 @@ const venues: Venue[] = [
       label: "IEEE Conference Paper",
       note: "CVPR uses an IEEE-style two-column format with its own cvpr.sty",
     },
-    site: { href: "https://cvpr.thecvf.com/", label: "cvpr.thecvf.com" },
+    sites: [{ href: "https://cvpr.thecvf.com/", label: "cvpr.thecvf.com" }],
   },
   {
     name: "ICCV / ECCV",
@@ -137,7 +137,10 @@ const venues: Venue[] = [
     submission: "Alternate years: ICCV (odd years) around March; ECCV (even years) around March",
     held: "ICCV October; ECCV September / October",
     template: { slug: "ieee-conference", label: "IEEE Conference Paper" },
-    site: { href: "https://www.thecvf.com/", label: "thecvf.com" },
+    sites: [
+      { href: "https://iccv.thecvf.com/", label: "iccv.thecvf.com" },
+      { href: "https://eccv.ecva.net/", label: "eccv.ecva.net" },
+    ],
   },
   {
     name: "KDD",
@@ -149,7 +152,7 @@ const venues: Venue[] = [
       label: "Research Paper",
       note: "KDD uses the ACM acmart class; start here and swap the class",
     },
-    site: { href: "https://www.kdd.org/", label: "kdd.org" },
+    sites: [{ href: "https://www.kdd.org/", label: "kdd.org" }],
   },
   {
     name: "SIGIR",
@@ -161,7 +164,7 @@ const venues: Venue[] = [
       label: "Research Paper",
       note: "SIGIR uses the ACM acmart class",
     },
-    site: { href: "https://sigir.org/", label: "sigir.org" },
+    sites: [{ href: "https://sigir.org/", label: "sigir.org" }],
   },
   {
     name: "ICASSP",
@@ -169,19 +172,19 @@ const venues: Venue[] = [
     submission: "September",
     held: "April",
     template: { slug: "ieee-conference", label: "IEEE Conference Paper" },
-    site: { href: "https://www.ieee.org/", label: "ieee.org" },
+    sites: [{ href: "https://ieeeicassp.org/", label: "ieeeicassp.org" }],
   },
   {
     name: "INTERSPEECH",
     area: "Speech",
-    submission: "March",
+    submission: "February / March",
     held: "September",
     template: {
       slug: "ieee-conference",
       label: "IEEE Conference Paper",
       note: "INTERSPEECH has its own ISCA two-column template",
     },
-    site: { href: "https://www.isca-speech.org/", label: "isca-speech.org" },
+    sites: [{ href: "https://www.isca-speech.org/", label: "isca-speech.org" }],
   },
 ];
 
@@ -249,14 +252,17 @@ export default async function ConferenceDeadlinesPage({
                     )}
                   </td>
                   <td className="px-4 py-3 whitespace-nowrap">
-                    <a
-                      href={v.site.href}
-                      className={linkClass}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {v.site.label}
-                    </a>
+                    {v.sites.map((s) => (
+                      <a
+                        key={s.href}
+                        href={s.href}
+                        className={`${linkClass} block`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {s.label}
+                      </a>
+                    ))}
                   </td>
                 </tr>
               ))}
@@ -302,8 +308,8 @@ export default async function ConferenceDeadlinesPage({
             </li>
             <li>
               <strong>Time zones.</strong> Almost every venue uses Anywhere on
-              Earth (AoE, UTC-12). A deadline of 23:59 AoE is the following
-              morning in Europe and Asia.
+              Earth (AoE, UTC-12). A deadline of 23:59 AoE is 11:59 UTC on the
+              following day: early afternoon in Europe and evening in East Asia.
             </li>
             <li>
               <strong>Page limits.</strong> Limits change with the format:

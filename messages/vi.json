@@ -60,6 +60,8 @@
   },
   "templates": {
     "title": "Công cụ & Mẫu LaTeX Miễn phí",
+    "conferenceDeadlinesPrompt": "Bạn sắp nộp bài cho hội nghị?",
+    "conferenceDeadlinesLink": "Xem trang hạn nộp bài của các hội nghị AI và CS.",
     "description": "Mẫu LaTeX chuyên nghiệp cho bài báo học thuật, thuyết trình, sơ yếu lý lịch và nhiều hơn nữa.",
     "allTemplates": "Tất cả mẫu",
     "noTemplatesFound": "Không tìm thấy mẫu phù hợp với tìm kiếm của bạn.",

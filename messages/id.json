@@ -60,6 +60,8 @@
   },
   "templates": {
     "title": "Alat & Templat LaTeX Gratis",
+    "conferenceDeadlinesPrompt": "Mengirim ke konferensi?",
+    "conferenceDeadlinesLink": "Lihat halaman tenggat konferensi AI dan ilmu komputer.",
     "description": "Templat LaTeX profesional untuk makalah akademik, presentasi, resume, dan lainnya.",
     "allTemplates": "Semua Templat",
     "noTemplatesFound": "Tidak ada templat yang cocok dengan pencarian Anda.",

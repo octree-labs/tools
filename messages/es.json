@@ -60,6 +60,8 @@
     },
     "templates": {
       "title": "Herramientas y Plantillas LaTeX Gratuitas",
+      "conferenceDeadlinesPrompt": "¿Vas a enviar a una conferencia?",
+      "conferenceDeadlinesLink": "Consulta la página de plazos de conferencias de IA e informática.",
       "description": "Plantillas LaTeX profesionales para artículos académicos, presentaciones, currículums y más.",
       "allTemplates": "Todas las Plantillas",
       "noTemplatesFound": "No se encontraron plantillas que coincidan con tu búsqueda.",

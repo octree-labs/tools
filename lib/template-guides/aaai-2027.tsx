@@ -213,7 +213,8 @@ export default function Aaai2027Guide() {
         ]}
       />
       <GuideP>
-        AAAI usually closes submissions in August for a February conference; see the{" "}
+        AAAI usually closes submissions in August for a January or February conference;
+        see the{" "}
         <GuideLink href="/conference-deadlines">conference deadlines page</GuideLink>.
       </GuideP>
 

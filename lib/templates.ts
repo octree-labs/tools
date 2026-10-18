@@ -7276,9 +7276,9 @@ Appendices follow the references and may contain extra experiments, prompts, and
     slug: "conference-poster",
     previewUrl: "/templates/conference-poster.pdf",
     category: "Presentations",
-    seoTitle: "LaTeX Poster Template (A0 Beamerposter) | Free Download & Preview",
+    seoTitle: "A0 LaTeX Poster Template (beamerposter) | Free Download",
     seoDescription:
-      "Free LaTeX poster template for academic conferences: A0 landscape beamerposter with three columns, title bar, TikZ figure and references. Compiles with pdflatex.",
+      "Free A0 landscape LaTeX poster template with beamerposter: three columns, title bar, TikZ figure and references. Compiles with plain pdflatex.",
     code: String.raw`%-------------------------------------------------------------------
 % Academic conference poster (A0 landscape, beamerposter, 3 columns)
 %
@@ -7578,9 +7578,9 @@ Appendices follow the references and may contain extra experiments, prompts, and
     slug: "ieee-conference",
     previewUrl: "/templates/ieee-conference.pdf",
     category: "Academic",
-    seoTitle: "IEEE Conference Paper Template (IEEEtran) | Free LaTeX Download & Preview",
+    seoTitle: "IEEE Conference Paper Template (IEEEtran) | Free LaTeX",
     seoDescription:
-      "Free IEEE conference paper template in LaTeX using the official IEEEtran class: correct IEEE format, author blocks, index terms, table, figure and references.",
+      "Free IEEE conference paper template in LaTeX using the official IEEEtran class: author blocks, index terms, table, figure and references.",
     code: String.raw`%-------------------------------------------------------------------
 % IEEE conference paper (IEEEtran, conference mode)
 %
@@ -7589,10 +7589,10 @@ Appendices follow the references and may contain extra experiments, prompts, and
 % it is part of every TeX Live / MiKTeX installation. The class sets
 % every rule of the IEEE paper format for you:
 %
-%   * US letter paper (8.5 x 11 in), two columns
+%   * US letter paper (8.5 x 11 in), two 3.5 in columns with a
+%     12 pt (1/6 in) gutter; margins fixed by the class (about 0.7 in
+%     at the sides and top, 1 in at the bottom)
 %   * 10 pt Times-like body text, 24 pt title, 11 pt author block
-%   * 0.75 in side margins (0.625 in in some templates), 1 in bottom
-%     margin, 0.75 in top margin, columns separated by 0.25 in
 %   * Abstract and Index Terms in bold, no page numbers
 %   * Roman-numbered sections, small-caps section headings
 %   * Figures and tables captioned top (tables) and bottom (figures)
@@ -7846,7 +7846,7 @@ Example University systems group for access to the test boards.
     slug: "jfm-paper",
     previewUrl: "/templates/jfm-paper.pdf",
     category: "Academic",
-    seoTitle: "JFM LaTeX Template (Journal of Fluid Mechanics) | Free Download & Preview",
+    seoTitle: "JFM LaTeX Template (Journal of Fluid Mechanics) | Free",
     seoDescription:
       "Free Journal of Fluid Mechanics (JFM) style LaTeX template: single column, running heads, author-year citations, abstract, keywords and JFM back matter.",
     code: String.raw`%-------------------------------------------------------------------
@@ -8188,7 +8188,7 @@ cut-off $\ell_0$.
     category: "Academic",
     seoTitle: "AAAI 2027 LaTeX Template | Free Download & Preview",
     seoDescription:
-      "Free AAAI 2027 LaTeX template: two-column AAAI format with title block, abstract, unnumbered sections and author-year references. Drop in aaai27.sty to submit.",
+      "Free AAAI 2027 LaTeX template: two-column AAAI format with title block, abstract, unnumbered sections and author-year references. Add aaai27.sty to submit.",
     code: String.raw`%-------------------------------------------------------------------
 % AAAI 2027 paper (AAAI author-kit style, two columns, letterpaper)
 %
@@ -8503,7 +8503,7 @@ EX-2027-0042. We thank the anonymous reviewers for their comments.
     category: "Academic",
     seoTitle: "NeurIPS 2027 LaTeX Template | Free Download & Preview",
     seoDescription:
-      "Free NeurIPS 2027 LaTeX template: single-column NeurIPS format with author block, abstract, numbered sections and the paper checklist. Swap in neurips_2027.sty to submit.",
+      "Free NeurIPS 2027 LaTeX template: single-column format with author block, abstract, sections and paper checklist. Swap in neurips_2027.sty to submit.",
     code: String.raw`%-------------------------------------------------------------------
 % NeurIPS 2027 paper (NeurIPS style, single column, letterpaper, 10pt)
 %

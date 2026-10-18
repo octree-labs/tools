@@ -60,6 +60,8 @@
   },
   "templates": {
     "title": "Alat & Templat LaTeX Percuma",
+    "conferenceDeadlinesPrompt": "Menghantar ke persidangan?",
+    "conferenceDeadlinesLink": "Lihat halaman tarikh akhir persidangan AI dan sains komputer.",
     "description": "Templat LaTeX profesional untuk kertas akademik, persembahan, resume, dan banyak lagi.",
     "allTemplates": "Semua Templat",
     "noTemplatesFound": "Tiada templat yang sepadan dengan carian anda.",

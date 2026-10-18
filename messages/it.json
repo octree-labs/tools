@@ -60,6 +60,8 @@
   },
   "templates": {
     "title": "Strumenti e modelli LaTeX gratuiti",
+    "conferenceDeadlinesPrompt": "Invii a una conferenza?",
+    "conferenceDeadlinesLink": "Vedi la pagina delle scadenze delle conferenze di IA e informatica.",
     "description": "Modelli LaTeX professionali per articoli accademici, presentazioni, curriculum e altro.",
     "allTemplates": "Tutti i modelli",
     "noTemplatesFound": "Nessun modello trovato corrispondente alla ricerca.",

@@ -60,6 +60,8 @@
     },
     "templates": {
       "title": "Ferramentas e modelos LaTeX gratuitos",
+      "conferenceDeadlinesPrompt": "Vai submeter a uma conferência?",
+      "conferenceDeadlinesLink": "Veja a página de prazos das conferências de IA e computação.",
       "description": "Modelos LaTeX profissionais para artigos acadêmicos, apresentações, currículos e mais.",
       "allTemplates": "Todos os modelos",
       "noTemplatesFound": "Nenhum modelo encontrado correspondendo à sua pesquisa.",

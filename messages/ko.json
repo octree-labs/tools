@@ -60,6 +60,8 @@
   },
   "templates": {
     "title": "무료 LaTeX 도구 및 템플릿",
+    "conferenceDeadlinesPrompt": "학회에 투고하시나요?",
+    "conferenceDeadlinesLink": "AI 및 CS 학회 마감일 페이지 보기",
     "description": "학술 논문, 프레젠테이션, 이력서 등을 위한 전문 LaTeX 템플릿.",
     "allTemplates": "모든 템플릿",
     "noTemplatesFound": "검색과 일치하는 템플릿을 찾을 수 없습니다.",

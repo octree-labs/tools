@@ -60,6 +60,8 @@
   },
   "templates": {
     "title": "Gratis LaTeX Tools & Sjablonen",
+    "conferenceDeadlinesPrompt": "Dien je in bij een conferentie?",
+    "conferenceDeadlinesLink": "Bekijk de pagina met deadlines van AI- en informaticaconferenties.",
     "description": "Professionele LaTeX-sjablonen voor academische artikelen, presentaties, cv's en meer.",
     "allTemplates": "Alle Sjablonen",
     "noTemplatesFound": "Geen sjablonen gevonden die overeenkomen met je zoekopdracht.",

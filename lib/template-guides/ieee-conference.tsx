@@ -71,8 +71,8 @@ export default function IeeeConferenceGuide() {
         <li>US letter paper, two columns, 10 pt Times-like body font.</li>
         <li>24 pt title, 11 pt author names, 10 pt affiliations, all centred.</li>
         <li>
-          Margins and a 0.25 in column gutter set by the class. Do not load{" "}
-          <GuideCode>geometry</GuideCode> or alter <GuideCode>\textwidth</GuideCode>.
+          Two 3.5 in columns with a 12 pt gutter and margins set by the class. Do not
+          load <GuideCode>geometry</GuideCode> or alter <GuideCode>\textwidth</GuideCode>.
         </li>
         <li>Abstract and Index Terms in bold with a run-in heading.</li>
         <li>

@@ -60,6 +60,8 @@
   },
   "templates": {
     "title": "Free LaTeX Tools & Templates",
+    "conferenceDeadlinesPrompt": "Submitting to a conference?",
+    "conferenceDeadlinesLink": "See the AI and CS conference deadlines page.",
     "description": "Professional LaTeX templates for academic papers, presentations, resumes, and more.",
     "allTemplates": "All Templates",
     "noTemplatesFound": "No templates found matching your search.",

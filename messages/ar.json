@@ -60,6 +60,8 @@
     },
     "templates": {
       "title": "أدوات وقوالب LaTeX مجانية",
+      "conferenceDeadlinesPrompt": "هل تقدّم ورقة إلى مؤتمر؟",
+      "conferenceDeadlinesLink": "اطّلع على صفحة مواعيد مؤتمرات الذكاء الاصطناعي وعلوم الحاسوب.",
       "description": "قوالب LaTeX احترافية للأوراق الأكاديمية والعروض التقديمية والسير الذاتية والمزيد.",
       "allTemplates": "جميع القوالب",
       "noTemplatesFound": "لم يتم العثور على قوالب تطابق بحثك.",

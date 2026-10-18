@@ -60,6 +60,8 @@
   },
   "templates": {
     "title": "Kostenlose LaTeX-Tools & Vorlagen",
+    "conferenceDeadlinesPrompt": "Sie reichen bei einer Konferenz ein?",
+    "conferenceDeadlinesLink": "Zur Seite mit den Deadlines der KI- und Informatik-Konferenzen.",
     "description": "Professionelle LaTeX-Vorlagen für wissenschaftliche Arbeiten, Präsentationen, Lebensläufe und mehr.",
     "allTemplates": "Alle Vorlagen",
     "noTemplatesFound": "Keine Vorlagen gefunden, die Ihrer Suche entsprechen.",

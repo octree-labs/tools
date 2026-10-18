@@ -60,6 +60,8 @@
     },
     "templates": {
       "title": "免费 LaTeX 工具和模板",
+      "conferenceDeadlinesPrompt": "准备投稿会议？",
+      "conferenceDeadlinesLink": "查看 AI 与计算机科学会议截止日期页面",
       "description": "用于学术论文、演示文稿、简历等的专业 LaTeX 模板。",
       "allTemplates": "所有模板",
       "noTemplatesFound": "未找到匹配您搜索的模板。",
