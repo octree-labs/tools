@@ -464,7 +464,12 @@
     "jakes-resume": { "title": "제이크의 이력서", "description": "깔끔하고 ATS 친화적인 단일 열 이력서 템플릿" },
     "harvard-resume": { "title": "하버드 이력서", "description": "학력, 경력, 리더십, 기술 섹션이 포함된 하버드 형식의 한 페이지 글머리 기호 이력서" },
     "emnlp-2026": { "title": "EMNLP 2026", "description": "ACL 스타일 2단 형식과 필수 한계점 섹션이 포함된 EMNLP 2026 자연어 처리 학회 논문 뼈대" },
-    "beamer-dark": { "title": "Beamer 다크 테마", "description": "고대비 슬라이드, 시안 강조색, 슬라이드 번호가 포함된 다크 모드 Beamer 프레젠테이션" }
+    "beamer-dark": { "title": "Beamer 다크 테마", "description": "고대비 슬라이드, 시안 강조색, 슬라이드 번호가 포함된 다크 모드 Beamer 프레젠테이션" },
+    "conference-poster": { "title": "학회 포스터", "description": "beamerposter 기반 A0 가로형 학술 포스터: 3단 구성, 제목 표시줄, TikZ 그림 및 참고문헌 블록" },
+    "ieee-conference": { "title": "IEEE 학회 논문", "description": "저자 블록, 초록, 색인어, 수식, 표, 그림, 참고문헌을 갖춘 공식 IEEEtran 학회 형식" },
+    "jfm-paper": { "title": "JFM 논문", "description": "머리글, 저자-연도 인용, 초록, 키워드, 후반부 항목을 갖춘 Journal of Fluid Mechanics 스타일 논문" },
+    "aaai-2027": { "title": "AAAI 2027", "description": "제목 블록, 굵은 초록 제목, 저자-연도 참고문헌을 갖춘 AAAI 2027 저자 키트 스타일 2단 논문" },
+    "neurips-2027": { "title": "NeurIPS 2027", "description": "저자 블록, 초록, 섹션, 논문 체크리스트를 갖춘 NeurIPS 2027 스타일 1단 프리프린트" }
   },
   "symbols": {
     "title": "LaTeX 기호",

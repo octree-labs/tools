@@ -740,6 +740,26 @@
     "beamer-dark": {
       "title": "Beamer Dark Theme",
       "description": "Beamer-Präsentation im Dunkelmodus mit kontrastreichen Folien, Cyan-Akzenten und Foliennummern"
+    },
+    "conference-poster": {
+      "title": "Konferenzposter",
+      "description": "Akademisches A0-Querformat-Poster mit beamerposter: drei Spalten, Titelleiste, TikZ-Abbildung und Literaturblock"
+    },
+    "ieee-conference": {
+      "title": "IEEE-Konferenzbeitrag",
+      "description": "Offizielles IEEEtran-Konferenzformat mit Autorenblöcken, Abstract, Index Terms, Gleichung, Tabelle, Abbildung und Literatur"
+    },
+    "jfm-paper": {
+      "title": "JFM-Artikel",
+      "description": "Artikel im Stil des Journal of Fluid Mechanics mit Kolumnentiteln, Autor-Jahr-Zitaten, Abstract, Schlüsselwörtern und Schlussteil"
+    },
+    "aaai-2027": {
+      "title": "AAAI 2027",
+      "description": "Zweispaltiger Beitrag im Stil des AAAI-2027-Autorenkits mit Titelblock, fetter Abstract-Überschrift und Autor-Jahr-Literatur"
+    },
+    "neurips-2027": {
+      "title": "NeurIPS 2027",
+      "description": "Einspaltiger Preprint im NeurIPS-2027-Stil mit Autorenblock, Abstract, Abschnitten und Paper-Checkliste"
     }
   },
   "symbols": {

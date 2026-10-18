@@ -738,6 +738,26 @@
       "beamer-dark": {
         "title": "Beamer 深色主题",
         "description": "深色模式 Beamer 演示文稿，高对比度幻灯片、青色强调色和页码"
+      },
+      "conference-poster": {
+        "title": "会议海报",
+        "description": "基于 beamerposter 的 A0 横向学术海报：三栏布局、标题栏、TikZ 图和参考文献块"
+      },
+      "ieee-conference": {
+        "title": "IEEE 会议论文",
+        "description": "官方 IEEEtran 会议格式，包含作者块、摘要、索引词、公式、表格、图和参考文献"
+      },
+      "jfm-paper": {
+        "title": "JFM 论文",
+        "description": "Journal of Fluid Mechanics 风格文章，包含页眉、作者-年份引用、摘要、关键词和文末事项"
+      },
+      "aaai-2027": {
+        "title": "AAAI 2027",
+        "description": "AAAI 2027 作者工具包风格的双栏论文，包含标题块、加粗摘要标题和作者-年份参考文献"
+      },
+      "neurips-2027": {
+        "title": "NeurIPS 2027",
+        "description": "NeurIPS 2027 风格的单栏预印本，包含作者块、摘要、章节和论文检查清单"
       }
     },
     "symbols": {

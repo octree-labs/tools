@@ -740,6 +740,26 @@
     "beamer-dark": {
       "title": "Beamer Dark Theme",
       "description": "Dark mode na Beamer presentation na may high-contrast na slides, cyan accents at frame numbers"
+    },
+    "conference-poster": {
+      "title": "Poster para sa Kumperensya",
+      "description": "Akademikong A0 landscape poster gamit ang beamerposter: tatlong kolum, title bar, TikZ figure at bloke ng mga sanggunian"
+    },
+    "ieee-conference": {
+      "title": "IEEE Conference Paper",
+      "description": "Opisyal na IEEEtran conference format na may mga bloke ng may-akda, abstract, index terms, equation, talahanayan, figure at mga sanggunian"
+    },
+    "jfm-paper": {
+      "title": "JFM Paper",
+      "description": "Artikulo sa istilong Journal of Fluid Mechanics na may running heads, author-year citations, abstract, keywords at back matter"
+    },
+    "aaai-2027": {
+      "title": "AAAI 2027",
+      "description": "Two-column paper sa istilong AAAI 2027 author kit na may title block, bold na abstract heading at author-year references"
+    },
+    "neurips-2027": {
+      "title": "NeurIPS 2027",
+      "description": "Single-column preprint sa istilong NeurIPS 2027 na may author block, abstract, mga seksyon at paper checklist"
     }
   },
   "symbols": {

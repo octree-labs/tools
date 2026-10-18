@@ -108,6 +108,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const homeUrls = generateLocalizedUrls('', 'daily', 1)
   const templatesIndexUrls = generateLocalizedUrls('/templates', 'weekly', 0.9)
   const symbolsIndexUrls = generateLocalizedUrls('/symbols', 'weekly', 0.9)
+  const conferenceDeadlineUrls = generateLocalizedUrls('/conference-deadlines', 'monthly', 0.8)
 
   const toolUrls = tools.flatMap(tool => 
     generateLocalizedUrls(`/tools/${tool}`, 'weekly', 0.8)
@@ -125,6 +126,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...homeUrls,
     ...templatesIndexUrls,
     ...symbolsIndexUrls,
+    ...conferenceDeadlineUrls,
     ...toolUrls,
     ...symbolUrls,
     ...templateUrls,

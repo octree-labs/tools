@@ -191,8 +191,18 @@ export default function TemplatesPage() {
             <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
               {t('title')}
             </h1>
-            <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 mb-4 max-w-2xl mx-auto">
               {t('description')}
+            </p>
+            <p className="text-sm text-gray-500 mb-8">
+              Submitting to a conference?{" "}
+              <Link
+                href="/conference-deadlines"
+                className="text-blue-600 hover:text-blue-700 underline underline-offset-2"
+              >
+                See the AI and CS conference deadlines page
+              </Link>
+              .
             </p>
 
 
