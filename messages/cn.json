@@ -726,6 +726,18 @@
       "jakes-resume": {
         "title": "杰克的简历",
         "description": "简洁、ATS友好的单栏简历模板"
+      },
+      "harvard-resume": {
+        "title": "哈佛简历",
+        "description": "哈佛风格单页要点式简历，包含教育、经历、领导力与活动、技能与兴趣栏目"
+      },
+      "emnlp-2026": {
+        "title": "EMNLP 2026",
+        "description": "EMNLP 2026 自然语言处理会议论文骨架，ACL 风格双栏排版，含必需的局限性章节"
+      },
+      "beamer-dark": {
+        "title": "Beamer 深色主题",
+        "description": "深色模式 Beamer 演示文稿，高对比度幻灯片、青色强调色和页码"
       }
     },
     "symbols": {

@@ -461,7 +461,10 @@
     "acl-2026": { "title": "ACL 2026", "description": "ACL 2026 NLP conferentieartikelsjabloon in tweekolomsformaat" },
     "interspeech-2026": { "title": "Interspeech 2026", "description": "Interspeech 2026 spraak- en taalverwerking conferentieartikelsjabloon" },
     "interactive-flashcard": { "title": "Interactieve Flashcard", "description": "Studiegids met verborgen antwoorden - perfect voor zelftesten" },
-    "jakes-resume": { "title": "Jake's CV", "description": "Schoon, ATS-vriendelijk enkelkoloms CV-sjabloon" }
+    "jakes-resume": { "title": "Jake's CV", "description": "Schoon, ATS-vriendelijk enkelkoloms CV-sjabloon" },
+    "harvard-resume": { "title": "Harvard-cv", "description": "Eenpagina-cv in Harvard-stijl met opsommingstekens en secties Opleiding, Ervaring, Leiderschap en Vaardigheden" },
+    "emnlp-2026": { "title": "EMNLP 2026", "description": "Papersjabloon voor de NLP-conferentie EMNLP 2026 in tweekoloms ACL-stijl met verplichte Limitations-sectie" },
+    "beamer-dark": { "title": "Beamer Donker Thema", "description": "Beamer-presentatie in donkere modus met contrastrijke dia's, cyaan accenten en dianummers" }
   },
   "symbols": {
     "title": "LaTeX Symbolen",

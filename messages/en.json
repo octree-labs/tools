@@ -728,6 +728,18 @@
     "jakes-resume": {
       "title": "Jake's Resume",
       "description": "Clean, ATS-friendly single-column resume template"
+    },
+    "harvard-resume": {
+      "title": "Harvard Resume",
+      "description": "Harvard-style one-page bullet resume with Education, Experience, Leadership and Skills sections"
+    },
+    "emnlp-2026": {
+      "title": "EMNLP 2026",
+      "description": "EMNLP 2026 NLP conference paper skeleton in ACL two-column style with mandatory Limitations section"
+    },
+    "beamer-dark": {
+      "title": "Beamer Dark Theme",
+      "description": "Dark-mode Beamer presentation with high-contrast slides, cyan accents and frame numbers"
     }
   },
   "symbols": {

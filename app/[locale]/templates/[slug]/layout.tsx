@@ -731,6 +731,36 @@ async function generateMetadataBase({
       'apa7 latex template',
       'latex apa title page',
     ],
+    'harvard-resume': [
+      'harvard resume template',
+      'harvard resume',
+      'harvard resume format',
+      'harvard bullet resume template',
+      'harvard cv template',
+      'harvard resume template latex',
+      'resume template harvard',
+      'harvard college resume template',
+    ],
+    'emnlp-2026': [
+      'emnlp 2026',
+      'emnlp 2026 template',
+      'emnlp latex template',
+      'emnlp template overleaf',
+      'emnlp 2026 latex',
+      'acl style emnlp',
+      'emnlp paper template',
+      'emnlp 2026 submission template',
+    ],
+    'beamer-dark': [
+      'beamer dark theme',
+      'dark beamer theme',
+      'beamer dark mode',
+      'beamer dark template',
+      'latex presentation dark theme',
+      'beamer theme dark background',
+      'beamer black theme',
+      'metropolis dark theme',
+    ],
   };
 
   const specificKeywords = keywordMap[slug] || [

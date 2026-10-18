@@ -461,7 +461,10 @@
     "acl-2026": { "title": "ACL 2026", "description": "ACL 2026 자연어 처리 학회 논문 템플릿" },
     "interspeech-2026": { "title": "Interspeech 2026", "description": "Interspeech 2026 음성 처리 학회 논문 템플릿" },
     "interactive-flashcard": { "title": "인터랙티브 플래시카드", "description": "클릭하면 답이 나타나는 학습 가이드 - 자가 테스트에 완벽" },
-    "jakes-resume": { "title": "제이크의 이력서", "description": "깔끔하고 ATS 친화적인 단일 열 이력서 템플릿" }
+    "jakes-resume": { "title": "제이크의 이력서", "description": "깔끔하고 ATS 친화적인 단일 열 이력서 템플릿" },
+    "harvard-resume": { "title": "하버드 이력서", "description": "학력, 경력, 리더십, 기술 섹션이 포함된 하버드 형식의 한 페이지 글머리 기호 이력서" },
+    "emnlp-2026": { "title": "EMNLP 2026", "description": "ACL 스타일 2단 형식과 필수 한계점 섹션이 포함된 EMNLP 2026 자연어 처리 학회 논문 뼈대" },
+    "beamer-dark": { "title": "Beamer 다크 테마", "description": "고대비 슬라이드, 시안 강조색, 슬라이드 번호가 포함된 다크 모드 Beamer 프레젠테이션" }
   },
   "symbols": {
     "title": "LaTeX 기호",

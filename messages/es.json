@@ -654,6 +654,18 @@
       "jakes-resume": {
         "title": "Currículum de Jake",
         "description": "Plantilla de currículum limpia y compatible con ATS"
+      },
+      "harvard-resume": {
+        "title": "Currículum Harvard",
+        "description": "Currículum de una página estilo Harvard con viñetas y secciones de Educación, Experiencia, Liderazgo y Habilidades"
+      },
+      "emnlp-2026": {
+        "title": "EMNLP 2026",
+        "description": "Esqueleto de artículo para la conferencia de PLN EMNLP 2026 en estilo ACL a dos columnas con sección obligatoria de Limitaciones"
+      },
+      "beamer-dark": {
+        "title": "Tema Oscuro Beamer",
+        "description": "Presentación Beamer en modo oscuro con diapositivas de alto contraste, acentos cian y números de diapositiva"
       }
     },
     "toolsList": {

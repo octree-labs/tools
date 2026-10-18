@@ -728,6 +728,18 @@
     "jakes-resume": {
       "title": "Resume Jake",
       "description": "Templat resume lajur tunggal yang bersih dan mesra ATS"
+    },
+    "harvard-resume": {
+      "title": "Resume Harvard",
+      "description": "Resume satu muka surat gaya Harvard dengan butiran bertitik dan bahagian Pendidikan, Pengalaman, Kepimpinan dan Kemahiran"
+    },
+    "emnlp-2026": {
+      "title": "EMNLP 2026",
+      "description": "Rangka kertas persidangan NLP EMNLP 2026 dalam gaya ACL dua lajur dengan bahagian Had wajib"
+    },
+    "beamer-dark": {
+      "title": "Tema Gelap Beamer",
+      "description": "Persembahan Beamer mod gelap dengan slaid kontras tinggi, aksen sian dan nombor slaid"
     }
   },
   "symbols": {

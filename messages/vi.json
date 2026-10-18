@@ -461,7 +461,10 @@
     "acl-2026": { "title": "ACL 2026", "description": "Mẫu bài báo hội nghị ACL 2026 NLP định dạng hai cột" },
     "interspeech-2026": { "title": "Interspeech 2026", "description": "Mẫu bài báo hội nghị xử lý giọng nói và ngôn ngữ Interspeech 2026" },
     "interactive-flashcard": { "title": "Thẻ ghi nhớ tương tác", "description": "Hướng dẫn học với câu trả lời ẩn - hoàn hảo để tự kiểm tra" },
-    "jakes-resume": { "title": "Sơ yếu lý lịch Jake", "description": "Mẫu sơ yếu lý lịch một cột sạch, thân thiện ATS" }
+    "jakes-resume": { "title": "Sơ yếu lý lịch Jake", "description": "Mẫu sơ yếu lý lịch một cột sạch, thân thiện ATS" },
+    "harvard-resume": { "title": "Sơ yếu lý lịch Harvard", "description": "Sơ yếu lý lịch một trang theo định dạng Harvard với gạch đầu dòng và các mục Học vấn, Kinh nghiệm, Lãnh đạo và Kỹ năng" },
+    "emnlp-2026": { "title": "EMNLP 2026", "description": "Khung bài báo hội nghị xử lý ngôn ngữ tự nhiên EMNLP 2026 theo kiểu ACL hai cột với mục Hạn chế bắt buộc" },
+    "beamer-dark": { "title": "Chủ đề tối Beamer", "description": "Bài thuyết trình Beamer chế độ tối với slide tương phản cao, điểm nhấn màu lục lam và số trang" }
   },
   "symbols": {
     "title": "Ký hiệu LaTeX",
