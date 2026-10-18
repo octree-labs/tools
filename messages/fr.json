@@ -718,6 +718,18 @@
       "jakes-resume": {
         "title": "CV de Jake",
         "description": "Modèle de CV épuré et compatible ATS"
+      },
+      "harvard-resume": {
+        "title": "CV Harvard",
+        "description": "CV d'une page au format Harvard à puces avec sections Formation, Expérience, Leadership et Compétences"
+      },
+      "emnlp-2026": {
+        "title": "EMNLP 2026",
+        "description": "Squelette d'article pour la conférence TAL EMNLP 2026 au style ACL deux colonnes avec section Limites obligatoire"
+      },
+      "beamer-dark": {
+        "title": "Thème Sombre Beamer",
+        "description": "Présentation Beamer en mode sombre avec diapositives à fort contraste, accents cyan et numéros de diapositive"
       }
     },
     "symbols": {

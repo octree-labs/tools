@@ -6701,6 +6701,574 @@ Interpret the results in light of the hypotheses, note limitations, and suggest 
 
 \end{document}`,
   },
+  {
+    id: 73,
+    title: "Harvard Resume",
+    description: "Harvard-style one-page bullet resume with Education, Experience, Leadership and Skills sections",
+    slug: "harvard-resume",
+    previewUrl: "/templates/harvard-resume.pdf",
+    category: "Resume & CV",
+    seoTitle: "Harvard Resume Template (LaTeX) | Free Download & Preview",
+    seoDescription:
+      "Free Harvard resume template in LaTeX: the classic Harvard format bullet resume with Education, Experience, Leadership and Skills. Preview the PDF and download.",
+    code: String.raw`%-------------------------------------------------------------------
+% Harvard-style bullet resume (one page, letterpaper, 11pt)
+%
+% Follows the Harvard Office of Career Services resume format:
+% centered name, single contact line, then Education, Experience,
+% Leadership & Activities and Skills & Interests, each with bold
+% organisation / role lines and concise action-verb bullets.
+% No colours, no graphics, no icons: it prints cleanly and parses
+% well in applicant tracking systems (ATS).
+%
+% Edit the content between \begin{document} and \end{document}.
+% Keep it to one page: trim bullets before shrinking the font.
+%-------------------------------------------------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage[margin=0.75in,top=0.6in,bottom=0.6in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+
+% No page numbers, no paragraph indentation
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\raggedright
+
+% Section headers: small caps with a thin rule underneath
+\titleformat{\section}{\large\scshape\bfseries}{}{0pt}{}[\vspace{-3pt}\titlerule]
+\titlespacing*{\section}{0pt}{8pt}{4pt}
+
+% Compact bullet lists
+\setlist[itemize]{leftmargin=0.18in,itemsep=1pt,parsep=0pt,topsep=2pt,partopsep=0pt,label=\textbullet}
+
+% --- Helper commands ---------------------------------------------------
+% Organisation line: \entry{Organisation}{Location}
+\newcommand{\entry}[2]{%
+  \vspace{4pt}%
+  \noindent\textbf{#1}\hfill #2\par}
+% Role line: \role{Title}{Dates}
+\newcommand{\role}[2]{%
+  \noindent\textit{#1}\hfill #2\par}
+% Name block: \name{Full Name}
+\newcommand{\name}[1]{%
+  \begin{center}{\LARGE\bfseries\scshape #1}\end{center}\vspace{-14pt}}
+% Contact line
+\newcommand{\contact}[1]{\begin{center}#1\end{center}\vspace{-8pt}}
+
+\begin{document}
+
+%-----------------------------------------------------------------------
+\name{Jordan A. Smith}
+\contact{%
+  Cambridge, MA 02138 \textbar{}
+  jordansmith@college.harvard.edu \textbar{}
+  (617) 555-0142 \textbar{}
+  \href{https://linkedin.com/in/jordansmith}{linkedin.com/in/jordansmith}}
+
+%-----------------------------------------------------------------------
+\section{Education}
+
+\entry{Harvard University}{Cambridge, MA}
+\role{A.B. in Economics, Secondary in Computer Science. GPA 3.8/4.0}{Expected May 2027}
+\begin{itemize}
+  \item Relevant coursework: Econometrics, Game Theory, Data Structures and Algorithms, Financial Markets
+  \item Honors: John Harvard Scholar (top 5\% of class), Dean's List (2024--2026)
+\end{itemize}
+
+\entry{Lincoln High School}{Portland, OR}
+\role{High School Diploma. Valedictorian, National Merit Scholar}{June 2023}
+
+%-----------------------------------------------------------------------
+\section{Experience}
+
+\entry{Goldman Sachs}{New York, NY}
+\role{Summer Analyst, Investment Banking Division}{June 2026 -- August 2026}
+\begin{itemize}
+  \item Built discounted cash flow and comparable-company models for three live M\&A transactions totaling \$2.4B in deal value
+  \item Drafted 40+ pages of pitch materials presented to C-suite executives of a Fortune 500 industrials client
+  \item Automated weekly market-update workflow in Excel and Python, reducing preparation time by 60\%
+\end{itemize}
+
+\entry{Harvard Kennedy School, Center for International Development}{Cambridge, MA}
+\role{Research Assistant}{September 2025 -- May 2026}
+\begin{itemize}
+  \item Cleaned and analyzed a 1.2M-row household survey panel in Stata and R to estimate the effect of cash transfers on school enrollment
+  \item Co-authored working paper with faculty; findings presented at the 2026 NEUDC conference
+\end{itemize}
+
+\entry{Brightline Analytics}{Portland, OR}
+\role{Data Analytics Intern}{June 2025 -- August 2025}
+\begin{itemize}
+  \item Designed SQL dashboards tracking customer churn for 12 retail clients, surfacing \$300K in at-risk annual revenue
+  \item Presented findings to the executive team, leading to the launch of a targeted retention campaign
+\end{itemize}
+
+%-----------------------------------------------------------------------
+\section{Leadership \& Activities}
+
+\entry{Harvard Undergraduate Consulting Group}{Cambridge, MA}
+\role{Case Team Leader}{January 2025 -- Present}
+\begin{itemize}
+  \item Lead a team of six analysts on a semester-long pro bono market-entry study for a Boston-area nonprofit
+  \item Ran recruiting and training for 30 new members; wrote the club's first case-interview preparation guide
+\end{itemize}
+
+\entry{Harvard Varsity Lightweight Crew}{Cambridge, MA}
+\role{Varsity Rower}{September 2023 -- Present}
+\begin{itemize}
+  \item Train 20+ hours per week while maintaining a full course load; 2025 Eastern Sprints silver medalist
+\end{itemize}
+
+\entry{Phillips Brooks House Association}{Cambridge, MA}
+\role{Volunteer Tutor}{September 2023 -- May 2025}
+\begin{itemize}
+  \item Tutored middle-school students in mathematics twice weekly through the Mission Hill after-school program
+\end{itemize}
+
+%-----------------------------------------------------------------------
+\section{Skills \& Interests}
+
+\begin{itemize}
+  \item \textbf{Technical:} Python (pandas, NumPy), R, Stata, SQL, Excel (advanced modeling), \LaTeX
+  \item \textbf{Languages:} Fluent in Spanish; conversational Mandarin
+  \item \textbf{Interests:} Distance running, behavioral economics podcasts, sourdough baking, chess
+\end{itemize}
+
+\end{document}`,
+  },
+  {
+    id: 74,
+    title: "EMNLP 2026",
+    description: "EMNLP 2026 NLP conference paper skeleton in ACL two-column style with mandatory Limitations section",
+    slug: "emnlp-2026",
+    previewUrl: "/templates/emnlp-2026.pdf",
+    category: "Academic",
+    seoTitle: "EMNLP 2026 LaTeX Template | Free Download & Preview",
+    seoDescription:
+      "Free EMNLP 2026 LaTeX template: ACL-style two-column paper skeleton with abstract, Limitations and Ethics sections and natbib stub. Preview and download.",
+    code: String.raw`%-------------------------------------------------------------------
+% EMNLP 2026 paper skeleton (ACL-style, two-column, letterpaper, 11pt)
+%
+% IMPORTANT -- OFFICIAL STYLE FILES FOR SUBMISSION
+% ----------------------------------------------------------------
+% EMNLP uses the unified ACL Rolling Review (ARR) style. The official
+% template depends on acl.sty and acl_natbib.bst, which are NOT bundled
+% here (they are distributed separately under their own license).
+%
+% Before you submit, download the official style files from
+%   https://github.com/acl-org/acl-style-files
+% place acl.sty and acl_natbib.bst next to this file, and replace the
+% preamble below with:
+%   \documentclass[11pt]{article}
+%   \usepackage[review]{acl}      % use [final] for the camera-ready
+%   \usepackage{times}
+%   \usepackage{latexsym}
+%   \usepackage[T1]{fontenc}
+%   \usepackage[utf8]{inputenc}
+%   \usepackage{microtype}
+%   \usepackage{inconsolata}
+% and use \bibliographystyle{acl_natbib}.
+%
+% This skeleton emulates the ACL look (Times, two columns, 0.75in
+% margins, 11pt) with standard LaTeX packages so it compiles anywhere
+% and you can start writing immediately. Section structure follows the
+% EMNLP 2026 call for papers: a Limitations section is mandatory and
+% does not count toward the page limit; an Ethics Statement is optional.
+%-------------------------------------------------------------------
+
+\documentclass[11pt,twocolumn,letterpaper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=0.75in,top=1in,bottom=1in,columnsep=0.25in]{geometry}
+\usepackage{amsmath}
+\usepackage{newtxtext,newtxmath}   % Times-like text and math (loads after amsmath;
+                                   % newtxmath already provides the amssymb/latexsym symbols)
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{url}
+\usepackage[hidelinks]{hyperref}
+\usepackage[round]{natbib}
+\usepackage{inconsolata}
+
+% ACL-style heading sizes
+\usepackage{titlesec}
+\titleformat{\section}{\large\bfseries}{\thesection}{0.6em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{0.6em}{}
+\titlespacing*{\section}{0pt}{10pt plus 2pt}{4pt}
+\titlespacing*{\subsection}{0pt}{8pt plus 2pt}{3pt}
+
+\pagestyle{empty}
+\raggedbottom
+\setlength{\parskip}{0pt}
+
+\title{\bfseries\Large EMNLP 2026 Submission Template: \\ A Skeleton for Empirical NLP Papers}
+
+\author{%
+  \textbf{First Author}$^{1}$ \quad \textbf{Second Author}$^{1,2}$ \quad \textbf{Third Author}$^{2}$ \\[2pt]
+  $^{1}$Department of Computer Science, University Name \\
+  $^{2}$Industry Research Lab \\
+  \texttt{\{first,second\}@university.edu}, \texttt{third@lab.com}}
+\date{}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+\begin{abstract}
+This document is a skeleton for papers submitted to the 2026 Conference on Empirical Methods in Natural Language Processing (EMNLP 2026). The abstract should be a single paragraph that states the problem, summarizes the proposed method, and reports the key quantitative findings. Keep it under 200 words so that it fits comfortably in the first column.
+\end{abstract}
+
+\section{Introduction}
+\label{sec:intro}
+
+Introduce the task, explain why it matters, and identify the gap in prior work that this paper fills. EMNLP long papers are limited to eight pages of content and short papers to four pages; references, the Limitations section and appendices do not count toward the limit.
+
+Close the introduction with a concise list of contributions:
+\begin{itemize}
+  \setlength\itemsep{0pt}
+  \item A new method for [task] that [key idea].
+  \item A benchmark or dataset of [size] [units] covering [languages or domains].
+  \item Empirical results showing [improvement] over strong baselines, with analysis of [phenomenon].
+\end{itemize}
+
+\section{Related Work}
+\label{sec:related}
+
+Situate the paper relative to prior work on [topic A] \citep{devlin2019bert}, [topic B] \citep{vaswani2017attention}, and [topic C]. Use \verb|\citet{}| for textual citations, e.g.\ \citet{brown2020language} show that \ldots, and \verb|\citep{}| for parenthetical ones.
+
+\section{Method}
+\label{sec:method}
+
+Describe the model or approach. Given an input sequence $x = (x_1, \ldots, x_n)$, we model the output $y$ as
+\begin{equation}
+  P(y \mid x) = \prod_{t=1}^{|y|} P\bigl(y_t \mid y_{<t}, x; \theta\bigr),
+  \label{eq:autoregressive}
+\end{equation}
+where $\theta$ are the model parameters. Training minimizes the negative log-likelihood
+\begin{equation}
+  \mathcal{L}(\theta) = -\sum_{(x,y) \in \mathcal{D}} \log P(y \mid x; \theta).
+\end{equation}
+
+\subsection{Architecture}
+Give the architectural details needed to reproduce the work: layer counts, hidden sizes, tokenization, and any task-specific components.
+
+\subsection{Training Objective}
+Explain any auxiliary losses, curriculum, or data-selection strategy.
+
+\section{Experiments}
+\label{sec:experiments}
+
+\paragraph{Datasets.} List the datasets with sizes and splits, and cite their sources.
+
+\paragraph{Baselines.} Describe the systems you compare against and how they were tuned.
+
+\paragraph{Implementation details.} Report hyperparameters, hardware, training time, and the number of runs used for each reported number.
+
+\section{Results}
+\label{sec:results}
+
+Table~\ref{tab:main} reports the main results. Report means and standard deviations over multiple seeds where possible, and mark statistically significant improvements.
+
+\begin{table}[t]
+  \centering
+  \small
+  \begin{tabular}{lccc}
+    \toprule
+    \textbf{Model} & \textbf{Acc.} & \textbf{F1} & \textbf{BLEU} \\
+    \midrule
+    Baseline A \citep{devlin2019bert} & 84.2 & 83.1 & 27.4 \\
+    Baseline B \citep{brown2020language} & 86.0 & 85.3 & 29.1 \\
+    \midrule
+    Ours (base)  & 87.4 & 86.6 & 30.2 \\
+    Ours (large) & \textbf{89.1} & \textbf{88.4} & \textbf{31.8} \\
+    \bottomrule
+  \end{tabular}
+  \caption{Main results on the test set. Best results in bold.}
+  \label{tab:main}
+\end{table}
+
+\begin{figure}[t]
+  \centering
+  \fbox{\parbox[c][1.6in][c]{0.9\columnwidth}{\centering Figure placeholder \\ (replace with \texttt{\textbackslash includegraphics})}}
+  \caption{Example figure. Use vector graphics (PDF) where possible and make sure text is legible when printed.}
+  \label{fig:example}
+\end{figure}
+
+\subsection{Analysis}
+Include ablations, error analysis, and qualitative examples that explain \emph{why} the method works.
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+Summarize the findings, restate the main contribution, and outline directions for future work.
+
+\section*{Limitations}
+EMNLP requires every paper to include a Limitations section. Discuss the scope of the claims, the languages and domains evaluated, computational requirements, and any assumptions that may not hold in practice. This section does not count toward the page limit.
+
+\section*{Ethics Statement}
+Optionally discuss potential risks, intended use, data licensing, annotator compensation, and any steps taken to mitigate harm. This section does not count toward the page limit.
+
+\section*{Acknowledgments}
+Acknowledgments appear only in the camera-ready version. Remove or anonymize them for the review submission.
+
+% --- References ---------------------------------------------------
+% For submission use the official bibliography style:
+%   \bibliographystyle{acl_natbib}
+%   \bibliography{custom}
+% The thebibliography block below is a stub so the skeleton compiles
+% without an external .bib file.
+\bibliographystyle{plainnat}
+\begin{thebibliography}{3}
+  \providecommand{\natexlab}[1]{#1}
+
+  \bibitem[Brown et~al.(2020)]{brown2020language}
+  Tom Brown, Benjamin Mann, Nick Ryder, et~al. 2020.
+  \newblock Language models are few-shot learners.
+  \newblock In \emph{Advances in Neural Information Processing Systems}.
+
+  \bibitem[Devlin et~al.(2019)]{devlin2019bert}
+  Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2019.
+  \newblock {BERT}: Pre-training of deep bidirectional transformers for language understanding.
+  \newblock In \emph{Proceedings of NAACL-HLT}, pages 4171--4186.
+
+  \bibitem[Vaswani et~al.(2017)]{vaswani2017attention}
+  Ashish Vaswani, Noam Shazeer, Niki Parmar, et~al. 2017.
+  \newblock Attention is all you need.
+  \newblock In \emph{Advances in Neural Information Processing Systems}.
+\end{thebibliography}
+
+\appendix
+\section{Additional Results}
+\label{app:extra}
+Appendices follow the references and may contain extra experiments, prompts, and dataset details.
+
+\end{document}`,
+  },
+  {
+    id: 75,
+    title: "Beamer Dark Theme",
+    description: "Dark-mode Beamer presentation with high-contrast slides, cyan accents and frame numbers",
+    slug: "beamer-dark",
+    previewUrl: "/templates/beamer-dark.pdf",
+    category: "Presentations",
+    seoTitle: "Beamer Dark Theme Template (LaTeX) | Free Download & Preview",
+    seoDescription:
+      "Free Beamer dark theme template for LaTeX: dark background, light text, cyan accents, frame numbers, no nav bar. Compiles with pdflatex. Preview and download.",
+    code: String.raw`%-------------------------------------------------------------------
+% Beamer dark theme presentation
+%
+% A complete, pdflatex-safe dark-mode Beamer deck. It builds on the
+% Madrid theme and overrides the colour palette so slides have a dark
+% background, light text and a cyan accent. No extra fonts or theme
+% packages are required.
+%
+% Tips:
+%   * Change the accent colour by editing \definecolor{accent}.
+%   * For a pure black background use  bg=black  in background canvas.
+%   * \pause reveals bullets one at a time; remove it for handouts
+%     (or compile with \documentclass[handout]{beamer}).
+%-------------------------------------------------------------------
+
+\documentclass[11pt,aspectratio=169]{beamer}
+
+\usetheme{Madrid}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{xcolor}
+
+% --- Dark palette ----------------------------------------------------
+\definecolor{bgdark}{HTML}{1E1E24}     % slide background
+\definecolor{bgpanel}{HTML}{2B2B33}    % frametitle / block backgrounds
+\definecolor{fglight}{HTML}{E6E6E6}    % body text
+\definecolor{fgmuted}{HTML}{A0A0A8}    % footline, captions
+\definecolor{accent}{HTML}{4FC3F7}     % cyan accent
+\definecolor{accent2}{HTML}{FFB74D}    % orange secondary accent
+
+\setbeamercolor{background canvas}{bg=bgdark}
+\setbeamercolor{normal text}{fg=fglight,bg=bgdark}
+\setbeamercolor{structure}{fg=accent}
+\setbeamercolor{alerted text}{fg=accent2}
+\setbeamercolor{example text}{fg=accent}
+
+\setbeamercolor{frametitle}{fg=fglight,bg=bgpanel}
+\setbeamercolor{framesubtitle}{fg=fgmuted}
+\setbeamercolor{title}{fg=fglight}
+\setbeamercolor{subtitle}{fg=fgmuted}
+\setbeamercolor{author}{fg=fglight}
+\setbeamercolor{institute}{fg=fgmuted}
+\setbeamercolor{date}{fg=fgmuted}
+
+\setbeamercolor{palette primary}{fg=fglight,bg=bgpanel}
+\setbeamercolor{palette secondary}{fg=fglight,bg=bgpanel!80!accent}
+\setbeamercolor{palette tertiary}{fg=bgdark,bg=accent}
+\setbeamercolor{palette quaternary}{fg=fglight,bg=bgpanel}
+\setbeamercolor{title in head/foot}{fg=fgmuted,bg=bgpanel}
+\setbeamercolor{author in head/foot}{fg=fgmuted,bg=bgpanel}
+\setbeamercolor{date in head/foot}{fg=fgmuted,bg=bgpanel}
+
+\setbeamercolor{block title}{fg=bgdark,bg=accent}
+\setbeamercolor{block body}{fg=fglight,bg=bgpanel}
+\setbeamercolor{block title alerted}{fg=bgdark,bg=accent2}
+\setbeamercolor{block body alerted}{fg=fglight,bg=bgpanel}
+\setbeamercolor{block title example}{fg=bgdark,bg=accent}
+\setbeamercolor{block body example}{fg=fglight,bg=bgpanel}
+
+\setbeamercolor{itemize item}{fg=accent}
+\setbeamercolor{itemize subitem}{fg=accent2}
+\setbeamercolor{enumerate item}{fg=accent}
+\setbeamercolor{caption name}{fg=accent}
+\setbeamercolor{section in toc}{fg=fglight}
+\setbeamercolor{subsection in toc}{fg=fgmuted}
+
+% --- Templates -------------------------------------------------------
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{itemize items}[circle]
+\setbeamertemplate{blocks}[rounded][shadow=false]
+\setbeamertemplate{caption}[numbered]
+\setbeamerfont{frametitle}{series=\bfseries}
+\setbeamerfont{title}{series=\bfseries,size=\LARGE}
+
+% Footline: author | title | frame number / total
+\setbeamertemplate{footline}{%
+  \leavevmode%
+  \hbox{%
+    \begin{beamercolorbox}[wd=.3\paperwidth,ht=2.4ex,dp=1ex,left,leftskip=1em]{author in head/foot}%
+      \usebeamerfont{author in head/foot}\insertshortauthor
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.4ex,dp=1ex,center]{title in head/foot}%
+      \usebeamerfont{title in head/foot}\insertshorttitle
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.2\paperwidth,ht=2.4ex,dp=1ex,right,rightskip=1em]{date in head/foot}%
+      \usebeamerfont{date in head/foot}\insertframenumber{} / \inserttotalframenumber
+    \end{beamercolorbox}}%
+  \vskip0pt%
+}
+
+% --- Metadata --------------------------------------------------------
+\title[Dark Theme Slides]{A Dark Theme for Beamer}
+\subtitle{Clean, high-contrast slides for talks and lectures}
+\author[J. Doe]{Jane Doe}
+\institute{Department of Computer Science \\ Example University}
+\date{\today}
+
+\begin{document}
+
+% 1. Title ------------------------------------------------------------
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+% 2. Outline ----------------------------------------------------------
+\begin{frame}{Outline}
+  \tableofcontents
+\end{frame}
+
+% 3. Bullets with pause ----------------------------------------------
+\section{Motivation}
+\begin{frame}{Why a dark theme?}
+  \begin{itemize}
+    \item Dark backgrounds reduce glare in dim lecture halls \pause
+    \item High-contrast accents draw attention to the key point \pause
+    \item Code listings and plots with dark backgrounds blend in naturally \pause
+    \item It looks good on screen recordings and video calls
+  \end{itemize}
+  \vspace{1em}
+  \begin{block}{Key idea}
+    Keep the palette to one background, one text colour and one or two accents.
+  \end{block}
+\end{frame}
+
+% 4. Figure placeholder ----------------------------------------------
+\section{Method}
+\begin{frame}{A figure}
+  \begin{figure}
+    \centering
+    % Replace the box with: \includegraphics[width=0.6\linewidth]{figure.pdf}
+    \begin{beamercolorbox}[wd=0.6\linewidth,ht=0.42\textheight,center,rounded=true]{block body}
+      \usebeamercolor[fg]{normal text}\Large Figure placeholder
+    \end{beamercolorbox}
+    \caption{Use light lines and labels so plots stay readable on the dark canvas.}
+  \end{figure}
+\end{frame}
+
+% 5. Table ------------------------------------------------------------
+\section{Results}
+\begin{frame}{A table}
+  \begin{table}
+    \centering
+    \begin{tabular}{lccc}
+      \toprule
+      \textbf{Model} & \textbf{Accuracy} & \textbf{F1} & \textbf{Latency (ms)} \\
+      \midrule
+      Baseline        & 84.2 & 83.1 & 12 \\
+      Ours (small)    & 87.4 & 86.6 & 14 \\
+      Ours (large)    & \alert{89.1} & \alert{88.4} & 21 \\
+      \bottomrule
+    \end{tabular}
+    \caption{Results on the held-out test set. Best values highlighted.}
+  \end{table}
+\end{frame}
+
+% 6. Equation ---------------------------------------------------------
+\begin{frame}{An equation}
+  The model is trained by minimising the negative log-likelihood
+  \begin{equation*}
+    \mathcal{L}(\theta) = -\sum_{(x,y)\in\mathcal{D}} \log P(y \mid x;\theta)
+    + \lambda \lVert \theta \rVert_2^2 .
+  \end{equation*}
+  \begin{exampleblock}{Interpretation}
+    The first term fits the data; the second term, weighted by $\lambda$, regularises the parameters $\theta$.
+  \end{exampleblock}
+\end{frame}
+
+% 7. Two columns ------------------------------------------------------
+\section{Discussion}
+\begin{frame}{Two columns}
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \textbf{Advantages}
+      \begin{itemize}
+        \item Less eye strain in dark rooms
+        \item Accent colours stand out
+        \item Works with \texttt{pdflatex}
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \textbf{Things to watch}
+      \begin{itemize}
+        \item Printed handouts use a lot of ink
+        \item Check contrast on projectors
+        \item Use light-coloured plot axes
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% 8. Closing ----------------------------------------------------------
+\begin{frame}[plain]
+  \centering
+  \vfill
+  {\usebeamercolor[fg]{title}\usebeamerfont{title}Thank you!}\\[1em]
+  {\usebeamercolor[fg]{subtitle}Questions?}\\[2em]
+  {\usebeamercolor[fg]{structure}\texttt{jane.doe@example.edu}}
+  \vfill
+\end{frame}
+
+\end{document}`,
+  },
 
 ];
 

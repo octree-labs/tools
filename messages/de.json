@@ -728,6 +728,18 @@
     "jakes-resume": {
       "title": "Jakes Lebenslauf",
       "description": "Saubere, ATS-freundliche einspaltige Lebenslauf-Vorlage"
+    },
+    "harvard-resume": {
+      "title": "Harvard-Lebenslauf",
+      "description": "Einseitiger Lebenslauf im Harvard-Format mit Stichpunkten und Abschnitten für Ausbildung, Erfahrung, Engagement und Kenntnisse"
+    },
+    "emnlp-2026": {
+      "title": "EMNLP 2026",
+      "description": "Papergerüst für die NLP-Konferenz EMNLP 2026 im zweispaltigen ACL-Stil mit verpflichtendem Limitations-Abschnitt"
+    },
+    "beamer-dark": {
+      "title": "Beamer Dark Theme",
+      "description": "Beamer-Präsentation im Dunkelmodus mit kontrastreichen Folien, Cyan-Akzenten und Foliennummern"
     }
   },
   "symbols": {

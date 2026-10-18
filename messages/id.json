@@ -728,6 +728,18 @@
     "jakes-resume": {
       "title": "Resume Jake",
       "description": "Templat resume kolom tunggal yang bersih dan ramah ATS"
+    },
+    "harvard-resume": {
+      "title": "Resume Harvard",
+      "description": "Resume satu halaman gaya Harvard dengan poin-poin dan bagian Pendidikan, Pengalaman, Kepemimpinan, dan Keterampilan"
+    },
+    "emnlp-2026": {
+      "title": "EMNLP 2026",
+      "description": "Kerangka makalah konferensi NLP EMNLP 2026 bergaya ACL dua kolom dengan bagian Keterbatasan wajib"
+    },
+    "beamer-dark": {
+      "title": "Tema Gelap Beamer",
+      "description": "Presentasi Beamer mode gelap dengan slide kontras tinggi, aksen sian, dan nomor slide"
     }
   },
   "symbols": {

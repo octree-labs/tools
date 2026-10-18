@@ -502,7 +502,10 @@
       "acl-2026": { "title": "ACL 2026", "description": "Modelo de artigo para conferência ACL 2026 de processamento de linguagem natural" },
       "interspeech-2026": { "title": "Interspeech 2026", "description": "Modelo de artigo para conferência Interspeech 2026 de processamento de fala" },
       "interactive-flashcard": { "title": "Cartão Interativo / Quiz Oculto", "description": "Guia de estudo com respostas ocultas - perfeito para autoavaliação" },
-      "jakes-resume": { "title": "Currículo do Jake", "description": "Modelo de currículo limpo e compatível com ATS" }
+      "jakes-resume": { "title": "Currículo do Jake", "description": "Modelo de currículo limpo e compatível com ATS" },
+      "harvard-resume": { "title": "Currículo Harvard", "description": "Currículo de uma página no estilo Harvard com marcadores e seções de Educação, Experiência, Liderança e Habilidades" },
+      "emnlp-2026": { "title": "EMNLP 2026", "description": "Esqueleto de artigo para a conferência de PLN EMNLP 2026 no estilo ACL de duas colunas com seção obrigatória de Limitações" },
+      "beamer-dark": { "title": "Tema Escuro Beamer", "description": "Apresentação Beamer em modo escuro com slides de alto contraste, destaques em ciano e números de slide" }
     },
     "symbols": {
     "title": "Símbolos LaTeX",

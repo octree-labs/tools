@@ -728,6 +728,18 @@
     "jakes-resume": {
       "title": "CV di Jake",
       "description": "Modello di curriculum pulito e compatibile con ATS"
+    },
+    "harvard-resume": {
+      "title": "Curriculum Harvard",
+      "description": "Curriculum di una pagina in stile Harvard a punti elenco con sezioni Formazione, Esperienza, Leadership e Competenze"
+    },
+    "emnlp-2026": {
+      "title": "EMNLP 2026",
+      "description": "Scheletro di articolo per la conferenza NLP EMNLP 2026 in stile ACL a due colonne con sezione Limitazioni obbligatoria"
+    },
+    "beamer-dark": {
+      "title": "Tema Scuro Beamer",
+      "description": "Presentazione Beamer in modalità scura con diapositive ad alto contrasto, accenti ciano e numeri di diapositiva"
     }
   },
   "symbols": {

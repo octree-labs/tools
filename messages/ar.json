@@ -502,7 +502,10 @@
       "acl-2026": { "title": "ACL 2026", "description": "قالب ورقة مؤتمر ACL 2026 لمعالجة اللغة الطبيعية" },
       "interspeech-2026": { "title": "Interspeech 2026", "description": "قالب ورقة مؤتمر Interspeech 2026 لمعالجة الكلام" },
       "interactive-flashcard": { "title": "بطاقة تعليمية تفاعلية", "description": "دليل دراسة مع إجابات مخفية - مثالي للاختبار الذاتي" },
-      "jakes-resume": { "title": "سيرة جيك الذاتية", "description": "قالب سيرة ذاتية نظيف ومتوافق مع ATS" }
+      "jakes-resume": { "title": "سيرة جيك الذاتية", "description": "قالب سيرة ذاتية نظيف ومتوافق مع ATS" },
+      "harvard-resume": { "title": "سيرة ذاتية هارفارد", "description": "سيرة ذاتية من صفحة واحدة بأسلوب هارفارد بنقاط مع أقسام التعليم والخبرة والقيادة والمهارات" },
+      "emnlp-2026": { "title": "EMNLP 2026", "description": "هيكل ورقة لمؤتمر معالجة اللغات الطبيعية EMNLP 2026 بأسلوب ACL ذي العمودين مع قسم القيود الإلزامي" },
+      "beamer-dark": { "title": "سمة Beamer الداكنة", "description": "عرض Beamer بالوضع الداكن مع شرائح عالية التباين ولمسات سماوية وأرقام الشرائح" }
     },
     "symbols": {
     "title": "رموز LaTeX",

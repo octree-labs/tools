@@ -728,6 +728,18 @@
     "jakes-resume": {
       "title": "ジェイクの履歴書",
       "description": "クリーンでATS対応のシングルカラム履歴書テンプレート"
+    },
+    "harvard-resume": {
+      "title": "ハーバード式履歴書",
+      "description": "学歴・職歴・リーダーシップ・スキルの各セクションを備えたハーバード形式の1ページ箇条書き履歴書"
+    },
+    "emnlp-2026": {
+      "title": "EMNLP 2026",
+      "description": "ACL 形式の2段組レイアウトと必須の Limitations セクションを備えた EMNLP 2026 自然言語処理会議論文の骨組み"
+    },
+    "beamer-dark": {
+      "title": "Beamer ダークテーマ",
+      "description": "高コントラストのスライド、シアンのアクセント、ページ番号を備えたダークモードの Beamer プレゼンテーション"
     }
   },
   "symbols": {
