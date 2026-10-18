@@ -19,6 +19,7 @@ import { OctreeCTA } from '@/components/OctreeCTA';
 import { useTranslations, useLocale } from 'next-intl';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 import type { Locale } from '@/lib/i18n/config';
+import { trackConverterUsed } from '@/lib/analytics';
 
 const Editor = dynamic(() => import('@monaco-editor/react'), { ssr: false });
 const PDFPreview = dynamic(() => import('@/components/PDFPreview'), { ssr: false });
@@ -100,7 +101,9 @@ export default function LatexPreview() {
       const data = await response.json();
       setPreviewUrl(data.previewUrl || data.pdfUrl || '');
       setLastCompiledLatex(latex);
+      trackConverterUsed('latex-preview', true);
     } catch (err) {
+      trackConverterUsed('latex-preview', false);
       console.error('Compilation error:', err);
       setPreviewUrl('');
       setLastCompiledLatex('');

@@ -15,6 +15,7 @@ export default async function MathToLatex() {
       <AIToolLayout
         title={t('title')}
         description={t('subtitle')}
+        analyticsTool="math-to-latex"
         apiEndpoint="/api/convert"
         inputLabel={t('inputLabel')}
         outputLabel={t('outputLabel')}

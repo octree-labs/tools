@@ -17,6 +17,7 @@ import { openInOctree } from '@/lib/open-in-octree';
 import { CompileErrorModal } from '@/components/CompileErrorModal';
 import { OctreeCTA } from '@/components/OctreeCTA';
 import { useTranslations } from 'next-intl';
+import { trackConverterUsed } from '@/lib/analytics';
 
 const Editor = dynamic(() => import('@monaco-editor/react'), { ssr: false });
 const PDFPreview = dynamic(() => import('@/components/PDFPreview'), { ssr: false });
@@ -30,6 +31,8 @@ interface AIToolLayoutProps {
   title: string;
   description: string;
   apiEndpoint: string;
+  /** Tool identifier for the converter_used analytics event. */
+  analyticsTool?: string;
   inputLabel?: string;
   outputLabel?: string;
   acceptedFormats?: string;
@@ -39,6 +42,7 @@ export default function AIToolLayout({
   title,
   description,
   apiEndpoint,
+  analyticsTool = apiEndpoint.replace(/^\/api\//, ''),
   inputLabel = 'Your Handwritten Notes',
   outputLabel = 'Clean LaTeX Code',
   acceptedFormats = 'JPEG, PNG, PDF',
@@ -116,7 +120,9 @@ export default function AIToolLayout({
         accumulatedText += chunk;
         setLatexCode(accumulatedText);
       }
+      trackConverterUsed(analyticsTool, true);
     } catch (err) {
+      trackConverterUsed(analyticsTool, false);
       setError(t('failedToProcess'));
       console.error(err);
     } finally {

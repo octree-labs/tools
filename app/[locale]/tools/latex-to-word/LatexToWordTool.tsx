@@ -15,6 +15,7 @@ import {
 import { Button } from '@/components/ui/button';
 import { OctreeCTA } from '@/components/OctreeCTA';
 import { useTranslations } from 'next-intl';
+import { trackConverterUsed } from '@/lib/analytics';
 
 const Editor = dynamic(() => import('@monaco-editor/react'), { ssr: false });
 
@@ -122,6 +123,7 @@ export default function LatexToWordTool() {
       const url = URL.createObjectURL(blob);
       setResultUrl(url);
       setDocxSize(blob.size);
+      trackConverterUsed('latex-to-word', true);
 
       // Trigger the download right away; the button stays for re-downloads.
       const a = document.createElement('a');
@@ -129,6 +131,7 @@ export default function LatexToWordTool() {
       a.download = 'document.docx';
       a.click();
     } catch (err) {
+      trackConverterUsed('latex-to-word', false);
       console.error('LaTeX to Word error:', err);
       setError(err instanceof Error ? err.message : t('failedToConvert'));
     } finally {

@@ -11,6 +11,7 @@ import { Button } from '@/components/ui/button';
 import { useTranslations, useLocale } from 'next-intl';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 import type { Locale } from '@/lib/i18n/config';
+import { trackConverterUsed } from '@/lib/analytics';
 
 const Editor = dynamic(() => import('@monaco-editor/react'), { ssr: false });
 
@@ -87,7 +88,9 @@ export default function LatexToMarkdown() {
         accumulatedText += chunk;
         setMarkdownText(accumulatedText);
       }
+      trackConverterUsed('latex-to-markdown', true);
     } catch (err) {
+      trackConverterUsed('latex-to-markdown', false);
       setError(t('failedToConvert'));
       console.error(err);
     } finally {

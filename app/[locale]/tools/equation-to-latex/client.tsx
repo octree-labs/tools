@@ -34,6 +34,7 @@ import { useCopyToClipboard } from '@/hooks/use-copy-to-clipboard';
 import { useTranslations, useLocale } from 'next-intl';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 import type { Locale } from '@/lib/i18n/config';
+import { trackConverterUsed } from '@/lib/analytics';
 
 const Editor = dynamic(() => import('@monaco-editor/react'), { ssr: false });
 const KatexPreview = dynamic(() => import('@/components/KatexPreview'), { ssr: false });
@@ -137,7 +138,9 @@ export default function EquationToLatexClient() {
         accumulatedText += chunk;
         setLatexCode(LATEX_TEMPLATE(accumulatedText));
       }
+      trackConverterUsed('equation-to-latex', true);
     } catch (err) {
+      trackConverterUsed('equation-to-latex', false);
       setError(t('failedToConvert'));
       console.error(err);
     } finally {

@@ -20,6 +20,7 @@ import { Button } from '@/components/ui/button';
 import { useTranslations, useLocale } from 'next-intl';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 import type { Locale } from '@/lib/i18n/config';
+import { trackConverterUsed } from '@/lib/analytics';
 
 const Editor = dynamic(() => import('@monaco-editor/react'), { ssr: false });
 const PDFPreview = dynamic(() => import('@/components/PDFPreview'), { ssr: false });
@@ -94,7 +95,9 @@ export default function MermaidToLatex() {
         accumulatedText += chunk;
         setLatexCode(accumulatedText);
       }
+      trackConverterUsed('mermaid-to-latex', true);
     } catch (err) {
+      trackConverterUsed('mermaid-to-latex', false);
       setError(t('failedToConvert'));
       console.error(err);
     } finally {
