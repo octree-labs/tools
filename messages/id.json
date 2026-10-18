@@ -60,6 +60,8 @@
   },
   "templates": {
     "title": "Alat & Templat LaTeX Gratis",
+    "conferenceDeadlinesPrompt": "Mengirim ke konferensi?",
+    "conferenceDeadlinesLink": "Lihat halaman tenggat konferensi AI dan ilmu komputer.",
     "description": "Templat LaTeX profesional untuk makalah akademik, presentasi, resume, dan lainnya.",
     "allTemplates": "Semua Templat",
     "noTemplatesFound": "Tidak ada templat yang cocok dengan pencarian Anda.",
@@ -740,6 +742,26 @@
     "beamer-dark": {
       "title": "Tema Gelap Beamer",
       "description": "Presentasi Beamer mode gelap dengan slide kontras tinggi, aksen sian, dan nomor slide"
+    },
+    "conference-poster": {
+      "title": "Poster Konferensi",
+      "description": "Poster akademik A0 lanskap dengan beamerposter: tiga kolom, bilah judul, gambar TikZ, dan blok referensi"
+    },
+    "ieee-conference": {
+      "title": "Makalah Konferensi IEEE",
+      "description": "Format konferensi IEEEtran resmi dengan blok penulis, abstrak, istilah indeks, persamaan, tabel, gambar, dan referensi"
+    },
+    "jfm-paper": {
+      "title": "Makalah JFM",
+      "description": "Artikel bergaya Journal of Fluid Mechanics dengan tajuk berjalan, sitasi penulis-tahun, abstrak, kata kunci, dan bagian akhir"
+    },
+    "aaai-2027": {
+      "title": "AAAI 2027",
+      "description": "Makalah dua kolom bergaya kit penulis AAAI 2027 dengan blok judul, judul abstrak tebal, dan referensi penulis-tahun"
+    },
+    "neurips-2027": {
+      "title": "NeurIPS 2027",
+      "description": "Pracetak satu kolom bergaya NeurIPS 2027 dengan blok penulis, abstrak, bagian, dan daftar periksa makalah"
     }
   },
   "symbols": {

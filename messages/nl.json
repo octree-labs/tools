@@ -60,6 +60,8 @@
   },
   "templates": {
     "title": "Gratis LaTeX Tools & Sjablonen",
+    "conferenceDeadlinesPrompt": "Dien je in bij een conferentie?",
+    "conferenceDeadlinesLink": "Bekijk de pagina met deadlines van AI- en informaticaconferenties.",
     "description": "Professionele LaTeX-sjablonen voor academische artikelen, presentaties, cv's en meer.",
     "allTemplates": "Alle Sjablonen",
     "noTemplatesFound": "Geen sjablonen gevonden die overeenkomen met je zoekopdracht.",
@@ -464,7 +466,12 @@
     "jakes-resume": { "title": "Jake's CV", "description": "Schoon, ATS-vriendelijk enkelkoloms CV-sjabloon" },
     "harvard-resume": { "title": "Harvard-cv", "description": "Eenpagina-cv in Harvard-stijl met opsommingstekens en secties Opleiding, Ervaring, Leiderschap en Vaardigheden" },
     "emnlp-2026": { "title": "EMNLP 2026", "description": "Papersjabloon voor de NLP-conferentie EMNLP 2026 in tweekoloms ACL-stijl met verplichte Limitations-sectie" },
-    "beamer-dark": { "title": "Beamer Donker Thema", "description": "Beamer-presentatie in donkere modus met contrastrijke dia's, cyaan accenten en dianummers" }
+    "beamer-dark": { "title": "Beamer Donker Thema", "description": "Beamer-presentatie in donkere modus met contrastrijke dia's, cyaan accenten en dianummers" },
+    "conference-poster": { "title": "Conferentieposter", "description": "Academische A0-liggende poster met beamerposter: drie kolommen, titelbalk, TikZ-figuur en referentieblok" },
+    "ieee-conference": { "title": "IEEE-conferentiepaper", "description": "Officieel IEEEtran-conferentieformaat met auteursblokken, abstract, index terms, vergelijking, tabel, figuur en referenties" },
+    "jfm-paper": { "title": "JFM-artikel", "description": "Artikel in de stijl van het Journal of Fluid Mechanics met kopregels, auteur-jaarcitaties, abstract, trefwoorden en slotgedeelte" },
+    "aaai-2027": { "title": "AAAI 2027", "description": "Tweekoloms paper in de stijl van de AAAI 2027-auteurskit met titelblok, vette abstractkop en auteur-jaarreferenties" },
+    "neurips-2027": { "title": "NeurIPS 2027", "description": "Eenkoloms preprint in NeurIPS 2027-stijl met auteursblok, abstract, secties en paperchecklist" }
   },
   "symbols": {
     "title": "LaTeX Symbolen",

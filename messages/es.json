@@ -60,6 +60,8 @@
     },
     "templates": {
       "title": "Herramientas y Plantillas LaTeX Gratuitas",
+      "conferenceDeadlinesPrompt": "¿Vas a enviar a una conferencia?",
+      "conferenceDeadlinesLink": "Consulta la página de plazos de conferencias de IA e informática.",
       "description": "Plantillas LaTeX profesionales para artículos académicos, presentaciones, currículums y más.",
       "allTemplates": "Todas las Plantillas",
       "noTemplatesFound": "No se encontraron plantillas que coincidan con tu búsqueda.",
@@ -666,6 +668,26 @@
       "beamer-dark": {
         "title": "Tema Oscuro Beamer",
         "description": "Presentación Beamer en modo oscuro con diapositivas de alto contraste, acentos cian y números de diapositiva"
+      },
+      "conference-poster": {
+        "title": "Póster de congreso",
+        "description": "Póster académico A0 apaisado con beamerposter: tres columnas, barra de título, figura TikZ y bloque de referencias"
+      },
+      "ieee-conference": {
+        "title": "Artículo de congreso IEEE",
+        "description": "Formato oficial de congreso IEEEtran con bloques de autores, resumen, términos de índice, ecuación, tabla, figura y referencias"
+      },
+      "jfm-paper": {
+        "title": "Artículo JFM",
+        "description": "Artículo al estilo del Journal of Fluid Mechanics con encabezados, citas autor-año, resumen, palabras clave y material final"
+      },
+      "aaai-2027": {
+        "title": "AAAI 2027",
+        "description": "Artículo a dos columnas al estilo del kit de autor AAAI 2027 con bloque de título, encabezado de resumen en negrita y referencias autor-año"
+      },
+      "neurips-2027": {
+        "title": "NeurIPS 2027",
+        "description": "Preprint a una columna al estilo NeurIPS 2027 con bloque de autores, resumen, secciones y lista de verificación del artículo"
       }
     },
     "toolsList": {

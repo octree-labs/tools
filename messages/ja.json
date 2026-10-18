@@ -60,6 +60,8 @@
   },
   "templates": {
     "title": "無料LaTeXツール＆テンプレート",
+    "conferenceDeadlinesPrompt": "学会に投稿予定ですか？",
+    "conferenceDeadlinesLink": "AI・CS 学会の投稿締切ページを見る",
     "description": "学術論文、プレゼンテーション、履歴書などのプロフェッショナルなLaTeXテンプレート。",
     "allTemplates": "すべてのテンプレート",
     "noTemplatesFound": "検索に一致するテンプレートが見つかりません。",
@@ -740,6 +742,26 @@
     "beamer-dark": {
       "title": "Beamer ダークテーマ",
       "description": "高コントラストのスライド、シアンのアクセント、ページ番号を備えたダークモードの Beamer プレゼンテーション"
+    },
+    "conference-poster": {
+      "title": "学会ポスター",
+      "description": "beamerposter による A0 横向きの学術ポスター：3 段組、タイトルバー、TikZ 図、参考文献ブロック"
+    },
+    "ieee-conference": {
+      "title": "IEEE 会議論文",
+      "description": "著者ブロック、要旨、インデックス用語、数式、表、図、参考文献を備えた公式 IEEEtran 会議形式"
+    },
+    "jfm-paper": {
+      "title": "JFM 論文",
+      "description": "柱、著者・年引用、要旨、キーワード、巻末事項を備えた Journal of Fluid Mechanics 形式の論文"
+    },
+    "aaai-2027": {
+      "title": "AAAI 2027",
+      "description": "タイトルブロック、太字の要旨見出し、著者・年参考文献を備えた AAAI 2027 著者キット形式の 2 段組論文"
+    },
+    "neurips-2027": {
+      "title": "NeurIPS 2027",
+      "description": "著者ブロック、要旨、セクション、論文チェックリストを備えた NeurIPS 2027 形式の 1 段組プレプリント"
     }
   },
   "symbols": {

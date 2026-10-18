@@ -60,6 +60,8 @@
   },
   "templates": {
     "title": "Alat & Templat LaTeX Percuma",
+    "conferenceDeadlinesPrompt": "Menghantar ke persidangan?",
+    "conferenceDeadlinesLink": "Lihat halaman tarikh akhir persidangan AI dan sains komputer.",
     "description": "Templat LaTeX profesional untuk kertas akademik, persembahan, resume, dan banyak lagi.",
     "allTemplates": "Semua Templat",
     "noTemplatesFound": "Tiada templat yang sepadan dengan carian anda.",
@@ -740,6 +742,26 @@
     "beamer-dark": {
       "title": "Tema Gelap Beamer",
       "description": "Persembahan Beamer mod gelap dengan slaid kontras tinggi, aksen sian dan nombor slaid"
+    },
+    "conference-poster": {
+      "title": "Poster Persidangan",
+      "description": "Poster akademik A0 landskap dengan beamerposter: tiga lajur, bar tajuk, rajah TikZ dan blok rujukan"
+    },
+    "ieee-conference": {
+      "title": "Kertas Persidangan IEEE",
+      "description": "Format persidangan IEEEtran rasmi dengan blok pengarang, abstrak, istilah indeks, persamaan, jadual, rajah dan rujukan"
+    },
+    "jfm-paper": {
+      "title": "Kertas JFM",
+      "description": "Artikel bergaya Journal of Fluid Mechanics dengan tajuk larian, petikan pengarang-tahun, abstrak, kata kunci dan bahagian akhir"
+    },
+    "aaai-2027": {
+      "title": "AAAI 2027",
+      "description": "Kertas dua lajur bergaya kit pengarang AAAI 2027 dengan blok tajuk, tajuk abstrak tebal dan rujukan pengarang-tahun"
+    },
+    "neurips-2027": {
+      "title": "NeurIPS 2027",
+      "description": "Pracetak satu lajur bergaya NeurIPS 2027 dengan blok pengarang, abstrak, bahagian dan senarai semak kertas"
     }
   },
   "symbols": {

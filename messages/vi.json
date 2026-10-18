@@ -60,6 +60,8 @@
   },
   "templates": {
     "title": "Công cụ & Mẫu LaTeX Miễn phí",
+    "conferenceDeadlinesPrompt": "Bạn sắp nộp bài cho hội nghị?",
+    "conferenceDeadlinesLink": "Xem trang hạn nộp bài của các hội nghị AI và CS.",
     "description": "Mẫu LaTeX chuyên nghiệp cho bài báo học thuật, thuyết trình, sơ yếu lý lịch và nhiều hơn nữa.",
     "allTemplates": "Tất cả mẫu",
     "noTemplatesFound": "Không tìm thấy mẫu phù hợp với tìm kiếm của bạn.",
@@ -464,7 +466,12 @@
     "jakes-resume": { "title": "Sơ yếu lý lịch Jake", "description": "Mẫu sơ yếu lý lịch một cột sạch, thân thiện ATS" },
     "harvard-resume": { "title": "Sơ yếu lý lịch Harvard", "description": "Sơ yếu lý lịch một trang theo định dạng Harvard với gạch đầu dòng và các mục Học vấn, Kinh nghiệm, Lãnh đạo và Kỹ năng" },
     "emnlp-2026": { "title": "EMNLP 2026", "description": "Khung bài báo hội nghị xử lý ngôn ngữ tự nhiên EMNLP 2026 theo kiểu ACL hai cột với mục Hạn chế bắt buộc" },
-    "beamer-dark": { "title": "Chủ đề tối Beamer", "description": "Bài thuyết trình Beamer chế độ tối với slide tương phản cao, điểm nhấn màu lục lam và số trang" }
+    "beamer-dark": { "title": "Chủ đề tối Beamer", "description": "Bài thuyết trình Beamer chế độ tối với slide tương phản cao, điểm nhấn màu lục lam và số trang" },
+    "conference-poster": { "title": "Poster hội nghị", "description": "Poster học thuật A0 ngang với beamerposter: ba cột, thanh tiêu đề, hình TikZ và khối tài liệu tham khảo" },
+    "ieee-conference": { "title": "Bài báo hội nghị IEEE", "description": "Định dạng hội nghị IEEEtran chính thức với khối tác giả, tóm tắt, từ khóa chỉ mục, phương trình, bảng, hình và tài liệu tham khảo" },
+    "jfm-paper": { "title": "Bài báo JFM", "description": "Bài báo theo phong cách Journal of Fluid Mechanics với tiêu đề chạy, trích dẫn tác giả-năm, tóm tắt, từ khóa và phần cuối" },
+    "aaai-2027": { "title": "AAAI 2027", "description": "Bài báo hai cột theo phong cách bộ công cụ tác giả AAAI 2027 với khối tiêu đề, tiêu đề tóm tắt in đậm và tài liệu tham khảo tác giả-năm" },
+    "neurips-2027": { "title": "NeurIPS 2027", "description": "Bản thảo một cột theo phong cách NeurIPS 2027 với khối tác giả, tóm tắt, các mục và danh sách kiểm tra bài báo" }
   },
   "symbols": {
     "title": "Ký hiệu LaTeX",
