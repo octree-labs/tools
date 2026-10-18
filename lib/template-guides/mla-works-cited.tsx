@@ -41,7 +41,7 @@ const faq: GuideFaqItem[] = [
   {
     question: "What font and spacing does MLA require?",
     answer:
-      "MLA 9 asks for a legible font in which regular and italic styles are clearly different, typically 12-point Times New Roman, double spacing throughout with no extra space between entries, and one-inch margins on all sides. The template sets these with the newtxtext font package, setspace and geometry.",
+      "MLA 9 asks for a legible font in which regular and italic styles are clearly different, typically 12-point Times New Roman, double spacing throughout with no extra space between entries, one-inch margins on all sides, and left-aligned text with automatic hyphenation turned off. The template sets these with the newtxtext font package, setspace, geometry, \\raggedright and \\hyphenpenalty.",
   },
 ];
 
@@ -96,8 +96,14 @@ export default function MlaWorksCitedGuide() {
             <GuideCode key="geometry">\usepackage[margin=1in]{"{geometry}"}</GuideCode>,
           ],
           [
-            "Heading \"Works Cited\" centred, same size and weight as the text",
-            <GuideCode key="heading">\begin{"{center}"} Works Cited \end{"{center}"}</GuideCode>,
+            "Heading \"Works Cited\" centred, same size and weight as the text, with no extra space around it",
+            <GuideCode key="heading">{"{\\centering Works Cited\\par}"}</GuideCode>,
+          ],
+          [
+            "Text left-aligned (not justified), automatic hyphenation turned off",
+            <>
+              <GuideCode>\raggedright</GuideCode> and <GuideCode>\hyphenpenalty=10000</GuideCode>
+            </>,
           ],
           [
             "Double spacing throughout, no extra space between entries",
@@ -123,7 +129,8 @@ export default function MlaWorksCitedGuide() {
           [
             "URLs without http:// or https://; DOIs as https://doi.org/...",
             <>
-              <GuideCode>\url{"{...}"}</GuideCode> in the text font, breaking at any character
+              <GuideCode>\url{"{...}"}</GuideCode> in the text font, breaking only after
+              punctuation such as / and .
             </>,
           ],
         ]}
@@ -166,8 +173,8 @@ export default function MlaWorksCitedGuide() {
           letters abbreviated (Jan., Feb., Mar., Apr., Aug., Sept., Oct., Nov., Dec.).
         </li>
         <li>
-          <strong>Location.</strong> Page range (pp. 55--61), DOI or URL. End the entry with
-          a period.
+          <strong>Location.</strong> Page range (pp. 55&ndash;61), DOI or URL. End the entry
+          with a period.
         </li>
       </GuideOl>
       <GuideP>
@@ -184,12 +191,13 @@ export default function MlaWorksCitedGuide() {
 \\usepackage{newtxtext}      % Times-like 12 pt text font
 \\usepackage{setspace}       % double spacing
 \\usepackage{fancyhdr}       % running header
-\\usepackage[hidelinks]{hyperref}
-\\usepackage{xurl}           % let long URLs break at any character
+\\usepackage[hidelinks]{hyperref}   % also loads url
 \\urlstyle{same}
 
 \\newcommand{\\lastname}{Smith}
 \\doublespacing
+\\raggedright               % MLA: do not justify the right margin
+\\hyphenpenalty=10000       % MLA: turn automatic hyphenation off
 \\frenchspacing
 \\pagestyle{fancy}
 \\fancyhf{}
@@ -199,11 +207,16 @@ export default function MlaWorksCitedGuide() {
         Change <GuideCode>\lastname</GuideCode> to your own surname; it is the only field
         in the header. <GuideCode>headheight</GuideCode> plus{" "}
         <GuideCode>headsep</GuideCode> add up to half an inch, which puts the header
-        where MLA wants it. <GuideCode>\frenchspacing</GuideCode> gives a single space after
+        where MLA wants it. <GuideCode>\raggedright</GuideCode> and{" "}
+        <GuideCode>\hyphenpenalty=10000</GuideCode> give the left-aligned, unhyphenated text
+        the handbook asks for (it says not to justify the right margin and to turn automatic
+        hyphenation off). <GuideCode>\frenchspacing</GuideCode> gives a single space after
         periods, matching the look of a paper typed in a word processor, and{" "}
         <GuideCode>\urlstyle{"{same}"}</GuideCode> keeps URLs in the body font rather than
-        typewriter. <GuideCode>hidelinks</GuideCode> stops hyperref from drawing coloured
-        boxes around links in the PDF.
+        typewriter; the <GuideCode>url</GuideCode> package that hyperref loads lets a long
+        URL break after a slash, period or underscore, never in the middle of a word.{" "}
+        <GuideCode>hidelinks</GuideCode> stops hyperref from drawing coloured boxes around
+        links in the PDF.
       </GuideP>
 
       <GuideH3>The \entry command</GuideH3>
@@ -247,12 +260,12 @@ export default function MlaWorksCitedGuide() {
       </GuideP>
 
       <GuideH3>Web page</GuideH3>
-      <GuidePre>{`\\entry{Purdue Online Writing Lab. “MLA Formatting and Style Guide.” \\textit{Purdue OWL}, Purdue University, \\url{owl.purdue.edu/owl/research_and_citation/mla_style/...}. Accessed 18 Oct. 2026.}`}</GuidePre>
+      <GuidePre>{`\\entry{Purdue Online Writing Lab. “MLA Formatting and Style Guide.” \\textit{Purdue OWL}, Purdue U, \\url{owl.purdue.edu/owl/research_and_citation/mla_style/...}. Accessed 18 Oct. 2026.}`}</GuidePre>
       <GuideP>
         Pattern: Author or organisation. &quot;Page Title.&quot; <em>Site Name</em>,
-        Publisher (omit if the same as the site name), Date, URL. Accessed Date. MLA 9
-        strips the protocol from URLs, so write <GuideCode>www.example.com/...</GuideCode>{" "}
-        rather than <GuideCode>https://www.example.com/...</GuideCode>.
+        Publisher (omit if the same as the site name; abbreviate University to U), Date,
+        URL. Accessed Date. MLA 9 strips the protocol from URLs, so write{" "}
+        <GuideCode>www.example.com/...</GuideCode> rather than <GuideCode>https://www.example.com/...</GuideCode>.
       </GuideP>
 
       <GuideH3>Chapter in an edited book</GuideH3>
@@ -310,13 +323,16 @@ export default function MlaWorksCitedGuide() {
         <li>
           <strong>Entries not alphabetised.</strong> LaTeX prints <GuideCode>\entry</GuideCode>{" "}
           lines in the order you write them. Sort by the first word of the entry, ignoring
-          A, An and The. Works by the same author go in title order, with three hyphens
-          (<GuideCode>---.</GuideCode>) replacing the name after the first entry.
+          A, An and The. Works by the same author go in title order, with three em dashes
+          replacing the name after the first entry; in LaTeX type{" "}
+          <GuideCode>---{"{}"}---{"{}"}---.</GuideCode>, since a bare{" "}
+          <GuideCode>---</GuideCode> prints only one em dash.
         </li>
         <li>
           <strong>Straight quotation marks.</strong> Typing <GuideCode>&quot;Title&quot;</GuideCode>{" "}
-          prints two closing marks in pdfLaTeX. Use the curly characters “ and ” as the
-          template does, or TeX&apos;s <GuideCode>``Title&apos;&apos;</GuideCode>.
+          prints straight marks, not the curly opening and closing pair MLA expects. Use the
+          curly characters “ and ” as the template does, or TeX&apos;s{" "}
+          <GuideCode>``Title&apos;&apos;</GuideCode>.
         </li>
         <li>
           <strong>Extra space between entries.</strong> A blank line before an{" "}
@@ -327,13 +343,16 @@ export default function MlaWorksCitedGuide() {
           <strong>Bold or underlined heading.</strong> MLA wants &quot;Works Cited&quot; in
           plain text, the same size as the body. Do not wrap it in{" "}
           <GuideCode>\textbf</GuideCode> or <GuideCode>\section*</GuideCode>, which would
-          enlarge it.
+          enlarge it, and avoid the <GuideCode>center</GuideCode> environment, which adds
+          vertical space above and below the heading; the template uses{" "}
+          <GuideCode>\centering</GuideCode> inside a group instead.
         </li>
         <li>
-          <strong>Overfull hbox warnings on URLs.</strong> A long URL that cannot break runs
-          into the margin. The template loads <GuideCode>xurl</GuideCode> so{" "}
-          <GuideCode>\url</GuideCode> can break anywhere; keep it if you add more web
-          sources.
+          <strong>Overfull hbox warnings on URLs.</strong> <GuideCode>\url</GuideCode>{" "}
+          breaks a URL only after punctuation, so a very long run of letters with no slash
+          or period can poke into the margin. If that happens, add{" "}
+          <GuideCode>\usepackage{"{xurl}"}</GuideCode> after hyperref to allow a break at any
+          character for that one entry&apos;s sake.
         </li>
         <li>
           <strong>Page number restarts at 1.</strong> When the works cited page is compiled

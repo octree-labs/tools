@@ -9065,6 +9065,8 @@ platform or infrastructure team.
 %   - the heading "Works Cited" centered, not bold, not underlined
 %   - every entry flush left with a 0.5-inch hanging indent
 %   - entries alphabetised by the first element (author, or title if no author)
+%   - text left-aligned (not justified) with automatic hyphenation off, as the
+%     MLA asks; URLs break only after punctuation such as / and .
 %
 % Write each entry with \entry{...}. Put titles of self-contained works
 % (books, films, websites, journals) in \textit{...} and titles of works
@@ -9090,8 +9092,7 @@ platform or infrastructure team.
 \usepackage{newtxtext}      % Times-like 12 pt text font (MLA asks for a legible serif such as Times New Roman)
 \usepackage{setspace}       % double spacing
 \usepackage{fancyhdr}       % running header: Last name + page number
-\usepackage[hidelinks]{hyperref}
-\usepackage{xurl}           % let long URLs break at any character
+\usepackage[hidelinks]{hyperref}   % also loads url, which lets URLs break after / . _ etc.
 \urlstyle{same}             % URLs and DOIs in the body font, not typewriter
 
 % --- Your last name, printed in the running header ---
@@ -9099,6 +9100,8 @@ platform or infrastructure team.
 
 % --- Page layout ---
 \doublespacing
+\raggedright               % MLA: do not justify the right margin
+\hyphenpenalty=10000       % MLA: turn automatic hyphenation off
 \frenchspacing             % single space after periods, as in a word processor
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt}
@@ -9114,9 +9117,7 @@ platform or infrastructure team.
 
 \begin{document}
 
-\begin{center}
-Works Cited
-\end{center}
+{\centering Works Cited\par}   % plain text, same size as the body; \centering adds no extra space
 
 % Entries go in alphabetical order by the first word (ignore A, An, The).
 
@@ -9142,7 +9143,7 @@ Works Cited
 \entry{\textit{Parasite}. Directed by Bong Joon-ho, CJ Entertainment, 2019.}
 
 % Page on a website with an organisation as author and an access date
-\entry{Purdue Online Writing Lab. “MLA Formatting and Style Guide.” \textit{Purdue OWL}, Purdue University, \url{owl.purdue.edu/owl/research_and_citation/mla_style/mla_formatting_and_style_guide/mla_formatting_and_style_guide.html}. Accessed 18 Oct. 2026.}
+\entry{Purdue Online Writing Lab. “MLA Formatting and Style Guide.” \textit{Purdue OWL}, Purdue U, \url{owl.purdue.edu/owl/research_and_citation/mla_style/mla_formatting_and_style_guide/mla_formatting_and_style_guide.html}. Accessed 18 Oct. 2026.}
 
 \end{document}`,
   },
