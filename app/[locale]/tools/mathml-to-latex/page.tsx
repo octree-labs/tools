@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react';
 import { Code2, Eye, Loader2, Download, ChevronDown, ArrowLeft } from 'lucide-react';
 import { DM_Sans } from 'next/font/google';
 import { cn } from '@/lib/utils';
-import { OctreeLogo } from '@/components/icons/octree-logo';
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { loader } from '@monaco-editor/react';
@@ -13,7 +12,8 @@ import {
   latexTokenProvider,
   registerLatexCompletions,
 } from '@/lib/editor-config';
-import { openInOctree } from '@/lib/open-in-octree';
+import { readCompileError, compileLogOf } from '@/lib/compile-error';
+import { ResultBar } from '@/components/ResultBar';
 import { CompileErrorModal } from '@/components/CompileErrorModal';
 import { OctreeCTA } from '@/components/OctreeCTA';
 import { Button } from '@/components/ui/button';
@@ -75,6 +75,7 @@ export default function MathMLToLatex() {
   const [lastCompiledLatex, setLastCompiledLatex] = useState<string>('');
   const [showExportMenu, setShowExportMenu] = useState(false);
   const [compileError, setCompileError] = useState<string>('');
+  const [compileLog, setCompileLog] = useState<string>('');
   const [showCompileErrorModal, setShowCompileErrorModal] = useState(false);
 
   useEffect(() => {
@@ -138,16 +139,7 @@ export default function MathMLToLatex() {
       });
 
       if (!response.ok) {
-        let message = tTools('failedToCompile');
-        try {
-          const data = await response.json();
-          if (data?.error) {
-            message = data.error;
-          }
-        } catch {
-          // ignore parse errors
-        }
-        throw new Error(message);
+        throw await readCompileError(response, tTools('failedToCompile'));
       }
 
       const data = await response.json();
@@ -160,6 +152,7 @@ export default function MathMLToLatex() {
       const fallbackMessage =
         err instanceof Error ? err.message : tTools('failedToCompile');
       setCompileError(fallbackMessage);
+      setCompileLog(compileLogOf(err));
       setShowCompileErrorModal(true);
     } finally {
       setIsCompiling(false);
@@ -389,15 +382,7 @@ export default function MathMLToLatex() {
             </div>
 
             {latexCode && !isProcessing && (
-              <div className="mt-2 flex gap-3">
-                <button
-                  onClick={() => openInOctree({ latex: latexCode, title: 'MathML Import', source: 'tools:mathml' })}
-                  className="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-gray-900 text-base font-medium rounded-lg border border-gray-200 hover:bg-gray-50 transition-colors shadow-sm"
-                >
-                  <OctreeLogo className="h-5 w-5" />
-                  {tCommon('openInOctree')}
-                </button>
-                
+              <ResultBar latex={latexCode} tool="mathml-to-latex" title="MathML to LaTeX result">
                 <div className="relative">
                   <button
                     onClick={() => setShowExportMenu(!showExportMenu)}
@@ -425,7 +410,7 @@ export default function MathMLToLatex() {
                     </div>
                   )}
                 </div>
-              </div>
+              </ResultBar>
             )}
           </div>
         </div>
@@ -439,9 +424,10 @@ export default function MathMLToLatex() {
       <CompileErrorModal
         isOpen={showCompileErrorModal}
         errorMessage={compileError}
+        errorLog={compileLog}
         latex={latexCode}
         onClose={() => setShowCompileErrorModal(false)}
-        source="tools:mathml"
+        source="tools:mathml-to-latex"
         title={t('title')}
       />
     </div>

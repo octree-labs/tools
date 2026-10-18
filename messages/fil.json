@@ -1097,7 +1097,10 @@
     "feature2": "Mag-upload ng larawan at i-convert ito sa LaTeX nang walang problema",
     "feature3": "Makakuha ng instant na tulong sa pagsulat at pag-format ng research papers",
     "useInOctree": "Gamitin sa Octree",
-    "learnMore": "Matuto Pa"
+    "learnMore": "Matuto Pa",
+    "resultReadyHint": "Handa na ang iyong LaTeX. I-edit, i-compile at ayusin ang mga error gamit ang AI sa Octree, libre.",
+    "openResultInOctree": "Buksan sa Octree para i-edit at i-compile",
+    "editTemplateWithAI": "I-edit ang template na ito gamit ang AI, libre"
   },
   "metadata": {
     "site": {

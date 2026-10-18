@@ -657,7 +657,10 @@
     "feature2": "Upload afbeelding en converteer naadloos naar LaTeX",
     "feature3": "Krijg directe hulp bij het schrijven en opmaken van onderzoeksartikelen",
     "useInOctree": "Gebruik in Octree",
-    "learnMore": "Meer Informatie"
+    "learnMore": "Meer Informatie",
+    "resultReadyHint": "Je LaTeX is klaar. Bewerk, compileer en los fouten op met AI in Octree, gratis.",
+    "openResultInOctree": "Openen in Octree om te bewerken en te compileren",
+    "editTemplateWithAI": "Bewerk dit sjabloon met AI, gratis"
   },
   "metadata": {
     "site": {

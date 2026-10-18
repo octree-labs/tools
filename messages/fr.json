@@ -941,7 +941,10 @@
       "feature2": "Téléchargez une image et convertissez-la en LaTeX facilement",
       "feature3": "Obtenez une assistance instantanée pour rédiger et formater vos articles de recherche",
       "useInOctree": "Utiliser dans Octree",
-      "learnMore": "En Savoir Plus"
+      "learnMore": "En Savoir Plus",
+      "resultReadyHint": "Votre LaTeX est prêt. Modifiez, compilez et corrigez les erreurs avec l'IA dans Octree, gratuitement.",
+      "openResultInOctree": "Ouvrir dans Octree pour modifier et compiler",
+      "editTemplateWithAI": "Modifier ce modèle avec l'IA, gratuitement"
     },
     "metadata": {
       "site": {

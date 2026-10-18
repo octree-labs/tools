@@ -657,7 +657,10 @@
     "feature2": "Tải lên hình ảnh và chuyển đổi sang LaTeX liền mạch",
     "feature3": "Nhận hỗ trợ tức thì trong việc viết và định dạng bài báo nghiên cứu",
     "useInOctree": "Sử dụng trong Octree",
-    "learnMore": "Tìm hiểu thêm"
+    "learnMore": "Tìm hiểu thêm",
+    "resultReadyHint": "LaTeX của bạn đã sẵn sàng. Chỉnh sửa, biên dịch và sửa lỗi bằng AI trong Octree, miễn phí.",
+    "openResultInOctree": "Mở trong Octree để chỉnh sửa và biên dịch",
+    "editTemplateWithAI": "Chỉnh sửa mẫu này bằng AI, miễn phí"
   },
   "metadata": {
     "site": {
