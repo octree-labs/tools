@@ -7269,6 +7269,1589 @@ Appendices follow the references and may contain extra experiments, prompts, and
 
 \end{document}`,
   },
+  {
+    id: 76,
+    title: "Conference Poster",
+    description: "A0 landscape academic poster with beamerposter: three columns, title bar, TikZ figure and reference block",
+    slug: "conference-poster",
+    previewUrl: "/templates/conference-poster.pdf",
+    category: "Presentations",
+    seoTitle: "LaTeX Poster Template (A0 Beamerposter) | Free Download & Preview",
+    seoDescription:
+      "Free LaTeX poster template for academic conferences: A0 landscape beamerposter with three columns, title bar, TikZ figure and references. Compiles with pdflatex.",
+    code: String.raw`%-------------------------------------------------------------------
+% Academic conference poster (A0 landscape, beamerposter, 3 columns)
+%
+% A complete scientific poster built on beamer + beamerposter. It
+% compiles with plain pdflatex, needs no external images (the logos
+% and figures are drawn with TikZ placeholders) and prints at A0
+% landscape (1189 x 841 mm). Everything is driven by a small colour
+% palette and the standard beamer block environments, so you can
+% restyle the whole poster by editing a few lines in the preamble.
+%
+% Quick guide
+%   * Paper size / orientation: edit the beamerposter options below.
+%     size=a0 | a1 | a2 | a3 | custom, orientation=landscape | portrait.
+%     scale=1.3 enlarges every font; lower it if text does not fit.
+%   * For a 36 x 48 in US poster use
+%       \usepackage[size=custom,width=121.92,height=91.44,scale=1.3]{beamerposter}
+%     (dimensions in centimetres, width x height).
+%   * Replace \logoplaceholder{...} with
+%       \includegraphics[width=10cm]{university-logo.png}
+%     once you have the logo file next to this .tex file.
+%   * Column widths are set as fractions of \paperwidth in the body.
+%   * Blocks: block (primary colour), alertblock (accent colour),
+%     exampleblock (muted). Keep 4-7 blocks; posters are read in 90 s.
+%-------------------------------------------------------------------
+
+\documentclass[final,t]{beamer}
+\usepackage[size=a0,orientation=landscape,scale=1.3]{beamerposter}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,shapes.geometric}
+
+% --- Colour palette ----------------------------------------------------
+\definecolor{primary}{HTML}{1F3A5F}   % headline, block titles
+\definecolor{accent}{HTML}{E07A1F}    % highlights, alert blocks
+\definecolor{panel}{HTML}{F3F5F9}     % block body background
+\definecolor{ink}{HTML}{222222}       % body text
+
+\usetheme{default}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{itemize items}[triangle]
+\setbeamertemplate{blocks}[rounded][shadow=false]
+
+\setbeamercolor{background canvas}{bg=white}
+\setbeamercolor{normal text}{fg=ink}
+\setbeamercolor{structure}{fg=primary}
+\setbeamercolor{headline}{fg=white,bg=primary}
+\setbeamercolor{accentbar}{bg=accent}
+\setbeamercolor{footline}{fg=white,bg=primary}
+\setbeamercolor{block title}{fg=white,bg=primary}
+\setbeamercolor{block body}{fg=ink,bg=panel}
+\setbeamercolor{block title alerted}{fg=white,bg=accent}
+\setbeamercolor{block body alerted}{fg=ink,bg=accent!8!white}
+\setbeamercolor{block title example}{fg=white,bg=primary!70!black}
+\setbeamercolor{block body example}{fg=ink,bg=panel}
+\setbeamercolor{item}{fg=accent}
+\setbeamercolor{caption name}{fg=primary}
+
+\setbeamerfont{title}{size=\VeryHuge,series=\bfseries}
+\setbeamerfont{author}{size=\LARGE}
+\setbeamerfont{institute}{size=\Large}
+\setbeamerfont{block title}{size=\Large,series=\bfseries}
+\setbeamerfont{caption}{size=\normalsize}
+
+\setbeamersize{text margin left=2cm,text margin right=2cm}
+
+% Vertical gap after each block
+\addtobeamertemplate{block end}{}{\vspace*{1.2cm}}
+\addtobeamertemplate{block alerted end}{}{\vspace*{1.2cm}}
+\addtobeamertemplate{block example end}{}{\vspace*{1.2cm}}
+
+% --- Logo placeholder (swap for \includegraphics) ---------------------
+\newcommand{\logoplaceholder}[1]{%
+  \begin{tikzpicture}
+    \draw[white,line width=3pt,rounded corners=14pt,fill=primary!80!white]
+      (0,0) rectangle (11,11);
+    \node[white,font=\Large,align=center] at (5.5,5.5) {#1};
+  \end{tikzpicture}}
+
+% --- Title bar -------------------------------------------------------
+\setbeamertemplate{headline}{%
+  \begin{beamercolorbox}[wd=\paperwidth]{headline}
+    \vskip2cm
+    \hspace{2cm}%
+    \begin{minipage}[c]{0.12\paperwidth}
+      \centering\logoplaceholder{University\\logo}
+    \end{minipage}%
+    \begin{minipage}[c]{0.70\paperwidth}
+      \centering
+      {\usebeamerfont{title}\inserttitle\par}
+      \vskip1.2cm
+      {\usebeamerfont{author}\insertauthor\par}
+      \vskip0.6cm
+      {\usebeamerfont{institute}\insertinstitute\par}
+    \end{minipage}%
+    \begin{minipage}[c]{0.12\paperwidth}
+      \centering\logoplaceholder{Lab or\\funder logo}
+    \end{minipage}
+    \vskip2cm
+  \end{beamercolorbox}
+  \begin{beamercolorbox}[wd=\paperwidth,ht=0.8cm]{accentbar}\end{beamercolorbox}
+}
+
+% --- Footer ----------------------------------------------------------
+\setbeamertemplate{footline}{%
+  \begin{beamercolorbox}[wd=\paperwidth,ht=3.2cm,dp=1.2cm,leftskip=2cm,rightskip=2cm]{footline}
+    \vskip1.3cm
+    \large
+    \textbf{Contact:} first.author@example.edu
+    \hfill
+    \textbf{Code and data:} github.com/example-lab/adaptive-sampling
+    \hfill
+    \textbf{Presented at} Example Conference on Machine Learning, 2027
+  \end{beamercolorbox}}
+
+% --- Poster metadata -------------------------------------------------
+\title{Adaptive Sampling for Efficient Training of Large Vision Models}
+\author{First Author\inst{1} \and Second Author\inst{2} \and Third Author\inst{1}}
+\institute{\inst{1}Department of Computer Science, Example University
+  \qquad \inst{2}Institute for Applied Mathematics, Another University}
+
+\begin{document}
+\begin{frame}[t]
+\vspace{1cm}
+\begin{columns}[t]
+
+% =====================================================================
+\begin{column}{0.30\paperwidth}
+
+\begin{block}{Introduction}
+  Training large vision models is dominated by the cost of passing
+  \emph{every} image through the network at \emph{every} epoch, even
+  though most examples stop contributing useful gradient early.
+  \begin{itemize}
+    \item \textbf{Problem:} uniform sampling wastes 40--60\,\% of compute
+      on examples the model already fits.
+    \item \textbf{Idea:} score examples online with a cheap proxy and
+      sample proportionally to their estimated learning value.
+    \item \textbf{Result:} same accuracy in 0.55$\times$ the wall-clock
+      time on three benchmarks, with no change to the architecture.
+  \end{itemize}
+\end{block}
+
+\begin{block}{Method}
+  Each example $i$ receives a score $s_i$ from an exponential moving
+  average of its recent loss, and the sampling distribution is
+  \begin{equation}
+    p_i = (1-\varepsilon)\,\frac{s_i^{\alpha}}{\sum_j s_j^{\alpha}}
+          + \frac{\varepsilon}{N},
+  \end{equation}
+  where $\alpha$ controls sharpness and $\varepsilon$ guarantees that
+  every example is still visited. Gradients are importance-weighted by
+  $1/(N p_i)$ so the estimator stays unbiased.
+
+  \vspace{0.5cm}
+  \begin{center}
+  \begin{tikzpicture}[
+      node distance=1.6cm,
+      box/.style={draw=primary,line width=2.5pt,rounded corners=10pt,
+                  fill=white,minimum width=7.5cm,minimum height=3cm,
+                  align=center,font=\large},
+      arr/.style={-{Latex[length=7mm]},line width=2.5pt,primary}]
+    \node[box] (data) {Dataset\\$N$ examples};
+    \node[box,right=of data] (score) {Score\\$s_i \leftarrow$ EMA(loss)};
+    \node[box,right=of score] (sample) {Sample\\$p_i \propto s_i^{\alpha}$};
+    \node[box,right=of sample,fill=accent!15!white,draw=accent] (train) {Train\\weighted SGD};
+    \draw[arr] (data) -- (score);
+    \draw[arr] (score) -- (sample);
+    \draw[arr] (sample) -- (train);
+    \draw[arr] (train.south) -- ++(0,-1.4) -| (score.south);
+  \end{tikzpicture}
+  \end{center}
+  \vspace{0.3cm}
+  \small The scorer runs on the forward pass that training performs
+  anyway, so the overhead is below 2\,\% of an epoch.
+\end{block}
+
+\end{column}
+
+% =====================================================================
+\begin{column}{0.30\paperwidth}
+
+\begin{block}{Results}
+  \begin{center}
+  % Placeholder bar chart drawn with TikZ. Replace with
+  % \includegraphics[width=0.9\linewidth]{results.pdf} for real data.
+  \begin{tikzpicture}[x=1cm,y=1cm]
+    % axes
+    \draw[line width=2pt] (0,0) -- (30,0);
+    \draw[line width=2pt] (0,0) -- (0,16);
+    \foreach \y/\lab in {0/0,4/25,8/50,12/75,16/100}
+      \draw[line width=1.5pt] (-0.4,\y) -- (0,\y) node[left,xshift=-4mm,font=\normalsize] {\lab};
+    \node[rotate=90,font=\large] at (-3.2,8) {Relative training time (\%)};
+    % bars: uniform, random drop, loss-ranked, ours
+    \foreach \x/\h/\lab/\col in {
+        3/16/Uniform/primary!40!white,
+        10/13.4/Random drop/primary!40!white,
+        17/11.2/Loss-ranked/primary!40!white,
+        24/8.8/Ours/accent}{
+      \fill[\col] (\x,0) rectangle ++(5,\h);
+      \draw[line width=1.5pt,primary] (\x,0) rectangle ++(5,\h);
+      \node[above,font=\large\bfseries] at (\x+2.5,\h) {\pgfmathparse{int(round(\h*100/16))}\pgfmathresult\,\%};
+      \node[below,font=\large,yshift=-3mm] at (\x+2.5,0) {\lab};
+    }
+  \end{tikzpicture}
+  \end{center}
+  \vspace{0.2cm}
+  {\centering\small Figure 1: Wall-clock time to reach the baseline
+  accuracy on ImageNet-1k (ResNet-50). Lower is better.\par}
+
+  \vspace{1cm}
+  \begin{center}
+  \begin{tabular}{lccc}
+    \toprule
+    Method & CIFAR-100 & ImageNet-1k & Places365 \\
+    \midrule
+    Uniform sampling   & 80.1 & 76.3 & 54.7 \\
+    Random drop (50\%) & 77.9 & 73.8 & 52.1 \\
+    Loss-ranked        & 80.0 & 76.0 & 54.4 \\
+    \textbf{Ours}      & \textbf{80.4} & \textbf{76.5} & \textbf{54.9} \\
+    \bottomrule
+  \end{tabular}
+  \end{center}
+  \vspace{0.2cm}
+  {\centering\small Table 1: Top-1 accuracy (\%) at a fixed compute
+  budget of 0.55$\times$ the uniform baseline.\par}
+\end{block}
+
+\begin{exampleblock}{Ablation}
+  \begin{itemize}
+    \item Sharpness $\alpha \in [0.5, 1.0]$ is robust; $\alpha > 2$ overfits
+      hard examples.
+    \item Removing the $\varepsilon$ floor costs 0.8 points of accuracy.
+    \item EMA half-life of 3 epochs works across all three datasets.
+  \end{itemize}
+\end{exampleblock}
+
+\end{column}
+
+% =====================================================================
+\begin{column}{0.30\paperwidth}
+
+\begin{alertblock}{Key findings}
+  \begin{itemize}
+    \item \textbf{1.8$\times$ faster} training to target accuracy.
+    \item \textbf{No accuracy loss} on three datasets and two architectures.
+    \item \textbf{Drop-in:} a data loader change only, no new hyperparameters
+      beyond $\alpha$ and $\varepsilon$.
+  \end{itemize}
+\end{alertblock}
+
+\begin{block}{Conclusion}
+  Adaptive sampling turns the loss signal the model already produces
+  into a free curriculum. Because the estimator is unbiased, standard
+  convergence guarantees still apply, and the practical speed-up grows
+  with dataset redundancy.
+
+  \vspace{0.5cm}
+  \textbf{Future work:} extend the scorer to multimodal pre-training,
+  study interactions with data augmentation, and release a
+  framework-agnostic loader.
+\end{block}
+
+\begin{block}{References}
+  \small
+  \begin{enumerate}
+    \item A. Katharopoulos and F. Fleuret. Not all samples are created
+      equal: Deep learning with importance sampling. \emph{ICML}, 2018.
+    \item Y. Bengio, J. Louradour, R. Collobert, and J. Weston.
+      Curriculum learning. \emph{ICML}, 2009.
+    \item T. Schaul, J. Quan, I. Antonoglou, and D. Silver. Prioritized
+      experience replay. \emph{ICLR}, 2016.
+    \item K. He, X. Zhang, S. Ren, and J. Sun. Deep residual learning for
+      image recognition. \emph{CVPR}, 2016.
+  \end{enumerate}
+\end{block}
+
+\begin{block}{Acknowledgements}
+  \small This work was supported by Example Research Council grant
+  EX/0000001. Compute was provided by the Example University HPC centre.
+\end{block}
+
+\end{column}
+\end{columns}
+\end{frame}
+\end{document}`,
+  },
+  {
+    id: 77,
+    title: "IEEE Conference Paper",
+    description: "Official IEEEtran conference format with author blocks, abstract, index terms, equation, table, figure and references",
+    slug: "ieee-conference",
+    previewUrl: "/templates/ieee-conference.pdf",
+    category: "Academic",
+    seoTitle: "IEEE Conference Paper Template (IEEEtran) | Free LaTeX Download & Preview",
+    seoDescription:
+      "Free IEEE conference paper template in LaTeX using the official IEEEtran class: correct IEEE format, author blocks, index terms, table, figure and references.",
+    code: String.raw`%-------------------------------------------------------------------
+% IEEE conference paper (IEEEtran, conference mode)
+%
+% This is the full official IEEE conference format: the IEEEtran class
+% in [conference] mode is what IEEE conferences ask authors to use, and
+% it is part of every TeX Live / MiKTeX installation. The class sets
+% every rule of the IEEE paper format for you:
+%
+%   * US letter paper (8.5 x 11 in), two columns
+%   * 10 pt Times-like body text, 24 pt title, 11 pt author block
+%   * 0.75 in side margins (0.625 in in some templates), 1 in bottom
+%     margin, 0.75 in top margin, columns separated by 0.25 in
+%   * Abstract and Index Terms in bold, no page numbers
+%   * Roman-numbered sections, small-caps section headings
+%   * Figures and tables captioned top (tables) and bottom (figures)
+%
+% Do NOT add \usepackage{geometry} or change \textwidth; the class is
+% already correct and the IEEE PDF eXpress checker will reject papers
+% with altered margins.
+%
+% Author block: use \IEEEauthorblockN for names and \IEEEauthorblockA
+% for affiliations; separate authors with \and. For more than three
+% authors use the "\IEEEauthorrefmark" style shown in the comment below.
+%
+% References: the IEEEtran bibliography style (IEEEtran.bst) is bundled
+% with the class. This template uses a hand-written thebibliography so
+% it compiles standalone. With BibTeX, delete that environment and use
+%   \bibliographystyle{IEEEtran}
+%   \bibliography{refs}
+%-------------------------------------------------------------------
+
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts   % needed for \thanks (funding footnote)
+
+\usepackage{cite}              % collapses [1], [2], [3] into [1]--[3]
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{tikz}              % used only for the placeholder figure
+
+% IEEE recommends BibTeX-style capitalisation and these abbreviations
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+\begin{document}
+
+\title{Energy-Aware Scheduling for Edge Inference\\
+  with Latency Guarantees\thanks{This work was supported in part by
+  the Example Science Foundation under Grant EX-2027-0001.}}
+
+% --- Author block ----------------------------------------------------
+% One \IEEEauthorblockN / \IEEEauthorblockA pair per author (or per
+% group of authors sharing an affiliation). Keep email addresses; IEEE
+% requires at least the corresponding author's.
+\author{%
+  \IEEEauthorblockN{1\textsuperscript{st} Given Name Surname}
+  \IEEEauthorblockA{\textit{Dept. of Electrical Engineering} \\
+    \textit{Example University}\\
+    City, Country \\
+    first.author@example.edu}
+  \and
+  \IEEEauthorblockN{2\textsuperscript{nd} Given Name Surname}
+  \IEEEauthorblockA{\textit{School of Computing} \\
+    \textit{Another University}\\
+    City, Country \\
+    second.author@example.org}
+  \and
+  \IEEEauthorblockN{3\textsuperscript{rd} Given Name Surname}
+  \IEEEauthorblockA{\textit{Research Division} \\
+    \textit{Example Labs Inc.}\\
+    City, Country \\
+    third.author@example.com}
+}
+% Alternative for many authors with shared affiliations:
+% \author{\IEEEauthorblockN{A. Author\IEEEauthorrefmark{1},
+%   B. Author\IEEEauthorrefmark{2} and C. Author\IEEEauthorrefmark{1}}
+%   \IEEEauthorblockA{\IEEEauthorrefmark{1}Example University, City, Country}
+%   \IEEEauthorblockA{\IEEEauthorrefmark{2}Example Labs, City, Country}}
+
+\maketitle
+
+% --- Abstract and index terms ---------------------------------------
+\begin{abstract}
+Edge devices increasingly run deep neural network inference under
+strict latency budgets while being limited by battery capacity. This
+paper proposes an energy-aware scheduler that selects a per-request
+model variant and processor frequency so that the end-to-end deadline
+is met with the lowest expected energy. We formulate the choice as a
+constrained Markov decision process, derive a lightweight threshold
+policy, and evaluate it on three commodity edge boards. Compared with a
+performance governor, the scheduler reduces energy per inference by
+31\,\% on average while missing fewer than 0.5\,\% of deadlines.
+\end{abstract}
+
+\begin{IEEEkeywords}
+edge computing, energy efficiency, DVFS, deep learning inference,
+real-time scheduling
+\end{IEEEkeywords}
+
+% --- Body ------------------------------------------------------------
+\section{Introduction}
+\IEEEPARstart{D}{eep} learning inference has moved from data centres to
+phones, cameras and sensors, where every joule matters. Dynamic voltage
+and frequency scaling (DVFS) and model selection are the two most
+effective knobs for trading latency against energy, but they are
+usually tuned independently and offline~\cite{han2016,lane2016}.
+
+This paper makes three contributions. First, we model the joint
+selection of a model variant and a core frequency as a constrained
+Markov decision process (CMDP) whose constraint is the deadline-miss
+rate (Section~\ref{sec:method}). Second, we show that the optimal
+policy has a threshold structure that can be stored as a small table
+and evaluated in microseconds. Third, we implement the scheduler on
+three edge boards and report energy, latency and accuracy
+(Section~\ref{sec:results}).
+
+\section{Related Work}
+Prior work on efficient inference falls into two groups. Model-side
+techniques such as pruning, quantisation and early exit reduce the work
+per request~\cite{han2016,teerapittayanon2016}. System-side techniques
+such as DVFS governors and offloading change how the work is executed
+\cite{lane2016,kang2017}. Our scheduler sits between the two: it treats
+the available model variants as actions and chooses among them online.
+
+\section{Method}\label{sec:method}
+\subsection{System Model}
+Requests arrive as a renewal process with mean inter-arrival time
+$1/\lambda$. For each request the scheduler picks a model variant
+$m \in \mathcal{M}$ and a frequency $f \in \mathcal{F}$. The latency
+$L(m,f)$ and energy $E(m,f)$ are measured offline; the accuracy
+$A(m)$ depends on the variant only.
+
+\subsection{Problem Formulation}
+We minimise the long-run average energy subject to a bound on the
+deadline-miss probability and a minimum average accuracy:
+\begin{equation}
+  \begin{aligned}
+    \min_{\pi}\quad & \lim_{T\to\infty}\frac{1}{T}\sum_{t=1}^{T}
+      \mathbb{E}_{\pi}\big[E(m_t,f_t)\big] \\
+    \text{s.t.}\quad & \Pr\big[L(m_t,f_t) > D\big] \le \delta,
+      \qquad \bar{A} \ge A_{\min}.
+  \end{aligned}
+  \label{eq:cmdp}
+\end{equation}
+Using a Lagrangian relaxation of~\eqref{eq:cmdp}, the problem reduces to
+an unconstrained MDP whose per-step cost is
+$E(m,f) + \mu\,\mathbb{I}[L(m,f) > D] - \nu A(m)$, and the resulting
+policy is a threshold on the remaining slack time~\cite{altman1999}.
+
+\subsection{Algorithm}
+\begin{algorithmic}[1]
+  \STATE Offline: profile $L(m,f)$, $E(m,f)$ for all $(m,f)$
+  \STATE Solve the relaxed MDP by value iteration; store thresholds
+  \FOR{each request with deadline $D$}
+    \STATE $s \leftarrow D - \text{queueing delay}$
+    \STATE $(m,f) \leftarrow \text{lookup}(s)$ \COMMENT{threshold table}
+    \STATE set frequency $f$; run model $m$
+  \ENDFOR
+\end{algorithmic}
+
+\section{Experimental Results}\label{sec:results}
+\subsection{Setup}
+We evaluate on three boards (Table~\ref{tab:boards}) running image
+classification with four variants of a MobileNet-style network. The
+deadline is 50\,ms and the target miss rate $\delta = 0.5\,\%$.
+
+\begin{table}[htbp]
+  \caption{Evaluation Platforms}
+  \label{tab:boards}
+  \centering
+  \begin{tabular}{lccc}
+    \toprule
+    \textbf{Board} & \textbf{CPU cores} & \textbf{Freq. range (GHz)} & \textbf{Idle power (W)} \\
+    \midrule
+    Board A & 4 & 0.6--1.8 & 1.9 \\
+    Board B & 6 & 0.4--2.2 & 2.6 \\
+    Board C & 8 & 0.5--2.0 & 3.1 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\subsection{Energy and Latency}
+Fig.~\ref{fig:energy} shows energy per inference. The threshold policy
+tracks the offline optimum within 4\,\% and beats the performance
+governor by 31\,\% on average, because it slows the processor whenever
+the slack time allows and switches to a smaller variant only when
+slowing down would miss the deadline.
+
+\begin{figure}[htbp]
+  \centering
+  % Placeholder figure drawn with TikZ. Replace with
+  % \includegraphics[width=\columnwidth]{energy.pdf}
+  \begin{tikzpicture}[x=1.0cm,y=1.0cm]
+    \draw[->] (0,0) -- (7.4,0) node[below left] {\footnotesize board};
+    \draw[->] (0,0) -- (0,4.2) node[left] {\footnotesize mJ};
+    \foreach \y in {1,2,3,4} \draw (0.1,\y) -- (-0.1,\y) node[left] {\footnotesize \y0};
+    \foreach \x/\g/\o/\lab in {1/3.6/2.4/A, 3.2/3.0/2.1/B, 5.4/3.9/2.7/C}{
+      \fill[gray!50] (\x,0) rectangle ++(0.8,\g);
+      \fill[black!80] (\x+0.9,0) rectangle ++(0.8,\o);
+      \node[below] at (\x+0.85,0) {\footnotesize \lab};
+    }
+    \fill[gray!50] (4.8,3.9) rectangle ++(0.3,0.25);
+    \node[right] at (5.1,4.0) {\footnotesize governor};
+    \fill[black!80] (4.8,3.5) rectangle ++(0.3,0.25);
+    \node[right] at (5.1,3.6) {\footnotesize ours};
+  \end{tikzpicture}
+  \caption{Energy per inference for the performance governor and the
+    proposed scheduler on the three boards.}
+  \label{fig:energy}
+\end{figure}
+
+\subsection{Discussion}
+The accuracy constraint was active on Board A only, where the scheduler
+chose the smallest variant for 12\,\% of requests. Raising $A_{\min}$
+by one point increased energy by 6\,\%, which quantifies the
+accuracy--energy trade-off the operator controls through
+$\nu$ in~\eqref{eq:cmdp}.
+
+\section{Conclusion}
+We presented a scheduler that jointly chooses the model variant and
+processor frequency for edge inference, proved that the optimal policy
+is a threshold rule, and showed energy savings of 31\,\% with
+negligible deadline misses. Future work includes multi-tenant devices
+and learning the profiles online.
+
+\section*{Acknowledgment}
+The authors thank the anonymous reviewers for their comments and the
+Example University systems group for access to the test boards.
+
+% --- References ------------------------------------------------------
+% Hand-written for a self-contained template. IEEE style: initials
+% first, title in quotes, venue in italics, year last.
+\begin{thebibliography}{00}
+\bibitem{han2016} S. Han, H. Mao, and W. J. Dally, \textquotedblleft Deep compression:
+  Compressing deep neural networks with pruning, trained quantization
+  and Huffman coding,'' in \emph{Proc. Int. Conf. Learn. Represent.
+  (ICLR)}, 2016.
+\bibitem{lane2016} N. D. Lane \emph{et al.}, \textquotedblleft DeepX: A software
+  accelerator for low-power deep learning inference on mobile devices,''
+  in \emph{Proc. 15th ACM/IEEE Int. Conf. Inf. Process. Sensor Netw.
+  (IPSN)}, 2016, pp. 1--12.
+\bibitem{teerapittayanon2016} S. Teerapittayanon, B. McDanel, and
+  H. T. Kung, \textquotedblleft BranchyNet: Fast inference via early exiting from deep
+  neural networks,'' in \emph{Proc. 23rd Int. Conf. Pattern Recognit.
+  (ICPR)}, 2016, pp. 2464--2469.
+\bibitem{kang2017} Y. Kang \emph{et al.}, \textquotedblleft Neurosurgeon: Collaborative
+  intelligence between the cloud and mobile edge,'' in \emph{Proc. 22nd
+  Int. Conf. Archit. Support Program. Lang. Oper. Syst. (ASPLOS)},
+  2017, pp. 615--629.
+\bibitem{altman1999} E. Altman, \emph{Constrained Markov Decision
+  Processes}. Boca Raton, FL, USA: Chapman \& Hall/CRC, 1999.
+\end{thebibliography}
+
+\end{document}`,
+  },
+  {
+    id: 78,
+    title: "JFM Paper",
+    description: "Journal of Fluid Mechanics style article with running heads, author-year citations, abstract, keywords and back matter",
+    slug: "jfm-paper",
+    previewUrl: "/templates/jfm-paper.pdf",
+    category: "Academic",
+    seoTitle: "JFM LaTeX Template (Journal of Fluid Mechanics) | Free Download & Preview",
+    seoDescription:
+      "Free Journal of Fluid Mechanics (JFM) style LaTeX template: single column, running heads, author-year citations, abstract, keywords and JFM back matter.",
+    code: String.raw`%-------------------------------------------------------------------
+% Journal of Fluid Mechanics (JFM) style article
+%
+% IMPORTANT -- OFFICIAL CLASS FOR SUBMISSION
+% ----------------------------------------------------------------
+% JFM manuscripts are typeset with the jfm.cls class distributed by
+% Cambridge University Press. That class is NOT part of TeX Live, so
+% this template mirrors the JFM layout with the standard article class
+% and common packages, and compiles anywhere. Before you submit,
+% download the official JFM LaTeX template (jfm.cls, jfm.bst and the
+% instructions for contributors) from the Cambridge University Press
+% author pages for the journal
+%   https://www.cambridge.org/core/journals/journal-of-fluid-mechanics
+% and move the body of this file into it. The front-matter macros used
+% below (\shorttitle, \shortauthor, \aff, \corresp, \email,
+% \affiliation, keywords environment) are named exactly as in jfm.cls
+% so the body transfers with minimal edits; you only delete the
+% emulation block in the preamble.
+%
+% What the emulation reproduces
+%   * 10 pt single-column text on a JFM-sized text block
+%   * The banner line that jfm.cls prints above the title
+%   * Title, author list with affiliation superscripts, corresponding
+%     author email, received/revised dates
+%   * Abstract, Key words, numbered sections and equations
+%   * Running heads: short title (odd pages) and short author (even)
+%   * Author-year citations in JFM form: Batchelor (1967), (Pope 2000)
+%   * Back matter order: Acknowledgements, Funding, Declaration of
+%     interests, Author ORCIDs, Appendix, References
+%-------------------------------------------------------------------
+
+\documentclass[10pt,twoside]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{newtxtext,newtxmath}   % Times-like text and maths, as in JFM
+\usepackage[a4paper,textwidth=135mm,textheight=215mm,
+            headheight=14pt,headsep=8mm]{geometry}
+\usepackage{amsmath}            % amssymb is not needed: newtxmath provides the AMS symbols
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tikz}                  % placeholder figure only
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage[authoryear,round,semicolon]{natbib}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+
+\setcitestyle{aysep={}}            % JFM: (Batchelor 1967), no comma
+
+% --- Emulation of the jfm.cls front-matter macros --------------------
+% (delete this whole block when you move to the official jfm.cls)
+\makeatletter
+\newcommand{\shorttitle}[1]{\def\@jfmshorttitle{#1}}
+\newcommand{\shortauthor}[1]{\def\@jfmshortauthor{#1}}
+\newcommand{\aff}[1]{\textsuperscript{#1}}
+\newcommand{\corresp}[1]{\textsuperscript{$\dagger$}\gdef\@jfmcorresp{#1}}
+\newcommand{\email}[1]{Email address for correspondence: \texttt{#1}}
+\newcommand{\affiliation}[1]{\def\@jfmaffiliation{#1}}
+\def\@jfmshorttitle{}\def\@jfmshortauthor{}\def\@jfmcorresp{}\def\@jfmaffiliation{}
+\renewcommand{\maketitle}{%
+  \thispagestyle{plain}
+  \begingroup
+  \def\and{ and }%
+  \noindent{\footnotesize\itshape Banner appropriate to article type
+    will appear here in typeset article}\par
+  \vspace{8mm}
+  \begin{center}
+    {\Large\bfseries\@title\par}
+    \vspace{6mm}
+    {\normalsize\@author\par}
+    \vspace{3mm}
+    {\small\@jfmaffiliation\par}
+    \vspace{3mm}
+    {\footnotesize(Received xx; revised xx; accepted xx)\par}
+  \end{center}
+  \vspace{4mm}
+  \endgroup
+  \renewcommand{\thefootnote}{}%
+  \footnotetext{$\dagger$ \@jfmcorresp}%
+  \renewcommand{\thefootnote}{\arabic{footnote}}%
+}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE]{\small\thepage\hfill\textit{\@jfmshortauthor}}
+\fancyhead[RO]{\small\textit{\@jfmshorttitle}\hfill\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\makeatother
+
+\renewenvironment{abstract}{\noindent\small\ignorespaces}{\par\vspace{2mm}}
+\newenvironment{keywords}{\noindent\small\textbf{Key words:} \ignorespaces}{\par\vspace{6mm}}
+% JFM headings: bold numbered sections, italic subsections, \S refs
+\titleformat{\section}{\large\bfseries}{\thesection.}{0.8em}{}
+\titlespacing*{\section}{0pt}{3ex plus 1ex minus 0.5ex}{1.5ex plus 0.3ex}
+\titleformat{\subsection}{\normalsize\bfseries\itshape}{\thesubsection.}{0.8em}{}
+\titlespacing*{\subsection}{0pt}{2ex plus 0.5ex minus 0.2ex}{1ex plus 0.2ex}
+
+% Convenient notation
+\newcommand{\Rey}{\mathit{Re}}
+\newcommand{\Pran}{\mathit{Pr}}
+\newcommand{\D}{\mathrm{D}}
+\newcommand{\dd}{\mathrm{d}}
+
+% --- Front matter ----------------------------------------------------
+\shorttitle{Wall-bounded turbulence at moderate Reynolds number}
+\shortauthor{A. N. Author, B. Collaborator and C. D. Supervisor}
+
+\title{Scaling of near-wall streaks in turbulent channel flow\\
+  at moderate Reynolds number}
+
+\author{A. N. Author\aff{1}\corresp{\email{a.author@example.ac.uk}},
+  B. Collaborator\aff{2} \and C. D. Supervisor\aff{1}}
+
+\affiliation{\aff{1}Department of Engineering, Example University,
+  Trumpington Street, Cambridge CB2 1PZ, UK\\
+  \aff{2}Institut de M\'ecanique des Fluides, Universit\'e d'Exemple,
+  31400 Toulouse, France}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Direct numerical simulations of turbulent channel flow are used to
+examine how the spanwise spacing of near-wall streaks varies with
+friction Reynolds number in the range $\Rey_\tau = 180$--$1000$. The
+streak spacing, measured from the first minimum of the two-point
+spanwise correlation of streamwise velocity, remains close to one
+hundred wall units at $y^+ = 15$ but grows logarithmically with
+distance from the wall. A simple model based on the attached-eddy
+hypothesis reproduces both trends and predicts the Reynolds-number
+dependence of the near-wall peak of the streamwise turbulence
+intensity. The results suggest that the inner-layer structure is
+universal once an outer-scaled correction is included.
+\end{abstract}
+
+\begin{keywords}
+turbulent boundary layers, turbulence simulation, turbulence theory
+\end{keywords}
+
+% --- Body ------------------------------------------------------------
+\section{Introduction}
+Streamwise streaks of alternating high- and low-speed fluid are the
+most prominent feature of the near-wall region of turbulent shear flows
+\citep{Kline1967}. Their mean spanwise spacing of roughly $100$ wall
+units is one of the best known empirical constants in wall turbulence
+\citep{Smith1983}, and it underpins both the self-sustaining process of
+\citet{Hamilton1995} and the minimal-flow-unit simulations of
+\citet{Jimenez1991}. Whether this spacing is truly independent of the
+Reynolds number, however, is still debated: as $\Rey_\tau$ increases,
+large outer-layer motions modulate the near-wall cycle
+\citep{Hutchins2007} and may leave an imprint on the streak statistics.
+
+The present paper addresses this question with a set of direct
+numerical simulations (DNS) spanning a factor of five in $\Rey_\tau$.
+Section~\ref{sec:formulation} states the governing equations and
+numerical method, \S\,\ref{sec:results} presents the streak statistics,
+and \S\,\ref{sec:model} compares them with an attached-eddy model.
+Conclusions are given in \S\,\ref{sec:conclusions}.
+
+\section{Formulation and numerical method}\label{sec:formulation}
+We consider incompressible flow between two parallel plates separated
+by $2h$, driven by a constant mean pressure gradient. The velocity
+$\bm{u} = (u, v, w)$ and pressure $p$ satisfy
+\begin{equation}
+  \frac{\partial \bm{u}}{\partial t} + (\bm{u}\cdot\nabla)\bm{u}
+    = -\nabla p + \frac{1}{\Rey}\nabla^2\bm{u},
+  \qquad \nabla\cdot\bm{u} = 0,
+  \label{eq:ns}
+\end{equation}
+with no-slip conditions at $y = \pm h$ and periodic conditions in
+$x$ and $z$. Lengths are scaled with $h$ and velocities with the bulk
+velocity $U_b$, so that $\Rey = U_b h/\nu$. The friction Reynolds
+number $\Rey_\tau = u_\tau h/\nu$, with $u_\tau = (\tau_w/\rho)^{1/2}$,
+is the control parameter of interest.
+
+Equations~\eqref{eq:ns} are integrated with a Fourier--Chebyshev
+pseudo-spectral method in the wall-normal velocity--vorticity
+formulation of \citet{Kim1987}, using a third-order Runge--Kutta scheme
+for the nonlinear terms and Crank--Nicolson for the viscous terms.
+Table~\ref{tab:cases} summarises the simulations.
+
+\begin{table}
+  \centering
+  \begin{tabular}{lcccccc}
+    \toprule
+    Case & $\Rey_\tau$ & $L_x/h$ & $L_z/h$ & $\Delta x^+$ & $\Delta z^+$ & $T u_\tau/h$ \\
+    \midrule
+    C180  & 182  & $4\pi$ & $2\pi$ & 8.9 & 4.5 & 30 \\
+    C550  & 547  & $4\pi$ & $2\pi$ & 8.9 & 4.5 & 15 \\
+    C1000 & 1001 & $4\pi$ & $2\pi$ & 8.2 & 4.1 & 10 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Simulation parameters: box dimensions, grid resolution in
+    wall units and averaging time.}
+  \label{tab:cases}
+\end{table}
+
+\section{Results}\label{sec:results}
+\subsection{Streak spacing}
+The streak spacing $\lambda_z^+$ is defined as twice the spanwise
+separation at which the two-point correlation
+\begin{equation}
+  R_{uu}(\Delta z; y) = \frac{\langle u'(x,y,z)\,u'(x,y,z+\Delta z)\rangle}
+                            {\langle u'^2\rangle}
+  \label{eq:ruu}
+\end{equation}
+first reaches its minimum. Figure~\ref{fig:spacing} shows
+$\lambda_z^+$ as a function of $y^+$ for the three cases. At
+$y^+ = 15$ the spacing is $104 \pm 3$ for all Reynolds numbers,
+confirming the classical value. Above $y^+ \approx 30$, however, the
+curves separate and follow $\lambda_z^+ \simeq 1.6\,y^+ + 60$ up to a
+height that scales with $h$ rather than with $\nu/u_\tau$.
+
+\begin{figure}
+  \centering
+  % Placeholder plot drawn with TikZ; replace with
+  % \includegraphics[width=0.7\textwidth]{spacing.pdf}
+  \begin{tikzpicture}[x=0.9cm,y=0.9cm]
+    \draw[->] (0,0) -- (8.6,0) node[right] {$y^+$};
+    \draw[->] (0,0) -- (0,5.2) node[above] {$\lambda_z^+$};
+    \foreach \x/\l in {0/0,2/50,4/100,6/150,8/200}
+      \draw (\x,0.1) -- (\x,-0.1) node[below] {\scriptsize \l};
+    \foreach \y/\l in {1/100,2/200,3/300,4/400,5/500}
+      \draw (0.1,\y) -- (-0.1,\y) node[left] {\scriptsize \l};
+    \draw[thick] plot[smooth] coordinates {(0.6,1.04) (1.2,1.1) (2,1.6) (4,2.7) (6,3.4) (8,3.8)};
+    \draw[thick,dashed] plot[smooth] coordinates {(0.6,1.04) (1.2,1.12) (2,1.7) (4,3.0) (6,4.0) (8,4.6)};
+    \draw[thick,dotted] plot[smooth] coordinates {(0.6,1.04) (1.2,1.14) (2,1.75) (4,3.2) (6,4.3) (8,5.0)};
+    \node[anchor=north west,align=left,font=\scriptsize] at (0.3,5.1)
+      {\rule{0.8cm}{0.6pt}\ $\Rey_\tau=180$\\
+       \tikz\draw[dashed] (0,0)--(0.8,0);\ $\Rey_\tau=550$\\
+       \tikz\draw[dotted] (0,0)--(0.8,0);\ $\Rey_\tau=1000$};
+  \end{tikzpicture}
+  \caption{Spanwise streak spacing as a function of wall distance for
+    the three Reynolds numbers of table~\ref{tab:cases}.}
+  \label{fig:spacing}
+\end{figure}
+
+\subsection{Turbulence intensities}
+The near-wall peak of $\langle u'^2\rangle^+$ grows from $7.6$ at
+$\Rey_\tau = 180$ to $8.7$ at $\Rey_\tau = 1000$, in agreement with the
+logarithmic growth reported by \citet{Hoyas2006} and attributed to the
+footprint of outer motions \citep{Hutchins2007}.
+
+\section{An attached-eddy model}\label{sec:model}
+Following \citet{Townsend1976}, we represent the near-wall region as a
+hierarchy of eddies attached to the wall whose spanwise width is
+proportional to their height. A population density
+$P(\ell) \propto \ell^{-1}$ for $\ell_0 < \ell < h$ gives
+\begin{equation}
+  \lambda_z^+(y^+) = \lambda_0^+ + \alpha\,y^+,
+  \qquad
+  \langle u'^2\rangle^+_{\max} = B_1 - A_1 \ln\!\left(\frac{y^+}{\Rey_\tau}\right),
+  \label{eq:model}
+\end{equation}
+with $\alpha \approx 1.6$ and $A_1 \approx 1.26$ obtained from the
+data. The model captures both the invariant spacing at $y^+ = 15$ and
+the Reynolds-number growth of the peak intensity.
+
+\section{Conclusions}\label{sec:conclusions}
+Near-wall streaks keep their classical spanwise spacing of about
+$100$ wall units at $y^+ = 15$ over the Reynolds-number range studied,
+while their spacing farther from the wall grows linearly in $y^+$ in a
+manner consistent with the attached-eddy hypothesis. The combination
+of an invariant inner spacing and an outer-scaled correction accounts
+for the observed growth of the near-wall intensity peak. Simulations
+at higher $\Rey_\tau$ are needed to test whether the linear growth
+saturates.
+
+% --- Back matter (JFM order) ----------------------------------------
+\section*{Acknowledgements}
+The authors thank the Example University High Performance Computing
+Service for computational resources.
+
+\section*{Funding}
+This work was supported by the Example Research Council (grant number
+EX/A000001/1).
+
+\section*{Declaration of interests}
+The authors report no conflict of interest.
+
+\section*{Author ORCIDs}
+A. N. Author, https://orcid.org/0000-0000-0000-0001.
+
+\appendix
+\section{Derivation of the spacing model}
+Integrating the eddy population density over heights between $y$ and
+$h$ gives the mean width of eddies that reach height $y$, from which
+\eqref{eq:model} follows with $\lambda_0^+$ fixed by the viscous
+cut-off $\ell_0$.
+
+% --- References ------------------------------------------------------
+% Hand-written in JFM author-year form so the template is
+% self-contained. With BibTeX use \bibliographystyle{jfm} from the
+% official template and \bibliography{refs}.
+\begin{thebibliography}{99}
+\bibitem[Hamilton \emph{et al.}(1995)]{Hamilton1995}
+  \textsc{Hamilton, J. M., Kim, J. \& Waleffe, F.} 1995 Regeneration
+  mechanisms of near-wall turbulence structures. \emph{J. Fluid Mech.}
+  \textbf{287}, 317--348.
+\bibitem[Hoyas \& Jim\'enez(2006)]{Hoyas2006}
+  \textsc{Hoyas, S. \& Jim\'enez, J.} 2006 Scaling of the velocity
+  fluctuations in turbulent channels up to $Re_\tau = 2003$.
+  \emph{Phys. Fluids} \textbf{18}, 011702.
+\bibitem[Hutchins \& Marusic(2007)]{Hutchins2007}
+  \textsc{Hutchins, N. \& Marusic, I.} 2007 Evidence of very long
+  meandering features in the logarithmic region of turbulent boundary
+  layers. \emph{J. Fluid Mech.} \textbf{579}, 1--28.
+\bibitem[Jim\'enez \& Moin(1991)]{Jimenez1991}
+  \textsc{Jim\'enez, J. \& Moin, P.} 1991 The minimal flow unit in
+  near-wall turbulence. \emph{J. Fluid Mech.} \textbf{225}, 213--240.
+\bibitem[Kim \emph{et al.}(1987)]{Kim1987}
+  \textsc{Kim, J., Moin, P. \& Moser, R.} 1987 Turbulence statistics in
+  fully developed channel flow at low Reynolds number. \emph{J. Fluid
+  Mech.} \textbf{177}, 133--166.
+\bibitem[Kline \emph{et al.}(1967)]{Kline1967}
+  \textsc{Kline, S. J., Reynolds, W. C., Schraub, F. A. \& Runstadler,
+  P. W.} 1967 The structure of turbulent boundary layers. \emph{J. Fluid
+  Mech.} \textbf{30}, 741--773.
+\bibitem[Smith \& Metzler(1983)]{Smith1983}
+  \textsc{Smith, C. R. \& Metzler, S. P.} 1983 The characteristics of
+  low-speed streaks in the near-wall region of a turbulent boundary
+  layer. \emph{J. Fluid Mech.} \textbf{129}, 27--54.
+\bibitem[Townsend(1976)]{Townsend1976}
+  \textsc{Townsend, A. A.} 1976 \emph{The Structure of Turbulent Shear
+  Flow}, 2nd edn. Cambridge University Press.
+\end{thebibliography}
+
+\end{document}`,
+  },
+  {
+    id: 79,
+    title: "AAAI 2027",
+    description: "AAAI 2027 author-kit style two-column paper with title block, bold abstract heading and author-year references",
+    slug: "aaai-2027",
+    previewUrl: "/templates/aaai-2027.pdf",
+    category: "Academic",
+    seoTitle: "AAAI 2027 LaTeX Template | Free Download & Preview",
+    seoDescription:
+      "Free AAAI 2027 LaTeX template: two-column AAAI format with title block, abstract, unnumbered sections and author-year references. Drop in aaai27.sty to submit.",
+    code: String.raw`%-------------------------------------------------------------------
+% AAAI 2027 paper (AAAI author-kit style, two columns, letterpaper)
+%
+% IMPORTANT -- OFFICIAL STYLE FILE FOR SUBMISSION
+% ----------------------------------------------------------------
+% AAAI papers must be submitted with the official style file from the
+% AAAI author kit (aaai27.sty for AAAI-27, plus aaai27.bst for BibTeX).
+% The author kit is NOT on TeX Live or CTAN; download it from
+%   https://aaai.org/conference/aaai/   (Author Kit link on the
+%   conference "Call for Papers" / "Submission Instructions" page)
+%
+% To switch this file to the official kit:
+%   1. Put aaai27.sty and aaai27.bst next to this .tex file.
+%   2. Replace everything between the two "EMULATION" markers below
+%      with the preamble from the kit, which is essentially
+%        \documentclass[letterpaper]{article}
+%        \usepackage[submission]{aaai27}   % [submission] | (none) for camera-ready
+%        \usepackage{times}
+%        \usepackage{helvet}
+%        \usepackage{courier}
+%        \usepackage[hyphens]{url}
+%        \usepackage{graphicx}
+%        \urlstyle{rm}
+%        \def\UrlFont{\rm}
+%        \usepackage{natbib}
+%        \usepackage{caption}
+%        \frenchspacing
+%        \setlength{\pdfpagewidth}{8.5in}
+%        \setlength{\pdfpageheight}{11in}
+%        \pdfinfo{/TemplateVersion (2027.1)}
+%   3. Use \bibliographystyle{aaai27} and \bibliography{refs} instead
+%      of the hand-written thebibliography at the end.
+%   4. Submit the anonymised PDF: the kit prints "Anonymous submission"
+%      in the author block when [submission] is active, and the AAAI
+%      page limit (7 pages + references for the main track) applies.
+%
+% What this emulation reproduces so your draft looks right while you
+% write: US letter, two 3.3 in columns with a 0.375 in gutter, 0.75 in
+% side margins, Times 10 pt body, bold 14 pt centred title, author
+% names with footnote-style affiliation markers, bold centred
+% "Abstract" heading, unnumbered bold section headings, no page
+% numbers, and author-year citations such as (Smith 2020).
+%-------------------------------------------------------------------
+
+\documentclass[letterpaper,10pt,twocolumn]{article}
+
+% ======================= EMULATION (begin) ==========================
+% Replace this block with the official aaai27.sty preamble.
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{times}
+\usepackage{helvet}
+\usepackage{courier}
+\usepackage[letterpaper,left=0.75in,right=0.75in,top=0.75in,bottom=1in,
+            columnsep=0.375in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tikz}                      % placeholder figure only
+\usepackage[hyphens]{url}
+\usepackage{titlesec}
+\urlstyle{rm}
+\frenchspacing
+\pagestyle{empty}                      % AAAI: no page numbers
+\setcounter{secnumdepth}{0}            % AAAI: unnumbered sections
+\setlength{\parindent}{10pt}
+
+% Section headings: AAAI uses centred bold 12 pt sections and
+% left-aligned bold 11 pt subsections.
+\titleformat{\section}{\large\bfseries\centering}{}{0pt}{}
+\titlespacing*{\section}{0pt}{12pt plus 2pt minus 2pt}{4pt}
+\titleformat{\subsection}{\normalsize\bfseries}{}{0pt}{}
+\titlespacing*{\subsection}{0pt}{8pt plus 2pt minus 1pt}{3pt}
+\titleformat{\subsubsection}[runin]{\normalsize\bfseries}{}{0pt}{}[.]
+\titlespacing*{\subsubsection}{0pt}{6pt}{0.5em}
+
+% Abstract: bold centred heading, body indented 0.2 in on both sides.
+\renewenvironment{abstract}
+  {\centerline{\bfseries Abstract}\vspace{0.5ex}%
+   \begin{list}{}{\setlength{\leftmargin}{0.2in}\setlength{\rightmargin}{0.2in}}%
+   \item\relax\small}
+  {\end{list}\vspace{1ex}}
+
+% Author-year citations without natbib: \bibitem[Label]{key} makes
+% \cite{key} print "(Label)". With the official kit, use natbib's
+% \citep and \citet with aaai27.bst instead.
+\makeatletter
+\renewcommand{\@cite}[2]{(#1\if@tempswa , #2\fi)}
+\renewcommand{\@biblabel}[1]{}
+\makeatother
+% ======================= EMULATION (end) ============================
+
+% --- Title block -----------------------------------------------------
+% AAAI format: title in bold 14 pt, then author names on one line with
+% superscript affiliation markers, then the affiliations and emails.
+% The block is passed to \twocolumn[...] so it spans both columns while
+% the abstract stays in the first column, as the AAAI kit does.
+% For [submission] (double-blind review) replace the names with
+% "Anonymous submission" and remove the emails.
+
+\begin{document}
+
+\twocolumn[%
+  \begin{center}
+    {\fontsize{14}{17}\selectfont\bfseries Counterfactual Explanations
+      for Sequential Decision Making under Partial Observability\par}
+    \vspace{10pt}
+    {\normalsize
+      First Author\textsuperscript{\rm 1},
+      Second Author\textsuperscript{\rm 2},
+      Third Author\textsuperscript{\rm 1,2}\par}
+    \vspace{4pt}
+    {\small
+      \textsuperscript{\rm 1}Department of Computer Science, Example University\\
+      \textsuperscript{\rm 2}Example AI Research Lab\\
+      first.author@example.edu, second.author@example.org, third.author@example.edu\par}
+    \vspace{14pt}
+  \end{center}]
+
+\begin{abstract}
+Explaining the decisions of agents that act over time is harder than
+explaining a single classification: a different action today changes
+every observation the agent receives afterwards. We introduce
+\emph{trajectory counterfactuals}, minimal edits to an observation
+history that would have led a partially observable policy to a
+different action, and show that finding them is NP-hard in general but
+tractable for policies with finite-memory controllers. We give an
+anytime search algorithm with optimality guarantees, evaluate it on
+three POMDP benchmarks and a clinical decision-support task, and report
+a user study in which trajectory counterfactuals improved participants'
+ability to predict agent behaviour by 23 points over saliency-based
+explanations.
+\end{abstract}
+
+\section{Introduction}
+Autonomous agents are increasingly deployed in settings where people
+need to understand why an action was taken: a driver-assistance system
+that brakes, a treatment-recommendation system that suggests a drug, a
+dialogue agent that escalates to a human. Counterfactual explanations,
+which answer the question of what would have had to be different for
+the outcome to change \cite{wachter2017}, are attractive because they
+are contrastive and actionable. Almost all existing methods, however,
+target single-shot classifiers \cite{mothilal2020}.
+
+Sequential decision making breaks the single-shot assumption in two
+ways. First, the policy conditions on a history, not an input vector,
+so the space of edits is combinatorial in the horizon. Second, under
+partial observability the agent's belief, and therefore its action,
+depends on the order of observations as well as their values. Our
+contributions are:
+\begin{itemize}
+  \item a formal definition of trajectory counterfactuals for
+    finite-state-controller (FSC) policies, with a cost model that
+    rewards sparse and temporally local edits;
+  \item a hardness result and an anytime branch-and-bound search that is
+    exact for FSC policies and approximate for recurrent policies;
+  \item an empirical evaluation on standard POMDP benchmarks and a user
+    study measuring explanation usefulness.
+\end{itemize}
+
+\section{Related Work}
+\subsection{Counterfactual explanations}
+The counterfactual framework for classifiers was introduced in the
+context of the GDPR right to explanation \cite{wachter2017}, and later
+work generates diverse, feasible sets of counterfactuals for the same
+input \cite{mothilal2020}. Both treat the model as a function of a
+fixed-size input vector and therefore do not apply to histories.
+
+\subsection{Explaining sequential agents}
+Work on explaining reinforcement-learning agents has focused on
+saliency over observations \cite{greydanus2018} and on summarising
+policies through representative trajectories \cite{amir2018}. Neither
+answers a contrastive question about a specific decision, which is the
+gap this paper addresses.
+
+\section{Problem Formulation}
+Let $\pi$ be a policy represented by a finite-state controller with
+nodes $Q$, transition function $\eta : Q \times O \to Q$ and action
+function $\psi : Q \to A$. For a history $h = (o_1, \dots, o_T)$, the
+action taken at time $T$ is $\psi(q_T)$ with
+$q_t = \eta(q_{t-1}, o_t)$.
+
+\subsubsection{Definition (trajectory counterfactual)}
+Given a history $h$, a target action $a' \neq \pi(h)$ and an edit cost
+$c : O \times O \to \mathbb{R}_{\ge 0}$, a trajectory counterfactual
+is a history $h'$ with $\pi(h') = a'$ that minimises
+\begin{equation}
+  C(h, h') = \sum_{t=1}^{T} c(o_t, o'_t)
+             + \lambda \,\big|\{\, t : o_t \neq o'_t \,\}\big|,
+  \label{eq:cost}
+\end{equation}
+where the second term rewards sparsity and $\lambda \ge 0$ trades it
+against the magnitude of individual edits.
+
+\subsubsection{Theorem 1}
+Deciding whether a trajectory counterfactual of cost at most $k$
+exists is NP-hard for general FSC policies, by reduction from
+shortest-common-supersequence; it is solvable in
+$O(T\,|Q|\,|O|)$ time when $c$ is uniform.
+
+\section{Method}
+We search over edited histories with branch and bound. The state of
+the search is $(t, q_t, \text{cost so far})$; because the controller is
+deterministic, two partial edits that reach the same $(t, q_t)$ are
+interchangeable, so the search runs over at most $T |Q|$ distinct
+states. A lower bound on the remaining cost is obtained from the
+shortest path in the controller graph from $q_t$ to any node $q$ with
+$\psi(q) = a'$, computed once per query. The algorithm is anytime: the
+first feasible edit found is reported immediately and improved until
+the bound closes. For recurrent policies we quantise the hidden state
+and run the same procedure approximately.
+
+\section{Experiments}
+\subsection{Setup}
+We evaluate on Tiger, RockSample(7,8) and Hallway from the POMDP
+literature, and on a sepsis-treatment simulator. Policies are FSCs
+with $|Q| \le 64$ obtained by policy iteration. We compare against a
+gradient-free edit baseline and a saliency map.
+
+\subsection{Results}
+Table~\ref{tab:results} reports cost and run time. Branch and bound
+finds the optimum on every FSC benchmark within one second, with 8--14
+times lower cost than the baseline. Figure~\ref{fig:anytime} shows
+the anytime profile.
+
+\begin{table}[t]
+  \centering
+  \small
+  \begin{tabular}{lrrr}
+    \toprule
+    Domain & Cost (ours) & Cost (baseline) & Time (s) \\
+    \midrule
+    Tiger           & 1.0 &  8.3 & 0.01 \\
+    RockSample(7,8) & 2.4 & 31.9 & 0.42 \\
+    Hallway         & 3.1 & 27.6 & 0.87 \\
+    Sepsis          & 4.8 & 40.2 & 2.95 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Mean counterfactual cost and wall-clock time per query,
+    averaged over 500 queries per domain.}
+  \label{tab:results}
+\end{table}
+
+\begin{figure}[t]
+  \centering
+  % Placeholder drawn with TikZ; replace with
+  % \includegraphics[width=0.9\columnwidth]{anytime.pdf}
+  \begin{tikzpicture}[x=0.78cm,y=0.65cm]
+    \draw[->] (0,0) -- (8.4,0) node[right] {\scriptsize time (s)};
+    \draw[->] (0,0) -- (0,4.4) node[above] {\scriptsize cost};
+    \foreach \x in {2,4,6,8} \draw (\x,0.1) -- (\x,-0.1) node[below] {\scriptsize \x};
+    \foreach \y in {1,2,3,4} \draw (0.1,\y) -- (-0.1,\y) node[left] {\scriptsize \y0};
+    \draw[thick] (0.2,4) -- (0.6,4) -- (0.6,2.6) -- (1.4,2.6) -- (1.4,1.5)
+      -- (2.6,1.5) -- (2.6,0.9) -- (4.4,0.9) -- (4.4,0.5) -- (8,0.5);
+    \draw[dashed] (0,0.45) -- (8,0.45) node[above left] {\scriptsize optimum};
+  \end{tikzpicture}
+  \caption{Anytime profile on Sepsis: cost of the best counterfactual
+    found as a function of search time.}
+  \label{fig:anytime}
+\end{figure}
+
+\subsection{User study}
+Forty participants predicted the agent's next action after seeing
+either a saliency map or a trajectory counterfactual. Accuracy rose
+from 51\% to 74\%, and 31 of 40 participants preferred the
+counterfactual explanation.
+
+\section{Conclusion}
+Trajectory counterfactuals extend contrastive explanations to agents
+that act over time under partial observability. The search is exact
+and fast for finite-state-controller policies and useful in practice
+for recurrent ones. Future work will treat stochastic policies and
+explanations that edit the environment rather than the observations.
+
+\section{Acknowledgments}
+This work was supported by the Example Science Foundation under grant
+EX-2027-0042. We thank the anonymous reviewers for their comments.
+
+% --- References ------------------------------------------------------
+% AAAI reference style: authors (surname, initials), year, title,
+% venue, pages. \bibitem[Label]{key} supplies the author-year label
+% that \cite prints in parentheses.
+\begin{thebibliography}{}
+\bibitem[Amir and Amir 2018]{amir2018}
+  Amir, D.; and Amir, O. 2018. HIGHLIGHTS: Summarizing Agent Behavior
+  to People. In \emph{Proceedings of the 17th International Conference
+  on Autonomous Agents and MultiAgent Systems (AAMAS)}, 1168--1176.
+\bibitem[Greydanus et al. 2018]{greydanus2018}
+  Greydanus, S.; Koul, A.; Dodge, J.; and Fern, A. 2018. Visualizing
+  and Understanding Atari Agents. In \emph{Proceedings of the 35th
+  International Conference on Machine Learning (ICML)}, 1792--1801.
+\bibitem[Mothilal, Sharma, and Tan 2020]{mothilal2020}
+  Mothilal, R. K.; Sharma, A.; and Tan, C. 2020. Explaining Machine
+  Learning Classifiers through Diverse Counterfactual Explanations. In
+  \emph{Proceedings of the 2020 Conference on Fairness, Accountability,
+  and Transparency (FAT*)}, 607--617.
+\bibitem[Wachter, Mittelstadt, and Russell 2017]{wachter2017}
+  Wachter, S.; Mittelstadt, B.; and Russell, C. 2017. Counterfactual
+  Explanations without Opening the Black Box: Automated Decisions and
+  the GDPR. \emph{Harvard Journal of Law \& Technology}, 31(2):
+  841--887.
+\end{thebibliography}
+
+\end{document}`,
+  },
+  {
+    id: 80,
+    title: "NeurIPS 2027",
+    description: "NeurIPS 2027 style single-column preprint with author block, abstract, sections and paper checklist",
+    slug: "neurips-2027",
+    previewUrl: "/templates/neurips-2027.pdf",
+    category: "Academic",
+    seoTitle: "NeurIPS 2027 LaTeX Template | Free Download & Preview",
+    seoDescription:
+      "Free NeurIPS 2027 LaTeX template: single-column NeurIPS format with author block, abstract, numbered sections and the paper checklist. Swap in neurips_2027.sty to submit.",
+    code: String.raw`%-------------------------------------------------------------------
+% NeurIPS 2027 paper (NeurIPS style, single column, letterpaper, 10pt)
+%
+% IMPORTANT -- OFFICIAL STYLE FILE FOR SUBMISSION
+% ----------------------------------------------------------------
+% NeurIPS submissions must use the official style file from the
+% conference (neurips_2027.sty) together with its template
+% (neurips_2027.tex) and the paper checklist. The style file is NOT on
+% TeX Live or CTAN; download the LaTeX style kit from
+%   https://neurips.cc/   (Call for Papers -> Style Files)
+%
+% To switch this file to the official kit:
+%   1. Put neurips_2027.sty next to this .tex file.
+%   2. Replace everything between the two "EMULATION" markers below with
+%        \documentclass{article}
+%        \usepackage[preprint]{neurips_2027}
+%      The option controls the header/footer and author block:
+%        (none)      anonymised submission: "Anonymous Author(s)",
+%                    line numbers, "Submitted to ..." footer
+%        [preprint]  named authors, "Preprint. Under review." footer
+%        [final]     camera-ready: named authors, conference footer
+%        [nonatbib]  if you do not want natbib loaded by the style
+%   3. Keep the body unchanged: \title, \author with \And / \AND,
+%      abstract, sections, and the mandatory checklist all work as in
+%      the official template.
+%   4. Use \bibliographystyle{plainnat} (or unsrtnat) with
+%      \bibliography{refs} instead of the hand-written references.
+%   5. Page limit: 9 content pages for the main text; references,
+%      appendices and the checklist do not count. Check the current
+%      Call for Papers for the exact limit.
+%
+% What this emulation reproduces while you write: US letter, 10 pt
+% Times body on a 5.5 in x 9 in text block, 17 pt bold title, the
+% author block laid out with \And side by side, centred bold "Abstract"
+% heading with an indented abstract, numbered bold section headings,
+% centred page numbers, the "Preprint. Under review." first-page
+% footnote, \citet / \citep via natbib, and a paper-checklist section.
+%-------------------------------------------------------------------
+
+\documentclass{article}
+
+% ======================= EMULATION (begin) ==========================
+% Replace this block with:  \usepackage[preprint]{neurips_2027}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{times}
+\usepackage[letterpaper,textwidth=5.5in,textheight=9in,
+            headheight=12pt,headsep=0.25in,footskip=0.4in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tikz}                 % placeholder figure only
+\usepackage{titlesec}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+\usepackage{url}
+\usepackage{microtype}
+\usepackage{enumitem}
+
+\pagestyle{plain}                 % centred page number, no running head
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5.5pt plus 1pt minus 1pt}
+
+% Section headings: NeurIPS uses 12 pt bold sections, 10 pt bold
+% subsections, run-in bold paragraphs.
+\titleformat{\section}{\large\bfseries}{\thesection}{1em}{}
+\titlespacing*{\section}{0pt}{2.0ex plus 0.5ex minus 0.2ex}{1.5ex plus 0.3ex minus 0.2ex}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{1em}{}
+\titlespacing*{\subsection}{0pt}{1.8ex plus 0.5ex minus 0.2ex}{0.8ex plus 0.2ex}
+\titleformat{\paragraph}[runin]{\normalsize\bfseries}{}{0pt}{}
+\titlespacing*{\paragraph}{0pt}{1.5ex plus 0.5ex minus 0.2ex}{1em}
+
+% Abstract: centred bold heading, text indented 0.5 in on each side.
+\renewenvironment{abstract}
+  {\vskip 0.075in\centerline{\large\bfseries Abstract}\vspace{0.5ex}%
+   \begin{list}{}{\setlength{\leftmargin}{0.5in}\setlength{\rightmargin}{0.5in}}%
+   \item\relax}
+  {\end{list}\vskip 1ex}
+
+% Author block: \And places the next author beside the previous one,
+% \AND starts a new row, exactly as in neurips_2027.sty.
+\makeatletter
+\def\And{\end{tabular}\hfil\linebreak[0]\hfil\begin{tabular}[t]{c}}
+\def\AND{\end{tabular}\\[1.5ex]\begin{tabular}[t]{c}}
+\renewcommand{\maketitle}{%
+  \begin{center}
+    {\LARGE\bfseries\@title\par}
+    \vskip 0.25in
+    {\normalsize\begin{tabular}[t]{c}\@author\end{tabular}\par}
+  \end{center}
+  \vskip 0.3in
+  % First-page notice as in the [preprint] option. For the anonymised
+  % submission the official style prints "Submitted to 41st Conference
+  % on Neural Information Processing Systems (NeurIPS 2027)".
+  \begingroup\renewcommand{\thefootnote}{}%
+  \footnotetext{Preprint. Under review.}\endgroup
+}
+\makeatother
+% ======================= EMULATION (end) ============================
+
+\title{Inference-Budget Scaling Laws for\\
+  Retrieval-Augmented Language Models}
+
+% Anonymised submission: replace the whole \author{...} with
+%   \author{Anonymous Author(s)\\ Affiliation\\ Address\\ \texttt{email}}
+\author{%
+  First Author \\
+  Department of Computer Science \\
+  Example University \\
+  \texttt{fauthor@example.edu}
+  \And
+  Second Author \\
+  Example AI Lab \\
+  \texttt{sauthor@example.org}
+  \And
+  Third Author \\
+  Department of Statistics \\
+  Example University \\
+  \texttt{tauthor@example.edu}
+}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Retrieval augmentation lets a language model consult an external
+corpus at inference time, trading parameters for lookups. We study how
+downstream loss scales when the total inference cost, counting both
+forward-pass FLOPs and retrieved tokens, is held fixed. Across 42
+models from 70M to 7B parameters and corpora from 1B to 1T tokens, we
+find that loss follows a two-term power law in model size and
+retrieval depth, with an interaction term that favours retrieval over
+parameters once the corpus exceeds roughly ten times the pre-training
+set. The fitted law predicts the loss of held-out configurations within
+1.2\%, and suggests that at a fixed budget the compute-optimal
+allocation shifts from parameters to retrieval as corpora grow.
+\end{abstract}
+
+\section{Introduction}
+Scaling laws relate the loss of a language model to its parameter
+count, training tokens and compute, and have guided the design of
+most recent large models \citep{kaplan2020,hoffmann2022}. Retrieval
+augmentation \citep{borgeaud2022,lewis2020} adds a fourth axis: the
+amount of external text a model can consult at inference time. The
+usual argument for retrieval is that it stores facts in a corpus
+rather than in weights, but we lack a quantitative account of
+\emph{when} this is the better use of a fixed inference budget.
+
+This paper asks a simple question: for a fixed cost per query, how
+should one split spending between model parameters and retrieved
+context? We make three contributions.
+\begin{enumerate}[leftmargin=*,itemsep=2pt]
+  \item We train a grid of retrieval-augmented models spanning two
+    orders of magnitude in size and three in corpus scale, and
+    measure loss under a unified cost model (Section~\ref{sec:setup}).
+  \item We fit a parametric scaling law with an interaction term and
+    show it extrapolates to held-out configurations
+    (Section~\ref{sec:law}).
+  \item We derive the budget-optimal allocation and show that it
+    crosses over from parameters to retrieval as corpus size grows
+    (Section~\ref{sec:optimal}).
+\end{enumerate}
+
+\section{Related work}
+Neural scaling laws were established by \citet{kaplan2020} and refined
+by \citet{hoffmann2022}, who showed that model size and training
+tokens should grow together. Retrieval-augmented models include REALM,
+RAG \citep{lewis2020} and RETRO \citep{borgeaud2022}; RETRO reported
+that retrieval benefits persist across model sizes but did not fit a
+joint law. Our work combines the two lines by treating retrieval depth
+as a scaled quantity with its own exponent.
+
+\section{Experimental setup}\label{sec:setup}
+\paragraph{Models.} Decoder-only transformers with 70M, 160M, 410M,
+1B, 2.8B and 7B parameters, each trained on 300B tokens. A
+cross-attention retrieval block after every third layer attends to
+$k$ chunks of 64 tokens returned by a frozen dense retriever.
+
+\paragraph{Cost model.} The inference cost of a query is
+\begin{equation}
+  C = 2N\,(L + kR) + c_{\mathrm{idx}}\,\log_2 |\mathcal{D}|,
+  \label{eq:cost}
+\end{equation}
+where $N$ is the parameter count, $L$ the prompt length, $k$ the
+retrieval depth, $R$ the chunk length, $|\mathcal{D}|$ the corpus size
+in chunks and $c_{\mathrm{idx}}$ the index lookup cost. We sweep
+$k \in \{0, 2, 5, 10, 20, 50\}$ and $|\mathcal{D}| \in \{10^9, 10^{10},
+10^{11}, 10^{12}\}$ tokens.
+
+\section{A scaling law with retrieval}\label{sec:law}
+We fit the held-out loss with
+\begin{equation}
+  \mathcal{L}(N, k, D) = E + \frac{A}{N^{\alpha}}
+    + \frac{B}{(1 + k\,D^{\gamma})^{\beta}}
+    - \frac{G\,\log D}{N^{\alpha}}\,\mathbb{I}[k > 0],
+  \label{eq:law}
+\end{equation}
+where $E$ is the irreducible loss and the last term captures the
+interaction between retrieval and model size. Table~\ref{tab:fit}
+reports the fitted exponents; Figure~\ref{fig:iso} shows iso-loss
+contours in the $(N, k)$ plane for a 100B-token corpus.
+
+\begin{table}[t]
+  \caption{Fitted parameters of Equation~\eqref{eq:law} with bootstrap
+    standard errors over 200 resamples.}
+  \label{tab:fit}
+  \centering
+  \begin{tabular}{lcc}
+    \toprule
+    Parameter & Estimate & Std.\ error \\
+    \midrule
+    $\alpha$ (model size)      & 0.076 & 0.004 \\
+    $\beta$ (retrieval depth)  & 0.21  & 0.02  \\
+    $\gamma$ (corpus size)     & 0.18  & 0.03  \\
+    $G$ (interaction)          & 0.011 & 0.002 \\
+    $E$ (irreducible)          & 1.69  & 0.01  \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{figure}[t]
+  \centering
+  % Placeholder drawn with TikZ; replace with
+  % \includegraphics[width=0.7\linewidth]{isoloss.pdf}
+  \begin{tikzpicture}[x=1cm,y=1cm]
+    \draw[->] (0,0) -- (8.4,0) node[below,yshift=-10pt] {\small parameters $N$ (log)};
+    \draw[->] (0,0) -- (0,4.4) node[above] {\small depth $k$ (log)};
+    \foreach \x/\l in {1/70M,3/410M,5/2.8B,7/7B}
+      \draw (\x,0.1) -- (\x,-0.1) node[below] {\scriptsize \l};
+    \foreach \y/\l in {1/2,2/5,3/20,4/50}
+      \draw (0.1,\y) -- (-0.1,\y) node[left] {\scriptsize \l};
+    \foreach \s/\lab in {1.0/2.4, 2.2/2.2, 3.4/2.0, 4.6/1.9}{
+      \draw[thick,gray!70!black] plot[smooth] coordinates
+        {(\s,4.2) (\s+0.6,2.6) (\s+1.6,1.4) (\s+3.4,0.5)};
+      \node[font=\scriptsize,fill=white,inner sep=1pt] at (\s+0.75,2.4) {\lab};
+    }
+    \draw[dashed,thick] (0.8,0.6) -- (7.6,3.9) node[above left,font=\scriptsize] {budget-optimal};
+  \end{tikzpicture}
+  \caption{Iso-loss contours predicted by Equation~\eqref{eq:law} for a
+    100B-token corpus. The dashed line is the budget-optimal
+    allocation of Section~\ref{sec:optimal}.}
+  \label{fig:iso}
+\end{figure}
+
+\section{Budget-optimal allocation}\label{sec:optimal}
+Minimising \eqref{eq:law} subject to the cost \eqref{eq:cost} gives a
+closed-form optimum for $k$ as a function of $N$ and $D$. The optimal
+retrieval depth grows as $D^{\gamma/(1+\beta)}$, and the crossover
+corpus size at which retrieval tokens are worth more than parameters
+is $D^{*} \approx 10 \times$ the pre-training set for every model size
+in our grid. Below $D^{*}$ the best use of extra budget is a larger
+model; above it, deeper retrieval.
+
+\section{Limitations}
+Our cost model counts FLOPs and tokens but not latency or memory
+traffic, which may favour parameters on some hardware. The grid stops
+at 7B parameters and 1T tokens, so the law is extrapolated beyond
+that. All corpora are English web text.
+
+\section{Conclusion}
+We presented a scaling law for retrieval-augmented language models
+under a fixed inference budget and showed that the budget-optimal
+split shifts from parameters toward retrieval as the corpus grows.
+The law is simple enough to guide allocation decisions before
+training and accurate enough to predict held-out configurations.
+
+\begin{thebibliography}{9}
+% Hand-written numeric references in plainnat form. With the official
+% kit use \bibliographystyle{plainnat} and a .bib file.
+\bibitem[Borgeaud et~al.(2022)]{borgeaud2022}
+  S.~Borgeaud, A.~Mensch, J.~Hoffmann, et~al.
+  Improving language models by retrieving from trillions of tokens.
+  In \emph{International Conference on Machine Learning (ICML)}, 2022.
+\bibitem[Hoffmann et~al.(2022)]{hoffmann2022}
+  J.~Hoffmann, S.~Borgeaud, A.~Mensch, et~al.
+  Training compute-optimal large language models.
+  In \emph{Advances in Neural Information Processing Systems (NeurIPS)}, 2022.
+\bibitem[Kaplan et~al.(2020)]{kaplan2020}
+  J.~Kaplan, S.~McCandlish, T.~Henighan, et~al.
+  Scaling laws for neural language models.
+  \emph{arXiv preprint arXiv:2001.08361}, 2020.
+\bibitem[Lewis et~al.(2020)]{lewis2020}
+  P.~Lewis, E.~Perez, A.~Piktus, et~al.
+  Retrieval-augmented generation for knowledge-intensive NLP tasks.
+  In \emph{Advances in Neural Information Processing Systems (NeurIPS)}, 2020.
+\end{thebibliography}
+
+\appendix
+\section{Additional results}
+Appendices do not count toward the page limit. Put extended tables,
+proofs and implementation details here.
+
+% --- NeurIPS paper checklist ----------------------------------------
+% NeurIPS requires the checklist to be included after the references
+% and appendices. The official template ships the full list of
+% questions with [Yes] / [No] / [NA] answers and a justification for
+% each; copy it from neurips_2027.tex. The items below show the format.
+\section*{NeurIPS Paper Checklist}
+\begin{enumerate}[leftmargin=*,itemsep=4pt]
+  \item \textbf{Claims.} Do the main claims made in the abstract and
+    introduction accurately reflect the paper's contributions and scope?\\
+    Answer: \textbf{[Yes]}\\
+    Justification: The abstract states the fitted law, its accuracy on
+    held-out configurations and the crossover result, all of which are
+    supported in Sections~\ref{sec:law} and \ref{sec:optimal}.
+  \item \textbf{Limitations.} Does the paper discuss the limitations of
+    the work performed by the authors?\\
+    Answer: \textbf{[Yes]}\\
+    Justification: See the Limitations section.
+  \item \textbf{Theory assumptions and proofs.} For each theoretical
+    result, does the paper provide the full set of assumptions and a
+    complete proof?\\
+    Answer: \textbf{[NA]}\\
+    Justification: The paper reports an empirical fit; no theorems are
+    claimed.
+  \item \textbf{Experimental result reproducibility.} Does the paper
+    fully disclose all the information needed to reproduce the main
+    experimental results?\\
+    Answer: \textbf{[Yes]}\\
+    Justification: Model sizes, training tokens, retrieval depths and
+    the cost model are given in Section~\ref{sec:setup}; code and
+    fitted parameters are released with the paper.
+  \item \textbf{Open access to data and code.} Does the paper provide
+    open access to the data and code?\\
+    Answer: \textbf{[Yes]}\\
+    Justification: An anonymised repository is linked in the
+    supplementary material.
+  \item \textbf{Error bars.} Does the paper report error bars or other
+    information about the statistical significance of the
+    experiments?\\
+    Answer: \textbf{[Yes]}\\
+    Justification: Table~\ref{tab:fit} gives bootstrap standard errors.
+  \item \textbf{Compute resources.} Does the paper provide sufficient
+    information on the compute resources needed?\\
+    Answer: \textbf{[Yes]}\\
+    Justification: GPU hours per model are listed in
+    Appendix~A.
+  \item \textbf{Code of ethics and broader impacts.} Does the research
+    conform with the NeurIPS Code of Ethics, and does the paper discuss
+    societal impacts?\\
+    Answer: \textbf{[Yes]}\\
+    Justification: The work is methodological; impacts are discussed
+    in the Limitations section.
+\end{enumerate}
+
+\end{document}`,
+  },
 
 ];
-
