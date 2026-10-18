@@ -271,6 +271,45 @@
       "convertedLatexWillAppear": "Lalabas ang converted LaTeX dito...",
       "failedToConvert": "Nabigo sa pag-convert ng MathML. Pakisubukang muli."
     },
+    "latexToPng": {
+      "title": "LaTeX to PNG Converter",
+      "subtitle": "Render LaTeX equations and documents as crisp PNG images",
+      "inputLabel": "LaTeX Code",
+      "inputHint": "Paste a standalone equation or a full document",
+      "convert": "Convert to PNG",
+      "converting": "Rendering...",
+      "outputLabel": "PNG Image",
+      "outputHint": "First page rendered at the selected resolution",
+      "imageWillAppear": "Your PNG will appear here...",
+      "scaleLabel": "Resolution",
+      "transparentLabel": "Transparent background",
+      "downloadPng": "Download PNG",
+      "copyToClipboard": "Copy to clipboard",
+      "copied": "Copied!",
+      "copyFailed": "Your browser could not copy the image. Download it instead.",
+      "compileFailed": "LaTeX compilation failed",
+      "showLog": "Show compile log",
+      "hideLog": "Hide compile log",
+      "renderFailed": "The PDF could not be rendered to an image. Please try again."
+    },
+    "latexToWord": {
+      "title": "LaTeX to Word Converter",
+      "subtitle": "Turn LaTeX documents into editable Word (.docx) files",
+      "inputLabel": "LaTeX Content",
+      "inputHint": "Paste a full document or a snippet",
+      "convert": "Convert to Word",
+      "converting": "Converting...",
+      "outputLabel": "Word Document",
+      "outputHint": "Headings, lists, tables and formatting preserved",
+      "documentWillAppear": "Your .docx download will appear here...",
+      "ready": "Your Word document is ready",
+      "fileSize": "document.docx ({size})",
+      "download": "Download document.docx",
+      "convertAgain": "Convert again",
+      "mathNoteTitle": "A note on math",
+      "mathNote": "Equations are converted to readable plain text (for example x² + y² = r²), not to native Word equations. For full math fidelity, use Pandoc: pandoc paper.tex -o paper.docx.",
+      "failedToConvert": "Failed to convert LaTeX. Please try again."
+    },
     "latexToMarkdown": {
       "title": "LaTeX sa Markdown Converter",
       "subtitle": "I-convert ang LaTeX documents o snippets sa malinis na Markdown",
@@ -420,6 +459,18 @@
     "pgfplotsGenerator": {
       "title": "Pgfplots Generator",
       "description": "Gumawa ng pgfplots graphs at charts gamit ang AI"
+    },
+    "latexToPng": {
+      "title": "LaTeX to PNG",
+      "description": "Render LaTeX equations and documents as PNG images"
+    },
+    "latexToWord": {
+      "title": "LaTeX to Word",
+      "description": "Convert LaTeX documents to editable Word (.docx) files"
+    },
+    "latexConverter": {
+      "title": "LaTeX Converter",
+      "description": "All converters to and from LaTeX in one place"
     },
     "latexToMarkdown": {
       "title": "LaTeX sa Markdown",
@@ -1100,6 +1151,21 @@
         "title": "Converter ng Markdown sa LaTeX - Libreng Online Tool",
         "description": "I-convert ang Markdown files sa malinis na LaTeX code. Mapanatili ang formatting, links, at structure.",
         "keywords": "markdown sa LaTeX, convert markdown sa LaTeX, md sa tex, markdown LaTeX converter, pandoc alternative, markdown sa PDF LaTeX, markdown sa TeX online, paano i-convert ang markdown, md file to LaTeX, GitHub markdown, README converter, notes to LaTeX, documentation converter, text to LaTeX, formatted text, libreng markdown converter"
+      },
+      "latexToPng": {
+        "title": "LaTeX to PNG Converter — Render Equations as Images",
+        "description": "Free online LaTeX to PNG converter. Render equations, formulas or whole documents as high-resolution PNG images for slides, Word, Google Docs, Notion and the web.",
+        "keywords": "latex to png, latex to image, equation to image, render latex to png, latex formula to png"
+      },
+      "latexToWord": {
+        "title": "LaTeX to Word Converter — Convert .tex to .docx Online",
+        "description": "Free online LaTeX to Word converter. Turn .tex documents into editable .docx files with headings, lists, tables and formatting preserved.",
+        "keywords": "latex to word, latex to docx, convert latex to word, latex to word converter, tex to docx"
+      },
+      "latexConverter": {
+        "title": "LaTeX Converter: Convert To and From LaTeX Online",
+        "description": "Free online LaTeX converter hub. Convert Markdown, HTML, MathML, Mermaid, tables, PDFs, images and equations to LaTeX, or LaTeX to Markdown, PNG, Word and PDF.",
+        "keywords": "latex converter, latex converter online, convert to latex, convert from latex, latex convert"
       },
       "latexToMarkdown": {
         "title": "Converter ng LaTeX sa Markdown - Libreng Online Tool",

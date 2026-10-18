@@ -25,6 +25,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'table-to-latex',
     'tikz-generator',
     'arxiv-to-latex',
+    'latex-to-png',
+    'latex-to-word',
+    'latex-converter',
   ]
 
   // All symbol category routes

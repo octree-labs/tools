@@ -15,6 +15,9 @@ import {
   Sigma,
   FileDown,
   Hash,
+  ImageDown,
+  FileType2,
+  ArrowLeftRight,
   type LucideIcon,
 } from "lucide-react";
 
@@ -139,5 +142,26 @@ export const tools: Tool[] = [
     description: "Count words in LaTeX documents accurately",
     href: "/tools/latex-word-counter",
     icon: Hash,
+  },
+  {
+    id: 17,
+    title: "LaTeX to PNG",
+    description: "Render LaTeX equations and documents as PNG images",
+    href: "/tools/latex-to-png",
+    icon: ImageDown,
+  },
+  {
+    id: 18,
+    title: "LaTeX to Word",
+    description: "Convert LaTeX documents to editable Word (.docx) files",
+    href: "/tools/latex-to-word",
+    icon: FileType2,
+  },
+  {
+    id: 19,
+    title: "LaTeX Converter",
+    description: "All converters to and from LaTeX in one place",
+    href: "/tools/latex-converter",
+    icon: ArrowLeftRight,
   },
 ];

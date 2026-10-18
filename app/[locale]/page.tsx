@@ -42,6 +42,9 @@ const getToolTranslationKey = (title: string): string => {
     "PDF to LaTeX": "pdfToLatex",
     "LaTeX Word Counter": "latexWordCounter",
     "ArXiv to LaTeX": "arxivToLatex",
+    "LaTeX to PNG": "latexToPng",
+    "LaTeX to Word": "latexToWord",
+    "LaTeX Converter": "latexConverter",
   };
   return titleToKey[title] || "";
 };
