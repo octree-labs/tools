@@ -8854,4 +8854,196 @@ proofs and implementation details here.
 \end{document}`,
   },
 
+  {
+    id: 81,
+    title: "ATS-Friendly Resume Template",
+    description: "Single-column plain-text resume that applicant tracking systems parse cleanly: standard headings, no tables, icons or columns",
+    slug: "ats-resume",
+    previewUrl: "/templates/ats-resume.pdf",
+    category: "Resume & CV",
+    seoTitle: "ATS-Friendly Resume Template (LaTeX) | Free Download",
+    seoDescription:
+      "Free ATS-friendly resume template in LaTeX: single column, standard headings, real text, no tables or icons so parsers read it right. Preview and download.",
+    code: String.raw`%-------------------------------------------------------------------
+% ATS-friendly resume (one page, letterpaper, 11pt)
+%
+% Applicant tracking systems (ATS) do not "see" your PDF; they flatten
+% it to plain text and then look for section names, job titles, dates
+% and keywords. Every choice below exists to make that extraction
+% clean and predictable:
+%
+%   * single column         -> text is read top to bottom in order
+%   * standard headings     -> "Experience", "Education" are what parsers match
+%   * real text only        -> no icons, images, skill bars or text in graphics
+%   * no tables/multicols   -> table cells and columns get merged or reordered
+%   * no header/footer      -> many parsers discard page furniture entirely
+%   * standard pdfLaTeX font -> glyphs map to the right Unicode characters
+%   * \pdfgentounicode      -> ligatures such as "fi" copy as "f" + "i"
+%
+% Edit the content between \begin{document} and \end{document}.
+% Keep it to one page: trim bullets before shrinking the font.
+%-------------------------------------------------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+% Margins between 0.6in and 0.75in keep the page dense without
+% letting text run into the printable edge (some parsers crop it).
+\usepackage[margin=0.65in,top=0.55in,bottom=0.55in]{geometry}
+
+% T1 encoding + utf8 input: accented names (José, Müller) are stored
+% as single characters that parsers and recruiters' search can find.
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}        % Latin Modern: a standard Type 1 font, no fontspec needed
+
+% Tight bullet lists without any custom bullet glyphs.
+\usepackage{enumitem}
+
+% Clickable email / LinkedIn / GitHub with no coloured boxes.
+% hidelinks keeps the printed output plain black.
+\usepackage[hidelinks]{hyperref}
+
+% Map every glyph (including ligatures like fi, fl, --) to its Unicode
+% code point so copy-paste and ATS extraction yield the typed text.
+% Both settings are pdfTeX primitives; the \ifdefined guards let the
+% file still compile unchanged if you pick XeLaTeX or LuaLaTeX.
+\ifdefined\pdfgentounicode
+  \input{glyphtounicode}
+  \pdfgentounicode=1
+\fi
+
+% pdfTeX normally encodes word gaps as positioning only; parsers then
+% guess where the spaces are. This writes a real space character into
+% the PDF at every word gap (including before right-aligned dates), so
+% "Senior Engineer" and "Jan 2023" can never be glued together.
+\ifdefined\pdfinterwordspaceon
+  \pdfinterwordspaceon
+\fi
+
+% Embed title/author metadata; some ATS read it as the candidate name.
+\hypersetup{
+  pdftitle={Alex Rivera - Resume},
+  pdfauthor={Alex Rivera},
+}
+
+% No page numbers (page furniture is often discarded or misread).
+\pagestyle{empty}
+
+% No paragraph indentation, no stretched word spacing.
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\raggedright
+
+% --- Section headings -----------------------------------------------
+% Plain bold heading in capitals followed by a thin rule. We avoid
+% titlesec and \section altogether: the heading is ordinary body text
+% with no numbering, no running headers, nothing a parser could mis-tag.
+\newcommand{\resumesection}[1]{%
+  \vspace{7pt}%
+  \noindent{\large\bfseries\MakeUppercase{#1}}\par\nobreak
+  \vspace{-7pt}\noindent\rule{\textwidth}{0.6pt}\par\nobreak
+  \vspace{2pt}}
+
+% --- Entry helpers -------------------------------------------------
+% \entry{Title or Organisation}{Right-hand text (location or dates)}
+% \hfill pushes dates to the right margin on the SAME line, so the
+% extracted text reads "Senior Engineer   Jan 2023 - Present".
+\newcommand{\entry}[2]{%
+  \vspace{4pt}%
+  \noindent\textbf{#1} \hfill #2\par}
+% \subentry{Organisation or Degree}{Location}
+\newcommand{\subentry}[2]{%
+  \noindent\textit{#1} \hfill #2\par}
+
+% Compact bullets using the plain ASCII-safe \textbullet.
+\setlist[itemize]{leftmargin=0.18in,itemsep=1pt,parsep=0pt,topsep=2pt,partopsep=0pt,label=\textbullet}
+
+\begin{document}
+
+%-----------------------------------------------------------------------
+% HEADER: name and a single contact line in the body (NOT a page header)
+\begin{center}
+  {\LARGE\bfseries Alex Rivera}\\[3pt]
+  Seattle, WA \textbar{}
+  (206) 555-0142 \textbar{}
+  \href{mailto:alex.rivera@example.com}{alex.rivera@example.com} \textbar{}
+  \href{https://linkedin.com/in/alexrivera}{linkedin.com/in/alexrivera}
+\end{center}
+
+%-----------------------------------------------------------------------
+\resumesection{Summary}
+
+Software engineer with 6 years of experience building distributed backend
+services and developer tooling in Go, Python and TypeScript. Led a
+four-person team that cut API latency by 40\% and shipped a payments
+platform processing \$120M per year. Seeking a senior backend role on a
+platform or infrastructure team.
+
+%-----------------------------------------------------------------------
+\resumesection{Experience}
+
+\entry{Senior Software Engineer}{January 2023 -- Present}
+\subentry{Northwind Logistics}{Seattle, WA}
+\begin{itemize}
+  \item Designed a Go microservice platform serving 25,000 requests per second, cutting p95 API latency by 40\%
+  \item Led four engineers through a monolith-to-Kubernetes migration with zero customer-facing downtime
+  \item Built an event-driven order pipeline on Kafka and PostgreSQL that handles 2 million shipments a month
+  \item Introduced SLOs and on-call runbooks, cutting mean time to recovery from 55 to 18 minutes
+\end{itemize}
+
+\entry{Software Engineer}{June 2020 -- December 2022}
+\subentry{Cascade Payments}{Portland, OR}
+\begin{itemize}
+  \item Developed a PCI-compliant payments API in Python (FastAPI) that settles \$120M a year
+  \item Implemented idempotent retry and reconciliation jobs that reduced failed settlements by 92\%
+  \item Wrote integration tests and GitHub Actions pipelines, raising backend test coverage from 48\% to 85\%
+\end{itemize}
+
+\entry{Software Engineering Intern}{May 2019 -- August 2019}
+\subentry{Cascade Payments}{Portland, OR}
+\begin{itemize}
+  \item Built a React and TypeScript dashboard used daily by 30 support agents to trace transactions
+\end{itemize}
+
+%-----------------------------------------------------------------------
+\resumesection{Education}
+
+\entry{Bachelor of Science in Computer Science}{September 2016 -- May 2020}
+\subentry{University of Washington}{Seattle, WA}
+\begin{itemize}
+  \item GPA 3.8/4.0; coursework in distributed systems, databases, algorithms and machine learning
+\end{itemize}
+
+%-----------------------------------------------------------------------
+\resumesection{Skills}
+
+% One category per line; plain comma-separated keywords are what
+% keyword-matching ATS compare against the job description.
+\textbf{Languages:} Go, Python, TypeScript, SQL, Java\par
+\textbf{Backend:} REST and gRPC APIs, microservices, Kafka, PostgreSQL, Redis, event-driven architecture\par
+\textbf{Cloud and DevOps:} AWS (EC2, Lambda, RDS, S3), Kubernetes, Docker, Terraform, GitHub Actions\par
+\textbf{Practices:} Agile/Scrum, test-driven development, code review, observability (Prometheus, Grafana)\par
+
+%-----------------------------------------------------------------------
+\resumesection{Certifications}
+
+\entry{AWS Certified Solutions Architect -- Associate}{March 2024}
+\entry{Certified Kubernetes Application Developer (CKAD)}{November 2022}
+
+%-----------------------------------------------------------------------
+\resumesection{Projects}
+
+\entry{OpenLedger (open source)}{2024 -- Present}
+\begin{itemize}
+  \item Maintain a double-entry accounting library in Go (1,200 GitHub stars) with a PostgreSQL backend and CLI
+\end{itemize}
+
+\entry{Latency Lab}{2023}
+\begin{itemize}
+  \item Built a Python load-testing toolkit that replays production traffic and charts p50/p95/p99 latency per endpoint
+\end{itemize}
+
+\end{document}`,
+  },
+
 ];

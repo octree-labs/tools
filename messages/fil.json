@@ -813,6 +813,10 @@
     "neurips-2027": {
       "title": "NeurIPS 2027",
       "description": "Single-column preprint sa istilong NeurIPS 2027 na may author block, abstract, mga seksyon at paper checklist"
+    },
+    "ats-resume": {
+      "title": "ATS-Friendly Resume Template",
+      "description": "Single-column na plain-text resume na malinis na nababasa ng applicant tracking systems: standard na headings, walang tables, icons o columns"
     }
   },
   "symbols": {

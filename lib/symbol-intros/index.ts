@@ -1,4 +1,5 @@
 import type { ComponentType } from "react";
+import AccentsIntro from "./accents";
 import ArrowsIntro from "./arrows";
 import BooleanIntro from "./boolean";
 import CombinatoricsIntro from "./combinatorics";
@@ -18,6 +19,7 @@ import ProbabilityIntro from "./probability";
  * `lib/symbol-intros/<slug>.tsx` and registering it here, keyed by the URL slug.
  */
 const symbolIntros: Record<string, ComponentType> = {
+  accents: AccentsIntro,
   arrows: ArrowsIntro,
   boolean: BooleanIntro,
   combinatorics: CombinatoricsIntro,

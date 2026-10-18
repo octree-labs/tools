@@ -809,6 +809,18 @@ async function generateMetadataBase({
       'neurips style file',
       'neurips template overleaf',
     ],
+    'ats-resume': [
+      'ats friendly resume template',
+      'ats resume template',
+      'ats resume template latex',
+      'ats resume format',
+      'ats friendly resume',
+      'ats friendly cv template',
+      'cv template',
+      'simple resume template',
+      'plain text resume template',
+      'resume template that passes ats',
+    ],
   };
 
   const specificKeywords = keywordMap[slug] || [

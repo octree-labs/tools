@@ -813,6 +813,10 @@
     "neurips-2027": {
       "title": "NeurIPS 2027",
       "description": "Pracetak satu lajur bergaya NeurIPS 2027 dengan blok pengarang, abstrak, bahagian dan senarai semak kertas"
+    },
+    "ats-resume": {
+      "title": "Templat Resume Mesra ATS",
+      "description": "Resume satu lajur berteks biasa yang dibaca dengan betul oleh sistem penjejakan pemohon: tajuk standard, tanpa jadual, ikon atau lajur"
     }
   },
   "symbols": {

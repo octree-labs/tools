@@ -2,6 +2,7 @@ import type { ComponentType } from "react";
 import Aaai2027Guide from "./aaai-2027";
 import AcademicCvGuide from "./academic-cv";
 import ApaTitlePageGuide from "./apa-title-page";
+import AtsResumeGuide from "./ats-resume";
 import BeamerDarkGuide from "./beamer-dark";
 import ConferencePosterGuide from "./conference-poster";
 import Emnlp2026Guide from "./emnlp-2026";
@@ -23,6 +24,7 @@ const templateGuides: Record<string, ComponentType> = {
   "aaai-2027": Aaai2027Guide,
   "academic-cv": AcademicCvGuide,
   "apa-title-page": ApaTitlePageGuide,
+  "ats-resume": AtsResumeGuide,
   "beamer-dark": BeamerDarkGuide,
   "conference-poster": ConferencePosterGuide,
   "emnlp-2026": Emnlp2026Guide,

@@ -522,7 +522,8 @@
     "ieee-conference": { "title": "Bài báo hội nghị IEEE", "description": "Định dạng hội nghị IEEEtran chính thức với khối tác giả, tóm tắt, từ khóa chỉ mục, phương trình, bảng, hình và tài liệu tham khảo" },
     "jfm-paper": { "title": "Bài báo JFM", "description": "Bài báo theo phong cách Journal of Fluid Mechanics với tiêu đề chạy, trích dẫn tác giả-năm, tóm tắt, từ khóa và phần cuối" },
     "aaai-2027": { "title": "AAAI 2027", "description": "Bài báo hai cột theo phong cách bộ công cụ tác giả AAAI 2027 với khối tiêu đề, tiêu đề tóm tắt in đậm và tài liệu tham khảo tác giả-năm" },
-    "neurips-2027": { "title": "NeurIPS 2027", "description": "Bản thảo một cột theo phong cách NeurIPS 2027 với khối tác giả, tóm tắt, các mục và danh sách kiểm tra bài báo" }
+    "neurips-2027": { "title": "NeurIPS 2027", "description": "Bản thảo một cột theo phong cách NeurIPS 2027 với khối tác giả, tóm tắt, các mục và danh sách kiểm tra bài báo" },
+    "ats-resume": { "title": "Mẫu Sơ yếu lý lịch Thân thiện với ATS", "description": "Sơ yếu lý lịch một cột dạng văn bản thuần mà hệ thống theo dõi ứng viên đọc chính xác: tiêu đề chuẩn, không bảng, biểu tượng hay cột" }
   },
   "symbols": {
     "title": "Ký hiệu LaTeX",

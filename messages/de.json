@@ -813,6 +813,10 @@
     "neurips-2027": {
       "title": "NeurIPS 2027",
       "description": "Einspaltiger Preprint im NeurIPS-2027-Stil mit Autorenblock, Abstract, Abschnitten und Paper-Checkliste"
+    },
+    "ats-resume": {
+      "title": "ATS-freundliche Lebenslauf-Vorlage",
+      "description": "Einspaltiger Klartext-Lebenslauf, den Bewerbermanagementsysteme sauber auslesen: Standardüberschriften, keine Tabellen, Icons oder Spalten"
     }
   },
   "symbols": {

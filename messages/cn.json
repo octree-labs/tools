@@ -811,6 +811,10 @@
       "neurips-2027": {
         "title": "NeurIPS 2027",
         "description": "NeurIPS 2027 风格的单栏预印本，包含作者块、摘要、章节和论文检查清单"
+    },
+      "ats-resume": {
+        "title": "ATS 友好简历模板",
+        "description": "单栏纯文本简历，求职者追踪系统可准确解析：标准标题，无表格、图标或分栏"
       }
     },
     "symbols": {

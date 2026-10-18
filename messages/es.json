@@ -727,6 +727,10 @@
       "neurips-2027": {
         "title": "NeurIPS 2027",
         "description": "Preprint a una columna al estilo NeurIPS 2027 con bloque de autores, resumen, secciones y lista de verificación del artículo"
+    },
+      "ats-resume": {
+        "title": "Plantilla de Currículum Compatible con ATS",
+        "description": "Currículum de una columna en texto plano que los sistemas de seguimiento de candidatos leen sin errores: títulos estándar, sin tablas, iconos ni columnas"
       }
     },
     "toolsList": {
