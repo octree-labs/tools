@@ -427,7 +427,7 @@ export default function MathMLToLatex() {
         errorLog={compileLog}
         latex={latexCode}
         onClose={() => setShowCompileErrorModal(false)}
-        source="tools:mathml"
+        source="tools:mathml-to-latex"
         title={t('title')}
       />
     </div>

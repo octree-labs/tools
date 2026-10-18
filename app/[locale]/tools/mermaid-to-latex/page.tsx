@@ -407,7 +407,7 @@ export default function MermaidToLatex() {
         errorLog={compileLog}
         latex={latexCode}
         onClose={() => setShowCompileErrorModal(false)}
-        source="tools:mermaid"
+        source="tools:mermaid-to-latex"
         title={t('title')}
       />
     </div>

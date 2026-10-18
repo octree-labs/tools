@@ -460,7 +460,7 @@ export default function MarkdownToLatex() {
         errorLog={compileLog}
         latex={latexCode}
         onClose={() => setShowCompileErrorModal(false)}
-        source="tools:markdown"
+        source="tools:markdown-to-latex"
         title={t("title")}
       />
     </div>

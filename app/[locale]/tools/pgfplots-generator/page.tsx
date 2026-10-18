@@ -390,7 +390,7 @@ export default function PgfplotsGenerator() {
         errorLog={compileLog}
         latex={latexCode}
         onClose={() => setShowCompileErrorModal(false)}
-        source="tools:pgfplots"
+        source="tools:pgfplots-generator"
         title={t('title')}
       />
     </div>
