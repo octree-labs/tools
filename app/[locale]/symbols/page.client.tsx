@@ -189,6 +189,82 @@ const uniqueSymbols = allSymbols.filter(
         index === self.findIndex((s) => s.latex === symbol.latex)
 );
 
+const popularCategories = [
+    { href: "/symbols/greek", key: "greek" },
+    { href: "/symbols/arrows", key: "arrows" },
+    { href: "/symbols/operators", key: "operators" },
+    { href: "/symbols/relations", key: "relations" },
+    { href: "/symbols/set-theory", key: "setTheory" },
+    { href: "/symbols/calculus", key: "calculus" },
+];
+
+const blogGuides = [
+    { href: "https://www.useoctree.com/blog/greater-than-less-than-symbols-guide", key: "greaterLess" },
+    { href: "https://www.useoctree.com/blog/not-equal-sign-meaning-how-to-type", key: "notEqual" },
+    { href: "https://www.useoctree.com/blog/plus-minus-symbol-meaning-how-to-type", key: "plusMinus" },
+    { href: "https://www.useoctree.com/blog/infinity-symbol-meaning-how-to-type", key: "infinity" },
+    { href: "https://www.useoctree.com/blog/degree-symbol-how-to-type", key: "degree" },
+    { href: "https://www.useoctree.com/blog/real-numbers-symbol-blackboard-bold", key: "realNumbers" },
+];
+
+const introLinkClass = "text-blue-600 hover:text-blue-700 underline underline-offset-2";
+
+// Editorial intro for the hub page. The grid of category cards alone gave the
+// page almost no indexable text; this explains what the reference covers and
+// links to the most-searched categories and the long-form symbol guides.
+//
+// It must not depend on useSearchParams: that hook opts its whole Suspense
+// subtree out of static prerendering, which is why SymbolsContent (and the
+// category grid) is not in the prerendered HTML. The intro is rendered as the
+// fallback of its own boundary so it is in the static page, and SymbolsIntroGate
+// hides it on the client only while a search query is active.
+function SymbolsIntro() {
+    const t = useTranslations('symbols.intro');
+    const tCategories = useTranslations('symbols.categories');
+
+    return (
+        <section className="max-w-3xl mx-auto mb-12 text-gray-700 leading-relaxed">
+            <h2 className="text-xl font-semibold text-gray-900 mb-3">{t('heading')}</h2>
+            <p className="mb-3">{t('coverage')}</p>
+            <p className="mb-3">{t('mathMode')}</p>
+            <p className="mb-4">{t('packages')}</p>
+            <p className="mb-2">
+                <span className="font-medium text-gray-900">{t('popularLabel')}</span>{" "}
+                {popularCategories.map((category, i) => (
+                    <span key={category.key}>
+                        <Link href={category.href} className={introLinkClass}>
+                            {tCategories(`${category.key}.title`)}
+                        </Link>
+                        {i < popularCategories.length - 1 ? ", " : "."}
+                    </span>
+                ))}
+            </p>
+            <p>
+                <span className="font-medium text-gray-900">{t('guidesLabel')}</span>{" "}
+                {blogGuides.map((guide, i) => (
+                    <span key={guide.key}>
+                        <a
+                            href={guide.href}
+                            className={introLinkClass}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            {t(`guides.${guide.key}`)}
+                        </a>
+                        {i < blogGuides.length - 1 ? ", " : "."}
+                    </span>
+                ))}
+            </p>
+        </section>
+    );
+}
+
+function SymbolsIntroGate() {
+    const searchParams = useSearchParams();
+    if (searchParams.get("q")) return null;
+    return <SymbolsIntro />;
+}
+
 function SymbolsContent() {
     const searchParams = useSearchParams();
     const searchQuery = searchParams.get("q") || "";
@@ -318,8 +394,13 @@ function SymbolsContent() {
 
 export default function SymbolsPage() {
     return (
-        <Suspense fallback={<div>Loading...</div>}>
-            <SymbolsContent />
-        </Suspense>
+        <>
+            <Suspense fallback={<SymbolsIntro />}>
+                <SymbolsIntroGate />
+            </Suspense>
+            <Suspense fallback={<div>Loading...</div>}>
+                <SymbolsContent />
+            </Suspense>
+        </>
     );
 }
