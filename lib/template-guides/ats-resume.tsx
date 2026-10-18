@@ -125,14 +125,6 @@ export default function AtsResumeGuide() {
         </li>
       </GuideOl>
 
-      <GuideH2 id="test">How to test the PDF</GuideH2>
-      <GuideP>
-        Open the compiled PDF, select all, and paste into a plain-text editor. You should
-        see the sections in order, one job title and date range per line, and no missing
-        characters. That is roughly what the ATS sees; if something looks wrong there, fix
-        the source rather than hoping the parser does better.
-      </GuideP>
-
       <GuideH2 id="when">When to use this vs other resume templates</GuideH2>
       <GuideTable
         headers={["Template", "Best for", "Difference"]}
@@ -161,7 +153,7 @@ export default function AtsResumeGuide() {
               Academic CV
             </GuideLink>,
             "Graduate school, postdoc and faculty applications",
-            "Multi-page with Publications and Teaching; not read by an ATS",
+            "Publications, Teaching and Awards sections that grow past one page; written for a hiring committee rather than an ATS",
           ],
         ]}
       />

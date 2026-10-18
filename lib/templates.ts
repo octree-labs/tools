@@ -8905,14 +8905,20 @@ proofs and implementation details here.
 
 % Map every glyph (including ligatures like fi, fl, --) to its Unicode
 % code point so copy-paste and ATS extraction yield the typed text.
-\input{glyphtounicode}
-\pdfgentounicode=1
+% Both settings are pdfTeX primitives; the \ifdefined guards let the
+% file still compile unchanged if you pick XeLaTeX or LuaLaTeX.
+\ifdefined\pdfgentounicode
+  \input{glyphtounicode}
+  \pdfgentounicode=1
+\fi
 
 % pdfTeX normally encodes word gaps as positioning only; parsers then
 % guess where the spaces are. This writes a real space character into
 % the PDF at every word gap (including before right-aligned dates), so
 % "Senior Engineer" and "Jan 2023" can never be glued together.
-\pdfinterwordspaceon
+\ifdefined\pdfinterwordspaceon
+  \pdfinterwordspaceon
+\fi
 
 % Embed title/author metadata; some ATS read it as the candidate name.
 \hypersetup{
@@ -8930,8 +8936,8 @@ proofs and implementation details here.
 
 % --- Section headings -----------------------------------------------
 % Plain bold heading in capitals followed by a thin rule. We avoid
-% titlesec and use \section* so the heading is ordinary body text:
-% no numbering, no running headers, nothing a parser could mis-tag.
+% titlesec and \section altogether: the heading is ordinary body text
+% with no numbering, no running headers, nothing a parser could mis-tag.
 \newcommand{\resumesection}[1]{%
   \vspace{7pt}%
   \noindent{\large\bfseries\MakeUppercase{#1}}\par\nobreak

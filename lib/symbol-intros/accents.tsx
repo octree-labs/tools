@@ -22,17 +22,17 @@ export default function AccentsIntro() {
         <Cmd>\hat{"{x}"}</Cmd>, <Cmd>\bar{"{x}"}</Cmd>, <Cmd>\vec{"{v}"}</Cmd>,{" "}
         <Cmd>\tilde{"{x}"}</Cmd>, <Cmd>\dot{"{x}"}</Cmd> and <Cmd>\ddot{"{x}"}</Cmd> for
         derivatives, <Cmd>\acute</Cmd>, <Cmd>\grave</Cmd>, <Cmd>\breve</Cmd> and{" "}
-        <Cmd>\check</Cmd>. For more than one character, amsmath provides the stretching{" "}
-        <Cmd>\widehat{"{xy}"}</Cmd> and <Cmd>\widetilde{"{xy}"}</Cmd>, and base LaTeX has{" "}
+        <Cmd>\check</Cmd>. For more than one character, base LaTeX has the stretching{" "}
+        <Cmd>\widehat{"{xy}"}</Cmd> and <Cmd>\widetilde{"{xy}"}</Cmd>, plus{" "}
         <Cmd>\overline{"{z}"}</Cmd> for conjugates and <Cmd>\overrightarrow{"{AB}"}</Cmd>{" "}
-        for vectors.
+        for vectors; none of them needs amsmath.
       </IntroP>
       <IntroP>
         Since 2018 LaTeX reads UTF-8 by default, so you can type é, ö or ñ directly in the
         source (older setups need <Cmd>\usepackage[utf8]{"{inputenc}"}</Cmd>). Add{" "}
         <Cmd>\usepackage[T1]{"{fontenc}"}</Cmd> so accented letters are single glyphs that
-        hyphenate and copy correctly; <Cmd>\k</Cmd> only works with T1. For a worked
-        example see our guide to{" "}
+        hyphenate and copy correctly instead of being composed from two pieces. For a
+        worked example see our guide to{" "}
         <IntroLink
           href="https://www.useoctree.com/blog/spanish-characters-latex-accents-special-letters"
           external
