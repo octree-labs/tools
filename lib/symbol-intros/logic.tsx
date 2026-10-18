@@ -7,8 +7,8 @@ export default function LogicIntro() {
       <IntroP>
         The connectives of propositional logic are <Cmd>\land</Cmd> (and), <Cmd>\lor</Cmd> (or)
         and <Cmd>\lnot</Cmd> (not); <Cmd>\wedge</Cmd>, <Cmd>\vee</Cmd> and <Cmd>\neg</Cmd> are
-        identical aliases. Implication and equivalence are best written with amsmath&rsquo;s{" "}
-        <Cmd>\implies</Cmd> and <Cmd>\iff</Cmd>, which add relation spacing around the arrows;
+        identical aliases. Implication and equivalence are best written with <Cmd>\implies</Cmd> (from amsmath)
+        and <Cmd>\iff</Cmd>, which add relation spacing around the arrows;
         the bare <Cmd>\Rightarrow</Cmd> and <Cmd>\Leftrightarrow</Cmd> work too. Quantifiers are{" "}
         <Cmd>\forall</Cmd> and <Cmd>\exists</Cmd>, with <Cmd>\nexists</Cmd> for &ldquo;there is
         no&rdquo;, and the constants true and false are <Cmd>\top</Cmd> and <Cmd>\bot</Cmd>.

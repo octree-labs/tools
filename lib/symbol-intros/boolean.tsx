@@ -18,8 +18,8 @@ export default function BooleanIntro() {
         The less common gates have dedicated symbols in amssymb: <Cmd>\barwedge</Cmd> for NAND,{" "}
         <Cmd>\veebar</Cmd> for XOR, and the Sheffer stroke and Peirce arrow can be written as{" "}
         <Cmd>\uparrow</Cmd> and <Cmd>\downarrow</Cmd>. Implication and equivalence are{" "}
-        <Cmd>\Rightarrow</Cmd> and <Cmd>\Leftrightarrow</Cmd> (or amsmath&rsquo;s{" "}
-        <Cmd>\implies</Cmd> and <Cmd>\iff</Cmd>), and the Boolean domain is{" "}
+        <Cmd>\Rightarrow</Cmd> and <Cmd>\Leftrightarrow</Cmd> (or the spaced{" "}
+        <Cmd>\implies</Cmd>, from amsmath, and <Cmd>\iff</Cmd>), and the Boolean domain is{" "}
         <Cmd>\mathbb{"{B}"} = \{"{0, 1\\}"}</Cmd>.
       </IntroP>
       <IntroP>

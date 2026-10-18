@@ -24,8 +24,8 @@ export default function OrderIntro() {
         <IntroLink href="/symbols/set-theory">set theory symbols</IntroLink> page.
       </IntroP>
       <IntroP>
-        Only the negated and slanted forms need <Cmd>\usepackage{"{amssymb}"}</Cmd>; the rest is
-        core LaTeX. Chains of inequalities such as <Cmd>a &lt; b \leq c</Cmd> can be typed in
+        Only the negated, slanted and curly-equal forms need{" "}
+        <Cmd>\usepackage{"{amssymb}"}</Cmd>; the rest is core LaTeX. Chains of inequalities such as <Cmd>a &lt; b \leq c</Cmd> can be typed in
         one go. Read our guide to the{" "}
         <IntroLink href="https://www.useoctree.com/blog/greater-than-less-than-symbols-guide" external>
           greater-than and less-than symbols

@@ -19,9 +19,9 @@ export default function ArrowsIntro() {
         equilibria.
       </IntroP>
       <IntroP>
-        All of the arrows above are built into LaTeX math mode. For logic, prefer the amsmath
-        commands <Cmd>\implies</Cmd> and <Cmd>\iff</Cmd>, which add the correct spacing around
-        the arrow, and for labelled arrows use <Cmd>\xrightarrow{"{f}"}</Cmd> and{" "}
+        All of the arrows above are built into LaTeX math mode. For logic, prefer{" "}
+        <Cmd>\implies</Cmd> (from amsmath) and the built-in <Cmd>\iff</Cmd>, which add the
+        correct spacing around the arrow, and for labelled arrows use <Cmd>\xrightarrow{"{f}"}</Cmd> and{" "}
         <Cmd>\xleftarrow{"{g}"}</Cmd>, also from amsmath, which stretch to fit the label.
         Negated and squiggly arrows (<Cmd>\nrightarrow</Cmd>, <Cmd>\rightsquigarrow</Cmd>,{" "}
         <Cmd>\twoheadrightarrow</Cmd>) need <Cmd>\usepackage{"{amssymb}"}</Cmd>.
