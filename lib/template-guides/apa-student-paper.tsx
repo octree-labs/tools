@@ -16,7 +16,7 @@ const faq: GuideFaqItem[] = [
   {
     question: "What margins does an APA 7 paper use?",
     answer:
-      "One inch (2.54 cm) on all four sides of every page, including the title page and the References page. The apa7 class sets this for you; do not load geometry on top of it. Page numbers sit inside the top margin, flush right, half an inch from the top edge.",
+      "One inch (2.54 cm) on all four sides of every page, including the title page and the References page. The apa7 class sets this for you; do not load geometry on top of it. The page number sits in the header, inside the top margin, flush right.",
   },
   {
     question: "What font does APA 7 require?",
@@ -26,7 +26,7 @@ const faq: GuideFaqItem[] = [
   {
     question: "Is an APA paper double spaced everywhere?",
     answer:
-      "Yes. The whole paper is double spaced: title page, body text, headings, block quotations and the References page. There is no extra blank line before or after headings or between paragraphs, and every paragraph starts with a 0.5-inch first-line indent. The only exceptions are inside tables and figures, and footnotes, which may be single spaced. The apa7 class applies double spacing automatically in stu and man modes; do not add setspace.",
+      "Yes. The whole paper is double spaced: title page, body text, headings, block quotations and the References page. There is no extra blank line before or after headings or between paragraphs, and every paragraph starts with a 0.5-inch first-line indent. The only exceptions are the body of tables and figures (single, 1.5 or double spacing), footnotes (single spaced) and displayed equations, which may be set with extra space. The apa7 class applies double spacing automatically in stu and man modes; do not add setspace.",
   },
   {
     question: "Does a student APA paper need a running head?",
@@ -63,8 +63,8 @@ export default function ApaStudentPaperGuide() {
         line of the body; Level 1, 2 and 3 headings; double-spaced 12-point text with
         one-inch margins and half-inch paragraph indents; narrative and parenthetical
         author-date citations; and a References page on its own sheet with hanging indents.
-        The sample body is a short four-section report (Method, Results, Discussion) so you
-        can compare every rule against the preview above.
+        The sample body is a short report (an introduction, then Method, Results and
+        Discussion) so you can compare every rule against the preview above.
       </GuideP>
       <GuideP>
         The document class is <GuideCode>apa7</GuideCode>, the maintained APA class in TeX
@@ -94,7 +94,7 @@ export default function ApaStudentPaperGuide() {
             </>,
           ],
           [
-            "An accepted font, used consistently: 12 pt Times New Roman, 11 pt Calibri or Arial, 10 pt Computer Modern",
+            "An accepted font, used consistently: 12 pt Times New Roman, 11 pt Calibri, Arial or Georgia, 10 pt Lucida Sans Unicode or Computer Modern",
             <>
               <GuideCode>12pt</GuideCode> class option and <GuideCode>\usepackage{"{newtxtext}"}</GuideCode>
             </>,
@@ -187,8 +187,8 @@ export default function ApaStudentPaperGuide() {
         <GuideCode>{"{...}"}</GuideCode> group.
       </GuideP>
       <GuideP>
-        Write the date in the form your instructor uses; the manual itself shows{" "}
-        <em>October 19, 2026</em>. If you only need the cover sheet, the{" "}
+        Write the date in the form your instructor uses; the manual&apos;s examples use the
+        Month Day, Year form, as in <em>October 19, 2026</em>. If you only need the cover sheet, the{" "}
         <GuideLink href="/templates/apa-title-page">APA title page template</GuideLink> is
         this same block on its own.
       </GuideP>
@@ -295,9 +295,9 @@ export default function ApaStudentPaperGuide() {
         Titles are entered in sentence case; biblatex-apa keeps them as written. At the end
         of the paper <GuideCode>\printbibliography</GuideCode> starts the References page,
         centres its bold heading, sorts the entries by surname and sets each with a
-        half-inch hanging indent. If you prefer natbib, the apa7 class also works with{" "}
-        <GuideCode>\usepackage{"{apacite}"}</GuideCode>, but biblatex-apa is the
-        maintained option and is what the class documentation recommends.
+        half-inch hanging indent. If you prefer BibTeX, the apa7 class also supports <GuideCode>apacite</GuideCode> through
+        its <GuideCode>apacite</GuideCode> and <GuideCode>natbib</GuideCode> class options, but
+        biblatex-apa is the maintained option and the class default.
       </GuideP>
 
       <GuideH2 id="format-example">APA paper example: page by page</GuideH2>
@@ -338,7 +338,7 @@ export default function ApaStudentPaperGuide() {
         rows={[
           ["Title page", "Title, author, affiliation, course, instructor, due date", "Title, authors, affiliations, author note"],
           ["Running head", "None; page number only", "Short title in capitals, max 50 characters, plus page number"],
-          ["Abstract", "Only if required", "Required, 150–250 words, with keywords"],
+          ["Abstract", "Only if required", "Required, usually no more than 250 words, with keywords"],
           ["Author note", "None", "ORCID, changes of affiliation, disclosures, contact"],
           ["Headings, citations, references", "Same", "Same"],
         ]}
@@ -438,14 +438,15 @@ export default function ApaStudentPaperGuide() {
         </li>
         <li>
           <strong>Font.</strong> Delete <GuideCode>newtxtext</GuideCode> for Computer Modern,
-          or replace it with <GuideCode>\usepackage{"{helvet}"}</GuideCode> plus{" "}
-          <GuideCode>\renewcommand{"{\\familydefault}{\\sfdefault}"}</GuideCode> and the{" "}
-          <GuideCode>11pt</GuideCode> option for an Arial-style paper.
+          or delete it and add the class options <GuideCode>helv</GuideCode> and{" "}
+          <GuideCode>11pt</GuideCode> for a Helvetica (Arial-style) paper.
         </li>
         <li>
           <strong>Block quotations.</strong> Quotations of 40 words or more go in the{" "}
           <GuideCode>quote</GuideCode> environment with no quotation marks and the citation
-          after the final period; apa7 indents it half an inch and keeps the double spacing.
+          after the final period. The class keeps the double spacing; the standard environment
+          indents the block about 0.4 in on both sides, close to the 0.5-inch left indent the
+          manual specifies.
         </li>
         <li>
           <strong>Paper size.</strong> Add <GuideCode>a4paper</GuideCode> to the class
@@ -462,8 +463,8 @@ export default function ApaStudentPaperGuide() {
           and Octree this happens automatically.
         </li>
         <li>
-          <strong>Error: babel or csquotes missing.</strong> biblatex-apa requires both.
-          Keep <GuideCode>\usepackage[american]{"{babel}"}</GuideCode> and{" "}
+          <strong>Warning that csquotes is missing, or wrong quotation marks and punctuation.</strong>{" "}
+          biblatex-apa needs csquotes and expects American babel. Keep <GuideCode>\usepackage[american]{"{babel}"}</GuideCode> and{" "}
           <GuideCode>\usepackage{"{csquotes}"}</GuideCode> in the preamble.
         </li>
         <li>
