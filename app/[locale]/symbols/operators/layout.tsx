@@ -3,7 +3,7 @@ import { generateSymbolMetadata } from '@/lib/generate-symbol-metadata';
 
 const defaultMetadata: Metadata = {
   title: "LaTeX Operators - Binary & Advanced Math Operator Symbols",
-  description: "Complete list of LaTeX operator symbols. Copy-paste ⊕, ⊗, ⊙, ⊖, ⋆, ∗, ∘, ∇, △, ▽ with LaTeX commands.",
+  description: "Complete list of LaTeX operator symbols. Copy-paste binary operators ⊕, ⊗, ⊙, ⊖, ⋆, ∗, ∘ and advanced operators ∇, △, ▽ with ready-to-use LaTeX commands.",
   keywords: [
     "math operators symbols",
     "binary operators latex",

@@ -3,7 +3,7 @@ import { generateSymbolMetadata } from '@/lib/generate-symbol-metadata';
 
 const defaultMetadata: Metadata = {
   title: "LaTeX Relation Symbols - Inequality, Equivalence & More | Free",
-  description: "Complete list of LaTeX relation and comparison symbols. Copy-paste ≤, ≥, ≠, ≈, ≡, ∝, ⊂, ⊆, ⟂, ∥ with LaTeX commands.",
+  description: "Complete list of LaTeX relation and comparison symbols. Copy-paste inequalities ≤, ≥, ≠, equivalences ≈, ≡, ∝, subsets ⊂, ⊆, ⟂ and ∥ with LaTeX commands.",
   keywords: [
     "comparison symbols",
     "relation symbols latex",

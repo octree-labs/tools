@@ -3,7 +3,7 @@ import { generateSymbolMetadata } from '@/lib/generate-symbol-metadata';
 
 const defaultMetadata: Metadata = {
   title: "LaTeX Physics Symbols - Quantum Mechanics, Vectors, Tensors",
-  description: "Complete list of LaTeX physics symbols. Copy-paste ℏ, ⟨ψ|, |ψ⟩, ∇, ∇², □, Lagrangian, Hamiltonian with LaTeX commands.",
+  description: "Complete list of LaTeX physics symbols. Copy-paste ℏ, bra-ket ⟨ψ|, |ψ⟩, ∇, ∇², d'Alembertian □, Lagrangian and Hamiltonian notation with LaTeX commands.",
   keywords: [
     // Physics keywords
     "physics symbols",
