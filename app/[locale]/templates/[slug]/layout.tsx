@@ -835,6 +835,18 @@ async function generateMetadataBase({
       'mla 9 works cited',
       'works cited format',
     ],
+    'annotated-bibliography': [
+      'annotated bibliography',
+      'annotated bibliography example',
+      'annotated bibliography template',
+      'apa annotated bibliography',
+      'mla annotated bibliography',
+      'annotated bibliography format',
+      'annotated bibliography latex',
+      'latex annotated bibliography template',
+      'apa 7 annotated bibliography',
+      'how to write an annotated bibliography',
+    ],
   };
 
   const specificKeywords = keywordMap[slug] || [

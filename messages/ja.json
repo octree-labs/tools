@@ -821,6 +821,10 @@
     "mla-works-cited": {
       "title": "MLA 引用文献ページ",
       "description": "ランニングヘッダー、ダブルスペース、ぶら下げインデント、8件のサンプル項目を備えた MLA 第9版の引用文献ページ"
+    },
+    "annotated-bibliography": {
+      "title": "注釈付き参考文献",
+      "description": "ぶら下げインデントの参考文献、インデントされた注釈、ダブルスペースを備えた APA 第7版の注釈付き参考文献。1行で MLA 第9版に切り替え可能"
     }
   },
   "symbols": {

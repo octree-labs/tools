@@ -821,6 +821,10 @@
     "mla-works-cited": {
       "title": "Halaman Works Cited MLA",
       "description": "Halaman works cited format MLA 9 dengan pengepala, langkau dua baris, inden gantung dan lapan contoh entri"
+    },
+    "annotated-bibliography": {
+      "title": "Bibliografi Beranotasi",
+      "description": "Bibliografi beranotasi format APA 7 dengan inden gantung, anotasi berinden, langkau dua baris dan suis satu baris ke MLA 9"
     }
   },
   "symbols": {

@@ -819,6 +819,10 @@
       "mla-works-cited": {
         "title": "MLA 引用作品页",
         "description": "符合 MLA 第9版的引用作品页：页眉、双倍行距、悬挂缩进和八条示例条目"
+      },
+      "annotated-bibliography": {
+        "title": "注释参考书目",
+        "description": "符合 APA 第7版的注释参考书目：悬挂缩进的参考文献、缩进的注释、双倍行距，并可一行切换为 MLA 第9版"
       }
     },
     "symbols": {

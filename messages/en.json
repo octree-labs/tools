@@ -821,6 +821,10 @@
     "mla-works-cited": {
       "title": "MLA Works Cited Page",
       "description": "MLA 9 works cited page with running header, double spacing, hanging indent and eight sample entries"
+    },
+    "annotated-bibliography": {
+      "title": "Annotated Bibliography",
+      "description": "APA 7 annotated bibliography with hanging-indent references, indented annotations, double spacing and a one-line switch to MLA 9"
     }
   },
   "symbols": {

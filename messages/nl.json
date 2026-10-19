@@ -524,7 +524,8 @@
     "aaai-2027": { "title": "AAAI 2027", "description": "Tweekoloms paper in de stijl van de AAAI 2027-auteurskit met titelblok, vette abstractkop en auteur-jaarreferenties" },
     "neurips-2027": { "title": "NeurIPS 2027", "description": "Eenkoloms preprint in NeurIPS 2027-stijl met auteursblok, abstract, secties en paperchecklist" },
     "ats-resume": { "title": "ATS-vriendelijk Cv-sjabloon", "description": "Cv in één kolom en platte tekst dat sollicitantvolgsystemen foutloos lezen: standaardkoppen, geen tabellen, pictogrammen of kolommen" },
-    "mla-works-cited": { "title": "MLA Works Cited-pagina", "description": "Works Cited-pagina in MLA 9-stijl met koptekst, dubbele regelafstand, hangende inspringing en acht voorbeeldvermeldingen" }
+    "mla-works-cited": { "title": "MLA Works Cited-pagina", "description": "Works Cited-pagina in MLA 9-stijl met koptekst, dubbele regelafstand, hangende inspringing en acht voorbeeldvermeldingen" },
+    "annotated-bibliography": { "title": "Geannoteerde bibliografie", "description": "Geannoteerde bibliografie in APA 7-stijl met hangende inspringing, ingesprongen annotaties, dubbele regelafstand en een schakelaar naar MLA 9" }
   },
   "symbols": {
     "title": "LaTeX Symbolen",
