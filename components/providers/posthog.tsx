@@ -3,6 +3,7 @@
 import { Suspense, useEffect } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
 import posthog from 'posthog-js';
+import { dropNoiseExceptions } from '@/lib/exception-filter';
 
 const POSTHOG_KEY = process.env.NEXT_PUBLIC_POSTHOG_KEY;
 const POSTHOG_HOST = process.env.NEXT_PUBLIC_POSTHOG_HOST || 'https://us.i.posthog.com';
@@ -18,6 +19,8 @@ if (typeof window !== 'undefined' && POSTHOG_KEY && !posthog.__loaded) {
     capture_pageview: false,
     capture_pageleave: true,
     capture_exceptions: true,
+    // Drop browser/extension noise (Edge SafeLinks, ResizeObserver) before it reaches error tracking.
+    before_send: dropNoiseExceptions,
     cross_subdomain_cookie: true,
     persistence: 'localStorage+cookie',
     // Converter inputs may hold user documents: never record what is typed.

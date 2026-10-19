@@ -2,6 +2,8 @@
 
 import '@/lib/promise-polyfill';
 import { useEffect } from 'react';
+import { BEFORE_NAVIGATION, EVENTS, track } from '@/lib/analytics';
+import { postDraftForm } from '@/lib/open-in-octree';
 
 export default function ClientBootstrap() {
   useEffect(() => {
@@ -33,32 +35,19 @@ export default function ClientBootstrap() {
           });
 
           const intent = JSON.parse(intentRaw) as { latex: string; title: string; source: string };
+          const title = intent.title ?? '';
+          const source = intent.source ?? '';
+
+          // The original click was already counted as open_in_octree_clicked before sign-in;
+          // this is the same draft being completed, so it gets its own event name.
+          track(
+            EVENTS.OPEN_IN_OCTREE_RESUMED,
+            { source, placement: source, title_length: title.length },
+            BEFORE_NAVIGATION,
+          );
+
           // Post the draft via form submit to trigger redirect to /import
-          const form = document.createElement('form');
-          form.method = 'POST';
-          form.action = 'https://app.useoctree.com/api/drafts';
-          form.style.display = 'none';
-
-          const contentInput = document.createElement('textarea');
-          contentInput.name = 'content';
-          contentInput.value = intent.latex;
-          form.appendChild(contentInput);
-
-          const titleInput = document.createElement('input');
-          titleInput.type = 'hidden';
-          titleInput.name = 'title';
-          titleInput.value = intent.title;
-          form.appendChild(titleInput);
-
-          const sourceInput = document.createElement('input');
-          sourceInput.type = 'hidden';
-          sourceInput.name = 'source';
-          sourceInput.value = intent.source;
-          form.appendChild(sourceInput);
-
-          document.body.appendChild(form);
-          form.submit();
-          document.body.removeChild(form);
+          postDraftForm({ latex: intent.latex, title, source });
           localStorage.removeItem('octree_draft_intent');
         }
       } catch {}
@@ -67,5 +56,3 @@ export default function ClientBootstrap() {
 
   return null;
 }
-
-
