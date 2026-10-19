@@ -7,6 +7,8 @@ import posthog, { type CaptureOptions } from 'posthog-js';
  */
 export const EVENTS = {
   OPEN_IN_OCTREE_CLICKED: 'open_in_octree_clicked',
+  /** A draft queued before sign-in was posted after SSO completed; not a fresh click. */
+  OPEN_IN_OCTREE_RESUMED: 'open_in_octree_resumed',
   TEMPLATE_VIEWED: 'template_viewed',
   TEMPLATE_DOWNLOADED: 'template_downloaded',
   CONVERTER_USED: 'converter_used',
