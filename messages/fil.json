@@ -825,6 +825,10 @@
     "annotated-bibliography": {
       "title": "Annotated Bibliography",
       "description": "Annotated bibliography sa format na APA 7 na may hanging indent, naka-indent na anotasyon, double spacing at isang linyang switch sa MLA 9"
+    },
+    "mla-paper": {
+      "title": "MLA Format Paper",
+      "description": "Papel sa format na MLA 9 na may apat na linyang heading, running header na apelyido at numero ng pahina, double spacing, block quote, in-text citation at pahina ng works cited"
     }
   },
   "symbols": {

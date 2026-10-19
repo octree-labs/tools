@@ -9281,4 +9281,137 @@ platform or infrastructure team.
 \end{document}`,
   },
 
+  {
+    id: 84,
+    title: "MLA Format Paper",
+    description: "MLA 9 paper with the four-line heading, Lastname page-number running header, double spacing, a block quote, an in-text citation and a Works Cited page",
+    slug: "mla-paper",
+    previewUrl: "/templates/mla-paper.pdf",
+    category: "Academic",
+    seoTitle: "MLA Format Paper Template (MLA 9) | Heading, Header & Works Cited",
+    seoDescription:
+      "Free MLA 9 paper template in LaTeX: four-line heading, Lastname page-number header, double spacing, 1-inch margins, block quote and Works Cited page.",
+    code: String.raw`% MLA 9 Paper Format
+% ------------------
+% A complete essay laid out according to the MLA Handbook, 9th edition:
+%   - letter paper, 1-inch margins on all sides
+%   - 12-point Times-style text, double spaced throughout, with no extra
+%     space between paragraphs and a 0.5-inch first-line indent
+%   - running header with your last name and the page number in the top
+%     right corner of every page, half an inch from the top
+%   - the four-line heading (your name, instructor, course, date) at the
+%     top left of the first page, one item per line, double spaced
+%   - the title centered on the next line in plain text: no bold, no
+%     underline, no quotation marks, no larger font
+%   - text left-aligned (not justified) with automatic hyphenation off
+%   - block quotations indented 0.5 inch, without quotation marks, with the
+%     parenthetical citation after the closing period
+%   - a Works Cited page that starts on a new page, title centered, every
+%     entry with a 0.5-inch hanging indent
+%
+% Fill in the \newcommand lines below, write your essay after the title and
+% add one \entry{...} per source on the Works Cited page.
+%
+% MLA does not use a title page unless an instructor asks for one. If yours
+% does, uncomment the block marked "Optional title page" after
+% \begin{document} and delete the four-line heading.
+
+\documentclass[12pt,letterpaper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in,headheight=15pt,headsep=21pt]{geometry}
+\usepackage{newtxtext}      % Times-like 12 pt text font (MLA asks for a legible serif such as Times New Roman)
+\usepackage{setspace}       % double spacing
+\usepackage{fancyhdr}       % running header: Last name + page number
+\usepackage[hidelinks]{hyperref}   % also loads url, so URLs in the Works Cited can break after / and .
+\urlstyle{same}             % URLs in the body font, not typewriter
+
+% --- Fill these in ---
+\newcommand{\studentname}{Jordan Smith}
+\newcommand{\lastname}{Smith}          % printed in the running header
+\newcommand{\instructor}{Professor Elena Marquez}
+\newcommand{\course}{English 102}
+\newcommand{\duedate}{19 October 2026}  % MLA date order: day month year
+\newcommand{\papertitle}{Reading the City: Memory and Place in Contemporary Fiction}
+
+% --- Page layout ---
+\doublespacing
+\raggedright               % MLA: do not justify the right margin
+\hyphenpenalty=10000       % MLA: turn automatic hyphenation off
+\frenchspacing             % single space after periods, as in a word processor
+\setlength{\parindent}{0.5in}   % first line of every paragraph (set after \raggedright, which zeroes it)
+\setlength{\parskip}{0pt}       % no extra space between paragraphs
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\lastname\ \thepage}
+\renewcommand{\headrulewidth}{0pt}
+
+% --- Block quotation: whole quotation indented 0.5 in, no quotation marks ---
+% Use for prose longer than four lines or verse longer than three. Put the
+% parenthetical citation after the final period, not before it.
+\newenvironment{blockquote}
+  {\par\setlength{\leftskip}{0.5in}\noindent\ignorespaces}
+  {\par}
+
+% --- One works cited entry: flush left, 0.5 in hanging indent ---
+\newcommand{\entry}[1]{%
+  \par\noindent\hangindent=0.5in\hangafter=1 #1\par}
+
+\begin{document}
+
+% ---- Optional title page (only if your instructor requires one) ----
+% MLA itself has no title page. When one is required, the usual layout is:
+% course, instructor and date in the upper third, the title in the middle,
+% your name near the bottom, everything centered and double spaced. The
+% title page carries no header or number. Uncomment these lines and delete
+% the four-line heading that follows.
+%
+% \thispagestyle{empty}
+% \begin{center}
+%   \vspace*{1.5in}
+%   \course\\
+%   \instructor\\
+%   \duedate
+%   \vfill
+%   \papertitle
+%   \vfill
+%   \studentname
+%   \vspace*{1.5in}
+% \end{center}
+% \newpage
+% \setcounter{page}{1}      % drop this line if the title page should count as page 1
+% ----------------------------------------------------------------------
+
+% Four-line heading: top left of page 1, one item per line, double spaced.
+% Each line is its own \noindent paragraph: under \raggedright a \\ ends
+% the paragraph, so a plain line break would pick up the 0.5 in indent.
+\noindent\studentname\par
+\noindent\instructor\par
+\noindent\course\par
+\noindent\duedate\par
+
+% Title: centered, plain text, title case; \centering adds no extra space
+{\centering \papertitle\par}
+
+Novels set in cities have long treated streets, buildings and public squares as more than scenery. In Marisol Alvarez's \textit{The Cartographer's Daughter}, the protagonist returns to a district that has been renamed and rebuilt in her absence, and the narrator observes that she “could read the old city only in the gaps the new one had failed to fill” (Alvarez 47). The remark captures the novel's central claim: memory is not stored in a place so much as reconstructed against it. This essay argues that contemporary urban fiction uses the mismatch between a remembered city and a present one to dramatize how personal history is revised every time it is recalled.
+
+Critics have read this pattern as a response to the pace of redevelopment. Daniel Okafor, surveying novels written in the decades after the war, argues that the genre's maps are unreliable on purpose:
+\begin{blockquote}
+The novel does not want its reader to find the street. It wants the reader to feel the street slip, to notice that the name on the sign and the name in the mind no longer agree, and to understand that the disagreement is where the story lives. (Okafor 118)
+\end{blockquote}
+\noindent Okafor's point explains why Alvarez withholds a map from her novel even though her protagonist is a mapmaker by trade. A map would settle the question of where things are; the book is interested in where things were, and in the reader's growing suspicion that the two accounts cannot be reconciled. The city becomes a record of revisions, and reading it is the work of the novel itself.
+
+% ---- Works Cited: new page, centered title, hanging indents, alphabetical ----
+\newpage
+
+{\centering Works Cited\par}
+
+\entry{Alvarez, Marisol. \textit{The Cartographer's Daughter}. Harbor Lane Press, 2019.}
+
+\entry{Okafor, Daniel. “Streets without Names: Memory and Mapping in the Postwar Novel.” \textit{Journal of Urban Fiction}, vol. 14, no.\ 2, 2021, pp. 113--31.}
+
+\end{document}`,
+  },
+
 ];
