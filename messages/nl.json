@@ -526,7 +526,8 @@
     "ats-resume": { "title": "ATS-vriendelijk Cv-sjabloon", "description": "Cv in één kolom en platte tekst dat sollicitantvolgsystemen foutloos lezen: standaardkoppen, geen tabellen, pictogrammen of kolommen" },
     "mla-works-cited": { "title": "MLA Works Cited-pagina", "description": "Works Cited-pagina in MLA 9-stijl met koptekst, dubbele regelafstand, hangende inspringing en acht voorbeeldvermeldingen" },
     "annotated-bibliography": { "title": "Geannoteerde bibliografie", "description": "Geannoteerde bibliografie in APA 7-stijl met hangende inspringing, ingesprongen annotaties, dubbele regelafstand en een schakelaar naar MLA 9" },
-    "mla-paper": { "title": "Paper in MLA-formaat", "description": "Paper in MLA 9-stijl met vierregelige kop, koptekst met achternaam en paginanummer, dubbele regelafstand, blokcitaat, verwijzing in de tekst en Works Cited-pagina" }
+    "mla-paper": { "title": "Paper in MLA-formaat", "description": "Paper in MLA 9-stijl met vierregelige kop, koptekst met achternaam en paginanummer, dubbele regelafstand, blokcitaat, verwijzing in de tekst en Works Cited-pagina" },
+    "apa-student-paper": { "title": "APA-werkstuk voor studenten", "description": "Werkstuk in APA 7-stijl met studententitelpagina, paginanummers rechtsboven, koppen van niveau 1–3, dubbele regelafstand, verwijzingen in de tekst via biblatex-apa en een referentiepagina met hangende inspringing" }
   },
   "symbols": {
     "title": "LaTeX Symbolen",

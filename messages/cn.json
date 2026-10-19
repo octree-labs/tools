@@ -827,6 +827,10 @@
       "mla-paper": {
         "title": "MLA 格式论文",
         "description": "符合 MLA 第9版的论文：四行标题信息、姓氏加页码的页眉、双倍行距、块引用、文内引用和引用作品页"
+      },
+      "apa-student-paper": {
+        "title": "APA 学生论文",
+        "description": "符合 APA 第7版的学生论文：学生版标题页、右上角页码、一至三级标题、双倍行距、biblatex-apa 文内引用和带悬挂缩进的参考文献页"
       }
     },
     "symbols": {

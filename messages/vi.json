@@ -526,7 +526,8 @@
     "ats-resume": { "title": "Mẫu Sơ yếu lý lịch Thân thiện với ATS", "description": "Sơ yếu lý lịch một cột dạng văn bản thuần mà hệ thống theo dõi ứng viên đọc chính xác: tiêu đề chuẩn, không bảng, biểu tượng hay cột" },
     "mla-works-cited": { "title": "Trang Works Cited MLA", "description": "Trang tài liệu trích dẫn theo chuẩn MLA 9 với tiêu đề chạy, giãn dòng đôi, thụt lề treo và tám mục mẫu" },
     "annotated-bibliography": { "title": "Thư mục có chú giải", "description": "Thư mục có chú giải theo chuẩn APA 7 với thụt lề treo, chú giải thụt vào, giãn dòng đôi và chuyển sang MLA 9 chỉ bằng một dòng" },
-    "mla-paper": { "title": "Bài luận định dạng MLA", "description": "Bài luận theo chuẩn MLA 9 với phần đầu bốn dòng, tiêu đề chạy gồm họ và số trang, giãn dòng đôi, trích dẫn khối, trích dẫn trong văn bản và trang Works Cited" }
+    "mla-paper": { "title": "Bài luận định dạng MLA", "description": "Bài luận theo chuẩn MLA 9 với phần đầu bốn dòng, tiêu đề chạy gồm họ và số trang, giãn dòng đôi, trích dẫn khối, trích dẫn trong văn bản và trang Works Cited" },
+    "apa-student-paper": { "title": "Bài luận sinh viên định dạng APA", "description": "Bài luận sinh viên theo chuẩn APA 7 với trang bìa dành cho sinh viên, số trang ở góc trên bên phải, tiêu đề cấp 1–3, giãn dòng đôi, trích dẫn trong văn bản bằng biblatex-apa và trang tài liệu tham khảo với thụt lề treo" }
   },
   "symbols": {
     "title": "Ký hiệu LaTeX",

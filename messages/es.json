@@ -743,6 +743,10 @@
       "mla-paper": {
         "title": "Trabajo en formato MLA",
         "description": "Trabajo en formato MLA 9 con encabezado de cuatro líneas, cabecera con apellido y número de página, doble espacio, cita en bloque, cita en el texto y página de obras citadas"
+      },
+      "apa-student-paper": {
+        "title": "Trabajo de estudiante en formato APA",
+        "description": "Trabajo de estudiante en formato APA 7 con portada de estudiante, números de página arriba a la derecha, títulos de nivel 1 a 3, doble espacio, citas en el texto con biblatex-apa y página de referencias con sangría francesa"
       }
     },
     "toolsList": {
