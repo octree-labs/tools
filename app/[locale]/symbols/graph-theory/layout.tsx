@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { generateSymbolMetadata } from '@/lib/generate-symbol-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "LaTeX Graph Theory Symbols - Vertices, Edges, Adjacency | Free Symbol Reference",
+  title: "LaTeX Graph Theory Symbols - Vertices, Edges, Adjacency | Free",
   description: "Complete list of LaTeX graph theory symbols. Copy-paste vertex, edge, adjacency, path, cycle, chromatic number with LaTeX commands.",
   keywords: [
     "graph theory symbols",

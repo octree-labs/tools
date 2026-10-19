@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { generateSymbolMetadata } from '@/lib/generate-symbol-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "LaTeX Functions & Mapping Symbols - Arrows, Composition | Free Symbol Reference",
+  title: "LaTeX Function & Mapping Symbols - Arrows, Composition | Free",
   description: "Complete list of LaTeX function and mapping symbols. Copy-paste f(x), →, ↦, ∘, injective, surjective notation with LaTeX commands.",
   keywords: [
     "function notation symbols",

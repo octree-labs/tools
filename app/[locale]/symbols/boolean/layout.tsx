@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { generateSymbolMetadata } from '@/lib/generate-symbol-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "LaTeX Logic Gates & Boolean Algebra Symbols | Free Symbol Reference",
+  title: "LaTeX Logic Gates & Boolean Algebra Symbols | Free Reference",
   description: "Complete list of LaTeX boolean algebra and logic gate symbols. Copy-paste AND ∧, OR ∨, NOT ¬, XOR ⊕, NAND ⊼, NOR with LaTeX commands.",
   keywords: [
     "boolean algebra symbols",

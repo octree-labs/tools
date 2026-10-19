@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { generateSymbolMetadata } from '@/lib/generate-symbol-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "LaTeX Relations & Comparisons - Inequality, Equivalence Symbols | Free Symbol Reference",
+  title: "LaTeX Relation Symbols - Inequality, Equivalence & More | Free",
   description: "Complete list of LaTeX relation and comparison symbols. Copy-paste ≤, ≥, ≠, ≈, ≡, ∝, ⊂, ⊆, ⟂, ∥ with LaTeX commands.",
   keywords: [
     "comparison symbols",

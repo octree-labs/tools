@@ -2,8 +2,8 @@ import { Metadata } from "next";
 import { generateSymbolMetadata } from '@/lib/generate-symbol-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "LaTeX Brackets & Delimiters - Angle Brackets, Floor, Ceiling, Norms | Free Symbol Reference",
-  description: "Complete list of LaTeX bracket and delimiter symbols. Copy-paste angle brackets ⟨⟩, floor ⌊⌋, ceiling ⌈⌉, norms ‖‖, double brackets ⟦⟧, and all delimiter pairs with LaTeX code.",
+  title: "LaTeX Brackets & Delimiters - Angle, Floor, Ceiling, Norms",
+  description: "Complete list of LaTeX bracket and delimiter symbols. Copy-paste angle brackets ⟨⟩, floor ⌊⌋, ceiling ⌈⌉, norms ‖‖ and all delimiter pairs with LaTeX code.",
   keywords: [
     // Brackets & delimiters keywords
     "bracket symbols",

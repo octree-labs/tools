@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { generateSymbolMetadata } from '@/lib/generate-symbol-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "LaTeX Topology & Abstract Math Symbols - Aleph, Boundary, Homology | Free Symbol Reference",
+  title: "LaTeX Topology Symbols - Aleph, Boundary, Homology & More | Free",
   description: "Complete list of LaTeX topology and abstract math symbols. Copy-paste ∂, ℵ, ℘, ℜ, ℑ, homology, cohomology, category theory with LaTeX commands.",
   keywords: [
     // Core keywords

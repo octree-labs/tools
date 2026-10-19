@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { generateSymbolMetadata } from '@/lib/generate-symbol-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "LaTeX Operators - Binary, Advanced Math Operators | Free Symbol Reference",
+  title: "LaTeX Operators - Binary & Advanced Math Operator Symbols",
   description: "Complete list of LaTeX operator symbols. Copy-paste ⊕, ⊗, ⊙, ⊖, ⋆, ∗, ∘, ∇, △, ▽ with LaTeX commands.",
   keywords: [
     "math operators symbols",

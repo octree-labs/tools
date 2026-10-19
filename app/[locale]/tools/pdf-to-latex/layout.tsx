@@ -3,7 +3,7 @@ import { generateToolMetadata } from '@/lib/generate-tool-metadata';
 
 const defaultMetadata: Metadata = {
   title: "Convert PDF to LaTeX Online Free - PDF to LaTeX Converter",
-  description: "Free AI-powered tool to convert PDF documents with mathematical equations and formulas to LaTeX code. Upload PDF files and get clean LaTeX output with PDF preview. Convert PDF to LaTeX instantly.",
+  description: "Free AI-powered tool to convert PDF documents with math equations and formulas to LaTeX code. Upload a PDF and get clean LaTeX output with a PDF preview.",
   keywords: [
     "convert PDF to LaTeX",
     "PDF to LaTeX converter",

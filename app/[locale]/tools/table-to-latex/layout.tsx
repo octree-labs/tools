@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { generateToolMetadata } from '@/lib/generate-tool-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "Convert Excel to LaTeX Online Free - CSV, JSON, Excel to LaTeX Converter",
-  description: "Free AI-powered tool to convert Excel spreadsheets from CSV, JSON, and XLSX files to LaTeX code. Upload your Excel files and get clean LaTeX table output with PDF preview. Convert Excel to LaTeX instantly.",
+  title: "Excel to LaTeX Converter - CSV, JSON & Excel to LaTeX | Free",
+  description: "Free AI-powered tool to convert Excel spreadsheets, CSV, JSON and XLSX files to LaTeX. Upload your file and get a clean LaTeX table with a PDF preview.",
   keywords: [
     "latex table generator",
     "table generator latex",

@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { generateToolMetadata } from '@/lib/generate-tool-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "LaTeX Citation Generator - Free BibTeX Citation Maker | Generate Citations Online",
-  description: "Free AI-powered LaTeX citation generator. Create BibTeX citations from DOIs, article details, or URLs. Generate formatted citations for books, articles, and papers instantly.",
+  title: "LaTeX Citation Generator - Free BibTeX Citation Maker Online",
+  description: "Free AI-powered LaTeX citation generator. Create BibTeX citations from DOIs, URLs or article details for books, articles and papers in seconds. No signup.",
   keywords: [
     "LaTeX citation generator",
     "BibTeX generator",

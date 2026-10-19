@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { generateToolMetadata } from '@/lib/generate-tool-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "Mermaid to TikZ/LaTeX Converter - Transform Diagrams Instantly | Free",
-  description: "Convert Mermaid diagrams to TikZ LaTeX code in one click. Flowcharts, sequence diagrams, Gantt charts → professional LaTeX graphics. Free online tool with live preview.",
+  title: "Mermaid to TikZ/LaTeX Converter - Convert Diagrams Instantly",
+  description: "Convert Mermaid diagrams to TikZ LaTeX code in one click. Flowcharts, sequence diagrams and Gantt charts become clean LaTeX graphics. Free, live preview.",
   keywords: [
     "convert Mermaid to LaTeX",
     "Mermaid to LaTeX converter",

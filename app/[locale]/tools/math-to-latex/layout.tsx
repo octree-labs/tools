@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { generateToolMetadata } from '@/lib/generate-tool-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "Convert Handwritten Math to LaTeX Online Free - Math Equation to LaTeX Converter",
-  description: "Free AI-powered tool to convert handwritten math equations, formulas, and expressions to LaTeX code. Upload image of math equations and get clean LaTeX output with PDF preview. Convert math text to LaTeX instantly.",
+  title: "Handwritten Math to LaTeX Converter - Free Equation to LaTeX",
+  description: "Free AI-powered tool to convert handwritten math equations and formulas to LaTeX. Upload an image of your equation and get clean LaTeX with a PDF preview.",
   keywords: [
     "convert handwritten math to LaTeX",
     "math equation to LaTeX converter",

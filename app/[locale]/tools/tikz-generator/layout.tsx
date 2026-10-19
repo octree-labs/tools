@@ -3,7 +3,7 @@ import { generateToolMetadata } from '@/lib/generate-tool-metadata';
 
 const defaultMetadata: Metadata = {
   title: "Free TikZ Generator Online - Create Diagrams in Seconds with AI",
-  description: "Create TikZ diagrams instantly — just describe what you need. AI generates flowcharts, graphs, neural networks & more. Free online TikZ maker with live PDF preview. No signup required.",
+  description: "Create TikZ diagrams instantly by describing what you need. AI generates flowcharts, graphs, neural networks and more. Free TikZ maker, live PDF preview.",
   keywords: [
     // High-volume TikZ keywords
     "tikz",

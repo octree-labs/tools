@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { generateSymbolMetadata } from '@/lib/generate-symbol-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "LaTeX Computer Science Symbols - Big O, Logic, Algorithms | Free Symbol Reference",
+  title: "LaTeX Computer Science Symbols - Big O, Logic, Algorithms",
   description: "Complete list of LaTeX computer science symbols. Copy-paste O(n), Ω(n), Θ(n), :=, ≡, ⊕, ∧, ∨, ⌊x⌋, ⌈x⌉ with LaTeX commands.",
   keywords: [
     // Computer science keywords

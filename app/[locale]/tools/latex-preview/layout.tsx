@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { generateToolMetadata } from '@/lib/generate-tool-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "Free Online LaTeX Editor with Live PDF Preview | Overleaf Alternative",
-  description: "Write LaTeX, see PDF instantly. Free online LaTeX editor with real-time compilation — no account needed. Test code, learn LaTeX, export PDFs. Best free Overleaf alternative.",
+  title: "Free Online LaTeX Editor, Live PDF Preview | Overleaf Alternative",
+  description: "Write LaTeX and see the PDF instantly. Free online LaTeX editor with real-time compilation, no account needed. Test code, learn LaTeX and export PDFs.",
   keywords: [
     "LaTeX preview",
     "online LaTeX editor",

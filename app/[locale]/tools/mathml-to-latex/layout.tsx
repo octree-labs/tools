@@ -3,7 +3,7 @@ import { generateToolMetadata } from '@/lib/generate-tool-metadata';
 
 const defaultMetadata: Metadata = {
   title: "MathML to LaTeX Converter Online - Free & Instant | Octree",
-  description: "Paste MathML, get perfect LaTeX in one click. Convert Word equations, MathType & Office Math to LaTeX instantly. Free online tool with live preview — no signup needed.",
+  description: "Paste MathML, get clean LaTeX in one click. Convert Word equations, MathType and Office Math to LaTeX instantly. Free online tool with live preview.",
   keywords: [
     "convert MathML to LaTeX",
     "MathML to LaTeX converter",

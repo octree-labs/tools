@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { generateSymbolMetadata } from '@/lib/generate-symbol-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "LaTeX Units & Measurements - Degree, Angstrom, SI Units | Free Symbol Reference",
+  title: "LaTeX Units & Measurements - Degree, Angstrom, SI Units | Free",
   description: "Complete list of LaTeX unit and measurement symbols. Copy-paste °, ′, ″, Å, μ, Ω, ℏ, SI units with LaTeX commands.",
   keywords: [
     "measurement symbols",

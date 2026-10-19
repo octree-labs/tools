@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { generateSymbolMetadata } from '@/lib/generate-symbol-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "LaTeX Probability & Statistics Symbols - Expectation, Variance | Free Symbol Reference",
+  title: "LaTeX Probability & Statistics Symbols - Expectation, Variance",
   description: "Complete list of LaTeX probability and statistics symbols. Copy-paste P(A), E[X], Var, σ, μ, ~, ⊥, binomial coefficients with LaTeX commands.",
   keywords: [
     // Probability & statistics keywords

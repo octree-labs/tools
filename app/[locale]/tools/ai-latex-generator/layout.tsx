@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { generateToolMetadata } from '@/lib/generate-tool-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "AI LaTeX Generator - Write Papers, Equations & Documents with AI | Free",
-  description: "Generate LaTeX code instantly with AI. Describe your document in plain English → get complete, compilable LaTeX. Research papers, equations, presentations & more. Free, no signup.",
+  title: "AI LaTeX Generator - Write Papers & Equations with AI | Free",
+  description: "Generate LaTeX code instantly with AI. Describe your document in plain English and get complete, compilable LaTeX for papers, equations and slides. Free.",
   keywords: [
     "AI LaTeX generator",
     "generate LaTeX code",

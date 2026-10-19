@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { generateSymbolMetadata } from '@/lib/generate-symbol-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "LaTeX Linear Algebra Symbols - Vectors, Matrices, Norms | Free Symbol Reference",
+  title: "LaTeX Linear Algebra Symbols - Vectors, Matrices, Norms | Free",
   description: "Complete list of LaTeX linear algebra symbols. Copy-paste vectors, matrices, transpose, inverse, determinant, norm, inner product with LaTeX commands.",
   keywords: [
     // Linear algebra keywords

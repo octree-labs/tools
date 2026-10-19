@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { generateSymbolMetadata } from '@/lib/generate-symbol-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "LaTeX Arrow Symbols - Left, Right, Double Arrows & More | Free Symbol Reference",
+  title: "LaTeX Arrow Symbols - Left, Right, Double Arrows & More | Free",
   description: "Complete list of LaTeX arrow symbols. Copy-paste →, ←, ↔, ⇒, ⇐, ⇔, ↑, ↓, ↗, ↘ and all directional arrows with LaTeX commands.",
   keywords: [
     // Core keywords

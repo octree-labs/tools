@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { generateSymbolMetadata } from '@/lib/generate-symbol-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "LaTeX Special Functions - Gamma, Zeta, Bessel | Free Symbol Reference",
+  title: "LaTeX Special Functions - Gamma, Zeta, Bessel | Free Reference",
   description: "Complete list of LaTeX special function symbols. Copy-paste Gamma Γ, Riemann zeta ζ, Bessel, Legendre, error function with LaTeX commands.",
   keywords: [
     "special functions symbols",

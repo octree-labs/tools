@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { generateSymbolMetadata } from '@/lib/generate-symbol-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "LaTeX Summation & Product Notation - Sigma, Pi Symbols | Free Symbol Reference",
+  title: "LaTeX Summation & Product Notation - Sigma, Pi Symbols | Free",
   description: "Complete list of LaTeX summation and product symbols. Copy-paste ∑, ∏, ⨁, ⨂ with indexed limits and LaTeX commands.",
   keywords: [
     "summation symbol",
