@@ -829,6 +829,10 @@
     "mla-paper": {
       "title": "Saggio in formato MLA",
       "description": "Saggio in formato MLA 9 con intestazione di quattro righe, testatina con cognome e numero di pagina, interlinea doppia, citazione in blocco, citazione nel testo e pagina delle opere citate"
+    },
+    "apa-student-paper": {
+      "title": "Elaborato studente in formato APA",
+      "description": "Elaborato studente in formato APA 7 con frontespizio per studenti, numeri di pagina in alto a destra, titoli di livello 1–3, interlinea doppia, citazioni nel testo con biblatex-apa e pagina dei riferimenti con rientro sporgente"
     }
   },
   "symbols": {

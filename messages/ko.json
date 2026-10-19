@@ -526,7 +526,8 @@
     "ats-resume": { "title": "ATS 친화적 이력서 템플릿", "description": "지원자 추적 시스템이 정확히 읽는 단일 열 일반 텍스트 이력서: 표준 제목, 표·아이콘·다단 없음" },
     "mla-works-cited": { "title": "MLA 인용 문헌 페이지", "description": "러닝 헤더, 2배 줄 간격, 내어쓰기와 8개의 예시 항목이 포함된 MLA 9판 인용 문헌 페이지" },
     "annotated-bibliography": { "title": "주석 달린 참고문헌", "description": "내어쓰기 참고문헌, 들여쓴 주석, 2배 줄 간격을 갖춘 APA 7판 주석 달린 참고문헌. 한 줄로 MLA 9판 전환 가능" },
-    "mla-paper": { "title": "MLA 형식 논문", "description": "4줄 머리글, 성과 쪽 번호 러닝 헤더, 2배 줄 간격, 블록 인용, 본문 내 인용과 인용 문헌 페이지를 갖춘 MLA 9판 논문" }
+    "mla-paper": { "title": "MLA 형식 논문", "description": "4줄 머리글, 성과 쪽 번호 러닝 헤더, 2배 줄 간격, 블록 인용, 본문 내 인용과 인용 문헌 페이지를 갖춘 MLA 9판 논문" },
+    "apa-student-paper": { "title": "APA 학생 논문", "description": "학생용 표지, 오른쪽 상단 쪽 번호, 1~3수준 제목, 2배 줄 간격, biblatex-apa 본문 내 인용과 내어쓰기 참고문헌 페이지를 갖춘 APA 7판 학생 논문" }
   },
   "symbols": {
     "title": "LaTeX 기호",

@@ -819,6 +819,10 @@
       "mla-paper": {
         "title": "Dissertation au format MLA",
         "description": "Dissertation au format MLA 9 avec en-tête de quatre lignes, en-tête courant nom et numéro de page, double interligne, citation longue, citation dans le texte et page Works Cited"
+      },
+      "apa-student-paper": {
+        "title": "Devoir étudiant au format APA",
+        "description": "Devoir étudiant au format APA 7 avec page de titre étudiante, numéros de page en haut à droite, titres de niveaux 1 à 3, double interligne, citations dans le texte via biblatex-apa et page de références avec retrait suspendu"
       }
     },
     "symbols": {

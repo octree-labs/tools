@@ -829,6 +829,10 @@
     "mla-paper": {
       "title": "Kertas Format MLA",
       "description": "Kertas format MLA 9 dengan tajuk empat baris, pengepala nama keluarga dan nombor halaman, langkau dua baris, petikan blok, petikan dalam teks dan halaman works cited"
+    },
+    "apa-student-paper": {
+      "title": "Kertas Pelajar Format APA",
+      "description": "Kertas pelajar format APA 7 dengan halaman tajuk pelajar, nombor halaman di kanan atas, tajuk Tahap 1–3, langkau dua baris, petikan dalam teks dengan biblatex-apa dan halaman Rujukan dengan inden gantung"
     }
   },
   "symbols": {

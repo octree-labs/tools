@@ -861,6 +861,20 @@ async function generateMetadataBase({
       'latex mla template',
       'mla 9 format',
     ],
+    'apa-student-paper': [
+      'apa paper example',
+      'apa format example',
+      'apa student paper template',
+      'apa student paper',
+      'apa paper template',
+      'apa format paper',
+      'apa 7 student paper',
+      'apa 7 paper example',
+      'apa paper format',
+      'apa headings',
+      'apa7 latex template',
+      'latex apa paper',
+    ],
   };
 
   const specificKeywords = keywordMap[slug] || [

@@ -9414,4 +9414,137 @@ The novel does not want its reader to find the street. It wants the reader to fe
 \end{document}`,
   },
 
+  {
+    id: 85,
+    title: "APA Student Paper",
+    description: "APA 7 student paper with the student title page, page numbers top right, Level 1–3 headings, double spacing, biblatex-apa in-text citations and a References page with hanging indent",
+    slug: "apa-student-paper",
+    previewUrl: "/templates/apa-student-paper.pdf",
+    category: "Academic",
+    seoTitle: "APA Student Paper Template (APA 7) | Format Example in LaTeX",
+    seoDescription:
+      "Free APA 7 student paper template in LaTeX (apa7 class): student title page, page numbers, Level 1-3 headings, double spacing, in-text citations and a References page with hanging indent.",
+    code: String.raw`% APA 7 Student Paper
+% -------------------
+% A complete student paper laid out according to the Publication Manual of
+% the American Psychological Association, 7th edition, using the apa7 class
+% in student mode (stu). The class handles every formatting rule:
+%   - student title page: title in bold, then author, affiliation, course,
+%     instructor and due date, centred in the upper half of the page
+%   - page number in the top right corner of every page (no running head
+%     on a student paper)
+%   - letter paper, 1-inch margins, 12-point text, double spaced throughout,
+%     0.5-inch first-line paragraph indent
+%   - the title repeated in bold, centred, as the first line of the body
+%   - headings: \section = Level 1 (centred, bold), \subsection = Level 2
+%     (flush left, bold), \subsubsection = Level 3 (flush left, bold
+%     italic); \paragraph and \subparagraph give the run-in Levels 4 and 5
+%   - author-date citations with biblatex-apa: \textcite{} for a narrative
+%     citation, \parencite{} for a parenthetical one
+%   - a References page on its own sheet, alphabetical, 0.5-inch hanging
+%     indent, title centred in bold
+%
+% The sources live in a small .bib file written out by the filecontents
+% block below, so the template is a single file. Replace those entries with
+% your own (or delete the block and \addbibresource your real .bib file) and
+% compile with latexmk, or pdflatex -> biber -> pdflatex twice, so biber
+% builds the reference list.
+
+\documentclass[stu,12pt,floatsintext]{apa7}
+
+\usepackage[american]{babel}
+\usepackage{csquotes}
+\usepackage{newtxtext}      % Times-like 12 pt text (APA 7 also accepts Computer Modern: delete this line)
+\usepackage[style=apa,backend=biber]{biblatex}
+
+% --- Sample sources (replace with your own) ---
+\begin{filecontents*}[overwrite]{sample-refs.bib}
+@article{halvorsen2023,
+  author  = {Halvorsen, Ingrid and Reyes, Tom{\'a}s},
+  title   = {Sleep timing and working memory in first-year undergraduates},
+  journal = {Journal of Student Learning Research},
+  year    = {2023},
+  volume  = {14},
+  number  = {2},
+  pages   = {115--132},
+  doi     = {10.0000/jslr.2023.0142},
+}
+@book{okafor2021,
+  author    = {Okafor, Nneka},
+  title     = {Rest and recall: How sleep shapes student learning},
+  publisher = {Example University Press},
+  year      = {2021},
+}
+@online{src2024,
+  author  = {{Sleep Research Collective}},
+  title   = {Study habits and sleep: A guide for first-year students},
+  date    = {2024-03-08},
+  url     = {https://www.example.org/sleep-guide},
+}
+\end{filecontents*}
+\addbibresource{sample-refs.bib}
+
+% --- Title page fields (student mode) ---
+\title{Sleep Regularity and Working Memory in First-Year Undergraduates}
+\authorsnames{Jordan A. Rivera}
+\authorsaffiliations{{Department of Psychology, Example University}}
+\course{PSY 240: Cognitive Psychology}
+\professor{Dr. Maria Lopez}
+\duedate{October 19, 2026}
+
+% ---- Professional (manuscript) paper instead ----
+% Change the class option  stu  to  man  and replace the student fields with:
+%
+% \shorttitle{SLEEP REGULARITY AND WORKING MEMORY}   % running head, caps, max 50 characters
+% \authorsnames[1,2]{Jordan A. Rivera, Maria Lopez}
+% \authorsaffiliations{{Department of Psychology, Example University},
+%                      {School of Education, Second University}}
+% \authornote{Correspondence concerning this article should be addressed to
+%   Jordan A. Rivera, Department of Psychology, Example University.
+%   Email: rivera@example.edu}
+% \abstract{One paragraph of up to 250 words.}
+% \keywords{sleep, working memory, undergraduates}
+%
+% and delete \course, \professor and \duedate, which only the student title
+% page prints. The headings, citations and References page stay the same.
+% --------------------------------------------------
+
+\begin{document}
+
+\maketitle
+
+% The class repeats the title as a centred bold Level 1 heading here; the
+% introduction follows it with no "Introduction" heading, as APA requires.
+First-year undergraduates report irregular sleep more often than any other group on campus, yet most advice they receive concerns how long to sleep rather than when. \textcite{halvorsen2023} found that students whose bedtimes varied by more than 90 minutes across the week scored lower on a digit-span task than consistent sleepers, even when total sleep time was the same. Earlier work on consolidation suggests why: memory traces are strengthened during specific sleep stages, so shifting bedtime shifts which stages a night contains \parencite{okafor2021}. This paper asks whether sleep regularity, independent of duration, predicts working memory performance in a first-year sample, and whether the popular guidance students actually read reflects that distinction \parencite{src2024}.
+
+\section{Method}
+
+\subsection{Participants}
+
+Forty-eight first-year students (29 women, 19 men; \emph{M} age = 18.4 years) took part in exchange for course credit. All reported normal or corrected-to-normal vision and no diagnosed sleep disorder.
+
+\subsection{Materials}
+
+\subsubsection{Sleep Diary}
+
+Participants logged bedtime and wake time each morning for 14 consecutive days. Regularity was defined as the standard deviation of bedtime across the two weeks, and duration as the mean time in bed.
+
+\subsubsection{Working Memory Task}
+
+Working memory was measured with a computerized digit-span task following the procedure of \textcite{halvorsen2023}. Each participant completed the task on Day 1 and Day 15.
+
+\section{Results}
+
+Bedtime regularity predicted Day 15 digit span after controlling for duration, \emph{b} = $-$0.41, \emph{SE} = 0.13, \emph{p} = .003. Duration alone was not a significant predictor, \emph{p} = .21, which matches the pattern reported by \textcite{halvorsen2023} and the consolidation account summarized by \textcite{okafor2021}.
+
+\section{Discussion}
+
+The results extend earlier findings to a smaller and more homogeneous sample: when students slept mattered more than how long. The guidance most widely circulated to first-year students still leads with duration \parencite{src2024}, so the practical recommendation is to anchor wake time first and let total sleep follow. Limitations include the self-report diary and a single campus; future work should use actigraphy and a larger sample.
+
+% ---- References: new page, centred bold title, hanging indent, alphabetical ----
+\printbibliography
+
+\end{document}`,
+  },
+
 ];

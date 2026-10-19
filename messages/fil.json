@@ -829,6 +829,10 @@
     "mla-paper": {
       "title": "MLA Format Paper",
       "description": "Papel sa format na MLA 9 na may apat na linyang heading, running header na apelyido at numero ng pahina, double spacing, block quote, in-text citation at pahina ng works cited"
+    },
+    "apa-student-paper": {
+      "title": "APA Student Paper",
+      "description": "Papel ng estudyante sa APA 7 na may pahina ng pamagat para sa estudyante, numero ng pahina sa kanang itaas, mga heading na Level 1–3, double spacing, mga in-text citation gamit ang biblatex-apa at pahina ng References na may hanging indent"
     }
   },
   "symbols": {

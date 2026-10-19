@@ -829,6 +829,10 @@
     "mla-paper": {
       "title": "Makalah Format MLA",
       "description": "Makalah format MLA 9 dengan heading empat baris, header nama belakang dan nomor halaman, spasi ganda, kutipan blok, kutipan dalam teks, dan halaman works cited"
+    },
+    "apa-student-paper": {
+      "title": "Makalah Mahasiswa Format APA",
+      "description": "Makalah mahasiswa format APA 7 dengan halaman judul mahasiswa, nomor halaman di kanan atas, judul Level 1–3, spasi ganda, sitasi dalam teks dengan biblatex-apa dan halaman Referensi dengan indentasi gantung"
     }
   },
   "symbols": {

@@ -829,6 +829,10 @@
     "mla-paper": {
       "title": "MLA Format Paper",
       "description": "MLA 9 paper with the four-line heading, Lastname page-number running header, double spacing, a block quote, an in-text citation and a Works Cited page"
+    },
+    "apa-student-paper": {
+      "title": "APA Student Paper",
+      "description": "APA 7 student paper with the student title page, page numbers top right, Level 1–3 headings, double spacing, biblatex-apa in-text citations and a References page with hanging indent"
     }
   },
   "symbols": {
