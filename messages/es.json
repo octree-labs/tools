@@ -739,6 +739,10 @@
       "annotated-bibliography": {
         "title": "Bibliografía anotada",
         "description": "Bibliografía anotada en formato APA 7 con sangría francesa, anotaciones sangradas, doble espacio y un cambio de una línea a MLA 9"
+      },
+      "mla-paper": {
+        "title": "Trabajo en formato MLA",
+        "description": "Trabajo en formato MLA 9 con encabezado de cuatro líneas, cabecera con apellido y número de página, doble espacio, cita en bloque, cita en el texto y página de obras citadas"
       }
     },
     "toolsList": {

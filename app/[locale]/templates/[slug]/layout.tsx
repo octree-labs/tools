@@ -847,6 +847,20 @@ async function generateMetadataBase({
       'apa 7 annotated bibliography',
       'how to write an annotated bibliography',
     ],
+    'mla-paper': [
+      'mla heading',
+      'mla format example',
+      'mla paper format',
+      'mla header format',
+      'mla title page',
+      'mla format essay',
+      'mla format paper',
+      'mla essay format',
+      'mla paper template',
+      'mla format latex',
+      'latex mla template',
+      'mla 9 format',
+    ],
   };
 
   const specificKeywords = keywordMap[slug] || [

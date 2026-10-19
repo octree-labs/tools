@@ -815,6 +815,10 @@
       "annotated-bibliography": {
         "title": "Bibliographie annotée",
         "description": "Bibliographie annotée au format APA 7 avec retrait négatif, annotations en retrait, double interligne et bascule en une ligne vers MLA 9"
+      },
+      "mla-paper": {
+        "title": "Dissertation au format MLA",
+        "description": "Dissertation au format MLA 9 avec en-tête de quatre lignes, en-tête courant nom et numéro de page, double interligne, citation longue, citation dans le texte et page Works Cited"
       }
     },
     "symbols": {

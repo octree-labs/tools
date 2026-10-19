@@ -825,6 +825,10 @@
     "annotated-bibliography": {
       "title": "Bibliografia annotata",
       "description": "Bibliografia annotata in formato APA 7 con rientro sporgente, annotazioni rientrate, interlinea doppia e passaggio a MLA 9 in una riga"
+    },
+    "mla-paper": {
+      "title": "Saggio in formato MLA",
+      "description": "Saggio in formato MLA 9 con intestazione di quattro righe, testatina con cognome e numero di pagina, interlinea doppia, citazione in blocco, citazione nel testo e pagina delle opere citate"
     }
   },
   "symbols": {

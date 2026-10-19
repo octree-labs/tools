@@ -825,6 +825,10 @@
     "annotated-bibliography": {
       "title": "Kommentierte Bibliographie",
       "description": "Kommentierte Bibliographie nach APA 7 mit hängendem Einzug, eingerückten Anmerkungen, doppeltem Zeilenabstand und Umschalter auf MLA 9"
+    },
+    "mla-paper": {
+      "title": "Aufsatz im MLA-Format",
+      "description": "Aufsatz nach MLA 9 mit vierzeiligem Kopfblock, Kopfzeile aus Nachname und Seitenzahl, doppeltem Zeilenabstand, Blockzitat, Kurzbeleg im Text und Works-Cited-Seite"
     }
   },
   "symbols": {

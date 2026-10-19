@@ -825,6 +825,10 @@
     "annotated-bibliography": {
       "title": "Bibliografi Beranotasi",
       "description": "Bibliografi beranotasi format APA 7 dengan inden gantung, anotasi berinden, langkau dua baris dan suis satu baris ke MLA 9"
+    },
+    "mla-paper": {
+      "title": "Kertas Format MLA",
+      "description": "Kertas format MLA 9 dengan tajuk empat baris, pengepala nama keluarga dan nombor halaman, langkau dua baris, petikan blok, petikan dalam teks dan halaman works cited"
     }
   },
   "symbols": {

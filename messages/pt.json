@@ -566,7 +566,8 @@
       "neurips-2027": { "title": "NeurIPS 2027", "description": "Preprint em coluna única no estilo NeurIPS 2027 com bloco de autores, resumo, seções e checklist do artigo" },
       "ats-resume": { "title": "Modelo de Currículo Compatível com ATS", "description": "Currículo de coluna única em texto simples que os sistemas de triagem de candidatos leem corretamente: títulos padrão, sem tabelas, ícones ou colunas" },
       "mla-works-cited": { "title": "Página de Obras Citadas MLA", "description": "Página de obras citadas no formato MLA 9 com cabeçalho, espaçamento duplo, recuo deslocado e oito entradas de exemplo" },
-      "annotated-bibliography": { "title": "Bibliografia Anotada", "description": "Bibliografia anotada no formato APA 7 com recuo deslocado, anotações recuadas, espaçamento duplo e troca em uma linha para MLA 9" }
+      "annotated-bibliography": { "title": "Bibliografia Anotada", "description": "Bibliografia anotada no formato APA 7 com recuo deslocado, anotações recuadas, espaçamento duplo e troca em uma linha para MLA 9" },
+      "mla-paper": { "title": "Trabalho em Formato MLA", "description": "Trabalho no formato MLA 9 com cabeçalho de quatro linhas, cabeçalho de página com sobrenome e número, espaçamento duplo, citação em bloco, citação no texto e página de obras citadas" }
     },
     "symbols": {
     "title": "Símbolos LaTeX",

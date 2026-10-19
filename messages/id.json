@@ -825,6 +825,10 @@
     "annotated-bibliography": {
       "title": "Bibliografi Beranotasi",
       "description": "Bibliografi beranotasi format APA 7 dengan indentasi gantung, anotasi menjorok, spasi ganda, dan pengalih satu baris ke MLA 9"
+    },
+    "mla-paper": {
+      "title": "Makalah Format MLA",
+      "description": "Makalah format MLA 9 dengan heading empat baris, header nama belakang dan nomor halaman, spasi ganda, kutipan blok, kutipan dalam teks, dan halaman works cited"
     }
   },
   "symbols": {

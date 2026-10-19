@@ -825,6 +825,10 @@
     "annotated-bibliography": {
       "title": "Annotated Bibliography",
       "description": "APA 7 annotated bibliography with hanging-indent references, indented annotations, double spacing and a one-line switch to MLA 9"
+    },
+    "mla-paper": {
+      "title": "MLA Format Paper",
+      "description": "MLA 9 paper with the four-line heading, Lastname page-number running header, double spacing, a block quote, an in-text citation and a Works Cited page"
     }
   },
   "symbols": {
