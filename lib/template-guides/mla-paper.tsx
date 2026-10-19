@@ -103,7 +103,8 @@ export default function MlaPaperGuide() {
 \\renewcommand{\\headrulewidth}{0pt}`}</GuidePre>
       <GuideP>
         <GuideCode>headheight</GuideCode> plus <GuideCode>headsep</GuideCode> add up to
-        half an inch, which places the header baseline where MLA wants it, and{" "}
+        half an inch, so the header sits half an inch below the top edge of the page, as
+        MLA wants, and{" "}
         <GuideCode>headrulewidth</GuideCode> set to zero removes the line fancyhdr would
         otherwise draw. The heading is four <GuideCode>\noindent</GuideCode> paragraphs
         after <GuideCode>\begin{"{document}"}</GuideCode>:
