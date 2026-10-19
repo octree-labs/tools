@@ -821,6 +821,10 @@
     "mla-works-cited": {
       "title": "Pagina Opere citate MLA",
       "description": "Pagina delle opere citate in formato MLA 9 con intestazione, interlinea doppia, rientro sporgente e otto voci di esempio"
+    },
+    "annotated-bibliography": {
+      "title": "Bibliografia annotata",
+      "description": "Bibliografia annotata in formato APA 7 con rientro sporgente, annotazioni rientrate, interlinea doppia e passaggio a MLA 9 in una riga"
     }
   },
   "symbols": {

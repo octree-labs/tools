@@ -821,6 +821,10 @@
     "mla-works-cited": {
       "title": "MLA Works-Cited-Seite",
       "description": "Works-Cited-Seite nach MLA 9 mit Kopfzeile, doppeltem Zeilenabstand, hängendem Einzug und acht Beispieleinträgen"
+    },
+    "annotated-bibliography": {
+      "title": "Kommentierte Bibliographie",
+      "description": "Kommentierte Bibliographie nach APA 7 mit hängendem Einzug, eingerückten Anmerkungen, doppeltem Zeilenabstand und Umschalter auf MLA 9"
     }
   },
   "symbols": {

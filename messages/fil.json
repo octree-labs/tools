@@ -821,6 +821,10 @@
     "mla-works-cited": {
       "title": "MLA Works Cited Page",
       "description": "Pahina ng works cited sa format na MLA 9 na may running header, double spacing, hanging indent at walong halimbawang entry"
+    },
+    "annotated-bibliography": {
+      "title": "Annotated Bibliography",
+      "description": "Annotated bibliography sa format na APA 7 na may hanging indent, naka-indent na anotasyon, double spacing at isang linyang switch sa MLA 9"
     }
   },
   "symbols": {

@@ -565,7 +565,8 @@
       "aaai-2027": { "title": "AAAI 2027", "description": "Artigo em duas colunas no estilo do kit de autor AAAI 2027 com bloco de título, cabeçalho de resumo em negrito e referências autor-ano" },
       "neurips-2027": { "title": "NeurIPS 2027", "description": "Preprint em coluna única no estilo NeurIPS 2027 com bloco de autores, resumo, seções e checklist do artigo" },
       "ats-resume": { "title": "Modelo de Currículo Compatível com ATS", "description": "Currículo de coluna única em texto simples que os sistemas de triagem de candidatos leem corretamente: títulos padrão, sem tabelas, ícones ou colunas" },
-      "mla-works-cited": { "title": "Página de Obras Citadas MLA", "description": "Página de obras citadas no formato MLA 9 com cabeçalho, espaçamento duplo, recuo deslocado e oito entradas de exemplo" }
+      "mla-works-cited": { "title": "Página de Obras Citadas MLA", "description": "Página de obras citadas no formato MLA 9 com cabeçalho, espaçamento duplo, recuo deslocado e oito entradas de exemplo" },
+      "annotated-bibliography": { "title": "Bibliografia Anotada", "description": "Bibliografia anotada no formato APA 7 com recuo deslocado, anotações recuadas, espaçamento duplo e troca em uma linha para MLA 9" }
     },
     "symbols": {
     "title": "Símbolos LaTeX",

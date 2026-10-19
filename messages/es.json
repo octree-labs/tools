@@ -735,6 +735,10 @@
       "mla-works-cited": {
         "title": "Página de obras citadas MLA",
         "description": "Página de obras citadas en formato MLA 9 con encabezado, doble espacio, sangría francesa y ocho entradas de ejemplo"
+      },
+      "annotated-bibliography": {
+        "title": "Bibliografía anotada",
+        "description": "Bibliografía anotada en formato APA 7 con sangría francesa, anotaciones sangradas, doble espacio y un cambio de una línea a MLA 9"
       }
     },
     "toolsList": {

@@ -9148,4 +9148,137 @@ platform or infrastructure team.
 \end{document}`,
   },
 
+  {
+    id: 83,
+    title: "Annotated Bibliography",
+    description: "APA 7 annotated bibliography with hanging-indent references, indented annotations, double spacing and a one-line switch to MLA 9",
+    slug: "annotated-bibliography",
+    previewUrl: "/templates/annotated-bibliography.pdf",
+    category: "Academic",
+    seoTitle: "Annotated Bibliography Template (APA 7 & MLA 9) | Free LaTeX",
+    seoDescription:
+      "Free LaTeX annotated bibliography template: APA 7 with one-line switch to MLA 9, hanging indents, indented annotations, double spacing and three examples.",
+    code: String.raw`% Annotated Bibliography (APA 7, with an MLA 9 switch)
+% ----------------------------------------------------
+% A standalone annotated bibliography that follows the APA Publication
+% Manual, 7th edition, section 9.51:
+%   - letter paper, 1-inch margins on all sides
+%   - 12-point Times-style text, double spaced throughout, left-aligned
+%   - page number top right (APA student papers have no running head)
+%   - the heading "Annotated Bibliography" centered and bold
+%   - each reference flush left with a 0.5-inch hanging indent, in
+%     alphabetical order by the first author's surname
+%   - each annotation as its own paragraph indented 0.5 inch from the left
+%     margin (the same indent as a block quotation), flush left within it
+%
+% Write each source as \entry{...} immediately followed by \annotation{...}.
+% Keep annotations to one paragraph of 100-150 words unless your instructor
+% asks for more: summary of the source, evaluation of its reliability, and
+% how it fits your project.
+%
+% SWITCH TO MLA 9: change \mlafalse to \mlatrue below. The running header
+% becomes "Last name page", the four-line MLA heading (name, instructor,
+% course, date) is printed at the top left of the first page, the title
+% becomes plain text, and the \ifmla branches in the body print MLA-style
+% references (Author, Title, container, date, location) in place of the APA
+% ones. The annotation paragraphs are the same in both styles. Set \lastname
+% and the four heading lines to your own details for MLA.
+%
+% Prefer automated citations? biblatex can print annotations from the
+% "annotation" field of your .bib file:
+%   \usepackage[style=apa,backend=biber]{biblatex}   % or style=mla
+%   \addbibresource{refs.bib}
+%   \DeclareFieldFormat{annotation}{\par\leftskip=0.5in #1\par}
+%   \renewbibmacro*{finentry}{\finentry\printfield{annotation}}
+%   ... \printbibliography[title={Annotated Bibliography}]
+
+\documentclass[12pt,letterpaper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in,headheight=15pt,headsep=21pt]{geometry}
+\usepackage{newtxtext}      % Times-like 12 pt text font (APA and MLA both accept Times New Roman)
+\usepackage{setspace}       % double spacing
+\usepackage{fancyhdr}       % page number (and last name for MLA) in the header
+\usepackage[hidelinks]{hyperref}   % also loads url, which lets URLs and DOIs break after / . _ etc.
+\urlstyle{same}             % URLs and DOIs in the body font, not typewriter
+
+% ===== STYLE SWITCH =====
+\newif\ifmla
+\mlafalse                   % APA 7 (default). Change to \mlatrue for MLA 9.
+\newcommand{\lastname}{Smith}   % used only in the MLA running header
+\newcommand{\mlaheading}{%       % MLA first-page heading: name, instructor, course, date
+  Jordan \lastname\\
+  Professor Lee\\
+  ENG 101\\
+  19 October 2026\par}
+
+% --- Page layout (shared by both styles) ---
+\doublespacing
+\raggedright               % APA 7 and MLA 9: left-aligned, uneven right margin
+\hyphenpenalty=10000       % APA 7 and MLA 9: no automatic hyphenation at line ends
+\frenchspacing             % one space after periods
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\pagestyle{fancy}
+\fancyhf{}
+\ifmla
+  \fancyhead[R]{\lastname\ \thepage}   % MLA: last name and page number
+\else
+  \fancyhead[R]{\thepage}              % APA student paper: page number only
+\fi
+\renewcommand{\headrulewidth}{0pt}
+
+% --- One reference: flush left, 0.5 in hanging indent ---
+\newcommand{\entry}[1]{%
+  \par\noindent\hangindent=0.5in\hangafter=1 #1\par}
+
+% --- The annotation: one paragraph, indented 0.5 in from the left margin ---
+\newcommand{\annotation}[1]{%
+  \par{\leftskip=0.5in\noindent #1\par}}
+
+\begin{document}
+
+% Heading: APA wants section labels bold and centered; MLA wants the four-line
+% heading flush left, then the title in plain text.
+\ifmla
+  \mlaheading
+  {\centering Annotated Bibliography\par}
+\else
+  {\centering\textbf{Annotated Bibliography}\par}
+\fi
+
+% Sources go in alphabetical order by the first author's surname (or by the
+% first word of the title when there is no author). Each \entry is followed
+% by its \annotation. The three sources below are fictional examples.
+
+% 1. Journal article with a DOI (two authors)
+\ifmla
+\entry{Halvorsen, Ingrid, and Tomás Reyes. “Sleep Timing and Working Memory in First-Year Undergraduates.” \textit{Journal of Student Learning Research}, vol. 14, no. 2, 2023, pp. 115--32, \url{https://doi.org/10.0000/jslr.2023.0142}.}
+\else
+\entry{Halvorsen, I., \& Reyes, T. (2023). Sleep timing and working memory in first-year undergraduates. \textit{Journal of Student Learning Research, 14}(2), 115--132. \url{https://doi.org/10.0000/jslr.2023.0142}}
+\fi
+\annotation{Halvorsen and Reyes report a semester-long study of 212 first-year undergraduates that tracked bedtime with wrist actigraphy and measured working memory with a digit-span task every four weeks. Students whose bedtimes varied by more than ninety minutes across the week scored lower on every test than consistent sleepers, even when total sleep time was the same. The sample is large and the measures are objective, but all participants came from one campus and the authors do not control for caffeine or screen use, which they acknowledge as a limitation. The article is the most rigorous evidence in this bibliography for the claim that sleep regularity, not only sleep length, affects learning, and it supplies the working-memory data on which the second section of my paper rests.}
+
+% 2. Book (one author)
+\ifmla
+\entry{Okafor, Nneka. \textit{Rest and Recall: How Sleep Shapes Student Learning}. Example UP, 2021.}
+\else
+\entry{Okafor, N. (2021). \textit{Rest and recall: How sleep shapes student learning}. Example University Press.}
+\fi
+\annotation{This book surveys fifty years of research on sleep and memory for a general academic audience. Its early chapters explain the consolidation cycle in plain language; the later chapters review field studies of students in secondary schools and universities and end with practical recommendations for timetabling and residence life. Okafor writes clearly and cites her sources fully, but the book favours breadth over depth, and the summaries of individual studies are too brief to assess their methods. It is best read as a map of the literature rather than as evidence in itself. For my paper it provides the historical background for the introduction and a useful vocabulary for distinguishing consolidation from retrieval, which the journal articles assume rather than define.}
+
+% 3. Web page published by the organisation that wrote it. APA: organisation
+%    as author, site name omitted because it is the same as the author. MLA:
+%    start with the title and give the site as the container.
+\ifmla
+\entry{“Study Habits and Sleep: A Guide for First-Year Students.” \textit{Sleep Research Collective}, 8 Mar. 2024, \url{www.example.org/sleep-guide}.}
+\else
+\entry{Sleep Research Collective. (2024, March 8). \textit{Study habits and sleep: A guide for first-year students}. \url{https://www.example.org/sleep-guide}}
+\fi
+\annotation{This guide, published by a nonprofit that runs sleep workshops on university campuses, condenses advice from the research literature into a short checklist for new students: fixed wake times, a screen-free hour before bed, and short afternoon naps instead of all-night study sessions. The page cites the studies it draws on and was updated in 2024, but it offers no original data and simplifies some findings, presenting the ninety-minute sleep-cycle rule as settled when the evidence is mixed. Its value for my paper is as an example of how research reaches students in practice: the recommendations section compares the guide's advice with the findings of Halvorsen and Reyes and Okafor to show where popular guidance keeps pace with the evidence and where it lags.}
+
+\end{document}`,
+  },
+
 ];
