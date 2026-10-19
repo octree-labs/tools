@@ -9176,11 +9176,13 @@ platform or infrastructure team.
 % asks for more: summary of the source, evaluation of its reliability, and
 % how it fits your project.
 %
-% SWITCH TO MLA 9: change \mlafalse to \mlatrue below. The heading becomes
-% plain text, the running header becomes "Last name page", and the \ifmla
-% branches in the body print MLA-style references (Author, Title, container,
-% date, location) in place of the APA ones. The annotation paragraphs are the
-% same in both styles. Set \lastname to your own surname for MLA.
+% SWITCH TO MLA 9: change \mlafalse to \mlatrue below. The running header
+% becomes "Last name page", the four-line MLA heading (name, instructor,
+% course, date) is printed at the top left of the first page, the title
+% becomes plain text, and the \ifmla branches in the body print MLA-style
+% references (Author, Title, container, date, location) in place of the APA
+% ones. The annotation paragraphs are the same in both styles. Set \lastname
+% and the four heading lines to your own details for MLA.
 %
 % Prefer automated citations? biblatex can print annotations from the
 % "annotation" field of your .bib file:
@@ -9205,6 +9207,11 @@ platform or infrastructure team.
 \newif\ifmla
 \mlafalse                   % APA 7 (default). Change to \mlatrue for MLA 9.
 \newcommand{\lastname}{Smith}   % used only in the MLA running header
+\newcommand{\mlaheading}{%       % MLA first-page heading: name, instructor, course, date
+  Jordan \lastname\\
+  Professor Lee\\
+  ENG 101\\
+  19 October 2026\par}
 
 % --- Page layout (shared by both styles) ---
 \doublespacing
@@ -9232,8 +9239,10 @@ platform or infrastructure team.
 
 \begin{document}
 
-% Heading: APA wants section labels bold and centered; MLA wants plain text.
+% Heading: APA wants section labels bold and centered; MLA wants the four-line
+% heading flush left, then the title in plain text.
 \ifmla
+  \mlaheading
   {\centering Annotated Bibliography\par}
 \else
   {\centering\textbf{Annotated Bibliography}\par}
@@ -9259,10 +9268,11 @@ platform or infrastructure team.
 \fi
 \annotation{This book surveys fifty years of research on sleep and memory for a general academic audience. Its early chapters explain the consolidation cycle in plain language; the later chapters review field studies of students in secondary schools and universities and end with practical recommendations for timetabling and residence life. Okafor writes clearly and cites her sources fully, but the book favours breadth over depth, and the summaries of individual studies are too brief to assess their methods. It is best read as a map of the literature rather than as evidence in itself. For my paper it provides the historical background for the introduction and a useful vocabulary for distinguishing consolidation from retrieval, which the journal articles assume rather than define.}
 
-% 3. Web page with an organisation as author (site name omitted because it
-%    is the same as the author)
+% 3. Web page published by the organisation that wrote it. APA: organisation
+%    as author, site name omitted because it is the same as the author. MLA:
+%    start with the title and give the site as the container.
 \ifmla
-\entry{Sleep Research Collective. “Study Habits and Sleep: A Guide for First-Year Students.” 8 Mar. 2024, \url{www.example.org/sleep-guide}.}
+\entry{“Study Habits and Sleep: A Guide for First-Year Students.” \textit{Sleep Research Collective}, 8 Mar. 2024, \url{www.example.org/sleep-guide}.}
 \else
 \entry{Sleep Research Collective. (2024, March 8). \textit{Study habits and sleep: A guide for first-year students}. \url{https://www.example.org/sleep-guide}}
 \fi

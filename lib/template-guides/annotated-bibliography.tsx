@@ -41,7 +41,7 @@ const faq: GuideFaqItem[] = [
   {
     question: "Does an annotated bibliography need a title page?",
     answer:
-      "In APA 7 a student assignment normally has a title page with the title, your name, course, instructor and due date, followed by the annotated bibliography on the next page. In MLA 9 there is no title page; your name, instructor, course and date go in the top left corner of the first page. Neither is included here so the template stays standalone; append it to the APA Title Page template or add the MLA four-line heading before the centred title.",
+      "In APA 7 a student assignment normally has a title page with the title, your name, course, instructor and due date, followed by the annotated bibliography on the next page. The APA title page is not included here so the template stays standalone; append the body to the APA Title Page template if your course wants one. In MLA 9 there is no title page; your name, instructor, course and date go in the top left corner of the first page, and the template prints that four-line heading as soon as you switch to MLA (edit the lines in \\mlaheading).",
   },
 ];
 
@@ -223,12 +223,21 @@ export default function AnnotatedBibliographyGuide() {
       </GuideP>
       <GuidePre>{`\\newif\\ifmla
 \\mlatrue                    % was \\mlafalse
-\\newcommand{\\lastname}{Smith}`}</GuidePre>
+\\newcommand{\\lastname}{Smith}
+\\newcommand{\\mlaheading}{%
+  Jordan \\lastname\\\\
+  Professor Lee\\\\
+  ENG 101\\\\
+  19 October 2026\\par}`}</GuidePre>
       <GuideP>
         Every <GuideCode>\ifmla ... \else ... \fi</GuideCode> block in the file then takes its
-        first branch: the running header becomes &quot;Smith 1&quot;, the heading becomes plain
-        centred text (MLA does not bold section headings), and the three references print in
-        MLA form while the annotations stay as they are. The MLA Handbook calls the list an
+        first branch: the running header becomes &quot;Smith 1&quot;, the four-line MLA heading
+        (name, instructor, course, date) is printed flush left at the top of the first page,
+        the title becomes plain centred text (MLA does not bold section headings), and the
+        three references print in MLA form while the annotations stay as they are. Note the
+        web page: because the Sleep Research Collective is both author and publisher, the MLA
+        entry starts with the page title and gives the site as the container, whereas APA
+        keeps the organisation as author and drops the site name. The MLA Handbook calls the list an
         &quot;Annotated Bibliography&quot; or &quot;Annotated List of Works Cited&quot;; edit the
         heading string if your instructor prefers the second. Everything else, including the
         double spacing, hanging indent and indented annotation, is the same in both styles, so
@@ -243,7 +252,8 @@ export default function AnnotatedBibliographyGuide() {
           ["Volume and issue", "14(2) with the volume italic", "vol. 14, no. 2"],
           ["Pages", "115–132", "pp. 115–32"],
           ["URL", "https://www.example.org/...", "www.example.org/... (protocol dropped)"],
-          ["Heading", "Bold, centred", "Plain, centred"],
+          ["Web page by an organisation", "Organisation as author; site name dropped", "Title first; site name as container"],
+          ["Title", "Bold, centred", "Plain, centred, under the four-line heading"],
           ["Header", "Page number", "Last name and page number"],
         ]}
       />
@@ -335,9 +345,10 @@ export default function AnnotatedBibliographyGuide() {
           its preamble; the class already sets the margins, spacing and page number.
         </li>
         <li>
-          <strong>Add the MLA first-page heading.</strong> Before the centred title, add four
-          flush-left lines: your name, the instructor&apos;s name, the course, and the date as
-          day Month year, each ended with <GuideCode>\\</GuideCode>.
+          <strong>Edit the MLA first-page heading.</strong> The four flush-left lines that MLA
+          puts before the title (your name, the instructor&apos;s name, the course, and the date
+          as day Month year) live in <GuideCode>\mlaheading</GuideCode> in the preamble and are
+          printed only when <GuideCode>\mlatrue</GuideCode> is set. Replace the sample values.
         </li>
         <li>
           <strong>Longer annotations.</strong> The command takes any amount of text. For
