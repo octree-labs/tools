@@ -2,8 +2,8 @@ import { Metadata } from "next";
 import { generateSymbolMetadata } from '@/lib/generate-symbol-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "LaTeX Number Theory Symbols - Divisibility, Modular Arithmetic | Free Symbol Reference",
-  description: "Complete list of LaTeX number theory symbols. Copy-paste |, ∤, gcd, lcm, ≡, φ(n), Legendre symbol with LaTeX commands.",
+  title: "LaTeX Number Theory Symbols - Divisibility, Mod, GCD | Free",
+  description: "Complete list of LaTeX number theory symbols. Copy-paste divides |, ∤, gcd, lcm, congruence ≡ (mod n), φ(n) and the Legendre symbol with LaTeX commands.",
   keywords: [
     // Core keywords
     "math symbols",

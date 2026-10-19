@@ -3,7 +3,7 @@ import { generateToolMetadata } from '@/lib/generate-tool-metadata';
 
 const defaultMetadata: Metadata = {
   title: "Free PGFPlots Generator Online - Create LaTeX Charts with AI",
-  description: "Create stunning LaTeX plots in seconds. Describe your chart → AI generates pgfplots code. Bar charts, scatter plots, line graphs & 3D plots. Free with live PDF preview.",
+  description: "Create LaTeX plots in seconds. Describe your chart and AI generates pgfplots code for bar, scatter, line and 3D plots. Free, with live PDF preview.",
   keywords: [
     // Core pgfplots keywords
     "pgfplots generator",

@@ -3,7 +3,7 @@ import { generateToolMetadata } from '@/lib/generate-tool-metadata';
 
 const defaultMetadata: Metadata = {
   title: "LaTeX to Word Converter — Convert .tex to .docx Online",
-  description: "Free online LaTeX to Word converter. Turn .tex documents into editable .docx files with headings, lists, tables, bold and italic text preserved. No sign-up, download instantly.",
+  description: "Free online LaTeX to Word converter. Turn .tex documents into editable .docx files with headings, lists, tables, bold and italics preserved. No sign-up.",
   keywords: [
     "latex to word",
     "latex to docx",

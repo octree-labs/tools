@@ -6638,13 +6638,13 @@ Answer: \reveal{q6}{30-60\% (roughly one-third to one-half)}
   {
     id: 72,
     title: "APA Title Page",
-    description: "APA 7th edition student title page with course, instructor and due date fields",
+    description: "APA 7th edition student title page (cover page) with course, instructor and due date fields",
     slug: "apa-title-page",
     previewUrl: "/templates/apa-title-page.pdf",
     category: "Academic",
-    seoTitle: "APA Title Page Template (7th Edition) | Free LaTeX Download & Preview",
+    seoTitle: "APA Title Page / Cover Page Template (7th Edition) | Free LaTeX",
     seoDescription:
-      "Free APA title page template in LaTeX (APA 7 student format). Correct APA format title page with title, author, course, instructor and due date. Download free.",
+      "Free APA title page template in LaTeX (APA 7 student format). Works as an APA cover page with title, author, course, instructor and due date fields.",
     code: String.raw`% APA 7th Edition Title Page (Student Paper)
 % ------------------------------------------
 % This template uses the apa7 class in STUDENT mode (stu), which produces

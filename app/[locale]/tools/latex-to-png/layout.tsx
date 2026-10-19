@@ -3,7 +3,7 @@ import { generateToolMetadata } from '@/lib/generate-tool-metadata';
 
 const defaultMetadata: Metadata = {
   title: "LaTeX to PNG Converter — Render Equations as Images",
-  description: "Free online LaTeX to PNG converter. Render equations, formulas or whole documents as high-resolution PNG images for slides, Word, Google Docs, Notion and the web. Transparent background, 1x/2x/4x DPI, download or copy to clipboard.",
+  description: "Free online LaTeX to PNG converter. Render equations, formulas or whole documents as high-resolution PNG images for slides, Word, Notion and the web. Free.",
   keywords: [
     "latex to png",
     "latex to image",

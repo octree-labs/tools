@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { generateSymbolMetadata } from '@/lib/generate-symbol-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "LaTeX Set Theory Symbols - Union, Intersection, Subset | Free Symbol Reference",
+  title: "LaTeX Set Theory Symbols - Union, Intersection, Subset | Free",
   description: "Complete list of LaTeX set theory symbols. Copy-paste ∅, ∈, ∉, ⊂, ⊆, ∪, ∩, ℕ, ℤ, ℚ, ℝ, ℂ and all set notation with LaTeX commands.",
   keywords: [
     // Set theory keywords

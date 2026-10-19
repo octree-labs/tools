@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { generateSymbolMetadata } from '@/lib/generate-symbol-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "LaTeX Geometry Symbols - Angles, Triangles, Parallel, Perpendicular | Free Symbol Reference",
+  title: "LaTeX Geometry Symbols - Angles, Parallel, Perpendicular | Free",
   description: "Complete list of LaTeX geometry symbols. Copy-paste ∠, △, ∘, ⟂, ≅, parallel, perpendicular, congruent, similar with LaTeX commands.",
   keywords: [
     // Geometry keywords

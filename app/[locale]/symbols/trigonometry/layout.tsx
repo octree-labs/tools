@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { generateSymbolMetadata } from '@/lib/generate-symbol-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "LaTeX Trigonometry Symbols - Sin, Cos, Tan, Inverse Trig | Free Symbol Reference",
+  title: "LaTeX Trigonometry Symbols - Sin, Cos, Tan, Inverse Trig | Free",
   description: "Complete list of LaTeX trigonometry symbols. Copy-paste sin, cos, tan, arcsin, arccos, arctan, hyperbolic functions with LaTeX commands.",
   keywords: [
     "trigonometry symbols",

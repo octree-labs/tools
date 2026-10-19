@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { generateSymbolMetadata } from '@/lib/generate-symbol-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "LaTeX Latin Letters & Accents - Special Characters | Free Symbol Reference",
+  title: "LaTeX Latin Letters & Accents - Special Characters | Free",
   description: "Complete list of LaTeX Latin letters and accented characters. Copy-paste ö, é, ñ, ç, å, ø, æ, œ and special Latin characters with LaTeX commands.",
   keywords: [
     // Core keywords

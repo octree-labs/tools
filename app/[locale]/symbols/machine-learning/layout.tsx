@@ -2,8 +2,8 @@ import { Metadata } from "next";
 import { generateSymbolMetadata } from '@/lib/generate-symbol-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "LaTeX Machine Learning & AI Symbols - Loss, Gradient, Argmax | Free Symbol Reference",
-  description: "Complete list of LaTeX machine learning and AI symbols. Copy-paste loss function ℒ, expectation 𝔼, KL divergence, argmax, argmin, tensor ⊗, gradient with LaTeX commands.",
+  title: "LaTeX Machine Learning Symbols - Loss, Gradient, Argmax | Free",
+  description: "Complete list of LaTeX machine learning and AI symbols. Copy-paste loss ℒ, expectation 𝔼, KL divergence, argmax, argmin, tensor ⊗ and gradient notation.",
   keywords: [
     "machine learning symbols",
     "ml symbols latex",

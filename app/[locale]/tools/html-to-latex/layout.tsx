@@ -3,7 +3,7 @@ import { generateToolMetadata } from '@/lib/generate-tool-metadata';
 
 const defaultMetadata: Metadata = {
   title: "HTML to LaTeX Converter Online - Free, Fast & Accurate | Octree",
-  description: "Convert HTML to LaTeX in seconds — tables, formatting & structure preserved. Paste any HTML and get clean, compilable LaTeX code. Free online with live PDF preview.",
+  description: "Convert HTML to LaTeX in seconds with tables, formatting and structure preserved. Paste any HTML and get clean, compilable LaTeX. Free, live PDF preview.",
   keywords: [
     "convert HTML to LaTeX",
     "HTML to LaTeX converter",

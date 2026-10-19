@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { generateToolMetadata } from '@/lib/generate-tool-metadata';
 
-const title = "Equation to LaTeX Converter – Convert Math & Handwritten Equations to LaTeX";
+const title = "Equation to LaTeX Converter – Math & Handwritten Equations | Free";
 const description =
-  "Free equation to LaTeX converter. Type a math equation or upload a photo, screenshot or handwritten equation and get clean LaTeX code with a live preview. No sign-up.";
+  "Free equation to LaTeX converter. Type a math equation or upload a photo, screenshot or handwritten equation and get clean LaTeX code with a live preview.";
 
 const defaultMetadata: Metadata = {
   title,

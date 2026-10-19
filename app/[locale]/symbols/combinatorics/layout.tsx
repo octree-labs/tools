@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { generateSymbolMetadata } from '@/lib/generate-symbol-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "LaTeX Combinatorics Symbols - Factorial, Binomial, Permutations | Free Symbol Reference",
+  title: "LaTeX Combinatorics Symbols - Factorial, Binomial, nPr | Free",
   description: "Complete list of LaTeX combinatorics symbols. Copy-paste factorial n!, binomial coefficient, nCr, nPr, Stirling numbers with LaTeX commands.",
   keywords: [
     "combinatorics symbols",

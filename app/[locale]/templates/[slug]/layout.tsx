@@ -721,6 +721,8 @@ async function generateMetadataBase({
     ],
     'apa-title-page': [
       'apa title page template',
+      'apa cover page',
+      'apa cover page format',
       'apa format title page',
       'apa title page format',
       'apa 7 title page',

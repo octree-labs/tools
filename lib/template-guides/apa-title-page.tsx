@@ -71,9 +71,10 @@ export default function ApaTitlePageGuide() {
         <GuideCode>biblatex-apa</GuideCode> expect to be present.
       </GuideP>
 
-      <GuideH2 id="apa-rules">APA 7 title page rules: student vs professional</GuideH2>
+      <GuideH2 id="apa-rules">APA 7 title page (cover page) rules: student vs professional</GuideH2>
       <GuideP>
-        APA 7 (2019) introduced two different title pages. Which one you need depends on
+        APA calls this page the title page; many course guides call it the APA cover
+        page. They are the same first page. APA 7 (2019) introduced two different title pages. Which one you need depends on
         who will read the paper, not on how advanced the work is.
       </GuideP>
       <GuideTable

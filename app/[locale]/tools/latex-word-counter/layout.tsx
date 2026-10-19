@@ -3,7 +3,7 @@ import { generateToolMetadata } from '@/lib/generate-tool-metadata';
 
 const defaultMetadata: Metadata = {
   title: "LaTeX Word Counter - Count Words in LaTeX Documents | Free Tool",
-  description: "Free online LaTeX word counter. Accurately count words in your LaTeX documents, excluding commands and markup. Get detailed statistics for text, headers, and captions.",
+  description: "Free online LaTeX word counter. Count words in your LaTeX documents accurately, excluding commands and markup, with stats for text, headers and captions.",
   keywords: [
     "LaTeX word counter",
     "count words LaTeX",

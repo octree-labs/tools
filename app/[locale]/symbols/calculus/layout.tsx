@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { generateSymbolMetadata } from '@/lib/generate-symbol-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "LaTeX Calculus Symbols - Derivatives, Integrals, Limits | Free Symbol Reference",
+  title: "LaTeX Calculus Symbols - Derivatives, Integrals, Limits | Free",
   description: "Complete list of LaTeX calculus and analysis symbols. Copy-paste ∂, ∇, ∫, ∬, ∮, limits, derivatives, summations with LaTeX commands.",
   keywords: [
     // Calculus & analysis keywords

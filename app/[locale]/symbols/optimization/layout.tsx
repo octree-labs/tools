@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { generateSymbolMetadata } from '@/lib/generate-symbol-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "LaTeX Optimization Symbols - Argmax, Argmin, Constraints | Free Symbol Reference",
+  title: "LaTeX Optimization Symbols - Argmax, Argmin, Constraints",
   description: "Complete list of LaTeX optimization and operations research symbols. Copy-paste argmax, argmin, constraints, Lagrangian, KKT with LaTeX commands.",
   keywords: [
     "optimization symbols",

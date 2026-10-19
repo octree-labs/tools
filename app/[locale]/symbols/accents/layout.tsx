@@ -2,8 +2,8 @@ import { Metadata } from "next";
 import { generateSymbolMetadata } from '@/lib/generate-symbol-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "LaTeX Accents & Modifiers - Hat, Tilde, Vector, Bar Symbols | Free Symbol Reference",
-  description: "Complete list of LaTeX accent and modifier symbols. Copy-paste hat ˆ, tilde ˜, dot ˙, bar ¯, vector arrows →, overbrace, underbrace with LaTeX code for mathematical notation.",
+  title: "LaTeX Accents & Modifiers - Hat, Tilde, Bar, Vector Symbols",
+  description: "Complete list of LaTeX accent and modifier symbols. Copy-paste hat ˆ, tilde ˜, dot ˙, bar ¯, vector arrows, overbrace and underbrace with LaTeX code.",
   keywords: [
     // Accents & modifiers keywords
     "math accents",

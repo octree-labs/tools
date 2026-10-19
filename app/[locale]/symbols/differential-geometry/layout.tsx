@@ -2,8 +2,8 @@ import { Metadata } from "next";
 import { generateSymbolMetadata } from '@/lib/generate-symbol-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "LaTeX Differential Geometry Symbols - Manifolds, Curvature | Free Symbol Reference",
-  description: "Complete list of LaTeX differential geometry symbols. Copy-paste manifold, tangent space, Christoffel, Riemann curvature, metric tensor with LaTeX commands.",
+  title: "LaTeX Differential Geometry Symbols - Manifolds, Curvature",
+  description: "Complete list of LaTeX differential geometry symbols. Copy-paste manifold, tangent space, Christoffel, Riemann curvature and metric tensor with LaTeX code.",
   keywords: [
     "differential geometry symbols",
     "manifold notation",

@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { generateSymbolMetadata } from '@/lib/generate-symbol-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "LaTeX Game Theory Symbols - Nash Equilibrium, Strategies | Free Symbol Reference",
+  title: "LaTeX Game Theory Symbols - Nash Equilibrium, Strategies",
   description: "Complete list of LaTeX game theory symbols. Copy-paste Nash equilibrium, payoff functions, strategies, Shapley value with LaTeX commands.",
   keywords: [
     "game theory symbols",

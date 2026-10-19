@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { generateSymbolMetadata } from '@/lib/generate-symbol-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "LaTeX Modal Logic Symbols - Necessity, Possibility, Box Diamond | Free Symbol Reference",
+  title: "LaTeX Modal Logic Symbols - Necessity, Possibility, Box | Free",
   description: "Complete list of LaTeX modal logic symbols. Copy-paste □ necessity, ◇ possibility, temporal logic, epistemic logic with LaTeX commands.",
   keywords: [
     "modal logic symbols",

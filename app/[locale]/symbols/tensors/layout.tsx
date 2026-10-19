@@ -2,8 +2,8 @@ import { Metadata } from "next";
 import { generateSymbolMetadata } from '@/lib/generate-symbol-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "LaTeX Tensor Notation - Einstein Summation, Indices | Free Symbol Reference",
-  description: "Complete list of LaTeX tensor notation symbols. Copy-paste Einstein summation, covariant/contravariant indices, Kronecker delta, Levi-Civita with LaTeX commands.",
+  title: "LaTeX Tensor Notation - Einstein Summation, Indices | Free",
+  description: "Complete list of LaTeX tensor notation symbols. Copy-paste Einstein summation, covariant and contravariant indices, Kronecker delta and Levi-Civita.",
   keywords: [
     "tensor notation symbols",
     "index notation",

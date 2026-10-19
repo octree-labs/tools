@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import { generateToolMetadata } from '@/lib/generate-tool-metadata';
 
 const defaultMetadata: Metadata = {
-  title: 'Image to TikZ Converter - Upload Any Diagram, Get Editable LaTeX Code',
+  title: 'Image to TikZ Converter - Turn Diagrams into Editable LaTeX Code',
   description:
-    'Turn screenshots & diagrams into editable TikZ code in seconds. Upload flowcharts, graphs, or hand-drawn sketches — AI converts them to clean LaTeX. Free, no signup.',
+    'Turn screenshots and diagrams into editable TikZ code in seconds. Upload flowcharts, graphs or sketches and AI converts them to clean LaTeX. Free tool.',
   keywords: [
     // Core image-to-tikz keywords
     'image to tikz',

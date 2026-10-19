@@ -2,8 +2,8 @@ import { Metadata } from "next";
 import { generateSymbolMetadata } from '@/lib/generate-symbol-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "LaTeX Quantifiers - For All, Exists, Element Of | Free Symbol Reference",
-  description: "Complete list of LaTeX quantifier symbols. Copy-paste ∀, ∃, ∄, ∃!, ∈, ∉ with set builder notation and LaTeX commands.",
+  title: "LaTeX Quantifiers - For All, Exists, Element Of | Free Reference",
+  description: "Complete list of LaTeX quantifier symbols. Copy-paste for all ∀, exists ∃, ∄, ∃!, element of ∈, ∉ with set builder notation and LaTeX commands.",
   keywords: [
     "quantifier symbols",
     "forall exists latex",

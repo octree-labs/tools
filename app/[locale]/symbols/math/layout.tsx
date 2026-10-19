@@ -2,8 +2,8 @@ import { Metadata } from "next";
 import { generateSymbolMetadata } from '@/lib/generate-symbol-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "LaTeX Math Symbols - Operators, Relations, Equations | Free Symbol Reference",
-  description: "Complete list of LaTeX mathematical symbols. Copy-paste operators (+, -, ×, ÷), relations (≤, ≥, ≠, ≈), summation, integrals, limits, and more with LaTeX code.",
+  title: "LaTeX Math Symbols - Operators, Relations, Equations | Free",
+  description: "Complete list of LaTeX math symbols. Copy-paste operators (+, -, ×, ÷), relations (≤, ≥, ≠, ≈), summation, integrals, limits and more with LaTeX code.",
   keywords: [
     // Core head keywords
     "math symbols",

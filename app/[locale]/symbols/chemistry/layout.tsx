@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { generateSymbolMetadata } from '@/lib/generate-symbol-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "LaTeX Chemistry Symbols - Reactions, Bonds, Isotopes | Free Symbol Reference",
+  title: "LaTeX Chemistry Symbols - Reactions, Bonds, Isotopes | Free",
   description: "Complete list of LaTeX chemistry symbols. Copy-paste ⇌, →, ↑, ↓, isotope notation, bonds, state symbols with LaTeX commands.",
   keywords: [
     // Chemistry keywords

@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { generateSymbolMetadata } from '@/lib/generate-symbol-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "LaTeX Complex Numbers - Real, Imaginary, Modulus | Free Symbol Reference",
+  title: "LaTeX Complex Number Symbols - Real, Imaginary, Modulus | Free",
   description: "Complete list of LaTeX complex number symbols. Copy-paste ℂ, i, j, Re, Im, conjugate, modulus, argument with LaTeX commands.",
   keywords: [
     "complex number symbols",

@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { generateSymbolMetadata } from '@/lib/generate-symbol-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "LaTeX Logic & Proof Symbols - Quantifiers, Connectives | Free Symbol Reference",
+  title: "LaTeX Logic & Proof Symbols - Quantifiers, Connectives | Free",
   description: "Complete list of LaTeX logic and proof symbols. Copy-paste ∀, ∃, ¬, ∧, ∨, ⇒, ⇔, ⊢, ⊨, ∴, ∵ and all logical notation with LaTeX commands.",
   keywords: [
     // Logic & proof keywords

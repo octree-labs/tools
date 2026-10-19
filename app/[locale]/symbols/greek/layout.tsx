@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { generateSymbolMetadata } from '@/lib/generate-symbol-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "LaTeX Greek Letters - Alpha, Beta, Gamma, Delta & More | Free Symbol Reference",
+  title: "LaTeX Greek Letters - Alpha, Beta, Gamma, Delta & More | Free",
   description: "Complete list of LaTeX Greek letter symbols. Copy-paste α, β, γ, δ, θ, π, σ, ω and all Greek letters (lowercase and uppercase) with LaTeX commands.",
   keywords: [
     // Core keywords

@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { generateSymbolMetadata } from '@/lib/generate-symbol-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "LaTeX Currency & Finance Symbols - Dollar, Euro, Formulas | Free Symbol Reference",
+  title: "LaTeX Currency & Finance Symbols - Dollar, Euro, Formulas",
   description: "Complete list of LaTeX currency and finance symbols. Copy-paste $, €, £, ¥, ₹, ₿, %, NPV, IRR, compound interest formulas with LaTeX commands.",
   keywords: [
     // Core keywords

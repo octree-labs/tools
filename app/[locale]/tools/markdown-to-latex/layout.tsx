@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { generateToolMetadata } from '@/lib/generate-tool-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "Convert Markdown to LaTeX Online Free - Markdown to LaTeX Converter",
-  description: "Free AI-powered tool to convert Markdown documents to LaTeX code. Convert Markdown formatting, tables, math equations, and text to clean LaTeX output with PDF preview. Convert Markdown to LaTeX instantly.",
+  title: "Markdown to LaTeX Converter - Convert Markdown to LaTeX Free",
+  description: "Free AI-powered tool to convert Markdown documents to LaTeX. Formatting, tables, math equations and text become clean LaTeX output with a live PDF preview.",
   keywords: [
     "convert Markdown to LaTeX",
     "Markdown to LaTeX converter",
