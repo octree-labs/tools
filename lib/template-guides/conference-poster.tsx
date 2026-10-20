@@ -141,7 +141,7 @@ export default function ConferencePosterGuide() {
 
       <GuideH2 id="design">Research poster design advice</GuideH2>
       <GuideP>
-        A research poster is read in about ninety seconds from one to two metres away. Keep
+        A poster is read in about ninety seconds from one to two metres away. Keep
         the body text at 28 to 32 pt (the default <GuideCode>scale=1.3</GuideCode> on A0
         does this), limit the whole poster to roughly 800 words, and put the result
         that matters in an alert block near the top of the right-hand column, where

@@ -25,7 +25,7 @@ const faq: GuideFaqItem[] = [
   {
     question: "Can I use this research proposal template for a PhD application?",
     answer:
-      "Yes. Most PhD programmes ask for a proposal of 1,500 to 3,000 words with the structure used here. Replace the example topic, keep the research questions explicit, and make sure the timeline covers the full length of the programme (three or four years instead of twelve months). Check the department's guidance for required headings such as Training Needs or Supervision and add them as new \\section commands.",
+      "Yes. Many PhD programmes ask for a proposal of 1,500 to 3,000 words with the structure used here. Replace the example topic, keep the research questions explicit, and make sure the timeline covers the full length of the programme (three or four years instead of twelve months). Check the department's guidance for required headings such as Training Needs or Supervision and add them as new \\section commands.",
   },
   {
     question: "How do I cite sources in the research proposal?",
