@@ -36,7 +36,7 @@ const faq: GuideFaqItem[] = [
   {
     question: "Can I type my notes into the template instead of printing it?",
     answer:
-      "Yes. \\cornellnotes{Topic}{Class}{Date}{cues}{notes}{summary} takes the three text areas as arguments, and the example page in the template shows itemize lists, bold run-in headings and emphasis inside them. The typed notes get a white background so they sit over the ruled lines. One page holds roughly 35 lines of notes; for a longer lecture call the macro again for a second page.",
+      "Yes. \\cornellnotes{Topic}{Class}{Date}{cues}{notes}{summary} takes the three text areas as arguments, and the example page in the template shows itemize lists, bold run-in headings and emphasis inside them. The typed notes get a white background so they sit over the ruled lines. One page holds roughly 40 lines of notes at the default \\small size; for a longer lecture call the macro again for a second page.",
   },
   {
     question: "Does this compile with pdflatex, and does it work in Overleaf?",
@@ -209,9 +209,12 @@ export default function CornellNotesGuide() {
           use <GuideCode>latexmk</GuideCode>, which reruns for you.
         </li>
         <li>
-          <strong>Commas in the topic break the header.</strong> The header fields are passed
-          through a <GuideCode>\foreach</GuideCode> list; wrap a topic that contains a comma
-          in an extra pair of braces: <GuideCode>{"\\cornellpage{{Cells, tissues}}{}{}"}</GuideCode>.
+          <strong>The rules overshoot the frame after changing a width.</strong>{" "}
+          <GuideCode>\noteswidth</GuideCode> and <GuideCode>\bodyheight</GuideCode> are
+          computed once in the preamble, so change <GuideCode>\cuewidth</GuideCode>,{" "}
+          <GuideCode>\headerheight</GuideCode> and <GuideCode>\summaryheight</GuideCode> on
+          their <GuideCode>\setlength</GuideCode> lines there, not after{" "}
+          <GuideCode>\begin{"{document}"}</GuideCode>.
         </li>
         <li>
           <strong>Typed notes overflow the page.</strong> A node does not break across pages.
