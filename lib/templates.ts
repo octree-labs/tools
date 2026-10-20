@@ -340,25 +340,27 @@ The averaged measurements are summarised in Table~\ref{tab:data}.
   \label{fig:plot}
 \end{figure}
 
-A least-squares fit of $T^2$ against $L$ (Figure~\ref{fig:plot}) gave a slope
-of \SI{4.037 \pm 0.049}{\second\squared\per\meter}. From
-Equation~\eqref{eq:period},
+A least-squares fit of $T^2$ against $L$ (Figure~\ref{fig:plot}), with each
+point weighted by the timing uncertainty of \SI{0.014}{\second} in $T$
+(Appendix~\ref{app:calc}), gave a slope of
+\SI{4.038 \pm 0.050}{\second\squared\per\meter} and an intercept of
+\SI{0.00 \pm 0.03}{\second\squared}. From Equation~\eqref{eq:period},
 \begin{equation}
   g = \frac{4\pi^2}{\text{slope}}
-    = \frac{4\pi^2}{\SI{4.037}{\second\squared\per\meter}}
+    = \frac{4\pi^2}{\SI{4.038}{\second\squared\per\meter}}
     = \SI{9.78 \pm 0.12}{\meter\per\second\squared}.
 \end{equation}
 
 \section{Discussion}
 The measured value of $g$ agrees with the accepted value of
 \SI{9.81}{\meter\per\second\squared} to within \SI{0.3}{\percent}, and the
-accepted value lies inside the quoted uncertainty. The dominant systematic
-error was the operator's reaction time (about \SI{0.2}{\second} per start and
-stop), which was reduced but not eliminated by timing 20 oscillations rather
-than one. The finite size of the bob and the small but non-zero mass of the
+accepted value lies inside the quoted uncertainty. The dominant source of
+uncertainty was the operator's reaction time (about \SI{0.2}{\second} at each
+start and stop), which was reduced but not eliminated by timing 20 oscillations
+rather than one. The finite size of the bob and the small but non-zero mass of the
 string both shift the effective length slightly; timing with a photogate and
 using a thinner string would reduce these effects. The fit intercept of
-\SI{-0.01 \pm 0.03}{\second\squared} is consistent with zero, as predicted.
+\SI{0.00 \pm 0.03}{\second\squared} is consistent with zero, as predicted.
 
 \section{Conclusion}
 Using a simple pendulum and a plot of $T^2$ against $L$, the acceleration due
@@ -377,12 +379,17 @@ the hand-operated stopwatch with an electronic timer.
 
 \appendix
 \section{Sample Calculation}
+\label{app:calc}
 For $L = \SI{0.600}{\meter}$ the three timed runs for 20 oscillations were
 \SI{31.08}{\second}, \SI{31.15}{\second} and \SI{31.13}{\second}, giving a mean
-of \SI{31.12}{\second} and $T = 31.12/20 = \SI{1.556}{\second}$. The
-uncertainty in $T$ from the spread of the runs is
-$\sigma_T = \SI{0.002}{\second}$, so
-$T^2 = \SI{2.421 \pm 0.006}{\second\squared}$.
+of \SI{31.12}{\second} and $T = 31.12/20 = \SI{1.556}{\second}$. The standard
+deviation of the three runs is \SI{0.04}{\second}, or
+$\sigma_T = \SI{0.002}{\second}$ per period, but the operator's reaction time
+of about \SI{0.2}{\second} at each of the start and stop, combined in
+quadrature and divided by 20 oscillations, contributes \SI{0.014}{\second};
+this larger value was used as the uncertainty in each $T$. Hence
+$T = \SI{1.556 \pm 0.014}{\second}$ and, since $\sigma_{T^2} = 2T\sigma_T$,
+$T^2 = \SI{2.421 \pm 0.044}{\second\squared}$.
 
 \end{document}`,
   },
