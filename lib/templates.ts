@@ -1099,8 +1099,8 @@ distributed over time produces better long-term retention than the same amount
 of study in one session, is among the most robust findings in memory research
 \citep{cepeda2006}. It remains unclear, however, how
 spacing should be scheduled for second-language vocabulary: comparisons of
-expanding and equal schedules have produced mixed results, and almost all of them
-measured retention within a week \citep{nakata2015}. This proposal addresses
+expanding and equal schedules have produced mixed results, and most of them
+measured retention after a week or less \citep{nakata2015}. This proposal addresses
 that gap with a four-week retention interval and enrolled adult learners.
 
 \section{Research Questions and Hypotheses}
@@ -1119,16 +1119,17 @@ that gap with a four-week retention interval and enrolled adult learners.
 \end{enumerate}
 
 \section{Literature Review}
-The meta-analysis by \citet{cepeda2006} of 254 distributed-practice studies
-found that spaced study improved verbal recall in almost every comparison and
-that the optimal gap between sessions grows with the retention interval.
+The meta-analysis by \citet{cepeda2006} of 317 experiments on distributed
+practice found that spaced study improved verbal recall in almost every
+comparison and that the optimal gap between sessions grows with the retention
+interval.
 \citet{karpicke2008} showed that repeated testing of foreign-language word pairs
 produced about 80\,\% recall after one week, against roughly 35\,\% for repeated
 study alone. Within second-language research, \citet{nation2013} argues that
 vocabulary programmes should plan repeated retrieval of each word, but the
 studies that have tested specific schedules are small and short:
-\citet{nakata2015} found only a modest advantage for expanding over equal
-spacing on a delayed test. No study has combined a four-week retention interval
+\citet{nakata2015} found only a limited advantage for expanding over equal
+spacing with 128 learners and 20 word pairs. No study has combined a four-week retention interval
 with a classroom-sized sample and a direct comparison of the three schedules.
 
 \section{Methodology}
@@ -1141,8 +1142,9 @@ sessions on days 1, 4 and 7 (equal-spaced), or on days 1, 2 and 7
 (expanding-spaced). Retention is tested one and four weeks after the last session.
 
 \subsection{Participants}
-A power analysis for three groups, a medium effect size ($f = 0.30$),
-$\alpha = 0.05$ and power of 0.80 requires 111 participants. We will recruit 120
+A power analysis for a one-way comparison of three groups (G*Power~3.1;
+medium-to-large effect size $f = 0.30$, $\alpha = 0.05$, power $= 0.80$)
+requires 111 participants. We will recruit 120
 adult learners (40 per condition) from beginner and lower-intermediate courses at
 the university language centre to allow for attrition. The protocol will be
 approved by the research ethics committee and participants give written consent.
