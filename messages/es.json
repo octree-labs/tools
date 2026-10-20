@@ -747,6 +747,10 @@
       "apa-student-paper": {
         "title": "Trabajo de estudiante en formato APA",
         "description": "Trabajo de estudiante en formato APA 7 con portada de estudiante, números de página arriba a la derecha, títulos de nivel 1 a 3, doble espacio, citas en el texto con biblatex-apa y página de referencias con sangría francesa"
+      },
+      "cornell-notes": {
+        "title": "Notas Cornell",
+        "description": "Páginas imprimibles para tomar notas con el método Cornell: encabezado de tema, clase y fecha, columna de preguntas de 2,5 in, columna de notas rayada y cuadro de resumen, con una página de ejemplo rellena y una macro por hoja en blanco"
       }
     },
     "toolsList": {

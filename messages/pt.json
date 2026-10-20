@@ -568,7 +568,8 @@
       "mla-works-cited": { "title": "Página de Obras Citadas MLA", "description": "Página de obras citadas no formato MLA 9 com cabeçalho, espaçamento duplo, recuo deslocado e oito entradas de exemplo" },
       "annotated-bibliography": { "title": "Bibliografia Anotada", "description": "Bibliografia anotada no formato APA 7 com recuo deslocado, anotações recuadas, espaçamento duplo e troca em uma linha para MLA 9" },
       "mla-paper": { "title": "Trabalho em Formato MLA", "description": "Trabalho no formato MLA 9 com cabeçalho de quatro linhas, cabeçalho de página com sobrenome e número, espaçamento duplo, citação em bloco, citação no texto e página de obras citadas" },
-      "apa-student-paper": { "title": "Trabalho de Estudante em Formato APA", "description": "Trabalho de estudante no formato APA 7 com página de título de estudante, números de página no canto superior direito, títulos de nível 1 a 3, espaçamento duplo, citações no texto com biblatex-apa e página de referências com recuo deslocado" }
+      "apa-student-paper": { "title": "Trabalho de Estudante em Formato APA", "description": "Trabalho de estudante no formato APA 7 com página de título de estudante, números de página no canto superior direito, títulos de nível 1 a 3, espaçamento duplo, citações no texto com biblatex-apa e página de referências com recuo deslocado" },
+      "cornell-notes": { "title": "Notas Cornell", "description": "Páginas imprimíveis de anotações no método Cornell com cabeçalho de tópico, disciplina e data, coluna de perguntas de 2,5 pol, coluna de notas pautada e caixa de resumo, mais uma página de exemplo preenchida e uma macro por folha em branco" }
     },
     "symbols": {
     "title": "Símbolos LaTeX",

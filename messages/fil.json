@@ -833,6 +833,10 @@
     "apa-student-paper": {
       "title": "APA Student Paper",
       "description": "Papel ng estudyante sa APA 7 na may pahina ng pamagat para sa estudyante, numero ng pahina sa kanang itaas, mga heading na Level 1–3, double spacing, mga in-text citation gamit ang biblatex-apa at pahina ng References na may hanging indent"
+    },
+    "cornell-notes": {
+      "title": "Cornell Notes",
+      "description": "Naka-print na mga pahina ng Cornell note-taking na may header para sa paksa, klase at petsa, 2.5 in na cue column, may guhit na notes column at summary box, kasama ang isang punong halimbawang pahina at isang linyang macro bawat blangkong pahina"
     }
   },
   "symbols": {

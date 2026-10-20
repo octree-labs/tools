@@ -6,6 +6,7 @@ import ApaStudentPaperGuide from "./apa-student-paper";
 import ApaTitlePageGuide from "./apa-title-page";
 import AtsResumeGuide from "./ats-resume";
 import BeamerDarkGuide from "./beamer-dark";
+import CornellNotesGuide from "./cornell-notes";
 import ConferencePosterGuide from "./conference-poster";
 import Emnlp2026Guide from "./emnlp-2026";
 import HarvardResumeGuide from "./harvard-resume";
@@ -32,6 +33,7 @@ const templateGuides: Record<string, ComponentType> = {
   "apa-title-page": ApaTitlePageGuide,
   "ats-resume": AtsResumeGuide,
   "beamer-dark": BeamerDarkGuide,
+  "cornell-notes": CornellNotesGuide,
   "conference-poster": ConferencePosterGuide,
   "emnlp-2026": Emnlp2026Guide,
   "harvard-resume": HarvardResumeGuide,

@@ -823,6 +823,10 @@
       "apa-student-paper": {
         "title": "Devoir étudiant au format APA",
         "description": "Devoir étudiant au format APA 7 avec page de titre étudiante, numéros de page en haut à droite, titres de niveaux 1 à 3, double interligne, citations dans le texte via biblatex-apa et page de références avec retrait suspendu"
+      },
+      "cornell-notes": {
+        "title": "Notes Cornell",
+        "description": "Pages imprimables de prise de notes Cornell : en-tête sujet / cours / date, colonne de questions de 2,5 po, colonne de notes lignée et encadré de résumé, avec une page d'exemple remplie et une macro par feuille vierge"
       }
     },
     "symbols": {

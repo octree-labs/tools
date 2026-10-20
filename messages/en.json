@@ -833,6 +833,10 @@
     "apa-student-paper": {
       "title": "APA Student Paper",
       "description": "APA 7 student paper with the student title page, page numbers top right, Level 1–3 headings, double spacing, biblatex-apa in-text citations and a References page with hanging indent"
+    },
+    "cornell-notes": {
+      "title": "Cornell Notes",
+      "description": "Printable Cornell note-taking pages with a Topic / Class / Date header, a 2.5 in cue column, a ruled notes column and a summary box, plus a filled example page and a one-line macro per blank sheet"
     }
   },
   "symbols": {

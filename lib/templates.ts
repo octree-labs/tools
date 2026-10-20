@@ -9547,4 +9547,172 @@ The results extend earlier findings to a smaller and more homogeneous sample: wh
 \end{document}`,
   },
 
+  {
+    id: 86,
+    title: "Cornell Notes",
+    description: "Printable Cornell note-taking pages with a Topic / Class / Date header, a 2.5 in cue column, a ruled notes column and a summary box, plus a filled example page and a one-line macro per blank sheet",
+    slug: "cornell-notes",
+    previewUrl: "/templates/cornell-notes.pdf",
+    category: "Education",
+    seoTitle: "Cornell Notes Template | Free Printable PDF & LaTeX",
+    seoDescription:
+      "Free Cornell notes template: printable blank pages with a cue column, ruled notes column and summary box, plus a filled example page. LaTeX source and PDF.",
+    code: String.raw`% Cornell Notes Template
+% ----------------------
+% A printable Cornell notes page: a header row (Topic / Class / Date / Page),
+% a narrow cue column on the left for questions and keywords, a wide notes
+% column on the right with light ruled lines, and a summary box across the
+% bottom. The frame is drawn with TikZ on every page, so one macro gives you
+% a blank sheet and another gives you a filled one.
+%
+%   \cornellpage{Topic}{Class}{Date}
+%       one blank Cornell page (print as many as you need)
+%   \cornellnotes{Topic}{Class}{Date}{Cues}{Notes}{Summary}
+%       one page with the cues, notes and summary typed in
+%
+% Every width and height is a \newlength below: change the cue column,
+% the summary box or the rule spacing in one place and every page follows.
+% Compiles with pdflatex; only standard TeX Live packages are used.
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage[letterpaper,margin=0.5in]{geometry}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage{xcolor}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{enumitem}
+\setlist[itemize]{leftmargin=1.1em, itemsep=2pt, topsep=0pt}
+
+\pagestyle{empty}           % no page numbers in the footer: the header has a Page field
+\setlength{\parindent}{0pt}
+
+% --- Layout (edit these) ---------------------------------------------------
+\newlength{\cuewidth}       \setlength{\cuewidth}{2.5in}      % cue / questions column
+\newlength{\headerheight}   \setlength{\headerheight}{0.6in}  % Topic / Class / Date / Page row
+\newlength{\summaryheight}  \setlength{\summaryheight}{2in}   % summary box at the bottom
+\newlength{\rulespacing}    \setlength{\rulespacing}{0.3in}   % distance between ruled lines
+\newlength{\cellpad}        \setlength{\cellpad}{6pt}         % padding inside each box
+\newcommand{\showrules}{1}  % 1 = ruled lines in the notes column, 0 = plain
+
+% The notes column takes whatever is left of the text width (5 in with
+% 0.5 in margins); the body height is what remains between header and summary.
+\newlength{\noteswidth}
+\setlength{\noteswidth}{\textwidth}\addtolength{\noteswidth}{-\cuewidth}
+\newlength{\bodyheight}
+\setlength{\bodyheight}{\textheight}
+\addtolength{\bodyheight}{-\headerheight}\addtolength{\bodyheight}{-\summaryheight}
+
+% --- Colours ---------------------------------------------------------------
+\definecolor{framegray}{gray}{0.35}   % box outlines
+\definecolor{rulegray}{gray}{0.82}    % ruled lines in the notes column
+\definecolor{labelgray}{gray}{0.45}   % small header / column labels
+\definecolor{boxfill}{gray}{0.96}     % header and summary background
+
+% --- Internal: draw one page -----------------------------------------------
+% #1 topic  #2 class  #3 date  #4 cue text  #5 notes text  #6 summary text
+\newcommand{\cornelldraw}[6]{%
+  \begin{tikzpicture}[remember picture, overlay, font=\small]
+    % Top-left corner of the text area
+    \coordinate (tl) at ($(current page.north west)+(0.5in,-0.5in)$);
+    \coordinate (hb) at ($(tl)+(0,-\headerheight)$);                  % header bottom-left
+    \coordinate (bb) at ($(hb)+(0,-\bodyheight)$);                    % body bottom-left
+    \coordinate (br) at ($(bb)+(\textwidth,-\summaryheight)$);        % page bottom-right
+
+    % Shaded header row and summary box
+    \fill[boxfill] (tl) rectangle ($(hb)+(\textwidth,0)$);
+    \fill[boxfill] (bb) rectangle (br);
+
+    % Header row with four fields
+    \foreach \lbl/\val/\x/\w in {Topic/{#1}/0/0.42, Class/{#2}/0.42/0.26, Date/{#3}/0.68/0.2, Page/\thepage/0.88/0.12} {
+      \node[anchor=north west, inner sep=\cellpad, text width=\w*\textwidth-2*\cellpad,
+            font=\footnotesize\bfseries, text=labelgray]
+        at ($(tl)+(\x*\textwidth,0)$) {\MakeUppercase{\lbl}\\[2pt]\normalfont\normalsize\color{black}\val};
+    }
+    \foreach \x in {0.42,0.68,0.88} {
+      \draw[framegray, thin] ($(tl)+(\x*\textwidth,0)$) -- ($(hb)+(\x*\textwidth,0)$);
+    }
+
+    % Ruled lines in the notes column
+    \ifnum\showrules=1
+      \pgfmathtruncatemacro{\numrules}{\bodyheight/\rulespacing - 1}
+      \foreach \i in {1,...,\numrules} {
+        \draw[rulegray, thin] ($(hb)+(\cuewidth,-\i*\rulespacing)$) -- ++(\noteswidth,0);
+      }
+    \fi
+
+    % Column labels
+    \node[anchor=north west, inner sep=\cellpad, font=\scriptsize\bfseries, text=labelgray]
+      at (hb) {CUES / QUESTIONS};
+    \node[anchor=north west, inner sep=\cellpad, font=\scriptsize\bfseries, text=labelgray]
+      at ($(hb)+(\cuewidth,0)$) {NOTES};
+    \node[anchor=north west, inner sep=\cellpad, font=\scriptsize\bfseries, text=labelgray]
+      at (bb) {SUMMARY};
+
+    % Contents (empty on a blank page)
+    \node[anchor=north west, inner sep=\cellpad, text width=\cuewidth-2*\cellpad]
+      at ($(hb)+(0,-14pt)$) {#4};
+    % (typed notes get a white background so they sit cleanly over the rules)
+    \if\relax\detokenize{#5}\relax\else
+      \node[anchor=north west, inner sep=\cellpad, text width=\noteswidth-2*\cellpad, fill=white]
+        at ($(hb)+(\cuewidth,-14pt)$) {#5};
+    \fi
+    \node[anchor=north west, inner sep=\cellpad, text width=\textwidth-2*\cellpad]
+      at ($(bb)+(0,-14pt)$) {#6};
+
+    % Frame: outer box, header line, column divider, summary line
+    \draw[framegray, thick] (tl) rectangle (br);
+    \draw[framegray, thick] (hb) -- ++(\textwidth,0);
+    \draw[framegray, thick] (hb) ++(\cuewidth,0) -- ++(0,-\bodyheight);
+    \draw[framegray, thick] (bb) -- ++(\textwidth,0);
+  \end{tikzpicture}%
+  \mbox{}\newpage
+}
+
+% Public macros
+\newcommand{\cornellpage}[3]{\cornelldraw{#1}{#2}{#3}{}{}{}}
+\newcommand{\cornellnotes}[6]{\cornelldraw{#1}{#2}{#3}{#4}{#5}{#6}}
+
+\begin{document}
+
+% ---- Example page: how a finished Cornell notes page looks ----------------
+\cornellnotes{The Cornell note-taking method}{Study Skills 101}{Oct 20, 2026}
+{% Cues / questions (written after class)
+  \textbf{What are the five R's?}\\[6pt]
+  Why keep cues separate from notes?\\[6pt]
+  How wide is the cue column?\\[6pt]
+  When is the summary written?\\[6pt]
+  How do I review with this page?
+}
+{% Notes (written during class)
+  \textbf{Origin.} Walter Pauk, Cornell University, 1950s; published in \emph{How to Study in College}.
+  \begin{itemize}
+    \item Page split into three areas: cue column (left), notes (right), summary (bottom)
+    \item Notes column: record main ideas, telegraphic sentences, abbreviations, skip lines between topics
+    \item Cue column: filled in \emph{after} class with questions and keywords that the notes answer
+    \item Summary: one or two sentences in your own words, written within 24 hours
+  \end{itemize}
+  \textbf{The five R's}
+  \begin{itemize}
+    \item Record -- capture facts and ideas in the notes column
+    \item Reduce -- condense to cues and questions
+    \item Recite -- cover the notes, answer the cues aloud
+    \item Reflect -- connect to what you already know
+    \item Review -- spend ten minutes a week on old pages
+  \end{itemize}
+  \textbf{Review routine.} Fold or cover the notes column, read each cue, answer from memory, then check. Repeat weekly before the exam.
+}
+{% Summary
+  The Cornell method divides each page into cues, notes and a summary so that taking notes and reviewing them become the same activity. Record during class, reduce to questions afterwards, and recite from the cue column to test yourself.
+}
+
+% ---- Blank pages: print as many as you need --------------------------------
+\cornellpage{}{}{}
+\cornellpage{}{}{}
+\cornellpage{}{}{}
+
+\end{document}`,
+  },
+
 ];

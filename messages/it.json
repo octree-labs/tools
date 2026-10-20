@@ -833,6 +833,10 @@
     "apa-student-paper": {
       "title": "Elaborato studente in formato APA",
       "description": "Elaborato studente in formato APA 7 con frontespizio per studenti, numeri di pagina in alto a destra, titoli di livello 1–3, interlinea doppia, citazioni nel testo con biblatex-apa e pagina dei riferimenti con rientro sporgente"
+    },
+    "cornell-notes": {
+      "title": "Appunti Cornell",
+      "description": "Pagine stampabili per appunti con il metodo Cornell: intestazione argomento / corso / data, colonna delle domande da 2,5 in, colonna degli appunti rigata e riquadro di riepilogo, con una pagina di esempio compilata e una macro per ogni foglio bianco"
     }
   },
   "symbols": {
