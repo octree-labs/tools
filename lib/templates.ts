@@ -236,60 +236,153 @@ Consider the equation:
   {
     id: 5,
     title: "Lab Report",
-    description: "Scientific lab report template",
+    description: "Scientific lab report template with abstract, methods, data table, figure and references",
     slug: "lab-report",
     previewUrl: "/templates/lab-report.pdf",
     category: "Reports",
+    seoTitle: "Lab Report Template & Example (LaTeX) | Free Download",
+    seoDescription:
+      "Free lab report template in LaTeX with a worked example: abstract, methods, results table, figure, discussion and references. Preview and download.",
     code: String.raw`\documentclass[12pt]{article}
 \usepackage[margin=1in]{geometry}
 \usepackage{graphicx}
 \usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage{caption}
+\usepackage[hidelinks]{hyperref}
 
-\title{Lab Report: Experiment Title}
-\author{Student Name\\Lab Partner: Partner Name}
-\date{\today}
+\sisetup{separate-uncertainty=true}
+
+% ---- Title block: edit the course, section and instructor fields ----
+\title{Lab Report: Measuring the Acceleration Due to Gravity\\with a Simple Pendulum}
+\author{Student Name \\ Lab Partner: Partner Name \\[6pt]
+  \normalsize PHYS 101, Section 02 \\
+  \normalsize Instructor: Dr.\ Instructor Name}
+\date{Experiment performed: 14 March 2026 \\ Report submitted: \today}
 
 \begin{document}
 \maketitle
 
-\section{Objective}
-The purpose of this experiment is to...
+\begin{abstract}
+The period of a simple pendulum was measured for six string lengths between
+\SI{0.20}{\meter} and \SI{1.20}{\meter} in order to determine the local
+acceleration due to gravity, $g$. A linear fit of $T^2$ against $L$ gave
+$g = \SI{9.78 \pm 0.12}{\meter\per\second\squared}$, which agrees with the
+accepted value of \SI{9.81}{\meter\per\second\squared} within one standard
+uncertainty. The main source of error was the timing reaction of the operator.
+\end{abstract}
 
-\section{Theory}
-The theoretical background includes...
+\section{Introduction}
+The purpose of this experiment was to determine $g$ from the dependence of a
+pendulum's period on its length. For small angular displacements, the period
+$T$ of a simple pendulum of length $L$ is given by
+\begin{equation}
+  T = 2\pi\sqrt{\frac{L}{g}} \qquad\Longrightarrow\qquad T^2 = \frac{4\pi^2}{g}\,L,
+  \label{eq:period}
+\end{equation}
+so a plot of $T^2$ against $L$ should be a straight line through the origin
+with slope $4\pi^2/g$ \cite{halliday}. Equation~\eqref{eq:period} holds to
+better than \SI{0.5}{\percent} for amplitudes below about \ang{10}
+\cite{nelson}.
 
 \section{Materials and Methods}
 \subsection{Materials}
 \begin{itemize}
-\item Item 1
-\item Item 2
+  \item Steel bob (\SI{50}{\gram}) on a light inextensible string
+  \item Retort stand, clamp and split cork
+  \item Metre rule (\SI{\pm 0.5}{\milli\meter}) and digital stopwatch (\SI{\pm 0.01}{\second})
+  \item Protractor
 \end{itemize}
 
 \subsection{Procedure}
 \begin{enumerate}
-\item Step 1
-\item Step 2
+  \item The string was clamped between the cork halves and the length $L$ from
+        the pivot to the centre of the bob was measured with the metre rule.
+  \item The bob was displaced by approximately \ang{5} and released from rest.
+  \item The time for 20 complete oscillations was recorded and divided by 20
+        to obtain the period $T$; this was repeated three times and averaged.
+  \item Steps 1--3 were repeated for six lengths between \SI{0.20}{\meter} and
+        \SI{1.20}{\meter}.
 \end{enumerate}
 
 \section{Results}
-\begin{table}[h]
-\centering
-\caption{Experimental Data}
-\begin{tabular}{|c|c|}
-\hline
-Trial & Result \\
-\hline
-1 & Value \\
-2 & Value \\
-\hline
-\end{tabular}
+The averaged measurements are summarised in Table~\ref{tab:data}.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Pendulum length, mean period of 20 oscillations and squared period.}
+  \label{tab:data}
+  \begin{tabular}{S[table-format=1.3] S[table-format=1.3] S[table-format=1.3]}
+    \toprule
+    {$L$ (\si{\meter})} & {$T$ (\si{\second})} & {$T^2$ (\si{\second\squared})} \\
+    \midrule
+    0.200 & 0.898 & 0.806 \\
+    0.400 & 1.270 & 1.613 \\
+    0.600 & 1.556 & 2.421 \\
+    0.800 & 1.797 & 3.229 \\
+    1.000 & 2.009 & 4.036 \\
+    1.200 & 2.201 & 4.844 \\
+    \bottomrule
+  \end{tabular}
 \end{table}
 
+\begin{figure}[htbp]
+  \centering
+  % Replace the placeholder box with your plot, e.g.
+  % \includegraphics[width=0.8\textwidth]{pendulum-plot.pdf}
+  \fbox{\parbox[c][5.5cm][c]{0.8\textwidth}{\centering
+    Figure placeholder\\[4pt]
+    \small Insert a plot of $T^2$ against $L$ with the fitted line here\\
+    (\texttt{\textbackslash includegraphics} or a \texttt{pgfplots} axis)}}
+  \caption{Squared period $T^2$ as a function of pendulum length $L$. The
+    solid line is a least-squares fit of Equation~\eqref{eq:period}.}
+  \label{fig:plot}
+\end{figure}
+
+A least-squares fit of $T^2$ against $L$ (Figure~\ref{fig:plot}) gave a slope
+of \SI{4.037 \pm 0.049}{\second\squared\per\meter}. From
+Equation~\eqref{eq:period},
+\begin{equation}
+  g = \frac{4\pi^2}{\text{slope}}
+    = \frac{4\pi^2}{\SI{4.037}{\second\squared\per\meter}}
+    = \SI{9.78 \pm 0.12}{\meter\per\second\squared}.
+\end{equation}
+
 \section{Discussion}
-The results indicate...
+The measured value of $g$ agrees with the accepted value of
+\SI{9.81}{\meter\per\second\squared} to within \SI{0.3}{\percent}, and the
+accepted value lies inside the quoted uncertainty. The dominant systematic
+error was the operator's reaction time (about \SI{0.2}{\second} per start and
+stop), which was reduced but not eliminated by timing 20 oscillations rather
+than one. The finite size of the bob and the small but non-zero mass of the
+string both shift the effective length slightly; timing with a photogate and
+using a thinner string would reduce these effects. The fit intercept of
+\SI{-0.01 \pm 0.03}{\second\squared} is consistent with zero, as predicted.
 
 \section{Conclusion}
-In conclusion...
+Using a simple pendulum and a plot of $T^2$ against $L$, the acceleration due
+to gravity was found to be $g = \SI{9.78 \pm 0.12}{\meter\per\second\squared}$,
+in agreement with the accepted value. The method confirms the small-angle
+relation in Equation~\eqref{eq:period} and could be improved most by replacing
+the hand-operated stopwatch with an electronic timer.
+
+\begin{thebibliography}{9}
+  \bibitem{halliday} D.~Halliday, R.~Resnick and J.~Walker,
+    \emph{Fundamentals of Physics}, 10th ed. Wiley, 2013, ch.~15.
+  \bibitem{nelson} R.~A. Nelson and M.~G. Olsson, \lq\lq The pendulum---rich physics
+    from a simple system,'' \emph{American Journal of Physics}, vol.~54,
+    no.~2, pp.~112--121, 1986.
+\end{thebibliography}
+
+\appendix
+\section{Sample Calculation}
+For $L = \SI{0.600}{\meter}$ the three timed runs for 20 oscillations were
+\SI{31.08}{\second}, \SI{31.15}{\second} and \SI{31.13}{\second}, giving a mean
+of \SI{31.12}{\second} and $T = 31.12/20 = \SI{1.556}{\second}$. The
+uncertainty in $T$ from the spread of the runs is
+$\sigma_T = \SI{0.002}{\second}$, so
+$T^2 = \SI{2.421 \pm 0.006}{\second\squared}$.
 
 \end{document}`,
   },
