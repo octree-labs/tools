@@ -13,6 +13,7 @@ import HarvardResumeGuide from "./harvard-resume";
 import IeeeConferenceGuide from "./ieee-conference";
 import JfmPaperGuide from "./jfm-paper";
 import JakesResumeGuide from "./jakes-resume";
+import LabReportGuide from "./lab-report";
 import LetterOfRecommendationGuide from "./letter-of-recommendation";
 import MlaPaperGuide from "./mla-paper";
 import MlaWorksCitedGuide from "./mla-works-cited";
@@ -40,6 +41,7 @@ const templateGuides: Record<string, ComponentType> = {
   "ieee-conference": IeeeConferenceGuide,
   "jfm-paper": JfmPaperGuide,
   "jakes-resume": JakesResumeGuide,
+  "lab-report": LabReportGuide,
   "letter-of-recommendation": LetterOfRecommendationGuide,
   "mla-paper": MlaPaperGuide,
   "mla-works-cited": MlaWorksCitedGuide,

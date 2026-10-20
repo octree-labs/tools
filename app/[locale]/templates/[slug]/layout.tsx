@@ -197,10 +197,16 @@ async function generateMetadataBase({
       'theorem proof latex template',
     ],
     'lab-report': [
+      'lab report template',
+      'lab report example',
+      'example lab report',
+      'sample of lab report',
+      'lab report format',
+      'lab report form',
+      'lab report',
       'latex lab report template',
       'lab report template latex',
       'scientific lab report latex',
-      'latex template lab report',
       'laboratory report latex',
     ],
     'book-chapter': [
