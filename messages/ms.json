@@ -833,6 +833,10 @@
     "apa-student-paper": {
       "title": "Kertas Pelajar Format APA",
       "description": "Kertas pelajar format APA 7 dengan halaman tajuk pelajar, nombor halaman di kanan atas, tajuk Tahap 1–3, langkau dua baris, petikan dalam teks dengan biblatex-apa dan halaman Rujukan dengan inden gantung"
+    },
+    "cornell-notes": {
+      "title": "Nota Cornell",
+      "description": "Halaman nota kaedah Cornell yang boleh dicetak dengan kepala topik / kelas / tarikh, lajur soalan selebar 2.5 inci, lajur nota bergaris dan kotak ringkasan, serta satu halaman contoh yang diisi dan satu makro bagi setiap helaian kosong"
     }
   },
   "symbols": {

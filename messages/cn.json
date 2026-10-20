@@ -831,6 +831,10 @@
       "apa-student-paper": {
         "title": "APA 学生论文",
         "description": "符合 APA 第7版的学生论文：学生版标题页、右上角页码、一至三级标题、双倍行距、biblatex-apa 文内引用和带悬挂缩进的参考文献页"
+      },
+      "cornell-notes": {
+        "title": "康奈尔笔记",
+        "description": "可打印的康奈尔笔记页：主题 / 课程 / 日期页眉、2.5 英寸线索栏、带横线的笔记栏和底部总结框，附一页填写示例，每张空白页只需一行宏"
       }
     },
     "symbols": {

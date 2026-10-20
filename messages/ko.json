@@ -527,7 +527,8 @@
     "mla-works-cited": { "title": "MLA 인용 문헌 페이지", "description": "러닝 헤더, 2배 줄 간격, 내어쓰기와 8개의 예시 항목이 포함된 MLA 9판 인용 문헌 페이지" },
     "annotated-bibliography": { "title": "주석 달린 참고문헌", "description": "내어쓰기 참고문헌, 들여쓴 주석, 2배 줄 간격을 갖춘 APA 7판 주석 달린 참고문헌. 한 줄로 MLA 9판 전환 가능" },
     "mla-paper": { "title": "MLA 형식 논문", "description": "4줄 머리글, 성과 쪽 번호 러닝 헤더, 2배 줄 간격, 블록 인용, 본문 내 인용과 인용 문헌 페이지를 갖춘 MLA 9판 논문" },
-    "apa-student-paper": { "title": "APA 학생 논문", "description": "학생용 표지, 오른쪽 상단 쪽 번호, 1~3수준 제목, 2배 줄 간격, biblatex-apa 본문 내 인용과 내어쓰기 참고문헌 페이지를 갖춘 APA 7판 학생 논문" }
+    "apa-student-paper": { "title": "APA 학생 논문", "description": "학생용 표지, 오른쪽 상단 쪽 번호, 1~3수준 제목, 2배 줄 간격, biblatex-apa 본문 내 인용과 내어쓰기 참고문헌 페이지를 갖춘 APA 7판 학생 논문" },
+    "cornell-notes": { "title": "코넬 노트", "description": "주제 / 과목 / 날짜 머리글, 2.5인치 단서 열, 줄이 그어진 노트 열과 요약 상자를 갖춘 인쇄용 코넬식 노트 페이지. 작성된 예시 페이지와 빈 페이지를 한 줄로 추가하는 매크로 포함" }
   },
   "symbols": {
     "title": "LaTeX 기호",

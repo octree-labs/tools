@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 import { templates } from '@/lib/templates';
 import { generateAlternates, withDefaultOgImage } from '@/lib/seo';
 
@@ -79,12 +80,7 @@ async function generateMetadataBase({
   const { slug, locale } = await params;
   const template = templates.find((t) => t.slug === slug);
 
-  if (!template) {
-    return {
-      title: 'Template Not Found | Octree LaTeX Tools',
-      description: 'The requested LaTeX template could not be found.',
-    };
-  }
+  if (!template) notFound();
 
   const titleFormat = templateTitleFormats[locale] || templateTitleFormats['en'];
   const descFormat = templateDescriptionFormats[locale] || templateDescriptionFormats['en'];
@@ -875,6 +871,18 @@ async function generateMetadataBase({
       'apa7 latex template',
       'latex apa paper',
     ],
+    'cornell-notes': [
+      'cornell notes template',
+      'cornell notes',
+      'cornell note taking template',
+      'cornell notes template pdf',
+      'cornell method',
+      'cornell notes template free',
+      'printable cornell notes',
+      'cornell note taking method',
+      'cornell notes latex template',
+      'latex cornell notes',
+    ],
   };
 
   const specificKeywords = keywordMap[slug] || [
@@ -922,9 +930,7 @@ export default async function TemplateLayout({
   const { slug, locale } = await params;
   const template = templates.find((t) => t.slug === slug);
 
-  if (!template) {
-    return children;
-  }
+  if (!template) notFound();
 
   const templateUrl = locale === 'en'
     ? `https://tools.useoctree.com/templates/${slug}`

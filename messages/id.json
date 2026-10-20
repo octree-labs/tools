@@ -833,6 +833,10 @@
     "apa-student-paper": {
       "title": "Makalah Mahasiswa Format APA",
       "description": "Makalah mahasiswa format APA 7 dengan halaman judul mahasiswa, nomor halaman di kanan atas, judul Level 1–3, spasi ganda, sitasi dalam teks dengan biblatex-apa dan halaman Referensi dengan indentasi gantung"
+    },
+    "cornell-notes": {
+      "title": "Catatan Cornell",
+      "description": "Halaman catatan metode Cornell siap cetak dengan kepala topik / kelas / tanggal, kolom pertanyaan selebar 2,5 inci, kolom catatan bergaris dan kotak ringkasan, ditambah satu halaman contoh terisi dan satu makro per lembar kosong"
     }
   },
   "symbols": {

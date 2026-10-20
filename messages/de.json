@@ -833,6 +833,10 @@
     "apa-student-paper": {
       "title": "APA-Studienarbeit",
       "description": "Studienarbeit nach APA 7 mit Titelseite für Studierende, Seitenzahlen oben rechts, Überschriften der Ebenen 1–3, doppeltem Zeilenabstand, Kurzbelegen im Text per biblatex-apa und Literaturverzeichnis mit hängendem Einzug"
+    },
+    "cornell-notes": {
+      "title": "Cornell-Notizen",
+      "description": "Druckbare Cornell-Notizseiten mit Kopfzeile für Thema, Kurs und Datum, 2,5-Zoll-Stichwortspalte, linierter Notizspalte und Zusammenfassungsfeld, dazu eine ausgefüllte Beispielseite und ein Einzeiler-Makro pro leerem Blatt"
     }
   },
   "symbols": {
