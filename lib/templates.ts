@@ -3408,14 +3408,14 @@ The PI has extensive experience in [area] with [number] publications and \$[amou
   },
   {
     id: 42,
-    title: "Letter of Recommendation Template",
+    title: "Letter of Recommendation",
     description: "Professional recommendation letter template",
     slug: "letter-of-recommendation",
     previewUrl: "/templates/letter-of-recommendation.pdf",
     category: "Letters",
     seoTitle: "Letter of Recommendation Template (LaTeX) | Free Download",
     seoDescription:
-      "Free letter of recommendation template in LaTeX for professors, advisors and managers. Ready-to-fill academic, research and character sections. Preview the PDF and download instantly.",
+      "Free letter of recommendation template in LaTeX for professors, advisors and managers, with ready-to-fill academic, research and character sections.",
     code: String.raw`\documentclass[11pt]{letter}
 \usepackage[margin=1in]{geometry}
 \usepackage{hyperref}
