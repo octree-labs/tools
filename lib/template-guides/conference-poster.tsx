@@ -14,6 +14,11 @@ import {
 
 const faq: GuideFaqItem[] = [
   {
+    question: "Is a research poster the same as a conference poster?",
+    answer:
+      "In practice yes. A research poster summarises one study on a single large sheet; a conference poster is the same thing named after where it is shown. Both use the layout in this poster template: a title bar, three columns that move from Introduction to Conclusion, one or two large figures and a short reference list. Universities also use research posters for student showcases and thesis days, where the same file works unchanged.",
+  },
+  {
     question: "What size is an A0 poster and does this template print at A0?",
     answer:
       "A0 is 841 by 1189 mm (33.1 by 46.8 in). The template sets size=a0 and orientation=landscape in the beamerposter options, so the PDF page is exactly 1189 by 841 mm and can go straight to a large-format printer. Change size=a1 for a half-size poster or orientation=portrait for a vertical layout.",
@@ -43,10 +48,11 @@ const faq: GuideFaqItem[] = [
 export default function ConferencePosterGuide() {
   return (
     <article>
-      <GuideH2 id="what-is-it">What is this LaTeX poster template?</GuideH2>
+      <GuideH2 id="what-is-it">What is this research poster template?</GuideH2>
       <GuideP>
-        This is a complete academic conference poster written in LaTeX with the{" "}
-        <GuideCode>beamerposter</GuideCode> package. It produces an A0 landscape sheet
+        This is a free research poster template written in LaTeX with the{" "}
+        <GuideCode>beamerposter</GuideCode> package, made for academic conference
+        poster sessions. It produces an A0 landscape sheet
         (1189 by 841 mm) with a coloured title bar holding the title, authors,
         affiliations and two logo placeholders, three equal columns of content blocks,
         and a footer with contact details. The sample content follows the structure
@@ -133,9 +139,9 @@ export default function ConferencePosterGuide() {
 % Replace a logo placeholder
 \\includegraphics[width=10cm]{university-logo.pdf}`}</GuidePre>
 
-      <GuideH2 id="design">Poster design advice</GuideH2>
+      <GuideH2 id="design">Research poster design advice</GuideH2>
       <GuideP>
-        A poster is read in about ninety seconds from one to two metres away. Keep
+        A research poster is read in about ninety seconds from one to two metres away. Keep
         the body text at 28 to 32 pt (the default <GuideCode>scale=1.3</GuideCode> on A0
         does this), limit the whole poster to roughly 800 words, and put the result
         that matters in an alert block near the top of the right-hand column, where
@@ -189,7 +195,7 @@ export default function ConferencePosterGuide() {
         headers={["Template", "Use it for", "Format"]}
         rows={[
           [
-            <strong key="p">Conference Poster</strong>,
+            <strong key="p">Research Poster</strong>,
             "Poster sessions at any conference",
             "A0 landscape, beamerposter, three columns",
           ],

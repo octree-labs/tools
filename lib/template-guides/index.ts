@@ -18,6 +18,7 @@ import LetterOfRecommendationGuide from "./letter-of-recommendation";
 import MlaPaperGuide from "./mla-paper";
 import MlaWorksCitedGuide from "./mla-works-cited";
 import Neurips2027Guide from "./neurips-2027";
+import ResearchProposalGuide from "./research-proposal";
 
 /**
  * Long-form guides rendered below the preview on template pages.
@@ -46,6 +47,7 @@ const templateGuides: Record<string, ComponentType> = {
   "mla-paper": MlaPaperGuide,
   "mla-works-cited": MlaWorksCitedGuide,
   "neurips-2027": Neurips2027Guide,
+  "research-proposal": ResearchProposalGuide,
 };
 
 export function getTemplateGuide(slug: string): ComponentType | undefined {

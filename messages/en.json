@@ -659,7 +659,7 @@
       "description": "Research grant proposal template"
     },
     "letter-of-recommendation": {
-      "title": "Letter of Recommendation",
+      "title": "Letter of Recommendation Template",
       "description": "Professional recommendation letter template"
     },
     "motivation-letter": {
@@ -795,7 +795,7 @@
       "description": "Dark-mode Beamer presentation with high-contrast slides, cyan accents and frame numbers"
     },
     "conference-poster": {
-      "title": "Conference Poster",
+      "title": "Research Poster",
       "description": "A0 landscape academic poster with beamerposter: three columns, title bar, TikZ figure and reference block"
     },
     "ieee-conference": {

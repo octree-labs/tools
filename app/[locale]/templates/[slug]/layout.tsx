@@ -260,6 +260,12 @@ async function generateMetadataBase({
       'university syllabus latex',
     ],
     'research-proposal': [
+      'proposal template',
+      'research proposal template',
+      'research proposal example',
+      'thesis proposal template',
+      'research proposal format',
+      'research proposal',
       'research proposal latex template',
       'latex research proposal template',
       'latex proposal template',
@@ -766,6 +772,7 @@ async function generateMetadataBase({
       'metropolis dark theme',
     ],
     'conference-poster': [
+      'research poster',
       'poster template',
       'latex poster template',
       'beamerposter',

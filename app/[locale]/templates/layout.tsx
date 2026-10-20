@@ -233,7 +233,7 @@ const templatesList = [
   { name: "Certificate", slug: "certificate", description: "Award and achievement certificate template" },
   { name: "Invoice", slug: "invoice", description: "Professional business invoice template" },
   { name: "Grant Proposal", slug: "grant-proposal", description: "Research grant proposal template" },
-  { name: "Letter of Recommendation", slug: "letter-of-recommendation", description: "Professional recommendation letter template" },
+  { name: "Letter of Recommendation Template", slug: "letter-of-recommendation", description: "Professional recommendation letter template" },
   { name: "Motivation Letter", slug: "motivation-letter", description: "Academic or professional motivation letter template" },
   { name: "Business Plan", slug: "business-plan", description: "Professional business plan template" },
   { name: "Business Report", slug: "business-report", description: "Corporate business report template" },

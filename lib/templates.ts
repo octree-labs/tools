@@ -1051,68 +1051,187 @@ Project & 20\% \\
   {
     id: 19,
     title: "Research Proposal",
-    description: "Grant and research proposal template",
+    description: "Research proposal template with abstract, research questions, literature review, methodology, timeline, budget and references",
     slug: "research-proposal",
     previewUrl: "/templates/research-proposal.pdf",
     category: "Academic",
-    code: String.raw`\documentclass[12pt]{article}
+    seoTitle: "Research Proposal Template & Example (LaTeX) | Free Download",
+    seoDescription:
+      "Free research proposal template in LaTeX with a complete example: abstract, research questions, literature review, methodology, timeline and budget.",
+    code: String.raw`\documentclass[11pt]{article}
 \usepackage[margin=1in]{geometry}
 \usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage{graphicx}
-\usepackage{natbib}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage[round]{natbib}
+\usepackage[hidelinks]{hyperref}
 
-\title{Research Proposal:\\
-{[}Project Title{]}}
-\author{Principal Investigator: Your Name\\
-Department, University\\
-Email: your.email@university.edu}
-\date{\today}
+% ---- Title block: edit the title, applicant, supervisor and department ----
+\title{Research Proposal: The Effect of Spaced Repetition on\\
+  Vocabulary Retention in Adult Second-Language Learners}
+\author{Your Name \\[4pt]
+  \normalsize Supervisor: Dr.\ Supervisor Name \\
+  \normalsize Department of Linguistics, University Name \\
+  \normalsize \texttt{your.email@university.edu}}
+\date{Submitted: \today}
 
 \begin{document}
-
 \maketitle
 
-\section{Abstract}
-This proposal seeks funding for [project]. The research will [objectives] with expected outcomes of [results].
+\begin{abstract}
+Learners forget a large share of newly studied second-language words within
+weeks. Laboratory research shows that spacing practice over time improves
+retention, but classroom studies with adult learners have used short retention
+intervals and have not compared equal and expanding schedules directly. This
+project proposes a pre-registered experiment in which 120 adult learners study
+60 unfamiliar nouns under a massed, an equal-spaced or an expanding-spaced
+schedule, with retention tested one and four weeks later.
+\end{abstract}
 
-\section{Background and Significance}
-The field of [area] faces challenges in [problem]. This research is significant because [importance].
+\section{Introduction and Background}
+Knowing a word means being able to retrieve its form and meaning long after the
+lesson in which it was first met \citep{nation2013}. The forgetting curve
+measured by \citet{ebbinghaus1885} shows that most of what is learned is lost
+within days unless it is practised again. The spacing effect, in which study
+distributed over time produces better long-term retention than the same amount
+of study in one session, is among the most robust findings in memory research
+\citep{cepeda2006}. It remains unclear, however, how
+spacing should be scheduled for second-language vocabulary: comparisons of
+expanding and equal schedules have produced mixed results, and almost all of them
+measured retention within a week \citep{nakata2015}. This proposal addresses
+that gap with a four-week retention interval and enrolled adult learners.
 
-\section{Specific Aims}
-\textbf{Aim 1:} [First aim]\\
-\textbf{Aim 2:} [Second aim]\\
-\textbf{Aim 3:} [Third aim]
+\section{Research Questions and Hypotheses}
+\begin{enumerate}
+  \item[\textbf{RQ1}] Does spacing retrieval practice over several days improve
+        retention of new vocabulary at one and four weeks, compared with massed
+        practice of the same duration? \textbf{H1:} Both spaced conditions will
+        outperform the massed condition at both delays.
+  \item[\textbf{RQ2}] Does an expanding schedule produce better retention than
+        an equal-interval schedule? \textbf{H2:} Expanding spacing will yield
+        higher cued recall than equal spacing at four weeks, with no reliable
+        difference at one week.
+  \item[\textbf{RQ3}] Is the benefit of spacing moderated by prior proficiency?
+        \textbf{H3:} The advantage of spaced over massed practice will be larger
+        for lower-proficiency learners.
+\end{enumerate}
 
-\section{Research Design and Methods}
-\subsection{Approach}
-We will employ [methodology] to [objective].
+\section{Literature Review}
+The meta-analysis by \citet{cepeda2006} of 254 distributed-practice studies
+found that spaced study improved verbal recall in almost every comparison and
+that the optimal gap between sessions grows with the retention interval.
+\citet{karpicke2008} showed that repeated testing of foreign-language word pairs
+produced about 80\,\% recall after one week, against roughly 35\,\% for repeated
+study alone. Within second-language research, \citet{nation2013} argues that
+vocabulary programmes should plan repeated retrieval of each word, but the
+studies that have tested specific schedules are small and short:
+\citet{nakata2015} found only a modest advantage for expanding over equal
+spacing on a delayed test. No study has combined a four-week retention interval
+with a classroom-sized sample and a direct comparison of the three schedules.
 
-\subsection{Data Collection}
-Data will be collected through [methods].
+\section{Methodology}
+\subsection{Design}
+The study is a pre-registered, between-subjects experiment with three
+conditions: \emph{massed}, \emph{equal-spaced} and \emph{expanding-spaced}
+retrieval practice. Each participant completes six retrieval attempts per word:
+all six in one 60-minute session (massed), two in each of three 20-minute
+sessions on days 1, 4 and 7 (equal-spaced), or on days 1, 2 and 7
+(expanding-spaced). Retention is tested one and four weeks after the last session.
 
-\subsection{Analysis Plan}
-We will analyze data using [statistical methods].
+\subsection{Participants}
+A power analysis for three groups, a medium effect size ($f = 0.30$),
+$\alpha = 0.05$ and power of 0.80 requires 111 participants. We will recruit 120
+adult learners (40 per condition) from beginner and lower-intermediate courses at
+the university language centre to allow for attrition. The protocol will be
+approved by the research ethics committee and participants give written consent.
 
-\section{Expected Outcomes}
-This research will produce [deliverables] and contribute [impact].
+\subsection{Materials and Procedure}
+Sixty concrete nouns from a language unfamiliar to all participants (Finnish)
+are paired with English translations. Session 1 begins with a 40-item proficiency test and one study exposure to all
+60 words. In each retrieval attempt the English meaning is shown, the learner
+types the Finnish form and receives the correct answer as feedback. The delayed
+tests consist of cued recall of the form from the meaning and a four-option
+meaning recognition test, run in a browser application that logs every response.
 
-\section{Timeline}
-\begin{itemize}
-\item Year 1: [Activities]
-\item Year 2: [Activities]
-\item Year 3: [Activities]
-\end{itemize}
+\subsection{Data Analysis}
+Item-level accuracy will be analysed with mixed-effects logistic regression,
+with condition, delay and their interaction as fixed effects, proficiency as a
+continuous moderator, and random intercepts for participants and items. The
+hypotheses and analysis script will be pre-registered on the Open Science
+Framework before data collection begins.
+
+\subsection{Timeline}
+Table~\ref{tab:timeline} shows the planned twelve-month schedule.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Project timeline; filled cells mark the active quarters.}
+  \label{tab:timeline}
+  \small
+  \begin{tabular}{c >{\raggedright\arraybackslash}p{6.4cm} c c c c}
+    \toprule
+    Phase & Activity & Months 1--3 & 4--6 & 7--9 & 10--12 \\
+    \midrule
+    1 & Ethics approval, stimuli and pilot study & $\blacksquare$ & & & \\
+    2 & Recruitment and training sessions & & $\blacksquare$ & $\blacksquare$ & \\
+    3 & One- and four-week retention tests & & & $\blacksquare$ & $\blacksquare$ \\
+    4 & Analysis, thesis writing and dissemination & & & & $\blacksquare$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\section{Expected Outcomes and Significance}
+We expect both spaced conditions to retain substantially more words than the
+massed condition at four weeks, with a small further advantage for the expanding
+schedule. If H3 is supported, lower-proficiency learners gain the most from
+spaced retrieval. The project will produce a master's thesis, a
+journal article, an open dataset and a review schedule that teachers and
+spaced-repetition software can adopt directly.
 
 \section{Budget}
-\begin{tabular}{lr}
-Personnel & \$XXX,XXX \\
-Equipment & \$XX,XXX \\
-Travel & \$X,XXX \\
-\textbf{Total} & \$XXX,XXX \\
-\end{tabular}
+Table~\ref{tab:budget} summarises the requested funding.
 
-\bibliographystyle{plain}
-\bibliography{references}
+\begin{table}[htbp]
+  \centering
+  \caption{Requested budget.}
+  \label{tab:budget}
+  \small
+  \begin{tabular}{l r}
+    \toprule
+    Item & Amount (USD) \\
+    \midrule
+    Participant compensation (120 participants $\times$ \$40) & 4,800 \\
+    Research assistant (200 hours $\times$ \$20) & 4,000 \\
+    Training platform licence (12 months) & 600 \\
+    Conference travel and dissemination & 1,500 \\
+    Open-access publication fee & 2,000 \\
+    \midrule
+    \textbf{Total} & \textbf{12,900} \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{thebibliography}{9}
+  \bibitem[Cepeda et al.(2006)]{cepeda2006}
+    Cepeda, N.~J., Pashler, H., Vul, E., Wixted, J.~T., and Rohrer, D. (2006).
+    Distributed practice in verbal recall tasks: A review and quantitative
+    synthesis. \emph{Psychological Bulletin}, 132(3), 354--380.
+  \bibitem[Ebbinghaus(1885)]{ebbinghaus1885}
+    Ebbinghaus, H. (1885). \emph{\"Uber das Ged\"achtnis: Untersuchungen zur
+    experimentellen Psychologie}. Leipzig: Duncker \& Humblot.
+  \bibitem[Karpicke and Roediger(2008)]{karpicke2008}
+    Karpicke, J.~D., and Roediger, H.~L. (2008). The critical importance of
+    retrieval for learning. \emph{Science}, 319(5865), 966--968.
+  \bibitem[Nakata(2015)]{nakata2015}
+    Nakata, T. (2015). Effects of expanding and equal spacing on second language
+    vocabulary learning: Does gradually increasing spacing increase vocabulary
+    learning? \emph{Studies in Second Language Acquisition}, 37(4), 677--711.
+  \bibitem[Nation(2013)]{nation2013}
+    Nation, I.~S.~P. (2013). \emph{Learning Vocabulary in Another Language}
+    (2nd ed.). Cambridge: Cambridge University Press.
+\end{thebibliography}
 
 \end{document}`,
   },
@@ -3289,12 +3408,12 @@ The PI has extensive experience in [area] with [number] publications and \$[amou
   },
   {
     id: 42,
-    title: "Letter of Recommendation",
+    title: "Letter of Recommendation Template",
     description: "Professional recommendation letter template",
     slug: "letter-of-recommendation",
     previewUrl: "/templates/letter-of-recommendation.pdf",
     category: "Letters",
-    seoTitle: "Letter of Recommendation Template (LaTeX) | Free Download & Preview",
+    seoTitle: "Letter of Recommendation Template (LaTeX) | Free Download",
     seoDescription:
       "Free letter of recommendation template in LaTeX for professors, advisors and managers. Ready-to-fill academic, research and character sections. Preview the PDF and download instantly.",
     code: String.raw`\documentclass[11pt]{letter}
@@ -7371,14 +7490,14 @@ Appendices follow the references and may contain extra experiments, prompts, and
   },
   {
     id: 76,
-    title: "Conference Poster",
+    title: "Research Poster",
     description: "A0 landscape academic poster with beamerposter: three columns, title bar, TikZ figure and reference block",
     slug: "conference-poster",
     previewUrl: "/templates/conference-poster.pdf",
     category: "Presentations",
-    seoTitle: "A0 LaTeX Poster Template (beamerposter) | Free Download",
+    seoTitle: "Research Poster Template (LaTeX, A0 beamerposter) | Free",
     seoDescription:
-      "Free A0 landscape LaTeX poster template with beamerposter: three columns, title bar, TikZ figure and references. Compiles with plain pdflatex.",
+      "Free research poster template in LaTeX: A0 landscape beamerposter with three columns, title bar, TikZ figure and references. Compiles with plain pdflatex.",
     code: String.raw`%-------------------------------------------------------------------
 % Academic conference poster (A0 landscape, beamerposter, 3 columns)
 %
