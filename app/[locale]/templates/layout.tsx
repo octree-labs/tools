@@ -203,7 +203,7 @@ const templatesList = [
   { name: "Assignment", slug: "assignment", description: "Homework and assignment template" },
   { name: "Worksheet", slug: "worksheet", description: "Practice problems and exercises template" },
   { name: "Homework Template", slug: "homework", description: "Structured homework assignment" },
-  { name: "Research Poster", slug: "poster", description: "Academic conference poster template" },
+  { name: "Academic Poster (tikzposter)", slug: "poster", description: "Academic conference poster template" },
   { name: "PhD Thesis", slug: "thesis", description: "Comprehensive thesis template with chapters" },
   { name: "Formal Letter", slug: "letter", description: "Professional business letter template" },
   { name: "Algorithm Pseudocode", slug: "algorithm", description: "Algorithm documentation with pseudocode" },

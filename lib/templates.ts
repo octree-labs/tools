@@ -677,7 +677,7 @@ Assume $\sqrt{2}$ is rational. Then $\sqrt{2} = \frac{p}{q}$ where $p,q$ are int
   },
   {
     id: 12,
-    title: "Research Poster",
+    title: "Academic Poster (tikzposter)",
     description: "Academic conference poster template",
     slug: "poster",
     previewUrl: "/templates/poster.pdf",
