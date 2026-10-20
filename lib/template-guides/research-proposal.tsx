@@ -57,7 +57,8 @@ export default function ResearchProposalGuide() {
 
       <GuideH2 id="format">Research proposal format: what goes in each section</GuideH2>
       <GuideP>
-        The sections below follow the order most universities and funders expect.
+        The sections below follow the order most university guidelines use; if a
+        funder&apos;s call prescribes its own headings, those take precedence.
         Lengths are for a three- to ten-page proposal; scale them up for a full
         thesis proposal.
       </GuideP>
@@ -96,7 +97,7 @@ export default function ResearchProposalGuide() {
           ],
           [
             "Timeline",
-            "A table or Gantt chart of phases against months or quarters.",
+            "A table or Gantt chart of phases against months or quarters; the template puts it at the end of Methodology.",
             "Quarter page",
           ],
           [

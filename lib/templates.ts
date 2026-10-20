@@ -1100,8 +1100,9 @@ of study in one session, is among the most robust findings in memory research
 \citep{cepeda2006}. It remains unclear, however, how
 spacing should be scheduled for second-language vocabulary: comparisons of
 expanding and equal schedules have produced mixed results, and most of them
-measured retention after a week or less \citep{nakata2015}. This proposal addresses
-that gap with a four-week retention interval and enrolled adult learners.
+measured retention after a week or less \citep{nakata2015}. This proposal
+addresses that gap with a four-week retention interval and enrolled adult
+learners.
 
 \section{Research Questions and Hypotheses}
 \begin{enumerate}
@@ -1127,10 +1128,11 @@ interval.
 produced about 80\,\% recall after one week, against roughly 35\,\% for repeated
 study alone. Within second-language research, \citet{nation2013} argues that
 vocabulary programmes should plan repeated retrieval of each word, but the
-studies that have tested specific schedules are small and short:
-\citet{nakata2015} found only a limited advantage for expanding over equal
-spacing with 128 learners and 20 word pairs. No study has combined a four-week retention interval
-with a classroom-sized sample and a direct comparison of the three schedules.
+studies that have tested specific schedules used few items and short retention
+intervals: \citet{nakata2015} found only a limited advantage for expanding over
+equal spacing with 20 word pairs and a one-week delayed test. No study has
+combined a four-week retention interval with a direct comparison of all three
+schedules.
 
 \section{Methodology}
 \subsection{Design}
@@ -1142,20 +1144,21 @@ sessions on days 1, 4 and 7 (equal-spaced), or on days 1, 2 and 7
 (expanding-spaced). Retention is tested one and four weeks after the last session.
 
 \subsection{Participants}
-A power analysis for a one-way comparison of three groups (G*Power~3.1;
-medium-to-large effect size $f = 0.30$, $\alpha = 0.05$, power $= 0.80$)
-requires 111 participants. We will recruit 120
+A power analysis for the three-group comparison that underlies H1
+(G*Power~3.1, one-way ANOVA; medium-to-large effect size $f = 0.30$,
+$\alpha = 0.05$, power $= 0.80$) requires 111 participants. We will recruit 120
 adult learners (40 per condition) from beginner and lower-intermediate courses at
-the university language centre to allow for attrition. The protocol will be
-approved by the research ethics committee and participants give written consent.
+the university language centre to allow for attrition. Ethics approval will
+precede recruitment and participants will give written consent.
 
 \subsection{Materials and Procedure}
 Sixty concrete nouns from a language unfamiliar to all participants (Finnish)
-are paired with English translations. Session 1 begins with a 40-item proficiency test and one study exposure to all
-60 words. In each retrieval attempt the English meaning is shown, the learner
-types the Finnish form and receives the correct answer as feedback. The delayed
-tests consist of cued recall of the form from the meaning and a four-option
-meaning recognition test, run in a browser application that logs every response.
+are paired with English translations. Session 1 begins with a 40-item
+proficiency test and one study exposure to all 60 words. In each retrieval
+attempt the English meaning is shown, the learner types the Finnish form and
+receives the correct answer as feedback. The delayed tests consist of cued
+recall of the form from the meaning and a four-option meaning recognition test,
+run in the same browser-based training platform as the practice sessions.
 
 \subsection{Data Analysis}
 Item-level accuracy will be analysed with mixed-effects logistic regression,
