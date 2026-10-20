@@ -18,7 +18,11 @@ export const getTemplateJsonLd = (
   return {
     "@context": "https://schema.org",
     "@type": "SoftwareSourceCode",
-    name: `${title} LaTeX Template`,
+    // "Letter of Recommendation Template" -> "Letter of Recommendation LaTeX Template",
+    // never "... Template LaTeX Template".
+    name: /\btemplate$/i.test(title)
+      ? title.replace(/\s*template$/i, " LaTeX Template")
+      : `${title} LaTeX Template`,
     description: description,
     programmingLanguage: "LaTeX",
     codeRepository: "https://tools.useoctree.com/templates",
