@@ -156,7 +156,9 @@ export default function LabReportGuide() {
         <li>
           Quote results to the significant figures your instrument justifies and always
           with an uncertainty: <GuideCode>{"\\SI{9.78 \\pm 0.12}{\\meter\\per\\second\\squared}"}</GuideCode>{" "}
-          typesets as (9.78 ± 0.12) m s<sup>−2</sup>.
+          typesets as (9.78 ± 0.12) m s<sup>−2</sup> because the preamble sets{" "}
+          <GuideCode>{"\\sisetup{separate-uncertainty=true}"}</GuideCode>; without it siunitx
+          prints the compact form 9.78(12).
         </li>
         <li>
           Number equations you refer back to and cite them with{" "}
@@ -209,7 +211,7 @@ export default function LabReportGuide() {
 \\begin{tikzpicture}
   \\begin{axis}[xlabel={$L$ (m)}, ylabel={$T^2$ (s$^2$)}, width=0.8\\textwidth]
     \\addplot[only marks] table {data.dat};
-    \\addplot[no marks] {4.037*x};
+    \\addplot[no marks, domain=0:1.2] {4.038*x};
   \\end{axis}
 \\end{tikzpicture}`}</GuidePre>
 
