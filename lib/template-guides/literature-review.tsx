@@ -25,7 +25,7 @@ const faq: GuideFaqItem[] = [
   {
     question: "How do I write the conclusion of a literature review?",
     answer:
-      "Restate the question the review set out to answer, give the two or three claims the evidence supports with the key citations attached, name the main limitation of the literature as a whole, and end with the direction future research should take. Do not introduce new sources in the conclusion. The example in the template follows exactly this order in one paragraph of about 200 words.",
+      "Restate the question the review set out to answer, give the two or three claims the evidence supports with the key citations attached, name the main limitation of the literature as a whole, and end with the direction future research should take. Do not introduce new sources in the conclusion. The example in the template follows exactly this order in one paragraph of about 150 words.",
   },
   {
     question: "Can I use BibTeX with this literature review template?",
@@ -35,7 +35,7 @@ const faq: GuideFaqItem[] = [
   {
     question: "Should a literature review be double-spaced?",
     answer:
-      "Most university assignments and thesis regulations ask for double or one-and-a-half spacing; journals and proposals usually want single spacing. The template loads the setspace package and sets \\singlespacing in the preamble, so change that one line to \\onehalfspacing or \\doublespacing to meet your requirement. At double spacing the example runs to about seven pages.",
+      "Most university assignments and thesis regulations ask for double or one-and-a-half spacing; journals and proposals usually want single spacing. The template loads the setspace package and sets \\singlespacing in the preamble, so change that one line to \\onehalfspacing or \\doublespacing to meet your requirement. At double spacing the example runs to six pages.",
   },
 ];
 
@@ -78,7 +78,7 @@ export default function LiteratureReviewGuide() {
           ],
           [
             "Introduction",
-            "Why the question matters, the boundaries of the review, and the search strategy: databases, search terms, date range and inclusion criteria.",
+            "Why the question matters, the boundaries of the review, and how sources were found: databases, search terms and screening counts for a systematic review, or the selection logic and inclusion criteria for a selective one like the example.",
             "Two paragraphs",
           ],
           [
@@ -132,8 +132,8 @@ export default function LiteratureReviewGuide() {
         in four moves. It restates the aim: what is known about active learning
         in undergraduate STEM courses, for whom it works and how students
         perceive it. It states three claims with the supporting citations
-        attached: active learning improves achievement and lowers failure rates
-        by about half a standard deviation across disciplines; its benefits are
+        attached: active learning improves achievement by about half a standard deviation
+        and lowers failure rates across disciplines; its benefits are
         largest for underrepresented students, but only when the active
         component is substantial and the classroom is deliberately inclusive;
         and students systematically underestimate how much they learn from it,
@@ -186,10 +186,11 @@ export default function LiteratureReviewGuide() {
       <GuideP>
         The reference list already follows APA order (authors, year, title,
         journal, volume, issue, pages). For strict APA 7 formatting of the
-        citations and the hanging-indent reference list, load{" "}
-        <GuideCode>apacite</GuideCode> instead of <GuideCode>natbib</GuideCode>{" "}
-        and use <GuideCode>{"\\bibliographystyle{apacite}"}</GuideCode> with a{" "}
-        <GuideCode>.bib</GuideCode> file, or start from the{" "}
+        citations and the hanging-indent reference list, replace{" "}
+        <GuideCode>natbib</GuideCode> with{" "}
+        <GuideCode>{"\\usepackage[style=apa]{biblatex}"}</GuideCode> and a{" "}
+        <GuideCode>.bib</GuideCode> file compiled with biber (the older{" "}
+        <GuideCode>apacite</GuideCode> package implements APA 6), or start from the{" "}
         <GuideLink href="/templates/apa-student-paper">APA student paper template</GuideLink>{" "}
         and paste the sections in.
       </GuideP>
