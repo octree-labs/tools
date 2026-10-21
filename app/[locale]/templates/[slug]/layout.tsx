@@ -397,6 +397,13 @@ async function generateMetadataBase({
       'grad school statement latex',
     ],
     'literature-review': [
+      'literature review template',
+      'literature review example',
+      'literature review sample',
+      'literature review outline',
+      'literature review format',
+      'literature review conclusion example',
+      'literature review',
       'latex literature review template',
       'literature review latex template',
       'latex template literature review',
