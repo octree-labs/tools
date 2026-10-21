@@ -3081,126 +3081,157 @@ practical guidance about how much active learning is enough.
   {
     id: 38,
     title: "Meeting Minutes",
-    description: "Professional meeting minutes and notes template",
+    description: "Meeting minutes template with a complete example: header block, attendees and apologies, numbered agenda, decisions, action items table and approval line",
     slug: "meeting-minutes",
     previewUrl: "/templates/meeting-minutes.pdf",
     category: "Business",
+    seoTitle: "Meeting Minutes Template & Example (LaTeX) | Free Download",
+    seoDescription:
+      "Free meeting minutes template in LaTeX with a complete example: attendees, agenda, discussion, decisions and an action items table with owners and due dates.",
     code: String.raw`\documentclass[11pt]{article}
-\usepackage[margin=1in]{geometry}
-\usepackage{enumitem}
+\usepackage[margin=0.9in]{geometry}
 \usepackage{booktabs}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{accent}{RGB}{31,78,121}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+\pagestyle{plain}
+
+% ---- One agenda item: \agendaitem{number}{title}{presenter} ----
+\newcommand{\agendaitem}[3]{%
+  \par\vspace{8pt}%
+  {\large\bfseries\color{accent}#1.\quad #2}\hfill{\small\itshape Presented by #3}\par
+  \vspace{2pt}}
+% ---- Labelled lines inside an item ----
+\newcommand{\discussion}{\textbf{Discussion.}~}
+\newcommand{\decision}[1]{\par\textbf{Decision:}~#1\par}
+\newcommand{\action}[3]{\par\textbf{Action:}~#1 \hfill\textit{Owner: #2; due #3}\par}
 
 \begin{document}
 
-\begin{center}
-{\Large \textbf{Meeting Minutes}}\\[0.3cm]
-{\large [Organization/Department Name]}
-\end{center}
+% ================= Header block =================
+{\small\color{accent}\textsc{Northwind Software Ltd}}\\[2pt]
+{\LARGE\bfseries Product Council --- Weekly Sync}\\[2pt]
+{\large Minutes of meeting}
 
-\vspace{0.5cm}
-
-\noindent
-\begin{tabular}{ll}
-\textbf{Date:} & [Meeting Date] \\
-\textbf{Time:} & [Start Time] - [End Time] \\
-\textbf{Location:} & [Location/Virtual] \\
-\textbf{Facilitator:} & [Name] \\
-\textbf{Note Taker:} & [Name] \\
+\vspace{6pt}
+\begin{tabular}{@{}>{\bfseries}l l@{\hspace{2.5em}}>{\bfseries}l l@{}}
+Date:     & Tuesday 13 October 2026 & Chair:        & Priya Raman (VP Product) \\
+Time:     & 10:00--11:00 (BST)      & Minute-taker: & Tom Okafor \\
+Location: & Room 4B and video call  & Quorum:       & Yes \\
 \end{tabular}
 
-\section*{Attendees}
+\vspace{4pt}
+{\color{accent}\rule{\textwidth}{0.8pt}}
 
-\textbf{Present:}
-\begin{itemize}[noitemsep]
-\item Name 1 - Title
-\item Name 2 - Title
-\item Name 3 - Title
-\end{itemize}
-
-\textbf{Absent:}
-\begin{itemize}[noitemsep]
-\item Name 4 - Title (excused)
-\end{itemize}
-
+% ================= Attendance and agenda (side by side) =================
+\noindent
+\begin{minipage}[t]{0.56\textwidth}
+\section*{Attendees and apologies}
+\small
+\begin{tabular}{@{}l l l@{}}
+\toprule
+\textbf{Name} & \textbf{Role} & \textbf{Attendance} \\
+\midrule
+Priya Raman   & VP Product (Chair)       & Present \\
+Tom Okafor    & Product Ops (Minutes)    & Present \\
+Lena Fischer  & Eng.\ Manager, Platform  & Present \\
+Marcus Hall   & Head of Design           & Present \\
+Aisha Bello   & Customer Success Lead    & Remote \\
+Daniel Kim    & Finance Partner          & Item 4 only \\
+Sofia Duarte  & Head of Marketing        & Apologies \\
+\bottomrule
+\end{tabular}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.40\textwidth}
 \section*{Agenda}
-
-\begin{enumerate}
-\item Review of previous meeting minutes
-\item Project status updates
-\item New business
-\item Action items
-\item Next meeting
+\small
+\begin{enumerate}[label=\arabic*., leftmargin=*, itemsep=1pt, topsep=2pt]
+  \item Approval of the minutes of 6 October and matters arising
+  \item Release 4.2 readiness (go/no-go)
+  \item Customer feedback: onboarding drop-off
+  \item Q4 roadmap budget request
+  \item Any other business
 \end{enumerate}
+\end{minipage}
 
-\section*{Discussion}
+% ================= Items =================
+\section*{Minutes}
 
-\subsection*{1. Review of Previous Meeting Minutes}
+\agendaitem{1}{Approval of previous minutes}{Priya Raman}
+\discussion The minutes of 6 October were circulated on 7 October. Lena noted that
+the date for the API deprecation notice should read 1 December, not 1 November.
+All actions from the previous meeting are closed except A-07 (pricing page
+copy), which is carried forward below.
+\decision{Minutes approved with the one correction above.}
 
-The minutes from the [previous date] meeting were reviewed and approved without changes.
+\agendaitem{2}{Release 4.2 readiness}{Lena Fischer}
+\discussion Feature freeze was reached on 9 October. Two blocking defects remain:
+a sync conflict on shared workspaces (fix in review) and a crash on export with
+more than 500 rows (root cause found, fix due Thursday). Regression testing is
+92\% complete. Marcus confirmed the new settings screens have passed the
+accessibility review. Aisha asked for the release notes 48 hours before launch so
+the support team can prepare.
+\decision{Conditional \emph{go} for Tuesday 20 October, provided both blocking
+defects are closed and verified by Friday 16 October. If not, the release moves to
+27 October.}
+\action{Close and verify both blocking defects}{Lena Fischer}{16 Oct}
+\action{Share draft release notes with Customer Success}{Tom Okafor}{16 Oct}
 
-\subsection*{2. Project Status Updates}
+\agendaitem{3}{Onboarding drop-off}{Aisha Bello}
+\discussion Analytics show that 38\% of new trial accounts leave during step 3 of
+onboarding (connecting a data source). Support tickets point to unclear error
+messages when credentials are wrong. Marcus proposed a \textquotedblleft skip for now\textquotedblright{} option
+with sample data; Lena warned this needs a separate empty-state design for
+dashboards. The council agreed the problem is worth fixing this quarter.
+\decision{Design to prototype the sample-data option and test it with five trial
+users before any engineering work is scheduled.}
+\action{Prototype and test the sample-data onboarding path}{Marcus Hall}{30 Oct}
+\action{Rewrite the step-3 credential error messages}{Lena Fischer}{23 Oct}
 
-\textbf{Project A:}
-\begin{itemize}
-\item Current status: [status]
-\item Progress: [progress description]
-\item Challenges: [any issues]
-\end{itemize}
+\agendaitem{4}{Q4 roadmap budget request}{Priya Raman}
+\discussion Priya requested funding for one additional contract front-end engineer
+for 12 weeks to deliver the reporting module in Q4. Daniel confirmed the request
+fits within the unallocated Q4 product budget but asked for a written estimate
+with milestones before sign-off.
+\decision{Approved in principle, subject to Finance receiving the estimate.}
+\action{Send estimate and milestones to Finance}{Priya Raman}{19 Oct}
 
-\textbf{Project B:}
-\begin{itemize}
-\item Current status: [status]
-\item Progress: [progress description]
-\item Next steps: [upcoming tasks]
-\end{itemize}
+\agendaitem{5}{Any other business}{Chair}
+Sofia (absent) had asked by email for a decision on the pricing page copy (A-07).
+Deferred to next week because Sofia was not present to discuss it.
 
-\subsection*{3. New Business}
-
-\textbf{Topic 1:}
-[Discussion summary]. Decision: [decision made].
-
-\textbf{Topic 2:}
-[Discussion summary]. Action required: [action needed].
-
-\section*{Decisions Made}
-
-\begin{enumerate}
-\item Decision 1: [description]
-\item Decision 2: [description]
-\item Decision 3: [description]
-\end{enumerate}
-
-\section*{Action Items}
-
-\begin{center}
-\begin{tabular}{|p{5cm}|p{3cm}|p{2.5cm}|}
-\hline
-\textbf{Action Item} & \textbf{Responsible} & \textbf{Due Date} \\
-\hline
-Complete project proposal & John Smith & 2025-01-15 \\
-\hline
-Review budget document & Jane Doe & 2025-01-20 \\
-\hline
-Schedule follow-up meeting & Sarah Johnson & 2025-01-10 \\
-\hline
+% ================= Action items =================
+\section*{Action items}
+\begin{tabular}{@{}l >{\raggedright\arraybackslash}p{3.3in} l l l@{}}
+\toprule
+\textbf{ID} & \textbf{Action} & \textbf{Owner} & \textbf{Due} & \textbf{Status} \\
+\midrule
+A-07 & Final pricing page copy for review            & Sofia Duarte & 20 Oct & Carried forward \\
+A-11 & Close and verify Release 4.2 blocking defects & Lena Fischer & 16 Oct & Open \\
+A-12 & Share draft release notes with Customer Success & Tom Okafor & 16 Oct & Open \\
+A-13 & Prototype and test sample-data onboarding     & Marcus Hall  & 30 Oct & Open \\
+A-14 & Rewrite step-3 credential error messages      & Lena Fischer & 23 Oct & Open \\
+A-15 & Send reporting module estimate to Finance     & Priya Raman  & 19 Oct & Open \\
+\bottomrule
 \end{tabular}
-\end{center}
 
-\section*{Next Meeting}
+% ================= Next meeting and approval =================
+\section*{Next meeting}
+Tuesday 20 October 2026, 10:00--11:00, Room 4B and video call. Standing items plus
+the Release 4.2 launch review and the pricing page copy (A-07). Agenda items to
+Tom Okafor by Monday 19 October, 12:00.
 
-\begin{tabular}{ll}
-\textbf{Date:} & [Next Meeting Date] \\
-\textbf{Time:} & [Time] \\
-\textbf{Location:} & [Location] \\
-\textbf{Agenda Items:} & [Preview of topics] \\
+\vspace{18pt}
+\begin{tabular}{@{}p{0.45\textwidth}@{\hspace{0.08\textwidth}}p{0.45\textwidth}@{}}
+\rule{\linewidth}{0.4pt} & \rule{\linewidth}{0.4pt} \\
+Minutes recorded by: Tom Okafor & Approved by: Priya Raman, Chair \\
+Date circulated: 14 October 2026 & Date approved: \\
 \end{tabular}
-
-\vspace{1cm}
-
-\noindent
-\textbf{Minutes prepared by:} [Name]\\
-\textbf{Date:} [Date]\\
-\textbf{Approved by:} [Name, Title]
 
 \end{document}`,
   },
