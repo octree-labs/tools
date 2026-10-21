@@ -2867,7 +2867,7 @@ achievement gaps for underrepresented students, and the mismatch between
 how much students learn and how much they feel they learn. Across
 meta-analyses and course-level studies, active learning raises exam and
 concept-inventory scores by roughly half a standard deviation, lowers
-failure rates and narrows achievement gaps, but students often rate it
+failure rates and narrows achievement gaps, but students can rate it
 below a polished lecture. The review closes by identifying gaps in dosage,
 long-term retention and replication beyond physics and biology.
 \end{abstract}
@@ -2883,16 +2883,18 @@ not always recognise them. The scope is limited to undergraduate STEM
 courses in which an active-learning format was compared with
 lecture-based instruction on a measured learning outcome.
 
-Sources were identified by searching ERIC, Web of Science and Google
-Scholar for the terms \emph{active learning}, \emph{interactive
-engagement} and \emph{peer instruction} combined with \emph{undergraduate}
-and \emph{STEM}, \emph{physics} or \emph{biology}, and by following
-citations from the two meta-analyses that the search returned. Studies
-were included if they (1) were published in a peer-reviewed venue between
-1998 and 2020, (2) involved undergraduate STEM courses, and (3) reported
-an empirical comparison with lecture-based instruction or a quantitative
-synthesis of such comparisons. Seven studies met these criteria;
-Table~\ref{tab:studies} summarises them.
+Because this is a short illustrative review rather than a systematic one,
+sources were selected purposively rather than screened from a database
+search. The two largest meta-analyses in the area
+\citep{freeman2014,theobald2020} served as anchors, and widely cited
+primary studies and reviews were added around them. Sources were retained
+if they (1) were published in a peer-reviewed journal, (2) concerned
+undergraduate STEM courses, and (3) compared active learning with
+lecture-based instruction on a measured outcome, either directly or by
+synthesising such comparisons. Seven studies published between 1998 and
+2020 were selected; a systematic review would also report the databases
+searched, the exact search strings and the number of records screened at
+each stage. Table~\ref{tab:studies} summarises them.
 
 \section{Thematic Review}
 
@@ -2904,9 +2906,9 @@ Force Concept Inventory and the earlier Mechanics Diagnostic test, he
 found that the 14 traditional courses averaged $\langle g \rangle = 0.23
 \pm 0.04$ while the 48 courses that made substantial use of
 interactive-engagement methods averaged $0.48 \pm 0.14$, almost two
-standard deviations higher. \citet{prince2004} reviewed the same body of
-work for engineering faculty and concluded that there was \textquotedblleft broad but
-uneven support\textquotedblright for the core elements of active, collaborative,
+standard deviations higher. \citet{prince2004} surveyed the wider research base
+for engineering faculty and concluded that there was \textquotedblleft broad but
+uneven support\textquotedblright{} for the core elements of active, collaborative,
 cooperative and problem-based learning. The most comprehensive estimate
 is the meta-analysis by \citet{freeman2014}, which pooled 225 studies
 across STEM disciplines. Active learning raised examination and
@@ -2928,13 +2930,12 @@ about 3\,\%, but Black students gained roughly twice as much, halving the
 gap with white students, and first-generation students closed the gap
 with continuing-generation peers. \citet{theobald2020} generalised this
 result in a meta-analysis of student-level data from 15 studies of exam
-scores (9,238 examinations) and 26 studies of passing rates (44,606
+scores (9,238 students) and 26 studies of passing rates (44,606
 students): active learning narrowed achievement gaps by 33\,\% on exam
-scores and by 45\,\% on passing rates. The narrowing was concentrated in
-courses with high-intensity active learning, defined as at least two
-thirds of class time spent on active work, which led the authors to
-propose that gaps close only when deliberate practice is combined with
-inclusive teaching.
+scores and by 45\,\% on passing rates. Only courses with high-intensity active learning,
+in which students spent a large share of class time on active work,
+narrowed the gaps, which led the authors to propose that gaps close only
+when deliberate practice is combined with inclusive teaching.
 
 \subsection{Student perception and implementation}
 The third theme concerns how students experience active learning.
@@ -2944,8 +2945,9 @@ conceptual reasoning and quantitative problem solving and describing
 refinements such as replacing in-class reading quizzes with pre-class
 written responses. \citet{deslauriers2019} then isolated the question of
 perception with a randomised crossover experiment in which 149 students
-in a calculus-based physics course were taught one topic actively and
-another by lecture, with identical content and slides. Students in the
+in two offerings of a calculus-based introductory physics course were
+taught one topic actively and another by lecture, with identical slides
+and handouts. Students in the
 active condition scored almost half a standard deviation higher on a
 test of learning (standardised coefficient 0.46) but rated their own
 learning more than half a standard deviation lower ($-0.56$). The authors
@@ -2997,7 +2999,7 @@ cohorts or sections rather than randomly assigned students, so differences
 in instructor enthusiasm or student self-selection cannot be ruled out;
 only \citet{deslauriers2019} randomised at the student level, and that
 study covered two class meetings rather than a semester.
-Second, \textquotedblleft active learning\textquotedblright is defined loosely. \citet{freeman2014}
+Second, \textquotedblleft active learning\textquotedblright{} is defined loosely. \citet{freeman2014}
 accepted any format in which students did more than listen, whereas
 \citet{theobald2020} found that only high-intensity formats narrowed
 gaps, which suggests that pooled effect sizes hide large differences in
@@ -3010,9 +3012,10 @@ in the United States, and several of the key studies share authors and
 institutions.
 
 \section{Gaps and Future Directions}
-Three gaps follow from this critique. The first is dosage: no study in the
-set varies the proportion of class time given to active work
-systematically, so the threshold at which benefits appear is unknown. The
+Three gaps follow from this critique. The first is dosage: \citet{theobald2020}
+compared intensity only across studies, and no study in the set varies the
+proportion of class time given to active work within a course, so the
+threshold at which benefits appear is unknown. The
 second is retention: outcomes are measured at the end of a class or a
 term, and there is little evidence on whether the gains persist into later
 courses or into professional practice. The third is generalisation beyond
