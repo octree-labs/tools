@@ -16,6 +16,7 @@ import JakesResumeGuide from "./jakes-resume";
 import LabReportGuide from "./lab-report";
 import LetterOfRecommendationGuide from "./letter-of-recommendation";
 import LiteratureReviewGuide from "./literature-review";
+import MeetingMinutesGuide from "./meeting-minutes";
 import MlaPaperGuide from "./mla-paper";
 import MlaWorksCitedGuide from "./mla-works-cited";
 import Neurips2027Guide from "./neurips-2027";
@@ -46,6 +47,7 @@ const templateGuides: Record<string, ComponentType> = {
   "lab-report": LabReportGuide,
   "letter-of-recommendation": LetterOfRecommendationGuide,
   "literature-review": LiteratureReviewGuide,
+  "meeting-minutes": MeetingMinutesGuide,
   "mla-paper": MlaPaperGuide,
   "mla-works-cited": MlaWorksCitedGuide,
   "neurips-2027": Neurips2027Guide,

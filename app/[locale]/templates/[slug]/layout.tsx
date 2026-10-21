@@ -409,6 +409,13 @@ async function generateMetadataBase({
       'latex template literature review',
     ],
     'meeting-minutes': [
+      'meeting minutes template',
+      'meeting minutes example',
+      'minutes of meeting format',
+      'meeting notes template',
+      'board meeting minutes template',
+      'agenda template',
+      'meeting minutes',
       'latex meeting minutes template',
       'meeting minutes latex template',
       'minutes template latex',
