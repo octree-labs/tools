@@ -3195,7 +3195,7 @@ users before any engineering work is scheduled.}
 
 \agendaitem{4}{Q4 roadmap budget request}{Priya Raman}
 \discussion Priya requested funding for one additional contract front-end engineer
-for 12 weeks to deliver the reporting module in Q4. Daniel confirmed the request
+for ten weeks to deliver the reporting module by the end of Q4. Daniel confirmed the request
 fits within the unallocated Q4 product budget but asked for a written estimate
 with milestones before sign-off.
 \decision{Approved in principle, subject to Finance receiving the estimate.}

@@ -36,7 +36,7 @@ const faq: GuideFaqItem[] = [
   {
     question: "How soon after a meeting should minutes be sent out?",
     answer:
-      "Within one or two working days while everyone still remembers the meeting, and always well before the next one, so owners can start on their actions. The example was circulated the day after the meeting, a week before the next one.",
+      "Within one or two working days while everyone still remembers the meeting, and always well before the next one, so owners can start on their actions. The example was circulated the day after the meeting, six days before the next one.",
   },
 ];
 
