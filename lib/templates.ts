@@ -2830,114 +2830,251 @@ Thank you for considering my application.
   {
     id: 37,
     title: "Literature Review",
-    description: "Academic literature review with citations",
+    description: "Literature review template with a complete example: introduction and search strategy, thematic sections, study summary table, critique, gaps and references",
     slug: "literature-review",
     previewUrl: "/templates/literature-review.pdf",
     category: "Academic",
-    code: String.raw`\documentclass[12pt]{article}
+    seoTitle: "Literature Review Template & Example (LaTeX) | Free Download",
+    seoDescription:
+      "Free literature review template in LaTeX with a complete example: thematic sections, study summary table, critique, conclusion and author-year references.",
+    code: String.raw`\documentclass[11pt]{article}
 \usepackage[margin=1in]{geometry}
 \usepackage{setspace}
-\usepackage{natbib}
-\doublespacing
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage[round]{natbib}
+\usepackage[hidelinks]{hyperref}
+\singlespacing  % switch to \onehalfspacing or \doublespacing if required
 
-\title{Literature Review:\\
-{[}Topic Name{]}}
-\author{Your Name}
+% ---- Title block: edit the title, author, course and date ----
+\title{Active Learning in Undergraduate STEM Courses:\\
+  A Literature Review of Achievement, Equity and Student Perception}
+\author{Your Name \\[4pt]
+  \normalsize Department of Education, University Name \\
+  \normalsize \texttt{your.email@university.edu}}
 \date{\today}
 
 \begin{document}
-
 \maketitle
 
+\begin{abstract}
+\noindent
+This literature review synthesises seven studies of active learning in
+undergraduate science, technology, engineering and mathematics (STEM)
+courses published between 1998 and 2020. Three themes organise the
+evidence: effects on achievement and failure rates, effects on
+achievement gaps for underrepresented students, and the mismatch between
+how much students learn and how much they feel they learn. Across
+meta-analyses and course-level studies, active learning raises exam and
+concept-inventory scores by roughly half a standard deviation, lowers
+failure rates and narrows achievement gaps, but students can rate it
+below a polished lecture. The review closes by identifying gaps in dosage,
+long-term retention and replication beyond physics and biology.
+\end{abstract}
+
 \section{Introduction}
+Lecturing has been the default mode of undergraduate STEM instruction for
+more than a century, yet a growing body of research argues that students
+learn more when they spend class time solving problems, answering
+conceptual questions and discussing their reasoning with peers
+\citep{prince2004,freeman2014}. This literature review examines what that
+research has established, for whom the benefits hold, and why students do
+not always recognise them. The scope is limited to undergraduate STEM
+courses in which an active-learning format was compared with
+lecture-based instruction on a measured learning outcome.
 
-This literature review examines the current state of research on [topic]. The review synthesizes findings from [time period] and identifies key themes, methodologies, and gaps in the literature.
+Because this is a short illustrative review rather than a systematic one,
+sources were selected purposively rather than screened from a database
+search. The two largest meta-analyses in the area
+\citep{freeman2014,theobald2020} served as anchors, and widely cited
+primary studies and reviews were added around them. Sources were retained
+if they (1) were published in a peer-reviewed journal, (2) concerned
+undergraduate STEM courses, and (3) compared active learning with
+lecture-based instruction on a measured outcome, either directly or by
+synthesising such comparisons. Seven studies published between 1998 and
+2020 were selected; a systematic review would also report the databases
+searched, the exact search strings and the number of records screened at
+each stage. Table~\ref{tab:studies} summarises them.
 
-\subsection{Purpose and Scope}
+\section{Thematic Review}
 
-The purpose of this review is to [purpose]. This review covers [scope] and focuses on [specific aspects].
+\subsection{Achievement and failure rates}
+The earliest large-scale evidence comes from \citet{hake1998}, who
+collected pre- and post-test data from 62 introductory physics courses
+with 6,542 students. Using the normalised gain $\langle g \rangle$ on the
+Force Concept Inventory and the earlier Mechanics Diagnostic test, he
+found that the 14 traditional courses averaged $\langle g \rangle = 0.23
+\pm 0.04$ while the 48 courses that made substantial use of
+interactive-engagement methods averaged $0.48 \pm 0.14$, almost two
+standard deviations higher. \citet{prince2004} surveyed the wider research base
+for engineering faculty and concluded that there was \textquotedblleft broad but
+uneven support\textquotedblright{} for the core elements of active, collaborative,
+cooperative and problem-based learning. The most comprehensive estimate
+is the meta-analysis by \citet{freeman2014}, which pooled 225 studies
+across STEM disciplines. Active learning raised examination and
+concept-inventory scores by 0.47 standard deviations, and the mean
+failure rate fell from 33.8\,\% under traditional lecturing to 21.8\,\%
+under active learning, so students in lecture courses were about 1.5
+times more likely to fail. The effect was present in every discipline
+examined and was largest in classes of fifty or fewer students.
 
-\section{Methodology}
+\subsection{Equity: who benefits most}
+A second line of research asks whether active learning narrows the
+achievement gaps that persist between well-represented and
+underrepresented students. \citet{eddy2014} compared three terms of a
+low-structure introductory biology course with three terms of a
+moderate-structure version taught by the same instructor, which added
+guided reading, graded preparatory homework and in-class activities. The
+moderate-structure design raised exam performance for all students by
+about 3\,\%, but Black students gained roughly twice as much, halving the
+gap with white students, and first-generation students closed the gap
+with continuing-generation peers. \citet{theobald2020} generalised this
+result in a meta-analysis of student-level data from 15 studies of exam
+scores (9,238 students) and 26 studies of passing rates (44,606
+students): active learning narrowed achievement gaps by 33\,\% on exam
+scores and by 45\,\% on passing rates. Only courses with high-intensity active learning,
+in which students spent a large share of class time on active work,
+narrowed the gaps, which led the authors to propose that gaps close only
+when deliberate practice is combined with inclusive teaching.
 
-\subsection{Search Strategy}
+\subsection{Student perception and implementation}
+The third theme concerns how students experience active learning.
+\citet{crouch2001} reported ten years of Peer Instruction in introductory
+physics courses for non-majors at Harvard, documenting gains in both
+conceptual reasoning and quantitative problem solving and describing
+refinements such as replacing in-class reading quizzes with pre-class
+written responses. \citet{deslauriers2019} then isolated the question of
+perception with a randomised crossover experiment in which 149 students
+in two offerings of a calculus-based introductory physics course were
+taught one topic actively and another by lecture, with identical slides
+and handouts. Students in the
+active condition scored almost half a standard deviation higher on a
+test of learning (standardised coefficient 0.46) but rated their own
+learning more than half a standard deviation lower ($-0.56$). The authors
+attribute the gap to the greater cognitive effort that active work
+demands, which novices read as a sign that they are learning less, and
+they recommend that instructors explain the method early in the term.
 
-A systematic search was conducted using databases including [databases]. Search terms included: [keywords]. The initial search yielded [N] papers, which were reduced to [M] after applying inclusion criteria.
+\begin{table}[htbp]
+  \centering
+  \caption{Studies included in the review.}
+  \label{tab:studies}
+  \small
+  \begin{tabular}{>{\raggedright\arraybackslash}p{3.2cm}
+                  >{\raggedright\arraybackslash}p{2.9cm}
+                  >{\raggedright\arraybackslash}p{3.0cm}
+                  >{\raggedright\arraybackslash}p{5.6cm}}
+    \toprule
+    Study & Design & Sample & Main finding \\
+    \midrule
+    Hake (1998) & Multi-course pre/post survey & 62 physics courses, 6,542 students &
+      Interactive engagement roughly doubled the normalised gain
+      (0.48 vs.\ 0.23). \\
+    Crouch and Mazur (2001) & Ten-year course case study & Harvard introductory
+      physics for non-majors & Peer Instruction improved conceptual reasoning
+      and problem solving. \\
+    Prince (2004) & Narrative review & Engineering education literature &
+      Broad but uneven support for active, collaborative, cooperative and
+      problem-based learning. \\
+    Eddy and Hogan (2014) & Quasi-experiment, six terms & One introductory biology
+      course, about 393 students per term & Moderate structure raised all
+      scores and halved the Black--white gap. \\
+    Freeman et al.\ (2014) & Meta-analysis & 225 studies across STEM &
+      Scores up 0.47 SD; failure rate 21.8\,\% vs.\ 33.8\,\%. \\
+    Deslauriers et al.\ (2019) & Randomised crossover & 149 physics students &
+      Active sections learned more but felt they learned less. \\
+    Theobald et al.\ (2020) & Meta-analysis of student-level data &
+      15 studies (exams), 26 studies (pass rates) & Gaps narrowed by 33\,\% on
+      exams and 45\,\% on passing rates. \\
+    \bottomrule
+  \end{tabular}
+\end{table}
 
-\subsection{Inclusion Criteria}
-
-Papers were included if they: (1) [criterion 1]; (2) [criterion 2]; (3) [criterion 3].
-
-\section{Theoretical Framework}
-
-\subsection{Key Concepts}
-
-The literature on [topic] is grounded in several theoretical frameworks \citep{author2020}. The dominant paradigm suggests that [theoretical perspective].
-
-\subsection{Evolution of the Field}
-
-Early work by \citet{pioneer1990} established the foundation by [contribution]. This was extended by \citet{developer2000} who demonstrated [advancement].
-
-\section{Major Themes}
-
-\subsection{Theme 1: [Theme Name]}
-
-Research on [theme 1] has shown that [findings]. \citet{author2019} found that [specific finding], while \citet{author2021} argued that [contrasting view].
-
-Key findings include:
-\begin{itemize}
-\item Finding 1 \citep{ref1}
-\item Finding 2 \citep{ref2}
-\item Finding 3 \citep{ref3}
-\end{itemize}
-
-\subsection{Theme 2: [Theme Name]}
-
-Another significant area of research focuses on [theme 2]. Studies have demonstrated \citep{author2018,author2020} that [findings].
-
-\subsection{Theme 3: [Theme Name]}
-
-Recent investigations into [theme 3] reveal [findings]. However, \citet{critic2022} cautions that [limitation or critique].
-
-\section{Methodological Approaches}
-
-\subsection{Quantitative Studies}
-
-Quantitative research employing [methods] has been predominant \citep{author2017}. These studies typically [characteristics].
-
-\subsection{Qualitative Studies}
-
-Qualitative approaches, including [methods], have provided rich insights into [aspects] \citep{author2019}.
-
-\subsection{Mixed Methods}
-
-Recent work has increasingly adopted mixed methods approaches \citep{author2021} to capture [advantages].
+\section{Methodological Critique}
+The strength of this literature lies in its convergence: a six-thousand-student
+survey, two meta-analyses, a six-term course comparison and a randomised
+experiment point in the same direction. Its weaknesses are also consistent.
+First, most primary studies are quasi-experimental, comparing different
+cohorts or sections rather than randomly assigned students, so differences
+in instructor enthusiasm or student self-selection cannot be ruled out;
+only \citet{deslauriers2019} randomised at the student level, and that
+study covered two class meetings rather than a semester.
+Second, \textquotedblleft active learning\textquotedblright{} is defined loosely. \citet{freeman2014}
+accepted any format in which students did more than listen, whereas
+\citet{theobald2020} found that only high-intensity formats narrowed
+gaps, which suggests that pooled effect sizes hide large differences in
+dosage. Third, outcome measures vary from concept inventories to course
+grades; \citet{freeman2014} themselves note that effects are larger on
+concept inventories than on course examinations, so the headline effect
+size depends on what is counted as learning. Finally, the evidence is
+concentrated in introductory physics and biology at research universities
+in the United States, and several of the key studies share authors and
+institutions.
 
 \section{Gaps and Future Directions}
-
-\subsection{Identified Gaps}
-
-Despite extensive research, several gaps remain:
-\begin{enumerate}
-\item Limited research on [gap 1]
-\item Insufficient attention to [gap 2]
-\item Need for [gap 3]
-\end{enumerate}
-
-\subsection{Recommendations for Future Research}
-
-Future research should:
-\begin{itemize}
-\item Address [recommendation 1]
-\item Investigate [recommendation 2]
-\item Develop [recommendation 3]
-\end{itemize}
+Three gaps follow from this critique. The first is dosage: \citet{theobald2020}
+compared intensity only across studies, and no study in the set varies the
+proportion of class time given to active work within a course, so the
+threshold at which benefits appear is unknown. The
+second is retention: outcomes are measured at the end of a class or a
+term, and there is little evidence on whether the gains persist into later
+courses or into professional practice. The third is generalisation beyond
+the dominant settings, including community colleges, mathematics and
+engineering courses, and institutions outside North America. Future
+research should combine student-level randomisation with semester-long
+interventions, report the intensity of active learning explicitly, and
+follow students across subsequent courses.
 
 \section{Conclusion}
+This literature review set out to establish what is known about active
+learning in undergraduate STEM courses, for whom it works and how students
+perceive it. The evidence reviewed supports three claims. Active learning
+improves achievement and lowers failure rates relative to lecturing, with
+an effect of about half a standard deviation that holds across
+disciplines \citep{hake1998,freeman2014}. Its benefits are largest for
+students from underrepresented groups, but only when the active component
+is substantial and the classroom is deliberately inclusive
+\citep{eddy2014,theobald2020}. And students systematically underestimate
+how much they learn from it, which means that course evaluations are an
+unreliable guide to effectiveness \citep{deslauriers2019}. The main
+limitations of the literature are its reliance on quasi-experimental
+designs, loose definitions of the intervention and short follow-up
+periods. Research that measures dosage, tracks retention and extends the
+evidence to new settings would turn a strong general finding into
+practical guidance about how much active learning is enough.
 
-This literature review has synthesized current knowledge on [topic]. The review reveals that [summary of findings]. Moving forward, research should address identified gaps and explore [future directions].
-
-\bibliographystyle{apalike}
-\bibliography{references}
+\begin{thebibliography}{9}
+  \bibitem[Crouch and Mazur(2001)]{crouch2001}
+    Crouch, C.~H., and Mazur, E. (2001). Peer Instruction: Ten years of
+    experience and results. \emph{American Journal of Physics}, 69(9),
+    970--977.
+  \bibitem[Deslauriers et al.(2019)]{deslauriers2019}
+    Deslauriers, L., McCarty, L.~S., Miller, K., Callaghan, K., and Kestin, G.
+    (2019). Measuring actual learning versus feeling of learning in response
+    to being actively engaged in the classroom. \emph{Proceedings of the
+    National Academy of Sciences}, 116(39), 19251--19257.
+  \bibitem[Eddy and Hogan(2014)]{eddy2014}
+    Eddy, S.~L., and Hogan, K.~A. (2014). Getting under the hood: How and for
+    whom does increasing course structure work? \emph{CBE---Life Sciences
+    Education}, 13(3), 453--468.
+  \bibitem[Freeman et al.(2014)]{freeman2014}
+    Freeman, S., Eddy, S.~L., McDonough, M., Smith, M.~K., Okoroafor, N.,
+    Jordt, H., and Wenderoth, M.~P. (2014). Active learning increases student
+    performance in science, engineering, and mathematics. \emph{Proceedings
+    of the National Academy of Sciences}, 111(23), 8410--8415.
+  \bibitem[Hake(1998)]{hake1998}
+    Hake, R.~R. (1998). Interactive-engagement versus traditional methods: A
+    six-thousand-student survey of mechanics test data for introductory
+    physics courses. \emph{American Journal of Physics}, 66(1), 64--74.
+  \bibitem[Prince(2004)]{prince2004}
+    Prince, M. (2004). Does active learning work? A review of the research.
+    \emph{Journal of Engineering Education}, 93(3), 223--231.
+  \bibitem[Theobald et al.(2020)]{theobald2020}
+    Theobald, E.~J., Hill, M.~J., Tran, E., et al. (2020). Active learning
+    narrows achievement gaps for underrepresented students in undergraduate
+    science, technology, engineering, and math. \emph{Proceedings of the
+    National Academy of Sciences}, 117(12), 6476--6483.
+\end{thebibliography}
 
 \end{document}`,
   },
