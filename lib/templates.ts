@@ -9680,9 +9680,9 @@ platform or infrastructure team.
     slug: "mla-paper",
     previewUrl: "/templates/mla-paper.pdf",
     category: "Academic",
-    seoTitle: "MLA Format Paper Template (MLA 9) | Heading, Header & Works Cited",
+    seoTitle: "MLA Format Example & Paper Template (MLA 9) | Free LaTeX",
     seoDescription:
-      "Free MLA 9 paper template in LaTeX: four-line heading, Lastname page-number header, double spacing, 1-inch margins, block quote and Works Cited page.",
+      "MLA format example and free LaTeX template: four-line heading, Lastname page header, title, double-spaced body, block quote and Works Cited page, all MLA 9.",
     code: String.raw`% MLA 9 Paper Format
 % ------------------
 % A complete essay laid out according to the MLA Handbook, 9th edition:
