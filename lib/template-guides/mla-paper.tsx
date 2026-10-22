@@ -14,6 +14,11 @@ import {
 
 const faq: GuideFaqItem[] = [
   {
+    question: "Is this an MLA format example or a template?",
+    answer:
+      "Both. The compiled PDF in the preview is an MLA format example: a finished two-page paper with the running header, four-line heading, centred title, double-spaced body, an in-text citation, a block quote and a Works Cited page, all set to MLA 9. The .tex source is the template: change the six commands at the top (name, last name, instructor, course, date, title), replace the sample paragraphs with your essay and the two entries with your sources, and the layout stays correct.",
+  },
+  {
     question: "What is the MLA heading?",
     answer:
       "The MLA heading is the four-line block at the top left of the first page: your full name, your instructor's name, the course name or number, and the date written day month year (19 October 2026). Each item sits on its own line, double spaced like the rest of the paper, with no blank line between them. The title follows on the next line, centred. The heading appears only on page 1; every page also carries the running header.",
@@ -62,7 +67,8 @@ export default function MlaPaperGuide() {
         with one-inch margins and half-inch paragraph indents, a block quotation, an
         in-text citation in the Author page form, and a Works Cited page on its own sheet
         with hanging indents. A short two-paragraph sample essay shows each rule in use, so
-        you can compare your own draft against the preview above.
+        the preview above doubles as an MLA format example you can compare your own draft
+        against.
       </GuideP>
       <GuideP>
         The document class is plain <GuideCode>article</GuideCode>; there is no MLA class
@@ -73,6 +79,69 @@ export default function MlaPaperGuide() {
         <GuideCode>\entry</GuideCode> command defined in the preamble. It compiles with
         pdfLaTeX on any TeX distribution and in Overleaf without changes.
       </GuideP>
+
+      <GuideH2 id="format-example">MLA format example</GuideH2>
+      <GuideP>
+        The preview above is a complete MLA format example: a two-page paper that follows
+        the 9th edition exactly. Reading the first page from top to bottom, this is what
+        you see and why each element is there:
+      </GuideP>
+      <GuideOl>
+        <li>
+          <strong>Running header.</strong> <em>Smith 1</em> in the top right corner, half
+          an inch from the top edge and flush with the right margin: the writer&apos;s
+          last name, a space and the page number, with no &ldquo;p.&rdquo; or comma. It
+          repeats on every page.
+        </li>
+        <li>
+          <strong>Four-line heading.</strong> One inch from the top, flush left:{" "}
+          <em>Jordan Smith</em>, <em>Professor Elena Marquez</em>, <em>English 102</em>,{" "}
+          <em>19 October 2026</em>. That is student, instructor, course and date, one per
+          line, with the date in day Month year order and no commas. This MLA heading
+          example appears on page 1 only.
+        </li>
+        <li>
+          <strong>Title.</strong> On the next line, centred:{" "}
+          <em>Reading the City: Memory and Place in Contemporary Fiction</em>. It is in
+          title case and in the same 12-point font as the body, with no bold, underlining,
+          italics, quotation marks or larger size.
+        </li>
+        <li>
+          <strong>First paragraph.</strong> Starts directly below the title with a
+          half-inch first-line indent. There is no extra space between the heading, the
+          title and the text; everything is double spaced, with a ragged right edge and
+          one-inch margins.
+        </li>
+        <li>
+          <strong>In-text citation.</strong> A short quotation in quotation marks is
+          followed by <em>(Alvarez 47)</em>: author&apos;s last name and page number, no
+          comma and no &ldquo;p.&rdquo;, placed before the sentence&apos;s period.
+        </li>
+        <li>
+          <strong>Block quote.</strong> The second paragraph ends with a colon and a
+          quotation longer than four lines, indented half an inch from the left margin,
+          still double spaced, with no quotation marks. The citation{" "}
+          <em>(Okafor 118)</em> comes after the final period. The sentence that follows
+          returns to the left margin without a paragraph indent.
+        </li>
+      </GuideOl>
+      <GuideP>
+        <strong>Works Cited page.</strong> Page 2 starts on a new page with the header{" "}
+        <em>Smith 2</em> and the title <em>Works Cited</em> centred in plain text. The two
+        sources are listed alphabetically by the author&apos;s last name (Alvarez, then
+        Okafor), double spaced, each with a half-inch hanging indent so the second line of
+        the Okafor entry is indented and the author names stand out at the left margin.
+      </GuideP>
+      <GuideP>
+        In the source, the information that fills the heading and title is collected in
+        six commands so you only edit the top of the file:
+      </GuideP>
+      <GuidePre>{`\\newcommand{\\studentname}{Jordan Smith}
+\\newcommand{\\lastname}{Smith}          % printed in the running header
+\\newcommand{\\instructor}{Professor Elena Marquez}
+\\newcommand{\\course}{English 102}
+\\newcommand{\\duedate}{19 October 2026}  % MLA date order: day month year
+\\newcommand{\\papertitle}{Reading the City: Memory and Place in Contemporary Fiction}`}</GuidePre>
 
       <GuideH2 id="heading-and-header">MLA heading and header</GuideH2>
       <GuideP>
@@ -118,40 +187,6 @@ export default function MlaPaperGuide() {
         a <GuideCode>\\</GuideCode> line break ends the paragraph, so without it lines two
         to four would pick up the half-inch first-line indent.
       </GuideP>
-
-      <GuideH2 id="format-example">MLA format example</GuideH2>
-      <GuideP>
-        Here is what the first page of the template looks like once compiled, element by
-        element. In the top right corner, half an inch from the top, sits the header{" "}
-        <em>Smith 1</em>. One inch from the top and the left edge the heading begins, four
-        double-spaced lines flush left: <em>Jordan Smith</em>, then{" "}
-        <em>Professor Elena Marquez</em>, then <em>English 102</em>, then{" "}
-        <em>19 October 2026</em>. On the next line, centred, the title{" "}
-        <em>Reading the City: Memory and Place in Contemporary Fiction</em> in ordinary
-        12-point type, with no bold, underlining or quotation marks. The first paragraph
-        starts on the line after the title, indented half an inch, and the text runs
-        double spaced with a ragged right edge to the one-inch margins.
-      </GuideP>
-      <GuideP>
-        The second paragraph ends with a colon and a block quotation indented half an inch
-        from the left margin, with no quotation marks and the citation{" "}
-        <em>(Okafor 118)</em> after the closing period. The sentence that continues the
-        paragraph after the quote returns to the left margin without a new indent. The
-        first paragraph contains a short quotation inside quotation marks followed by the
-        in-text citation <em>(Alvarez 47)</em> before the sentence&apos;s period. Page 2
-        carries the header <em>Smith 2</em>, the title <em>Works Cited</em> centred, and
-        two entries with hanging indents, alphabetised by the authors&apos; surnames.
-      </GuideP>
-      <GuideP>
-        In the source, the information that fills the heading and title is collected in
-        six commands so you only edit the top of the file:
-      </GuideP>
-      <GuidePre>{`\\newcommand{\\studentname}{Jordan Smith}
-\\newcommand{\\lastname}{Smith}          % printed in the running header
-\\newcommand{\\instructor}{Professor Elena Marquez}
-\\newcommand{\\course}{English 102}
-\\newcommand{\\duedate}{19 October 2026}  % MLA date order: day month year
-\\newcommand{\\papertitle}{Reading the City: Memory and Place in Contemporary Fiction}`}</GuidePre>
 
       <GuideH2 id="rules">MLA paper format rules</GuideH2>
       <GuideP>
