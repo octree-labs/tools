@@ -118,11 +118,14 @@ export default function MlaPaperGuide() {
           comma and no &ldquo;p.&rdquo;, placed before the sentence&apos;s period.
         </li>
         <li>
-          <strong>Block quote.</strong> The second paragraph ends with a colon and a
-          quotation longer than four lines, indented half an inch from the left margin,
-          still double spaced, with no quotation marks. The citation{" "}
+          <strong>Block quote.</strong> Partway through the second paragraph, a sentence
+          ending in a colon introduces a block quotation: indented half an inch from the
+          left margin, still double spaced, with no quotation marks. MLA calls for this
+          layout when a prose quotation would run to more than four lines of your text;
+          the three-line sample is kept short to show the format. The citation{" "}
           <em>(Okafor 118)</em> comes after the final period. The sentence that follows
-          returns to the left margin without a paragraph indent.
+          continues the same paragraph, so it returns to the left margin without an
+          indent.
         </li>
       </GuideOl>
       <GuideP>
