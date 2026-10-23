@@ -519,8 +519,8 @@
       "description": "Book or thesis chapter template"
     },
     "resume": {
-      "title": "Resume",
-      "description": "Professional resume template"
+      "title": "LaTeX Resume Template (Overleaf-Compatible)",
+      "description": "Professional one-page resume template that compiles unchanged in Overleaf"
     },
     "grading-rubric": {
       "title": "Grading Rubric",
@@ -779,8 +779,8 @@
       "description": "Click-to-reveal study guide with hidden answers - perfect for self-testing"
     },
     "jakes-resume": {
-      "title": "Jake's Resume",
-      "description": "Clean, ATS-friendly single-column resume template"
+      "title": "Jake's Resume Template (LaTeX, Overleaf-Compatible)",
+      "description": "Clean, ATS-friendly single-column resume template that compiles unchanged in Overleaf"
     },
     "harvard-resume": {
       "title": "Harvard Resume",
