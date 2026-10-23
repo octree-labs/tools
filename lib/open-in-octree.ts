@@ -32,6 +32,18 @@ export function appUrl(
   return url.toString();
 }
 
+/**
+ * Properties for `open_in_octree_clicked` on a plain link to the app
+ * (`kind: 'link'`). `source` equals `placement` (as it does for every draft
+ * click in production), so link clicks such as `tools:templates:<slug>:cta`
+ * never share a `source` with the draft clicks (`tools:templates:<slug>`) and
+ * do not inflate source-grouped draft conversion.
+ */
+export function linkClickProps(placement: string) {
+  const resolved = normalizePlacement(placement);
+  return { source: resolved, placement: resolved, kind: 'link' as const };
+}
+
 export interface OpenInOctreeOptions {
   latex: string;
   title?: string;
@@ -53,7 +65,8 @@ export interface DraftPayload {
 /**
  * Submit a top-level form POST to the app's drafts endpoint. A real navigation
  * (not fetch) avoids CORS and carries large payloads; the app handles auth and
- * redirects (copying utm_* from the action URL onto its redirect). Every
+ * redirects (octree-labs/octree#426 copies utm_* from the action URL onto its
+ * redirect; until it ships, draft visitors lose utm at the 303). Every
  * Open-in-Octree path must go through here.
  */
 export function postDraftForm({ latex, title, source, placement }: DraftPayload) {

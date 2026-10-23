@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { APP_ORIGIN, DRAFTS_ENDPOINT, appUrl, normalizePlacement, postDraftForm } from '../lib/open-in-octree';
+import { APP_ORIGIN, DRAFTS_ENDPOINT, appUrl, linkClickProps, normalizePlacement, postDraftForm } from '../lib/open-in-octree';
 
 test('appUrl adds utm params with cta as the default medium', () => {
   const url = new URL(appUrl('/', { placement: 'tools:latex-preview:cta' }));
@@ -97,4 +97,38 @@ test('postDraftForm posts content/title/source to the drafts endpoint with utm o
   });
   assert.equal(form.children.find((c) => c.name === 'title')?.type, 'hidden');
   assert.equal(form.children.find((c) => c.name === 'source')?.type, 'hidden');
+});
+
+test('appUrl keeps a hash after the query', () => {
+  const out = appUrl('/pricing?plan=pro#faq', { placement: 'tools:header', medium: 'nav' });
+  const url = new URL(out);
+  assert.equal(url.hash, '#faq');
+  assert.equal(url.searchParams.get('plan'), 'pro');
+  assert.equal(url.searchParams.get('utm_campaign'), 'tools:header');
+  assert.ok(out.endsWith('#faq'));
+});
+
+test('placements already in production are left unchanged', () => {
+  for (const p of [
+    'tools:latex-preview:fix-error',
+    'tools:image-to-tikz:result',
+    'tools:templates:mla-paper',
+    'tools:templates',
+    'tools:ai',
+    'tools:fix-error',
+  ]) {
+    assert.equal(normalizePlacement(p), p);
+  }
+  assert.equal(normalizePlacement('  tools:ai  '), 'tools:ai');
+  assert.ok(!normalizePlacement('tools:x').startsWith('tools:tools:'));
+});
+
+test('link clicks use source === placement, distinct from the draft source', () => {
+  assert.deepEqual(linkClickProps('tools:templates:mla-paper:cta'), {
+    source: 'tools:templates:mla-paper:cta',
+    placement: 'tools:templates:mla-paper:cta',
+    kind: 'link',
+  });
+  assert.notEqual(linkClickProps('tools:templates:mla-paper:cta').source, 'tools:templates:mla-paper');
+  assert.equal(linkClickProps('header').placement, 'tools:header');
 });

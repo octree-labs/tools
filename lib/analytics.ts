@@ -6,11 +6,15 @@ import posthog, { type CaptureOptions } from 'posthog-js';
  * titles and tool identifiers only.
  *
  * Tools → app funnel contract (helpers in lib/open-in-octree.ts):
- * - `source`: the tool or page, always `tools:`-prefixed (`tools:latex-preview`,
- *   `tools:templates:<slug>`, `tools:header`); see normalizePlacement().
- * - `placement`: the specific CTA on that page (`tools:latex-preview:fix-error`,
- *   `tools:image-to-tikz:result`, `tools:latex-preview:cta` for the OctreeCTA
- *   card, `tools:header`). cta_impression and open_in_octree_clicked share it.
+ * - `placement`: the specific CTA, always `tools:`-prefixed (see
+ *   normalizePlacement()): `tools:latex-preview:fix-error`,
+ *   `tools:image-to-tikz:result`, `tools:templates:<slug>`, `tools:templates`
+ *   (drafts); `tools:<tool>:cta` / `tools:templates:<slug>:cta` for the
+ *   OctreeCTA card and `tools:header` (links). cta_impression and
+ *   open_in_octree_clicked share it.
+ * - `source`: equal to `placement` on every click today (callers may pass a
+ *   distinct placement to openInOctree, but none do). Link clicks never reuse
+ *   a draft source, so source-grouped draft queries are not inflated.
  * - `kind` (open_in_octree_clicked only): `draft` = form POST of LaTeX to
  *   /api/drafts, `link` = plain navigation to the app.
  * - Every app URL carries utm_source=tools, utm_medium=cta|nav|draft and

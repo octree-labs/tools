@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
 import { useTranslations } from 'next-intl';
 import { BEFORE_NAVIGATION, EVENTS, track } from "@/lib/analytics";
-import { appUrl } from "@/lib/open-in-octree";
+import { appUrl, linkClickProps } from "@/lib/open-in-octree";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -63,11 +63,7 @@ export default function Header() {
             <Link
               href={appUrl("/", { placement: HEADER_PLACEMENT, medium: "nav" })}
               onClick={() =>
-                track(
-                  EVENTS.OPEN_IN_OCTREE_CLICKED,
-                  { source: HEADER_PLACEMENT, placement: HEADER_PLACEMENT, kind: "link" },
-                  BEFORE_NAVIGATION,
-                )
+                track(EVENTS.OPEN_IN_OCTREE_CLICKED, linkClickProps(HEADER_PLACEMENT), BEFORE_NAVIGATION)
               }
             >
               {t('getStarted')}

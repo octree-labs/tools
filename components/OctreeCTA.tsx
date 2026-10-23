@@ -7,7 +7,7 @@ import { DM_Sans } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { useTranslations } from 'next-intl';
 import { BEFORE_NAVIGATION, EVENTS, track } from "@/lib/analytics";
-import { appUrl, normalizePlacement } from "@/lib/open-in-octree";
+import { appUrl, linkClickProps, normalizePlacement } from "@/lib/open-in-octree";
 import { useCtaImpression } from "@/hooks/use-cta-impression";
 
 const dmSans = DM_Sans({
@@ -21,8 +21,7 @@ interface OctreeCTAProps {
 
 export function OctreeCTA({ source = "" }: OctreeCTAProps) {
   const t = useTranslations('cta');
-  const normalizedSource = normalizePlacement(source);
-  const placement = `${normalizedSource}:cta`;
+  const placement = `${normalizePlacement(source)}:cta`;
   const ref = useCtaImpression<HTMLDivElement>(placement);
 
   return (
@@ -71,11 +70,7 @@ export function OctreeCTA({ source = "" }: OctreeCTAProps) {
                   <Link
                     href={appUrl("/", { placement, medium: "cta" })}
                     onClick={() =>
-                      track(
-                        EVENTS.OPEN_IN_OCTREE_CLICKED,
-                        { source: normalizedSource, placement, kind: "link" },
-                        BEFORE_NAVIGATION,
-                      )
+                      track(EVENTS.OPEN_IN_OCTREE_CLICKED, linkClickProps(placement), BEFORE_NAVIGATION)
                     }
                   >
                     <ExternalLink className="h-4 w-4" />
