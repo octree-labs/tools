@@ -439,6 +439,9 @@ This chapter has presented...
     slug: "resume",
     previewUrl: "/templates/resume.pdf",
     category: "Resume & CV",
+    seoTitle: "LaTeX Resume Template (Overleaf-Compatible) | Free Download",
+    seoDescription:
+      "Free one-page LaTeX resume template that compiles unchanged in Overleaf, Octree or any TeX install. Preview the PDF, copy the source, add your experience.",
     code: String.raw`\documentclass[11pt]{article}
 \usepackage[margin=0.75in]{geometry}
 \usepackage{enumitem}
@@ -6849,9 +6852,9 @@ Answer: \reveal{q6}{30-60\% (roughly one-third to one-half)}
     slug: "jakes-resume",
     previewUrl: "/templates/jakes-resume.pdf",
     category: "Resume & CV",
-    seoTitle: "Jake's Resume LaTeX Template | Free Download, Preview & Guide",
+    seoTitle: "Jake's Resume Template for LaTeX & Overleaf | Free Download",
     seoDescription:
-      "Jake's Resume is the free, MIT-licensed LaTeX resume template by Jake Gutierrez. Preview the PDF, open it in Octree, and learn how to customize it and pass ATS.",
+      "Jake's Resume: the free, MIT-licensed LaTeX resume by Jake Gutierrez. Overleaf-compatible. Preview the PDF, open it in Octree or Overleaf, and pass ATS.",
     code: String.raw`%-------------------------
 % Resume in Latex
 % Author : Jake Gutierrez

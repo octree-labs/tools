@@ -34,6 +34,11 @@ const faq: GuideFaqItem[] = [
       "The template deliberately has no photo, and for US, UK and Canadian tech applications you should leave it out, because photos can confuse ATS parsers and introduce bias concerns. If a photo is expected in your region, load the graphicx package and place a small \\includegraphics inside a minipage next to the heading block, keeping all text outside the image so it stays selectable.",
   },
   {
+    question: "Can I use Jake's Resume in Overleaf?",
+    answer:
+      "Yes. Create a blank project in Overleaf, paste the source from this page into main.tex and compile with the default pdfLaTeX compiler; every package the template loads is part of TeX Live, which Overleaf uses. The template is also listed in the Overleaf gallery as Jake's Resume. The same source opens in Octree with the Open as template button, so you can switch editors without changing a line.",
+  },
+  {
     question: "Does Jake's Resume work with XeLaTeX or LuaLaTeX?",
     answer:
       "Mostly, with one change. \\pdfgentounicode=1 and \\input{glyphtounicode} are pdfTeX-specific, so under XeLaTeX you should remove or comment out those two lines; XeLaTeX already embeds Unicode text mappings. Everything else in the template compiles under XeLaTeX and LuaLaTeX, which is useful if you want to use a system font via fontspec. The default and recommended engine is pdfLaTeX.",
@@ -53,6 +58,20 @@ export default function JakesResumeGuide() {
         few years, there is a good chance it was built on this template. The sample
         document on Overleaf uses the placeholder name &quot;Jake Ryan&quot;, which is why
         you will also see it searched for as the &quot;Jake Ryan resume&quot;.
+      </GuideP>
+      <GuideP>
+        The template is fully Overleaf-compatible. It uses only packages that ship with TeX
+        Live, so the source on this page compiles unchanged in a blank Overleaf project with
+        the default pdfLaTeX compiler, in Octree, or on a local TeX Live or MiKTeX install.
+        Nothing here is Overleaf-specific, which means a resume you start in one editor can
+        be moved to another by copying a single <GuideCode>.tex</GuideCode> file. See{" "}
+        <a
+          href="#compile"
+          className="text-blue-600 hover:text-blue-700 underline underline-offset-2"
+        >
+          How to compile Jake&apos;s Resume
+        </a> for the
+        Overleaf steps.
       </GuideP>
       <GuideP>
         Technically, it is a single-page, single-column document built on the standard{" "}
