@@ -6,6 +6,9 @@ import { Button } from "@/components/ui/button";
 import { DM_Sans } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { useTranslations } from 'next-intl';
+import { BEFORE_NAVIGATION, EVENTS, track } from "@/lib/analytics";
+import { appUrl, normalizePlacement } from "@/lib/open-in-octree";
+import { useCtaImpression } from "@/hooks/use-cta-impression";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -18,10 +21,12 @@ interface OctreeCTAProps {
 
 export function OctreeCTA({ source = "" }: OctreeCTAProps) {
   const t = useTranslations('cta');
-  const trackingParam = source ? `?ref=${source}` : "";
+  const normalizedSource = normalizePlacement(source);
+  const placement = `${normalizedSource}:cta`;
+  const ref = useCtaImpression<HTMLDivElement>(placement);
 
   return (
-    <div className="py-2">
+    <div ref={ref} data-cta-placement={placement} className="py-2">
       <div className="mx-auto max-w-4xl">
         <div className="relative rounded-3xl p-[2px] overflow-hidden">
           {/* Single traveling line border animation - light blue */}
@@ -63,7 +68,16 @@ export function OctreeCTA({ source = "" }: OctreeCTAProps) {
 
               <div className="flex flex-wrap justify-center gap-4">
                 <Button asChild size="lg" variant="gradient">
-                  <Link href={`https://app.useoctree.com${trackingParam}`}>
+                  <Link
+                    href={appUrl("/", { placement, medium: "cta" })}
+                    onClick={() =>
+                      track(
+                        EVENTS.OPEN_IN_OCTREE_CLICKED,
+                        { source: normalizedSource, placement, kind: "link" },
+                        BEFORE_NAVIGATION,
+                      )
+                    }
+                  >
                     <ExternalLink className="h-4 w-4" />
                     <span>{t('useInOctree')}</span>
                   </Link>

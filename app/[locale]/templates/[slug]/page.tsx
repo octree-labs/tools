@@ -261,7 +261,7 @@ export default function TemplatePage({
 
         {/* Call to Action */}
         <div className="mt-16 pb-16">
-          <OctreeCTA source={`templates:${slug}`} />
+          <OctreeCTA source={`tools:templates:${slug}`} />
         </div>
       </div>
 

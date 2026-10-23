@@ -6,11 +6,15 @@ import { Space_Grotesk } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
 import { useTranslations } from 'next-intl';
+import { BEFORE_NAVIGATION, EVENTS, track } from "@/lib/analytics";
+import { appUrl } from "@/lib/open-in-octree";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
   weight: ["500"],
 });
+
+const HEADER_PLACEMENT = "tools:header";
 
 export default function Header() {
   const t = useTranslations('nav');
@@ -56,7 +60,16 @@ export default function Header() {
             </Link>
           </div>
           <Button asChild variant="gradient">
-            <Link href="https://app.useoctree.com">
+            <Link
+              href={appUrl("/", { placement: HEADER_PLACEMENT, medium: "nav" })}
+              onClick={() =>
+                track(
+                  EVENTS.OPEN_IN_OCTREE_CLICKED,
+                  { source: HEADER_PLACEMENT, placement: HEADER_PLACEMENT, kind: "link" },
+                  BEFORE_NAVIGATION,
+                )
+              }
+            >
               {t('getStarted')}
             </Link>
           </Button>

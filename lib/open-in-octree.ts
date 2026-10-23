@@ -1,6 +1,36 @@
 import { BEFORE_NAVIGATION, EVENTS, track } from '@/lib/analytics';
 
-export const DRAFTS_ENDPOINT = 'https://app.useoctree.com/api/drafts';
+export const APP_ORIGIN = 'https://app.useoctree.com';
+export const DRAFTS_ENDPOINT = `${APP_ORIGIN}/api/drafts`;
+
+/** `utm_medium` values: big CTA cards / inline buttons, the site header, and draft form POSTs. */
+export type AppLinkMedium = 'cta' | 'nav' | 'draft';
+
+/**
+ * Every placement/source string starts with `tools:` so tools traffic is one
+ * prefix in PostHog (`templates:mla-paper` → `tools:templates:mla-paper`).
+ */
+export function normalizePlacement(placement: string | undefined): string {
+  const value = (placement || '').trim();
+  if (!value || value === 'tools') return 'tools';
+  return value.startsWith('tools:') ? value : `tools:${value}`;
+}
+
+/**
+ * Absolute app URL for `path` with utm params appended (existing query on
+ * `path` is kept). utm must travel in the URL: PostHog campaign properties
+ * live in per-origin localStorage and do not cross to app.useoctree.com.
+ */
+export function appUrl(
+  path: string,
+  { placement, medium = 'cta' }: { placement: string; medium?: AppLinkMedium },
+): string {
+  const url = new URL(path || '/', APP_ORIGIN);
+  url.searchParams.set('utm_source', 'tools');
+  url.searchParams.set('utm_medium', medium);
+  url.searchParams.set('utm_campaign', normalizePlacement(placement));
+  return url.toString();
+}
 
 export interface OpenInOctreeOptions {
   latex: string;
@@ -16,17 +46,20 @@ export interface DraftPayload {
   latex: string;
   title: string;
   source: string;
+  /** utm_campaign on the form action; defaults to `source`. */
+  placement?: string;
 }
 
 /**
  * Submit a top-level form POST to the app's drafts endpoint. A real navigation
  * (not fetch) avoids CORS and carries large payloads; the app handles auth and
- * redirects. Every Open-in-Octree path must go through here.
+ * redirects (copying utm_* from the action URL onto its redirect). Every
+ * Open-in-Octree path must go through here.
  */
-export function postDraftForm({ latex, title, source }: DraftPayload) {
+export function postDraftForm({ latex, title, source, placement }: DraftPayload) {
   const form = document.createElement('form');
   form.method = 'POST';
-  form.action = DRAFTS_ENDPOINT;
+  form.action = appUrl('/api/drafts', { placement: placement || source, medium: 'draft' });
   form.style.display = 'none';
 
   const contentInput = document.createElement('textarea');
@@ -53,7 +86,8 @@ export function postDraftForm({ latex, title, source }: DraftPayload) {
 
 export async function openInOctree({ latex, title, source, placement, templateSlug }: OpenInOctreeOptions) {
   // Template pages get a per-template source (tools:templates:<slug>); every other caller keeps its own.
-  const resolvedSource = templateSlug ? `tools:templates:${templateSlug}` : source || '';
+  const resolvedSource = normalizePlacement(templateSlug ? `tools:templates:${templateSlug}` : source);
+  const resolvedPlacement = placement ? normalizePlacement(placement) : resolvedSource;
   const resolvedTitle = title || 'Imported from Tools';
 
   // Fired before the form POST below navigates away; never awaited.
@@ -61,7 +95,8 @@ export async function openInOctree({ latex, title, source, placement, templateSl
     EVENTS.OPEN_IN_OCTREE_CLICKED,
     {
       source: resolvedSource,
-      placement: placement || resolvedSource,
+      placement: resolvedPlacement,
+      kind: 'draft',
       title: resolvedTitle,
       title_length: resolvedTitle.length,
       template_slug: templateSlug,
@@ -69,5 +104,5 @@ export async function openInOctree({ latex, title, source, placement, templateSl
     BEFORE_NAVIGATION,
   );
 
-  postDraftForm({ latex, title: resolvedTitle, source: resolvedSource });
+  postDraftForm({ latex, title: resolvedTitle, source: resolvedSource, placement: resolvedPlacement });
 }
