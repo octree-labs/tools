@@ -242,6 +242,13 @@ async function generateMetadataBase({
       'job application cover letter latex',
       'latex cover letter',
       'professional cover letter latex template',
+      'overleaf cover letter template',
+      'overleaf cover letter templates',
+      'overleaf cover letter',
+      'cover letter overleaf',
+      'cover letter overleaf template',
+      'cover letter latex templates',
+      'latex application letter template',
     ],
     'journal-article': [
       'latex journal article template',

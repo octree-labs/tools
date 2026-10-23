@@ -555,8 +555,8 @@
       "description": "Algorithm documentation with pseudocode"
     },
     "cover-letter": {
-      "title": "Cover Letter",
-      "description": "Professional academic and job application cover letter"
+      "title": "Cover Letter LaTeX Template (Overleaf-Compatible)",
+      "description": "Professional job application and academic cover letter that compiles unchanged in Overleaf"
     },
     "journal-article": {
       "title": "Journal Article",
