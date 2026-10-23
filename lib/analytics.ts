@@ -4,6 +4,22 @@ import posthog, { type CaptureOptions } from 'posthog-js';
  * Product analytics event names shared across the tools site.
  * Event properties must never contain PII or user LaTeX source — slugs,
  * titles and tool identifiers only.
+ *
+ * Tools → app funnel contract (helpers in lib/open-in-octree.ts):
+ * - `placement`: the specific CTA, always `tools:`-prefixed (see
+ *   normalizePlacement()): `tools:latex-preview:fix-error`,
+ *   `tools:image-to-tikz:result`, `tools:templates:<slug>`, `tools:templates`
+ *   (drafts); `tools:<tool>:cta` / `tools:templates:<slug>:cta` for the
+ *   OctreeCTA card and `tools:header` (links). cta_impression and
+ *   open_in_octree_clicked share it.
+ * - `source`: equal to `placement` on every click today (callers may pass a
+ *   distinct placement to openInOctree, but none do). Link clicks never reuse
+ *   a draft source, so source-grouped draft queries are not inflated.
+ * - `kind` (open_in_octree_clicked only): `draft` = form POST of LaTeX to
+ *   /api/drafts, `link` = plain navigation to the app.
+ * - Every app URL carries utm_source=tools, utm_medium=cta|nav|draft and
+ *   utm_campaign=<placement> (appUrl()), because PostHog campaign properties
+ *   do not cross from tools to app.useoctree.com (per-origin localStorage).
  */
 export const EVENTS = {
   OPEN_IN_OCTREE_CLICKED: 'open_in_octree_clicked',
@@ -46,9 +62,10 @@ export function trackConverterUsed(tool: string, success: boolean) {
 }
 
 /**
- * A conversion CTA became visible. `placement` equals the `source` its click
- * sends with open_in_octree_clicked, so conversion per placement is
- * open_in_octree_clicked / cta_impression grouped by that string.
+ * A conversion CTA became visible. `placement` equals the `placement` its click
+ * sends with open_in_octree_clicked (and the utm_campaign on the app URL), so
+ * conversion per placement is open_in_octree_clicked / cta_impression grouped
+ * by that string. See the contract on EVENTS.
  */
 export function trackCtaImpression(placement: string) {
   track(EVENTS.CTA_IMPRESSION, { placement });

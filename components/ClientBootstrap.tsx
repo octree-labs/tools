@@ -3,7 +3,7 @@
 import '@/lib/promise-polyfill';
 import { useEffect } from 'react';
 import { BEFORE_NAVIGATION, EVENTS, track } from '@/lib/analytics';
-import { postDraftForm } from '@/lib/open-in-octree';
+import { normalizePlacement, postDraftForm } from '@/lib/open-in-octree';
 
 export default function ClientBootstrap() {
   useEffect(() => {
@@ -36,7 +36,7 @@ export default function ClientBootstrap() {
 
           const intent = JSON.parse(intentRaw) as { latex: string; title: string; source: string };
           const title = intent.title ?? '';
-          const source = intent.source ?? '';
+          const source = normalizePlacement(intent.source);
 
           // The original click was already counted as open_in_octree_clicked before sign-in;
           // this is the same draft being completed, so it gets its own event name.
@@ -46,7 +46,7 @@ export default function ClientBootstrap() {
             BEFORE_NAVIGATION,
           );
 
-          // Post the draft via form submit to trigger redirect to /import
+          // Post the draft via form submit to trigger redirect to /import (action carries utm_*)
           postDraftForm({ latex: intent.latex, title, source });
           localStorage.removeItem('octree_draft_intent');
         }
