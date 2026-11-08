@@ -4,16 +4,19 @@ import { Suspense, useEffect } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
 import posthog from 'posthog-js';
 import { dropNoiseExceptions } from '@/lib/exception-filter';
+import { POSTHOG_RELAY_PATH, resolveIngestHost, uiHostFor } from '@/lib/posthog-proxy';
 
 const POSTHOG_KEY = process.env.NEXT_PUBLIC_POSTHOG_KEY;
-const POSTHOG_HOST = process.env.NEXT_PUBLIC_POSTHOG_HOST || 'https://us.i.posthog.com';
 
 // Initialise once, synchronously, when this client module is first evaluated in
 // the browser so the very first pageview (captured in an effect below) is not
 // lost. Without a key (local dev) this is a no-op and every `track()` call is too.
 if (typeof window !== 'undefined' && POSTHOG_KEY && !posthog.__loaded) {
   posthog.init(POSTHOG_KEY, {
-    api_host: POSTHOG_HOST,
+    // First-party relay on this site's own origin (lib/posthog-proxy.ts):
+    // posting to *.posthog.com directly is blocked by common ad blockers.
+    api_host: POSTHOG_RELAY_PATH,
+    ui_host: uiHostFor(resolveIngestHost(process.env.NEXT_PUBLIC_POSTHOG_HOST)),
     person_profiles: 'identified_only',
     // App Router navigations do not reload the page; PostHogPageView captures them.
     capture_pageview: false,

@@ -1,6 +1,8 @@
 import type { NextConfig } from "next";
 import createNextIntlPlugin from 'next-intl/plugin';
 
+import { posthogRelayRewrites } from './lib/posthog-proxy';
+
 const withNextIntl = createNextIntlPlugin('./src/i18n/request.ts');
 
 const nextConfig: NextConfig = {
@@ -29,6 +31,13 @@ const nextConfig: NextConfig = {
   // Experimental settings for better module handling
   experimental: {
     esmExternals: 'loose',
+  },
+
+  // posthog-js posts to paths with trailing slashes (/e/, /flags/); a 308 to
+  // the slash-less path would drop the request body. See lib/posthog-proxy.ts.
+  skipTrailingSlashRedirect: true,
+  async rewrites() {
+    return posthogRelayRewrites(process.env.NEXT_PUBLIC_POSTHOG_HOST);
   },
 };
 
