@@ -32,7 +32,7 @@ const abstracts: Record<string, string> = {
   "lab-report":
     "Scientific lab report template with sections for abstract, introduction, methodology, results, discussion, and references.",
   "cover-letter":
-    "Professional cover letter template with formal letterhead, recipient information, and signature block.",
+    "Professional cover letter template with formal letterhead, recipient information, and signature block. It is built on the standard LaTeX letter class and loads only geometry and hyperref, so it is Overleaf-compatible: paste it into a blank Overleaf project, Octree, or any TeX Live or MiKTeX install and it compiles unchanged with pdfLaTeX. Use it for job applications or academic positions.",
 };
 
 function getTags(title: string, category: string) {

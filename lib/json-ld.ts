@@ -11,6 +11,16 @@ export interface TemplateJsonLd {
   };
 }
 
+// "Letter of Recommendation Template" -> "Letter of Recommendation LaTeX Template",
+// never "... Template LaTeX Template"; a title that already says "LaTeX" and
+// "Template" (e.g. "Cover Letter LaTeX Template (Overleaf-Compatible)") is kept as is.
+export const templateJsonLdName = (title: string): string => {
+  if (/\blatex\b/i.test(title) && /\btemplate\b/i.test(title)) return title;
+  return /\btemplate$/i.test(title)
+    ? title.replace(/\s*template$/i, " LaTeX Template")
+    : `${title} LaTeX Template`;
+};
+
 export const getTemplateJsonLd = (
   title: string,
   description: string
@@ -18,11 +28,7 @@ export const getTemplateJsonLd = (
   return {
     "@context": "https://schema.org",
     "@type": "SoftwareSourceCode",
-    // "Letter of Recommendation Template" -> "Letter of Recommendation LaTeX Template",
-    // never "... Template LaTeX Template".
-    name: /\btemplate$/i.test(title)
-      ? title.replace(/\s*template$/i, " LaTeX Template")
-      : `${title} LaTeX Template`,
+    name: templateJsonLdName(title),
     description: description,
     programmingLanguage: "LaTeX",
     codeRepository: "https://tools.useoctree.com/templates",
