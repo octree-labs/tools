@@ -2,11 +2,15 @@ import { Metadata } from "next";
 import { generateSymbolMetadata } from '@/lib/generate-symbol-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "LaTeX Probability & Statistics Symbols - Expectation, Variance",
-  description: "Complete list of LaTeX probability and statistics symbols. Copy-paste P(A), E[X], Var, σ, μ, ~, ⊥, binomial coefficients with LaTeX commands.",
+  title: "Probability Symbols in LaTeX - P, Expectation Operator E, Var",
+  description: "Every probability symbol in LaTeX with copy-ready commands: \\Pr and \\mathbb{P}, the expectation operator \\mathbb{E}[X], Var, Cov, ~, σ, μ and binomial coefficients.",
   keywords: [
     // Probability & statistics keywords
     "probability symbols",
+    "probability symbol",
+    "probability symbol latex",
+    "expectation operator latex",
+    "expected value latex",
     "statistics symbols",
     "expectation symbol",
     "variance symbol",
@@ -39,8 +43,8 @@ const defaultMetadata: Metadata = {
     "scientific symbols",
   ],
   openGraph: {
-    title: "LaTeX Probability & Statistics Symbols - Complete Symbol Reference",
-    description: "Copy-paste LaTeX code for probability, expectation, variance, and statistical notation.",
+    title: "Probability Symbols in LaTeX - Expectation, Variance & More",
+    description: "Copy-paste LaTeX for the probability symbol, the expectation operator, variance and statistical notation.",
   },
 };
 

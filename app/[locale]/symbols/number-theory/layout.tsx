@@ -2,8 +2,8 @@ import { Metadata } from "next";
 import { generateSymbolMetadata } from '@/lib/generate-symbol-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "LaTeX Number Theory Symbols - Divisibility, Mod, GCD | Free",
-  description: "Complete list of LaTeX number theory symbols. Copy-paste divides |, ∤, gcd, lcm, congruence ≡ (mod n), φ(n) and the Legendre symbol with LaTeX commands.",
+  title: "LaTeX Number Theory Symbols - Modulus, Mod, Divides, GCD",
+  description: "Modulus and mod in LaTeX (\\bmod, \\pmod{n}, |z|) plus every number theory symbol: divides |, ∤, gcd, lcm, congruence ≡, φ(n) and the Legendre symbol, copy-ready.",
   keywords: [
     // Core keywords
     "math symbols",
@@ -13,6 +13,10 @@ const defaultMetadata: Metadata = {
     "latex number theory",
     "latex divisibility",
     "latex modular arithmetic",
+    "modulus latex",
+    "mod latex",
+    "latex modulo",
+    "absolute value latex",
     "latex gcd lcm",
     "latex congruent",
     "latex euler phi",
@@ -31,7 +35,7 @@ const defaultMetadata: Metadata = {
     "complete list of latex symbols",
   ],
   openGraph: {
-    title: "LaTeX Number Theory Symbols - Complete Symbol Reference",
+    title: "LaTeX Number Theory Symbols - Modulus, Mod & Divisibility",
     description: "Copy-paste LaTeX code for divisibility, modular arithmetic, and number-theoretic functions.",
   },
 };

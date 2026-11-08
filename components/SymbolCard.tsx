@@ -1,9 +1,8 @@
 "use client";
 
 import { Copy, Check } from "lucide-react";
-import { useState } from "react";
 import KatexPreview from "./KatexPreview";
-import { EVENTS, track } from "@/lib/analytics";
+import { useCopyLatex } from "./CopyLatexButton";
 
 interface SymbolCardProps {
     latex: string;
@@ -11,18 +10,7 @@ interface SymbolCardProps {
 }
 
 export function SymbolCard({ latex, name }: SymbolCardProps) {
-    const [copied, setCopied] = useState(false);
-
-    const copyToClipboard = async () => {
-        try {
-            await navigator.clipboard.writeText(latex);
-            track(EVENTS.SYMBOL_COPIED, { latex });
-            setCopied(true);
-            setTimeout(() => setCopied(false), 2000);
-        } catch (err) {
-            console.error("Failed to copy:", err);
-        }
-    };
+    const { copied, copy: copyToClipboard } = useCopyLatex(latex);
 
     return (
         <div
