@@ -2,8 +2,8 @@ import { Metadata } from "next";
 import { generateSymbolMetadata } from '@/lib/generate-symbol-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "LaTeX Arrow Symbols - Left, Right, Double Arrows & More | Free",
-  description: "Complete list of LaTeX arrow symbols. Copy-paste →, ←, ↔, ⇒, ⇐, ⇔, ↑, ↓, ↗, ↘ and all directional arrows with LaTeX commands.",
+  title: "LaTeX Arrows - Every Arrow in LaTeX, Copy-Paste (→ ⇒ ↦ ⟶)",
+  description: "All LaTeX arrows, copy-ready: \\rightarrow, \\to, \\Rightarrow, \\mapsto, \\longrightarrow, \\xrightarrow. How to write an arrow in LaTeX in math and text mode.",
   keywords: [
     // Core keywords
     "latex symbols",
@@ -12,6 +12,11 @@ const defaultMetadata: Metadata = {
     "unicode math symbols",
     // Arrow keywords
     "latex arrows",
+    "arrow latex",
+    "arrows in latex",
+    "arrow in latex",
+    "latex arrow with text above",
+    "xrightarrow latex",
     "latex arrow symbols",
     "latex right arrow",
     "latex left arrow",
@@ -33,8 +38,8 @@ const defaultMetadata: Metadata = {
     "logical equivalence symbol",
   ],
   openGraph: {
-    title: "LaTeX Arrow Symbols - Complete Symbol Reference",
-    description: "Copy-paste LaTeX code for all arrow symbols - directional, double, and special arrows.",
+    title: "LaTeX Arrows - Every Arrow in LaTeX, Copy-Paste",
+    description: "How to write an arrow in LaTeX: copy-ready commands for right, double, long and labelled arrows.",
   },
 };
 
