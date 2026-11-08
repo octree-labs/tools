@@ -59,3 +59,16 @@ export function posthogRelayRewrites(configuredHost?: string | null): Rewrite[] 
     { source: `${POSTHOG_RELAY_PATH}/:path*`, destination: `${ingest}/:path*` },
   ];
 }
+
+/**
+ * `skipTrailingSlashRedirect` (needed so posthog-js can post to `/e/`) also
+ * turns off Next's default 308 from `/page/` to `/page`, which would leave
+ * duplicate URLs for search engines. This restores it for every path except
+ * the relay. `.+` keeps the root `/` untouched; Next carries the query string
+ * over to the destination. Must be the first redirect.
+ */
+export const trailingSlashRedirect = {
+  source: '/:path((?!relay-o7(?:/|$)).+)/',
+  destination: '/:path',
+  permanent: true,
+} as const;
