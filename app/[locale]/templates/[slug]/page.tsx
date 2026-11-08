@@ -26,7 +26,7 @@ const abstracts: Record<string, string> = {
   "academic-cv":
     "Comprehensive academic curriculum vitae template with sections for education, publications, research experience, teaching, and awards.",
   resume:
-    "Modern one-page resume template with clean formatting. Ideal for job applications in tech, engineering, and professional fields.",
+    "Modern one-page LaTeX resume template with clean formatting, ideal for job applications in tech, engineering, and professional fields. It uses only standard packages (geometry, enumitem, hyperref), so it is Overleaf-compatible: paste it into a blank Overleaf project, Octree, or any TeX Live or MiKTeX install and it compiles unchanged with pdfLaTeX.",
   thesis:
     "Complete PhD/Master's thesis template with multi-chapter structure, automatic table of contents, list of figures, bibliography, and appendices.",
   "lab-report":
