@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { generateSymbolMetadata } from '@/lib/generate-symbol-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "Probability Symbols in LaTeX - P, Expectation Operator E, Var",
+  title: "Probability Symbols in LaTeX - P, Expectation Operator, Var",
   description: "Every probability symbol in LaTeX with copy-ready commands: \\Pr and \\mathbb{P}, the expectation operator \\mathbb{E}[X], Var, Cov, ~, σ, μ and binomial coefficients.",
   keywords: [
     // Probability & statistics keywords

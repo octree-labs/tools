@@ -16,7 +16,7 @@ const quickRef: QuickRefRow[] = [
   { latex: "\\rightarrow", use: "Right arrow" },
   { latex: "\\to", use: "Maps to a set, limits (x \u2192 \u221e)" },
   { latex: "\\leftarrow", use: "Left arrow, assignment" },
-  { latex: "\\leftrightarrow", use: "Two-headed arrow" },
+  { latex: "\\leftrightarrow", use: "Left-right arrow (both directions)" },
   { latex: "\\Rightarrow", use: "Implies (double arrow)" },
   { latex: "\\Leftrightarrow", use: "If and only if" },
   { latex: "\\mapsto", use: "Function rule, x \u21a6 x\u00b2" },
@@ -35,7 +35,7 @@ const faq: FaqJsonLdItem[] = [
   {
     question: "How do I write an arrow in LaTeX?",
     answer:
-      "Arrows are math symbols, so put them in math mode: $\\rightarrow$ (or the shorthand $\\to$) gives a right arrow, $\\leftarrow$ a left arrow and $\\leftrightarrow$ a two-headed arrow. Capitalising the first letter gives the double-line version, for example \\Rightarrow and \\Leftrightarrow. None of these need a package.",
+      "Arrows are math symbols, so put them in math mode: $\\rightarrow$ (or the shorthand $\\to$) gives a right arrow, $\\leftarrow$ a left arrow and $\\leftrightarrow$ a left-right arrow. Capitalising the first letter gives the double-line version, for example \\Rightarrow and \\Leftrightarrow. None of these need a package.",
   },
   {
     question: "How do I make a long arrow in LaTeX?",
@@ -50,7 +50,7 @@ const faq: FaqJsonLdItem[] = [
   {
     question: "How do I write a double arrow in LaTeX?",
     answer:
-      "Use \\Rightarrow for \u21d2, \\Leftarrow for \u21d0 and \\Leftrightarrow for \u21d4. In logic, \\implies and \\iff (amsmath) give the same arrows with wider spacing. For two arrows stacked on top of each other use \\rightleftarrows (amssymb) or \\rightleftharpoons for chemical equilibria.",
+      "Use \\Rightarrow for \u21d2, \\Leftarrow for \u21d0 and \\Leftrightarrow for \u21d4. In logic, \\implies (amsmath) and the built-in \\iff give the same arrows with wider spacing. For two arrows stacked on top of each other use \\rightleftarrows (amssymb) or \\rightleftharpoons for chemical equilibria.",
   },
   {
     question: "How do I use an arrow in text mode in LaTeX?",
