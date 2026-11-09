@@ -5,7 +5,7 @@ const text: SymbolPageTranslations = {
   "curly-precedes": {
     name: "Précédence courbe",
     meaning: "Relation courbe « précède ou égal », utilisée pour les ordres larges et les relations de préférence distinctes du ≤ numérique habituel.",
-    usage: "Les spécialistes de la théorie des ordres et les économistes recourent à \\preccurlyeq lorsqu'un préordre abstrait a besoin d'un symbole nettement différent de \\leq, par exemple la préférence faible d'un consommateur x \\preccurlyeq y ou l'ordre de dominance sur les partitions. Son pendant strict est \\prec, et son symétrique est \\succcurlyeq. Ne le confondez pas avec \\preceq, qui porte en dessous une barre droite au lieu de la barre courbe ; certains auteurs utilisent les deux dans un même article pour marquer deux ordres distincts. Comme c'est une relation, TeX l'entoure automatiquement d'espaces épaisses : ne l'encadrez jamais à la main avec \\, ou \;.",
+    usage: "Les spécialistes de la théorie des ordres et les économistes recourent à \\preccurlyeq lorsqu'un préordre abstrait a besoin d'un symbole nettement différent de \\leq, par exemple la préférence faible d'un consommateur x \\preccurlyeq y ou l'ordre de dominance sur les partitions. Son pendant strict est \\prec, et son symétrique est \\succcurlyeq. Ne le confondez pas avec \\preceq, qui porte en dessous une barre droite au lieu de la barre courbe ; certains auteurs utilisent les deux dans un même article pour marquer deux ordres distincts. Comme c'est une relation, TeX l'entoure automatiquement d'espaces épaisses : ne l'encadrez jamais à la main avec \\, ou \\;.",
     example: "x \\preccurlyeq y \\text{ et } y \\preccurlyeq z \\implies x \\preccurlyeq z",
   },
   "curly-succeeds": {
