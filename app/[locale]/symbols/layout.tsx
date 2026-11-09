@@ -146,9 +146,8 @@ export default function SymbolsLayout({
 }: {
     children: React.ReactNode;
 }) {
-    return (
-        <Suspense fallback={<div className="min-h-screen bg-gray-50" />}>
-            <SymbolsLayoutContent>{children}</SymbolsLayoutContent>
-        </Suspense>
-    );
+    // No Suspense boundary around the page: an unknown symbol slug calls
+    // notFound(), and that only yields a 404 status if it happens before the
+    // first byte is streamed. The search box has its own boundary.
+    return <SymbolsLayoutContent>{children}</SymbolsLayoutContent>;
 }
