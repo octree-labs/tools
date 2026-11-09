@@ -42,8 +42,13 @@ import PosterGuide from "./poster";
 import ProjectReportGuide from "./project-report";
 import QuestionnaireGuide from "./questionnaire";
 import QuizTemplateGuide from "./quiz-template";
+import RecipeBookGuide from "./recipe-book";
+import ResearchPaperGuide from "./research-paper";
 import ResearchProposalGuide from "./research-proposal";
+import ResearchStatementGuide from "./research-statement";
 import ResumeGuide from "./resume";
+import ScientificReportGuide from "./scientific-report";
+import StatementOfPurposeGuide from "./statement-of-purpose";
 
 /**
  * Long-form guides rendered below the preview on template pages.
@@ -96,8 +101,13 @@ const templateGuides: Record<string, ComponentType> = {
   "project-report": ProjectReportGuide,
   "questionnaire": QuestionnaireGuide,
   "quiz-template": QuizTemplateGuide,
+  "recipe-book": RecipeBookGuide,
+  "research-paper": ResearchPaperGuide,
   "research-proposal": ResearchProposalGuide,
+  "research-statement": ResearchStatementGuide,
   resume: ResumeGuide,
+  "scientific-report": ScientificReportGuide,
+  "statement-of-purpose": StatementOfPurposeGuide,
 };
 
 export function getTemplateGuide(slug: string): ComponentType | undefined {
