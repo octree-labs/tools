@@ -2,9 +2,12 @@ import { Metadata } from "next";
 import { generateSymbolMetadata } from '@/lib/generate-symbol-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "LaTeX Differential Geometry Symbols - Manifolds, Curvature",
-  description: "Complete list of LaTeX differential geometry symbols. Copy-paste manifold, tangent space, Christoffel, Riemann curvature and metric tensor with LaTeX code.",
+  title: "Differential Geometry Symbols in LaTeX - Wedge, Nabla",
+  description: "Differential geometry symbols in LaTeX, copy-ready: wedge product, \\bigwedge, exterior and covariant derivatives, Lie derivative, Christoffel symbols.",
   keywords: [
+    "differential geometry symbols latex",
+    "latex bigwedge",
+    "christoffel symbol latex",
     "differential geometry symbols",
     "manifold notation",
     "latex manifold",
@@ -28,8 +31,8 @@ const defaultMetadata: Metadata = {
     "physics symbols",
   ],
   openGraph: {
-    title: "LaTeX Differential Geometry Symbols - Complete Symbol Reference",
-    description: "Copy-paste LaTeX code for manifolds, curvature, connections, and differential geometry notation.",
+    title: "Differential Geometry Symbols in LaTeX - Wedge, Nabla",
+    description: "How to write forms, connections, curvature and derivatives on manifolds in LaTeX.",
   },
 };
 

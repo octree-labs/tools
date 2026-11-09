@@ -2,9 +2,17 @@ import { Metadata } from "next";
 import { generateSymbolMetadata } from '@/lib/generate-symbol-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "LaTeX Set Theory Symbols - Union, Intersection, Subset | Free",
-  description: "Complete list of LaTeX set theory symbols. Copy-paste ∅, ∈, ∉, ⊂, ⊆, ∪, ∩, ℕ, ℤ, ℚ, ℝ, ℂ and all set notation with LaTeX commands.",
+  title: "LaTeX Set Theory Symbols - Subset, Element Of, Empty Set",
+  description: "LaTeX set theory symbols, copy-ready: element of \\in, subset \\subseteq, union \\cup, intersection \\cap, empty set \\emptyset, set-builder notation, \\mathbb{R}.",
   keywords: [
+    "latex subset",
+    "element of latex",
+    "latex set theory symbols",
+    "empty set latex",
+    "union latex",
+    "subset latex",
+    "subseteq latex",
+    "set builder notation latex",
     // Set theory keywords
     "set notation symbols",
     "set theory symbols",
@@ -37,8 +45,8 @@ const defaultMetadata: Metadata = {
     "copy math symbols",
   ],
   openGraph: {
-    title: "LaTeX Set Theory Symbols - Complete Symbol Reference",
-    description: "Copy-paste LaTeX code for set theory - unions, intersections, subsets, and number sets.",
+    title: "LaTeX Set Theory Symbols - Subset, Element Of, Empty Set",
+    description: "How to write subset, element of, union, intersection and the empty set in LaTeX.",
   },
 };
 

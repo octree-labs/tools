@@ -2,9 +2,16 @@ import { Metadata } from "next";
 import { generateSymbolMetadata } from '@/lib/generate-symbol-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "LaTeX Computer Science Symbols - Big O, Logic, Algorithms",
-  description: "Complete list of LaTeX computer science symbols. Copy-paste O(n), Ω(n), Θ(n), :=, ≡, ⊕, ∧, ∨, ⌊x⌋, ⌈x⌉ with LaTeX commands.",
+  title: "Computer Science Symbols in LaTeX - Big O, Floor, XOR",
+  description: "Computer science symbols in LaTeX, copy-ready: Big O notation O(n), \\Omega, \\Theta, floor and ceiling, \\bmod, XOR \\oplus, \\gets and := for algorithms.",
   keywords: [
+    "big o notation latex",
+    "big o latex",
+    "computer science symbols latex",
+    "floor latex",
+    "ceiling latex",
+    "xor latex",
+    "latex mod",
     // Computer science keywords
     "computer science symbols",
     "algorithm symbols",
@@ -36,8 +43,8 @@ const defaultMetadata: Metadata = {
     "academic symbols",
   ],
   openGraph: {
-    title: "LaTeX Computer Science Symbols - Complete Symbol Reference",
-    description: "Copy-paste LaTeX code for Big O notation, logical operators, and algorithm symbols.",
+    title: "Computer Science Symbols in LaTeX - Big O, Floor, XOR",
+    description: "How to write Big O notation, floor, ceiling, mod and pseudocode symbols in LaTeX.",
   },
 };
 

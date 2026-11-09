@@ -2,9 +2,11 @@ import { Metadata } from "next";
 import { generateSymbolMetadata } from '@/lib/generate-symbol-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "LaTeX Operators - Binary & Advanced Math Operator Symbols",
-  description: "Complete list of LaTeX operator symbols. Copy-paste binary operators ⊕, ⊗, ⊙, ⊖, ⋆, ∗, ∘ and advanced operators ∇, △, ▽ with ready-to-use LaTeX commands.",
+  title: "LaTeX Operators - Circle Plus ⊕, Otimes ⊗, Odot ⊙, Times",
+  description: "LaTeX operator symbols, copy-ready: circle plus \\oplus, \\otimes, \\odot, \\times, \\cdot, \\circ, big operators like \\bigoplus, and \\DeclareMathOperator.",
   keywords: [
+    "latex circle plus",
+    "declaremathoperator",
     "math operators symbols",
     "binary operators latex",
     "latex operators",
@@ -27,8 +29,8 @@ const defaultMetadata: Metadata = {
     "symbol copy paste",
   ],
   openGraph: {
-    title: "LaTeX Operators - Complete Symbol Reference",
-    description: "Copy-paste LaTeX code for binary and advanced mathematical operators.",
+    title: "LaTeX Operators - Circle Plus ⊕, Otimes ⊗, Odot ⊙, Times",
+    description: "Binary and big operators in LaTeX, and how to declare your own.",
   },
 };
 

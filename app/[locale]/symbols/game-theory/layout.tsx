@@ -2,9 +2,12 @@ import { Metadata } from "next";
 import { generateSymbolMetadata } from '@/lib/generate-symbol-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "LaTeX Game Theory Symbols - Nash Equilibrium, Strategies",
-  description: "Complete list of LaTeX game theory symbols. Copy-paste Nash equilibrium, payoff functions, strategies, Shapley value with LaTeX commands.",
+  title: "Game Theory Symbols in LaTeX - Nash Equilibrium, Payoffs",
+  description: "Game theory symbols in LaTeX, copy-ready: strategies s_i and s_{-i}, payoffs u_i, Nash equilibrium s^*, best response, mixed strategies, payoff matrices.",
   keywords: [
+    "game theory symbols latex",
+    "nash equilibrium latex",
+    "payoff matrix latex",
     "game theory symbols",
     "nash equilibrium notation",
     "latex game theory",
@@ -24,8 +27,8 @@ const defaultMetadata: Metadata = {
     "math symbols",
   ],
   openGraph: {
-    title: "LaTeX Game Theory Symbols - Complete Symbol Reference",
-    description: "Copy-paste LaTeX code for Nash equilibrium, strategies, and game theory notation.",
+    title: "Game Theory Symbols in LaTeX - Nash Equilibrium, Payoffs",
+    description: "How to write strategies, payoffs, Nash equilibria and payoff matrices in LaTeX.",
   },
 };
 

@@ -2,9 +2,14 @@ import { Metadata } from "next";
 import { generateSymbolMetadata } from '@/lib/generate-symbol-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "LaTeX Graph Theory Symbols - Vertices, Edges, Adjacency | Free",
-  description: "Complete list of LaTeX graph theory symbols. Copy-paste vertex, edge, adjacency, path, cycle, chromatic number with LaTeX commands.",
+  title: "Graph Theory Symbols in LaTeX - Degree, Adjacency, K_n",
+  description: "Graph theory symbols in LaTeX, copy-ready: G = (V, E), adjacency u \\sim v, degree \\deg(v), complete graphs K_n, chromatic number \\chi(G), TikZ drawing.",
   keywords: [
+    "graph theory symbols latex",
+    "graph theory latex",
+    "degree of vertex latex",
+    "draw graph latex tikz",
+    "adjacency symbol latex",
     "graph theory symbols",
     "adjacency notation",
     "graph symbols latex",
@@ -27,8 +32,8 @@ const defaultMetadata: Metadata = {
     "math symbols",
   ],
   openGraph: {
-    title: "LaTeX Graph Theory Symbols - Complete Symbol Reference",
-    description: "Copy-paste LaTeX code for vertices, edges, paths, cycles, and graph notation.",
+    title: "Graph Theory Symbols in LaTeX - Degree, Adjacency, K_n",
+    description: "How to write graph theory notation and draw graphs with TikZ in LaTeX.",
   },
 };
 

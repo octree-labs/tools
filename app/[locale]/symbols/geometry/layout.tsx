@@ -2,9 +2,16 @@ import { Metadata } from "next";
 import { generateSymbolMetadata } from '@/lib/generate-symbol-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "LaTeX Geometry Symbols - Angles, Parallel, Perpendicular | Free",
-  description: "Complete list of LaTeX geometry symbols. Copy-paste ∠, △, ∘, ⟂, ≅, parallel, perpendicular, congruent, similar with LaTeX commands.",
+  title: "Geometry Symbols in LaTeX - Perpendicular, Angle, Triangle",
+  description: "Geometry symbols in LaTeX, copy-ready: perpendicular \\perp (orthogonal), parallel \\parallel, angle \\angle, triangle \\triangle, congruent \\cong, segments.",
   keywords: [
+    "perpendicular latex",
+    "orthogonal symbol latex",
+    "latex orthogonal symbol",
+    "orthogonal latex",
+    "parallel symbol latex",
+    "angle symbol latex",
+    "geometry symbols latex",
     // Geometry keywords
     "geometry symbols",
     "angle symbol",
@@ -41,8 +48,8 @@ const defaultMetadata: Metadata = {
     "math symbols",
   ],
   openGraph: {
-    title: "LaTeX Geometry Symbols - Complete Symbol Reference",
-    description: "Copy-paste LaTeX code for angles, triangles, parallel, perpendicular, and geometry notation.",
+    title: "Geometry Symbols in LaTeX - Perpendicular, Angle, Triangle",
+    description: "How to write perpendicular, parallel, angle, triangle and congruence symbols in LaTeX.",
   },
 };
 

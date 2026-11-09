@@ -2,9 +2,16 @@ import { Metadata } from "next";
 import { generateSymbolMetadata } from '@/lib/generate-symbol-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "LaTeX Calculus Symbols - Derivatives, Integrals, Limits | Free",
-  description: "Complete list of LaTeX calculus and analysis symbols. Copy-paste ∂, ∇, ∫, ∬, ∮, limits, derivatives, summations with LaTeX commands.",
+  title: "Calculus Symbols in LaTeX - Derivative, Integral, Limit",
+  description: "Calculus symbols in LaTeX, copy-ready: derivatives \\frac{dy}{dx}, partial derivatives \\partial, integrals \\int_a^b, limits \\lim and physics shortcuts.",
   keywords: [
+    "derivative latex",
+    "partial derivative latex",
+    "integral latex",
+    "limit latex",
+    "calculus symbols latex",
+    "double integral latex",
+    "derivadas en latex",
     // Calculus & analysis keywords
     "calculus symbols",
     "derivative symbols",
@@ -39,8 +46,8 @@ const defaultMetadata: Metadata = {
     "scientific symbols",
   ],
   openGraph: {
-    title: "LaTeX Calculus Symbols - Complete Symbol Reference",
-    description: "Copy-paste LaTeX code for derivatives, integrals, limits, and analysis notation.",
+    title: "Calculus Symbols in LaTeX - Derivative, Integral, Limit",
+    description: "How to write derivatives, partial derivatives, integrals and limits in LaTeX.",
   },
 };
 

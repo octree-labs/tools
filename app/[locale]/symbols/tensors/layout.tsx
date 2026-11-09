@@ -2,9 +2,14 @@ import { Metadata } from "next";
 import { generateSymbolMetadata } from '@/lib/generate-symbol-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "LaTeX Tensor Notation - Einstein Summation, Indices | Free",
-  description: "Complete list of LaTeX tensor notation symbols. Copy-paste Einstein summation, covariant and contravariant indices, Kronecker delta and Levi-Civita.",
+  title: "Tensor Notation in LaTeX - Indices, Einstein Summation",
+  description: "Tensor notation in LaTeX, copy-ready: upper and lower indices, staggered indices with the tensor package, Kronecker delta, Levi-Civita, metric g_{\\mu\\nu}.",
   keywords: [
+    "tensor latex",
+    "latex tensor",
+    "latex tensor notation",
+    "tensor notation latex",
+    "tensor package latex",
     "tensor notation symbols",
     "index notation",
     "einstein summation latex",
@@ -24,8 +29,8 @@ const defaultMetadata: Metadata = {
     "math symbols",
   ],
   openGraph: {
-    title: "LaTeX Tensor Notation - Complete Symbol Reference",
-    description: "Copy-paste LaTeX code for Einstein summation, indices, and tensor operations.",
+    title: "Tensor Notation in LaTeX - Indices, Einstein Summation",
+    description: "How to write tensor indices, staggered indices and Einstein summation in LaTeX.",
   },
 };
 

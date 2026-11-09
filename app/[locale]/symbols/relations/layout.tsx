@@ -2,9 +2,16 @@ import { Metadata } from "next";
 import { generateSymbolMetadata } from '@/lib/generate-symbol-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "LaTeX Relation Symbols - Inequality, Equivalence & More | Free",
-  description: "Complete list of LaTeX relation and comparison symbols. Copy-paste inequalities ≤, ≥, ≠, equivalences ≈, ≡, ∝, subsets ⊂, ⊆, ⟂ and ∥ with LaTeX commands.",
+  title: "LaTeX Relations - Not Equal ≠, Approx ≈, Less Than <, ≤",
+  description: "Relation symbols in LaTeX, copy-ready: not equal \\neq, approximately equal \\approx, less than <, \\leq, \\geq, \\equiv, \\sim, \\cong, \\propto and negations.",
   keywords: [
+    "not equal latex",
+    "approx latex",
+    "approximately equal latex",
+    "latex approximate symbol",
+    "latex less than",
+    "approximately equal in latex",
+    "almost equal latex",
     "comparison symbols",
     "relation symbols latex",
     "inequality symbols",
@@ -29,8 +36,8 @@ const defaultMetadata: Metadata = {
     "symbol copy paste",
   ],
   openGraph: {
-    title: "LaTeX Relations & Comparisons - Complete Symbol Reference",
-    description: "Copy-paste LaTeX code for inequality, equivalence, and comparison symbols.",
+    title: "LaTeX Relations - Not Equal ≠, Approx ≈, Less Than <, ≤",
+    description: "How to write not equal, approximately equal, less than and other relations in LaTeX.",
   },
 };
 

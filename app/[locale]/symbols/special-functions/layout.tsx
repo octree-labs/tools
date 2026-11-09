@@ -2,9 +2,13 @@ import { Metadata } from "next";
 import { generateSymbolMetadata } from '@/lib/generate-symbol-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "LaTeX Special Functions - Gamma, Zeta, Bessel | Free Reference",
-  description: "Complete list of LaTeX special function symbols. Copy-paste Gamma Γ, Riemann zeta ζ, Bessel, Legendre, error function with LaTeX commands.",
+  title: "Special Functions in LaTeX - Gamma, Zeta, Erf, Bessel",
+  description: "Special functions in LaTeX, copy-ready: Gamma \\Gamma(z), Beta, zeta \\zeta(s), erf with \\operatorname, Bessel J_n, Legendre and hypergeometric {}_2F_1.",
   keywords: [
+    "gamma function latex",
+    "erf latex",
+    "zeta function latex",
+    "special functions latex",
     "special functions symbols",
     "gamma function notation",
     "latex gamma function",
@@ -27,8 +31,8 @@ const defaultMetadata: Metadata = {
     "math symbols",
   ],
   openGraph: {
-    title: "LaTeX Special Functions - Complete Symbol Reference",
-    description: "Copy-paste LaTeX code for Gamma, zeta, Bessel, and special mathematical functions.",
+    title: "Special Functions in LaTeX - Gamma, Zeta, Erf, Bessel",
+    description: "How to write the Gamma, zeta, error, Bessel and hypergeometric functions in LaTeX.",
   },
 };
 

@@ -2,9 +2,15 @@ import { Metadata } from "next";
 import { generateSymbolMetadata } from '@/lib/generate-symbol-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "LaTeX Units & Measurements - Degree, Angstrom, SI Units | Free",
-  description: "Complete list of LaTeX unit and measurement symbols. Copy-paste degree °, ′, ″, angstrom Å, μ, Ω, ℏ and SI units with siunitx and LaTeX commands.",
+  title: "Units in LaTeX - siunitx, Degree Symbol, SI Units",
+  description: "Units in LaTeX, copy-ready: siunitx \\qty, \\unit and \\num, degree symbol ^\\circ and \\degreeCelsius, angstrom \\AA, micro and ohm with correct spacing.",
   keywords: [
+    "units latex",
+    "siunitx",
+    "latex units",
+    "degree symbol latex",
+    "angstrom latex",
+    "celsius latex",
     "measurement symbols",
     "units symbols latex",
     "latex degree symbol",
@@ -25,8 +31,8 @@ const defaultMetadata: Metadata = {
     "symbol copy paste",
   ],
   openGraph: {
-    title: "LaTeX Units & Measurements - Complete Symbol Reference",
-    description: "Copy-paste LaTeX code for degrees, SI units, and measurement symbols.",
+    title: "Units in LaTeX - siunitx, Degree Symbol, SI Units",
+    description: "How to write units, the degree symbol and SI prefixes in LaTeX with siunitx.",
   },
 };
 

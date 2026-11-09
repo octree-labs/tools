@@ -2,9 +2,16 @@ import { Metadata } from "next";
 import { generateSymbolMetadata } from '@/lib/generate-symbol-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "LaTeX Linear Algebra Symbols - Vectors, Matrices, Norms | Free",
-  description: "Complete list of LaTeX linear algebra symbols. Copy-paste vectors, matrices, transpose, inverse, determinant, norm, inner product with LaTeX commands.",
+  title: "Linear Algebra in LaTeX - Matrix, Transpose, Vector, Norm",
+  description: "Linear algebra symbols in LaTeX, copy-ready: pmatrix and bmatrix matrices, transpose A^\\top, inverse, determinant, trace, norms and vectors \\mathbf{v}.",
   keywords: [
+    "matrix latex",
+    "transpose latex",
+    "vector latex",
+    "linear algebra symbols latex",
+    "determinant latex",
+    "norm latex",
+    "pmatrix latex",
     // Linear algebra keywords
     "matrix symbols",
     "vector notation symbols",
@@ -39,8 +46,8 @@ const defaultMetadata: Metadata = {
     "academic symbols",
   ],
   openGraph: {
-    title: "LaTeX Linear Algebra Symbols - Complete Symbol Reference",
-    description: "Copy-paste LaTeX code for vectors, matrices, norms, and linear algebra notation.",
+    title: "Linear Algebra in LaTeX - Matrix, Transpose, Vector, Norm",
+    description: "How to write matrices, vectors, transposes, determinants and norms in LaTeX.",
   },
 };
 

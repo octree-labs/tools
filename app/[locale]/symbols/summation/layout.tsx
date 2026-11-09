@@ -2,9 +2,14 @@ import { Metadata } from "next";
 import { generateSymbolMetadata } from '@/lib/generate-symbol-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "LaTeX Summation & Product Notation - Sigma, Pi Symbols | Free",
-  description: "Complete list of LaTeX summation and product symbols. Copy-paste sigma ∑, pi ∏, ⨁, ⨂ with upper and lower limits, indexed sums and LaTeX commands.",
+  title: "Sum in LaTeX - Sigma Notation, Product, Limits",
+  description: "Sum in LaTeX, copy-ready: sigma notation \\sum_{i=1}^{n}, products \\prod, double sums, \\limits for inline math, \\substack conditions and big unions.",
   keywords: [
+    "sum latex",
+    "sigma notation latex",
+    "summation latex",
+    "product symbol latex",
+    "prod latex",
     "summation symbol",
     "product notation latex",
     "sigma notation",
@@ -27,8 +32,8 @@ const defaultMetadata: Metadata = {
     "symbol copy paste",
   ],
   openGraph: {
-    title: "LaTeX Summation & Product Notation - Complete Symbol Reference",
-    description: "Copy-paste LaTeX code for summation, product, and indexed notation.",
+    title: "Sum in LaTeX - Sigma Notation, Product, Limits",
+    description: "How to write sums, products and their limits in LaTeX.",
   },
 };
 
