@@ -1,15 +1,18 @@
 "use client";
 
 import { Copy, Check } from "lucide-react";
+import { Link } from "@/src/i18n/navigation";
 import KatexPreview from "./KatexPreview";
 import { useCopyLatex } from "./CopyLatexButton";
 
 interface SymbolCardProps {
     latex: string;
     name?: string;
+    /** Locale-less path of the symbol's own page; the name links there. */
+    href?: string;
 }
 
-export function SymbolCard({ latex, name }: SymbolCardProps) {
+export function SymbolCard({ latex, name, href }: SymbolCardProps) {
     const { copied, copy: copyToClipboard } = useCopyLatex(latex);
 
     return (
@@ -34,7 +37,19 @@ export function SymbolCard({ latex, name }: SymbolCardProps) {
 
             <div className="text-center">
                 {name && (
-                    <p className="text-sm font-medium text-gray-900 mb-1">{name}</p>
+                    <p className="text-sm font-medium text-gray-900 mb-1">
+                        {href ? (
+                            <Link
+                                href={href}
+                                onClick={(e) => e.stopPropagation()}
+                                className="hover:text-blue-600 hover:underline"
+                            >
+                                {name}
+                            </Link>
+                        ) : (
+                            name
+                        )}
+                    </p>
                 )}
                 <code className="text-xs text-gray-500 bg-gray-50 px-2 py-1 rounded border border-gray-100 font-mono">
                     {latex}

@@ -2,6 +2,7 @@ import { MetadataRoute } from 'next'
 import { templates as templateList } from '@/lib/templates'
 import { LOCALES, DEFAULT_LOCALE } from '@/lib/i18n/config'
 import { toLanguageTag } from '@/lib/seo'
+import { SYMBOL_PAGES, symbolPagePath } from '@/lib/symbol-pages'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://tools.useoctree.com'
@@ -125,6 +126,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     generateLocalizedUrls(`/templates/${template}`, 'monthly', 0.7)
   )
 
+  // One page per distinct command (lib/symbol-pages), under its home category
+  const symbolPageUrls = SYMBOL_PAGES.flatMap(page =>
+    generateLocalizedUrls(symbolPagePath(page), 'monthly', 0.6)
+  )
+
   return [
     ...homeUrls,
     ...templatesIndexUrls,
@@ -133,5 +139,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...toolUrls,
     ...symbolUrls,
     ...templateUrls,
+    ...symbolPageUrls,
   ]
 }

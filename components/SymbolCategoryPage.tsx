@@ -5,6 +5,7 @@ import { SymbolCard } from "@/components/SymbolCard";
 import { useSearchParams } from "next/navigation";
 import { useTranslations } from 'next-intl';
 import { SymbolItem } from "@/lib/symbols";
+import { getSymbolPageRefByLatex, symbolPagePath } from "@/lib/symbol-pages";
 
 interface SymbolCategoryPageProps {
     symbols: SymbolItem[];
@@ -15,6 +16,11 @@ interface SymbolCategoryPageProps {
      * HTML; it is only hidden on the client while a search query is active.
      */
     intro?: ReactNode;
+}
+
+function symbolHref(latex: string): string | undefined {
+    const ref = getSymbolPageRefByLatex(latex);
+    return ref ? symbolPagePath(ref) : undefined;
 }
 
 function SymbolCategoryContent({ symbols, categoryKey }: Omit<SymbolCategoryPageProps, "intro">) {
@@ -41,7 +47,12 @@ function SymbolCategoryContent({ symbols, categoryKey }: Omit<SymbolCategoryPage
             {filteredSymbols.length > 0 ? (
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
                     {filteredSymbols.map((symbol) => (
-                        <SymbolCard key={symbol.latex} latex={symbol.latex} name={symbol.name} />
+                        <SymbolCard
+                            key={symbol.latex}
+                            latex={symbol.latex}
+                            name={symbol.name}
+                            href={symbolHref(symbol.latex)}
+                        />
                     ))}
                 </div>
             ) : (
