@@ -20,7 +20,7 @@ const faq: GuideFaqItem[] = [
   {
     question: "Is a LaTeX resume ATS-friendly?",
     answer:
-      "A single-column LaTeX resume with real text (no images or text inside tables) parses well in applicant tracking systems, and this template is single column. Two things help further: keep standard section names such as Experience, Education and Skills, and add \\usepackage[T1]{fontenc} and \\usepackage{lmodern} so copied text keeps ligatures and accents intact. For a layout tuned specifically for ATS parsing, see the ATS-friendly resume template.",
+      "A single-column LaTeX resume with real text (no images or text inside tables) parses well in applicant tracking systems, and this template is single column. Two things help further: keep standard section names such as Experience, Education and Skills, and add \\usepackage[T1]{fontenc} and \\usepackage{lmodern} so accented characters are stored as single glyphs and copy out of the PDF correctly. For a layout tuned specifically for ATS parsing, see the ATS-friendly resume template.",
   },
   {
     question: "How do I keep my resume to one page?",

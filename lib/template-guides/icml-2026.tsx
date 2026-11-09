@@ -24,7 +24,7 @@ const faq: GuideFaqItem[] = [
   {
     question: "How do I make a figure or table span both columns?",
     answer:
-      "Use the starred environments: \\begin{figure*}[t] ... \\end{figure*} or \\begin{table*}[t] ... \\end{table*}, with widths given relative to \\textwidth. Two-column floats can only appear at the top of a page, usually the page after where they are defined.",
+      "Use the starred environments: \\begin{figure*}[t] ... \\end{figure*} or \\begin{table*}[t] ... \\end{table*}, with widths given relative to \\textwidth. Two-column floats can only go at the top of a page or on a float page, usually the page after the one where they are defined.",
   },
   {
     question: "What is the ICML 2026 page limit?",
@@ -32,9 +32,9 @@ const faq: GuideFaqItem[] = [
       "The sample abstract in this template mentions eight pages for the main text with references and appendices unlimited, which matches recent ICML calls. Confirm the exact limit and the rules for the camera-ready in the official ICML 2026 call for papers.",
   },
   {
-    question: "Why does the abstract span the full page width?",
+    question: "How do the title and authors span both columns?",
     answer:
-      "It does not; only the title and authors do. The template redefines \\maketitle to print the title block inside \\twocolumn[...], which typesets it across both columns, and the abstract then starts in the left column as in ICML papers.",
+      "The template redefines \\maketitle to print the title block inside \\twocolumn[...], which typesets it across the full page width. The abstract then starts in the left column, as in ICML papers.",
   },
 ];
 
