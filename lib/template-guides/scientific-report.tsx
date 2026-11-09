@@ -17,9 +17,9 @@ const faq: GuideFaqItem[] = [
       "Title page, abstract, introduction (background, objectives, significance), literature review, methodology (design, materials, procedures, analysis, ethics), results, discussion (interpretation, implications, limitations, future research), conclusion and references. This template has all of these as chapters and sections, so you can fill it in from top to bottom.",
   },
   {
-    question: "Why does the bibliography not appear?",
+    question: "How do I add my own references?",
     answer:
-      "The template ends with \\bibliography{references}, which reads a file called references.bib that is not included. Create references.bib next to the .tex file, add BibTeX entries, cite them with \\cite{key}, and compile with pdfLaTeX, BibTeX, then pdfLaTeX twice. Overleaf and Octree run BibTeX automatically.",
+      "The template ends with \\bibliography{references}. A filecontents* block at the top writes a sample references.bib, with one entry cited in the Literature Review, when no such file exists. Upload or create your own references.bib next to the .tex file, delete the block, cite entries with \\cite{key}, and compile with pdfLaTeX, BibTeX, then pdfLaTeX twice. Overleaf and Octree run BibTeX automatically.",
   },
   {
     question: "How do I add a figure to the Results chapter?",
@@ -29,7 +29,7 @@ const faq: GuideFaqItem[] = [
   {
     question: "Does this scientific report template work in Overleaf?",
     answer:
-      "Yes. It uses the report class with geometry, amsmath, amssymb, graphicx, cite and abstract, all part of TeX Live, so it compiles with pdfLaTeX in Overleaf, Octree or a local install once you add a references.bib file.",
+      "Yes. It uses the report class with geometry, amsmath, amssymb, graphicx, cite and abstract, all part of TeX Live, so it compiles with pdfLaTeX in Overleaf, Octree or a local install. The sample references.bib is generated from the source, so no extra file is needed.",
   },
 ];
 
@@ -59,8 +59,9 @@ export default function ScientificReportGuide() {
         The source is the <GuideCode>report</GuideCode> class at 12 pt with one-inch
         margins, with <GuideCode>amsmath</GuideCode>, <GuideCode>graphicx</GuideCode> and
         the <GuideCode>abstract</GuideCode> package, so it compiles as a scientific report
-        template for Overleaf, in Octree or locally once you supply a{" "}
-        <GuideCode>references.bib</GuideCode> file.
+        template for Overleaf, in Octree or locally; a{" "}
+        <GuideCode>filecontents*</GuideCode> block at the top writes a one-entry sample{" "}
+        <GuideCode>references.bib</GuideCode> so the bibliography builds out of the box.
       </GuideP>
 
       <GuideH2 id="included">What is included</GuideH2>
@@ -79,7 +80,9 @@ export default function ScientificReportGuide() {
           paste the code into Overleaf or a local <GuideCode>report.tex</GuideCode>.
         </li>
         <li>
-          Create <GuideCode>references.bib</GuideCode> next to it and cite entries with{" "}
+          Replace the sample bibliography: put your own{" "}
+          <GuideCode>references.bib</GuideCode> next to the .tex file, delete the{" "}
+          <GuideCode>filecontents*</GuideCode> block, and cite entries with{" "}
           <GuideCode>{"\\cite{key}"}</GuideCode>.
         </li>
         <li>
@@ -94,9 +97,9 @@ export default function ScientificReportGuide() {
 
       <GuideH2 id="customise">Customise the template</GuideH2>
       <GuideP>
-        <strong>Start the reference file.</strong> A minimal{" "}
-        <GuideCode>references.bib</GuideCode> entry, cited as{" "}
-        <GuideCode>{"\\cite{smith2021}"}</GuideCode>:
+        <strong>Add reference entries.</strong> The sample entry, cited in the
+        Literature Review as <GuideCode>{"\\cite{smith2021}"}</GuideCode>, shows the
+        format; copy it for each source in your <GuideCode>references.bib</GuideCode>:
       </GuideP>
       <GuidePre>{`@article{smith2021,
   author  = {Smith, Jane and Lee, Kim},

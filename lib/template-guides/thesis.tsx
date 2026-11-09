@@ -14,7 +14,7 @@ const faq: GuideFaqItem[] = [
   {
     question: "How do I structure a thesis in LaTeX?",
     answer:
-      "Use the book or report class, put the title page, abstract and table of contents in \\frontmatter, the numbered chapters in \\mainmatter and the bibliography and appendices in \\backmatter, as this template does. For a long thesis, keep each chapter in its own file and include it with \\include{chapters/introduction}.",
+      "Use the book or report class, put the title page, abstract and table of contents in \\frontmatter, the numbered chapters in \\mainmatter and the bibliography in \\backmatter, as this template does. Appendices go at the end of \\mainmatter, after \\appendix, so they keep their letters. For a long thesis, keep each chapter in its own file and include it with \\include{chapters/introduction}.",
   },
   {
     question: "Does this thesis template follow my university's rules?",

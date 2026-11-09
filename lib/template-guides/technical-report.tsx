@@ -22,9 +22,9 @@ const faq: GuideFaqItem[] = [
       "The listings package is already loaded and configured with a grey background, small monospaced text, line numbers and line breaking. Put code inside \\begin{lstlisting}[language=Python] ... \\end{lstlisting}, or include a source file with \\lstinputlisting[language=Python]{script.py}.",
   },
   {
-    question: "Why does '<100ms' print strangely in the table?",
+    question: "How do I type < or > in a LaTeX table?",
     answer:
-      "In text mode with pdfLaTeX's default font encoding, the < character prints as an inverted exclamation mark. Write the comparison in math mode, $<$100\\,ms, or load \\usepackage[T1]{fontenc} in the preamble.",
+      "In text mode with pdfLaTeX's default font encoding, a bare < prints as an inverted exclamation mark and > as an inverted question mark. Put the sign in math mode, as the template's results table does with $<$100\\,ms, or load \\usepackage[T1]{fontenc} in the preamble.",
   },
   {
     question: "Does the technical report template work in Overleaf?",
@@ -109,10 +109,10 @@ def health():
     commentstyle=\\color{codegreen},
     stringstyle=\\color{purple},`}</GuidePre>
       <GuideP>
-        <strong>Fix the comparison signs.</strong> In the results table,{" "}
-        <GuideCode>&lt;100ms</GuideCode> is plain text, which pdfLaTeX&apos;s default
-        encoding prints as an inverted exclamation mark. Write{" "}
-        <GuideCode>$&lt;$100\,ms</GuideCode>, or add{" "}
+        <strong>Comparison signs in tables.</strong> The results table writes its
+        latency target as <GuideCode>$&lt;$100\,ms</GuideCode>: a bare{" "}
+        <GuideCode>&lt;</GuideCode> in text prints as an inverted exclamation mark with
+        pdfLaTeX&apos;s default encoding. Use math mode for new rows too, or add{" "}
         <GuideCode>{"\\usepackage[T1]{fontenc}"}</GuideCode> to the preamble.
       </GuideP>
 

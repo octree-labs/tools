@@ -193,6 +193,7 @@ Machine Learning, Artificial Intelligence, Computer Vision
     slug: "mathematical-document",
     previewUrl: "/templates/mathematical-document.pdf",
     category: "Math",
+    seoTitle: "Mathematical Document LaTeX Template | Free Download",
     code: String.raw`\documentclass{article}
 \usepackage{amsmath,amsthm,amssymb}
 \usepackage[margin=1in]{geometry}
@@ -688,6 +689,7 @@ Assume $\sqrt{2}$ is rational. Then $\sqrt{2} = \frac{p}{q}$ where $p,q$ are int
     slug: "poster",
     previewUrl: "/templates/poster.pdf",
     category: "Presentations",
+    seoTitle: "Academic Poster LaTeX Template | Free Download & Preview",
     code: String.raw`\documentclass[25pt,a0paper,portrait]{tikzposter}
 \usepackage{amsmath}
 
@@ -1780,7 +1782,7 @@ The system consists of multiple microservices deployed on Kubernetes, with Redis
 \textbf{Metric} & \textbf{Target} & \textbf{Actual} \\
 \midrule
 Uptime & 99.9\% & 99.95\% \\
-Latency & <100ms & 65ms \\
+Latency & $<$100\,ms & 65\,ms \\
 Throughput & 10M/day & 12M/day \\
 \bottomrule
 \end{tabular}
@@ -2785,6 +2787,7 @@ The authors thank [acknowledgments].
     slug: "statement-of-purpose",
     previewUrl: "/templates/statement-of-purpose.pdf",
     category: "Resume & CV",
+    seoTitle: "Statement of Purpose LaTeX Template | Free Download",
     code: String.raw`\documentclass[11pt]{article}
 \usepackage[margin=1in]{geometry}
 \usepackage{setspace}
@@ -4061,7 +4064,19 @@ Immediate next steps include:
     slug: "scientific-report",
     previewUrl: "/templates/scientific-report.pdf",
     category: "Academic",
-    code: String.raw`\documentclass[12pt]{report}
+    code: String.raw`% Sample bibliography: written to references.bib only if that file does not
+% exist yet. Upload your own references.bib and delete this block.
+\begin{filecontents*}{references.bib}
+@article{smith2021,
+  author  = {Smith, Jane and Lee, Kim},
+  title   = {Effects of temperature on enzyme activity},
+  journal = {Journal of Example Studies},
+  year    = {2021},
+  volume  = {12},
+  pages   = {34--56}
+}
+\end{filecontents*}
+\documentclass[12pt]{report}
 \usepackage[margin=1in]{geometry}
 \usepackage{amsmath,amssymb}
 \usepackage{graphicx}
@@ -4111,7 +4126,7 @@ This research is significant because [importance].
 \chapter{Literature Review}
 
 \section{Theoretical Framework}
-Previous work by [citations] established that [background]. Recent studies have demonstrated [recent findings].
+Previous work~\cite{smith2021} established that [background]. Recent studies have demonstrated [recent findings].
 
 \section{Research Gap}
 Despite these advances, [gap that this research addresses].
@@ -4412,7 +4427,7 @@ I would recommend that future interns:
 \begin{center}
 {\color{headerblue}\rule{\linewidth}{3pt}}\\[0.2cm]
 {\Huge \textbf{Organization Newsletter}}\\[0.2cm]
-{\Large Month Year | Volume X, Issue X}\\[0.2cm]
+{\Large Month Year \textbar{} Volume X, Issue X}\\[0.2cm]
 {\color{headerblue}\rule{\linewidth}{3pt}}
 \end{center}
 
@@ -4483,7 +4498,7 @@ Description: Brief event description.
 
 This month we recognize [Name] for [achievement or contribution]. [Brief description of their work and impact].
 
-''Quote from the person being featured about their experience or perspective.''
+\textquotedblleft Quote from the person being featured about their experience or perspective.\textquotedblright
 
 \columnbreak
 
@@ -4550,7 +4565,7 @@ Address: 123 Main St
 
 \begin{center}
 {\color{headerblue}\rule{\linewidth}{3pt}}\\[0.1cm]
-{\small \textit{Organization Name | www.organization.com | info@organization.com}}
+{\small \textit{Organization Name \textbar{} www.organization.com \textbar{} info@organization.com}}
 \end{center}
 
 \end{document}`,
@@ -4567,6 +4582,7 @@ Address: 123 Main St
 \usepackage{enumitem}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{array}
 
 \begin{document}
 
@@ -4653,7 +4669,7 @@ Please answer all questions honestly. There are no right or wrong answers. For m
 \item Please indicate your level of agreement with the following statements:
 
 \begin{center}
-\begin{tabular}{|p{6cm}|c|c|c|c|c|}
+\begin{tabular}{|p{4.8cm}|*{5}{>{\centering\arraybackslash}p{1.7cm}|}}
 \hline
 \textbf{Statement} & \textbf{Strongly Disagree} & \textbf{Disagree} & \textbf{Neutral} & \textbf{Agree} & \textbf{Strongly Agree} \\
 \hline
@@ -4704,7 +4720,7 @@ Statement 3 & $\square$ & $\square$ & $\square$ & $\square$ & $\square$ \\
 \begin{center}
 \textbf{Thank you for your participation!}\\[0.3cm]
 For questions about this study, please contact:\\
-Researcher Name | Email | Phone
+Researcher Name \textbar{} Email \textbar{} Phone
 \end{center}
 
 \end{document}`,
@@ -5219,11 +5235,11 @@ Your Name is a writer who background and credentials. Previous publications or r
 
 \tableofcontents
 
-\chapter{Appetizers \& Starters}
+\chapter{Appetizers \& Starters}\label{ch:appetizers}
 
-\section*{Bruschetta}
+\section*{Bruschetta}\label{rec:bruschetta}
 
-\textbf{Servings:} 6 | \textbf{Prep Time:} 15 min | \textbf{Cook Time:} 5 min
+\textbf{Servings:} 6 \textbar{} \textbf{Prep Time:} 15 min \textbar{} \textbf{Cook Time:} 5 min
 
 \subsection*{Ingredients}
 
@@ -5251,11 +5267,11 @@ Your Name is a writer who background and credentials. Previous publications or r
 
 Best served fresh. Can prepare tomato mixture 1 hour ahead and refrigerate.
 
-\chapter{Main Courses}
+\chapter{Main Courses}\label{ch:mains}
 
-\section*{Classic Spaghetti Carbonara}
+\section*{Classic Spaghetti Carbonara}\label{rec:carbonara}
 
-\textbf{Servings:} 4 | \textbf{Prep Time:} 10 min | \textbf{Cook Time:} 20 min
+\textbf{Servings:} 4 \textbar{} \textbf{Prep Time:} 10 min \textbar{} \textbf{Cook Time:} 20 min
 
 \subsection*{Ingredients}
 
@@ -5285,11 +5301,11 @@ Best served fresh. Can prepare tomato mixture 1 hour ahead and refrigerate.
 
 The key is to work quickly and off heat when adding eggs to prevent scrambling.
 
-\chapter{Desserts}
+\chapter{Desserts}\label{ch:desserts}
 
-\section*{Chocolate Chip Cookies}
+\section*{Chocolate Chip Cookies}\label{rec:cookies}
 
-\textbf{Servings:} 24 cookies | \textbf{Prep Time:} 15 min | \textbf{Cook Time:} 12 min
+\textbf{Servings:} 24 cookies \textbar{} \textbf{Prep Time:} 15 min \textbar{} \textbf{Cook Time:} 12 min
 
 \subsection*{Ingredients}
 
@@ -5329,26 +5345,26 @@ Try adding nuts, using different chocolate types, or substituting half the choco
 
 \begin{multicols}{2}
 \textbf{A}\\
-Appetizers, 1
+Appetizers, \pageref{ch:appetizers}
 
 \textbf{B}\\
-Bruschetta, 1
+Bruschetta, \pageref{rec:bruschetta}
 
 \textbf{C}\\
-Carbonara, 2\\
-Chocolate Chip Cookies, 3
+Carbonara, \pageref{rec:carbonara}\\
+Chocolate Chip Cookies, \pageref{rec:cookies}
 
 \textbf{D}\\
-Desserts, 3
+Desserts, \pageref{ch:desserts}
 
 \textbf{M}\\
-Main Courses, 2
+Main Courses, \pageref{ch:mains}
 
 \textbf{P}\\
-Pasta, 2
+Pasta, \pageref{rec:carbonara}
 
 \textbf{S}\\
-Spaghetti, 2
+Spaghetti, \pageref{rec:carbonara}
 \end{multicols}
 
 \end{document}`,
@@ -5935,7 +5951,7 @@ the American Heart Association}
 
 \vspace{0.2in}
 
-{\footnotesize \textit{''To live in hearts we leave behind is not to die.''}}
+{\footnotesize \textit{\textquotedblleft To live in hearts we leave behind is not to die.\textquotedblright}}
 
 \end{center}
 
@@ -6518,7 +6534,18 @@ Please ensure all figures have descriptions for accessibility.
     slug: "www-2026",
     previewUrl: "/templates/www-2026.pdf",
     category: "Academic",
-    code: `\\documentclass[sigconf,anonymous]{acmart}
+    code: `% Sample bibliography: written to references.bib only if that file does not
+% exist yet. Upload your own references.bib and delete this block.
+\\begin{filecontents*}{references.bib}
+@inproceedings{doe2025,
+  author  = {Doe, Alex and Roe, Sam},
+  title   = {Measuring the Web at Scale},
+  booktitle = {Proceedings of the ACM Web Conference 2025},
+  year    = {2025},
+  pages   = {1--12}
+}
+\\end{filecontents*}
+\\documentclass[sigconf,anonymous]{acmart}
 
 \\title{The Web Conference 2026 Submission}
 
@@ -6539,13 +6566,13 @@ Abstract goes here.
 \\maketitle
 
 \\section{Introduction}
-Unlike CHI, The Web Conference uses the double-column format for review.
+Unlike CHI, The Web Conference uses the double-column format for review. Cite related work as usual~\\cite{doe2025}.
 
 \\section{Relevance to the Web}
 \\textbf{Mandatory Section:} Please explicitly state how your work is relevant to the Web. This is a requirement for the Research Track.
 
 \\bibliographystyle{ACM-Reference-Format}
-\\bibliography{software}
+\\bibliography{references}
 
 \\end{document}`,
   },

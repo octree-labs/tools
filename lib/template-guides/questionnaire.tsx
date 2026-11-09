@@ -19,7 +19,7 @@ const faq: GuideFaqItem[] = [
   {
     question: "How do I create a Likert scale table?",
     answer:
-      "Use a tabular with one wide column for the statement and one column per answer, with $\\square$ in each cell. The template's agreement table does this with five columns from Strongly Disagree to Strongly Agree. Because the long headers do not wrap, the table is wider than the text block; narrow the statement column and give the answer columns fixed, centred widths with the array package to fix it.",
+      "Use a tabular with one wide column for the statement and one column per answer, with $\\square$ in each cell. The template's agreement table does this with five columns from Strongly Disagree to Strongly Agree. The answer columns use the array package's >{\\centering\\arraybackslash}p{1.7cm} so long headers wrap and the table fits the text width.",
   },
   {
     question: "How do I keep question numbers running between sections?",
@@ -90,10 +90,11 @@ export default function QuestionnaireGuide() {
 
       <GuideH2 id="customise">Customise the template</GuideH2>
       <GuideP>
-        <strong>Fit the Likert table to the page.</strong> As shipped, the agreement
-        table is wider than the text block because its long headers cannot wrap. Load{" "}
-        <GuideCode>array</GuideCode>, narrow the statement column and give the five
-        answer columns fixed, centred widths so the headers wrap:
+        <strong>Resize the Likert table.</strong> The agreement table loads{" "}
+        <GuideCode>array</GuideCode> and gives the statement column 4.8 cm and each of
+        the five answer columns a fixed, centred 1.7 cm, so headers such as
+        &quot;Strongly Disagree&quot; wrap and the table fits the page. If you change
+        the widths, keep their total below the text width. Each statement is one row:
       </GuideP>
       <GuidePre>{`\\usepackage{array}
 ...

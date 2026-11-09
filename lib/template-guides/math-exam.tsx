@@ -24,7 +24,7 @@ const faq: GuideFaqItem[] = [
   {
     question: "How do I give students more room to write?",
     answer:
-      "Increase the \\vspace after each problem, for example \\vspace{8cm}, or start a problem on a fresh page with \\newpage. Problems 1 to 3 use 4 cm and problem 4 uses 6 cm in the sample.",
+      "Increase the \\vspace after each problem, for example \\vspace{8cm}, or start a problem on a fresh page with \\newpage. In the sample, problems 1 and 2 are followed by 4 cm, problem 3 by a page break and problem 4 by 6 cm.",
   },
   {
     question: "Can I print this exam from Overleaf?",

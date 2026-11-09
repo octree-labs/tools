@@ -24,7 +24,7 @@ const faq: GuideFaqItem[] = [
   {
     question: "Is the index generated automatically?",
     answer:
-      "No. The Index chapter is a hand-written two-column list with typed page numbers, so it will be wrong once you add recipes. Replace the typed numbers with \\pageref to labels placed in each recipe, or generate a real index with the imakeidx package and \\index entries.",
+      "Partly. The Index chapter is a hand-written two-column list, but its page numbers come from \\pageref to a \\label after each chapter and recipe heading, so they stay correct as pages move. For each new recipe, add a label and an index line; for a large book, generate the index with the imakeidx package and \\index entries instead.",
   },
   {
     question: "How do I remove the blank pages between chapters?",
@@ -59,7 +59,7 @@ export default function RecipeBookGuide() {
         <GuideCode>recipecolor</GuideCode> defined and ready to use. It compiles as a
         cookbook template for Overleaf, in Octree or with any local TeX install. Copy a
         recipe block for each new dish, add chapters for other courses such as soups or
-        breads, and update the index at the end.
+        breads, and add each new dish to the index at the end.
       </GuideP>
 
       <GuideH2 id="included">What is included</GuideH2>
@@ -68,7 +68,7 @@ export default function RecipeBookGuide() {
         <li>Three course chapters with one complete recipe each</li>
         <li>Servings and timing line, ingredients, numbered steps and notes per recipe</li>
         <li>Two-column ingredient list example</li>
-        <li>A hand-written two-column index</li>
+        <li>A two-column index with page numbers from <GuideCode>\pageref</GuideCode></li>
       </GuideUl>
 
       <GuideH2 id="how-to-use">How to use it</GuideH2>
@@ -91,20 +91,21 @@ export default function RecipeBookGuide() {
         every recipe looks the same, appears in the contents, uses the unused{" "}
         <GuideCode>recipecolor</GuideCode>, and gets a label for the index:
       </GuideP>
-      <GuidePre>{`\\newcommand{\\recipe}[4]{%
-  \\section*{\\color{recipecolor}#1}\\label{rec:#1}
-  \\addcontentsline{toc}{section}{#1}
-  \\textbf{Servings:} #2 \\textbar{} \\textbf{Prep Time:} #3 \\textbar{} \\textbf{Cook Time:} #4}
+      <GuidePre>{`\\newcommand{\\recipe}[5]{%
+  \\section*{\\color{recipecolor}#2}\\label{rec:#1}
+  \\addcontentsline{toc}{section}{#2}
+  \\textbf{Servings:} #3 \\textbar{} \\textbf{Prep Time:} #4 \\textbar{} \\textbf{Cook Time:} #5}
 
-\\recipe{Bruschetta}{6}{15 min}{5 min}`}</GuidePre>
+\\recipe{bruschetta}{Bruschetta}{6}{15 min}{5 min}`}</GuidePre>
       <GuideP>
         <GuideCode>\textbar</GuideCode> is used because, with pdfLaTeX&apos;s default
         font encoding, a bare <GuideCode>|</GuideCode> in text can print as a dash.
       </GuideP>
       <GuideP>
-        <strong>Keep the index accurate.</strong> With the labels from the macro above,
-        replace typed page numbers with references that update on every compile:{" "}
-        <GuideCode>{"Bruschetta, \\pageref{rec:Bruschetta}"}</GuideCode>.
+        <strong>Keep the index accurate.</strong> The first argument of the macro is
+        the label key, matching the template&apos;s existing labels, so index lines
+        such as <GuideCode>{"Bruschetta, \\pageref{rec:bruschetta}"}</GuideCode> keep
+        working. Compile twice after adding recipes so the page numbers update.
       </GuideP>
       <GuideP>
         <strong>Add a photo.</strong> Under the recipe header, add{" "}

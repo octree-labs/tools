@@ -103,9 +103,13 @@ export default function NewsletterGuide() {
 
 Brief description of this update or news item.`}</GuidePre>
       <GuideP>
-        <strong>Fix the quotation marks.</strong> The Spotlight quote opens with two
-        apostrophes (<GuideCode>&apos;&apos;</GuideCode>), which LaTeX prints as a
-        closing quote. Use two backticks to open: <GuideCode>``Quote ...&apos;&apos;</GuideCode>.
+        <strong>Quotation marks.</strong> The Spotlight quote uses{" "}
+        <GuideCode>\textquotedblleft</GuideCode> and{" "}
+        <GuideCode>\textquotedblright</GuideCode> for curly quotes. In your own text,
+        type two backticks to open and two apostrophes to close:{" "}
+        <GuideCode>``Quote ...&apos;&apos;</GuideCode>. A straight{" "}
+        <GuideCode>&quot;</GuideCode> or two apostrophes at the start print the wrong
+        mark.
       </GuideP>
 
       <GuideP>

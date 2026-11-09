@@ -27,9 +27,9 @@ const faq: GuideFaqItem[] = [
       "Remove anonymous from the class options, so the first line reads \\documentclass[sigconf]{acmart}, and complete every \\author, \\affiliation and \\email block. With anonymous set, acmart hides author names in the PDF, so you can fill them in from the start.",
   },
   {
-    question: "Why does the bibliography not compile?",
+    question: "How do I add my references?",
     answer:
-      "The template ends with \\bibliography{software}, so BibTeX looks for a file called software.bib, which is not included. Create a .bib file, change the argument to its name without the extension (for example \\bibliography{references}), cite entries with \\cite, and compile with pdfLaTeX and BibTeX. The ACM-Reference-Format style ships with acmart.",
+      "The template ends with \\bibliography{references}, and a filecontents* block at the top writes a one-entry sample references.bib (cited in the Introduction) when no such file exists. Upload your own references.bib, delete the block, cite entries with \\cite, and compile with pdfLaTeX and BibTeX. The ACM-Reference-Format style ships with acmart.",
   },
 ];
 
@@ -81,9 +81,8 @@ export default function Www2026Guide() {
           paste the code into Overleaf or a local <GuideCode>paper.tex</GuideCode>.
         </li>
         <li>
-          Create a <GuideCode>.bib</GuideCode> file and point{" "}
-          <GuideCode>\bibliography</GuideCode> at it; the template expects{" "}
-          <GuideCode>software.bib</GuideCode>.
+          Put your own <GuideCode>references.bib</GuideCode> next to the .tex file and
+          delete the sample <GuideCode>filecontents*</GuideCode> block at the top.
         </li>
         <li>
           Compile with pdfLaTeX and BibTeX (<GuideCode>latexmk -pdf paper.tex</GuideCode>{" "}

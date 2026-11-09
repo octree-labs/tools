@@ -40,7 +40,7 @@ export default function LetterGuide() {
       <GuideP>
         This formal letter LaTeX template is the shortest route to a correctly laid-out
         business letter: your address and the date at the top right, the recipient&apos;s
-        address on the left, a salutation, three body paragraphs, a closing and your name
+        address on the left, a salutation, four short body paragraphs, a closing and your name
         under space for a handwritten signature. Use it for complaints, requests,
         resignations, notices to a landlord or any other formal correspondence.
       </GuideP>
@@ -66,7 +66,7 @@ export default function LetterGuide() {
       <GuideUl>
         <li>Sender address block and automatic date, aligned right</li>
         <li>Recipient address block on the left</li>
-        <li>Salutation, three guided body paragraphs and a closing</li>
+        <li>Salutation, four guided body paragraphs and a closing</li>
         <li>Signature block printed from <GuideCode>\signature</GuideCode></li>
       </GuideUl>
 

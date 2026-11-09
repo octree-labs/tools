@@ -103,8 +103,10 @@ export default function ObituaryGuide() {
   \\draw[accent, line width=1pt] (0,0) circle (1.2in);
 \\end{tikzpicture}`}</GuidePre>
       <GuideP>
-        <strong>Fix the quotation marks.</strong> The closing quote opens with two
-        apostrophes, which prints as a closing mark. Use two backticks to open:{" "}
+        <strong>Quotation marks.</strong> The closing quotation is wrapped in{" "}
+        <GuideCode>\textquotedblleft</GuideCode> and{" "}
+        <GuideCode>\textquotedblright</GuideCode>. If you type your own quote, open it
+        with two backticks and close it with two apostrophes:{" "}
         <GuideCode>``To live in hearts we leave behind is not to die.&apos;&apos;</GuideCode>
       </GuideP>
       <GuideP>
