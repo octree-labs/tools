@@ -39,8 +39,7 @@ export default function ObituaryGuide() {
       <GuideH2 id="what-is-it">An obituary template in LaTeX</GuideH2>
       <GuideP>
         This obituary LaTeX template creates a dignified memorial page that can be
-        printed as a card, included in a funeral or memorial service programme, or
-        shared as a PDF with family and friends. The page is A5 with a double-line
+        printed as a card, added to a memorial service programme, or shared as a PDF. The page is A5 with a double-line
         border drawn around the edge, and the content is centred and calm: a small cross
         symbol, &quot;In Loving Memory&quot; in small capitals, a circular frame for a
         photograph, the person&apos;s name in large bold type, their dates of birth and
@@ -58,8 +57,8 @@ export default function ObituaryGuide() {
         <GuideCode>parskip</GuideCode> separates paragraphs with space instead of
         indentation. The document is plain <GuideCode>article</GuideCode> with standard
         packages, so it compiles as an obituary template for Overleaf, in Octree or on
-        any TeX Live install. Replace the sample name, dates and text, add a photo, and
-        adjust the wording to suit the family and any religious or cultural customs.
+        any TeX Live install. Replace the sample text, add a photo, and adapt the
+        wording to the family&apos;s customs.
       </GuideP>
 
       <GuideH2 id="included">What is included</GuideH2>
