@@ -2,10 +2,10 @@ import type { ReactNode } from "react";
 import { getFaqJsonLd, serializeJsonLd, type FaqJsonLdItem } from "@/lib/json-ld";
 
 /**
- * English-only editorial block rendered below a tool. It is a server
- * component (no hooks, no translations) so it is part of the static HTML in
- * every locale, like app/[locale]/tools/equation-to-latex/seo-content.tsx.
- * Each tool keeps its copy in its own seo-content.tsx and passes it here.
+ * Editorial block rendered below a tool. It is a server component (no hooks)
+ * so it is part of the static HTML in every locale. Each tool keeps its
+ * English copy in its own seo-content.tsx and passes it here; translations
+ * live in lib/tool-seo/locales and are picked by LocalizedToolSeoContent.
  */
 
 export interface ToolSeoItem {
@@ -27,6 +27,8 @@ export interface ToolSeoContentProps {
   faq: FaqJsonLdItem[];
   /** Closing line with the internal links (learn page, related tools). */
   related: ReactNode;
+  /** BCP 47 tag of a translated block, emitted as the FAQPage inLanguage. */
+  inLanguage?: string;
 }
 
 export function ToolSeoContent({
@@ -39,7 +41,10 @@ export function ToolSeoContent({
   faqHeading,
   faq,
   related,
+  inLanguage,
 }: ToolSeoContentProps) {
+  // Chinese prose closes a run-in title with a full-width colon, not "."
+  const titleEnd = inLanguage === "zh" ? "：" : ".";
   return (
     <section className="bg-gray-50">
       <div className="mx-auto max-w-4xl px-6 pb-20 text-gray-700 leading-relaxed">
@@ -50,7 +55,7 @@ export function ToolSeoContent({
         <ol className="list-decimal pl-6 space-y-3 mb-10">
           {steps.map((step) => (
             <li key={step.title}>
-              <span className="font-medium text-gray-900">{step.title}.</span> {step.body}
+              <span className="font-medium text-gray-900">{step.title}{titleEnd}</span> {step.body}
             </li>
           ))}
         </ol>
@@ -61,7 +66,7 @@ export function ToolSeoContent({
             <ul className="list-disc pl-6 space-y-3 mb-10">
               {tips.map((tip) => (
                 <li key={tip.title}>
-                  <span className="font-medium text-gray-900">{tip.title}.</span> {tip.body}
+                  <span className="font-medium text-gray-900">{tip.title}{titleEnd}</span> {tip.body}
                 </li>
               ))}
             </ul>
@@ -82,7 +87,7 @@ export function ToolSeoContent({
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: serializeJsonLd(getFaqJsonLd(faq)) }}
+          dangerouslySetInnerHTML={{ __html: serializeJsonLd(getFaqJsonLd(faq, inLanguage)) }}
         />
       </div>
     </section>

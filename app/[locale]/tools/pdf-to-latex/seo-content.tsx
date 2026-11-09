@@ -1,6 +1,6 @@
-import { ToolSeoContent } from "@/components/ToolSeoContent";
 import { IntroLink } from "@/lib/symbol-intros/ui";
 import type { FaqJsonLdItem } from "@/lib/json-ld";
+import { LocalizedToolSeoContent } from "@/lib/tool-seo";
 
 const steps = [
   {
@@ -60,9 +60,11 @@ const faq: FaqJsonLdItem[] = [
   },
 ];
 
-export default function PdfToLatexSeoContent() {
+export default function PdfToLatexSeoContent({ locale }: { locale?: string }) {
   return (
-    <ToolSeoContent
+    <LocalizedToolSeoContent
+      slug="pdf-to-latex"
+      locale={locale}
       heading="Convert PDF to LaTeX online"
       intro={
         <>

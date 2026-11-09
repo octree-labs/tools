@@ -1,11 +1,16 @@
 import LatexPreviewClient from "./client";
 import LatexPreviewSeoContent from "./seo-content";
 
-export default function LatexPreviewPage() {
+export default async function LatexPreviewPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
   return (
     <>
       <LatexPreviewClient />
-      <LatexPreviewSeoContent />
+      <LatexPreviewSeoContent locale={locale} />
     </>
   );
 }
