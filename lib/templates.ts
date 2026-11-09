@@ -97,6 +97,9 @@ We have demonstrated [conclusion].
     slug: "beamer-presentation",
     previewUrl: "/templates/beamer-presentation.pdf",
     category: "Presentations",
+    seoTitle: "Beamer Template for LaTeX & Overleaf | Free Download",
+    seoDescription:
+      "Free Beamer presentation template (Madrid theme) that compiles unchanged in Overleaf, Octree or any TeX install. Preview the slides, copy the source, swap themes.",
     code: String.raw`\documentclass{beamer}
 \usetheme{Madrid}
 \usecolortheme{default}
@@ -895,9 +898,9 @@ This document presents the [Algorithm Name] algorithm for solving [problem].
     slug: "cover-letter",
     previewUrl: "/templates/cover-letter.pdf",
     category: "Resume & CV",
-    seoTitle: "Cover Letter LaTeX Template for Overleaf | Free Download",
+    seoTitle: "LaTeX Cover Letter & Application Letter Template | Overleaf",
     seoDescription:
-      "Free LaTeX cover letter template that compiles unchanged in Overleaf, Octree or any TeX install. Preview the PDF, copy the source, fill in the job details.",
+      "Free LaTeX cover letter and job application letter template that compiles unchanged in Overleaf, Octree or any TeX install. Preview the PDF and copy the source.",
     code: String.raw`\documentclass[11pt]{letter}
 \usepackage[margin=1in]{geometry}
 \usepackage{hyperref}
