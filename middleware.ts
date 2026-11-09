@@ -8,5 +8,9 @@ export const config = {
   // - api routes
   // - _next (Next.js internals)
   // - static files (with extensions)
-  matcher: ['/((?!api|_next|opengraph-image|.*\\..*).*)']
+  // - the PostHog relay (lib/posthog-proxy.ts, rewritten in next.config.ts):
+  //   next-intl would otherwise redirect /relay-o7/e/ to a locale path and
+  //   drop the event batch. Matchers must be static literals, so the prefix
+  //   is repeated here.
+  matcher: ['/((?!api|_next|relay-o7(?:/|$)|opengraph-image|.*\\..*).*)']
 };
