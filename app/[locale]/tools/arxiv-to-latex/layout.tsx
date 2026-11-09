@@ -2,12 +2,13 @@ import type { Metadata } from "next";
 import { generateToolMetadata } from '@/lib/generate-tool-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "ArXiv to LaTeX - Import arXiv Papers into Octree",
-  description: "Import arXiv papers directly into Octree. Download and edit LaTeX source files from arXiv papers with our free tool. Coming soon!",
+  title: "arXiv to LaTeX - Download arXiv LaTeX Source (.tex) Free",
+  description: "Paste an arXiv ID or link to get the paper's LaTeX source: browse the .tex files, download the arXiv source code as a .zip, or open it in Octree. Free, no sign-up.",
   keywords: [
     "arxiv to latex",
     "arxiv latex source",
     "arxiv download latex",
+    "download arxiv tex",
     "arxiv paper source",
     "arxiv tex files",
     "import arxiv papers",
@@ -20,8 +21,8 @@ const defaultMetadata: Metadata = {
     canonical: '/tools/arxiv-to-latex',
   },
   openGraph: {
-    title: "ArXiv to LaTeX - Import arXiv Papers",
-    description: "Import arXiv papers directly into Octree for editing",
+    title: "arXiv to LaTeX - Download arXiv LaTeX Source",
+    description: "Get the LaTeX source of any arXiv paper: browse the files, download a .zip, or open it in Octree.",
     url: 'https://tools.useoctree.com/tools/arxiv-to-latex',
     siteName: 'Octree LaTeX Tools',
     locale: 'en_US',
@@ -29,8 +30,8 @@ const defaultMetadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "ArXiv to LaTeX - Import arXiv Papers",
-    description: "Import arXiv papers directly into Octree for editing",
+    title: "arXiv to LaTeX - Download arXiv LaTeX Source",
+    description: "Get the LaTeX source of any arXiv paper: browse the files, download a .zip, or open it in Octree.",
   },
 };
 
