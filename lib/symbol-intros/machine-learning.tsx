@@ -40,7 +40,7 @@ const faq: FaqJsonLdItem[] = [
   {
     question: "How do I write argmax and argmin in LaTeX?",
     answer:
-      "With amsmath, write \\operatorname*{arg\\,max}_\\theta f(\\theta); the star puts the subscript underneath in display math. For repeated use declare it once in the preamble with \\DeclareMathOperator*{\\argmax}{arg\\,max} and then write \\argmax_\\theta. The shortcut \\arg\\max also works but places the limit beside the operator.",
+      "With amsmath, write \\operatorname*{arg\\,max}_\\theta f(\\theta); the star puts the subscript underneath in display math. For repeated use declare it once in the preamble with \\DeclareMathOperator*{\\argmax}{arg\\,max} and then write \\argmax_\\theta. The shortcut \\arg\\max_\\theta also works, but the subscript then sits under max alone rather than under the whole arg max.",
   },
   {
     question: "How do I write the expectation and the loss function in LaTeX?",

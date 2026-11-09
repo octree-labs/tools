@@ -35,7 +35,7 @@ const faq: FaqJsonLdItem[] = [
   {
     question: "How do I type the less than symbol in LaTeX?",
     answer:
-      "In math mode type < directly: $a < b$. In running text outside math mode, older font encodings print ¡ instead of <, so either wrap it as $<$ or use \\textless (and \\textgreater for >), or load \\usepackage[T1]{fontenc}.",
+      "In math mode type < directly: $a < b$. In running text outside math mode, the default OT1 font encoding prints ¡ instead of <, so either wrap it as $<$ or use \\textless (and \\textgreater for >), or load \\usepackage[T1]{fontenc}.",
   },
   {
     question: "How do I write not less than or not equal in LaTeX?",

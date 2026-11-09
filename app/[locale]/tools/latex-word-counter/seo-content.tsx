@@ -38,7 +38,7 @@ const steps = [
   {
     title: "Let it count",
     body:
-      "The count updates automatically as you type. Your source is run through texcount, the same counter TeX Live and Overleaf use, so commands and markup are stripped correctly.",
+      "The count updates automatically as you type. Your source is run through texcount, the counter that ships with TeX Live and that Overleaf uses, so commands and markup are stripped correctly.",
   },
   {
     title: "Read the breakdown",
@@ -61,7 +61,7 @@ const faq: FaqJsonLdItem[] = [
   {
     question: "How does this compare to texcount and Overleaf's word count?",
     answer:
-      "It runs texcount, the Perl script shipped with TeX Live and MiKTeX, so the numbers match texcount -total on your machine and Overleaf's word count, which also uses texcount. The difference is that you do not need a local TeX installation or an account.",
+      "It runs texcount, the Perl script shipped with TeX Live and MiKTeX, so the numbers match texcount -total on your machine; Overleaf's word count is also built on texcount, so totals should agree closely. The difference is that you do not need a local TeX installation or an account.",
   },
   {
     question: "Are the bibliography and comments included in the word count?",
