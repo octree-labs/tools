@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { ArrowLeft, Loader2 } from 'lucide-react';
-import { DM_Sans } from 'next/font/google';
+import { dmSans } from '@/lib/fonts';
 import { cn } from '@/lib/utils';
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
@@ -23,11 +23,6 @@ import { trackConverterUsed } from '@/lib/analytics';
 
 const Editor = dynamic(() => import('@monaco-editor/react'), { ssr: false });
 const PDFPreview = dynamic(() => import('@/components/PDFPreview'), { ssr: false });
-
-const dmSans = DM_Sans({
-  subsets: ['latin'],
-  weight: ['400', '500', '700'],
-});
 
 const DEFAULT_LATEX = `\\documentclass{article}
 \\usepackage{amsmath}

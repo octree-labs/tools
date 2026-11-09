@@ -1,16 +1,11 @@
 'use client';
 
 import { ArrowLeft, Construction, FileDown } from 'lucide-react';
-import { DM_Sans } from 'next/font/google';
+import { dmSans } from '@/lib/fonts';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import { OctreeCTA } from '@/components/OctreeCTA';
 import { useTranslations } from 'next-intl';
-
-const dmSans = DM_Sans({
-  subsets: ['latin'],
-  weight: ['400', '500', '700'],
-});
 
 export default function ArxivToLatex() {
   const tCommon = useTranslations('common');

@@ -3,17 +3,12 @@
 import { ExternalLink, Pi } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { DM_Sans } from "next/font/google";
+import { dmSans } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import { useTranslations } from 'next-intl';
 import { BEFORE_NAVIGATION, EVENTS, track } from "@/lib/analytics";
 import { appUrl, linkClickProps, normalizePlacement } from "@/lib/open-in-octree";
 import { useCtaImpression } from "@/hooks/use-cta-impression";
-
-const dmSans = DM_Sans({
-  subsets: ["latin"],
-  weight: ["400", "500", "700"],
-});
 
 interface OctreeCTAProps {
   source?: string;
