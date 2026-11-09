@@ -19,6 +19,18 @@ import {
   symbolPagePath,
 } from '../lib/symbol-pages';
 import { buildSymbolPageModel, type SymbolPageModel, type SymbolPageT } from '../lib/symbol-pages/model';
+import { getSymbolCopy } from '../lib/symbol-pages/content';
+import {
+  SYMBOL_PAGE_TEXT_LOCALES,
+  getSymbolPageText,
+  getSymbolPageTranslation,
+  isSymbolPageLocalized,
+  symbolPageLocales,
+  translatedSymbolCategories,
+  translatedSymbolSlugs,
+} from '../lib/symbol-pages/locales';
+import { symbolPageAlternates } from '../lib/symbol-pages/seo';
+import { LOCALES } from '../lib/i18n/config';
 
 function translator(messages: Record<string, unknown>, locale: string): SymbolPageT {
   const local = createTranslator({ locale: toLanguageTag(locale), messages: messages as never, namespace: 'symbolPage' as never });
@@ -35,7 +47,7 @@ const locales: Record<string, Record<string, unknown>> = { en, cn, es, fr, ru, d
 function models(locale: string): SymbolPageModel[] {
   const t = translator(locales[locale], locale);
   return SYMBOL_PAGES.map((ref) => {
-    const model = buildSymbolPageModel(ref, t);
+    const model = buildSymbolPageModel(ref, t, locale);
     assert.ok(model, `${symbolPagePath(ref)} has no copy or facts (lib/symbol-pages/content.json, facts.json)`);
     return model;
   });
@@ -138,36 +150,142 @@ test('no aggregateRating markup on symbol pages', () => {
   assert.ok(!JSON.stringify(enModels.map((m) => m.faq)).includes('aggregateRating'));
 });
 
-test('sitemap lists symbol pages only in locales with localised copy, each file small', async () => {
+test('sitemap lists each symbol page in English plus its translated locales, each file small', async () => {
   const { default: sitemap, sitemapIds } = await import('../app/sitemap');
-  const { SYMBOL_PAGE_INDEXED_LOCALES } = await import('../lib/symbol-pages');
   const files = await Promise.all(sitemapIds().map((id) => sitemap({ id })));
   const urls = files.flat().map((entry) => entry.url);
   assert.equal(new Set(urls).size, urls.length, 'no URL is listed twice');
-  const symbolPageUrl = /^https:\/\/tools\.useoctree\.com(?:\/([a-z]+))?\/symbols\/[a-z-]+\/[a-z0-9-]+$/;
+  const symbolPageUrl = /^https:\/\/tools\.useoctree\.com(?:\/([a-z]+))?\/symbols\/([a-z-]+)\/([a-z0-9-]+)$/;
   const symbolUrls = urls.filter((u) => symbolPageUrl.test(u));
-  assert.equal(symbolUrls.length, SYMBOL_PAGES.length * SYMBOL_PAGE_INDEXED_LOCALES.length);
-  for (const u of symbolUrls) {
-    const locale = symbolPageUrl.exec(u)![1] ?? 'en';
-    assert.ok(SYMBOL_PAGE_INDEXED_LOCALES.includes(locale), `non-localised symbol URL in sitemap: ${u}`);
-  }
+  const expected = SYMBOL_PAGES.reduce((n, ref) => n + symbolPageLocales(ref).length, 0);
+  assert.equal(symbolUrls.length, expected);
+  assert.equal(
+    symbolUrls.filter((u) => !symbolPageUrl.exec(u)![1]).length,
+    SYMBOL_PAGES.length,
+    'every English symbol page is listed',
+  );
+  const localized = (href: string) => {
+    const [, locale = 'en', category, slug] = symbolPageUrl.exec(href)!;
+    return isSymbolPageLocalized(category, slug, locale);
+  };
+  for (const u of symbolUrls) assert.ok(localized(u), `untranslated symbol URL in sitemap: ${u}`);
   for (const entry of files.flat().filter((e) => symbolPageUrl.test(e.url))) {
     for (const href of Object.values(entry.alternates?.languages ?? {})) {
-      const locale = symbolPageUrl.exec(String(href))?.[1] ?? 'en';
-      assert.ok(SYMBOL_PAGE_INDEXED_LOCALES.includes(locale), `hreflang to non-localised page: ${href}`);
+      assert.ok(localized(String(href)), `hreflang to untranslated page: ${href}`);
     }
   }
   for (const file of files) assert.ok(file.length > 0 && file.length <= 5000, `sitemap file has ${file.length} URLs`);
 });
 
-test('non-localised symbol pages canonicalise to English and are noindex', async () => {
-  const { symbolPageAlternates } = await import('../lib/symbol-pages/seo');
-  const path = '/symbols/arrows/right-arrow';
-  const fr = symbolPageAlternates(path, 'fr');
-  assert.equal(fr.alternates?.canonical, path);
-  assert.deepEqual(fr.robots, { index: false, follow: true });
-  const en = symbolPageAlternates(path, 'en');
-  assert.equal(en.alternates?.canonical, path);
-  assert.equal(en.robots, undefined);
-  assert.deepEqual(Object.keys(en.alternates?.languages ?? {}).sort(), ['en', 'x-default']);
+test('canonical, robots and hreflang follow the translation of each symbol-locale pair', () => {
+  for (const ref of SYMBOL_PAGES) {
+    const path = symbolPagePath(ref);
+    const translated = symbolPageLocales(ref);
+    const expectedLanguages = [...translated.map(toLanguageTag), 'x-default'].sort();
+    for (const locale of LOCALES) {
+      const meta = symbolPageAlternates(ref, locale);
+      if (isSymbolPageLocalized(ref.category, ref.slug, locale)) {
+        assert.equal(meta.alternates?.canonical, locale === 'en' ? path : `/${locale}${path}`);
+        assert.equal(meta.robots, undefined, `${locale}${path} must be indexable`);
+        assert.deepEqual(Object.keys(meta.alternates?.languages ?? {}).sort(), expectedLanguages);
+      } else {
+        assert.equal(meta.alternates?.canonical, path, `${locale}${path} canonicalises to English`);
+        assert.deepEqual(meta.robots, { index: false, follow: true });
+        assert.equal(meta.alternates?.languages, undefined);
+      }
+    }
+  }
+});
+
+test('locales without any translated symbol copy stay noindex everywhere', () => {
+  const path = '/symbols/greek/alpha';
+  const ref = getSymbolPageRef('greek', 'alpha')!;
+  for (const locale of LOCALES.filter((l) => l !== 'en' && !SYMBOL_PAGE_TEXT_LOCALES.includes(l))) {
+    assert.equal(translatedSymbolCategories(locale).length, 0);
+    assert.deepEqual(symbolPageAlternates(ref, locale), {
+      alternates: { canonical: path },
+      robots: { index: false, follow: true },
+    });
+  }
+});
+
+/** Categories whose body copy is translated in every SYMBOL_PAGE_TEXT_LOCALES locale. */
+const TRANSLATED_CATEGORIES: string[] = ['math', 'set-theory', 'arrows'];
+
+test('translated categories are complete in cn, es, fr and ru, and nothing else is', () => {
+  assert.deepEqual([...SYMBOL_PAGE_TEXT_LOCALES].sort(), ['cn', 'es', 'fr', 'ru']);
+  for (const locale of SYMBOL_PAGE_TEXT_LOCALES) {
+    assert.deepEqual(translatedSymbolCategories(locale).sort(), [...TRANSLATED_CATEGORIES].sort(), locale);
+    const dir = path.join('lib/symbol-pages/locales', locale);
+    const files = fs.existsSync(dir) ? fs.readdirSync(dir).map((f) => f.replace(/\.ts$/, '')).sort() : [];
+    assert.deepEqual(files, [...TRANSLATED_CATEGORIES].sort(), `${dir}: every category file is registered`);
+  }
+  for (const ref of SYMBOL_PAGES) {
+    const expected = TRANSLATED_CATEGORIES.includes(ref.category) ? ['en', 'fr', 'es', 'cn', 'ru'] : ['en'];
+    assert.deepEqual(symbolPageLocales(ref), expected, symbolPagePath(ref));
+  }
+});
+
+const commandsIn = (text: string) => new Set(text.match(/\\[a-zA-Z]+/g) ?? []);
+
+test('every translated symbol has all fields, keeps its commands and a compilable example', () => {
+  for (const locale of SYMBOL_PAGE_TEXT_LOCALES) {
+    for (const category of translatedSymbolCategories(locale)) {
+      const refs = SYMBOL_PAGES.filter((r) => r.category === category);
+      assert.ok(refs.length > 0, `${category} is a real category`);
+      const names = new Set<string>();
+      for (const slug of translatedSymbolSlugs(locale, category)) {
+        assert.ok(getSymbolPageRef(category, slug), `${locale}/${category}: ${slug} is not a page of this category`);
+      }
+      for (const ref of refs) {
+        const where = `${locale}${symbolPagePath(ref)}`;
+        const local = getSymbolPageTranslation(category, ref.slug, locale);
+        assert.ok(local, `${where} is missing`);
+        for (const field of ['name', 'meaning', 'usage'] as const) {
+          assert.ok(local[field]?.trim(), `${where}: empty ${field}`);
+        }
+        const english = getSymbolCopy(ref.latex)!;
+        assert.notEqual(local.meaning, english.meaning, `${where}: meaning is untranslated`);
+        assert.notEqual(local.usage, english.usage, `${where}: usage is untranslated`);
+        const kept = commandsIn(`${local.meaning} ${local.usage}`);
+        for (const cmd of commandsIn(`${english.meaning} ${english.usage}`)) {
+          assert.ok(kept.has(cmd), `${where}: ${cmd} dropped from the translation`);
+        }
+        if (local.example !== undefined) {
+          assert.match(local.example, /^[\x00-\x7f]+$/, `${where}: example must stay ASCII`);
+          assert.deepEqual(commandsIn(local.example), commandsIn(english.example), `${where}: example commands`);
+        }
+        assert.ok(!names.has(local.name), `${where}: duplicate name ${local.name}`);
+        names.add(local.name);
+      }
+    }
+  }
+});
+
+test('translated pairs render their own language; untranslated pairs fall back to English', () => {
+  for (const locale of SYMBOL_PAGE_TEXT_LOCALES) {
+    const t = translator(locales[locale], locale);
+    for (const ref of SYMBOL_PAGES) {
+      const model = buildSymbolPageModel(ref, t, locale)!;
+      const local = getSymbolPageTranslation(ref.category, ref.slug, locale);
+      const text = getSymbolPageText(ref.category, ref.slug, locale)!;
+      assert.equal(model.localized, local !== undefined);
+      assert.equal(text.localized, local !== undefined);
+      if (local) {
+        assert.equal(model.copy.meaning, local.meaning);
+        assert.equal(model.name, local.name);
+        assert.ok(model.title.includes(local.name));
+        assert.ok(model.metaDescription.startsWith(local.meaning));
+        assert.ok(model.faq[0].question.includes(local.name), 'FAQ asks about the localised name');
+      } else {
+        assert.equal(model.copy.meaning, getSymbolCopy(ref.latex)!.meaning);
+        assert.equal(model.name, ref.name);
+      }
+      // The example document keeps the English name (and example unless an
+      // ASCII one is given) so the measured packages and pdfLaTeX still apply.
+      const enDoc = enModels[SYMBOL_PAGES.indexOf(ref)].exampleDocument;
+      if (!local?.example) assert.equal(model.exampleDocument, enDoc);
+      else assert.equal(model.exampleDocument, enDoc.replace(getSymbolCopy(ref.latex)!.example, local.example));
+    }
+  }
 });

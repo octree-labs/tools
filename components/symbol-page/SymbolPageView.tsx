@@ -42,7 +42,7 @@ export async function SymbolPageView({ model, locale }: { model: SymbolPageModel
     itemListElement: [
       { name: t("breadcrumbSymbols"), path: "/symbols" },
       { name: categoryTitle(ref.category), path: categoryPath },
-      { name: ref.name, path: pagePath },
+      { name: model.name, path: pagePath },
     ].map((item, i) => ({
       "@type": "ListItem",
       position: i + 1,
@@ -68,7 +68,7 @@ export async function SymbolPageView({ model, locale }: { model: SymbolPageModel
             <Link href={href(categoryPath)} className="hover:text-gray-900">{categoryTitle(ref.category)}</Link>
           </li>
           <li aria-hidden="true">/</li>
-          <li aria-current="page" className="text-gray-900">{ref.name}</li>
+          <li aria-current="page" className="text-gray-900">{model.name}</li>
         </ol>
       </nav>
 
