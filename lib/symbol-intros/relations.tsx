@@ -11,7 +11,7 @@ import {
   type QuickRefRow,
 } from "./ui";
 
-const quickRef: QuickRefRow[] = [
+export const quickRef: QuickRefRow[] = [
   { latex: "\\neq", use: "Not equal (alias \\ne)" },
   { latex: "\\approx", use: "Approximately equal" },
   { latex: "<", use: "Less than" },

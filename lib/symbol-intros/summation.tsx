@@ -11,7 +11,7 @@ import {
   type QuickRefRow,
 } from "./ui";
 
-const quickRef: QuickRefRow[] = [
+export const quickRef: QuickRefRow[] = [
   { latex: "\\sum_{i=1}^{n} a_i", use: "Sum (sigma notation)" },
   { latex: "\\sum_{n=1}^{\\infty} \\frac{1}{n^2}", use: "Infinite series" },
   { latex: "\\prod_{i=1}^{n} x_i", use: "Product" },

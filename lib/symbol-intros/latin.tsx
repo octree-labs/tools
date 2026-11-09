@@ -11,7 +11,7 @@ import {
   type QuickRefRow,
 } from "./ui";
 
-const quickRef: QuickRefRow[] = [
+export const quickRef: QuickRefRow[] = [
   { latex: "\\ae", preview: "\\text{æ}", use: "Ash ligature æ (\\AE for Æ)" },
   { latex: "\\oe", preview: "\\text{œ}", use: "Ethel ligature œ (\\OE for Œ)" },
   { latex: "\\o", preview: "\\text{ø}", use: "Slashed o ø (\\O for Ø)" },

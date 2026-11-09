@@ -11,7 +11,7 @@ import {
   type QuickRefRow,
 } from "./ui";
 
-const quickRef: QuickRefRow[] = [
+export const quickRef: QuickRefRow[] = [
   { latex: "\\sin \\theta", use: "Sine" },
   { latex: "\\cos \\theta", use: "Cosine" },
   { latex: "\\tan \\theta", use: "Tangent" },

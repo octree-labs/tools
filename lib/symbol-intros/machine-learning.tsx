@@ -11,7 +11,7 @@ import {
   type QuickRefRow,
 } from "./ui";
 
-const quickRef: QuickRefRow[] = [
+export const quickRef: QuickRefRow[] = [
   { latex: "\\nabla", use: "Gradient symbol (nabla, del)" },
   { latex: "\\nabla_\\theta \\mathcal{L}", use: "Gradient of the loss with respect to θ" },
   { latex: "\\partial", use: "Partial derivative" },

@@ -11,7 +11,7 @@ import {
   type QuickRefRow,
 } from "./ui";
 
-const quickRef: QuickRefRow[] = [
+export const quickRef: QuickRefRow[] = [
   { latex: "\\overline{A}", use: "Closure" },
   { latex: "\\partial A", use: "Boundary" },
   { latex: "A^\\circ", use: "Interior (also \\operatorname{int} A)" },

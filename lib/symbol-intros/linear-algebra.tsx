@@ -11,7 +11,7 @@ import {
   type QuickRefRow,
 } from "./ui";
 
-const quickRef: QuickRefRow[] = [
+export const quickRef: QuickRefRow[] = [
   {
     latex: "\\begin{pmatrix} a & b \\\\ c & d \\end{pmatrix}",
     use: "Matrix in parentheses",

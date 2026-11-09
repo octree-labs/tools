@@ -10,7 +10,7 @@ import {
   type QuickRefRow,
 } from "./ui";
 
-const quickRef: QuickRefRow[] = [
+export const quickRef: QuickRefRow[] = [
   { latex: "\\$", use: "Dollar sign" },
   { latex: "\\pounds", use: "Pound sterling" },
   { latex: "\\texteuro", preview: "\\text{€}", use: "Euro sign (textcomp, built in)" },

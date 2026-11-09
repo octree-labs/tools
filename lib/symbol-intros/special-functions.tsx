@@ -11,7 +11,7 @@ import {
   type QuickRefRow,
 } from "./ui";
 
-const quickRef: QuickRefRow[] = [
+export const quickRef: QuickRefRow[] = [
   { latex: "\\Gamma(z)", use: "Gamma function" },
   { latex: "\\mathrm{B}(x, y)", use: "Beta function (upright capital B)" },
   { latex: "\\zeta(s)", use: "Riemann zeta function" },

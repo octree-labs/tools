@@ -11,7 +11,7 @@ import {
   type QuickRefRow,
 } from "./ui";
 
-const quickRef: QuickRefRow[] = [
+export const quickRef: QuickRefRow[] = [
   { latex: "\\frac{dy}{dx}", use: "Derivative (Leibniz notation)" },
   { latex: "f'(x)", use: "Derivative (prime notation); f''(x) for the second" },
   { latex: "\\frac{d^2 y}{dx^2}", use: "Second derivative" },

@@ -11,7 +11,7 @@ import {
   type QuickRefRow,
 } from "./ui";
 
-const quickRef: QuickRefRow[] = [
+export const quickRef: QuickRefRow[] = [
   { latex: "\\Box p", use: "Necessarily p", pkg: "amssymb" },
   { latex: "\\Diamond p", use: "Possibly p", pkg: "amssymb" },
   { latex: "\\Box(p \\to q)", use: "Necessity of an implication (axiom K)", pkg: "amssymb" },

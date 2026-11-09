@@ -11,7 +11,7 @@ import {
   type QuickRefRow,
 } from "./ui";
 
-const quickRef: QuickRefRow[] = [
+export const quickRef: QuickRefRow[] = [
   { latex: "\\binom{n}{k}", use: "n choose k (binomial coefficient)", pkg: "amsmath" },
   { latex: "\\dbinom{n}{k}", use: "Display-size binomial, even inline", pkg: "amsmath" },
   { latex: "\\tbinom{n}{k}", use: "Text-size binomial, even in display", pkg: "amsmath" },

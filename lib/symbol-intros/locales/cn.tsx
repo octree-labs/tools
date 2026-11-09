@@ -442,6 +442,403 @@ const cn: IntroLocale = {
         },
       ],
     },
+    boolean: {
+      title: "LaTeX 中的布尔代数符号：与、或、异或",
+      intro: (
+        <IntroP>
+          LaTeX 中的布尔代数符号沿用了逻辑联结词：与（AND）是 <Cmd>{"\\land"}</Cmd>（&and;），或（OR）是{" "}
+          <Cmd>{"\\lor"}</Cmd>（&or;），非（NOT）是 <Cmd>{"\\lnot"}</Cmd>（&not;）。异或（XOR）写作{" "}
+          <Cmd>{"\\oplus"}</Cmd>（&oplus;），也可以用 amssymb 中的 <Cmd>{"\\veebar"}</Cmd>。蕴含和等价是{" "}
+          <Cmd>{"\\Rightarrow"}</Cmd> 和 <Cmd>{"\\iff"}</Cmd>，真、假两个常量是 <Cmd>{"\\top"}</Cmd> 和{" "}
+          <Cmd>{"\\bot"}</Cmd>，量词是 <Cmd>{"\\forall"}</Cmd> 和 <Cmd>{"\\exists"}</Cmd>。它们都只能用于数学模式。下表列出了最常用的命令及各自所需的宏包；完整的逻辑门符号列表见页面下方。
+        </IntroP>
+      ),
+      quickRefHeading: "速查表：最常用的布尔运算符号",
+      use: {
+        "\\land": "与（别名 \\wedge）",
+        "\\lor": "或（别名 \\vee）",
+        "\\lnot": "非（别名 \\neg）",
+        "\\overline{A}": "非，上划线记法",
+        "\\oplus": "异或",
+        "\\veebar": "异或，逻辑学写法",
+        "\\barwedge": "与非",
+        "\\Rightarrow": "蕴含",
+        "\\iff": "当且仅当（等价）",
+        "\\top": "真，1",
+        "\\bot": "假，0",
+        "\\forall x \\, \\exists y": "对所有、存在",
+      },
+      faqHeading: "LaTeX 布尔代数符号常见问题",
+      faq: [
+        {
+          question: "如何在 LaTeX 中输入与和或符号？",
+          answer:
+            "与（∧）是 \\land 或其别名 \\wedge，或（∨）是 \\lor 或 \\vee。二者都是内置命令，需放在数学模式中：$A \\land B$、$A \\lor B$。非是 \\lnot 或 \\neg。在电路记法中，也可以用 A \\cdot B 表示与，A + B 表示或，\\overline{A} 表示非。",
+        },
+        {
+          question: "如何在 LaTeX 中输入异或？",
+          answer:
+            "使用内置的 \\oplus（⊕）：$A \\oplus B$。逻辑学教材有时用 \\veebar（⊻），它需要 \\usepackage{amssymb}。同或通常写作 \\odot 或 \\overline{A \\oplus B}。",
+        },
+        {
+          question: "LaTeX 中的布尔代数符号需要哪个宏包？",
+          answer:
+            "常用符号都不需要：\\land、\\lor、\\lnot、\\oplus、\\Rightarrow、\\iff、\\top、\\bot、\\forall 和 \\exists 都是内置命令。\\veebar 和 \\barwedge 需要加载 amssymb，\\implies 需要 amsmath。",
+        },
+      ],
+    },
+    brackets: {
+      title: "LaTeX 括号：花括号、尖括号、取整与范数",
+      intro: (
+        <IntroP>
+          LaTeX 中的括号分为两类：一类可以直接输入，如 <Cmd>{"("}</Cmd>、<Cmd>{")"}</Cmd>、<Cmd>{"["}</Cmd> 和{" "}
+          <Cmd>{"]"}</Cmd>；另一类需要命令，如花括号 <Cmd>{"\\{"}</Cmd> 和 <Cmd>{"\\}"}</Cmd>，尖括号{" "}
+          <Cmd>{"\\langle"}</Cmd> 和 <Cmd>{"\\rangle"}</Cmd>，向下取整 <Cmd>{"\\lfloor"}</Cmd> 和{" "}
+          <Cmd>{"\\rfloor"}</Cmd>，以及范数 <Cmd>{"\\lVert"}</Cmd> 和 <Cmd>{"\\rVert"}</Cmd>。在任意一对括号前加上{" "}
+          <Cmd>{"\\left"}</Cmd> 和 <Cmd>{"\\right"}</Cmd>，LaTeX 就会按内容（例如分式）自动调整括号大小。双方括号需要 stmaryrd 宏包。下表列出了最常用的括号和定界符及各自所需的宏包；完整列表见页面下方。
+        </IntroP>
+      ),
+      quickRefHeading: "速查表：最常用的括号",
+      use: {
+        "\\left( \\frac{a}{b} \\right)": "随内容自动伸缩的圆括号",
+        "\\{ x \\}": "花括号（需转义）",
+        "\\langle x \\rangle": "尖括号、内积",
+        "\\lfloor x \\rfloor": "向下取整",
+        "\\lceil x \\rceil": "向上取整",
+        "\\lvert x \\rvert": "绝对值",
+        "\\lVert x \\rVert": "范数",
+        "\\llbracket x \\rrbracket": "双方括号",
+        "\\bigl( x \\bigr)": "手动指定大小：\\big、\\Big、\\bigg、\\Bigg",
+        "[a, b)": "半开区间",
+        "\\underbrace{a + b}_{n}": "表达式下方的花括号（上方用 \\overbrace）",
+      },
+      faqHeading: "LaTeX 括号常见问题",
+      faq: [
+        {
+          question: "如何在 LaTeX 中输入花括号？",
+          answer:
+            "花括号是 LaTeX 的分组字符，直接输入 { 或 } 不会显示出来。需要转义：\\{ 和 \\} 在文本和数学模式中都可用，例如 $\\{1, 2, 3\\}$。若要花括号随内容伸缩，使用 \\left\\{ 和 \\right\\}；\\lbrace 和 \\rbrace 是对应的命名命令。",
+        },
+        {
+          question: "如何在 LaTeX 中输入尖括号？",
+          answer:
+            "使用 \\langle 和 \\rangle，例如 $\\langle u, v \\rangle$。不要用键盘上的 < 和 >：它们是关系符号，形状和间距都不同。内容较高时写 \\left\\langle ... \\right\\rangle。",
+        },
+        {
+          question: "如何在 LaTeX 中输入双方括号？",
+          answer:
+            "加载 \\usepackage{stmaryrd}，然后写 \\llbracket x \\rrbracket，得到语义学和整数区间中使用的双方括号 ⟦x⟧。不用宏包时，可以写 [\\![ x ]\\!]，用负的细间距把两个方括号挤在一起来模拟。",
+        },
+      ],
+    },
+    calculus: {
+      title: "LaTeX 中的微积分符号：导数、积分与极限",
+      intro: (
+        <IntroP>
+          LaTeX 中的核心微积分符号都是内置的。导数写成分式 <Cmd>{"\\frac{dy}{dx}"}</Cmd> 或撇号形式{" "}
+          <Cmd>{"f'(x)"}</Cmd>；偏导数使用 <Cmd>{"\\partial"}</Cmd>，例如{" "}
+          <Cmd>{"\\frac{\\partial f}{\\partial x}"}</Cmd>；积分是 <Cmd>{"\\int_a^b f(x)\\,dx"}</Cmd>；极限是{" "}
+          <Cmd>{"\\lim_{x \\to 0}"}</Cmd>。<Cmd>{"\\iint"}</Cmd> 和 <Cmd>{"\\iiint"}</Cmd> 等重积分来自 amsmath，physics 宏包还提供了{" "}
+          <Cmd>{"\\dv"}</Cmd> 和 <Cmd>{"\\pdv"}</Cmd> 等快捷命令。下表列出了最常用的微积分符号及各自所需的宏包；完整列表见页面下方。
+        </IntroP>
+      ),
+      quickRefHeading: "速查表：导数、积分与极限",
+      use: {
+        "\\frac{dy}{dx}": "导数（莱布尼茨记法）",
+        "f'(x)": "导数（撇号记法）；二阶导数写 f''(x)",
+        "\\frac{d^2 y}{dx^2}": "二阶导数",
+        "\\frac{\\partial f}{\\partial x}": "偏导数",
+        "\\dot{x}": "对时间的导数（牛顿点记法）；二阶写 \\ddot{x}",
+        "\\int_a^b f(x)\\,dx": "定积分",
+        "\\iint_D f\\,dA": "二重积分（三重积分用 \\iiint）",
+        "\\oint_C": "围道积分（闭合曲线积分）",
+        "\\lim_{x \\to 0}": "极限",
+        "\\nabla f": "梯度",
+        "\\dv{f}{x}": "导数快捷命令",
+        "\\pdv{f}{x}": "偏导数快捷命令",
+      },
+      faqHeading: "LaTeX 微积分符号常见问题",
+      faq: [
+        {
+          question: "如何在 LaTeX 中输入导数？",
+          answer:
+            "在数学模式中把它写成分式：dy/dx 写作 $\\frac{dy}{dx}$，二阶导数写作 $\\frac{d^2y}{dx^2}$。撇号记法是 f'(x) 和 f''(x)，牛顿点记法是 \\dot{x} 和 \\ddot{x}。这些都是内置的；physics 宏包另外提供 \\dv{y}{x} 作为快捷写法。",
+        },
+        {
+          question: "如何在 LaTeX 中输入偏导数？",
+          answer:
+            "在分式中使用内置的 \\partial 符号：$\\frac{\\partial f}{\\partial x}$；二阶混合偏导数写作 $\\frac{\\partial^2 f}{\\partial x \\partial y}$。加载 \\usepackage{physics} 后，\\pdv{f}{x} 和 \\pdv{f}{x}{y} 会得到相同的输出。",
+        },
+        {
+          question: "如何在 LaTeX 中输入带上下限的积分？",
+          answer:
+            "给 \\int 加上下标和上标：$\\int_a^b f(x)\\,dx$。加上 \\limits（\\int\\limits_a^b）可以把上下限放在积分号的正上方和正下方。二重和三重积分请加载 amsmath 并使用 \\iint 和 \\iiint，它们能正确处理积分号之间的间距；\\oint 输出闭合围道积分。",
+        },
+      ],
+    },
+    combinatorics: {
+      title: "LaTeX 中的组合数与阶乘：组合数学符号",
+      intro: (
+        <IntroP>
+          要在 LaTeX 中输入“从 n 个中选 k 个”的组合数，请加载 amsmath 并使用 <Cmd>{"\\binom{n}{k}"}</Cmd>，它会把二项式系数放在圆括号中输出，并根据行内或独立公式自动调整大小；<Cmd>{"\\dbinom"}</Cmd> 和{" "}
+          <Cmd>{"\\tbinom"}</Cmd> 分别强制使用大号和小号。阶乘在 LaTeX 中完全不需要命令：<Cmd>{"n!"}</Cmd> 就是字母加感叹号，所以二项式系数公式写作{" "}
+          <Cmd>{"\\frac{n!}{k!(n-k)!}"}</Cmd>。下表列出了最常用的组合数学命令及各自所需的宏包；完整的符号列表见页面下方。
+        </IntroP>
+      ),
+      quickRefHeading: "速查表：组合数、阶乘与排列",
+      use: {
+        "\\binom{n}{k}": "n 选 k（二项式系数）",
+        "\\dbinom{n}{k}": "独立公式大小的二项式系数，行内也适用",
+        "\\tbinom{n}{k}": "文本大小的二项式系数，独立公式中也适用",
+        "{n \\choose k}": "Plain TeX 的组合数写法（使用 amsmath 时应避免）",
+        "n!": "阶乘",
+        "n!!": "双阶乘",
+        "\\frac{n!}{k!(n-k)!}": "二项式系数公式",
+        "\\binom{n}{k_1, k_2, \\ldots, k_m}": "多项式系数",
+        "P(n, k) = \\frac{n!}{(n-k)!}": "排列数（nPr）",
+        "n^{\\underline{k}}": "下降阶乘",
+      },
+      faqHeading: "LaTeX 组合数学符号常见问题",
+      faq: [
+        {
+          question: "如何在 LaTeX 中输入组合数 n 选 k？",
+          answer:
+            "加载 amsmath 并写 \\binom{n}{k}，它会输出圆括号中上下排列的 n 和 k，并根据行内或独立公式自动调整大小。用 \\dbinom{n}{k} 强制使用大号的独立公式尺寸，用 \\tbinom{n}{k} 使用小号的文本尺寸。Plain TeX 写法 {n \\choose k} 也能用，但 amsmath 会对此发出警告。",
+        },
+        {
+          question: "如何在 LaTeX 中输入阶乘？",
+          answer:
+            "阶乘不需要任何命令：在数学模式中直接写 n!。双阶乘是 n!!；对于表达式，先用圆括号括起来，例如 (n+1)!。二项式系数公式写作 \\frac{n!}{k!(n-k)!}。",
+        },
+        {
+          question: "如何在 LaTeX 中输入多项式系数？",
+          answer:
+            "沿用 \\binom，在下方参数中写一个列表：\\binom{n}{k_1, k_2, \\ldots, k_m}。也可以展开写成 \\frac{n!}{k_1!\\,k_2!\\cdots k_m!}。",
+        },
+      ],
+    },
+    complex: {
+      title: "LaTeX 中的复数符号与共轭",
+      intro: (
+        <IntroP>
+          复数集的符号是黑板粗体 &#8450;，在 LaTeX 中借助 amssymb 宏包写作 <Cmd>{"\\mathbb{C}"}</Cmd>。共轭复数对单个字母写作{" "}
+          <Cmd>{"\\bar{z}"}</Cmd>，对整个表达式写作 <Cmd>{"\\overline{z}"}</Cmd>，物理学中则常写 <Cmd>{"z^*"}</Cmd>。实部和虚部是{" "}
+          <Cmd>{"\\Re"}</Cmd> 和 <Cmd>{"\\Im"}</Cmd>，或者直立体的 <Cmd>{"\\operatorname{Re}"}</Cmd>；模是{" "}
+          <Cmd>{"|z|"}</Cmd>，辐角是 <Cmd>{"\\arg z"}</Cmd>。下表列出了最常用的复数符号及各自所需的宏包；完整列表见页面下方。
+        </IntroP>
+      ),
+      quickRefHeading: "速查表：最常用的复数符号",
+      use: {
+        "\\mathbb{C}": "复数集",
+        "z = a + bi": "代数形式（直角坐标形式）",
+        "\\bar{z}": "共轭复数（单个字母）",
+        "\\overline{z + w}": "表达式的共轭",
+        "z^*": "共轭，物理学记法",
+        "\\Re(z)": "实部，哥特体 ℜ",
+        "\\Im(z)": "虚部，哥特体 ℑ",
+        "\\operatorname{Re}(z)": "实部，直立体（虚部同理用 Im）",
+        "|z|": "模（绝对值）",
+        "\\arg z": "辐角",
+        "re^{i\\theta}": "极坐标形式（指数形式）",
+        "\\mathrm{i}": "直立体虚数单位",
+      },
+      faqHeading: "LaTeX 复数符号常见问题",
+      faq: [
+        {
+          question: "复数集用什么符号表示？",
+          answer:
+            "复数集用黑板粗体 C 表示，即 ℂ。在 LaTeX 中加载 \\usepackage{amssymb}（或 amsfonts）后写 \\mathbb{C}，例如 z \\in \\mathbb{C}。实数集用同样的字体写作 \\mathbb{R}。",
+        },
+        {
+          question: "如何在 LaTeX 中输入共轭复数？",
+          answer:
+            "单个字母用 \\bar{z}，较长的表达式用 \\overline{z + w}，因为 \\overline 会延伸覆盖整个参数。物理学家和工程师常写 z^*，矩阵的共轭转置则写作 A^\\dagger 或 A^*。",
+        },
+        {
+          question: "如何在 LaTeX 中输入实部和虚部？",
+          answer:
+            "内置的 \\Re 和 \\Im 输出哥特体字母 ℜ 和 ℑ。若要使用大多数现代教材采用的直立体 Re 和 Im，请借助 amsmath 写 \\operatorname{Re}(z) 和 \\operatorname{Im}(z)，或者用 \\renewcommand{\\Re}{\\operatorname{Re}} 一次性重新定义原命令。",
+        },
+      ],
+    },
+    "computer-science": {
+      title: "LaTeX 中的计算机科学符号：大 O、取整与算法记号",
+      intro: (
+        <IntroP>
+          LaTeX 中的大多数计算机科学符号都是普通的数学命令。大 O 记号写作 <Cmd>{"O(n \\log n)"}</Cmd>，许多论文也使用花体的{" "}
+          <Cmd>{"\\mathcal{O}(n)"}</Cmd>；与之相关的有 <Cmd>{"\\Omega(n)"}</Cmd>、<Cmd>{"\\Theta(n)"}</Cmd> 和小 o 记号{" "}
+          <Cmd>{"o(n)"}</Cmd>。向下取整和向上取整是 <Cmd>{"\\lfloor x \\rfloor"}</Cmd> 和{" "}
+          <Cmd>{"\\lceil x \\rceil"}</Cmd>，异或是 <Cmd>{"\\oplus"}</Cmd>，伪代码中的赋值是 <Cmd>{"\\gets"}</Cmd>，而用 := 表示的定义最好使用 mathtools 中的{" "}
+          <Cmd>{"\\coloneqq"}</Cmd>。下表列出了最常用的计算机科学符号及各自所需的宏包；完整列表见页面下方。
+        </IntroP>
+      ),
+      quickRefHeading: "速查表：复杂度、取整与算法",
+      use: {
+        "O(n \\log n)": "大 O（上界）",
+        "\\mathcal{O}(n)": "大 O，花体写法",
+        "\\Omega(n)": "大 Ω（下界）",
+        "\\Theta(n^2)": "大 Θ（紧确界）",
+        "o(n)": "小 o",
+        "\\lfloor \\log_2 n \\rfloor": "以 2 为底的对数向下取整",
+        "\\lceil n/2 \\rceil": "向上取整",
+        "a \\bmod n": "作为二元运算符的取模",
+        "\\oplus": "异或",
+        "x \\gets x + 1": "伪代码中的赋值",
+        "\\coloneqq": "定义为（:=）",
+        "\\{0,1\\}^*": "所有二进制串（克莱尼星号）",
+      },
+      faqHeading: "LaTeX 计算机科学符号常见问题",
+      faq: [
+        {
+          question: "如何在 LaTeX 中输入大 O 记号？",
+          answer:
+            "在数学模式中直接写 O(n)：$O(n \\log n)$。许多作者更喜欢花体形式 $\\mathcal{O}(n)$，它不需要任何宏包。大 Ω 和大 Θ 使用希腊大写字母 \\Omega(n) 和 \\Theta(n)，小 o 写作 o(n)。对数要写 \\log 而不是 log，这样函数名才会是直立体。",
+        },
+        {
+          question: "如何在 LaTeX 中输入向下取整和向上取整？",
+          answer:
+            "使用内置定界符：\\lfloor x \\rfloor 得到 ⌊x⌋，\\lceil x \\rceil 得到 ⌈x⌉。内容较高时在前面加 \\left 和 \\right，例如 \\left\\lfloor \\frac{n}{2} \\right\\rfloor；也可以用 mathtools 的 \\DeclarePairedDelimiter 定义 \\floor 和 \\ceil 命令。",
+        },
+        {
+          question: "如何在 LaTeX 中输入取模 mod？",
+          answer:
+            "二元运算符用 \\bmod，如 a \\bmod n；同余式用 \\pmod{n}，如 a \\equiv b \\pmod{n}，它会以正确的间距输出 (mod n)。两者都是内置命令；amsmath 还提供了 \\mod{n} 和 \\pod{n}，对应其他间距风格。",
+        },
+      ],
+    },
+    "differential-geometry": {
+      title: "LaTeX 中的微分几何符号：微分形式、联络与曲率",
+      intro: (
+        <IntroP>
+          LaTeX 中的微分几何符号建立在少数几个内置命令之上。微分形式的楔积是{" "}
+          <Cmd>{"\\alpha \\wedge \\beta"}</Cmd>，外幂用 <Cmd>{"\\bigwedge^k V"}</Cmd>；外微分是{" "}
+          <Cmd>{"d\\omega"}</Cmd>；协变导数是 <Cmd>{"\\nabla_X Y"}</Cmd>；李导数是 <Cmd>{"\\mathcal{L}_X"}</Cmd>。克里斯托费尔符号和曲率张量是带指标的字母，即{" "}
+          <Cmd>{"\\Gamma^k_{ij}"}</Cmd> 和 <Cmd>{"R^l{}_{ijk}"}</Cmd>，点 p 处的切空间是 <Cmd>{"T_pM"}</Cmd>。下表列出了最常用的微分几何符号，它们全部是内置命令；完整列表见页面下方。
+        </IntroP>
+      ),
+      quickRefHeading: "速查表：流形、微分形式与曲率",
+      use: {
+        "T_pM": "点 p 处的切空间",
+        "T^*_pM": "点 p 处的余切空间",
+        "\\nabla_X Y": "协变导数（联络）",
+        "\\Gamma^k_{ij}": "克里斯托费尔符号",
+        "R^l{}_{ijk}": "黎曼曲率张量",
+        "g_{ij}": "度量张量",
+        "\\alpha \\wedge \\beta": "微分形式的楔积",
+        "\\bigwedge^k V": "外幂，k 形式",
+        "d\\omega": "外微分",
+        "\\mathcal{L}_X": "李导数",
+        "[X, Y]": "向量场的李括号",
+        "\\star\\omega": "霍奇星算子",
+      },
+      faqHeading: "LaTeX 微分几何符号常见问题",
+      faq: [
+        {
+          question: "如何在 LaTeX 中输入楔积？",
+          answer:
+            "在微分形式之间使用 \\wedge，如 $\\alpha \\wedge \\beta$；它是二元运算符，间距正确。外幂或对指标集取的大楔积请用大型运算符 \\bigwedge，例如 \\bigwedge^k V 或 \\bigwedge_{i=1}^{n} dx_i。两者都是内置命令。",
+        },
+        {
+          question: "如何在 LaTeX 中输入协变导数？",
+          answer:
+            "写 \\nabla，并把方向作为下标：$\\nabla_X Y$，在指标记法中写作 \\nabla_\\mu V^\\nu。沿坐标方向的偏导数写作 \\partial_\\mu，物理教材中也常见分号记法 V^\\nu{}_{;\\mu}。",
+        },
+        {
+          question: "如何在 LaTeX 中输入李导数和外微分？",
+          answer:
+            "李导数是带下标的花体 L：\\mathcal{L}_X T。外微分就是普通的 d，如 d\\omega；有些作者用 \\mathrm{d}\\omega 把它设为直立体，以便与变量区分。",
+        },
+      ],
+    },
+    finance: {
+      title: "LaTeX 中的货币与金融符号：美元、欧元与公式",
+      intro: (
+        <IntroP>
+          在 LaTeX 中输入货币符号需要稍加注意，因为美元符号会开启数学模式。要输出美元符号，请转义为{" "}
+          <Cmd>{"\\$"}</Cmd>；英镑符号是 <Cmd>{"\\pounds"}</Cmd>，欧元符号是 <Cmd>{"\\texteuro"}</Cmd>，若要官方设计的欧元符号，可用 eurosym 宏包中的{" "}
+          <Cmd>{"\\euro"}</Cmd>。百分号要写 <Cmd>{"\\%"}</Cmd>，因为单独的 % 会开始一段注释；千分号是{" "}
+          <Cmd>{"\\textperthousand"}</Cmd>。净现值、复利等金融公式就是由 <Cmd>{"\\sum"}</Cmd> 和{" "}
+          <Cmd>{"\\frac"}</Cmd> 构成的普通数学公式。下表列出了最常用的金融符号及各自所需的宏包；完整列表见页面下方。
+        </IntroP>
+      ),
+      quickRefHeading: "速查表：货币、百分号与公式",
+      use: {
+        "\\$": "美元符号",
+        "\\pounds": "英镑",
+        "\\texteuro": "欧元符号（textcomp，内置）",
+        "\\euro": "官方欧元符号",
+        "\\textyen": "日元符号（textcomp，内置）",
+        "\\%": "百分号",
+        "\\textperthousand": "千分号（textcomp，内置）",
+        "\\mathrm{NPV} = \\sum_{t=0}^{n} \\frac{C_t}{(1+r)^t}": "净现值",
+        "A = P\\left(1 + \\frac{r}{n}\\right)^{nt}": "复利",
+        "A = Pe^{rt}": "连续复利",
+        "\\pm": "正负号",
+      },
+      faqHeading: "LaTeX 货币与金融符号常见问题",
+      faq: [
+        {
+          question: "如何在 LaTeX 中输入美元符号？",
+          answer:
+            "需要转义：\\$ 在文本和数学模式中都输出 $，例如 \\$100。单独的 $ 会开启或结束数学模式，所以价格中未转义的美元符号会导致报错，或把该行剩余部分变成数学公式。",
+        },
+        {
+          question: "如何在 LaTeX 中输入欧元符号？",
+          answer:
+            "\\texteuro（来自 textcomp，现已并入 LaTeX 内核）无需额外宏包即可输出当前字体的欧元符号。若要欧盟官方设计，请加载 \\usepackage{eurosym} 并写 \\euro。使用 XeLaTeX 或 LuaLaTeX 时，也可以直接输入 €。",
+        },
+        {
+          question: "如何在 LaTeX 中输入百分号？",
+          answer:
+            "写 \\%。单独的 % 会开始一段注释，该行之后的内容都不会出现在输出中。千分号用 \\textperthousand；带单位的数值可以使用 siunitx 宏包的 \\qty{5}{\\percent}。",
+        },
+      ],
+    },
+    "game-theory": {
+      title: "LaTeX 中的博弈论符号：策略、收益与均衡",
+      intro: (
+        <IntroP>
+          LaTeX 中的博弈论记号大多是带下标的字母，所以关键在于下标写法保持一致。参与者的策略是{" "}
+          <Cmd>{"s_i"}</Cmd>，其他所有参与者的策略是 <Cmd>{"s_{-i}"}</Cmd>，收益是{" "}
+          <Cmd>{"u_i(s_i, s_{-i})"}</Cmd>，纳什均衡用星号标记，即 <Cmd>{"s^*"}</Cmd>。混合策略写作{" "}
+          <Cmd>{"\\sigma_i \\in \\Delta(S_i)"}</Cmd>，偏好关系用 <Cmd>{"\\succ"}</Cmd> 和{" "}
+          <Cmd>{"\\succeq"}</Cmd>，最优反应最好用 amsmath 的 <Cmd>{"\\operatorname{BR}_i"}</Cmd> 来写。收益矩阵是用 array 构建的表格。下表列出了最常用的博弈论符号及各自所需的宏包；完整列表见页面下方。
+        </IntroP>
+      ),
+      quickRefHeading: "速查表：策略、收益与均衡",
+      use: {
+        "s_i \\in S_i": "参与者 i 的策略",
+        "s_{-i}": "其他所有参与者的策略",
+        "u_i(s_i, s_{-i})": "参与者 i 的收益（效用）",
+        "s^* = (s_1^*, \\ldots, s_n^*)": "纳什均衡策略组合",
+        "\\operatorname{BR}_i(s_{-i})": "最优反应",
+        "\\sigma_i \\in \\Delta(S_i)": "混合策略",
+        "\\mathbb{E}[u_i(\\sigma)]": "期望收益",
+        "a \\succ b": "严格偏好",
+        "a \\succeq b": "弱偏好",
+        "\\max_{s_i} \\min_{s_{-i}} u_i": "最大最小值",
+        "\\phi_i(v)": "沙普利值",
+        "v(S)": "联盟 S 的值",
+      },
+      faqHeading: "LaTeX 博弈论符号常见问题",
+      faq: [
+        {
+          question: "如何在 LaTeX 中输入收益矩阵？",
+          answer:
+            "在独立公式中使用 array，并在行标签后加一条竖线：\\begin{array}{c|cc} & L & R \\\\ \\hline U & 3,3 & 0,5 \\\\ D & 5,0 & 1,1 \\end{array}。如果是带参与者名称的策略式博弈，sgame 宏包提供了 game 环境。",
+        },
+        {
+          question: "如何在 LaTeX 中输入 s 下标 -i？",
+          answer:
+            "把负号和指标一起放进花括号：s_{-i}。不加花括号时，s_-i 只会把负号降为下标。策略组合 (s_i', s_{-i}) 和最优反应 BR_i(s_{-i}) 也是同样的写法。",
+        },
+        {
+          question: "如何在 LaTeX 中标记纳什均衡？",
+          answer:
+            "使用上标星号：策略组合写 s^*，单个参与者的均衡策略写 s_i^*。均衡条件写作：对所有 s_i \\in S_i，有 u_i(s_i^*, s_{-i}^*) \\geq u_i(s_i, s_{-i}^*)。",
+        },
+      ],
+    },
   },
 };
 

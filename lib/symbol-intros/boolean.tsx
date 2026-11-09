@@ -11,7 +11,7 @@ import {
   type QuickRefRow,
 } from "./ui";
 
-const quickRef: QuickRefRow[] = [
+export const quickRef: QuickRefRow[] = [
   { latex: "\\land", use: "AND (alias \\wedge)" },
   { latex: "\\lor", use: "OR (alias \\vee)" },
   { latex: "\\lnot", use: "NOT (alias \\neg)" },

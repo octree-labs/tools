@@ -11,7 +11,7 @@ import {
   type QuickRefRow,
 } from "./ui";
 
-const quickRef: QuickRefRow[] = [
+export const quickRef: QuickRefRow[] = [
   { latex: "<", use: "Less than (type it directly)" },
   { latex: ">", use: "Greater than (type it directly)" },
   { latex: "\\leq", use: "Less than or equal to (alias \\le)" },

@@ -11,7 +11,7 @@ import {
   type QuickRefRow,
 } from "./ui";
 
-const quickRef: QuickRefRow[] = [
+export const quickRef: QuickRefRow[] = [
   {
     latex: "\\operatorname*{arg\\,max}_{x} f(x)",
     use: "Argmax with the variable underneath",
