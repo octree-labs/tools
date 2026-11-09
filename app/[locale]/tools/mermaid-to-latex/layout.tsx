@@ -2,9 +2,11 @@ import type { Metadata } from "next";
 import { generateToolMetadata } from '@/lib/generate-tool-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "Mermaid to TikZ/LaTeX Converter - Convert Diagrams Instantly",
-  description: "Convert Mermaid diagrams to TikZ LaTeX code in one click. Flowcharts, sequence diagrams and Gantt charts become clean LaTeX graphics. Free, live preview.",
+  title: "Mermaid to TikZ: Convert Mermaid Diagrams to LaTeX",
+  description: "Convert Mermaid diagrams to TikZ LaTeX code. Flowcharts and other Mermaid diagrams become a compilable tikzpicture with a live PDF preview. Free, no signup.",
   keywords: [
+    "mermaid latex",
+    "mermaid to tikz",
     "convert Mermaid to LaTeX",
     "Mermaid to LaTeX converter",
     "Mermaid to LaTeX online",
@@ -26,8 +28,8 @@ const defaultMetadata: Metadata = {
     canonical: '/tools/mermaid-to-latex',
   },
   openGraph: {
-    title: "Mermaid to TikZ/LaTeX Converter - Transform Diagrams Instantly",
-    description: "Convert Mermaid diagrams to TikZ LaTeX code in one click. Flowcharts, sequence diagrams → professional LaTeX graphics.",
+    title: "Mermaid to TikZ: Convert Mermaid Diagrams to LaTeX",
+    description: "Convert Mermaid diagrams to TikZ LaTeX code with a live PDF preview. Free, no signup.",
     url: 'https://tools.useoctree.com/tools/mermaid-to-latex',
     siteName: 'Octree LaTeX Tools',
     locale: 'en_US',
@@ -35,8 +37,8 @@ const defaultMetadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Mermaid to TikZ/LaTeX Converter - Transform Diagrams Instantly",
-    description: "Convert Mermaid diagrams to TikZ LaTeX code in one click. Flowcharts, sequence diagrams → professional LaTeX graphics.",
+    title: "Mermaid to TikZ: Convert Mermaid Diagrams to LaTeX",
+    description: "Convert Mermaid diagrams to TikZ LaTeX code with a live PDF preview. Free, no signup.",
   },
 };
 

@@ -3,14 +3,8 @@ import Link from 'next/link';
 import { ArrowLeft, ArrowLeftRight, ArrowRight } from 'lucide-react';
 import { generateAlternates, withDefaultOgImage } from '@/lib/seo';
 import { OctreeCTA } from '@/components/OctreeCTA';
-import {
-  GuideFaq,
-  GuideH2,
-  GuideLink,
-  GuideP,
-  GuideTable,
-  type GuideFaqItem,
-} from '@/lib/template-guides/ui';
+import { GuideH2, GuideLink, GuideTable } from '@/lib/template-guides/ui';
+import LatexConverterSeoContent from './seo-content';
 
 const TITLE = 'LaTeX Converter: Convert To and From LaTeX Online';
 const DESCRIPTION =
@@ -80,21 +74,21 @@ const toLatex: Converter[] = [
     name: 'HTML to LaTeX',
     href: '/tools/html-to-latex',
     input: 'HTML markup',
-    output: 'LaTeX',
+    output: 'LaTeX document',
     ai: true,
     bestFor: 'Web pages, CMS exports and documentation sites',
     description:
-      'Maps HTML headings, paragraphs, lists, tables, links and inline formatting onto LaTeX equivalents, keeping the document structure while dropping scripts, styles and navigation chrome.',
+      'Maps pasted HTML headings, paragraphs, lists, tables, links and inline formatting onto LaTeX equivalents and returns a complete document with a PDF preview.',
   },
   {
     name: 'MathML to LaTeX',
     href: '/tools/mathml-to-latex',
     input: 'MathML (Presentation)',
-    output: 'LaTeX math',
+    output: 'LaTeX math document',
     ai: true,
-    bestFor: 'Equations exported from Word, MathType, Maple or browsers',
+    bestFor: 'Equations exported from Word, MathType or web pages',
     description:
-      'Converts MathML trees (mrow, mfrac, msup, msqrt, mtable and friends) into clean amsmath syntax so formulas from Word or the web can be reused in LaTeX papers.',
+      'Converts MathML trees (mrow, mfrac, msup, msqrt, mtable and friends) into amsmath syntax inside a complete document, so formulas from Word or the web can be reused in LaTeX papers.',
   },
   {
     name: 'Mermaid to LaTeX',
@@ -109,12 +103,12 @@ const toLatex: Converter[] = [
   {
     name: 'Table to LaTeX',
     href: '/tools/table-to-latex',
-    input: 'CSV, JSON, Excel',
-    output: 'LaTeX tabular',
-    ai: false,
+    input: 'CSV file (export Excel or Sheets as CSV)',
+    output: 'LaTeX table document',
+    ai: true,
     bestFor: 'Data tables, results tables and spreadsheets',
     description:
-      'Upload a CSV, JSON or Excel file and get a booktabs-styled tabular environment with proper column alignment and escaped special characters, ready to paste into a table float.',
+      'Upload a .csv file exported from Excel or Google Sheets and get a complete LaTeX document with a booktabs-styled tabular table, previewed as a PDF before you copy it into a table float.',
   },
   {
     name: 'PDF to LaTeX',
@@ -208,34 +202,6 @@ const fromLatex: Converter[] = [
     bestFor: 'Compiling and checking a document without installing TeX',
     description:
       'An online LaTeX editor with live compilation: type on the left, see the PDF on the right, and export it. Full TeX Live, so packages like TikZ, biblatex and beamer just work.',
-  },
-];
-
-const faq: GuideFaqItem[] = [
-  {
-    question: 'What is a LaTeX converter?',
-    answer:
-      'A LaTeX converter is a tool that translates between LaTeX source and another format. Converters to LaTeX take Markdown, HTML, MathML, Mermaid, spreadsheets, PDFs or images and produce .tex code; converters from LaTeX take .tex source and produce Markdown, PNG images, Word documents or PDFs. This page collects all of Octree’s free converters in both directions.',
-  },
-  {
-    question: 'Which converters use AI and which are deterministic?',
-    answer:
-      'Structure-heavy conversions (Markdown, HTML, MathML, Mermaid, PDF, images, equations and LaTeX to Markdown or Word) use an AI model because the mapping is ambiguous and needs judgement. Table to LaTeX, arXiv to LaTeX, LaTeX to PNG and LaTeX to PDF are deterministic: they parse or compile your input exactly and give the same output every time.',
-  },
-  {
-    question: 'How do I convert LaTeX to Word or PDF for free?',
-    answer:
-      'For Word, open the LaTeX to Word converter, paste your document and download document.docx. For PDF, open the LaTeX preview, paste your document and export the compiled PDF. Both run on a full TeX Live installation on our servers and require no account.',
-  },
-  {
-    question: 'Can I convert a whole paper with figures and a bibliography?',
-    answer:
-      'Text, sections, lists, tables and equations convert well in every direction. Figures are the main limitation: image files are not uploaded with the source, so converters keep the caption and reference. For bibliographies, LaTeX to Word keeps citation keys and a References list; for full BibTeX resolution, use the Citation Generator to create entries and compile in the LaTeX preview.',
-  },
-  {
-    question: 'Is there a limit on document size?',
-    answer:
-      'Each converter accepts a typical paper, chapter or long README. The AI-powered converters cap input around 60,000 characters per request; split a thesis by chapter if it is larger. The compile-based tools (PNG and PDF) accept any document that compiles within the server time limit.',
   },
 ];
 
@@ -338,30 +304,6 @@ export default function LatexConverterPage() {
               ])}
             />
 
-            <GuideH2 id="choosing">Choosing the right converter</GuideH2>
-            <GuideP>
-              Start from what you have. If it is text with structure (a Markdown file, a web
-              page, a Word export), use the matching <strong>to LaTeX</strong> converter and
-              then open the result in the{' '}
-              <GuideLink href="/tools/latex-preview">LaTeX preview</GuideLink> to compile it. If
-              it is a picture of math, a sketch or a PDF, the image, PDF and equation converters
-              reconstruct source you can edit. If you already have LaTeX and someone else needs
-              another format, pick by destination: <strong>Markdown</strong> for wikis and
-              GitHub, <strong>Word</strong> for reviewers and submission portals,{' '}
-              <strong>PNG</strong> for slides and documents that cannot typeset math, and{' '}
-              <strong>PDF</strong> for the final, typeset output.
-            </GuideP>
-            <GuideP>
-              The AI-powered converters trade exactness for flexibility: they handle custom
-              macros, unusual packages and messy input, but you should proofread the output.
-              The deterministic converters (tables, arXiv, PNG, PDF) never invent content and
-              are the right choice when the input is already well-formed. Need something not
-              listed here, such as a TikZ diagram from a description or a BibTeX entry from a
-              DOI? See the <GuideLink href="/">full list of LaTeX tools</GuideLink>.
-            </GuideP>
-
-            <GuideH2 id="faq">Frequently asked questions</GuideH2>
-            <GuideFaq items={faq} />
           </article>
         </section>
 
@@ -369,6 +311,7 @@ export default function LatexConverterPage() {
           <OctreeCTA source="tools:latex-converter" />
         </div>
       </div>
+      <LatexConverterSeoContent />
     </div>
   );
 }

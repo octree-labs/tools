@@ -2,9 +2,12 @@ import type { Metadata } from "next";
 import { generateToolMetadata } from '@/lib/generate-tool-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "MathML to LaTeX Converter Online - Free & Instant | Octree",
+  title: "MathML to LaTeX Converter Online: Free & Instant",
   description: "Paste MathML, get clean LaTeX in one click. Convert Word equations, MathType and Office Math to LaTeX instantly. Free online tool with live preview.",
   keywords: [
+    "mathml to latex",
+    "mathml latex",
+    "online mathml editor",
     "convert MathML to LaTeX",
     "MathML to LaTeX converter",
     "MathML to LaTeX online",
@@ -25,7 +28,7 @@ const defaultMetadata: Metadata = {
     canonical: '/tools/mathml-to-latex',
   },
   openGraph: {
-    title: "MathML to LaTeX Converter Online - Free & Instant",
+    title: "MathML to LaTeX Converter Online: Free & Instant",
     description: "Paste MathML, get perfect LaTeX in one click. Convert Word equations & MathType to LaTeX instantly.",
     url: 'https://tools.useoctree.com/tools/mathml-to-latex',
     siteName: 'Octree LaTeX Tools',
@@ -34,7 +37,7 @@ const defaultMetadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "MathML to LaTeX Converter Online - Free & Instant",
+    title: "MathML to LaTeX Converter Online: Free & Instant",
     description: "Paste MathML, get perfect LaTeX in one click. Convert Word equations & MathType to LaTeX instantly.",
   },
 };

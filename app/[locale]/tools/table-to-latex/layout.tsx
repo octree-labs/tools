@@ -2,16 +2,19 @@ import type { Metadata } from "next";
 import { generateToolMetadata } from '@/lib/generate-tool-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "Excel to LaTeX Converter - CSV, JSON & Excel to LaTeX | Free",
-  description: "Free AI-powered tool to convert Excel spreadsheets, CSV, JSON and XLSX files to LaTeX. Upload your file and get a clean LaTeX table with a PDF preview.",
+  title: "LaTeX Table Generator from CSV: Excel to LaTeX Free",
+  description: "Free LaTeX table generator. Upload a CSV exported from Excel or Google Sheets and get a booktabs LaTeX table with a PDF preview. No signup.",
   keywords: [
+    "csv to latex",
+    "csv latex",
+    "excel latex",
+    "excel table latex",
     "latex table generator",
     "table generator latex",
     "create latex table",
     "online table generator latex",
     "convert Excel to LaTeX",
     "CSV to LaTeX converter",
-    "JSON to LaTeX converter",
     "Excel to LaTeX converter",
     "Excel to LaTeX online",
     "free Excel to LaTeX converter",
@@ -30,8 +33,8 @@ const defaultMetadata: Metadata = {
     canonical: '/tools/table-to-latex',
   },
   openGraph: {
-    title: "Convert Excel to LaTeX - Free Online Converter",
-    description: "AI-powered converter for CSV, JSON, and Excel spreadsheets to LaTeX code with instant preview",
+    title: "LaTeX Table Generator from CSV: Excel to LaTeX Free",
+    description: "Upload a CSV exported from Excel or Google Sheets and get a LaTeX table with a PDF preview. Free, no signup.",
     url: 'https://tools.useoctree.com/tools/table-to-latex',
     siteName: 'Octree LaTeX Tools',
     locale: 'en_US',
@@ -39,8 +42,8 @@ const defaultMetadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Convert Excel to LaTeX - Free Online Converter",
-    description: "AI-powered converter for CSV, JSON, and Excel spreadsheets to LaTeX code with instant preview",
+    title: "LaTeX Table Generator from CSV: Excel to LaTeX Free",
+    description: "Upload a CSV exported from Excel or Google Sheets and get a LaTeX table with a PDF preview. Free, no signup.",
   },
 };
 
