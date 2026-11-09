@@ -6,14 +6,50 @@ import cnArrows from "./cn/arrows";
 import esArrows from "./es/arrows";
 import frArrows from "./fr/arrows";
 import ruArrows from "./ru/arrows";
-import cnSetTheory from "./cn/set-theory";
-import esSetTheory from "./es/set-theory";
-import frSetTheory from "./fr/set-theory";
-import ruSetTheory from "./ru/set-theory";
 import cnMath from "./cn/math";
 import esMath from "./es/math";
 import frMath from "./fr/math";
 import ruMath from "./ru/math";
+import cnProbability from "./cn/probability";
+import esProbability from "./es/probability";
+import frProbability from "./fr/probability";
+import ruProbability from "./ru/probability";
+import cnQuantifiers from "./cn/quantifiers";
+import esQuantifiers from "./es/quantifiers";
+import frQuantifiers from "./fr/quantifiers";
+import ruQuantifiers from "./ru/quantifiers";
+import cnRelations from "./cn/relations";
+import esRelations from "./es/relations";
+import frRelations from "./fr/relations";
+import ruRelations from "./ru/relations";
+import cnSetTheory from "./cn/set-theory";
+import esSetTheory from "./es/set-theory";
+import frSetTheory from "./fr/set-theory";
+import ruSetTheory from "./ru/set-theory";
+import cnSpecialFunctions from "./cn/special-functions";
+import esSpecialFunctions from "./es/special-functions";
+import frSpecialFunctions from "./fr/special-functions";
+import ruSpecialFunctions from "./ru/special-functions";
+import cnSummation from "./cn/summation";
+import esSummation from "./es/summation";
+import frSummation from "./fr/summation";
+import ruSummation from "./ru/summation";
+import cnTensors from "./cn/tensors";
+import esTensors from "./es/tensors";
+import frTensors from "./fr/tensors";
+import ruTensors from "./ru/tensors";
+import cnTopology from "./cn/topology";
+import esTopology from "./es/topology";
+import frTopology from "./fr/topology";
+import ruTopology from "./ru/topology";
+import cnTrigonometry from "./cn/trigonometry";
+import esTrigonometry from "./es/trigonometry";
+import frTrigonometry from "./fr/trigonometry";
+import ruTrigonometry from "./ru/trigonometry";
+import cnUnits from "./cn/units";
+import esUnits from "./es/units";
+import frUnits from "./fr/units";
+import ruUnits from "./ru/units";
 
 export type { SymbolPageTranslation, SymbolPageTranslations } from "./types";
 
@@ -27,10 +63,62 @@ export type { SymbolPageTranslation, SymbolPageTranslations } from "./types";
  * (every slug of the category, see ./types.ts) and register it below.
  */
 const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
-  cn: { "math": cnMath, "set-theory": cnSetTheory, "arrows": cnArrows },
-  es: { "math": esMath, "set-theory": esSetTheory, "arrows": esArrows },
-  fr: { "math": frMath, "set-theory": frSetTheory, "arrows": frArrows },
-  ru: { "math": ruMath, "set-theory": ruSetTheory, "arrows": ruArrows },
+  cn: {
+    "arrows": cnArrows,
+    "math": cnMath,
+    "probability": cnProbability,
+    "quantifiers": cnQuantifiers,
+    "relations": cnRelations,
+    "set-theory": cnSetTheory,
+    "special-functions": cnSpecialFunctions,
+    "summation": cnSummation,
+    "tensors": cnTensors,
+    "topology": cnTopology,
+    "trigonometry": cnTrigonometry,
+    "units": cnUnits,
+  },
+  es: {
+    "arrows": esArrows,
+    "math": esMath,
+    "probability": esProbability,
+    "quantifiers": esQuantifiers,
+    "relations": esRelations,
+    "set-theory": esSetTheory,
+    "special-functions": esSpecialFunctions,
+    "summation": esSummation,
+    "tensors": esTensors,
+    "topology": esTopology,
+    "trigonometry": esTrigonometry,
+    "units": esUnits,
+  },
+  fr: {
+    "arrows": frArrows,
+    "math": frMath,
+    "probability": frProbability,
+    "quantifiers": frQuantifiers,
+    "relations": frRelations,
+    "set-theory": frSetTheory,
+    "special-functions": frSpecialFunctions,
+    "summation": frSummation,
+    "tensors": frTensors,
+    "topology": frTopology,
+    "trigonometry": frTrigonometry,
+    "units": frUnits,
+  },
+  ru: {
+    "arrows": ruArrows,
+    "math": ruMath,
+    "probability": ruProbability,
+    "quantifiers": ruQuantifiers,
+    "relations": ruRelations,
+    "set-theory": ruSetTheory,
+    "special-functions": ruSpecialFunctions,
+    "summation": ruSummation,
+    "tensors": ruTensors,
+    "topology": ruTopology,
+    "trigonometry": ruTrigonometry,
+    "units": ruUnits,
+  },
 };
 
 /** Locales that have translated symbol copy for at least one category. */
