@@ -18,6 +18,18 @@ import cnGameTheory from "./cn/game-theory";
 import esGameTheory from "./es/game-theory";
 import frGameTheory from "./fr/game-theory";
 import ruGameTheory from "./ru/game-theory";
+import cnGeometry from "./cn/geometry";
+import esGeometry from "./es/geometry";
+import frGeometry from "./fr/geometry";
+import ruGeometry from "./ru/geometry";
+import cnGraphTheory from "./cn/graph-theory";
+import esGraphTheory from "./es/graph-theory";
+import frGraphTheory from "./fr/graph-theory";
+import ruGraphTheory from "./ru/graph-theory";
+import cnGreek from "./cn/greek";
+import esGreek from "./es/greek";
+import frGreek from "./fr/greek";
+import ruGreek from "./ru/greek";
 import cnMath from "./cn/math";
 import esMath from "./es/math";
 import frMath from "./fr/math";
@@ -80,6 +92,9 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "finance": cnFinance,
     "functions": cnFunctions,
     "game-theory": cnGameTheory,
+    "geometry": cnGeometry,
+    "graph-theory": cnGraphTheory,
+    "greek": cnGreek,
     "math": cnMath,
     "probability": cnProbability,
     "quantifiers": cnQuantifiers,
@@ -97,6 +112,9 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "finance": esFinance,
     "functions": esFunctions,
     "game-theory": esGameTheory,
+    "geometry": esGeometry,
+    "graph-theory": esGraphTheory,
+    "greek": esGreek,
     "math": esMath,
     "probability": esProbability,
     "quantifiers": esQuantifiers,
@@ -114,6 +132,9 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "finance": frFinance,
     "functions": frFunctions,
     "game-theory": frGameTheory,
+    "geometry": frGeometry,
+    "graph-theory": frGraphTheory,
+    "greek": frGreek,
     "math": frMath,
     "probability": frProbability,
     "quantifiers": frQuantifiers,
@@ -131,6 +152,9 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "finance": ruFinance,
     "functions": ruFunctions,
     "game-theory": ruGameTheory,
+    "geometry": ruGeometry,
+    "graph-theory": ruGraphTheory,
+    "greek": ruGreek,
     "math": ruMath,
     "probability": ruProbability,
     "quantifiers": ruQuantifiers,
