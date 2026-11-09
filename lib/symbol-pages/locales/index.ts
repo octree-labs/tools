@@ -38,10 +38,42 @@ import cnLinearAlgebra from "./cn/linear-algebra";
 import esLinearAlgebra from "./es/linear-algebra";
 import frLinearAlgebra from "./fr/linear-algebra";
 import ruLinearAlgebra from "./ru/linear-algebra";
+import cnLogic from "./cn/logic";
+import esLogic from "./es/logic";
+import frLogic from "./fr/logic";
+import ruLogic from "./ru/logic";
+import cnMachineLearning from "./cn/machine-learning";
+import esMachineLearning from "./es/machine-learning";
+import frMachineLearning from "./fr/machine-learning";
+import ruMachineLearning from "./ru/machine-learning";
 import cnMath from "./cn/math";
 import esMath from "./es/math";
 import frMath from "./fr/math";
 import ruMath from "./ru/math";
+import cnModalLogic from "./cn/modal-logic";
+import esModalLogic from "./es/modal-logic";
+import frModalLogic from "./fr/modal-logic";
+import ruModalLogic from "./ru/modal-logic";
+import cnNumberTheory from "./cn/number-theory";
+import esNumberTheory from "./es/number-theory";
+import frNumberTheory from "./fr/number-theory";
+import ruNumberTheory from "./ru/number-theory";
+import cnOperators from "./cn/operators";
+import esOperators from "./es/operators";
+import frOperators from "./fr/operators";
+import ruOperators from "./ru/operators";
+import cnOptimization from "./cn/optimization";
+import esOptimization from "./es/optimization";
+import frOptimization from "./fr/optimization";
+import ruOptimization from "./ru/optimization";
+import cnOrder from "./cn/order";
+import esOrder from "./es/order";
+import frOrder from "./fr/order";
+import ruOrder from "./ru/order";
+import cnPhysics from "./cn/physics";
+import esPhysics from "./es/physics";
+import frPhysics from "./fr/physics";
+import ruPhysics from "./ru/physics";
 import cnProbability from "./cn/probability";
 import esProbability from "./es/probability";
 import frProbability from "./fr/probability";
@@ -105,7 +137,15 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "greek": cnGreek,
     "latin": cnLatin,
     "linear-algebra": cnLinearAlgebra,
+    "logic": cnLogic,
+    "machine-learning": cnMachineLearning,
     "math": cnMath,
+    "modal-logic": cnModalLogic,
+    "number-theory": cnNumberTheory,
+    "operators": cnOperators,
+    "optimization": cnOptimization,
+    "order": cnOrder,
+    "physics": cnPhysics,
     "probability": cnProbability,
     "quantifiers": cnQuantifiers,
     "relations": cnRelations,
@@ -127,7 +167,15 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "greek": esGreek,
     "latin": esLatin,
     "linear-algebra": esLinearAlgebra,
+    "logic": esLogic,
+    "machine-learning": esMachineLearning,
     "math": esMath,
+    "modal-logic": esModalLogic,
+    "number-theory": esNumberTheory,
+    "operators": esOperators,
+    "optimization": esOptimization,
+    "order": esOrder,
+    "physics": esPhysics,
     "probability": esProbability,
     "quantifiers": esQuantifiers,
     "relations": esRelations,
@@ -149,7 +197,15 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "greek": frGreek,
     "latin": frLatin,
     "linear-algebra": frLinearAlgebra,
+    "logic": frLogic,
+    "machine-learning": frMachineLearning,
     "math": frMath,
+    "modal-logic": frModalLogic,
+    "number-theory": frNumberTheory,
+    "operators": frOperators,
+    "optimization": frOptimization,
+    "order": frOrder,
+    "physics": frPhysics,
     "probability": frProbability,
     "quantifiers": frQuantifiers,
     "relations": frRelations,
@@ -171,7 +227,15 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "greek": ruGreek,
     "latin": ruLatin,
     "linear-algebra": ruLinearAlgebra,
+    "logic": ruLogic,
+    "machine-learning": ruMachineLearning,
     "math": ruMath,
+    "modal-logic": ruModalLogic,
+    "number-theory": ruNumberTheory,
+    "operators": ruOperators,
+    "optimization": ruOptimization,
+    "order": ruOrder,
+    "physics": ruPhysics,
     "probability": ruProbability,
     "quantifiers": ruQuantifiers,
     "relations": ruRelations,
