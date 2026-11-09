@@ -27,6 +27,7 @@ import { Button } from "@/components/ui/button";
 import { useTranslations, useLocale } from "next-intl";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import type { Locale } from "@/lib/i18n/config";
+import { ApiError, readApiError } from "@/lib/api-error";
 
 const Editor = dynamic(() => import("@monaco-editor/react"), { ssr: false });
 const PDFPreview = dynamic(() => import("@/components/PDFPreview"), {
@@ -87,7 +88,7 @@ export default function AILatexGenerator() {
         body: JSON.stringify({ prompt }),
       });
 
-      if (!response.ok) throw new Error("Generation failed");
+      if (!response.ok) throw await readApiError(response, t("failedToGenerate"));
 
       const reader = response.body?.getReader();
       const decoder = new TextDecoder();
@@ -105,7 +106,7 @@ export default function AILatexGenerator() {
         setLatexCode(accumulatedText);
       }
     } catch (err) {
-      setError(t("failedToGenerate"));
+      setError(err instanceof ApiError ? err.message : t("failedToGenerate"));
       console.error(err);
     } finally {
       setIsProcessing(false);

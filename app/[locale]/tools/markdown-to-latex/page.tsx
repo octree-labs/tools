@@ -28,6 +28,7 @@ import LanguageSwitcher from "@/components/LanguageSwitcher";
 import type { Locale } from "@/lib/i18n/config";
 import { Button } from "@/components/ui/button";
 import { trackConverterUsed } from "@/lib/analytics";
+import { ApiError, readApiError } from "@/lib/api-error";
 
 const Editor = dynamic(() => import("@monaco-editor/react"), { ssr: false });
 const PDFPreview = dynamic(() => import("@/components/PDFPreview"), {
@@ -108,7 +109,7 @@ export default function MarkdownToLatex() {
         body: JSON.stringify({ markdown: markdownText }),
       });
 
-      if (!response.ok) throw new Error("Conversion failed");
+      if (!response.ok) throw await readApiError(response, t("failedToConvert"));
 
       const reader = response.body?.getReader();
       const decoder = new TextDecoder();
@@ -128,7 +129,7 @@ export default function MarkdownToLatex() {
       trackConverterUsed('markdown-to-latex', true);
     } catch (err) {
       trackConverterUsed('markdown-to-latex', false);
-      setError(t("failedToConvert"));
+      setError(err instanceof ApiError ? err.message : t("failedToConvert"));
       console.error(err);
     } finally {
       setIsProcessing(false);
