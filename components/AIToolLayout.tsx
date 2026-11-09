@@ -18,9 +18,24 @@ import { CompileErrorModal } from '@/components/CompileErrorModal';
 import { OctreeCTA } from '@/components/OctreeCTA';
 import { useTranslations } from 'next-intl';
 import { trackConverterUsed } from '@/lib/analytics';
+import { appUrl } from '@/lib/open-in-octree';
+import {
+  UPLOAD_ERRORS,
+  acceptAttribute,
+  allowedKinds,
+  checkUpload,
+  stripCodeFences,
+} from '@/lib/convert-input';
 
 const Editor = dynamic(() => import('@monaco-editor/react'), { ssr: false });
 const PDFPreview = dynamic(() => import('@/components/PDFPreview'), { ssr: false });
+
+/** A failed conversion with a message fit to show; `offerOctree` adds the Open-in-Octree fallback. */
+class ConversionError extends Error {
+  constructor(message: string, readonly offerOctree: boolean) {
+    super(message);
+  }
+}
 
 interface AIToolLayoutProps {
   title: string;
@@ -57,6 +72,8 @@ export default function AIToolLayout({
   const [showExportMenu, setShowExportMenu] = useState(false);
   const [uploadedFileName, setUploadedFileName] = useState<string>('');
   const [isTableFile, setIsTableFile] = useState(false);
+  const [isPdfFile, setIsPdfFile] = useState(false);
+  const [showOpenInOctreeFallback, setShowOpenInOctreeFallback] = useState(false);
   const [fileType, setFileType] = useState<string>('math');
   const [compileError, setCompileError] = useState<string>('');
   const [compileLog, setCompileLog] = useState<string>('');
@@ -64,11 +81,12 @@ export default function AIToolLayout({
   const [latestLatexDocument, setLatestLatexDocument] = useState<string>('');
 
   // Convert acceptedFormats to file accept attribute
+  // Convert acceptedFormats to file accept attribute
+  const uploadKinds = allowedKinds(acceptedFormats);
   const getAcceptAttribute = () => {
     if (acceptedFormats.includes('CSV')) return '.csv,text/csv';
     if (acceptedFormats.includes('HTML')) return '.html,text/html';
-    // For image formats (JPEG, PNG) with or without PDF
-    return 'image/*,application/pdf,.pdf';
+    return acceptAttribute(uploadKinds);
   };
 
   // Initialize Monaco with LaTeX syntax highlighting
@@ -84,9 +102,10 @@ export default function AIToolLayout({
     });
   }, []);
 
-  const processImage = async (image: string) => {
+  const processImage = async (image: string, filename?: string) => {
     setIsProcessing(true);
     setError('');
+    setShowOpenInOctreeFallback(false);
     setLatexCode('');
     setActiveTab('code');
     setPreviewUrl('');
@@ -96,10 +115,20 @@ export default function AIToolLayout({
       const response = await fetch(apiEndpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ image, type: fileType }),
+        body: JSON.stringify({ image, type: fileType, filename }),
       });
 
-      if (!response.ok) throw new Error('Conversion failed');
+      if (!response.ok) {
+        // The API answers errors with `{ error, code }`; the platform's own 413 is not JSON.
+        const payload = await response.json().catch(() => null);
+        const message =
+          typeof payload?.error === 'string'
+            ? payload.error
+            : response.status === 413
+              ? UPLOAD_ERRORS.too_large
+              : t('failedToProcess');
+        throw new ConversionError(message, response.status !== 400);
+      }
 
       const reader = response.body?.getReader();
       const decoder = new TextDecoder();
@@ -116,10 +145,14 @@ export default function AIToolLayout({
         accumulatedText += chunk;
         setLatexCode(accumulatedText);
       }
+      const cleaned = stripCodeFences(accumulatedText);
+      if (!cleaned.trim()) throw new ConversionError(t('failedToProcess'), true);
+      if (cleaned !== accumulatedText) setLatexCode(cleaned);
       trackConverterUsed(analyticsTool, true);
     } catch (err) {
       trackConverterUsed(analyticsTool, false);
-      setError(t('failedToProcess'));
+      setError(err instanceof ConversionError ? err.message : t('failedToProcess'));
+      setShowOpenInOctreeFallback(err instanceof ConversionError ? err.offerOctree : true);
       console.error(err);
     } finally {
       setIsProcessing(false);
@@ -170,75 +203,64 @@ export default function AIToolLayout({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [latexCode, activeTab, isProcessing]);
 
-  const handleDrop = useCallback((e: React.DragEvent) => {
-    e.preventDefault();
-    setIsDragging(false);
+  const handleFile = (file: File) => {
+    setError('');
+    setShowOpenInOctreeFallback(false);
 
-    const file = e.dataTransfer.files[0];
-    if (file) {
-      const isLikelyImageByName = (name: string) => {
-        const lower = name.toLowerCase();
-        return (
-          lower.endsWith('.png') ||
-          lower.endsWith('.jpg') ||
-          lower.endsWith('.jpeg') ||
-          lower.endsWith('.webp') ||
-          lower.endsWith('.gif') ||
-          lower.endsWith('.heic') ||
-          lower.endsWith('.heif')
-        );
+    if (acceptedFormats.includes('CSV')) {
+      if (!file.name.toLowerCase().endsWith('.csv') && file.type !== 'text/csv') {
+        setError(t('onlyCsvFiles'));
+        return;
+      }
+
+      setUploadedFileName(file.name);
+      const reader = new FileReader();
+      setIsTableFile(true);
+      setIsPdfFile(false);
+      setFileType('csv');
+
+      reader.onload = (event) => {
+        const data = event.target?.result as string;
+        setImageData(data);
+        processImage(data, file.name);
       };
 
-      // Check if it's a CSV file tool
-      const isCSVTool = acceptedFormats.includes('CSV');
-      const isImageTool = acceptedFormats.includes('JPEG') || acceptedFormats.includes('PNG');
-      
-      if (isCSVTool) {
-        if (!file.name.toLowerCase().endsWith('.csv') && file.type !== 'text/csv') {
-          setError(t('onlyCsvFiles'));
-          return;
-        }
-
-        setUploadedFileName(file.name);
-        const reader = new FileReader();
-        setIsTableFile(true);
-        setFileType('csv');
-
-        reader.onload = (event) => {
-          const data = event.target?.result as string;
-          setImageData(data);
-          processImage(data);
-        };
-
-        reader.readAsText(file);
-      } else if (isImageTool) {
-        // Handle images and PDFs
-        // Some browsers (or HEIC files) may provide an empty MIME type; fall back to extension.
-        const isImage =
-          file.type.startsWith('image/') || (file.type === '' && isLikelyImageByName(file.name));
-        const isPdf = file.type === 'application/pdf' || file.name.toLowerCase().endsWith('.pdf');
-
-        if (!isImage && !isPdf) {
-          setError(t('onlyImageFiles'));
-          return;
-        }
-
-        setUploadedFileName(file.name);
-        const reader = new FileReader();
-        setIsTableFile(false);
-        setFileType('math');
-
-        reader.onload = (event) => {
-          const data = event.target?.result as string;
-          setImageData(data);
-          processImage(data);
-        };
-
-        reader.readAsDataURL(file);
-      }
+      reader.readAsText(file);
+      return;
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [acceptedFormats]);
+
+    if (uploadKinds.length === 0) return;
+
+    // Images and PDFs: same checks as the API (type, size) so nothing fails silently.
+    const check = checkUpload(file, uploadKinds);
+    if (!check.ok) {
+      setError(check.error);
+      setShowOpenInOctreeFallback(check.error === UPLOAD_ERRORS.too_large);
+      return;
+    }
+
+    setUploadedFileName(file.name);
+    const reader = new FileReader();
+    setIsTableFile(false);
+    setIsPdfFile(check.kind === 'pdf');
+    setFileType(check.kind === 'pdf' ? 'pdf' : 'math');
+
+    reader.onload = (event) => {
+      const data = event.target?.result as string;
+      setImageData(data);
+      processImage(data, file.name);
+    };
+    reader.onerror = () => setError(UPLOAD_ERRORS.unreadable);
+
+    reader.readAsDataURL(file);
+  };
+
+  const handleDrop = (e: React.DragEvent) => {
+    e.preventDefault();
+    setIsDragging(false);
+    const file = e.dataTransfer.files[0];
+    if (file) handleFile(file);
+  };
 
   const handleDragOver = useCallback((e: React.DragEvent) => {
     e.preventDefault();
@@ -251,67 +273,9 @@ export default function AIToolLayout({
 
   const handleFileInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
-    if (file) {
-      const isLikelyImageByName = (name: string) => {
-        const lower = name.toLowerCase();
-        return (
-          lower.endsWith('.png') ||
-          lower.endsWith('.jpg') ||
-          lower.endsWith('.jpeg') ||
-          lower.endsWith('.webp') ||
-          lower.endsWith('.gif') ||
-          lower.endsWith('.heic') ||
-          lower.endsWith('.heif')
-        );
-      };
-
-      // Check if it's a CSV file tool
-      const isCSVTool = acceptedFormats.includes('CSV');
-      const isImageTool = acceptedFormats.includes('JPEG') || acceptedFormats.includes('PNG');
-      
-      if (isCSVTool) {
-        if (!file.name.toLowerCase().endsWith('.csv') && file.type !== 'text/csv') {
-          setError(t('onlyCsvFiles'));
-          return;
-        }
-
-        setUploadedFileName(file.name);
-        const reader = new FileReader();
-        setIsTableFile(true);
-        setFileType('csv');
-
-        reader.onload = (event) => {
-          const data = event.target?.result as string;
-          setImageData(data);
-          processImage(data);
-        };
-
-        reader.readAsText(file);
-      } else if (isImageTool) {
-        // Handle images and PDFs
-        const isImage =
-          file.type.startsWith('image/') || (file.type === '' && isLikelyImageByName(file.name));
-        const isPdf = file.type === 'application/pdf' || file.name.toLowerCase().endsWith('.pdf');
-
-        if (!isImage && !isPdf) {
-          setError(t('onlyImageFiles'));
-          return;
-        }
-
-        setUploadedFileName(file.name);
-        const reader = new FileReader();
-        setIsTableFile(false);
-        setFileType('math');
-
-        reader.onload = (event) => {
-          const data = event.target?.result as string;
-          setImageData(data);
-          processImage(data);
-        };
-
-        reader.readAsDataURL(file);
-      }
-    }
+    // Reset so choosing the same file again still fires onChange.
+    e.target.value = '';
+    if (file) handleFile(file);
   };
 
   const exportAsLatex = () => {
@@ -446,7 +410,7 @@ export default function AIToolLayout({
               >
                                    {imageData ? (
                        <div className="relative w-full h-full flex items-center justify-center">
-                         {isTableFile ? (
+                         {isTableFile || isPdfFile ? (
                            <div className="text-center">
                              <div className="mb-4 flex justify-center">
                                <div className="bg-blue-50 rounded-full p-6">
@@ -499,8 +463,16 @@ export default function AIToolLayout({
             </div>
 
             {error && (
-              <div className="mt-4 rounded-lg bg-red-50 border border-red-200 p-4">
+              <div role="alert" className="mt-4 rounded-lg bg-red-50 border border-red-200 p-4">
                 <p className="text-sm text-red-800">{error}</p>
+                {showOpenInOctreeFallback && uploadKinds.includes('pdf') && (
+                  <a
+                    href={appUrl('/generate', { placement: `tools:${analyticsTool}:error` })}
+                    className="mt-2 inline-block text-sm font-medium text-blue-700 underline hover:text-blue-600"
+                  >
+                    Open in Octree to convert
+                  </a>
+                )}
               </div>
             )}
           </div>
