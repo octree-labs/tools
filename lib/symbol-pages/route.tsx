@@ -14,14 +14,19 @@ type Params = { locale: string; symbol: string };
  * Route handlers shared by every app/[locale]/symbols/<category>/[symbol]
  * page. English pages are prerendered at build time; the other 15 locales
  * render on first request and are then cached (ISR with no expiry), which
- * keeps the build to ~650 symbol pages instead of ~10k.
+ * keeps the build to ~1.2k symbol pages instead of ~10.5k (3.2 GB of output).
  */
 export function symbolPageRoute(category: string) {
   const refs = SYMBOL_PAGES.filter((p) => p.category === category);
 
   function generateStaticParams({ params }: { params: { locale: string } }) {
-    if (params.locale !== DEFAULT_LOCALE) return [];
-    return refs.map((ref) => ({ symbol: ref.slug }));
+    // Next only prerenders a route when every parent param set yields at
+    // least one child (a parent that yields none leaves an incomplete param
+    // set and the whole route falls back to on-demand). Other locales
+    // therefore prerender the category's first symbol; the rest render on
+    // first request and stay cached.
+    const list = params.locale === DEFAULT_LOCALE ? refs : refs.slice(0, 1);
+    return list.map((ref) => ({ locale: params.locale, symbol: ref.slug }));
   }
 
   async function generateMetadata({ params }: { params: Promise<Params> }): Promise<Metadata> {
