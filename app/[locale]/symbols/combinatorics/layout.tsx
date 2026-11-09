@@ -2,9 +2,15 @@ import { Metadata } from "next";
 import { generateSymbolMetadata } from '@/lib/generate-symbol-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "LaTeX Combinatorics Symbols - Factorial, Binomial, nPr | Free",
-  description: "Complete list of LaTeX combinatorics symbols. Copy-paste factorial n!, binomial coefficient, nCr, nPr, Stirling numbers with LaTeX commands.",
+  title: "Choose in LaTeX (\\binom) & Factorial - Combinatorics Symbols",
+  description: "Write n choose k in LaTeX with \\binom{n}{k}, \\dbinom and \\tbinom, and a factorial with n!. Copy-ready commands for multinomials, permutations and Stirling numbers.",
   keywords: [
+    "choose in latex",
+    "n choose k latex",
+    "latex choose",
+    "latex factorial",
+    "factorial in latex",
+    "binom latex",
     "combinatorics symbols",
     "permutation notation",
     "combination symbols",
@@ -28,8 +34,8 @@ const defaultMetadata: Metadata = {
     "math symbols",
   ],
   openGraph: {
-    title: "LaTeX Combinatorics Symbols - Complete Symbol Reference",
-    description: "Copy-paste LaTeX code for factorials, binomials, permutations, and combinatorial notation.",
+    title: "Choose & Factorial in LaTeX - Combinatorics Symbols",
+    description: "Copy-paste LaTeX for n choose k, factorials, multinomial coefficients and permutations.",
   },
 };
 

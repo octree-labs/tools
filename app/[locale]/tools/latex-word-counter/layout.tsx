@@ -2,12 +2,15 @@ import type { Metadata } from "next";
 import { generateToolMetadata } from '@/lib/generate-tool-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "LaTeX Word Counter - Count Words in LaTeX Documents | Free Tool",
-  description: "Free online LaTeX word counter. Count words in your LaTeX documents accurately, excluding commands and markup, with stats for text, headers and captions.",
+  title: "LaTeX Word Count Online - Free LaTeX Word Counter",
+  description: "Get an accurate LaTeX word count online. Paste your .tex source to count words in LaTeX, excluding commands, math and comments, with texcount-compatible totals.",
   keywords: [
     "LaTeX word counter",
-    "count words LaTeX",
-    "LaTeX word count",
+    "latex word count",
+    "word count latex",
+    "count words latex",
+    "latex word count online",
+    "texcount",
     "word count LaTeX document",
     "texcount online",
     "LaTeX statistics",
@@ -24,8 +27,8 @@ const defaultMetadata: Metadata = {
     canonical: '/tools/latex-word-counter',
   },
   openGraph: {
-    title: "LaTeX Word Counter - Count Words in LaTeX Documents",
-    description: "Free online tool to accurately count words in LaTeX documents, excluding commands and markup",
+    title: "LaTeX Word Count Online - Free LaTeX Word Counter",
+    description: "Count words in LaTeX online, excluding commands, math and comments, with texcount-compatible totals.",
     url: 'https://tools.useoctree.com/tools/latex-word-counter',
     siteName: 'Octree LaTeX Tools',
     locale: 'en_US',
@@ -33,8 +36,8 @@ const defaultMetadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "LaTeX Word Counter - Count Words in LaTeX Documents",
-    description: "Free online tool to accurately count words in LaTeX documents, excluding commands and markup",
+    title: "LaTeX Word Count Online - Free LaTeX Word Counter",
+    description: "Count words in LaTeX online, excluding commands, math and comments, with texcount-compatible totals.",
   },
 };
 

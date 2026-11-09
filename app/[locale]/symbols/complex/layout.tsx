@@ -2,9 +2,14 @@ import { Metadata } from "next";
 import { generateSymbolMetadata } from '@/lib/generate-symbol-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "LaTeX Complex Number Symbols - Real, Imaginary, Modulus | Free",
-  description: "Complete list of LaTeX complex number symbols. Copy-paste ℂ, i, j, Re, Im, conjugate, modulus, argument with LaTeX commands.",
+  title: "Complex Number Symbol ℂ & Conjugate in LaTeX",
+  description: "The symbol for complex numbers is ℂ (\\mathbb{C}). Copy-ready LaTeX for the complex conjugate \\bar{z}, z^*, Re, Im, modulus |z|, argument and polar form.",
   keywords: [
+    "complex number symbol",
+    "symbol for complex numbers",
+    "complex numbers symbol",
+    "conjugate latex",
+    "latex conjugate",
     "complex number symbols",
     "imaginary unit symbol",
     "latex complex numbers",
@@ -25,8 +30,8 @@ const defaultMetadata: Metadata = {
     "math symbols",
   ],
   openGraph: {
-    title: "LaTeX Complex Numbers - Complete Symbol Reference",
-    description: "Copy-paste LaTeX code for complex numbers, conjugates, modulus, and polar form.",
+    title: "Complex Number Symbol ℂ & Conjugate in LaTeX",
+    description: "Copy-paste LaTeX for the complex numbers symbol, conjugates, Re, Im, modulus and polar form.",
   },
 };
 

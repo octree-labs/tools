@@ -2,10 +2,15 @@ import { Metadata } from "next";
 import { generateSymbolMetadata } from '@/lib/generate-symbol-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "LaTeX Latin Letters & Accents - Special Characters | Free",
-  description: "Complete list of LaTeX Latin letters and accented characters. Copy-paste ö, é, ñ, ç, å, ø, æ, œ and special Latin characters with LaTeX commands.",
+  title: "Latin Symbols in LaTeX - æ, ø, ß, ł & Accented Letters",
+  description: "Latin symbols and special letters in LaTeX: \\ae, \\oe, \\o, \\aa, \\ss, \\l, dotless \\i and accents like \\'e, \\\"o, \\~n, \\c{c}. Copy-ready commands.",
   keywords: [
     // Core keywords
+    "symbol latin",
+    "latin symbols",
+    "latin symbols latex",
+    "latex ss",
+    "latex ae",
     "latex symbols",
     "symbol copy paste",
     "unicode math symbols",
@@ -33,8 +38,8 @@ const defaultMetadata: Metadata = {
     "how to write symbols in latex",
   ],
   openGraph: {
-    title: "LaTeX Latin Letters & Accents - Complete Symbol Reference",
-    description: "Copy-paste LaTeX code for accented Latin letters and special characters.",
+    title: "Latin Symbols in LaTeX - Special Letters & Accents",
+    description: "Copy-paste LaTeX for æ, œ, ø, å, ß, ł and accented Latin letters.",
   },
 };
 

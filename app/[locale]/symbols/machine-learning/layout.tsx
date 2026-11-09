@@ -2,9 +2,14 @@ import { Metadata } from "next";
 import { generateSymbolMetadata } from '@/lib/generate-symbol-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "LaTeX Machine Learning Symbols - Loss, Gradient, Argmax | Free",
-  description: "Complete list of LaTeX machine learning and AI symbols. Copy-paste loss ℒ, expectation 𝔼, KL divergence, argmax, argmin, tensor ⊗ and gradient notation.",
+  title: "Gradient Symbol in LaTeX (\\nabla) & Machine Learning Symbols",
+  description: "The gradient symbol in LaTeX is \\nabla. Copy-ready commands for gradients, partial derivatives, loss ℒ, expectation 𝔼, argmax, argmin and norms in machine learning.",
   keywords: [
+    "latex gradient symbol",
+    "gradient symbol latex",
+    "gradient in latex",
+    "nabla latex",
+    "partial derivative latex",
     "machine learning symbols",
     "ml symbols latex",
     "loss function symbols",
@@ -31,8 +36,8 @@ const defaultMetadata: Metadata = {
     "l1 l2 norm latex",
   ],
   openGraph: {
-    title: "LaTeX Machine Learning & AI Symbols - Complete Symbol Reference",
-    description: "Copy-paste LaTeX code for loss functions, gradients, argmax, and ML notation.",
+    title: "Gradient Symbol in LaTeX & Machine Learning Notation",
+    description: "Copy-paste LaTeX for the gradient \\nabla, partial derivatives, loss functions, argmax and ML notation.",
   },
 };
 

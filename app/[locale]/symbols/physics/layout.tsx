@@ -2,10 +2,13 @@ import { Metadata } from "next";
 import { generateSymbolMetadata } from '@/lib/generate-symbol-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "LaTeX Physics Symbols - Quantum Mechanics, Vectors, Tensors",
-  description: "Complete list of LaTeX physics symbols. Copy-paste ℏ, bra-ket ⟨ψ|, |ψ⟩, ∇, ∇², d'Alembertian □, Lagrangian and Hamiltonian notation with LaTeX commands.",
+  title: "Quantum Mechanics Symbols in LaTeX - Bra-Ket, ℏ, Operators",
+  description: "Quantum physics symbols in LaTeX: ℏ (\\hbar), bra ⟨ψ|, ket |ψ⟩, \\braket from the braket and physics packages, \\hat{H}, dagger, ∇² and ∂ₜ, with copy-ready commands.",
   keywords: [
     // Physics keywords
+    "quantum symbols",
+    "quantum physics symbols",
+    "bra ket latex",
     "physics symbols",
     "quantum mechanics symbols",
     "vector field symbols",
@@ -38,8 +41,8 @@ const defaultMetadata: Metadata = {
     "research symbols",
   ],
   openGraph: {
-    title: "LaTeX Physics Symbols - Complete Symbol Reference",
-    description: "Copy-paste LaTeX code for quantum mechanics, vectors, tensors, and physics notation.",
+    title: "Quantum Mechanics Symbols in LaTeX - Bra-Ket, ℏ, Operators",
+    description: "Copy-paste LaTeX for ℏ, bra-ket notation, operators, the dagger and physics notation.",
   },
 };
 
