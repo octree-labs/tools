@@ -29,6 +29,14 @@ for (const [code, locale] of Object.entries(locales)) {
     }
   });
 
+  test(`${code}: every symbol page is translated, with its full table`, () => {
+    for (const slug of [...Object.keys(quickRefs), 'accents', 'logic']) {
+      const intro = locale.intros[slug];
+      assert.ok(intro?.title.trim(), `${code}/${slug} has no translation`);
+      if (quickRefs[slug]) assert.ok(intro?.use, `${code}/${slug} leaves the table in English`);
+    }
+  });
+
   test(`${code}: FAQs are complete`, () => {
     for (const [slug, intro] of Object.entries(locale.intros)) {
       for (const item of intro?.faq ?? []) {

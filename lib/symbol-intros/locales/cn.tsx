@@ -1243,6 +1243,406 @@ const cn: IntroLocale = {
         },
       ],
     },
+    order: {
+      title: "LaTeX 中的小于、大于与小于等于",
+      intro: (
+        <IntroP>
+          在 LaTeX 中，小于号和大于号可以在数学模式中直接输入 <Cmd>{"<"}</Cmd> 和 <Cmd>{">"}</Cmd>。小于等于是{" "}
+          <Cmd>{"\\leq"}</Cmd>（或别名 <Cmd>{"\\le"}</Cmd>），大于等于是 <Cmd>{"\\geq"}</Cmd>（<Cmd>{"\\ge"}</Cmd>），不等于是{" "}
+          <Cmd>{"\\neq"}</Cmd>；这三个都是内置命令，所以 <Cmd>{"$a \\leq b$"}</Cmd> 在任何文档中都能使用。远小于是{" "}
+          <Cmd>{"\\ll"}</Cmd>，倾斜样式、近似和否定形式则来自 amssymb。下表列出了最常用的不等号及各自所需的宏包；完整的序关系符号列表见页面下方。
+        </IntroP>
+      ),
+      quickRefHeading: "速查表：最常用的不等号",
+      use: {
+        "<": "小于（直接输入）",
+        ">": "大于（直接输入）",
+        "\\leq": "小于等于（别名 \\le）",
+        "\\geq": "大于等于（别名 \\ge）",
+        "\\neq": "不等于（别名 \\ne）",
+        "\\ll": "远小于",
+        "\\gg": "远大于",
+        "\\leqslant": "小于等于，倾斜样式",
+        "\\lesssim": "小于或约等于",
+        "\\not<": "不小于",
+        "\\nleq": "不小于等于",
+        "\\prec": "先于（偏序）；后于用 \\succ",
+      },
+      faqHeading: "LaTeX 不等号常见问题",
+      faq: [
+        {
+          question: "如何在 LaTeX 中输入小于等于号？",
+          answer:
+            "在数学模式中写 \\leq 或其简短别名 \\le：$a \\leq b$。大于等于是 \\geq 或 \\ge。两者都是内置命令。若要欧洲教材中常见的倾斜样式，请加载 amssymb 并使用 \\leqslant 和 \\geqslant。",
+        },
+        {
+          question: "如何在 LaTeX 中输入小于号？",
+          answer:
+            "在数学模式中直接输入 <：$a < b$。在数学模式之外的正文中，默认的 OT1 字体编码会把 < 输出为 ¡，所以要么用 $<$ 包裹，要么使用 \\textless（大于号用 \\textgreater），或者加载 \\usepackage[T1]{fontenc}。",
+        },
+        {
+          question: "如何在 LaTeX 中输入“不小于”或“不等于”？",
+          answer:
+            "不等于是 \\neq 或 \\ne。对于其他关系，在符号前加 \\not，例如 \\not<；或者加载 amssymb，使用专门的否定符号 \\nless、\\ngtr、\\nleq 和 \\ngeq，它们比叠加的斜线更美观。",
+        },
+        {
+          question: "LaTeX 中 \\leq 和 \\le 有什么区别？",
+          answer:
+            "没有区别：\\le 是 \\leq 的别名，二者都输出 ≤；同样，\\ge 是 \\geq 的别名，\\ne 是 \\neq 的别名。按个人习惯选用即可，但要保持一致。",
+        },
+      ],
+    },
+    relations: {
+      title: "LaTeX 中的关系符号：不等于、约等于与小于",
+      intro: (
+        <IntroP>
+          LaTeX 中的关系符号用于比较两个表达式，常用的都是内置命令。不等于是 <Cmd>{"\\neq"}</Cmd>（≠），约等于是{" "}
+          <Cmd>{"\\approx"}</Cmd>（≈），小于和大于直接输入 <Cmd>{"<"}</Cmd> 和 <Cmd>{">"}</Cmd>，小于等于是{" "}
+          <Cmd>{"\\leq"}</Cmd>（≤）。等价是 <Cmd>{"\\equiv"}</Cmd>，相似是 <Cmd>{"\\sim"}</Cmd>，全等是{" "}
+          <Cmd>{"\\cong"}</Cmd>，正比于是 <Cmd>{"\\propto"}</Cmd>。在任意关系符前加 <Cmd>{"\\not"}</Cmd> 即可取否定，也可以加载 amssymb 使用专门的否定形式（如{" "}
+          <Cmd>{"\\nleq"}</Cmd>）和倾斜形式（如 <Cmd>{"\\leqslant"}</Cmd>）。下表列出了最常用的关系符号及各自所需的宏包；完整列表见页面下方。
+        </IntroP>
+      ),
+      quickRefHeading: "速查表：最常用的关系符号",
+      use: {
+        "\\neq": "不等于（别名 \\ne）",
+        "\\approx": "约等于",
+        "<": "小于",
+        ">": "大于",
+        "\\leq": "小于等于",
+        "\\geq": "大于等于",
+        "\\equiv": "等价、恒等、模 n 同余",
+        "\\sim": "相似、服从（某分布）",
+        "\\cong": "全等、同构",
+        "\\propto": "正比于",
+        "\\ll": "远小于（远大于用 \\gg）",
+        "\\leqslant": "倾斜样式的小于等于",
+      },
+      faqHeading: "LaTeX 关系符号常见问题",
+      faq: [
+        {
+          question: "如何在 LaTeX 中输入不等于号？",
+          answer:
+            "在数学模式中使用 \\neq（或其别名 \\ne）：$a \\neq b$ 输出 a ≠ b，不需要宏包。其他关系的否定可以在前面加 \\not，例如 \\not\\equiv，或使用 amssymb 中的专用符号，如 \\nleq 和 \\ncong。",
+        },
+        {
+          question: "如何在 LaTeX 中输入约等于号？",
+          answer:
+            "\\approx 输出 ≈，是标准的约等于符号：$\\pi \\approx 3.14$。与之相近的有 \\simeq（≃）、\\cong（≅）、\\sim（∼）和 \\doteq（≐），都是内置命令，另外还有 amssymb 中的 \\approxeq（≊）。",
+        },
+        {
+          question: "如何在 LaTeX 中输入小于号？",
+          answer:
+            "在数学模式中直接输入 < 和 >：$a < b$。在数学模式之外的正文中，请使用 \\textless 和 \\textgreater，或用 $...$ 包裹符号，因为在旧的 OT1 字体编码下，单独的 < 可能会被输出为倒置的感叹号。",
+        },
+      ],
+    },
+    "special-functions": {
+      title: "LaTeX 中的特殊函数：Gamma、Beta、zeta、erf 与贝塞尔函数",
+      intro: (
+        <IntroP>
+          LaTeX 中的特殊函数用希腊字母或直立体名称书写。伽马函数是 <Cmd>{"\\Gamma(z)"}</Cmd>，黎曼 zeta 函数是{" "}
+          <Cmd>{"\\zeta(s)"}</Cmd>，双伽马函数是 <Cmd>{"\\psi(x)"}</Cmd>，狄拉克 δ 函数是 <Cmd>{"\\delta(x)"}</Cmd>。以拉丁字母命名的函数应使用直立体：LaTeX 没有内置的{" "}
+          <Cmd>{"\\erf"}</Cmd>，所以要写 <Cmd>{"\\operatorname{erf}(x)"}</Cmd>，或用 amsmath 的{" "}
+          <Cmd>{"\\DeclareMathOperator"}</Cmd> 一次性声明。贝塞尔函数和正交多项式是带下标的字母，例如{" "}
+          <Cmd>{"J_n(x)"}</Cmd> 和 <Cmd>{"P_n(x)"}</Cmd>，超几何函数写作 <Cmd>{"{}_2F_1(a, b; c; z)"}</Cmd>。下表列出了最常用的特殊函数及各自所需的宏包；完整列表见页面下方。
+        </IntroP>
+      ),
+      quickRefHeading: "速查表：最常用的特殊函数",
+      use: {
+        "\\Gamma(z)": "伽马函数",
+        "\\mathrm{B}(x, y)": "贝塔函数（直立体大写 B）",
+        "\\zeta(s)": "黎曼 zeta 函数",
+        "\\operatorname{erf}(x)": "误差函数",
+        "\\operatorname{erfc}(x)": "互补误差函数",
+        "J_n(x)": "第一类贝塞尔函数",
+        "Y_n(x)": "第二类贝塞尔函数",
+        "P_n(x)": "勒让德多项式",
+        "H_n(x)": "埃尔米特多项式",
+        "{}_2F_1(a, b; c; z)": "高斯超几何函数",
+        "\\psi(x)": "双伽马函数",
+        "\\delta(x)": "狄拉克 δ 函数",
+      },
+      faqHeading: "LaTeX 特殊函数常见问题",
+      faq: [
+        {
+          question: "如何在 LaTeX 中输入伽马函数？",
+          answer:
+            "使用大写希腊字母：$\\Gamma(z) = \\int_0^\\infty t^{z-1} e^{-t}\\,dt$，不需要宏包。贝塔函数通常用直立体 B 表示，即 \\mathrm{B}(x, y)，以免被误认为变量。",
+        },
+        {
+          question: "如何在 LaTeX 中输入误差函数 erf？",
+          answer:
+            "LaTeX 没有 \\erf 命令。请使用 amsmath 的 \\operatorname{erf}(x)，或在导言区加入 \\DeclareMathOperator{\\erf}{erf} 后写 \\erf(x)。这样 erf 会以直立体和运算符间距排版；而直接写 erf 则会输出三个斜体变量。",
+        },
+        {
+          question: "如何在 LaTeX 中输入超几何函数？",
+          answer:
+            "用一个空的分组来添加左下标：{}_2F_1(a, b; c; z)。mathtools 宏包还提供了用于前置上下标的 \\prescript{}{2}{F}_{1}，广义超几何函数 {}_pF_q 也按同样方式书写。",
+        },
+      ],
+    },
+    summation: {
+      title: "LaTeX 中的求和：Sigma 记号、连乘与上下限",
+      intro: (
+        <IntroP>
+          LaTeX 中的求和用 <Cmd>{"\\sum"}</Cmd> 书写，它把大写 sigma（Σ）作为大型运算符输出：
+          <Cmd>{"\\sum_{i=1}^{n} a_i"}</Cmd> 把求和指标放在下方，把上限放在上方。连乘符号的用法相同，即{" "}
+          <Cmd>{"\\prod_{i=1}^{n}"}</Cmd>。在独立公式中，上下限位于符号的上方和下方；在行内公式中，它们会移到符号右侧，除非加上{" "}
+          <Cmd>{"\\limits"}</Cmd> 或 <Cmd>{"\\displaystyle"}</Cmd>。求和号下的多行条件使用 amsmath 的{" "}
+          <Cmd>{"\\substack"}</Cmd>，大型集合运算符 <Cmd>{"\\bigcup"}</Cmd> 和 <Cmd>{"\\bigcap"}</Cmd> 也遵循同样的规则。下表列出了最常用的求和符号及各自所需的宏包；完整列表见页面下方。
+        </IntroP>
+      ),
+      quickRefHeading: "速查表：求和、连乘与上下限",
+      use: {
+        "\\sum_{i=1}^{n} a_i": "求和（Sigma 记号）",
+        "\\sum_{n=1}^{\\infty} \\frac{1}{n^2}": "无穷级数",
+        "\\prod_{i=1}^{n} x_i": "连乘",
+        "\\coprod": "余积",
+        "\\sum\\limits_{i=1}^{n}": "在行内公式中把上下限放在上方和下方",
+        "\\displaystyle\\sum_{i=1}^{n}": "在行内公式中使用独立公式大小的求和号",
+        "\\sum_{i=1}^{n} \\sum_{j=1}^{m} a_{ij}": "二重求和",
+        "\\sum_{\\substack{i < j \\\\ i \\neq k}}": "多行求和条件",
+        "\\bigcup_{i \\in I} A_i": "按指标求并集",
+        "\\bigcap_{i=1}^{n} A_i": "按指标求交集",
+        "\\sum_{k=0}^{n} \\binom{n}{k}": "二项式系数求和",
+      },
+      faqHeading: "LaTeX 求和符号常见问题",
+      faq: [
+        {
+          question: "如何在 LaTeX 中输入求和式？",
+          answer:
+            "在数学模式中给 \\sum 加上下标和上标：$\\sum_{i=1}^{n} a_i$。多个字符的上下限要用花括号括起来。在独立公式（\\[...\\]）中，上下限位于 sigma 的上方和下方；在行内公式中则位于右侧。",
+        },
+        {
+          question: "如何在行内公式中把上下限放在求和号的上方和下方？",
+          answer:
+            "在运算符后加 \\limits，即 \\sum\\limits_{i=1}^{n}，或用 \\displaystyle\\sum_{i=1}^{n} 把整个求和式设为独立公式大小。请谨慎使用，因为这会增大该段落的行距。",
+        },
+        {
+          question: "如何在 LaTeX 中输入连乘符号？",
+          answer:
+            "\\prod 输出连乘符号 ∏，上下限的写法与 \\sum 相同：$\\prod_{i=1}^{n} x_i$。不要用 \\Pi，它是希腊字母，在独立公式中不会变大，上下限的位置也不正确。",
+        },
+      ],
+    },
+    tensors: {
+      title: "LaTeX 中的张量记号：指标、爱因斯坦求和约定与 tensor 宏包",
+      intro: (
+        <IntroP>
+          LaTeX 中的张量记号由上标和下标构成：<Cmd>{"T^{ij}_{kl}"}</Cmd> 表示带两个上指标和两个下指标的张量，
+          <Cmd>{"g_{\\mu\\nu}"}</Cmd> 表示度规，<Cmd>{"\\delta^i_j"}</Cmd> 表示克罗内克 δ。当混合指标的顺序很重要时，用空分组把它们错开，即{" "}
+          <Cmd>{"T^{i}{}_{j}"}</Cmd>，或加载 tensor 宏包并写 <Cmd>{"\\tensor{T}{^i_j}"}</Cmd>。列维-奇维塔符号是{" "}
+          <Cmd>{"\\epsilon_{ijk}"}</Cmd>，张量积是 <Cmd>{"\\otimes"}</Cmd>，爱因斯坦求和约定只需重复一个指标，即{" "}
+          <Cmd>{"A^i B_i"}</Cmd>。下表列出了最常用的张量符号及各自所需的宏包；完整列表见页面下方。
+        </IntroP>
+      ),
+      quickRefHeading: "速查表：指标与张量运算",
+      use: {
+        "T^{ij}_{kl}": "带上指标和下指标的张量",
+        "T^{i}{}_{j}": "错开的指标（顺序有意义）",
+        "\\tensor{T}{^i_j^k}": "轻松书写错开的指标",
+        "g_{\\mu\\nu}": "度规张量",
+        "\\delta^i_j": "克罗内克 δ",
+        "\\epsilon_{ijk}": "列维-奇维塔符号",
+        "A^i B_i": "爱因斯坦求和约定（重复指标）",
+        "A \\otimes B": "张量积",
+        "\\partial_\\mu": "沿坐标方向的偏导数",
+        "\\nabla_\\mu T^{\\nu}": "协变导数",
+        "T_{(ij)}": "对称化",
+        "T_{[ij]}": "反对称化",
+      },
+      faqHeading: "LaTeX 张量记号常见问题",
+      faq: [
+        {
+          question: "如何在 LaTeX 中输入带上下指标的张量？",
+          answer:
+            "把上标和下标组合起来：$T^{ij}_{kl}$。如果指标的水平顺序很重要，就插入一个空分组，避免它们上下叠放：T^{i}{}_{j} 会把 j 放在 i 之后。tensor 宏包用 \\tensor{T}{^i_j} 和 T\\indices{^i_j} 自动完成这一点。",
+        },
+        {
+          question: "如何在 LaTeX 中输入克罗内克 δ 和列维-奇维塔符号？",
+          answer:
+            "克罗内克 δ 写作 \\delta_{ij} 或 \\delta^i_j；列维-奇维塔符号写作 \\epsilon_{ijk} 或 \\varepsilon_{ijk}，取决于你所在领域习惯哪种 epsilon 字形。二者都是带指标的内置希腊字母。",
+        },
+        {
+          question: "如何在 LaTeX 中书写爱因斯坦求和约定？",
+          answer:
+            "不需要专门的命令：一个指标在上、下各出现一次即表示求和，所以 A^i B_i 的意思是 \\sum_i A^i B_i。只有在需要明确写出时才使用 \\sum；时空分量请使用 \\mu 和 \\nu 等希腊字母指标。",
+        },
+      ],
+    },
+    topology: {
+      title: "LaTeX 中的拓扑符号：闭包、边界、同胚与阿列夫",
+      intro: (
+        <IntroP>
+          LaTeX 中的拓扑符号大多是内置的。集合的闭包是 <Cmd>{"\\overline{A}"}</Cmd>，边界是 <Cmd>{"\\partial A"}</Cmd>，内部是{" "}
+          <Cmd>{"A^\\circ"}</Cmd> 或 <Cmd>{"\\operatorname{int} A"}</Cmd>。同胚通常写作 <Cmd>{"\\cong"}</Cmd>（≅），同伦等价写作{" "}
+          <Cmd>{"\\simeq"}</Cmd>，基本群是 <Cmd>{"\\pi_1(X)"}</Cmd>，同调群是 <Cmd>{"H_n(X)"}</Cmd>。集合论记号同样适用：属于是{" "}
+          <Cmd>{"\\in"}</Cmd>，包含于（子集或相等）是 <Cmd>{"\\subseteq"}</Cmd>。表示基数时，<Cmd>{"\\aleph_0"}</Cmd> 是内置的，
+          <Cmd>{"\\beth"}</Cmd> 则来自 amssymb。下表列出了最常用的拓扑符号及各自所需的宏包；完整列表见页面下方。
+        </IntroP>
+      ),
+      quickRefHeading: "速查表：最常用的拓扑符号",
+      use: {
+        "\\overline{A}": "闭包",
+        "\\partial A": "边界",
+        "A^\\circ": "内部（也写作 \\operatorname{int} A）",
+        "X \\cong Y": "同胚",
+        "X \\simeq Y": "同伦等价",
+        "\\pi_1(X, x_0)": "基本群",
+        "H_n(X)": "第 n 个同调群",
+        "\\mathcal{T}": "集合上的拓扑",
+        "x \\in U \\subseteq X": "属于、包含于（子集或相等）",
+        "S^n": "n 维球面",
+        "\\aleph_0": "阿列夫零（可数基数）",
+        "\\beth_1": "贝特数",
+      },
+      faqHeading: "LaTeX 拓扑符号常见问题",
+      faq: [
+        {
+          question: "如何在 LaTeX 中输入同胚符号？",
+          answer:
+            "大多数教材使用 \\cong（≅）：$X \\cong Y$。也有作者使用 \\approx（≈）或 \\simeq（≃），不过 \\simeq 通常表示同伦等价。三者都是内置命令；如果可能产生歧义，请先说明你采用的约定。",
+        },
+        {
+          question: "如何在 LaTeX 中输入贝特符号？",
+          answer:
+            "\\beth 输出 ℶ，需要 \\usepackage{amssymb}，该宏包还提供 \\gimel 和 \\daleth。\\aleph（ℵ）是内置的。基数照常加下标：\\aleph_0、\\beth_1；连续统的基数用 \\mathfrak{c}（amssymb）。",
+        },
+        {
+          question: "如何在 LaTeX 中输入集合的闭包和内部？",
+          answer:
+            "闭包写作 \\overline{A}，单个字母也可写 \\bar{A}，或写 \\operatorname{cl}(A)。内部写作 A^\\circ，或借助 amsmath 写 \\operatorname{int}(A)；边界是 \\partial A。超过一个字母时请用 \\overline 而不是 \\bar。",
+        },
+      ],
+    },
+    trigonometry: {
+      title: "LaTeX 三角函数：sin、cos、tan 与反三角函数",
+      intro: (
+        <IntroP>
+          LaTeX 中的三角函数都有专门的命令：<Cmd>{"\\sin"}</Cmd>、<Cmd>{"\\cos"}</Cmd>、<Cmd>{"\\tan"}</Cmd>、<Cmd>{"\\cot"}</Cmd>、
+          <Cmd>{"\\sec"}</Cmd> 和 <Cmd>{"\\csc"}</Cmd>，反三角函数 <Cmd>{"\\arcsin"}</Cmd>、<Cmd>{"\\arccos"}</Cmd> 和{" "}
+          <Cmd>{"\\arctan"}</Cmd>，以及双曲函数 <Cmd>{"\\sinh"}</Cmd>、<Cmd>{"\\cosh"}</Cmd> 和 <Cmd>{"\\tanh"}</Cmd>。请始终使用命令，而不是直接输入 sin：命令会以直立体和正确的间距排版函数名，而直接输入的 sin 会被当作三个斜体变量。幂次紧跟在函数名之后，如{" "}
+          <Cmd>{"\\sin^2 \\theta"}</Cmd>；角度是上标圆圈，如 <Cmd>{"30^\\circ"}</Cmd>。下表列出了最常用的三角函数符号及各自所需的宏包；完整列表见页面下方。
+        </IntroP>
+      ),
+      quickRefHeading: "速查表：三角函数与恒等式",
+      use: {
+        "\\sin \\theta": "正弦",
+        "\\cos \\theta": "余弦",
+        "\\tan \\theta": "正切",
+        "\\sec \\theta": "正割（\\csc 余割，\\cot 余切）",
+        "\\arcsin x": "反正弦",
+        "\\arccos x": "反余弦",
+        "\\arctan x": "反正切",
+        "\\sin^{-1} x": "反正弦，幂次记法",
+        "\\sin^2 \\theta + \\cos^2 \\theta = 1": "勾股恒等式",
+        "\\sinh x": "双曲正弦（\\cosh、\\tanh）",
+        "30^\\circ": "角度（度）",
+        "\\operatorname{arcsec} x": "反正割（非内置）",
+      },
+      faqHeading: "LaTeX 三角函数常见问题",
+      faq: [
+        {
+          question: "如何在 LaTeX 中输入 sin、cos 和 tan？",
+          answer:
+            "在数学模式中使用内置命令：$\\sin x$、$\\cos x$、$\\tan x$，倒数函数用 \\cot、\\sec 和 \\csc。不加反斜杠直接输入 sin 会输出斜体的乘积 s·i·n，这正是这些命令存在的原因。",
+        },
+        {
+          question: "如何在 LaTeX 中输入 arcsin 等反三角函数？",
+          answer:
+            "\\arcsin、\\arccos 和 \\arctan 是内置的，\\sinh、\\cosh、\\tanh 和 \\coth 也是。\\arcsec、\\arccsc、\\arccot、\\sech 和 \\csch 则不是：请写 \\operatorname{arcsec} x，或借助 amsmath 在导言区加入 \\DeclareMathOperator{\\arcsec}{arcsec}。幂次记法 \\sin^{-1} x 同样可用。",
+        },
+        {
+          question: "如何在 LaTeX 中输入正弦的平方和角度？",
+          answer:
+            "把指数紧跟在命令之后：\\sin^2 \\theta。角度使用上标圆圈 $30^\\circ$，或用 siunitx 的 \\ang{30}，使正文和表格中的格式保持一致。",
+        },
+      ],
+    },
+    units: {
+      title: "LaTeX 中的单位：siunitx、度数符号与国际单位制",
+      intro: (
+        <IntroP>
+          在 LaTeX 中书写单位，最简单的方法是使用 siunitx 宏包：<Cmd>{"\\qty{9.81}{\\metre\\per\\second\\squared}"}</Cmd> 会以直立体字母和正确的间距排版数值及其单位，
+          <Cmd>{"\\unit{\\kilo\\gram}"}</Cmd> 单独输出单位，<Cmd>{"\\num{6.022e23}"}</Cmd> 用于格式化数字。不用 siunitx 时，要手动把单位设为直立体，例如{" "}
+          <Cmd>{"9.81\\,\\mathrm{m/s^2}"}</Cmd>，并在数值和单位之间加细间距 <Cmd>{"\\,"}</Cmd>。度数符号在数学模式中是{" "}
+          <Cmd>{"^\\circ"}</Cmd>，使用 siunitx 时写 <Cmd>{"\\qty{20}{\\degreeCelsius}"}</Cmd>，埃是 <Cmd>{"\\AA"}</Cmd>。下表列出了最常用的单位命令及各自所需的宏包；完整列表见页面下方。
+        </IntroP>
+      ),
+      quickRefHeading: "速查表：使用与不使用 siunitx 的单位写法",
+      use: {
+        "\\qty{9.81}{\\metre\\per\\second\\squared}": "带单位的物理量",
+        "\\unit{\\kilo\\gram}": "单独的单位",
+        "\\num{6.022e23}": "格式化的数字",
+        "\\qty{20}{\\degreeCelsius}": "摄氏度",
+        "\\ang{45}": "以度为单位的角",
+        "\\qty{10}{\\micro\\metre}": "国际单位制词头（微米）",
+        "\\qty{5}{\\kilo\\ohm}": "千欧",
+        "9.81\\,\\mathrm{m/s^2}": "手动书写单位，无需宏包",
+        "^\\circ": "数学模式中的度数符号",
+        "\\AA": "埃（文本模式）",
+        "\\textdegree": "文本模式中的度数符号",
+        "\\hbar": "约化普朗克常数",
+      },
+      faqHeading: "LaTeX 单位常见问题",
+      faq: [
+        {
+          question: "如何在 LaTeX 中书写单位？",
+          answer:
+            "加载 \\usepackage{siunitx}，带单位的数值写 \\qty{3.0}{\\metre\\per\\second}，单独的单位写 \\unit{\\kilo\\gram}，数字写 \\num{1.5e-3}。siunitx 第 3 版使用 \\qty 和 \\unit；旧的 \\SI 和 \\si 仍然可用。不用宏包时写 3.0\\,\\mathrm{m/s}。",
+        },
+        {
+          question: "如何在 LaTeX 中输入度数符号？",
+          answer:
+            "在数学模式中使用上标圆圈：$90^\\circ$，温度写 $20^\\circ\\mathrm{C}$。在文本中，\\textdegree 输出 °。使用 siunitx 时，\\ang{90} 和 \\qty{20}{\\degreeCelsius} 能在各处保持一致的间距。",
+        },
+        {
+          question: "siunitx 与 physics 宏包会冲突吗？",
+          answer:
+            "两个宏包都定义了 \\qty 命令，同时加载会产生冲突。如果需要使用 physics，请用 siunitx 的旧写法 \\SI{9.81}{\\metre\\per\\second\\squared} 来书写带单位的物理量，siunitx 第 3 版仍然支持这种写法。",
+        },
+      ],
+    },
+    accents: {
+      title: "LaTeX 中的重音符号与特殊字母",
+      intro: (
+        <>
+          <IntroP>
+            在文本中，LaTeX 用命令加基础字母来构造带重音的字母：尖音符 <Cmd>{"\\'e"}</Cmd>（é）、钝音符{" "}
+            <Cmd>{"\\`e"}</Cmd>（è）、扬抑符 <Cmd>{"\\^e"}</Cmd>（ê）、分音符（变音）<Cmd>{"\\\"o"}</Cmd>（ö）、波浪符{" "}
+            <Cmd>{"\\~n"}</Cmd>（ñ）、软音符 <Cmd>{"\\c{c}"}</Cmd>（ç）、抑扬符 <Cmd>{"\\v{s}"}</Cmd>（š）、短音符{" "}
+            <Cmd>{"\\u{a}"}</Cmd>（ă）、匈牙利双尖音符 <Cmd>{"\\H{o}"}</Cmd>（ő）、上点 <Cmd>{"\\.z"}</Cmd>（ż）、长音符{" "}
+            <Cmd>{"\\=a"}</Cmd>（ā）、下点 <Cmd>{"\\d{a}"}</Cmd>、下横线 <Cmd>{"\\b{a}"}</Cmd>、上圆圈 <Cmd>{"\\r{a}"}</Cmd>（å）以及反尾形符{" "}
+            <Cmd>{"\\k{e}"}</Cmd>（ę）。整个字母也有各自的命令：<Cmd>{"\\l"}</Cmd>（ł）、<Cmd>{"\\o"}</Cmd>（ø）、
+            <Cmd>{"\\ae"}</Cmd>（æ）和 <Cmd>{"\\ss"}</Cmd>（ß）。要给 i 或 j 加重音，请使用无点形式 <Cmd>{"\\i"}</Cmd> 和{" "}
+            <Cmd>{"\\j"}</Cmd>，例如用 <Cmd>{"\\'{\\i}"}</Cmd> 得到 í，这样重音就不会与字母上的点重叠。
+          </IntroP>
+          <IntroP>
+            数学模式使用另一套重音命令，它们加在变量而不是字母之上：<Cmd>{"\\hat{x}"}</Cmd>、<Cmd>{"\\bar{x}"}</Cmd>、
+            <Cmd>{"\\vec{v}"}</Cmd>、<Cmd>{"\\tilde{x}"}</Cmd>，表示导数的 <Cmd>{"\\dot{x}"}</Cmd> 和 <Cmd>{"\\ddot{x}"}</Cmd>，以及{" "}
+            <Cmd>{"\\acute"}</Cmd>、<Cmd>{"\\grave"}</Cmd>、<Cmd>{"\\breve"}</Cmd> 和 <Cmd>{"\\check"}</Cmd>。对于多个字符，基础 LaTeX 提供可伸缩的{" "}
+            <Cmd>{"\\widehat{xy}"}</Cmd> 和 <Cmd>{"\\widetilde{xy}"}</Cmd>，还有用于共轭的 <Cmd>{"\\overline{z}"}</Cmd> 和用于向量的{" "}
+            <Cmd>{"\\overrightarrow{AB}"}</Cmd>；这些都不需要 amsmath。
+          </IntroP>
+          <IntroP>
+            自 2018 年起，LaTeX 默认读取 UTF-8，因此可以在源文件中直接输入 é、ö 或 ñ（较旧的环境需要{" "}
+            <Cmd>{"\\usepackage[utf8]{inputenc}"}</Cmd>）。再加上 <Cmd>{"\\usepackage[T1]{fontenc}"}</Cmd>，带重音的字母就会成为单个字形，能够正确断词和复制，而不是由两个部分拼合而成。完整示例请参阅我们的{" "}
+            <IntroLink
+              href="https://www.useoctree.com/blog/spanish-characters-latex-accents-special-letters"
+              external
+            >
+              LaTeX 西班牙语字符与重音指南
+            </IntroLink>
+            ，或{" "}
+            <IntroLink href="https://www.useoctree.com/learn/special-characters" external>
+              LaTeX 特殊字符概览
+            </IntroLink>
+            。点击下方任意卡片即可复制其命令。
+          </IntroP>
+        </>
+      ),
+    },
   },
 };
 
