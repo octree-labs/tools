@@ -29,8 +29,14 @@ import Eccv2026Guide from "./eccv-2026";
 import Emnlp2026Guide from "./emnlp-2026";
 import EssayGuide from "./essay";
 import FlyerGuide from "./flyer";
+import FormulaSheetGuide from "./formula-sheet";
+import GradingRubricGuide from "./grading-rubric";
+import GrantProposalGuide from "./grant-proposal";
 import HarvardResumeGuide from "./harvard-resume";
+import HomeworkGuide from "./homework";
+import Iclr2026Guide from "./iclr-2026";
 import Icml2026Guide from "./icml-2026";
+import Icra2026Guide from "./icra-2026";
 import IeeeConferenceGuide from "./ieee-conference";
 import JfmPaperGuide from "./jfm-paper";
 import JakesResumeGuide from "./jakes-resume";
@@ -113,8 +119,14 @@ const templateGuides: Record<string, ComponentType> = {
   "emnlp-2026": Emnlp2026Guide,
   "essay": EssayGuide,
   "flyer": FlyerGuide,
+  "formula-sheet": FormulaSheetGuide,
+  "grading-rubric": GradingRubricGuide,
+  "grant-proposal": GrantProposalGuide,
   "harvard-resume": HarvardResumeGuide,
+  "homework": HomeworkGuide,
+  "iclr-2026": Iclr2026Guide,
   "icml-2026": Icml2026Guide,
+  "icra-2026": Icra2026Guide,
   "ieee-conference": IeeeConferenceGuide,
   "jfm-paper": JfmPaperGuide,
   "jakes-resume": JakesResumeGuide,
