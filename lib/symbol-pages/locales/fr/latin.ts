@@ -13,7 +13,7 @@ const text: SymbolPageTranslations = {
     meaning: "Place un accent grave sur le o, produisant ò sous forme d’accent mathématique ; pour les mots, on utilise la commande textuelle \\`o.",
     usage:
       "L’accent grave marque l’accent tonique ou la qualité de la voyelle en italien (però, città), en catalan et en vietnamien, et apparaît en français dans des mots comme où. Dans un document, écrivez ces mots avec \\`{o} ou en tapant la lettre accentuée, car \\grave ne fonctionne qu’en mode mathématique et compose la lettre en italique mathématique. L’usage mathématique de \\grave est rare ; un auteur s’en sert parfois pour décorer une variable lorsque \\hat, \\tilde et \\bar sont déjà pris. Ne confondez pas l’accent grave avec l’accent aigu \\acute, incliné dans l’autre sens.",
-    example: "\\grave{o} \\quad \\text{vs. l'accent de texte dans } \\text{per\\`{o}}",
+    example: "\\grave{o} \\quad \\text{comparer avec l'accent de texte dans } \\text{per\\`{o}}",
   },
   "o-with-acute-accent": {
     name: "O accent aigu",
