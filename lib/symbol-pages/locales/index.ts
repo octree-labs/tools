@@ -38,10 +38,18 @@ import cnLinearAlgebra from "./cn/linear-algebra";
 import esLinearAlgebra from "./es/linear-algebra";
 import frLinearAlgebra from "./fr/linear-algebra";
 import ruLinearAlgebra from "./ru/linear-algebra";
+import cnLogic from "./cn/logic";
+import esLogic from "./es/logic";
+import frLogic from "./fr/logic";
+import ruLogic from "./ru/logic";
 import cnMath from "./cn/math";
 import esMath from "./es/math";
 import frMath from "./fr/math";
 import ruMath from "./ru/math";
+import cnOrder from "./cn/order";
+import esOrder from "./es/order";
+import frOrder from "./fr/order";
+import ruOrder from "./ru/order";
 import cnProbability from "./cn/probability";
 import esProbability from "./es/probability";
 import frProbability from "./fr/probability";
@@ -105,7 +113,9 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "greek": cnGreek,
     "latin": cnLatin,
     "linear-algebra": cnLinearAlgebra,
+    "logic": cnLogic,
     "math": cnMath,
+    "order": cnOrder,
     "probability": cnProbability,
     "quantifiers": cnQuantifiers,
     "relations": cnRelations,
@@ -127,7 +137,9 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "greek": esGreek,
     "latin": esLatin,
     "linear-algebra": esLinearAlgebra,
+    "logic": esLogic,
     "math": esMath,
+    "order": esOrder,
     "probability": esProbability,
     "quantifiers": esQuantifiers,
     "relations": esRelations,
@@ -149,7 +161,9 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "greek": frGreek,
     "latin": frLatin,
     "linear-algebra": frLinearAlgebra,
+    "logic": frLogic,
     "math": frMath,
+    "order": frOrder,
     "probability": frProbability,
     "quantifiers": frQuantifiers,
     "relations": frRelations,
@@ -171,7 +185,9 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "greek": ruGreek,
     "latin": ruLatin,
     "linear-algebra": ruLinearAlgebra,
+    "logic": ruLogic,
     "math": ruMath,
+    "order": ruOrder,
     "probability": ruProbability,
     "quantifiers": ruQuantifiers,
     "relations": ruRelations,
