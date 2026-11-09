@@ -1,4 +1,5 @@
 import { NextRequest } from 'next/server';
+import { AI_UNAVAILABLE, aiErrorResponse } from '@/lib/api-error';
 
 export async function POST(request: NextRequest) {
   try {
@@ -39,33 +40,8 @@ ${input}`,
     });
 
     if (!response.ok) {
-      const errorData = await response.json();
-      console.error('OpenAI API error:', errorData);
-      
-      // Return fallback as stream
-      const encoder = new TextEncoder();
-      const fallbackBibtex = `@article{example2023,
-  author = {Example Author},
-  title = {Example Title},
-  journal = {Example Journal},
-  year = {2023}
-}`;
-      
-      return new Response(
-        new ReadableStream({
-          start(controller) {
-            controller.enqueue(encoder.encode(fallbackBibtex));
-            controller.close();
-          },
-        }),
-        {
-          headers: {
-            'Content-Type': 'text/event-stream',
-            'Cache-Control': 'no-cache',
-            'Connection': 'keep-alive',
-          },
-        }
-      );
+      console.error('OpenAI API error:', response.status, (await response.text().catch(() => '')).slice(0, 500));
+      return aiErrorResponse(502, AI_UNAVAILABLE, 'upstream_error');
     }
 
     // Create a transform stream to parse SSE and extract content
@@ -122,30 +98,6 @@ ${input}`,
     });
   } catch (error) {
     console.error('Citation generation error:', error);
-    
-    // Return fallback as stream
-    const encoder = new TextEncoder();
-    const fallbackBibtex = `@article{example2023,
-  author = {Example Author},
-  title = {Example Title},
-  journal = {Example Journal},
-  year = {2023}
-}`;
-    
-    return new Response(
-      new ReadableStream({
-        start(controller) {
-          controller.enqueue(encoder.encode(fallbackBibtex));
-          controller.close();
-        },
-      }),
-      {
-        headers: {
-          'Content-Type': 'text/event-stream',
-          'Cache-Control': 'no-cache',
-          'Connection': 'keep-alive',
-        },
-      }
-    );
+    return aiErrorResponse(500, AI_UNAVAILABLE);
   }
 } 

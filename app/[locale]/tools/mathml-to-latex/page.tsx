@@ -20,6 +20,7 @@ import { Button } from '@/components/ui/button';
 import { useTranslations, useLocale } from 'next-intl';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 import type { Locale } from '@/lib/i18n/config';
+import { ApiError, readApiError } from '@/lib/api-error';
 
 const Editor = dynamic(() => import('@monaco-editor/react'), { ssr: false });
 const PDFPreview = dynamic(() => import('@/components/PDFPreview'), { ssr: false });
@@ -96,7 +97,7 @@ export default function MathMLToLatex() {
         body: JSON.stringify({ mathml: mathmlInput }),
       });
 
-      if (!response.ok) throw new Error('Conversion failed');
+      if (!response.ok) throw await readApiError(response, t('failedToConvert'));
 
       const reader = response.body?.getReader();
       const decoder = new TextDecoder();
@@ -114,7 +115,7 @@ export default function MathMLToLatex() {
         setLatexCode(accumulatedText);
       }
     } catch (err) {
-      setError(t('failedToConvert'));
+      setError(err instanceof ApiError ? err.message : t('failedToConvert'));
       console.error(err);
     } finally {
       setIsProcessing(false);

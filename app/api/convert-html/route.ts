@@ -1,4 +1,5 @@
 import { NextRequest } from 'next/server';
+import { AI_UNAVAILABLE, aiErrorResponse } from '@/lib/api-error';
 
 export async function POST(request: NextRequest) {
   try {
@@ -33,36 +34,8 @@ ${html}`,
     });
 
     if (!response.ok) {
-      const errorData = await response.json();
-      console.error('OpenAI API error:', errorData);
-      
-      const encoder = new TextEncoder();
-      const fallbackLatex = `\\documentclass{article}
-\\usepackage{amsmath}
-\\usepackage{amssymb}
-\\usepackage{hyperref}
-\\begin{document}
-
-\\section{Sample Document}
-This is a sample LaTeX document converted from HTML.
-
-\\end{document}`;
-      
-      return new Response(
-        new ReadableStream({
-          start(controller) {
-            controller.enqueue(encoder.encode(fallbackLatex));
-            controller.close();
-          },
-        }),
-        {
-          headers: {
-            'Content-Type': 'text/event-stream',
-            'Cache-Control': 'no-cache',
-            'Connection': 'keep-alive',
-          },
-        }
-      );
+      console.error('OpenAI API error:', response.status, (await response.text().catch(() => '')).slice(0, 500));
+      return aiErrorResponse(502, AI_UNAVAILABLE, 'upstream_error');
     }
 
     const reader = response.body?.getReader();
@@ -118,33 +91,6 @@ This is a sample LaTeX document converted from HTML.
     });
   } catch (error) {
     console.error('HTML conversion error:', error);
-    
-    const encoder = new TextEncoder();
-    const fallbackLatex = `\\documentclass{article}
-\\usepackage{amsmath}
-\\usepackage{amssymb}
-\\usepackage{hyperref}
-\\begin{document}
-
-\\section{Sample Document}
-This is a sample LaTeX document converted from HTML.
-
-\\end{document}`;
-    
-    return new Response(
-      new ReadableStream({
-        start(controller) {
-          controller.enqueue(encoder.encode(fallbackLatex));
-          controller.close();
-        },
-      }),
-      {
-        headers: {
-          'Content-Type': 'text/event-stream',
-          'Cache-Control': 'no-cache',
-          'Connection': 'keep-alive',
-        },
-      }
-    );
+    return aiErrorResponse(500, AI_UNAVAILABLE);
   }
 } 

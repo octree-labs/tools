@@ -1,4 +1,5 @@
 import { NextRequest } from 'next/server';
+import { AI_UNAVAILABLE, aiErrorResponse } from '@/lib/api-error';
 
 export async function POST(request: NextRequest) {
   try {
@@ -34,42 +35,8 @@ Return ONLY the complete LaTeX code, no explanations or markdown formatting.`,
     });
 
     if (!response.ok) {
-      const errorData = await response.json();
-      console.error('OpenAI API error:', errorData);
-
-      // return fallback as stream
-      const encoder = new TextEncoder();
-      const fallbackLatex = `\\documentclass{standalone}
-\\usepackage{pgfplots}
-\\pgfplotsset{compat=1.18}
-\\begin{document}
-\\begin{tikzpicture}
-\\begin{axis}[
-    xlabel={x},
-    ylabel={f(x)},
-]
-\\addplot[color=blue,mark=*] coordinates {
-    (0,0) (1,1) (2,4) (3,9) (4,16)
-};
-\\end{axis}
-\\end{tikzpicture}
-\\end{document}`;
-      
-      return new Response(
-        new ReadableStream({
-          start(controller) {
-            controller.enqueue(encoder.encode(fallbackLatex));
-            controller.close();
-          },
-        }),
-        {
-          headers: {
-            'Content-Type': 'text/event-stream',
-            'Cache-Control': 'no-cache',
-            'Connection': 'keep-alive',
-          },
-        }
-      );
+      console.error('OpenAI API error:', response.status, (await response.text().catch(() => '')).slice(0, 500));
+      return aiErrorResponse(502, AI_UNAVAILABLE, 'upstream_error');
     }
 
     // create a transform stream to parse sse and extract content
@@ -126,40 +93,7 @@ Return ONLY the complete LaTeX code, no explanations or markdown formatting.`,
     });
   } catch (error) {
     console.error('pgfplots generation error:', error);
-
-    // return fallback as stream
-    const encoder = new TextEncoder();
-    const fallbackLatex = `\\documentclass{standalone}
-\\usepackage{pgfplots}
-\\pgfplotsset{compat=1.18}
-\\begin{document}
-\\begin{tikzpicture}
-\\begin{axis}[
-    xlabel={x},
-    ylabel={f(x)},
-]
-\\addplot[color=blue,mark=*] coordinates {
-    (0,0) (1,1) (2,4) (3,9) (4,16)
-};
-\\end{axis}
-\\end{tikzpicture}
-\\end{document}`;
-    
-    return new Response(
-      new ReadableStream({
-        start(controller) {
-          controller.enqueue(encoder.encode(fallbackLatex));
-          controller.close();
-        },
-      }),
-      {
-        headers: {
-          'Content-Type': 'text/event-stream',
-          'Cache-Control': 'no-cache',
-          'Connection': 'keep-alive',
-        },
-      }
-    );
+    return aiErrorResponse(500, AI_UNAVAILABLE);
   }
 }
 

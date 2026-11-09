@@ -14,6 +14,7 @@ import { Button } from '@/components/ui/button';
 import { useTranslations, useLocale } from 'next-intl';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 import type { Locale } from '@/lib/i18n/config';
+import { ApiError, readApiError } from '@/lib/api-error';
 
 const Editor = dynamic(() => import('@monaco-editor/react'), { ssr: false });
 
@@ -79,7 +80,7 @@ export default function CitationGenerator() {
         body: JSON.stringify({ input: citationInput }),
       });
 
-      if (!response.ok) throw new Error('Citation generation failed');
+      if (!response.ok) throw await readApiError(response, t('failedToGenerate'));
 
       const reader = response.body?.getReader();
       const decoder = new TextDecoder();
@@ -97,7 +98,7 @@ export default function CitationGenerator() {
         setBibtexCode(accumulatedText);
       }
     } catch (err) {
-      setError(t('failedToGenerate'));
+      setError(err instanceof ApiError ? err.message : t('failedToGenerate'));
       console.error(err);
     } finally {
       setIsProcessing(false);

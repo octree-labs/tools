@@ -1,4 +1,5 @@
 import { NextRequest } from 'next/server';
+import { AI_UNAVAILABLE, aiErrorResponse } from '@/lib/api-error';
 
 const SYSTEM_PROMPT = `You are an expert LaTeX and TikZ engineer. Your task is to convert images of diagrams, flowcharts, shapes, and visual elements into clean, compilable TikZ code.
 
@@ -39,37 +40,12 @@ SHAPE RECOGNITION:
 
 Remember: Output ONLY valid LaTeX/TikZ code that compiles without errors, nothing else.`;
 
-const FALLBACK_TIKZ = `\\documentclass{standalone}
-\\usepackage{tikz}
-
-\\begin{document}
-\\begin{tikzpicture}
-  % Fallback diagram - conversion failed
-  \\node[draw, rounded corners, fill=yellow!20] at (0,0) {Conversion failed. Please try again.};
-\\end{tikzpicture}
-\\end{document}`;
-
 export async function POST(request: NextRequest) {
   try {
     const { image, mimeType } = await request.json();
 
     if (!image) {
-      const encoder = new TextEncoder();
-      return new Response(
-        new ReadableStream({
-          start(controller) {
-            controller.enqueue(encoder.encode(FALLBACK_TIKZ));
-            controller.close();
-          },
-        }),
-        {
-          headers: {
-            'Content-Type': 'text/event-stream',
-            'Cache-Control': 'no-cache',
-            'Connection': 'keep-alive',
-          },
-        }
-      );
+      return aiErrorResponse(400, 'No image was sent.', 'missing_file');
     }
 
     const validMimeTypes = ['image/png', 'image/jpeg', 'image/gif', 'image/webp'];
@@ -111,25 +87,8 @@ export async function POST(request: NextRequest) {
     });
 
     if (!response.ok) {
-      const errorData = await response.json();
-      console.error('OpenAI API error:', errorData);
-
-      const encoder = new TextEncoder();
-      return new Response(
-        new ReadableStream({
-          start(controller) {
-            controller.enqueue(encoder.encode(FALLBACK_TIKZ));
-            controller.close();
-          },
-        }),
-        {
-          headers: {
-            'Content-Type': 'text/event-stream',
-            'Cache-Control': 'no-cache',
-            'Connection': 'keep-alive',
-          },
-        }
-      );
+      console.error('OpenAI API error:', response.status, (await response.text().catch(() => '')).slice(0, 500));
+      return aiErrorResponse(502, AI_UNAVAILABLE, 'upstream_error');
     }
 
     const reader = response.body?.getReader();
@@ -185,22 +144,6 @@ export async function POST(request: NextRequest) {
     });
   } catch (error) {
     console.error('Image to TikZ conversion error:', error);
-
-    const encoder = new TextEncoder();
-    return new Response(
-      new ReadableStream({
-        start(controller) {
-          controller.enqueue(encoder.encode(FALLBACK_TIKZ));
-          controller.close();
-        },
-      }),
-      {
-        headers: {
-          'Content-Type': 'text/event-stream',
-          'Cache-Control': 'no-cache',
-          'Connection': 'keep-alive',
-        },
-      }
-    );
+    return aiErrorResponse(500, AI_UNAVAILABLE);
   }
 }

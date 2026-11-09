@@ -1,4 +1,5 @@
 import { NextRequest } from 'next/server';
+import { AI_UNAVAILABLE, aiErrorResponse } from '@/lib/api-error';
 
 export async function POST(request: NextRequest) {
   try {
@@ -36,36 +37,8 @@ ${mermaid}`,
     });
 
     if (!response.ok) {
-      const errorData = await response.json();
-      console.error('OpenAI API error:', errorData);
-      
-      const encoder = new TextEncoder();
-      const fallbackLatex = `\\documentclass{standalone}
-\\usepackage{tikz}
-\\usetikzlibrary{shapes.geometric, arrows, positioning}
-\\begin{document}
-\\begin{tikzpicture}[node distance=2cm, every node/.style={align=center}]
-  \\node (start) [rectangle, draw] {Start};
-  \\node (end) [rectangle, draw, below=of start] {End};
-  \\draw [->] (start) -- (end);
-\\end{tikzpicture}
-\\end{document}`;
-      
-      return new Response(
-        new ReadableStream({
-          start(controller) {
-            controller.enqueue(encoder.encode(fallbackLatex));
-            controller.close();
-          },
-        }),
-        {
-          headers: {
-            'Content-Type': 'text/event-stream',
-            'Cache-Control': 'no-cache',
-            'Connection': 'keep-alive',
-          },
-        }
-      );
+      console.error('OpenAI API error:', response.status, (await response.text().catch(() => '')).slice(0, 500));
+      return aiErrorResponse(502, AI_UNAVAILABLE, 'upstream_error');
     }
 
     const reader = response.body?.getReader();
@@ -121,33 +94,6 @@ ${mermaid}`,
     });
   } catch (error) {
     console.error('Mermaid conversion error:', error);
-    
-    const encoder = new TextEncoder();
-    const fallbackLatex = `\\documentclass{standalone}
-\\usepackage{tikz}
-\\usetikzlibrary{shapes.geometric, arrows, positioning}
-\\begin{document}
-\\begin{tikzpicture}[node distance=2cm, every node/.style={align=center}]
-  \\node (start) [rectangle, draw] {Start};
-  \\node (end) [rectangle, draw, below=of start] {End};
-  \\draw [->] (start) -- (end);
-\\end{tikzpicture}
-\\end{document}`;
-    
-    return new Response(
-      new ReadableStream({
-        start(controller) {
-          controller.enqueue(encoder.encode(fallbackLatex));
-          controller.close();
-        },
-      }),
-      {
-        headers: {
-          'Content-Type': 'text/event-stream',
-          'Cache-Control': 'no-cache',
-          'Connection': 'keep-alive',
-        },
-      }
-    );
+    return aiErrorResponse(500, AI_UNAVAILABLE);
   }
 } 

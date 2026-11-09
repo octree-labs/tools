@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { AI_UNAVAILABLE, aiErrorResponse } from '@/lib/api-error';
 
 export async function POST(request: NextRequest) {
   try {
@@ -100,28 +101,8 @@ Rules:
     });
 
     if (!response.ok) {
-      const errorData = await response.json();
-      console.error('OpenAI API error:', errorData);
-
-      // Return fallback as stream
-      const encoder = new TextEncoder();
-      const fallbackLatex = '\\[ x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a} \\]';
-
-      return new Response(
-        new ReadableStream({
-          start(controller) {
-            controller.enqueue(encoder.encode(fallbackLatex));
-            controller.close();
-          },
-        }),
-        {
-          headers: {
-            'Content-Type': 'text/event-stream',
-            'Cache-Control': 'no-cache',
-            Connection: 'keep-alive',
-          },
-        }
-      );
+      console.error('OpenAI API error:', response.status, (await response.text().catch(() => '')).slice(0, 500));
+      return aiErrorResponse(502, AI_UNAVAILABLE, 'upstream_error');
     }
 
     // Create a transform stream to parse SSE and extract content
@@ -178,25 +159,6 @@ Rules:
     });
   } catch (error) {
     console.error('Equation to LaTeX error:', error);
-
-    // Return fallback as stream
-    const encoder = new TextEncoder();
-    const fallbackLatex = '\\[ x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a} \\]';
-
-    return new Response(
-      new ReadableStream({
-        start(controller) {
-          controller.enqueue(encoder.encode(fallbackLatex));
-          controller.close();
-        },
-      }),
-      {
-        headers: {
-          'Content-Type': 'text/event-stream',
-          'Cache-Control': 'no-cache',
-          Connection: 'keep-alive',
-        },
-      }
-    );
+    return aiErrorResponse(500, AI_UNAVAILABLE);
   }
 }

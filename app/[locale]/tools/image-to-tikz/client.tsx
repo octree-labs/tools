@@ -20,6 +20,7 @@ import { useTranslations, useLocale } from 'next-intl';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 import type { Locale } from '@/lib/i18n/config';
 import { trackConverterUsed } from '@/lib/analytics';
+import { ApiError, readApiError } from '@/lib/api-error';
 
 const Editor = dynamic(() => import('@monaco-editor/react'), { ssr: false });
 const PDFPreview = dynamic(() => import('@/components/PDFPreview'), { ssr: false });
@@ -92,7 +93,7 @@ export default function ImageToTikz() {
         }),
       });
 
-      if (!response.ok) throw new Error('Conversion failed');
+      if (!response.ok) throw await readApiError(response, t('failedToConvert'));
 
       const responseReader = response.body?.getReader();
       const decoder = new TextDecoder();
@@ -112,7 +113,7 @@ export default function ImageToTikz() {
       trackConverterUsed('image-to-tikz', true);
     } catch (err) {
       trackConverterUsed('image-to-tikz', false);
-      setError(t('failedToConvert'));
+      setError(err instanceof ApiError ? err.message : t('failedToConvert'));
       console.error(err);
     } finally {
       setIsProcessing(false);
