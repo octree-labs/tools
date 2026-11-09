@@ -58,8 +58,7 @@ export default function StatementOfPurposeGuide() {
         <GuideCode>article</GuideCode> class with <GuideCode>setspace</GuideCode> for
         the line spacing and unnumbered <GuideCode>\section*</GuideCode> headings, and
         compiles as a statement of purpose template for Overleaf, in Octree or with any
-        local TeX install. Keep one copy per programme so that the Why section stays
-        specific.
+        local TeX install.
       </GuideP>
 
       <GuideH2 id="included">What is included</GuideH2>
