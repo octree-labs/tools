@@ -2,9 +2,15 @@ import { Metadata } from "next";
 import { generateSymbolMetadata } from '@/lib/generate-symbol-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "LaTeX Chemistry Symbols - Reactions, Bonds, Isotopes | Free",
-  description: "Complete list of LaTeX chemistry symbols. Copy-paste ⇌, →, ↑, ↓, isotope notation, bonds, state symbols with LaTeX commands.",
+  title: "Chemistry Symbols in LaTeX - Yields Arrow, Equilibrium",
+  description: "Chemistry symbols in LaTeX, copy-ready: yields arrow, equilibrium \\rightleftharpoons, mhchem \\ce reactions, ions, isotopes, bonds and gas or precipitate.",
   keywords: [
+    "chemistry symbols latex",
+    "yields arrow",
+    "equilibrium symbol latex",
+    "equilibrium symbol copy paste",
+    "mhchem",
+    "latex chemical equation",
     // Chemistry keywords
     "chemistry symbols",
     "reaction arrow symbols",
@@ -36,8 +42,8 @@ const defaultMetadata: Metadata = {
     "scientific symbols",
   ],
   openGraph: {
-    title: "LaTeX Chemistry Symbols - Complete Symbol Reference",
-    description: "Copy-paste LaTeX code for reaction arrows, bonds, isotopes, and chemistry notation.",
+    title: "Chemistry Symbols in LaTeX - Yields Arrow, Equilibrium",
+    description: "How to write reactions, the yields arrow, the equilibrium symbol and formulas in LaTeX.",
   },
 };
 

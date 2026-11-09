@@ -2,9 +2,15 @@ import { Metadata } from "next";
 import { generateSymbolMetadata } from '@/lib/generate-symbol-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "LaTeX Brackets & Delimiters - Angle, Floor, Ceiling, Norms",
-  description: "Complete list of LaTeX bracket and delimiter symbols. Copy-paste angle brackets ⟨⟩, floor ⌊⌋, ceiling ⌈⌉, norms ‖‖ and all delimiter pairs with LaTeX code.",
+  title: "LaTeX Brackets - Braces, Angle, Floor, Double Brackets",
+  description: "LaTeX brackets, copy-ready: curly braces \\{ \\}, angle brackets \\langle \\rangle, floor, ceiling, norms, \\left \\right sizing and double brackets.",
   keywords: [
+    "curly braces latex",
+    "angle brackets latex",
+    "double bracket latex",
+    "latex floor ceiling",
+    "latex norm",
+    "left right latex",
     // Brackets & delimiters keywords
     "bracket symbols",
     "parentheses symbols",
@@ -37,8 +43,8 @@ const defaultMetadata: Metadata = {
     "unicode math symbols",
   ],
   openGraph: {
-    title: "LaTeX Brackets & Delimiters - Complete Symbol Reference",
-    description: "Copy-paste LaTeX code for angle brackets, floor, ceiling, norms, and all delimiter pairs.",
+    title: "LaTeX Brackets - Braces, Angle, Floor, Double Brackets",
+    description: "How to write curly braces, angle brackets, floor, norms and double brackets in LaTeX.",
   },
 };
 

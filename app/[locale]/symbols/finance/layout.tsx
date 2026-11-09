@@ -2,9 +2,15 @@ import { Metadata } from "next";
 import { generateSymbolMetadata } from '@/lib/generate-symbol-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "LaTeX Currency & Finance Symbols - Dollar, Euro, Formulas",
-  description: "Complete list of LaTeX currency and finance symbols. Copy-paste $, €, £, ¥, ₹, ₿, %, NPV, IRR, compound interest formulas with LaTeX commands.",
+  title: "Currency Symbols in LaTeX - Dollar, Euro, Pound, Percent",
+  description: "Currency and finance symbols in LaTeX, copy-ready: dollar \\$, euro \\texteuro and \\euro, pound \\pounds, yen, percent \\%, plus NPV and interest formulas.",
   keywords: [
+    "dollar sign latex",
+    "euro symbol latex",
+    "currency symbols latex",
+    "pound sign latex",
+    "percent sign latex",
+    "finance symbols latex",
     // Core keywords
     "latex symbols",
     "symbol copy paste",
@@ -31,8 +37,8 @@ const defaultMetadata: Metadata = {
     "research symbols",
   ],
   openGraph: {
-    title: "LaTeX Currency & Finance Symbols - Complete Symbol Reference",
-    description: "Copy-paste LaTeX code for currency symbols and financial notation.",
+    title: "Currency Symbols in LaTeX - Dollar, Euro, Pound, Percent",
+    description: "How to write dollar, euro, pound and percent signs and finance formulas in LaTeX.",
   },
 };
 
