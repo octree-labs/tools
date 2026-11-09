@@ -6,6 +6,9 @@ const defaultMetadata: Metadata = {
   description: "Free AI-powered tool to convert handwritten math equations and formulas to LaTeX. Upload an image of your equation and get clean LaTeX with a PDF preview.",
   keywords: [
     "convert handwritten math to LaTeX",
+    "math into latex",
+    "online latex converter",
+    "equations to latex converter",
     "math equation to LaTeX converter",
     "convert math to LaTeX online",
     "math formula to LaTeX converter",

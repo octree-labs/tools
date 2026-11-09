@@ -2,9 +2,13 @@ import type { Metadata } from "next";
 import { generateToolMetadata } from '@/lib/generate-tool-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "Free Online LaTeX Editor, Live PDF Preview | Overleaf Alternative",
-  description: "Write LaTeX and see the PDF instantly. Free online LaTeX editor with real-time compilation, no account needed. Test code, learn LaTeX and export PDFs.",
+  title: "Edit LaTeX Online: Free LaTeX Editor, Compiler & Viewer",
+  description: "Edit LaTeX online and see the PDF as you type. Free LaTeX compiler and viewer with full TeX Live, pdfLaTeX, XeLaTeX and LuaLaTeX. No account needed.",
   keywords: [
+    "edit latex online",
+    "latex online editor",
+    "latex online",
+    "online tex compiler",
     "LaTeX preview",
     "online LaTeX editor",
     "LaTeX live preview",
@@ -34,8 +38,8 @@ const defaultMetadata: Metadata = {
     canonical: '/tools/latex-preview',
   },
   openGraph: {
-    title: "Free Online LaTeX Editor with Live PDF Preview",
-    description: "Write LaTeX, see PDF instantly. Real-time compilation, no account needed. Best free Overleaf alternative.",
+    title: "Edit LaTeX Online: Free LaTeX Editor, Compiler & Viewer",
+    description: "Edit LaTeX online and see the PDF as you type. Full TeX Live, no account needed.",
     url: 'https://tools.useoctree.com/tools/latex-preview',
     siteName: 'Octree LaTeX Tools',
     locale: 'en_US',
@@ -43,8 +47,8 @@ const defaultMetadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Free Online LaTeX Editor with Live PDF Preview",
-    description: "Write LaTeX, see PDF instantly. Real-time compilation, no account needed. Best free Overleaf alternative.",
+    title: "Edit LaTeX Online: Free LaTeX Editor, Compiler & Viewer",
+    description: "Edit LaTeX online and see the PDF as you type. Full TeX Live, no account needed.",
   },
 };
 

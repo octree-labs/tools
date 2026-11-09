@@ -6,6 +6,7 @@ const defaultMetadata: Metadata = {
   description: "Generate LaTeX code instantly with AI. Describe your document in plain English and get complete, compilable LaTeX for papers, equations and slides. Free.",
   keywords: [
     "AI LaTeX generator",
+    "latex generator",
     "generate LaTeX code",
     "LaTeX code generator",
     "AI LaTeX writer",

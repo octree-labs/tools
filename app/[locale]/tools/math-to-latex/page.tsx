@@ -2,6 +2,7 @@ import AIToolLayout from '@/components/AIToolLayout';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 import { getRequestLocale } from '@/lib/i18n/server';
 import { getTranslations } from 'next-intl/server';
+import MathToLatexSeoContent from './seo-content';
 
 export default async function MathToLatex() {
   const locale = await getRequestLocale();
@@ -21,6 +22,7 @@ export default async function MathToLatex() {
         outputLabel={t('outputLabel')}
         acceptedFormats="JPEG, PNG, PDF"
       />
+      <MathToLatexSeoContent />
     </div>
   );
 } 
