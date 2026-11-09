@@ -195,7 +195,7 @@
     },
     "citationGenerator": {
       "title": "Генератор цитат LaTeX",
-      "subtitle": "Генерируйте цитаты BibTeX из деталей статьи, DOI или URL",
+      "subtitle": "Создавайте записи BibTeX из вставленных вами сведений об источнике",
       "citationDetailsLabel": "Детали цитаты",
       "citationDetailsHint": "Введите детали статьи, DOI или URL",
       "placeholder": "Введите детали цитаты...",
@@ -438,7 +438,7 @@
     },
     "citationGenerator": {
       "title": "Генератор цитат",
-      "description": "Генерируйте цитаты BibTeX из DOI или деталей статьи"
+      "description": "Записи BibTeX из вставленных вами сведений об источнике"
     },
     "mathmlToLatex": {
       "title": "MathML в LaTeX",
@@ -752,7 +752,7 @@
       },
       "citationGenerator": {
         "title": "Генератор цитат LaTeX - Генератор BibTeX",
-        "description": "Генерируйте цитаты BibTeX из DOI, URL или деталей статьи. Бесплатный инструмент цитирования LaTeX.",
+        "description": "Создавайте записи BibTeX из вставленных вами сведений: название, авторы, год и журнал или издательство. Бесплатный инструмент цитирования LaTeX.",
         "keywords": "генератор цитат LaTeX, генератор BibTeX, DOI в BibTeX, генератор цитирования, генератор ссылок, генератор библиографии, генератор cite, цитирование APA LaTeX, цитирование MLA LaTeX, цитирование Chicago, цитирование IEEE, Гарвардское цитирование LaTeX"
       },
       "latexPreview": {

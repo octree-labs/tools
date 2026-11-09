@@ -195,7 +195,7 @@
     },
     "citationGenerator": {
       "title": "Trình tạo trích dẫn LaTeX",
-      "subtitle": "Tạo trích dẫn BibTeX từ chi tiết bài báo, DOI hoặc URL",
+      "subtitle": "Tạo trích dẫn BibTeX từ thông tin bạn dán vào",
       "citationDetailsLabel": "Chi tiết trích dẫn",
       "citationDetailsHint": "Nhập chi tiết bài báo, DOI hoặc URL",
       "placeholder": "Nhập chi tiết trích dẫn...",
@@ -418,7 +418,7 @@
     "imageToTikz": { "title": "Hình ảnh sang TikZ", "description": "Chuyển đổi hình ảnh sang sơ đồ TikZ với AI" },
     "latexPreview": { "title": "Xem trước LaTeX", "description": "Trình soạn thảo LaTeX trực tiếp với xem trước PDF" },
     "markdownToLatex": { "title": "Markdown sang LaTeX", "description": "Chuyển đổi tài liệu Markdown sang định dạng LaTeX" },
-    "citationGenerator": { "title": "Trình tạo trích dẫn", "description": "Tạo trích dẫn BibTeX từ DOI hoặc chi tiết bài báo" },
+    "citationGenerator": { "title": "Trình tạo trích dẫn", "description": "Tạo trích dẫn BibTeX từ thông tin bạn dán vào" },
     "mathmlToLatex": { "title": "MathML sang LaTeX", "description": "Chuyển đổi markup MathML sang định dạng LaTeX" },
     "aiLatexGenerator": { "title": "Trình tạo LaTeX AI", "description": "Tạo mã LaTeX từ mô tả văn bản" },
     "htmlToLatex": { "title": "HTML sang LaTeX", "description": "Chuyển đổi markup HTML sang định dạng LaTeX" },
@@ -701,7 +701,7 @@
       },
       "citationGenerator": {
         "title": "Trình tạo trích dẫn LaTeX - Trình tạo BibTeX",
-        "description": "Tạo trích dẫn BibTeX từ DOI, URL hoặc chi tiết bài báo. Công cụ trích dẫn LaTeX miễn phí.",
+        "description": "Tạo trích dẫn BibTeX từ thông tin bạn dán vào: tiêu đề, tác giả, năm và tạp chí hoặc nhà xuất bản. Công cụ trích dẫn LaTeX miễn phí.",
         "keywords": "trình tạo trích dẫn LaTeX, trình tạo BibTeX, DOI sang BibTeX, trình tạo trích dẫn, trình tạo tham khảo, trình tạo thư mục, trích dẫn APA LaTeX, trích dẫn MLA LaTeX, trích dẫn Chicago, trích dẫn IEEE, tham khảo Harvard LaTeX"
       },
       "latexPreview": {

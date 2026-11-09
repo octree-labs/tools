@@ -195,7 +195,7 @@
     },
     "citationGenerator": {
       "title": "Penjana Sitasi LaTeX",
-      "subtitle": "Jana sitasi BibTeX daripada butiran artikel, DOI, atau URL",
+      "subtitle": "Jana sitasi BibTeX daripada butiran yang anda tampal",
       "citationDetailsLabel": "Butiran Sitasi",
       "citationDetailsHint": "Masukkan butiran artikel, DOI, atau URL",
       "placeholder": "Masukkan butiran sitasi...",
@@ -438,7 +438,7 @@
     },
     "citationGenerator": {
       "title": "Penjana Sitasi",
-      "description": "Jana sitasi BibTeX daripada DOI atau butiran artikel"
+      "description": "Jana sitasi BibTeX daripada butiran yang anda tampal"
     },
     "mathmlToLatex": {
       "title": "MathML ke LaTeX",
@@ -1156,7 +1156,7 @@
       },
       "citationGenerator": {
         "title": "Penjana Sitasi LaTeX - Penjana BibTeX",
-        "description": "Jana sitasi BibTeX daripada DOI, URL, atau butiran artikel. Alat sitasi LaTeX percuma.",
+        "description": "Jana sitasi BibTeX daripada butiran yang anda tampal: tajuk, pengarang, tahun dan jurnal atau penerbit. Alat sitasi LaTeX percuma.",
         "keywords": "penjana sitasi LaTeX, penjana BibTeX, DOI ke BibTeX, penjana sitasi, penjana rujukan, penjana bibliografi, penjana cite, sitasi APA LaTeX, sitasi MLA LaTeX, sitasi Chicago, sitasi IEEE, rujukan Harvard LaTeX"
       },
       "latexPreview": {

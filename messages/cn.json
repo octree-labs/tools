@@ -193,7 +193,7 @@
       },
       "citationGenerator": {
         "title": "LaTeX 引用生成器",
-        "subtitle": "从文章详情、DOI 或 URL 生成 BibTeX 引用",
+        "subtitle": "根据您粘贴的文献信息生成 BibTeX 引用",
         "citationDetailsLabel": "引用详情",
         "citationDetailsHint": "输入文章详情、DOI 或 URL",
         "placeholder": "输入引用详情...",
@@ -436,7 +436,7 @@
       },
       "citationGenerator": {
         "title": "引用生成器",
-        "description": "从 DOI 或文章详情生成 BibTeX 引用"
+        "description": "根据您粘贴的文献信息生成 BibTeX 引用"
       },
       "mathmlToLatex": {
         "title": "MathML 转 LaTeX",
@@ -1008,7 +1008,7 @@
         },
         "citationGenerator": {
           "title": "LaTeX 引用生成器 - BibTeX 生成器",
-          "description": "从 DOI、URL 或文章详情生成 BibTeX 引用。免费 LaTeX 引用工具。",
+          "description": "根据您粘贴的文献信息（标题、作者、年份、期刊或出版社）生成 BibTeX 引用。免费 LaTeX 引用工具。",
           "keywords": "LaTeX 引用生成器, BibTeX 生成器, DOI 转 BibTeX, 引用生成器, 参考文献生成器, 书目生成器, 引用格式生成, APA 引用 LaTeX, MLA 引用 LaTeX, 芝加哥引用格式, IEEE 引用, 哈佛引用 LaTeX, 文献引用工具, 论文引用生成器, 学术引用格式"
         },
         "latexPreview": {

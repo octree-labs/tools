@@ -195,7 +195,7 @@
     },
     "citationGenerator": {
       "title": "LaTeX Citatie Generator",
-      "subtitle": "Genereer BibTeX-citaties van artikeldetails, DOI's of URL's",
+      "subtitle": "Genereer BibTeX-citaties uit de gegevens die u plakt",
       "citationDetailsLabel": "Citatiedetails",
       "citationDetailsHint": "Voer artikeldetails, DOI of URL in",
       "placeholder": "Voer citatiedetails in...",
@@ -418,7 +418,7 @@
     "imageToTikz": { "title": "Afbeelding naar TikZ", "description": "Converteer afbeeldingen naar TikZ-diagrammen met AI" },
     "latexPreview": { "title": "LaTeX Voorbeeld", "description": "Live LaTeX-editor met PDF-weergave" },
     "markdownToLatex": { "title": "Markdown naar LaTeX", "description": "Converteer Markdown-documenten naar LaTeX-formaat" },
-    "citationGenerator": { "title": "Citatie Generator", "description": "Genereer BibTeX-citaties van DOI's of artikeldetails" },
+    "citationGenerator": { "title": "Citatie Generator", "description": "Genereer BibTeX-citaties uit de gegevens die je plakt" },
     "mathmlToLatex": { "title": "MathML naar LaTeX", "description": "Converteer MathML-opmaak naar LaTeX-formaat" },
     "aiLatexGenerator": { "title": "AI LaTeX Generator", "description": "Genereer LaTeX-code van tekstbeschrijvingen" },
     "htmlToLatex": { "title": "HTML naar LaTeX", "description": "Converteer HTML-opmaak naar LaTeX-formaat" },
@@ -701,7 +701,7 @@
       },
       "citationGenerator": {
         "title": "LaTeX Citatie Generator - BibTeX Generator",
-        "description": "Genereer BibTeX-citaties van DOI's, URL's of artikeldetails. Gratis LaTeX citatie tool.",
+        "description": "Genereer BibTeX-citaties uit de gegevens die je plakt: titel, auteurs, jaar en tijdschrift of uitgever. Gratis LaTeX-citatietool.",
         "keywords": "LaTeX citatie generator, BibTeX generator, DOI naar BibTeX, citatie generator, referentie generator, bibliografie generator, cite generator, APA citatie LaTeX, MLA citatie LaTeX, Chicago citatie, IEEE citatie, Harvard referentie LaTeX"
       },
       "latexPreview": {

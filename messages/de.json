@@ -195,7 +195,7 @@
     },
     "citationGenerator": {
       "title": "LaTeX-Zitat-Generator",
-      "subtitle": "Generieren Sie BibTeX-Zitate aus Artikeldetails, DOIs oder URLs",
+      "subtitle": "Erstellen Sie BibTeX-Zitate aus den Angaben, die Sie einfügen",
       "citationDetailsLabel": "Zitatdetails",
       "citationDetailsHint": "Geben Sie Artikeldetails, DOI oder URL ein",
       "placeholder": "Zitatdetails eingeben...",
@@ -438,7 +438,7 @@
     },
     "citationGenerator": {
       "title": "Zitat-Generator",
-      "description": "BibTeX-Zitate aus DOIs oder Artikeldetails generieren"
+      "description": "BibTeX-Zitate aus den eingefügten Angaben erstellen"
     },
     "mathmlToLatex": {
       "title": "MathML zu LaTeX",
@@ -1156,7 +1156,7 @@
       },
       "citationGenerator": {
         "title": "LaTeX-Zitat-Generator - BibTeX-Generator",
-        "description": "Generieren Sie BibTeX-Zitate aus DOIs, URLs oder Artikeldetails. Kostenloses LaTeX-Zitat-Tool.",
+        "description": "Erstellen Sie BibTeX-Zitate aus den Angaben, die Sie einfügen: Titel, Autoren, Jahr und Erscheinungsort. Kostenloses LaTeX-Zitat-Tool.",
         "keywords": "LaTeX Zitat Generator, BibTeX Generator, DOI zu BibTeX, Zitat Generator, Referenz Generator, Bibliographie Generator, Zitier Generator, APA Zitat LaTeX, MLA Zitat LaTeX, Chicago Zitat, IEEE Zitat, Harvard Referenzierung LaTeX"
       },
       "latexPreview": {
