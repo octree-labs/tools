@@ -2,14 +2,18 @@ import SymbolCategoryPage from "@/components/SymbolCategoryPage";
 import { getSymbolIntro } from "@/lib/symbol-intros";
 import { modalSymbols } from "@/lib/symbols";
 
-const Intro = getSymbolIntro("modal-logic");
-
-export default function ModalLogicSymbolsPage() {
+export default async function ModalLogicSymbolsPage({
+    params,
+}: {
+    params: Promise<{ locale: string }>;
+}) {
+    const { locale } = await params;
+    const intro = getSymbolIntro("modal-logic", locale);
     return (
         <SymbolCategoryPage
             symbols={modalSymbols}
             categoryKey="modalLogic"
-            intro={Intro ? <Intro /> : undefined}
+            intro={intro}
         />
     );
 }

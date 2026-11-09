@@ -46,10 +46,11 @@ export interface FaqJsonLdItem {
 }
 
 /** schema.org FAQPage markup for a list of question/answer pairs. */
-export const getFaqJsonLd = (items: FaqJsonLdItem[]) => {
+export const getFaqJsonLd = (items: FaqJsonLdItem[], inLanguage?: string) => {
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
+    ...(inLanguage ? { inLanguage } : {}),
     mainEntity: items.map((item) => ({
       "@type": "Question",
       name: item.question,

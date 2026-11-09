@@ -11,7 +11,7 @@ import {
   type QuickRefRow,
 } from "./ui";
 
-const quickRef: QuickRefRow[] = [
+export const quickRef: QuickRefRow[] = [
   { latex: "\\alpha", use: "Alpha" },
   { latex: "\\beta", use: "Beta" },
   { latex: "\\gamma", use: "Gamma (\\Gamma uppercase)" },

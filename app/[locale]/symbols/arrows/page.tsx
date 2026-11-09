@@ -2,14 +2,18 @@ import SymbolCategoryPage from "@/components/SymbolCategoryPage";
 import { getSymbolIntro } from "@/lib/symbol-intros";
 import { arrowSymbols } from "@/lib/symbols";
 
-const Intro = getSymbolIntro("arrows");
-
-export default function ArrowSymbolsPage() {
+export default async function ArrowSymbolsPage({
+    params,
+}: {
+    params: Promise<{ locale: string }>;
+}) {
+    const { locale } = await params;
+    const intro = getSymbolIntro("arrows", locale);
     return (
         <SymbolCategoryPage
             symbols={arrowSymbols}
             categoryKey="arrows"
-            intro={Intro ? <Intro /> : undefined}
+            intro={intro}
         />
     );
 }

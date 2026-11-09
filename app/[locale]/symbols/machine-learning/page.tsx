@@ -2,14 +2,18 @@ import SymbolCategoryPage from "@/components/SymbolCategoryPage";
 import { getSymbolIntro } from "@/lib/symbol-intros";
 import { mlSymbols } from "@/lib/symbols";
 
-const Intro = getSymbolIntro("machine-learning");
-
-export default function MachineLearningSymbolsPage() {
+export default async function MachineLearningSymbolsPage({
+    params,
+}: {
+    params: Promise<{ locale: string }>;
+}) {
+    const { locale } = await params;
+    const intro = getSymbolIntro("machine-learning", locale);
     return (
         <SymbolCategoryPage
             symbols={mlSymbols}
             categoryKey="machineLearning"
-            intro={Intro ? <Intro /> : undefined}
+            intro={intro}
         />
     );
 }

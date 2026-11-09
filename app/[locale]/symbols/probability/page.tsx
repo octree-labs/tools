@@ -2,14 +2,18 @@ import SymbolCategoryPage from "@/components/SymbolCategoryPage";
 import { getSymbolIntro } from "@/lib/symbol-intros";
 import { probabilitySymbols } from "@/lib/symbols";
 
-const Intro = getSymbolIntro("probability");
-
-export default function ProbabilitySymbolsPage() {
+export default async function ProbabilitySymbolsPage({
+    params,
+}: {
+    params: Promise<{ locale: string }>;
+}) {
+    const { locale } = await params;
+    const intro = getSymbolIntro("probability", locale);
     return (
         <SymbolCategoryPage
             symbols={probabilitySymbols}
             categoryKey="probability"
-            intro={Intro ? <Intro /> : undefined}
+            intro={intro}
         />
     );
 }

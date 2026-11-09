@@ -2,14 +2,18 @@ import SymbolCategoryPage from "@/components/SymbolCategoryPage";
 import { getSymbolIntro } from "@/lib/symbol-intros";
 import { summationSymbols } from "@/lib/symbols";
 
-const Intro = getSymbolIntro("summation");
-
-export default function SummationSymbolsPage() {
+export default async function SummationSymbolsPage({
+    params,
+}: {
+    params: Promise<{ locale: string }>;
+}) {
+    const { locale } = await params;
+    const intro = getSymbolIntro("summation", locale);
     return (
         <SymbolCategoryPage
             symbols={summationSymbols}
             categoryKey="summation"
-            intro={Intro ? <Intro /> : undefined}
+            intro={intro}
         />
     );
 }

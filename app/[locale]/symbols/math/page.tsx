@@ -2,14 +2,18 @@ import SymbolCategoryPage from "@/components/SymbolCategoryPage";
 import { getSymbolIntro } from "@/lib/symbol-intros";
 import { mathSymbols } from "@/lib/symbols";
 
-const Intro = getSymbolIntro("math");
-
-export default function MathSymbolsPage() {
+export default async function MathSymbolsPage({
+    params,
+}: {
+    params: Promise<{ locale: string }>;
+}) {
+    const { locale } = await params;
+    const intro = getSymbolIntro("math", locale);
     return (
         <SymbolCategoryPage
             symbols={mathSymbols}
             categoryKey="math"
-            intro={Intro ? <Intro /> : undefined}
+            intro={intro}
         />
     );
 }

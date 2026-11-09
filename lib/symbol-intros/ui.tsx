@@ -36,23 +36,48 @@ export interface QuickRefRow {
   pkg?: string;
 }
 
+/** Column headers and the "built in" cell, overridable per locale. */
+export interface QuickRefLabels {
+  symbol: string;
+  command: string;
+  use: string;
+  package: string;
+  builtIn: string;
+  copy: string;
+}
+
+const defaultQuickRefLabels: QuickRefLabels = {
+  symbol: "Symbol",
+  command: "Command",
+  use: "Use",
+  package: "Package",
+  builtIn: "built in",
+  copy: "Copy",
+};
+
 /**
  * Copy-ready lookup table of the most used commands in a category. The
  * rendered symbol and copy button are client components; the command text
  * itself is server-rendered so it is indexable.
  */
-export function QuickRefTable({ rows }: { rows: QuickRefRow[] }) {
+export function QuickRefTable({
+  rows,
+  labels = defaultQuickRefLabels,
+}: {
+  rows: QuickRefRow[];
+  labels?: QuickRefLabels;
+}) {
   return (
     <div className="overflow-x-auto mb-4 border border-gray-200 rounded-lg bg-white">
       <table className="w-full text-sm text-left">
         <thead className="bg-gray-50 text-gray-900">
           <tr>
-            <th scope="col" className="px-4 py-3 font-semibold">Symbol</th>
-            <th scope="col" className="px-4 py-3 font-semibold">Command</th>
-            <th scope="col" className="px-4 py-3 font-semibold">Use</th>
-            <th scope="col" className="px-4 py-3 font-semibold">Package</th>
+            <th scope="col" className="px-4 py-3 font-semibold">{labels.symbol}</th>
+            <th scope="col" className="px-4 py-3 font-semibold">{labels.command}</th>
+            <th scope="col" className="px-4 py-3 font-semibold">{labels.use}</th>
+            <th scope="col" className="px-4 py-3 font-semibold">{labels.package}</th>
             <th scope="col" className="px-4 py-3 font-semibold">
-              <span className="sr-only">Copy</span>
+              <span className="sr-only">{labels.copy}</span>
             </th>
           </tr>
         </thead>
@@ -66,7 +91,7 @@ export function QuickRefTable({ rows }: { rows: QuickRefRow[] }) {
                 <code className="font-mono text-gray-800 whitespace-nowrap">{row.latex}</code>
               </td>
               <td className="px-4 py-2">{row.use}</td>
-              <td className="px-4 py-2 whitespace-nowrap">{row.pkg ?? "built in"}</td>
+              <td className="px-4 py-2 whitespace-nowrap">{row.pkg ?? labels.builtIn}</td>
               <td className="px-4 py-2 text-right">
                 <CopyLatexButton latex={row.latex} />
               </td>
@@ -79,7 +104,14 @@ export function QuickRefTable({ rows }: { rows: QuickRefRow[] }) {
 }
 
 /** FAQ list plus the matching schema.org FAQPage JSON-LD. */
-export function IntroFaq({ items }: { items: FaqJsonLdItem[] }) {
+export function IntroFaq({
+  items,
+  inLanguage,
+}: {
+  items: FaqJsonLdItem[];
+  /** BCP 47 tag added to the FAQPage markup on translated intros. */
+  inLanguage?: string;
+}) {
   return (
     <>
       <dl className="space-y-5">
@@ -92,7 +124,7 @@ export function IntroFaq({ items }: { items: FaqJsonLdItem[] }) {
       </dl>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: serializeJsonLd(getFaqJsonLd(items)) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(getFaqJsonLd(items, inLanguage)) }}
       />
     </>
   );

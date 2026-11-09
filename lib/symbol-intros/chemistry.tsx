@@ -11,7 +11,7 @@ import {
   type QuickRefRow,
 } from "./ui";
 
-const quickRef: QuickRefRow[] = [
+export const quickRef: QuickRefRow[] = [
   {
     latex: "\\ce{2H2 + O2 -> 2H2O}",
     preview: "2\\mathrm{H_2} + \\mathrm{O_2} \\rightarrow 2\\mathrm{H_2O}",
