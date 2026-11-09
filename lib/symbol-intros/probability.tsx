@@ -11,7 +11,7 @@ import {
   type QuickRefRow,
 } from "./ui";
 
-const quickRef: QuickRefRow[] = [
+export const quickRef: QuickRefRow[] = [
   { latex: "\\Pr(A)", use: "Probability operator (upright Pr)" },
   { latex: "\\mathbb{P}(A)", use: "Probability symbol, blackboard bold", pkg: "amssymb" },
   { latex: "\\mathbb{E}[X]", use: "Expectation operator", pkg: "amssymb" },

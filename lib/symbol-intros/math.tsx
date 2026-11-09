@@ -11,7 +11,7 @@ import {
   type QuickRefRow,
 } from "./ui";
 
-const quickRef: QuickRefRow[] = [
+export const quickRef: QuickRefRow[] = [
   { latex: "\\pm", use: "Plus or minus" },
   { latex: "\\times", use: "Multiplication (times)" },
   { latex: "\\div", use: "Division" },

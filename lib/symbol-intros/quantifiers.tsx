@@ -11,7 +11,7 @@ import {
   type QuickRefRow,
 } from "./ui";
 
-const quickRef: QuickRefRow[] = [
+export const quickRef: QuickRefRow[] = [
   { latex: "\\forall", use: "For all" },
   { latex: "\\exists", use: "There exists" },
   { latex: "\\nexists", use: "There does not exist", pkg: "amssymb" },

@@ -11,7 +11,7 @@ import {
   type QuickRefRow,
 } from "./ui";
 
-const quickRef: QuickRefRow[] = [
+export const quickRef: QuickRefRow[] = [
   { latex: "f \\colon A \\to B", use: "Function from A to B" },
   { latex: "x \\mapsto x^2", use: "Maps to (function rule)" },
   { latex: "g \\circ f", use: "Composition, g after f" },

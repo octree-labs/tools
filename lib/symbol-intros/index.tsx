@@ -1,4 +1,4 @@
-import type { ComponentType } from "react";
+import type { ComponentType, ReactNode } from "react";
 import AccentsIntro from "./accents";
 import ArrowsIntro from "./arrows";
 import BooleanIntro from "./boolean";
@@ -36,14 +36,26 @@ import TensorsIntro from "./tensors";
 import TopologyIntro from "./topology";
 import TrigonometryIntro from "./trigonometry";
 import UnitsIntro from "./units";
+import { LocalizedIntroView, type IntroLocale } from "./localized";
+import { quickRefs } from "./quick-refs";
+import cn from "./locales/cn";
+import es from "./locales/es";
+import fr from "./locales/fr";
+import ru from "./locales/ru";
 
 /**
  * Editorial intros rendered above the symbol grid on category pages.
  *
- * Intros are English-only content aimed at search terms (the pages otherwise
- * contain almost no indexable text) and render in every locale, like the
- * template guides in lib/template-guides. Add one by creating
+ * Intros are aimed at search terms (the pages otherwise contain almost no
+ * indexable text). The English intro is the source and renders in every
+ * locale that has no translation. Add one by creating
  * `lib/symbol-intros/<slug>.tsx` and registering it here, keyed by the URL slug.
+ *
+ * Translations live in `lib/symbol-intros/locales/<locale>.tsx`, one file per
+ * route locale (`cn` is Simplified Chinese, emitted as `zh`), keyed by the
+ * same slug. To translate another page, export its `quickRef` from the
+ * English module, add it to `./quick-refs.ts` and add an entry to each locale
+ * file. To add a locale, create its file and register it in `introLocales`.
  */
 const symbolIntros: Record<string, ComponentType> = {
   accents: AccentsIntro,
@@ -85,6 +97,20 @@ const symbolIntros: Record<string, ComponentType> = {
   units: UnitsIntro,
 };
 
-export function getSymbolIntro(slug: string): ComponentType | undefined {
-  return symbolIntros[slug];
+const introLocales: Partial<Record<string, IntroLocale>> = { cn, es, fr, ru };
+
+/**
+ * The intro for a category page in the given route locale, falling back to
+ * the English intro when there is no translation.
+ */
+export function getSymbolIntro(slug: string, locale = "en"): ReactNode {
+  const introLocale = introLocales[locale];
+  const translated = introLocale?.intros[slug];
+  if (introLocale && translated) {
+    return (
+      <LocalizedIntroView content={translated} rows={quickRefs[slug]} locale={introLocale} />
+    );
+  }
+  const Intro = symbolIntros[slug];
+  return Intro ? <Intro /> : undefined;
 }

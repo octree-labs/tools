@@ -2,14 +2,18 @@ import SymbolCategoryPage from "@/components/SymbolCategoryPage";
 import { getSymbolIntro } from "@/lib/symbol-intros";
 import { csSymbols } from "@/lib/symbols";
 
-const Intro = getSymbolIntro("computer-science");
-
-export default function ComputerScienceSymbolsPage() {
+export default async function ComputerScienceSymbolsPage({
+    params,
+}: {
+    params: Promise<{ locale: string }>;
+}) {
+    const { locale } = await params;
+    const intro = getSymbolIntro("computer-science", locale);
     return (
         <SymbolCategoryPage
             symbols={csSymbols}
             categoryKey="computerScience"
-            intro={Intro ? <Intro /> : undefined}
+            intro={intro}
         />
     );
 }

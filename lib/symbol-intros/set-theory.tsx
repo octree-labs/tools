@@ -11,7 +11,7 @@ import {
   type QuickRefRow,
 } from "./ui";
 
-const quickRef: QuickRefRow[] = [
+export const quickRef: QuickRefRow[] = [
   { latex: "\\in", use: "Element of" },
   { latex: "\\notin", use: "Not an element of" },
   { latex: "\\subset", use: "Subset" },

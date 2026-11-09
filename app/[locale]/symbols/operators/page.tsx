@@ -2,14 +2,18 @@ import SymbolCategoryPage from "@/components/SymbolCategoryPage";
 import { getSymbolIntro } from "@/lib/symbol-intros";
 import { operatorSymbols } from "@/lib/symbols";
 
-const Intro = getSymbolIntro("operators");
-
-export default function OperatorsSymbolsPage() {
+export default async function OperatorsSymbolsPage({
+    params,
+}: {
+    params: Promise<{ locale: string }>;
+}) {
+    const { locale } = await params;
+    const intro = getSymbolIntro("operators", locale);
     return (
         <SymbolCategoryPage
             symbols={operatorSymbols}
             categoryKey="operators"
-            intro={Intro ? <Intro /> : undefined}
+            intro={intro}
         />
     );
 }

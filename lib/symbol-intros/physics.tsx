@@ -12,7 +12,7 @@ import {
   type QuickRefRow,
 } from "./ui";
 
-const quickRef: QuickRefRow[] = [
+export const quickRef: QuickRefRow[] = [
   { latex: "\\hbar", use: "Reduced Planck constant (h-bar)" },
   { latex: "\\langle \\psi |", use: "Bra, built from basic commands" },
   { latex: "| \\psi \\rangle", use: "Ket, built from basic commands" },

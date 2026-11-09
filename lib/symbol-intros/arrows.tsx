@@ -12,7 +12,7 @@ import {
   type QuickRefRow,
 } from "./ui";
 
-const quickRef: QuickRefRow[] = [
+export const quickRef: QuickRefRow[] = [
   { latex: "\\rightarrow", use: "Right arrow" },
   { latex: "\\to", use: "Maps to a set, limits (x \u2192 \u221e)" },
   { latex: "\\leftarrow", use: "Left arrow, assignment" },
