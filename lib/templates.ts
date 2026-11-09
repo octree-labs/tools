@@ -636,6 +636,7 @@ x - y &= 1
     slug: "homework",
     previewUrl: "/templates/homework.pdf",
     category: "Education",
+    seoTitle: "Homework Template for LaTeX & Overleaf | Free Download",
     code: String.raw`\documentclass[12pt]{article}
 \usepackage[margin=1in]{geometry}
 \usepackage{amsmath,amssymb,amsthm}
@@ -6762,6 +6763,7 @@ Summary of the work and future directions.
     slug: "interactive-flashcard",
     previewUrl: "/templates/interactive-flashcard.pdf",
     category: "Education",
+    seoTitle: "Interactive Flashcard & Redacted Quiz LaTeX Template",
     code: String.raw`%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % INTERACTIVE FLASHCARD TEMPLATE
 % Click black boxes to reveal answers. Click again to hide.

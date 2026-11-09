@@ -38,8 +38,13 @@ import Iclr2026Guide from "./iclr-2026";
 import Icml2026Guide from "./icml-2026";
 import Icra2026Guide from "./icra-2026";
 import IeeeConferenceGuide from "./ieee-conference";
+import InteractiveFlashcardGuide from "./interactive-flashcard";
+import InternshipReportGuide from "./internship-report";
+import Interspeech2026Guide from "./interspeech-2026";
+import InvoiceGuide from "./invoice";
 import JfmPaperGuide from "./jfm-paper";
 import JakesResumeGuide from "./jakes-resume";
+import JournalArticleGuide from "./journal-article";
 import LabReportGuide from "./lab-report";
 import LeafletGuide from "./leaflet";
 import LectureNotesGuide from "./lecture-notes";
@@ -128,8 +133,13 @@ const templateGuides: Record<string, ComponentType> = {
   "icml-2026": Icml2026Guide,
   "icra-2026": Icra2026Guide,
   "ieee-conference": IeeeConferenceGuide,
+  "interactive-flashcard": InteractiveFlashcardGuide,
+  "internship-report": InternshipReportGuide,
+  "interspeech-2026": Interspeech2026Guide,
+  "invoice": InvoiceGuide,
   "jfm-paper": JfmPaperGuide,
   "jakes-resume": JakesResumeGuide,
+  "journal-article": JournalArticleGuide,
   "lab-report": LabReportGuide,
   leaflet: LeafletGuide,
   "lecture-notes": LectureNotesGuide,
