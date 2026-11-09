@@ -21,6 +21,7 @@ import {
   type TemplateCategory,
 } from "@/lib/templates";
 import { openInOctree } from "@/lib/open-in-octree";
+import { templateFiles } from "@/lib/template-files";
 import { RedditIcon } from "@/components/icons/reddit";
 import { DiscordIcon } from "@/components/icons/discord";
 import { GitHubIcon } from "@/components/icons/github";
@@ -315,6 +316,7 @@ export default function TemplatesPage() {
                           onClick={() => {
                             openInOctree({
                               latex: template.code,
+                              files: templateFiles(template.code) ?? undefined,
                               title: template.title,
                               source: "tools:templates",
                             });
