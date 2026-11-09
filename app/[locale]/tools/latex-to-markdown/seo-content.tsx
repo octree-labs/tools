@@ -1,6 +1,6 @@
-import { ToolSeoContent } from "@/components/ToolSeoContent";
 import { Cmd, IntroLink } from "@/lib/symbol-intros/ui";
 import type { FaqJsonLdItem } from "@/lib/json-ld";
+import { LocalizedToolSeoContent } from "@/lib/tool-seo";
 
 const steps = [
   {
@@ -72,9 +72,11 @@ const faq: FaqJsonLdItem[] = [
   },
 ];
 
-export default function LatexToMarkdownSeoContent() {
+export default function LatexToMarkdownSeoContent({ locale }: { locale?: string }) {
   return (
-    <ToolSeoContent
+    <LocalizedToolSeoContent
+      slug="latex-to-markdown"
+      locale={locale}
       heading="LaTeX to Markdown Converter"
       intro={
         <>

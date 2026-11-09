@@ -1,6 +1,6 @@
-import { ToolSeoContent } from "@/components/ToolSeoContent";
 import { Cmd, IntroLink } from "@/lib/symbol-intros/ui";
 import type { FaqJsonLdItem } from "@/lib/json-ld";
+import { LocalizedToolSeoContent } from "@/lib/tool-seo";
 
 const steps = [
   {
@@ -77,9 +77,11 @@ const faq: FaqJsonLdItem[] = [
   },
 ];
 
-export default function PgfplotsGeneratorSeoContent() {
+export default function PgfplotsGeneratorSeoContent({ locale }: { locale?: string }) {
   return (
-    <ToolSeoContent
+    <LocalizedToolSeoContent
+      slug="pgfplots-generator"
+      locale={locale}
       heading="PGFPlots Generator"
       intro={
         <>

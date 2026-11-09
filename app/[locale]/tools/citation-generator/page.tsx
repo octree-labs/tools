@@ -1,11 +1,16 @@
 import CitationGeneratorClient from "./client";
 import CitationGeneratorSeoContent from "./seo-content";
 
-export default function CitationGeneratorPage() {
+export default async function CitationGeneratorPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
   return (
     <>
       <CitationGeneratorClient />
-      <CitationGeneratorSeoContent />
+      <CitationGeneratorSeoContent locale={locale} />
     </>
   );
 }

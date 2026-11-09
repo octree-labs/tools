@@ -1,4 +1,5 @@
 import { Cmd, IntroLink } from "@/lib/symbol-intros/ui";
+import { GuideCode, GuidePre, GuideTable } from "@/lib/template-guides/ui";
 import type { ToolSeoLocale } from "..";
 
 const translations: ToolSeoLocale = {
@@ -708,6 +709,557 @@ const translations: ToolSeoLocale = {
       </>
     ),
   },
+  "arxiv-to-latex": {
+    heading: "arXiv 转 LaTeX：下载任意 arXiv 论文的 LaTeX 源码",
+    intro: (
+      <>
+        <p>
+          arXiv 上的大多数论文都是用 LaTeX 写成的，而 arXiv 会保存作者上传的源码：.tex 文件、参考文献、样式文件和图片。本工具帮你获取这份 arXiv LaTeX 源码。粘贴论文编号或链接，即可浏览全部文件、阅读主 .tex 文件，并把 arXiv 源码打包为 .zip 下载，无需自己解压 .tar.gz。
+        </p>
+        <p>
+          文件直接从 arXiv 的 e-print 服务下载，不会保存任何内容。支持最大 30 MB、最多 200 个文件的源码。只以 PDF 形式提交的论文没有可下载的 TeX 源码；遇到这种情况，工具会给出提示，并引导你改用转换工具。
+        </p>
+      </>
+    ),
+    stepsHeading: "如何下载 arXiv 的 TeX 源码",
+    steps: [
+      {
+        title: "粘贴 arXiv 编号或链接",
+        body: "输入 2401.12345 这样的编号、hep-th/9711200 这样的旧式编号，或任意 arxiv.org/abs、arxiv.org/pdf 链接。加上版本号（如 2401.12345v2）即可获取该版本；不加版本号则获取最新版本。",
+      },
+      {
+        title: "浏览 LaTeX 源码",
+        body: "工具会从 arXiv 下载论文的 e-print 文件，解压后列出所有文件。主 .tex 文件（即包含 \\documentclass 和 \\begin{document} 的文件）会在查看器中打开；点击其他任意 .tex、.bib 或 .sty 文件即可阅读。",
+      },
+      {
+        title: "下载或编辑源码",
+        body: "把 arXiv 源码下载为 .zip，或在 Octree 中打开主文件，其中通过 \\input 和 \\include 引入的文件会被内联进来。上传 .zip 中的图片后，即可连同图片一起编译。",
+      },
+    ],
+    faqHeading: "arXiv LaTeX 源码常见问题",
+    faq: [
+      {
+        question: "如何下载 arXiv 论文的 LaTeX 源码？",
+        answer:
+          "把论文的 arXiv 编号或网址粘贴到本页的工具中。它会获取作者上传到 arXiv 的源码，列出所有文件，显示主 .tex 文件，并可将全部文件打包为 .zip 下载。在 arxiv.org 上，同样的文件位于论文摘要页的 TeX Source 链接后面，以 .tar.gz 格式打包。",
+      },
+      {
+        question: "为什么有的论文显示没有 LaTeX 源码？",
+        answer:
+          "有些作者只向 arXiv 提交了 PDF，因此没有可下载的 .tex 文件。对于这类论文，可以用 PDF 转 LaTeX 工具把文字和公式重建为可编辑的 LaTeX，但它无法恢复原始源码。",
+      },
+      {
+        question: "哪个文件是主 .tex 文件？",
+        answer:
+          "arXiv 源码中常常有多个 .tex 文件。如果 arXiv 的 00README 标明了顶层文件，工具就选择它；否则选择包含 \\documentclass 和 \\begin{document}、且没有被其他文件 \\input 的那个文件。通过 \\input 或 \\include 引入的章节会在文件树中作为单独的文件显示。",
+      },
+      {
+        question: "可以复用 arXiv 论文的 LaTeX 源码吗？",
+        answer:
+          "源码可以用来研究论文是如何排版的、核对公式或借用宏定义。至于能否复用其中的文字、图片乃至整篇论文，取决于作者在 arXiv 上选择的许可协议（显示在摘要页上）；无论哪种情况，都请注明作者。",
+      },
+    ],
+    related: (
+      <>
+        arXiv 上没有源码？试试 <IntroLink href="/tools/pdf-to-latex">PDF 转 LaTeX 工具</IntroLink>
+        。在 <IntroLink href="/tools/latex-preview">在线 LaTeX 编辑器</IntroLink>中编辑和编译源码，或用{" "}
+        <IntroLink href="/tools/latex-word-counter">LaTeX 字数统计工具</IntroLink>统计字数。
+      </>
+    ),
+  },
+
+  "citation-generator": {
+    heading: "BibTeX 引用生成器：在线生成 LaTeX 参考文献条目",
+    intro: (
+      <>
+        <p>
+          这款 BibTeX 引用生成器可以把图书、期刊文章、会议论文或网页的信息转换为 BibTeX 条目，粘贴到 .bib 文件中即可在 LaTeX 中引用。粘贴结构化字段或自由格式的参考文献，生成器就会写出一个条目，包含条目类型、引用键，以及它能识别的字段：author、title、year、journal 或 booktitle、volume、pages、publisher 和 DOI。
+        </p>
+        <p>
+          条目由 AI 模型（OpenAI gpt-4o-mini）根据你粘贴的文字编写。它不会查询 Crossref、PubMed 或图书馆目录，因此只给出 DOI 或 URL 不足以得到可靠的结果：请附上标题和作者，并对照原始文献核对输出。本工具免费、无需账号，可导出适用于 BibTeX、natbib 和 biblatex 的 references.bib 文件。
+        </p>
+      </>
+    ),
+    stepsHeading: "如何生成 BibTeX 引用",
+    steps: [
+      {
+        title: "描述文献信息",
+        body: "粘贴图书、文章或会议论文的标题、作者、年份和发表刊物或会议，顺序不限，也可以直接粘贴一条自由格式的参考文献。DOI 或 URL 也可以填进去，但请同时补充你掌握的其他信息，因为生成器不会去抓取这些信息。",
+      },
+      {
+        title: "生成 BibTeX 条目",
+        body: (
+          <>
+            点击“生成 BibTeX”。AI 会选择条目类型（<Cmd>@article</Cmd>、<Cmd>@book</Cmd>、
+            <Cmd>@inproceedings</Cmd> 等），编写 <Cmd>goodfellow2016deep</Cmd> 这样的引用键，并填写它能识别的字段。
+          </>
+        ),
+      },
+      {
+        title: "核对并保存",
+        body: (
+          <>
+            将各字段与出版商页面对照，然后复制条目，或点击“导出为 .bib”下载 <Cmd>references.bib</Cmd>
+            。“预览”标签页会在 Octree 中打开一份引用了所有键的 natbib 测试文档。
+          </>
+        ),
+      },
+    ],
+    tipsHeading: "常见 BibTeX 错误及解决方法",
+    tips: [
+      {
+        title: "Citation undefined（引用未定义）",
+        body: (
+          <>
+            <Cmd>\cite{"{...}"}</Cmd> 中的键必须与 <Cmd>@article{"{"}</Cmd> 后面的键完全一致，而且文档中需要有
+            <Cmd>\bibliography{"{references}"}</Cmd>，以及 <Cmd>\bibliographystyle{"{plain}"}</Cmd>
+            之类的样式。先运行 BibTeX，再运行两次 LaTeX。
+          </>
+        ),
+      },
+      {
+        title: "作者姓名顺序错误",
+        body: (
+          <>
+            多位作者之间用 <Cmd>and</Cmd> 分隔，而不是逗号：
+            <Cmd>author = {"{Smith, John and Doe, Jane}"}</Cmd>
+            。单个姓名内部的逗号表示“姓, 名”（Last, First）的顺序。
+          </>
+        ),
+      },
+      {
+        title: "大写字母消失",
+        body: (
+          <>
+            许多样式会把标题转为小写。用花括号包住缩写词和专有名词，例如 <Cmd>{"{BERT}"}</Cmd> 或{" "}
+            <Cmd>{"{Bayesian}"}</Cmd>，即可保留其中的大写字母。
+          </>
+        ),
+      },
+    ],
+    faqHeading: "BibTeX 引用生成器常见问题",
+    faq: [
+      {
+        question: "如何生成 BibTeX 引用？",
+        answer:
+          "把文献信息（标题、作者、年份、期刊或出版社）粘贴到输入框中，然后点击“生成 BibTeX”。工具会返回一个完整的 BibTeX 条目，包含条目类型、引用键和相应字段，你可以复制它，或下载为 references.bib。",
+      },
+      {
+        question: "可以根据 DOI 或 URL 生成 BibTeX 条目吗？",
+        answer:
+          "可以粘贴 DOI 或 URL，但生成器不会在 Crossref 或网上查询：条目是 AI 模型根据你提供的文字写出来的。对于知名论文，它通常能正确填写各字段，但也可能出错，因此请逐一核对每个字段，或在 DOI 之外一并粘贴标题、作者和发表刊物或会议。",
+      },
+      {
+        question: "它能生成 APA、MLA 或 IEEE 格式的引用吗？",
+        answer:
+          "它只输出 BibTeX。引用格式在你的 LaTeX 文档中选择，例如 \\bibliographystyle{IEEEtran} 或 \\bibliographystyle{apalike}，或者使用 biblatex 并设置 style=apa，因此同一个 .bib 条目可以按任意格式输出。",
+      },
+      {
+        question: "BibTeX 生成器免费吗？",
+        answer:
+          "免费，而且无需账号。本页不会保存任何内容，离开前请复制条目或导出 .bib 文件。",
+      },
+    ],
+    related: (
+      <>
+        在{" "}
+        <IntroLink href="https://www.useoctree.com/learn/bibliography-examples" external>
+          LaTeX 参考文献指南
+        </IntroLink>
+        中查看完整示例，从 <IntroLink href="/templates">LaTeX 模板</IntroLink>开始写论文，或在{" "}
+        <IntroLink href="/tools/latex-preview">在线 LaTeX 编辑器</IntroLink>中编译文档。
+      </>
+    ),
+  },
+
+  "html-to-latex": {
+    heading: "HTML 转 LaTeX：在线 HTML 转 LaTeX 转换器",
+    intro: (
+      <>
+        <p>
+          这款 HTML 转 LaTeX 转换器可以把网页标记转换为一份完整、可编译的 LaTeX 文档。把 HTML 粘贴到编辑器中，AI 模型（OpenAI gpt-4o-mini）会把每个元素映射为对应的 LaTeX 写法：
+          <Cmd>{"<h1>"}</Cmd> 到 <Cmd>{"<h3>"}</Cmd> 标题转为章节，<Cmd>{"<ul>"}</Cmd> 和 <Cmd>{"<ol>"}</Cmd>
+          转为 itemize 和 enumerate，<Cmd>{"<table>"}</Cmd> 转为 tabular，<Cmd>{"<strong>"}</Cmd>、
+          <Cmd>{"<em>"}</Cmd>、<Cmd>{"<code>"}</Cmd>
+          和链接转为相应的 LaTeX 命令，并在导言区加载 amsmath、amssymb 和 hyperref。
+        </p>
+        <p>
+          “预览”标签页会用 Octree 编译服务上的完整 TeX Live 发行版编译结果，让你在下载 .tex 文件之前先看到 PDF。本工具接受粘贴的标记，不接受 URL；每次转换返回约 2,000 个 token 的 LaTeX，因此较长的网页最好分段转换。完全免费，无需账号。
+        </p>
+      </>
+    ),
+    stepsHeading: "如何将 HTML 转换为 LaTeX",
+    steps: [
+      {
+        title: "粘贴 HTML",
+        body: "用你自己的标记替换示例：可以是整个网页、一段文章片段，或是从网站、CMS 导出内容中复制的表格源码。",
+      },
+      {
+        title: "转换为 LaTeX",
+        body: (
+          <>
+            点击“转换为 LaTeX”。LaTeX 会以完整文档的形式逐步输出到“代码”标签页，从
+            <Cmd>\documentclass{"{article}"}</Cmd> 一直到 <Cmd>\end{"{document}"}</Cmd>。
+          </>
+        ),
+      },
+      {
+        title: "预览并导出",
+        body: "打开“预览”标签页把文档编译为 PDF，然后导出为 .tex 文件或 PDF，或在 Octree 中打开继续编辑。",
+      },
+    ],
+    tipsHeading: "让转换结果更干净的技巧",
+    tips: [
+      {
+        title: "去掉 LaTeX 用不上的内容",
+        body: "转换前请删除脚本、内联样式、导航栏和广告。颜色、字体等段落级 CSS 在 LaTeX 中没有直接对应的写法，而且输入越短，留给正文内容的空间就越多。",
+      },
+      {
+        title: "图片会变成占位行",
+        body: (
+          <>
+            <Cmd>{"<img>"}</Cmd> 标签只能转换为一行 <Cmd>\includegraphics</Cmd>
+            ；图片文件本身不会被下载，因此预览无法显示图片。请在 Octree 中添加图片文件，或把这些行注释掉。
+          </>
+        ),
+      },
+      {
+        title: "特殊字符",
+        body: (
+          <>
+            如果编译在某个符号处失败，请检查正文中的 <Cmd>&amp;</Cmd>、<Cmd>%</Cmd>、<Cmd>#</Cmd> 和 <Cmd>_</Cmd>
+            是否已转义为 <Cmd>\&amp;</Cmd>、<Cmd>\%</Cmd>、<Cmd>\#</Cmd> 和 <Cmd>\_</Cmd>。
+          </>
+        ),
+      },
+    ],
+    faqHeading: "HTML 转 LaTeX 常见问题",
+    faq: [
+      {
+        question: "如何把 HTML 转换成 LaTeX？",
+        answer:
+          "把 HTML 粘贴到本页的编辑器中，然后点击“转换为 LaTeX”。标题会转为 \\section 命令，列表转为 itemize 或 enumerate，表格转为 tabular，粗体、斜体和链接分别转为 \\textbf、\\emph 和 \\href。在“预览”标签页中检查结果，然后下载 .tex 或 PDF。",
+      },
+      {
+        question: "这个工具能把 LaTeX 转换成 HTML 吗？",
+        answer:
+          "不能，它只能把 HTML 转换为 LaTeX。要把 LaTeX 转换为 HTML，通常的做法是使用本地 TeX 工具，例如 TeX4ht 中的 make4ht 或 htlatex，或者使用 Pandoc（pandoc paper.tex -o paper.html）。如果是为了网页发布，也可以使用本站的 LaTeX 转 Markdown 工具。",
+      },
+      {
+        question: "HTML 最长可以有多长？",
+        answer:
+          "输入长度没有固定上限，但每次转换返回约 2,000 个 token 的 LaTeX，大约相当于几页内容。较长的网页请分段转换，或先删除脚本、样式和导航栏，只发送正文内容。",
+      },
+      {
+        question: "HTML 转 LaTeX 转换器免费吗？",
+        answer:
+          "免费，而且无需账号。转换使用 AI 模型（OpenAI gpt-4o-mini），请校对输出，尤其是包含合并单元格的表格。",
+      },
+    ],
+    related: (
+      <>
+        需要其他格式？查看所有 <IntroLink href="/tools/latex-converter">LaTeX 转换工具</IntroLink>，把{" "}
+        <IntroLink href="/tools/markdown-to-latex">Markdown 转换为 LaTeX</IntroLink>，或在{" "}
+        <IntroLink href="https://www.useoctree.com/learn/tables" external>
+          LaTeX 表格指南
+        </IntroLink>
+        中学习基础知识。
+      </>
+    ),
+  },
+
+  "latex-to-word": {
+    heading: "LaTeX 转 Word：在线将 LaTeX 转换为 DOCX",
+    intro: (
+      <>
+        <p>
+          这款 LaTeX 转 Word 工具可以把 .tex 文档转换为可编辑的 Microsoft Word .docx 文件。转换分两步进行。第一步，AI 模型（OpenAI gpt-4o-mini）读取你的 LaTeX，将其改写为干净的语义化 HTML，保留
+          <GuideCode>\section</GuideCode> 标题、列表、<GuideCode>tabular</GuideCode>
+          表格、粗体和斜体文字、链接以及脚注，同时丢弃导言区和在 Word 中没有意义的版式命令。第二步，这份 HTML 会按固定规则映射为 Word 自身的构件：“标题 1”到“标题 6”样式、项目符号列表和编号列表、带标题行的表格，以及带格式的文本。
+        </p>
+        <p>
+          生成的是原生 .docx 文件，因此修订、批注和目录都能像在任何 Word 文件中一样使用。数学公式会写成可读的 Unicode 文本，而不是 Word 公式；图片会变成对应的图注；输入上限为 60,000 个字符。本转换工具免费、无需账号，文件发回后不会保留任何内容。
+        </p>
+        <GuideTable
+          headers={["LaTeX", "Word 输出"]}
+          rows={[
+            [<GuideCode key="1">\title, \section, \subsection</GuideCode>, "“标题”“标题 1”“标题 2”样式"],
+            [<GuideCode key="2">itemize, enumerate, description</GuideCode>, "项目符号列表和编号列表，保留嵌套层级"],
+            [<GuideCode key="3">tabular, booktabs, longtable</GuideCode>, "标题行加粗的 Word 表格；题注位于表格上方"],
+            [<GuideCode key="4">\textbf, \emph, \underline, \texttt</GuideCode>, "粗体、斜体、下划线、等宽字体文本"],
+            [<GuideCode key="5">$inline math$</GuideCode>, "带 Unicode 符号、上标和下标的可读文本"],
+            [<GuideCode key="6">equation, align, \[ \]</GuideCode>, "每行公式一个居中段落，保留公式编号"],
+            [<GuideCode key="7">\href, \url, \footnote</GuideCode>, "可点击的超链接；脚注文字放在括号中"],
+            [<GuideCode key="8">\cite, thebibliography</GuideCode>, "[key] 占位符和带编号的 References（参考文献）部分"],
+            [<GuideCode key="9">figure, \includegraphics</GuideCode>, "仅保留图注（图片文件不会上传）"],
+          ]}
+        />
+      </>
+    ),
+    stepsHeading: "如何将 LaTeX 转换为 Word",
+    steps: [
+      {
+        title: "粘贴 LaTeX 代码",
+        body: "粘贴 .tex 文件的内容，可以是完整文档，也可以是片段，最多 60,000 个字符。",
+      },
+      {
+        title: "转换为 Word",
+        body: "点击“Convert to Word”。转换完成后，document.docx 会自动下载；下载按钮会一直保留，方便再下载一份。",
+      },
+      {
+        title: "在 Word 中打开",
+        body: "用 Microsoft Word、Google 文档、LibreOffice 或 Pages 打开文件。标题使用的是 Word 内置的“标题”样式，因此导航窗格和目录可以直接使用。",
+      },
+    ],
+    tipsHeading: "转换限制及应对方法",
+    tips: [
+      {
+        title: "公式会变成纯文本",
+        body: (
+          <>
+            数学公式会变成 x² + y² = r² 这样的可读 Unicode 文本，而不是可编辑的 Word 公式。如需原生 Word（OMML）公式，请在本地运行
+            Pandoc：<Cmd>pandoc paper.tex -o paper.docx --citeproc --bibliography=refs.bib</Cmd>，或用{" "}
+            <IntroLink href="/tools/latex-to-png">LaTeX 转 PNG 工具</IntroLink>渲染关键公式。
+          </>
+        ),
+      },
+      {
+        title: "图片只保留图注",
+        body: "图片文件不会随文本一起上传，因此每张图片只会保留它的图注。请之后在 Word 中插入图片。",
+      },
+      {
+        title: "输入内容过长",
+        body: "上限为 60,000 个字符。学位论文请逐章转换，再把各部分粘贴到同一个 Word 文件中。",
+      },
+    ],
+    faqHeading: "LaTeX 转 Word 常见问题",
+    faq: [
+      {
+        question: "如何把 LaTeX 文件转换成 Word？",
+        answer:
+          "把 .tex 文件的内容粘贴到编辑器中，然后点击“Convert to Word”。转换工具会读取 LaTeX 的结构，将其重建为包含真正的标题、列表、表格和文本格式的 Word 文档，并把 document.docx 下载到你的电脑。可以用 Microsoft Word、Google 文档、LibreOffice 或 Pages 打开。",
+      },
+      {
+        question: "LaTeX 转 Word 时，公式会怎样处理？",
+        answer:
+          "行内公式和行间公式会转换为带 Unicode 符号的可读纯文本（例如 x² + y² = r² 或 ∫ f(x) dx），行间公式单独成行并居中。它们不是 Word 原生的公式对象。如果需要可编辑的 Word 公式（OMML），请在本地运行 Pandoc：pandoc paper.tex -o paper.docx。如果想让公式与排版效果完全一致，可以用 LaTeX 转 PNG 工具渲染后粘贴图片。",
+      },
+      {
+        question: "表格、列表和参考文献会保留吗？",
+        answer:
+          "表格（tabular、booktabs、longtable）会变成带标题行的真正 Word 表格；itemize 和 enumerate 会变成项目符号列表和编号列表；粗体、斜体、下划线、等宽字体、链接和脚注都会保留。引用会显示为 [key] 或“作者-年份”形式的文本，thebibliography 环境会变成带编号的 References（参考文献）部分。由于转换工具拿不到图片文件，图片会被替换为图注。",
+      },
+      {
+        question: "LaTeX 转 Word 免费吗？会保存我的文档吗？",
+        answer:
+          "转换工具免费，无需注册。你的 LaTeX 会发送到我们的服务器进行转换，Word 文件在内存中生成并以流式方式传回你的浏览器；响应发送后不会保留任何内容。支持最多 60,000 个字符的文档，足以容纳一篇典型论文或学位论文的一章。",
+      },
+    ],
+    related: (
+      <>
+        需要用于 Notion 或 GitHub 的 Markdown？请使用{" "}
+        <IntroLink href="/tools/latex-to-markdown">LaTeX 转 Markdown 工具</IntroLink>，在{" "}
+        <IntroLink href="/tools/latex-preview">在线 LaTeX 编辑器</IntroLink>中编译 PDF，或查看所有{" "}
+        <IntroLink href="/tools/latex-converter">LaTeX 转换工具</IntroLink>。
+      </>
+    ),
+  },
+
+  "latex-to-png": {
+    heading: "LaTeX 转 PNG 在线：把公式渲染为高清透明背景图片",
+    intro: (
+      <>
+        <p>
+          这款 LaTeX 转 PNG 工具可以把公式、TikZ 图或文档的第一页渲染为 PNG 图片。代码由 Octree 编译服务上的完整 TeX Live 发行版编译，与
+          <IntroLink href="/tools/latex-preview">在线 LaTeX 编辑器</IntroLink>
+          使用的是同一个服务，因此你在本地会用到的宏包这里都有。PDF 返回浏览器后，pdf.js 会按你选择的 DPI 将其第一页栅格化，生成透明或白色背景的 PNG。整个过程不涉及 AI，编译完成后不会保存任何内容。
+        </p>
+        <p>
+          对于单个公式，带 <GuideCode>preview</GuideCode> 选项的 <GuideCode>standalone</GuideCode>
+          文档类会把页面裁剪到公式大小，<GuideCode>border=4pt</GuideCode>
+          会在公式四周留出少许空白。生成的图片可用于幻灯片、Word 和 Google 文档、README 文件、Notion、Slack 或电子邮件等任何无法排版数学公式的地方。完全免费，无需账号。
+        </p>
+        <GuidePre>{`\\documentclass[preview,border=4pt]{standalone}
+\\usepackage{amsmath,amssymb}
+\\begin{document}
+$\\displaystyle \\hat{H}\\psi = E\\psi$
+\\end{document}`}</GuidePre>
+      </>
+    ),
+    stepsHeading: "如何将 LaTeX 转换为 PNG",
+    steps: [
+      {
+        title: "编写公式或文档",
+        body: (
+          <>
+            编辑示例，它使用 <Cmd>\documentclass[preview,border=4pt]{"{standalone}"}</Cmd>
+            ，让图片裁剪到公式大小；也可以粘贴任意完整文档。
+          </>
+        ),
+      },
+      {
+        title: "选择分辨率和背景",
+        body: "在“Resolution”中选择 1× (96 DPI)、2× (192 DPI) 或 4× (384 DPI)。用于幻灯片和深色主题时保持勾选“Transparent background”（透明背景），需要白色背景时取消勾选。",
+      },
+      {
+        title: "转换并保存",
+        body: "点击“Convert to PNG”。下载 latex.png，或把图片复制到剪贴板，再粘贴到 PowerPoint、Google 文档、Notion 或 Slack 中。",
+      },
+    ],
+    tipsHeading: "生成更好图片的技巧",
+    tips: [
+      {
+        title: "公式紧贴图片边缘",
+        body: (
+          <>
+            在文档类选项中增大 <Cmd>border=4pt</Cmd>。使用行内的 <Cmd>$\displaystyle ...$</Cmd>，而不是会占满整行宽度的{" "}
+            <Cmd>\[ ... \]</Cmd>。
+          </>
+        ),
+      },
+      {
+        title: "用于深色幻灯片的图片",
+        body: (
+          <>
+            加载 <Cmd>xcolor</Cmd>，并在公式前写上 <Cmd>\color{"{white}"}</Cmd>
+            ；配合透明背景，白色文字可以放在任何深色主题上。
+          </>
+        ),
+      },
+      {
+        title: "只显示了一页",
+        body: "只会渲染 PDF 的第一页。请把每个公式单独转换，或在在线 LaTeX 编辑器中把多页文档编译为 PDF。",
+      },
+    ],
+    faqHeading: "LaTeX 转 PNG 常见问题",
+    faq: [
+      {
+        question: "如何把 LaTeX 公式转换为 PNG 图片？",
+        answer:
+          "把公式放进一个 standalone 文档中（默认示例使用 \\documentclass[preview,border=4pt]{standalone}），选择分辨率，然后点击“Convert to PNG”。LaTeX 会在我们的服务器上编译为 PDF，第一页在你的浏览器中渲染，之后你可以下载 PNG，或直接复制到剪贴板。",
+      },
+      {
+        question: "可以生成透明背景的 LaTeX PNG 吗？",
+        answer:
+          "可以。保持勾选“Transparent background”（透明背景）选项即可。由于 standalone 文档类不会绘制页面底色，公式以外的所有像素都保持透明，因此图片可以干净地放在深色幻灯片、彩色背景和网页上。取消勾选即可得到不透明的白色背景。",
+      },
+      {
+        question: "用于幻灯片或打印时，应该选择哪个分辨率？",
+        answer:
+          "1×（96 DPI）适合快速预览或聊天消息。用于 Google 幻灯片、PowerPoint、Word、Google 文档和 Notion 时选择 2×（192 DPI），在这些场景中，图片在高分辨率屏幕上大致按原始尺寸显示。图片需要打印或放大时选择 4×（384 DPI）。",
+      },
+      {
+        question: "除了公式，它也支持完整的 LaTeX 文档吗？",
+        answer:
+          "支持。任何能用 pdflatex 编译的文档都可以，包括 article、beamer 或 TikZ 图。只有第一页会被渲染为 PNG；多页文档请使用 LaTeX 预览工具编译并下载完整的 PDF。",
+      },
+    ],
+    related: (
+      <>
+        需要整篇文档？在 <IntroLink href="/tools/latex-preview">在线 LaTeX 编辑器</IntroLink>中编译，把它转换为{" "}
+        <IntroLink href="/tools/latex-to-word">Word 文件</IntroLink>，或在{" "}
+        <IntroLink href="https://www.useoctree.com/learn/mathematical-expressions" external>
+          LaTeX 数学公式指南
+        </IntroLink>
+        中查找命令。
+      </>
+    ),
+  },
+
+  "markdown-to-latex": {
+    heading: "Markdown 转 LaTeX：在线转换 Markdown 文档",
+    intro: (
+      <>
+        <p>
+          这款 Markdown 转 LaTeX 转换器可以把 .md 文本转换为一份完整、可编译的 LaTeX 文档。AI 模型（OpenAI gpt-4o-mini）会把标题改写为章节，把粗体和斜体改写为
+          <Cmd>\textbf</Cmd> 和 <Cmd>\textit</Cmd>
+          ，把无序列表和编号列表改写为 itemize 和 enumerate，把表格改写为 tabular，把围栏代码块改写为代码清单，把链接改写为超链接，并加载 booktabs、listings 和 hyperref 等宏包，同时把行内公式和行间公式保留为 LaTeX 数学公式。
+        </p>
+        <p>
+          “预览”标签页会用 Octree 编译服务上的完整 TeX Live 发行版编译结果，让你在下载 .tex 文件之前先看到 PDF。输入方式为粘贴文本，每次转换返回约 2,000 个 token 的 LaTeX，足够几页内容；更长的文件请拆分转换。本工具免费、无需账号，适用于 README 文件、课堂笔记，以及在 Obsidian、Notion 或 Typora 中写成、需要变成论文或学位论文章节的草稿。
+        </p>
+      </>
+    ),
+    stepsHeading: "如何将 Markdown 转换为 LaTeX",
+    steps: [
+      {
+        title: "粘贴 Markdown",
+        body: "用你自己的 .md 内容替换示例：可以是来自 Obsidian 或 Notion 的笔记、README，或包含标题、列表、表格、代码块和数学公式的草稿。",
+      },
+      {
+        title: "转换为 LaTeX",
+        body: (
+          <>
+            点击“转换为 LaTeX”。一份完整文档会逐步输出到“代码”标签页：<Cmd>#</Cmd> 标题变为 <Cmd>\section</Cmd>
+            ，列表变为 itemize 和 enumerate，<Cmd>$...$</Cmd> 和 <Cmd>$$...$$</Cmd> 公式保留为 LaTeX 数学公式。
+          </>
+        ),
+      },
+      {
+        title: "预览并导出",
+        body: "打开“预览”标签页把文档编译为 PDF，然后导出 .tex 文件或 PDF，或在 Octree 中打开继续写作。",
+      },
+    ],
+    tipsHeading: "常见错误及解决方法",
+    tips: [
+      {
+        title: "数学公式中出现 Undefined control sequence",
+        body: (
+          <>
+            Markdown 中的公式会原样保留，因此仅 KaTeX 支持的命令，或在没有加载 amssymb 时使用的 <Cmd>\mathbb</Cmd>
+            ，都可能导致编译失败。日志会指出出错的行；修改命令或添加相应宏包即可。
+          </>
+        ),
+      },
+      {
+        title: "图片没有显示",
+        body: (
+          <>
+            <Cmd>![alt](image.png)</Cmd> 会变成一行 <Cmd>\includegraphics</Cmd>
+            ，但图片文件不会被上传。请在 Octree 中上传图片，或把这一行注释掉再编译。
+          </>
+        ),
+      },
+      {
+        title: "长文档转换提前中断",
+        body: "每次转换返回约 2,000 个 token 的 LaTeX。请把长文件按章或按节逐次转换，再把各部分拼接起来。",
+      },
+    ],
+    faqHeading: "Markdown 转 LaTeX 常见问题",
+    faq: [
+      {
+        question: "如何在线把 Markdown 转换成 LaTeX？",
+        answer:
+          "把 Markdown 粘贴到本页的编辑器中，然后点击“转换为 LaTeX”。工具会返回一份加载了所需宏包的完整 LaTeX 文档，你可以将其预览为 PDF，并下载为 .tex 文件。无需安装任何软件，也无需账号。",
+      },
+      {
+        question: "数学公式会保留吗？",
+        answer:
+          "会。$...$ 中的行内公式和 $$...$$ 中的行间公式都会保留为 LaTeX 数学公式，导言区也会加载 amsmath 和 amssymb，因此为 MathJax 或 KaTeX 编写的公式通常无需修改就能编译。",
+      },
+      {
+        question: "它和 Pandoc 有什么区别？",
+        answer:
+          "Pandoc（pandoc notes.md -o notes.tex）是需要在本地安装的确定性命令行转换工具。本工具在浏览器中运行，借助 AI 模型（OpenAI gpt-4o-mini）编写 LaTeX，并立即编译出 PDF 预览。由于 AI 可能改写措辞或调整结构，请校对输出。",
+      },
+      {
+        question: "可以把 .md 文件转换为 .tex 吗？",
+        answer:
+          "用任意文本编辑器打开 .md 文件，把内容复制到转换工具中并点击“转换为 LaTeX”，然后通过“导出”下载 document.tex。本页接受粘贴的文本，不支持上传文件。",
+      },
+    ],
+    related: (
+      <>
+        需要反向转换？请使用 <IntroLink href="/tools/latex-to-markdown">LaTeX 转 Markdown 工具</IntroLink>，查看所有{" "}
+        <IntroLink href="/tools/latex-converter">LaTeX 转换工具</IntroLink>，或阅读{" "}
+        <IntroLink href="https://www.useoctree.com/learn/latex" external>
+          LaTeX 入门介绍
+        </IntroLink>
+        。
+      </>
+    ),
+  },
+
 };
 
 export default translations;

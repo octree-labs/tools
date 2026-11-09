@@ -1,11 +1,16 @@
 import MermaidToLatexClient from "./client";
 import MermaidToLatexSeoContent from "./seo-content";
 
-export default function MermaidToLatexPage() {
+export default async function MermaidToLatexPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
   return (
     <>
       <MermaidToLatexClient />
-      <MermaidToLatexSeoContent />
+      <MermaidToLatexSeoContent locale={locale} />
     </>
   );
 }

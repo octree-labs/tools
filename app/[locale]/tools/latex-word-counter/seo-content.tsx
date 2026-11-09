@@ -1,10 +1,15 @@
 import Link from "next/link";
+import { ToolSeoContent } from "@/components/ToolSeoContent";
 import { getFaqJsonLd, serializeJsonLd, type FaqJsonLdItem } from "@/lib/json-ld";
+import { toLanguageTag } from "@/lib/seo";
+import { getToolSeoTranslation } from "@/lib/tool-seo";
 
 /**
- * English-only editorial content rendered below the word counter. It is a
- * server component (no hooks, no translations) so it is part of the static
- * HTML in every locale, like the template guides in lib/template-guides.
+ * Editorial content rendered below the word counter. It is a server component
+ * (no hooks) so it is part of the static HTML in every locale. This English
+ * copy predates components/ToolSeoContent and keeps its own markup; locales
+ * with a translation in lib/tool-seo/locales render that through
+ * ToolSeoContent instead, with "What is counted" as its tips list.
  */
 
 const counted = [
@@ -70,7 +75,11 @@ const faq: FaqJsonLdItem[] = [
   },
 ];
 
-export default function LatexWordCounterSeoContent() {
+export default function LatexWordCounterSeoContent({ locale = "en" }: { locale?: string }) {
+  const translated = getToolSeoTranslation("latex-word-counter", locale);
+  if (translated) {
+    return <ToolSeoContent {...translated} inLanguage={toLanguageTag(locale)} />;
+  }
   return (
     <section className="bg-gray-50">
       <div className="mx-auto max-w-4xl px-6 pb-20 text-gray-700 leading-relaxed">
