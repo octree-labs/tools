@@ -2,14 +2,16 @@ import { MetadataRoute } from 'next'
 import { templates as templateList } from '@/lib/templates'
 import { LOCALES, DEFAULT_LOCALE } from '@/lib/i18n/config'
 import { toLanguageTag } from '@/lib/seo'
-import { SYMBOL_PAGES, SYMBOL_PAGE_INDEXED_LOCALES, symbolPagePath } from '@/lib/symbol-pages'
+import { SYMBOL_PAGES, symbolPagePath } from '@/lib/symbol-pages'
+import { symbolPageLocales } from '@/lib/symbol-pages/locales'
 import { notFound } from 'next/navigation'
 
 export const SITEMAP_BASE_URL = 'https://tools.useoctree.com'
 
 /**
- * Symbol pages per sitemap file. Only the indexed locales are listed (see
- * SYMBOL_PAGE_INDEXED_LOCALES), so today one file holds them all. Keep each
+ * Symbol pages per sitemap file. Each page is listed in English plus the
+ * locales its body copy is translated into (lib/symbol-pages/locales), so a
+ * file holds at most 5 URLs per page. Keep each
  * file well under Vercel's 20 MB prerender limit and the 50k-URL cap if
  * locales are added.
  */
@@ -157,11 +159,12 @@ export default async function sitemap({ id }: { id: number | string }): Promise<
     const start = (index - 1) * SYMBOL_PAGES_PER_SITEMAP
     return SYMBOL_PAGES.slice(start, start + SYMBOL_PAGES_PER_SITEMAP).flatMap(page => {
       const path = symbolPagePath(page)
+      const locales = symbolPageLocales(page)
       const languages = Object.fromEntries([
-        ...SYMBOL_PAGE_INDEXED_LOCALES.map(locale => [toLanguageTag(locale), getLocalizedUrl(path, locale)]),
+        ...locales.map(locale => [toLanguageTag(locale), getLocalizedUrl(path, locale)]),
         ['x-default', getLocalizedUrl(path, DEFAULT_LOCALE)],
       ])
-      return SYMBOL_PAGE_INDEXED_LOCALES.map(locale => ({
+      return locales.map(locale => ({
         url: getLocalizedUrl(path, locale),
         lastModified: new Date(),
         changeFrequency: 'monthly' as const,
