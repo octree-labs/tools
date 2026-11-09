@@ -2,9 +2,14 @@ import { Metadata } from "next";
 import { generateSymbolMetadata } from '@/lib/generate-symbol-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "LaTeX Optimization Symbols - Argmax, Argmin, Constraints",
-  description: "Complete list of LaTeX optimization and operations research symbols. Copy-paste argmax, argmin, constraints, Lagrangian, KKT with LaTeX commands.",
+  title: "Optimization Symbols in LaTeX - Argmax, Argmin, s.t.",
+  description: "Optimization symbols in LaTeX, copy-ready: argmax and argmin with \\DeclareMathOperator*, min and max, subject to, Lagrangian, constraints and optidef.",
   keywords: [
+    "argmax latex",
+    "argmin latex",
+    "optimization latex",
+    "optimization problem latex",
+    "latex min max",
     "optimization symbols",
     "argmax argmin latex",
     "latex argmax",
@@ -25,8 +30,8 @@ const defaultMetadata: Metadata = {
     "math symbols",
   ],
   openGraph: {
-    title: "LaTeX Optimization Symbols - Complete Symbol Reference",
-    description: "Copy-paste LaTeX code for argmax, argmin, constraints, and optimization notation.",
+    title: "Optimization Symbols in LaTeX - Argmax, Argmin, s.t.",
+    description: "How to write argmax, argmin and constrained optimization problems in LaTeX.",
   },
 };
 

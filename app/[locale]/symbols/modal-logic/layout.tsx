@@ -2,9 +2,14 @@ import { Metadata } from "next";
 import { generateSymbolMetadata } from '@/lib/generate-symbol-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "LaTeX Modal Logic Symbols - Necessity, Possibility, Box | Free",
-  description: "Complete list of LaTeX modal logic symbols. Copy-paste □ necessity, ◇ possibility, temporal logic, epistemic logic with LaTeX commands.",
+  title: "Modal Logic Symbols in LaTeX - Box, Diamond, Models",
+  description: "Modal logic symbols in LaTeX, copy-ready: necessity \\Box, possibility \\Diamond, \\models and \\Vdash, Kripke frames, knowledge K_a p and temporal operators.",
   keywords: [
+    "modal logic symbols latex",
+    "box symbol latex",
+    "diamond symbol latex",
+    "models symbol latex",
+    "necessity possibility latex",
     "modal logic symbols",
     "necessity possibility symbols",
     "latex box diamond",
@@ -26,8 +31,8 @@ const defaultMetadata: Metadata = {
     "math symbols",
   ],
   openGraph: {
-    title: "LaTeX Modal Logic Symbols - Complete Symbol Reference",
-    description: "Copy-paste LaTeX code for necessity, possibility, and modal operators.",
+    title: "Modal Logic Symbols in LaTeX - Box, Diamond, Models",
+    description: "How to write necessity, possibility, Kripke semantics and temporal operators in LaTeX.",
   },
 };
 

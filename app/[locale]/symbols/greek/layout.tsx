@@ -2,9 +2,15 @@ import { Metadata } from "next";
 import { generateSymbolMetadata } from '@/lib/generate-symbol-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "LaTeX Greek Letters - Alpha, Beta, Gamma, Delta & More | Free",
-  description: "Complete list of LaTeX Greek letter symbols. Copy-paste α, β, γ, δ, θ, π, σ, ω and all Greek letters (lowercase and uppercase) with LaTeX commands.",
+  title: "Greek Letters in LaTeX - Full Greek Alphabet, Copy-Paste",
+  description: "Greek letters in LaTeX, copy-ready: \\alpha, \\beta, \\gamma, \\delta, \\theta, \\pi, \\sigma, \\omega, uppercase \\Gamma to \\Omega, variants and bold Greek.",
   keywords: [
+    "greek letters latex",
+    "latex greek alphabet",
+    "alpha latex",
+    "theta latex",
+    "sigma latex",
+    "bold greek letters latex",
     // Core keywords
     "latex symbols",
     "math symbols",
@@ -38,8 +44,8 @@ const defaultMetadata: Metadata = {
     "scientific symbols",
   ],
   openGraph: {
-    title: "LaTeX Greek Letters - Complete Symbol Reference",
-    description: "Copy-paste LaTeX code for all Greek letters - alpha, beta, gamma, delta, and more.",
+    title: "Greek Letters in LaTeX - Full Greek Alphabet, Copy-Paste",
+    description: "How to write every Greek letter in LaTeX, uppercase, variant and bold forms.",
   },
 };
 

@@ -2,9 +2,13 @@ import { Metadata } from "next";
 import { generateSymbolMetadata } from '@/lib/generate-symbol-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "LaTeX Quantifiers - For All, Exists, Element Of | Free Reference",
-  description: "Complete list of LaTeX quantifier symbols. Copy-paste for all ∀, exists ∃, ∄, ∃!, element of ∈, ∉ with set builder notation and LaTeX commands.",
+  title: "Quantifiers in LaTeX - For All ∀, There Exists ∃, ∈",
+  description: "Quantifier symbols in LaTeX, copy-ready: for all \\forall, there exists \\exists, \\nexists, unique existence \\exists!, element of \\in and logical connectives.",
   keywords: [
+    "for all latex",
+    "there exists latex",
+    "quantifiers latex",
+    "forall symbol latex",
     "quantifier symbols",
     "forall exists latex",
     "latex for all",
@@ -26,8 +30,8 @@ const defaultMetadata: Metadata = {
     "latex symbols",
   ],
   openGraph: {
-    title: "LaTeX Quantifiers - Complete Symbol Reference",
-    description: "Copy-paste LaTeX code for for all, exists, element of, and set builder notation.",
+    title: "Quantifiers in LaTeX - For All ∀, There Exists ∃, ∈",
+    description: "How to write for all, there exists and such that in LaTeX.",
   },
 };
 
