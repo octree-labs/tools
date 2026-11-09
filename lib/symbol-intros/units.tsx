@@ -39,7 +39,7 @@ const quickRef: QuickRefRow[] = [
   { latex: "\\ang{45}", preview: "45^{\\circ}", use: "Angle in degrees", pkg: "siunitx" },
   {
     latex: "\\qty{10}{\\micro\\metre}",
-    preview: "10\\,\\mu\\mathrm{m}",
+    preview: "10\\,\\text{µm}",
     use: "SI prefix (micrometre)",
     pkg: "siunitx",
   },

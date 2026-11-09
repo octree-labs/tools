@@ -22,7 +22,7 @@ const quickRef: QuickRefRow[] = [
   { latex: "\\oint_C", use: "Contour (closed line) integral" },
   { latex: "\\lim_{x \\to 0}", use: "Limit" },
   { latex: "\\nabla f", use: "Gradient" },
-  { latex: "\\dv{f}{x}", preview: "\\frac{df}{dx}", use: "Derivative shortcut", pkg: "physics" },
+  { latex: "\\dv{f}{x}", preview: "\\frac{\\mathrm{d}f}{\\mathrm{d}x}", use: "Derivative shortcut", pkg: "physics" },
   {
     latex: "\\pdv{f}{x}",
     preview: "\\frac{\\partial f}{\\partial x}",
