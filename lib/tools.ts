@@ -41,7 +41,7 @@ export const tools: Tool[] = [
   {
     id: 2,
     title: "Excel to LaTeX",
-    description: "Convert CSV, JSON, Excel to LaTeX tables",
+    description: "Convert CSV files from Excel or Sheets to LaTeX tables",
     href: "/tools/table-to-latex",
     icon: Table,
   },

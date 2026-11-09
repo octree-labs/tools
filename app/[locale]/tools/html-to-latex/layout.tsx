@@ -2,9 +2,12 @@ import type { Metadata } from "next";
 import { generateToolMetadata } from '@/lib/generate-tool-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "HTML to LaTeX Converter Online - Free, Fast & Accurate | Octree",
+  title: "HTML to LaTeX Converter Online: Free HTML to TeX",
   description: "Convert HTML to LaTeX in seconds with tables, formatting and structure preserved. Paste any HTML and get clean, compilable LaTeX. Free, live PDF preview.",
   keywords: [
+    "html to latex converter",
+    "html latex",
+    "latex converters",
     "convert HTML to LaTeX",
     "HTML to LaTeX converter",
     "HTML to LaTeX online",
@@ -25,7 +28,7 @@ const defaultMetadata: Metadata = {
     canonical: '/tools/html-to-latex',
   },
   openGraph: {
-    title: "HTML to LaTeX Converter Online - Free, Fast & Accurate",
+    title: "HTML to LaTeX Converter Online: Free HTML to TeX",
     description: "Convert HTML to LaTeX in seconds — tables, formatting & structure preserved. Free online with live PDF preview.",
     url: 'https://tools.useoctree.com/tools/html-to-latex',
     siteName: 'Octree LaTeX Tools',
@@ -34,7 +37,7 @@ const defaultMetadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "HTML to LaTeX Converter Online - Free, Fast & Accurate",
+    title: "HTML to LaTeX Converter Online: Free HTML to TeX",
     description: "Convert HTML to LaTeX in seconds — tables, formatting & structure preserved. Free online with live PDF preview.",
   },
 };

@@ -2,9 +2,12 @@ import type { Metadata } from "next";
 import { generateToolMetadata } from '@/lib/generate-tool-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "Markdown to LaTeX Converter - Convert Markdown to LaTeX Free",
+  title: "Convert Markdown to LaTeX Online: Free MD to TeX Converter",
   description: "Free AI-powered tool to convert Markdown documents to LaTeX. Formatting, tables, math equations and text become clean LaTeX output with a live PDF preview.",
   keywords: [
+    "markdown to latex",
+    "markdown to latex converter",
+    "md to tex",
     "convert Markdown to LaTeX",
     "Markdown to LaTeX converter",
     "Markdown to LaTeX online",
@@ -27,7 +30,7 @@ const defaultMetadata: Metadata = {
     canonical: '/tools/markdown-to-latex',
   },
   openGraph: {
-    title: "Convert Markdown to LaTeX - Free Online Converter",
+    title: "Convert Markdown to LaTeX Online: Free MD to TeX Converter",
     description: "AI-powered converter for Markdown documents to LaTeX code with instant preview",
     url: 'https://tools.useoctree.com/tools/markdown-to-latex',
     siteName: 'Octree LaTeX Tools',
@@ -36,7 +39,7 @@ const defaultMetadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Convert Markdown to LaTeX - Free Online Converter",
+    title: "Convert Markdown to LaTeX Online: Free MD to TeX Converter",
     description: "AI-powered converter for Markdown documents to LaTeX code with instant preview",
   },
 };
