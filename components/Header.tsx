@@ -2,17 +2,12 @@
 
 import Link from "next/link";
 import { OctreeLogo } from "@/components/icons/octree-logo";
-import { Space_Grotesk } from "next/font/google";
+import { spaceGrotesk } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
 import { useTranslations } from 'next-intl';
 import { BEFORE_NAVIGATION, EVENTS, track } from "@/lib/analytics";
 import { appUrl, linkClickProps } from "@/lib/open-in-octree";
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  weight: ["500"],
-});
 
 const HEADER_PLACEMENT = "tools:header";
 

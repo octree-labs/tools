@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { ArrowLeft, Download, FileType2, Info, Loader2 } from 'lucide-react';
-import { DM_Sans } from 'next/font/google';
+import { dmSans } from '@/lib/fonts';
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { loader } from '@monaco-editor/react';
@@ -18,11 +18,6 @@ import { useTranslations } from 'next-intl';
 import { trackConverterUsed } from '@/lib/analytics';
 
 const Editor = dynamic(() => import('@monaco-editor/react'), { ssr: false });
-
-const dmSans = DM_Sans({
-  subsets: ['latin'],
-  weight: ['400', '500', '700'],
-});
 
 const DEFAULT_LATEX = `\\documentclass{article}
 \\usepackage{amsmath, amssymb}

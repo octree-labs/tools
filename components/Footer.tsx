@@ -2,14 +2,9 @@
 
 import Link from "next/link";
 import { OctreeLogo } from "@/components/icons/octree-logo";
-import { Space_Grotesk } from "next/font/google";
+import { spaceGrotesk } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import { useTranslations } from 'next-intl';
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  weight: ["500"],
-});
 
 const toolLinks = [
   { key: "imageToLatex", href: "/tools/math-to-latex" },
