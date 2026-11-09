@@ -26,7 +26,6 @@ const text: SymbolPageTranslations = {
     name: "Abreviatura s.t. (sujeto a)",
     meaning: "Abreviatura del inglés «subject to» (sujeto a), que introduce las restricciones de un problema de optimización.",
     usage: "En el enunciado de un problema, s.t. separa el objetivo de las restricciones: \\min_x f(x) \\quad \\text{s.t.} \\quad g_i(x) \\leq 0; en textos en español es habitual la abreviatura equivalente s.a. Usa \\text para que las letras salgan en redonda y se conserve el punto, y rodéala de \\quad por ambos lados, porque \\text no añade espaciado propio. Muchas guías de estilo prefieren la frase completa \\text{sujeto a}, sobre todo en formulaciones display alineadas con el entorno align, donde las restricciones se apilan en las líneas siguientes bajo la primera. No escribas s.t. directamente en modo matemático: imprimiría s y t en cursiva como variables, con un punto.",
-    example: "\\min_{x} f(x) \\quad \\text{s.a.} \\quad Ax = b, \\; x \\geq 0",
   },
   "constraint": {
     name: "Restricción de desigualdad",

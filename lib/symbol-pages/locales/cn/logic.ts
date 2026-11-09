@@ -63,7 +63,7 @@ const text: SymbolPageTranslations = {
       "在逻辑中 \\top 表示重言式，是合取的单位元（p \\land \\top \\equiv p）。格论和域论用它表示顶元（最大元），类型论用它表示单位类型。它也广泛用作上标表示矩阵转置 A^\\top，可替代 A^T 或 A^\\intercal。\\top 是普通符号。不要把它与字母 T 混淆，后者位于基线上且比例不同。它的对偶是 \\bot。",
   },
   "not-equivalent": {
-    name: "不同余符号",
+    name: "不等价符号（不同余）",
     meaning: "带斜线的三横线：表示模 n 不同余，或不恒等。",
     usage:
       "数论中当 n 不整除 a - b 时写 a \\not\\equiv b \\pmod{n}，例如费马小定理的条件 a \\not\\equiv 0 \\pmod{p}。前缀 \\not 会在关系符上叠加一条斜线，应紧挨着放在 \\equiv 之前。在某些字体中斜线看起来略微偏离中心，但常用符号字体中没有标准的专用字形，因此通常使用 \\not\\equiv。在逻辑中它表示逻辑上不等价。若只是表示不相等，请改用 \\neq。",

@@ -34,13 +34,13 @@ const text: SymbolPageTranslations = {
   },
   "argmax-subscript": {
     name: "带下标的 argmax",
-    meaning: "下标为优化变量 theta 的 argmax：使目标函数最大的参数值。",
+    meaning: "下标为优化变量 θ 的 argmax：使目标函数最大的参数值。",
     usage:
-      "这种形式写明了被优化的变量，是书写最大似然估计 \\hat{\\theta}_{\\text{MLE}} = \\arg\\max_\\theta \\sum_i \\log p(x_i|\\theta) 和最大后验（MAP）估计的标准方式。由于下标只附在 \\max 上，在行间公式中 theta 位于 max 下方，而不是居中于整个 arg max 下方。改用 \\operatorname*{arg\\,max}_{\\theta} 或已声明的 \\argmax 可以让下标居中，这也是大多数期刊的要求。在行内公式中，下标无论如何都出现在右侧。也可以在下标中列出约束，例如 \\theta \\in \\Theta，多行时使用 \\substack。",
+      "这种形式写明了被优化的变量，是书写最大似然估计 \\hat{\\theta}_{\\text{MLE}} = \\arg\\max_\\theta \\sum_i \\log p(x_i|\\theta) 和最大后验（MAP）估计的标准方式。由于下标只附在 \\max 上，在行间公式中 θ 位于 max 下方，而不是居中于整个 arg max 下方。改用 \\operatorname*{arg\\,max}_{\\theta} 或已声明的 \\argmax 可以让下标居中，这也是大多数期刊的要求。在行内公式中，下标无论如何都出现在右侧。也可以在下标中列出约束，例如 \\theta \\in \\Theta，多行时使用 \\substack。",
   },
   "argmin-subscript": {
     name: "带下标的 argmin",
-    meaning: "关于 theta 的 argmin：使损失函数或目标函数最小的参数值。",
+    meaning: "关于 θ 的 argmin：使损失函数或目标函数最小的参数值。",
     usage:
       "经验风险最小化通常这样书写：\\theta^* = \\arg\\min_\\theta \\frac{1}{N}\\sum_i \\ell(f_\\theta(x_i), y_i)。在行间公式中，下标只位于 min 下方，看起来略微偏离中心；\\operatorname*{arg\\,min}_{\\theta} 可以解决这个问题并保持间距一致。如果经常使用，在导言区定义宏既省事又能保证输出一致。正则化目标函数通常会加上惩罚项，如岭回归或 lasso。当最小值点唯一时，用等号即可；否则，由于 argmin 返回的是集合，用 \\in 这一关系更准确。",
   },
@@ -58,21 +58,21 @@ const text: SymbolPageTranslations = {
   },
   "gradient-of-l": {
     name: "损失函数 L 的梯度",
-    meaning: "损失 L 关于参数 theta 的梯度：训练中使用的偏导数向量。",
+    meaning: "损失 L 关于参数 θ 的梯度：训练中使用的偏导数向量。",
     usage:
-      "这正是反向传播所计算的量，它驱动梯度下降的更新 \\theta \\leftarrow \\theta - \\eta \\nabla_\\theta \\mathcal{L}。\\nabla 的下标说明对哪些变量求导，当损失同时依赖参数和输入时这一点很重要，例如对抗攻击中的 \\nabla_x \\mathcal{L}。\\mathcal 给出花体 L，且只支持大写字母。在行内文本中，下标位于 nabla 的右下方，这是标准写法。对于随机估计，加上帽子符号会有帮助：\\hat{\\nabla}_\\theta \\mathcal{L} 或 \\tilde{g}。",
+      "这正是反向传播所计算的量，它驱动梯度下降的更新 \\theta \\leftarrow \\theta - \\eta \\nabla_\\theta \\mathcal{L}。\\nabla 的下标说明对哪些变量求导，当损失同时依赖参数和输入时这一点很重要，例如对抗攻击中的 \\nabla_x \\mathcal{L}。\\mathcal 给出花体 L，且只支持大写字母。在行内文本中，下标位于 ∇ 的右下方，这是标准写法。对于随机估计，加上帽子符号会有帮助：\\hat{\\nabla}_\\theta \\mathcal{L} 或 \\tilde{g}。",
   },
   "partial-derivative": {
     name: "偏导数",
-    meaning: "损失 L 关于参数 theta 的偏导数，即损失对每个参数的敏感度。",
+    meaning: "损失 L 关于参数 θ 的偏导数，即损失对每个参数的敏感度。",
     usage:
-      "这个分式是反向传播的标量基本单元；链式法则写作 \\frac{\\partial \\mathcal{L}}{\\partial w} = \\frac{\\partial \\mathcal{L}}{\\partial a} \\frac{\\partial a}{\\partial w}。偏导数用弯曲的 d 即 \\partial，全导数用普通的 d。在正文中，\\frac 会缩小以适应行高，往往难以阅读；\\tfrac、斜线形式 \\partial \\mathcal{L}/\\partial \\theta，或在行间公式中使用 \\dfrac 效果可能更好。如需反复使用，宏或 physics 宏包风格的 \\pdv 命令可以减少输入。当 theta 是向量时，许多作者改用 \\nabla_\\theta \\mathcal{L}。",
+      "这个分式是反向传播的标量基本单元；链式法则写作 \\frac{\\partial \\mathcal{L}}{\\partial w} = \\frac{\\partial \\mathcal{L}}{\\partial a} \\frac{\\partial a}{\\partial w}。偏导数用弯曲的 d 即 \\partial，全导数用普通的 d。在正文中，\\frac 会缩小以适应行高，往往难以阅读；\\tfrac、斜线形式 \\partial \\mathcal{L}/\\partial \\theta，或在行间公式中使用 \\dfrac 效果可能更好。如需反复使用，宏或 physics 宏包风格的 \\pdv 命令可以减少输入。当 θ 是向量时，许多作者改用 \\nabla_\\theta \\mathcal{L}。",
   },
   "theta-star": {
-    name: "最优参数 theta*",
-    meaning: "带星号上标的 theta：最优参数值，通常是损失函数的最小值点。",
+    name: "最优参数 θ*",
+    meaning: "带星号上标的 θ：最优参数值，通常是损失函数的最小值点。",
     usage:
-      "带星号的符号表示最优值，如 \\theta^* = \\arg\\min_\\theta \\mathcal{L}(\\theta)，收敛性结果会给出 \\|\\theta_t - \\theta^*\\| 的界。输入 ^* 会得到上标大小的星号。替代写法有 ^\\ast（效果相同）和 ^\\star（五角星），有些作者偏好后者，因为星号可能与共轭或伴随混淆。要把它与 \\hat{\\theta} 区分开，后者通常表示由数据得到的估计值，而不是真正的最优值。如果 theta 还带有下标，两种顺序都可以，\\theta^*_t 和 \\theta_t^* 的输出相同。",
+      "带星号的符号表示最优值，如 \\theta^* = \\arg\\min_\\theta \\mathcal{L}(\\theta)，收敛性结果会给出 \\|\\theta_t - \\theta^*\\| 的界。输入 ^* 会得到上标大小的星号。替代写法有 ^\\ast（效果相同）和 ^\\star（五角星），有些作者偏好后者，因为星号可能与共轭或伴随混淆。要把它与 \\hat{\\theta} 区分开，后者通常表示由数据得到的估计值，而不是真正的最优值。如果 θ 还带有下标，两种顺序都可以，\\theta^*_t 和 \\theta_t^* 的输出相同。",
   },
   "weight-matrix": {
     name: "权重矩阵",
@@ -106,9 +106,9 @@ const text: SymbolPageTranslations = {
   },
   "log-likelihood": {
     name: "对数似然",
-    meaning: "数据 x 在参数 theta 下的对数似然，是最大似然估计中要最大化的量。",
+    meaning: "数据 x 在参数 θ 下的对数似然，是最大似然估计中要最大化的量。",
     usage:
-      "取对数把独立似然的乘积变为求和，\\log \\prod_i p(x_i|\\theta) = \\sum_i \\log p(x_i|\\theta)，更容易求导且数值上更稳定。它的相反数就是常见的负对数似然（NLL）损失。排版提示：单独的 | 是普通符号，两侧都没有间距；\\mid 是关系符，会添加均衡的间距，得到 p(x \\mid \\theta)。有些作者使用分号 p(x; \\theta)，表示 theta 是固定参数而不是被条件化的随机变量，这是频率学派的解读。",
+      "取对数把独立似然的乘积变为求和，\\log \\prod_i p(x_i|\\theta) = \\sum_i \\log p(x_i|\\theta)，更容易求导且数值上更稳定。它的相反数就是常见的负对数似然（NLL）损失。排版提示：单独的 | 是普通符号，两侧都没有间距；\\mid 是关系符，会添加均衡的间距，得到 p(x \\mid \\theta)。有些作者使用分号 p(x; \\theta)，表示 θ 是固定参数而不是被条件化的随机变量，这是频率学派的解读。",
   },
   "probability-distribution": {
     name: "概率分布",
@@ -136,13 +136,13 @@ const text: SymbolPageTranslations = {
   },
   "l1-norm": {
     name: "L1 范数",
-    meaning: "theta 的 L1 范数：各分量绝对值之和。",
+    meaning: "θ 的 L1 范数：各分量绝对值之和。",
     usage:
       "L1 范数 \\|\\theta\\|_1 = \\sum_i |\\theta_i| 是 lasso 的惩罚项，由于其单位球在坐标轴上有尖角，它会促使解稀疏。\\| 给出双竖线，但把它们当作普通符号，因此后面紧跟减号时间距可能不对；\\lVert \\theta \\rVert_1 把它们标记为左、右定界符，间距正确。对于较高的参数，使用 \\left\\| ... \\right\\| 使其伸缩。许多论文为保持一致，通过 mathtools 宏包的 \\DeclarePairedDelimiter 定义一个 \\norm 宏。不要把它与 |\\theta| 混淆，后者表示绝对值或集合的基数。",
   },
   "l2-norm": {
     name: "L2 范数",
-    meaning: "theta 的欧几里得（L2）范数：各分量平方和的平方根。",
+    meaning: "θ 的欧几里得（L2）范数：各分量平方和的平方根。",
     usage:
       "L2 范数 \\|\\theta\\|_2 = \\sqrt{\\sum_i \\theta_i^2} 度量长度，它的平方出现在岭回归或权重衰减的惩罚项 \\lambda\\|\\theta\\|_2^2 中。注意上下标的顺序：\\|\\theta\\|_2^2 表示范数的平方，TeX 会把下标和上标整齐地叠放。在上下文明确时，许多作者会省略下标 2。为了获得更好的定界符间距，请用 \\lVert 和 \\rVert 代替 \\|，内容较高（如分式）时用 \\left\\| \\right\\|。对于矩阵，\\|A\\|_2 通常表示谱范数，而不是逐元素的范数，后者是 Frobenius 范数。",
   },

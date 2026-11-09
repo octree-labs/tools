@@ -26,7 +26,6 @@ const text: SymbolPageTranslations = {
     name: "Abréviation « sous contraintes » (s.t.)",
     meaning: "Abréviation de l'anglais « subject to » (sous contraintes), qui introduit les contraintes d'un problème d'optimisation.",
     usage: "Dans l'énoncé d'un problème, s.t. sépare l'objectif des contraintes : \\min_x f(x) \\quad \\text{s.t.} \\quad g_i(x) \\leq 0 ; les textes français écrivent souvent \\text{s.c.}. Utilisez \\text pour que les lettres soient droites et que le point soit conservé, et entourez-le de \\quad des deux côtés, car \\text n'ajoute aucun espacement de lui-même. De nombreux guides de style préfèrent l'expression complète \\text{sous contraintes}, en particulier dans les formulations en display alignées avec l'environnement align, où les contraintes s'empilent sur les lignes suivantes sous la première. Ne tapez pas s.t. directement en mode mathématique : vous obtiendriez un s et un t en italique, traités comme des variables, suivis d'un point.",
-    example: "\\min_{x} f(x) \\quad \\text{s.c.} \\quad Ax = b, \\; x \\geq 0",
   },
   constraint: {
     name: "Contrainte d'inégalité",
@@ -54,7 +53,7 @@ const text: SymbolPageTranslations = {
     usage: "En optimisation, \\nabla^2 f(x) est la matrice hessienne, utilisée dans la méthode de Newton, x_{k+1} = x_k - [\\nabla^2 f(x_k)]^{-1} \\nabla f(x_k), et dans les conditions du second ordre : une hessienne définie positive en un point stationnaire implique un minimum local strict. Attention : en physique et en EDP, \\nabla^2 f désigne le laplacien, un scalaire égal à la trace de la hessienne, souvent noté \\Delta f. Précisez ce que vous entendez, ou utilisez H_f ou \\nabla\\nabla^\\top f pour la matrice. Pour une fonction deux fois dérivable, la convexité équivaut à \\nabla^2 f(x) \\succeq 0 partout.",
   },
   "optimal-value": {
-    name: "Valeur optimale",
+    name: "Solution optimale",
     meaning: "x muni d'une étoile en exposant : la solution optimale, ou minimiseur, d'un problème d'optimisation.",
     usage: "L'étoile marque le point optimal : p^* = f(x^*) est la valeur optimale, et les optima duaux s'écrivent \\lambda^*, \\nu^*. Les vitesses de convergence s'expriment en fonction de f(x_k) - f(x^*) ou de \\|x_k - x^*\\|. ^* et ^\\ast produisent le même astérisque ; ^\\star donne une étoile qui évite la confusion avec les conjugués complexes, les adjoints ou l'étoile de Kleene, qui utilisent aussi un astérisque. Lorsque x porte aussi un indice, x_k^* et x^*_k donnent un rendu identique. Distinguez x^* de \\hat{x}, qui désigne généralement une estimation ou une solution approchée.",
   },

@@ -23,7 +23,7 @@ const text: SymbolPageTranslations = {
     usage: "\\lor est un alias de \\vee, utilisé en logique propositionnelle et en logique des prédicats : p \\lor \\neg p est le principe du tiers exclu. LaTeX l'espace comme un opérateur binaire, donc p \\lor q ne demande aucune commande d'espacement manuelle. Pour un grand nombre de disjoints, \\bigvee_{i} p_i est le grand opérateur. Le OU exclusif est un autre symbole : \\oplus ou \\veebar. En algèbre de Boole et en conception de circuits, le OU s'écrit souvent +. Préférez \\lor dans les formules logiques et \\vee en théorie des treillis pour un source lisible, même si les deux ont le même rendu.",
   },
   "proves": {
-    name: "Thèse (taquet de déduction)",
+    name: "Symbole de déduction (taquet)",
     meaning: "Taquet (thèse) : la formule de droite est dérivable (démontrable) à partir des hypothèses de gauche.",
     usage: "La théorie de la démonstration écrit \\Gamma \\vdash \\varphi pour la conséquence syntaxique, et la théorie des types l'utilise dans les jugements de typage \\Gamma \\vdash e : \\tau. Il se distingue de \\models, qui exprime la conséquence sémantique (vérité dans tous les modèles) ; la correction et la complétude affirment que les deux coïncident en logique du premier ordre. Sa négation s'écrit \\nvdash. \\vdash est une relation, l'espacement est donc automatique. Pour les règles d'inférence, \\frac ou un paquet dédié aux arbres de preuve produit le trait horizontal, avec des jugements contenant \\vdash au-dessus et en dessous. Le symbole miroir est \\dashv.",
   },

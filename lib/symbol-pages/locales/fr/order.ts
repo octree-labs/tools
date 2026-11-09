@@ -23,6 +23,7 @@ const text: SymbolPageTranslations = {
     name: "Signe non supérieur à",
     meaning: "Signe supérieur à barré, qui affirme que le membre de gauche n'est pas strictement plus grand que celui de droite.",
     usage: "Le nom de la commande supprime les voyelles de « greater » (\\ngtr, et non \\ngt ou \\ngreater), ce qui piège ceux qui la tapent de mémoire. Dans un ordre total, x \\ngtr y signifie simplement x \\leq y, et la plupart des auteurs préfèrent la forme positive ; \\ngtr est plus naturel dans les ordres partiels, les treillis ou pour énoncer l'échec d'une hypothèse, comme une suite qui n'est pas à partir d'un certain rang supérieure à une borne. Associez-le à \\nless pour l'autre sens et à \\ngeq pour la version large niée. Il a l'espacement d'une relation, comme > lui-même.",
+    example: "f(n) \\ngtr g(n) \\quad \\text{pour } n \\text{ arbitrairement grand}",
   },
   "not-less-or-equal": {
     name: "Signe non inférieur ou égal à",
