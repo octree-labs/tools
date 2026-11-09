@@ -1,10 +1,15 @@
 import Link from "next/link";
+import { ToolSeoContent } from "@/components/ToolSeoContent";
 import { getFaqJsonLd, serializeJsonLd, type FaqJsonLdItem } from "@/lib/json-ld";
+import { toLanguageTag } from "@/lib/seo";
+import { getToolSeoTranslation } from "@/lib/tool-seo";
 
 /**
- * English-only editorial content rendered below the converter. It is a server
- * component (no hooks, no translations) so it is part of the static HTML in
- * every locale, like the template guides in lib/template-guides.
+ * Editorial content rendered below the converter. It is a server component
+ * (no hooks) so it is part of the static HTML in every locale. This English
+ * copy predates components/ToolSeoContent and keeps its own markup; locales
+ * with a translation in lib/tool-seo/locales render that through
+ * ToolSeoContent instead.
  */
 
 const steps = [
@@ -16,7 +21,7 @@ const steps = [
   {
     title: "Convert to LaTeX",
     body:
-      "Click Convert. The AI reads the equation, recognises fractions, roots, sums, integrals, matrices and Greek letters, and writes standard LaTeX using amsmath, so the output compiles in Overleaf, Octree or any TeX distribution.",
+      "Click Convert to LaTeX. The AI reads the equation, recognises fractions, roots, sums, integrals, matrices and Greek letters, and writes standard LaTeX using amsmath, so the output compiles in Overleaf, Octree or any TeX distribution.",
   },
   {
     title: "Check the preview and copy the code",
@@ -71,7 +76,11 @@ const faq: FaqJsonLdItem[] = [
   },
 ];
 
-export default function EquationToLatexSeoContent() {
+export default function EquationToLatexSeoContent({ locale = "en" }: { locale?: string }) {
+  const translated = getToolSeoTranslation("equation-to-latex", locale);
+  if (translated) {
+    return <ToolSeoContent {...translated} inLanguage={toLanguageTag(locale)} />;
+  }
   return (
     <section className="bg-gray-50">
       <div className="mx-auto max-w-4xl px-6 pb-20 text-gray-700 leading-relaxed">
@@ -118,12 +127,13 @@ export default function EquationToLatexSeoContent() {
           Looking for the commands behind the output? Browse the{" "}
           <Link href="/symbols" className="text-blue-600 hover:text-blue-700 underline underline-offset-2">
             LaTeX symbol reference
-          </Link>{" "}
-          or try the{" "}
-          <Link href="/tools/math-to-latex" className="text-blue-600 hover:text-blue-700 underline underline-offset-2">
-            math to LaTeX converter
-          </Link>{" "}
-          for plain-text math notation.
+          </Link>
+          . Plain-text math goes straight into the box above; to keep editing the result as a
+          full document, use the{" "}
+          <Link href="/tools/latex-preview" className="text-blue-600 hover:text-blue-700 underline underline-offset-2">
+            online LaTeX editor
+          </Link>
+          .
         </p>
 
         <script

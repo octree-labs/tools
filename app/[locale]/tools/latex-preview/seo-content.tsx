@@ -1,6 +1,6 @@
-import { ToolSeoContent } from "@/components/ToolSeoContent";
 import { Cmd, IntroLink } from "@/lib/symbol-intros/ui";
 import type { FaqJsonLdItem } from "@/lib/json-ld";
+import { LocalizedToolSeoContent } from "@/lib/tool-seo";
 
 const steps = [
   {
@@ -86,9 +86,11 @@ const faq: FaqJsonLdItem[] = [
   },
 ];
 
-export default function LatexPreviewSeoContent() {
+export default function LatexPreviewSeoContent({ locale }: { locale?: string }) {
   return (
-    <ToolSeoContent
+    <LocalizedToolSeoContent
+      slug="latex-preview"
+      locale={locale}
       heading="Edit LaTeX online: free LaTeX compiler and PDF viewer"
       intro={
         <>

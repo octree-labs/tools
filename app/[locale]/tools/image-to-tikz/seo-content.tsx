@@ -1,6 +1,6 @@
-import { ToolSeoContent } from "@/components/ToolSeoContent";
 import { Cmd, IntroLink } from "@/lib/symbol-intros/ui";
 import type { FaqJsonLdItem } from "@/lib/json-ld";
+import { LocalizedToolSeoContent } from "@/lib/tool-seo";
 
 const steps = [
   {
@@ -66,9 +66,11 @@ const faq: FaqJsonLdItem[] = [
   },
 ];
 
-export default function ImageToTikzSeoContent() {
+export default function ImageToTikzSeoContent({ locale }: { locale?: string }) {
   return (
-    <ToolSeoContent
+    <LocalizedToolSeoContent
+      slug="image-to-tikz"
+      locale={locale}
       heading="Image to TikZ: convert a diagram into editable LaTeX"
       intro={
         <>

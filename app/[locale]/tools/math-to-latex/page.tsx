@@ -4,7 +4,12 @@ import { getRequestLocale } from '@/lib/i18n/server';
 import { getTranslations } from 'next-intl/server';
 import MathToLatexSeoContent from './seo-content';
 
-export default async function MathToLatex() {
+export default async function MathToLatex({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale: routeLocale } = await params;
   const locale = await getRequestLocale();
   const t = await getTranslations('toolsSpecific.mathToLatex');
 
@@ -22,7 +27,7 @@ export default async function MathToLatex() {
         outputLabel={t('outputLabel')}
         acceptedFormats="JPEG, PNG, PDF"
       />
-      <MathToLatexSeoContent />
+      <MathToLatexSeoContent locale={routeLocale} />
     </div>
   );
 } 
