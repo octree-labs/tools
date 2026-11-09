@@ -17,8 +17,14 @@ import IeeeConferenceGuide from "./ieee-conference";
 import JfmPaperGuide from "./jfm-paper";
 import JakesResumeGuide from "./jakes-resume";
 import LabReportGuide from "./lab-report";
+import LeafletGuide from "./leaflet";
+import LectureNotesGuide from "./lecture-notes";
+import LetterGuide from "./letter";
 import LetterOfRecommendationGuide from "./letter-of-recommendation";
 import LiteratureReviewGuide from "./literature-review";
+import ManuscriptGuide from "./manuscript";
+import MathCheatSheetGuide from "./math-cheat-sheet";
+import MathExamGuide from "./math-exam";
 import MeetingMinutesGuide from "./meeting-minutes";
 import MlaPaperGuide from "./mla-paper";
 import MlaWorksCitedGuide from "./mla-works-cited";
@@ -53,8 +59,14 @@ const templateGuides: Record<string, ComponentType> = {
   "jfm-paper": JfmPaperGuide,
   "jakes-resume": JakesResumeGuide,
   "lab-report": LabReportGuide,
+  "leaflet": LeafletGuide,
+  "lecture-notes": LectureNotesGuide,
+  "letter": LetterGuide,
   "letter-of-recommendation": LetterOfRecommendationGuide,
   "literature-review": LiteratureReviewGuide,
+  "manuscript": ManuscriptGuide,
+  "math-cheat-sheet": MathCheatSheetGuide,
+  "math-exam": MathExamGuide,
   "meeting-minutes": MeetingMinutesGuide,
   "mla-paper": MlaPaperGuide,
   "mla-works-cited": MlaWorksCitedGuide,
