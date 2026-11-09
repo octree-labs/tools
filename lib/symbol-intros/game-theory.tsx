@@ -11,7 +11,7 @@ import {
   type QuickRefRow,
 } from "./ui";
 
-const quickRef: QuickRefRow[] = [
+export const quickRef: QuickRefRow[] = [
   { latex: "s_i \\in S_i", use: "Strategy of player i" },
   { latex: "s_{-i}", use: "Strategies of all other players" },
   { latex: "u_i(s_i, s_{-i})", use: "Payoff (utility) of player i" },

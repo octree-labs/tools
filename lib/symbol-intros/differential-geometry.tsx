@@ -11,7 +11,7 @@ import {
   type QuickRefRow,
 } from "./ui";
 
-const quickRef: QuickRefRow[] = [
+export const quickRef: QuickRefRow[] = [
   { latex: "T_pM", use: "Tangent space at p" },
   { latex: "T^*_pM", use: "Cotangent space at p" },
   { latex: "\\nabla_X Y", use: "Covariant derivative (connection)" },

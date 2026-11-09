@@ -11,7 +11,7 @@ import {
   type QuickRefRow,
 } from "./ui";
 
-const quickRef: QuickRefRow[] = [
+export const quickRef: QuickRefRow[] = [
   {
     latex: "\\qty{9.81}{\\metre\\per\\second\\squared}",
     preview: "9.81\\,\\mathrm{m\\,s^{-2}}",

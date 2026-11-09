@@ -492,6 +492,1346 @@ const es: IntroLocale = {
         },
       ],
     },
+    boolean: {
+      title: "Símbolos de álgebra booleana en LaTeX: AND, OR y XOR",
+      intro: (
+        <IntroP>
+          Los símbolos de álgebra booleana en LaTeX reutilizan las conectivas lógicas: el símbolo
+          AND es <Cmd>{"\\land"}</Cmd> (&and;), el símbolo OR es <Cmd>{"\\lor"}</Cmd> (&or;) y NOT
+          es <Cmd>{"\\lnot"}</Cmd> (&not;). El XOR en LaTeX es <Cmd>{"\\oplus"}</Cmd> (&oplus;), o{" "}
+          <Cmd>{"\\veebar"}</Cmd> de amssymb. La implicación y la equivalencia son{" "}
+          <Cmd>{"\\Rightarrow"}</Cmd> e <Cmd>{"\\iff"}</Cmd>, las constantes verdadero y falso son{" "}
+          <Cmd>{"\\top"}</Cmd> y <Cmd>{"\\bot"}</Cmd>, y los cuantificadores son{" "}
+          <Cmd>{"\\forall"}</Cmd> y <Cmd>{"\\exists"}</Cmd>. Todos van en modo matemático. La
+          tabla recoge los comandos más usados, con el paquete que necesita cada uno; la lista
+          completa de símbolos de puertas lógicas aparece más abajo.
+        </IntroP>
+      ),
+      quickRefHeading: "Referencia rápida: operaciones booleanas",
+      use: {
+        "\\land": "AND, conjunción (alias \\wedge)",
+        "\\lor": "OR, disyunción (alias \\vee)",
+        "\\lnot": "NOT, negación (alias \\neg)",
+        "\\overline{A}": "NOT, notación con barra",
+        "\\oplus": "XOR (o exclusivo)",
+        "\\veebar": "XOR, estilo de lógica",
+        "\\barwedge": "NAND",
+        "\\Rightarrow": "Implica",
+        "\\iff": "Si y solo si (equivalencia)",
+        "\\top": "Verdadero, 1",
+        "\\bot": "Falso, 0",
+        "\\forall x \\, \\exists y": "Para todo, existe",
+      },
+      faqHeading: "Preguntas frecuentes sobre los símbolos booleanos en LaTeX",
+      faq: [
+        {
+          question: "¿Cómo escribo los símbolos AND y OR en LaTeX?",
+          answer:
+            "AND (∧) es \\land o su alias \\wedge, y OR (∨) es \\lor o \\vee. Ambos están integrados y van en modo matemático: $A \\land B$, $A \\lor B$. NOT es \\lnot o \\neg. En la notación de circuitos también puedes escribir A \\cdot B para AND, A + B para OR y \\overline{A} para NOT.",
+        },
+        {
+          question: "¿Cómo escribo XOR en LaTeX?",
+          answer:
+            "Usa \\oplus (⊕), que está integrado: $A \\oplus B$. Los textos de lógica a veces usan \\veebar (⊻), que necesita \\usepackage{amssymb}. XNOR se escribe normalmente \\odot o \\overline{A \\oplus B}.",
+        },
+        {
+          question: "¿Qué paquete necesito para los símbolos de álgebra booleana en LaTeX?",
+          answer:
+            "Ninguno para los habituales: \\land, \\lor, \\lnot, \\oplus, \\Rightarrow, \\iff, \\top, \\bot, \\forall y \\exists están integrados. Carga amssymb para \\veebar y \\barwedge, y amsmath para \\implies.",
+        },
+      ],
+    },
+    brackets: {
+      title: "Corchetes en LaTeX: llaves, corchetes angulares, función piso y normas",
+      intro: (
+        <IntroP>
+          Los delimitadores de LaTeX son de dos tipos: los que se escriben directamente, como{" "}
+          <Cmd>{"("}</Cmd>, <Cmd>{")"}</Cmd>, <Cmd>{"["}</Cmd> y <Cmd>{"]"}</Cmd>, y los que
+          necesitan un comando, como <Cmd>{"\\{"}</Cmd> y <Cmd>{"\\}"}</Cmd> para las llaves,{" "}
+          <Cmd>{"\\langle"}</Cmd> y <Cmd>{"\\rangle"}</Cmd> para los corchetes angulares,{" "}
+          <Cmd>{"\\lfloor"}</Cmd> y <Cmd>{"\\rfloor"}</Cmd> para la función piso, y{" "}
+          <Cmd>{"\\lVert"}</Cmd> y <Cmd>{"\\rVert"}</Cmd> para una norma. Si antepones{" "}
+          <Cmd>{"\\left"}</Cmd> y <Cmd>{"\\right"}</Cmd> a cualquier par, LaTeX ajusta el tamaño
+          de los delimitadores a su contenido, por ejemplo una fracción. Los corchetes dobles
+          necesitan el paquete stmaryrd. La tabla recoge los corchetes y delimitadores más usados,
+          con el paquete que necesita cada uno; la lista completa aparece más abajo.
+        </IntroP>
+      ),
+      quickRefHeading: "Referencia rápida: los corchetes más usados",
+      use: {
+        "\\left( \\frac{a}{b} \\right)": "Paréntesis que se ajustan al contenido",
+        "\\{ x \\}": "Llaves (escapadas)",
+        "\\langle x \\rangle": "Corchetes angulares, producto escalar",
+        "\\lfloor x \\rfloor": "Función piso (parte entera)",
+        "\\lceil x \\rceil": "Función techo",
+        "\\lvert x \\rvert": "Valor absoluto",
+        "\\lVert x \\rVert": "Norma",
+        "\\llbracket x \\rrbracket": "Corchetes dobles",
+        "\\bigl( x \\bigr)": "Tamaños manuales: \\big, \\Big, \\bigg, \\Bigg",
+        "[a, b)": "Intervalo semiabierto",
+        "\\underbrace{a + b}_{n}": "Llave bajo una expresión (\\overbrace encima)",
+      },
+      faqHeading: "Preguntas frecuentes sobre los corchetes en LaTeX",
+      faq: [
+        {
+          question: "¿Cómo escribo llaves en LaTeX?",
+          answer:
+            "Las llaves son los caracteres de agrupación de LaTeX, así que una { o } sin más no se imprime. Escápalas: \\{ y \\} funcionan en texto y en modo matemático, por ejemplo $\\{1, 2, 3\\}$. Usa \\left\\{ y \\right\\} para llaves que crecen con su contenido; \\lbrace y \\rbrace son alternativas con nombre.",
+        },
+        {
+          question: "¿Cómo escribo corchetes angulares en LaTeX?",
+          answer:
+            "Usa \\langle y \\rangle, como en $\\langle u, v \\rangle$. No uses las teclas < y >: son símbolos de relación con otra forma y otro espaciado. Para contenido alto escribe \\left\\langle ... \\right\\rangle.",
+        },
+        {
+          question: "¿Cómo escribo corchetes dobles en LaTeX?",
+          answer:
+            "Carga \\usepackage{stmaryrd} y escribe \\llbracket x \\rrbracket para los corchetes dobles ⟦x⟧ que se usan en semántica y para intervalos de enteros. Sin el paquete, [\\![ x ]\\!] los imita juntando dos corchetes con un espacio fino negativo.",
+        },
+      ],
+    },
+    calculus: {
+      title: "Símbolos de cálculo en LaTeX: derivadas, integrales y límites",
+      intro: (
+        <IntroP>
+          Los símbolos básicos de cálculo en LaTeX están todos integrados. Una derivada en LaTeX es
+          una fracción, <Cmd>{"\\frac{dy}{dx}"}</Cmd>, o una prima, <Cmd>{"f'(x)"}</Cmd>; una
+          derivada parcial usa <Cmd>{"\\partial"}</Cmd>, como en{" "}
+          <Cmd>{"\\frac{\\partial f}{\\partial x}"}</Cmd>; una integral es{" "}
+          <Cmd>{"\\int_a^b f(x)\\,dx"}</Cmd>; y un límite es <Cmd>{"\\lim_{x \\to 0}"}</Cmd>. Las
+          integrales múltiples como <Cmd>{"\\iint"}</Cmd> e <Cmd>{"\\iiint"}</Cmd> vienen de
+          amsmath, y el paquete physics añade atajos como <Cmd>{"\\dv"}</Cmd> y{" "}
+          <Cmd>{"\\pdv"}</Cmd>. La tabla recoge los símbolos de cálculo más usados, con el paquete
+          que necesita cada uno; la lista completa aparece más abajo.
+        </IntroP>
+      ),
+      quickRefHeading: "Referencia rápida: derivadas, integrales y límites",
+      use: {
+        "\\frac{dy}{dx}": "Derivada (notación de Leibniz)",
+        "f'(x)": "Derivada (notación prima); f''(x) para la segunda",
+        "\\frac{d^2 y}{dx^2}": "Segunda derivada",
+        "\\frac{\\partial f}{\\partial x}": "Derivada parcial",
+        "\\dot{x}": "Derivada temporal (punto de Newton); \\ddot{x} para la segunda",
+        "\\int_a^b f(x)\\,dx": "Integral definida",
+        "\\iint_D f\\,dA": "Integral doble (\\iiint para la triple)",
+        "\\oint_C": "Integral de contorno (integral de línea cerrada)",
+        "\\lim_{x \\to 0}": "Límite",
+        "\\nabla f": "Gradiente",
+        "\\dv{f}{x}": "Atajo para la derivada",
+        "\\pdv{f}{x}": "Atajo para la derivada parcial",
+      },
+      faqHeading: "Preguntas frecuentes sobre los símbolos de cálculo en LaTeX",
+      faq: [
+        {
+          question: "¿Cómo escribo una derivada en LaTeX?",
+          answer:
+            "Escríbela como una fracción en modo matemático: $\\frac{dy}{dx}$ para dy/dx y $\\frac{d^2y}{dx^2}$ para la segunda derivada. La notación prima es f'(x) y f''(x), y la notación de punto de Newton es \\dot{x} y \\ddot{x}. Todas están integradas; el paquete physics añade \\dv{y}{x} como atajo.",
+        },
+        {
+          question: "¿Cómo escribo una derivada parcial en LaTeX?",
+          answer:
+            "Usa el símbolo integrado \\partial dentro de una fracción: $\\frac{\\partial f}{\\partial x}$, y $\\frac{\\partial^2 f}{\\partial x \\partial y}$ para una segunda derivada mixta. Con \\usepackage{physics}, \\pdv{f}{x} y \\pdv{f}{x}{y} producen el mismo resultado.",
+        },
+        {
+          question: "¿Cómo escribo una integral con límites en LaTeX?",
+          answer:
+            "Usa \\int con un subíndice y un superíndice: $\\int_a^b f(x)\\,dx$. Añade \\limits (\\int\\limits_a^b) para colocar los límites encima y debajo del signo. Para integrales dobles y triples carga amsmath y usa \\iint e \\iiint, que espacian correctamente los signos; \\oint da una integral de contorno cerrado.",
+        },
+      ],
+    },
+    combinatorics: {
+      title: "Coeficiente binomial y factorial en LaTeX: símbolos de combinatoria",
+      intro: (
+        <IntroP>
+          Para escribir «n sobre k» en LaTeX, carga amsmath y usa <Cmd>{"\\binom{n}{k}"}</Cmd>,
+          que imprime el coeficiente binomial entre paréntesis y ajusta su tamaño a las fórmulas
+          en línea o destacadas; <Cmd>{"\\dbinom"}</Cmd> y <Cmd>{"\\tbinom"}</Cmd> fuerzan el
+          tamaño grande o pequeño. Un factorial en LaTeX no necesita ningún comando:{" "}
+          <Cmd>{"n!"}</Cmd> es la letra seguida de un signo de exclamación, así que la fórmula del
+          coeficiente binomial es <Cmd>{"\\frac{n!}{k!(n-k)!}"}</Cmd>. La tabla recoge los
+          comandos de combinatoria más usados, con el paquete que necesita cada uno; la lista
+          completa de símbolos aparece más abajo.
+        </IntroP>
+      ),
+      quickRefHeading: "Referencia rápida: coeficientes binomiales y factoriales",
+      use: {
+        "\\binom{n}{k}": "n sobre k (coeficiente binomial)",
+        "\\dbinom{n}{k}": "Binomial en tamaño destacado, incluso en línea",
+        "\\tbinom{n}{k}": "Binomial en tamaño de texto, incluso en fórmulas destacadas",
+        "{n \\choose k}": "\\choose de TeX plano (evítalo con amsmath)",
+        "n!": "Factorial",
+        "n!!": "Doble factorial",
+        "\\frac{n!}{k!(n-k)!}": "Fórmula del coeficiente binomial",
+        "\\binom{n}{k_1, k_2, \\ldots, k_m}": "Coeficiente multinomial",
+        "P(n, k) = \\frac{n!}{(n-k)!}": "Variaciones (permutaciones de n elementos tomados de k en k)",
+        "n^{\\underline{k}}": "Factorial descendente",
+      },
+      faqHeading: "Preguntas frecuentes sobre los símbolos de combinatoria en LaTeX",
+      faq: [
+        {
+          question: "¿Cómo escribo «n sobre k» en LaTeX?",
+          answer:
+            "Carga amsmath y escribe \\binom{n}{k}, que imprime n sobre k entre paréntesis y ajusta su tamaño a las fórmulas en línea o destacadas. Usa \\dbinom{n}{k} para forzar el tamaño grande de las fórmulas destacadas y \\tbinom{n}{k} para el tamaño pequeño de texto. La forma de TeX plano {n \\choose k} también funciona, pero amsmath la desaconseja.",
+        },
+        {
+          question: "¿Cómo escribo un factorial en LaTeX?",
+          answer:
+            "Un factorial no necesita ningún comando: escribe n! en modo matemático. El doble factorial es n!!, y para una expresión enciérrala entre paréntesis, como en (n+1)!. La fórmula del coeficiente binomial es \\frac{n!}{k!(n-k)!}.",
+        },
+        {
+          question: "¿Cómo escribo un coeficiente multinomial en LaTeX?",
+          answer:
+            "Reutiliza \\binom con una lista en el argumento inferior: \\binom{n}{k_1, k_2, \\ldots, k_m}. O escríbelo desarrollado como \\frac{n!}{k_1!\\,k_2!\\cdots k_m!}.",
+        },
+      ],
+    },
+    complex: {
+      title: "Símbolo de los números complejos y conjugado en LaTeX",
+      intro: (
+        <IntroP>
+          El símbolo de los números complejos es la C de pizarra &#8450;, que en LaTeX se escribe{" "}
+          <Cmd>{"\\mathbb{C}"}</Cmd> con el paquete amssymb. El conjugado complejo en LaTeX es{" "}
+          <Cmd>{"\\bar{z}"}</Cmd> para una sola letra o <Cmd>{"\\overline{z}"}</Cmd> para una
+          expresión completa, y en física se escribe <Cmd>{"z^*"}</Cmd>. Las partes real e
+          imaginaria son <Cmd>{"\\Re"}</Cmd> e <Cmd>{"\\Im"}</Cmd>, o la forma recta{" "}
+          <Cmd>{"\\operatorname{Re}"}</Cmd>; el módulo es <Cmd>{"|z|"}</Cmd> y el argumento{" "}
+          <Cmd>{"\\arg z"}</Cmd>. La tabla recoge los símbolos de números complejos más usados,
+          con el paquete que necesita cada uno; la lista completa aparece más abajo.
+        </IntroP>
+      ),
+      quickRefHeading: "Referencia rápida: notación de números complejos",
+      use: {
+        "\\mathbb{C}": "Conjunto de los números complejos",
+        "z = a + bi": "Forma binómica",
+        "\\bar{z}": "Conjugado complejo (una letra)",
+        "\\overline{z + w}": "Conjugado de una expresión",
+        "z^*": "Conjugado, notación de física",
+        "\\Re(z)": "Parte real, ℜ gótica (Fraktur)",
+        "\\Im(z)": "Parte imaginaria, ℑ gótica (Fraktur)",
+        "\\operatorname{Re}(z)": "Parte real, en letra recta (también Im)",
+        "|z|": "Módulo (valor absoluto)",
+        "\\arg z": "Argumento",
+        "re^{i\\theta}": "Forma polar",
+        "\\mathrm{i}": "Unidad imaginaria en letra recta",
+      },
+      faqHeading: "Preguntas frecuentes sobre los números complejos en LaTeX",
+      faq: [
+        {
+          question: "¿Cuál es el símbolo de los números complejos?",
+          answer:
+            "El conjunto de los números complejos es la C de pizarra, ℂ. En LaTeX escribe \\mathbb{C} con \\usepackage{amssymb} (o amsfonts), como en z \\in \\mathbb{C}. Los números reales son \\mathbb{R} con el mismo estilo.",
+        },
+        {
+          question: "¿Cómo escribo el conjugado complejo en LaTeX?",
+          answer:
+            "Usa \\bar{z} para una sola letra y \\overline{z + w} para una expresión más larga, ya que \\overline se extiende sobre todo su argumento. En física e ingeniería se suele escribir z^*, y la traspuesta conjugada de una matriz es A^\\dagger o A^*.",
+        },
+        {
+          question: "¿Cómo escribo las partes real e imaginaria en LaTeX?",
+          answer:
+            "Los comandos integrados \\Re e \\Im imprimen las letras góticas ℜ y ℑ. Para las formas rectas Re e Im que usa la mayoría de los textos actuales, escribe \\operatorname{Re}(z) y \\operatorname{Im}(z) con amsmath, o redefine los originales una vez con \\renewcommand{\\Re}{\\operatorname{Re}}.",
+        },
+      ],
+    },
+    "computer-science": {
+      title: "Símbolos de ciencias de la computación en LaTeX: O grande, función piso y notación de algoritmos",
+      intro: (
+        <IntroP>
+          La mayoría de los símbolos de ciencias de la computación en LaTeX son comandos
+          matemáticos corrientes. La notación O grande en LaTeX es <Cmd>{"O(n \\log n)"}</Cmd> o,
+          en muchos artículos, la caligráfica <Cmd>{"\\mathcal{O}(n)"}</Cmd>; sus parientes son{" "}
+          <Cmd>{"\\Omega(n)"}</Cmd>, <Cmd>{"\\Theta(n)"}</Cmd> y la o pequeña <Cmd>{"o(n)"}</Cmd>.
+          Las funciones piso y techo son <Cmd>{"\\lfloor x \\rfloor"}</Cmd> y{" "}
+          <Cmd>{"\\lceil x \\rceil"}</Cmd>, el XOR es <Cmd>{"\\oplus"}</Cmd>, la asignación en
+          pseudocódigo es <Cmd>{"\\gets"}</Cmd>, y una definición con := queda más limpia con{" "}
+          <Cmd>{"\\coloneqq"}</Cmd> de mathtools. La tabla recoge los símbolos de ciencias de la
+          computación más usados, con el paquete que necesita cada uno; la lista completa aparece
+          más abajo.
+        </IntroP>
+      ),
+      quickRefHeading: "Referencia rápida: complejidad, redondeo y algoritmos",
+      use: {
+        "O(n \\log n)": "O grande (cota superior)",
+        "\\mathcal{O}(n)": "O grande, estilo caligráfico",
+        "\\Omega(n)": "Omega grande (cota inferior)",
+        "\\Theta(n^2)": "Theta grande (cota ajustada)",
+        "o(n)": "o pequeña",
+        "\\lfloor \\log_2 n \\rfloor": "Piso del logaritmo en base 2",
+        "\\lceil n/2 \\rceil": "Función techo",
+        "a \\bmod n": "Módulo como operador binario",
+        "\\oplus": "XOR",
+        "x \\gets x + 1": "Asignación en pseudocódigo",
+        "\\coloneqq": "Definido como (:=)",
+        "\\{0,1\\}^*": "Todas las cadenas binarias (estrella de Kleene)",
+      },
+      faqHeading: "Preguntas frecuentes sobre los símbolos de ciencias de la computación en LaTeX",
+      faq: [
+        {
+          question: "¿Cómo escribo la notación O grande en LaTeX?",
+          answer:
+            "Escribe O(n) en modo matemático: $O(n \\log n)$. Muchos autores prefieren la forma caligráfica $\\mathcal{O}(n)$, que no necesita paquetes. Omega grande y Theta grande usan las mayúsculas griegas \\Omega(n) y \\Theta(n), y la o pequeña es o(n). Escribe \\log y no log, para que el nombre de la función aparezca en letra recta.",
+        },
+        {
+          question: "¿Cómo escribo las funciones piso y techo en LaTeX?",
+          answer:
+            "Usa los delimitadores integrados \\lfloor x \\rfloor para ⌊x⌋ y \\lceil x \\rceil para ⌈x⌉. Para contenido alto antepón \\left y \\right, como en \\left\\lfloor \\frac{n}{2} \\right\\rfloor, o define \\floor y \\ceil con \\DeclarePairedDelimiter de mathtools.",
+        },
+        {
+          question: "¿Cómo escribo mod en LaTeX?",
+          answer:
+            "Usa \\bmod para el operador binario, a \\bmod n, y \\pmod{n} para una congruencia, como en a \\equiv b \\pmod{n}, que imprime (mod n) con el espaciado correcto. Ambos están integrados; amsmath añade \\mod{n} y \\pod{n} para otros estilos de espaciado.",
+        },
+      ],
+    },
+    "differential-geometry": {
+      title: "Símbolos de geometría diferencial en LaTeX: formas, conexiones y curvatura",
+      intro: (
+        <IntroP>
+          Los símbolos de geometría diferencial en LaTeX se construyen con unos pocos comandos
+          integrados. El producto exterior de formas es <Cmd>{"\\alpha \\wedge \\beta"}</Cmd>,
+          con <Cmd>{"\\bigwedge^k V"}</Cmd> para la potencia exterior; la derivada exterior es{" "}
+          <Cmd>{"d\\omega"}</Cmd>; la derivada covariante es <Cmd>{"\\nabla_X Y"}</Cmd>; y la
+          derivada de Lie es <Cmd>{"\\mathcal{L}_X"}</Cmd>. Los símbolos de Christoffel y los
+          tensores de curvatura son letras con índices, <Cmd>{"\\Gamma^k_{ij}"}</Cmd> y{" "}
+          <Cmd>{"R^l{}_{ijk}"}</Cmd>, y el espacio tangente en un punto es <Cmd>{"T_pM"}</Cmd>. La
+          tabla recoge los símbolos de geometría diferencial más usados; todos están integrados, y
+          la lista completa aparece más abajo.
+        </IntroP>
+      ),
+      quickRefHeading: "Referencia rápida: variedades, formas y curvatura",
+      use: {
+        "T_pM": "Espacio tangente en p",
+        "T^*_pM": "Espacio cotangente en p",
+        "\\nabla_X Y": "Derivada covariante (conexión)",
+        "\\Gamma^k_{ij}": "Símbolos de Christoffel",
+        "R^l{}_{ijk}": "Tensor de curvatura de Riemann",
+        "g_{ij}": "Tensor métrico",
+        "\\alpha \\wedge \\beta": "Producto exterior de formas",
+        "\\bigwedge^k V": "Potencia exterior, k-formas",
+        "d\\omega": "Derivada exterior",
+        "\\mathcal{L}_X": "Derivada de Lie",
+        "[X, Y]": "Corchete de Lie de campos vectoriales",
+        "\\star\\omega": "Estrella de Hodge",
+      },
+      faqHeading: "Preguntas frecuentes sobre los símbolos de geometría diferencial en LaTeX",
+      faq: [
+        {
+          question: "¿Cómo escribo el producto exterior (cuña) en LaTeX?",
+          answer:
+            "Usa \\wedge entre formas, $\\alpha \\wedge \\beta$; es un operador binario con el espaciado correcto. Para la potencia exterior o un producto exterior grande sobre un conjunto de índices, usa el operador grande \\bigwedge, como en \\bigwedge^k V o \\bigwedge_{i=1}^{n} dx_i. Ambos están integrados.",
+        },
+        {
+          question: "¿Cómo escribo la derivada covariante en LaTeX?",
+          answer:
+            "Escribe \\nabla con la dirección como subíndice: $\\nabla_X Y$, o \\nabla_\\mu V^\\nu en notación de índices. Las derivadas parciales a lo largo de las coordenadas se escriben \\partial_\\mu, y la notación con punto y coma V^\\nu{}_{;\\mu} también es habitual en los textos de física.",
+        },
+        {
+          question: "¿Cómo escribo la derivada de Lie y la derivada exterior en LaTeX?",
+          answer:
+            "La derivada de Lie es una L caligráfica con subíndice, \\mathcal{L}_X T. La derivada exterior es una d normal, d\\omega; algunos autores la escriben en letra recta con \\mathrm{d}\\omega para distinguirla de una variable.",
+        },
+      ],
+    },
+    finance: {
+      title: "Símbolos de moneda y finanzas en LaTeX: dólar, euro y fórmulas",
+      intro: (
+        <IntroP>
+          Los símbolos de moneda en LaTeX requieren algo de cuidado porque el signo de dólar inicia
+          el modo matemático. Escápalo como <Cmd>{"\\$"}</Cmd> para imprimir un signo de dólar; el
+          signo de la libra es <Cmd>{"\\pounds"}</Cmd>, y el signo del euro es{" "}
+          <Cmd>{"\\texteuro"}</Cmd>, o <Cmd>{"\\euro"}</Cmd> del paquete eurosym para el diseño
+          oficial. El porcentaje es <Cmd>{"\\%"}</Cmd> porque un % sin escapar inicia un
+          comentario, y el tanto por mil es <Cmd>{"\\textperthousand"}</Cmd>. Las fórmulas
+          financieras, como el valor actual neto o el interés compuesto, son matemáticas
+          corrientes construidas con <Cmd>{"\\sum"}</Cmd> y <Cmd>{"\\frac"}</Cmd>. La tabla recoge
+          los símbolos financieros más usados, con el paquete que necesita cada uno; la lista
+          completa aparece más abajo.
+        </IntroP>
+      ),
+      quickRefHeading: "Referencia rápida: monedas, porcentajes y fórmulas",
+      use: {
+        "\\$": "Signo de dólar",
+        "\\pounds": "Libra esterlina",
+        "\\texteuro": "Signo del euro (textcomp, integrado)",
+        "\\euro": "Signo oficial del euro",
+        "\\textyen": "Signo del yen (textcomp, integrado)",
+        "\\%": "Porcentaje",
+        "\\textperthousand": "Tanto por mil (textcomp, integrado)",
+        "\\mathrm{NPV} = \\sum_{t=0}^{n} \\frac{C_t}{(1+r)^t}": "Valor actual neto (VAN)",
+        "A = P\\left(1 + \\frac{r}{n}\\right)^{nt}": "Interés compuesto",
+        "A = Pe^{rt}": "Capitalización continua",
+        "\\pm": "Más o menos",
+      },
+      faqHeading: "Preguntas frecuentes sobre los símbolos financieros en LaTeX",
+      faq: [
+        {
+          question: "¿Cómo escribo el signo de dólar en LaTeX?",
+          answer:
+            "Escápalo: \\$ imprime $ tanto en modo texto como en modo matemático, por ejemplo \\$100. Un $ sin escapar abre o cierra el modo matemático, por eso un signo de dólar sin escapar en un precio provoca errores o convierte el resto de la línea en una fórmula.",
+        },
+        {
+          question: "¿Cómo escribo el signo del euro en LaTeX?",
+          answer:
+            "\\texteuro (de textcomp, que ahora forma parte del núcleo de LaTeX) imprime el signo del euro de la fuente actual sin paquetes adicionales. Para el diseño oficial de la UE carga \\usepackage{eurosym} y escribe \\euro. Con XeLaTeX o LuaLaTeX también puedes escribir € directamente.",
+        },
+        {
+          question: "¿Cómo escribo el signo de porcentaje en LaTeX?",
+          answer:
+            "Escribe \\%. Un % sin escapar inicia un comentario, de modo que todo lo que le sigue en la línea desaparece del documento. Para el tanto por mil usa \\textperthousand, y para números con unidades el paquete siunitx ofrece \\qty{5}{\\percent}.",
+        },
+      ],
+    },
+    "game-theory": {
+      title: "Símbolos de teoría de juegos en LaTeX: estrategias, pagos y equilibrios",
+      intro: (
+        <IntroP>
+          La notación de teoría de juegos en LaTeX consiste sobre todo en letras con índices, así
+          que la clave es usar subíndices coherentes. La estrategia de un jugador es{" "}
+          <Cmd>{"s_i"}</Cmd>, las estrategias de todos los demás son <Cmd>{"s_{-i}"}</Cmd>, el pago
+          es <Cmd>{"u_i(s_i, s_{-i})"}</Cmd>, y un equilibrio de Nash se marca con un asterisco,{" "}
+          <Cmd>{"s^*"}</Cmd>. Las estrategias mixtas usan{" "}
+          <Cmd>{"\\sigma_i \\in \\Delta(S_i)"}</Cmd>, las preferencias usan <Cmd>{"\\succ"}</Cmd>{" "}
+          y <Cmd>{"\\succeq"}</Cmd>, y la mejor respuesta queda mejor con{" "}
+          <Cmd>{"\\operatorname{BR}_i"}</Cmd> de amsmath. Las matrices de pagos son tablas
+          construidas con array. La tabla recoge los símbolos de teoría de juegos más usados, con
+          el paquete que necesita cada uno; la lista completa aparece más abajo.
+        </IntroP>
+      ),
+      quickRefHeading: "Referencia rápida: estrategias, pagos y equilibrios",
+      use: {
+        "s_i \\in S_i": "Estrategia del jugador i",
+        "s_{-i}": "Estrategias de todos los demás jugadores",
+        "u_i(s_i, s_{-i})": "Pago (utilidad) del jugador i",
+        "s^* = (s_1^*, \\ldots, s_n^*)": "Perfil de equilibrio de Nash",
+        "\\operatorname{BR}_i(s_{-i})": "Mejor respuesta",
+        "\\sigma_i \\in \\Delta(S_i)": "Estrategia mixta",
+        "\\mathbb{E}[u_i(\\sigma)]": "Pago esperado",
+        "a \\succ b": "Preferencia estricta",
+        "a \\succeq b": "Preferencia débil",
+        "\\max_{s_i} \\min_{s_{-i}} u_i": "Valor maximin",
+        "\\phi_i(v)": "Valor de Shapley",
+        "v(S)": "Valor de la coalición S",
+      },
+      faqHeading: "Preguntas frecuentes sobre los símbolos de teoría de juegos en LaTeX",
+      faq: [
+        {
+          question: "¿Cómo escribo una matriz de pagos en LaTeX?",
+          answer:
+            "Usa un array dentro de una fórmula destacada, con una línea vertical después de las etiquetas de las filas: \\begin{array}{c|cc} & L & R \\\\ \\hline U & 3,3 & 0,5 \\\\ D & 5,0 & 1,1 \\end{array}. Para un juego en forma estratégica con los nombres de los jugadores, el paquete sgame ofrece un entorno game.",
+        },
+        {
+          question: "¿Cómo escribo s menos i en LaTeX?",
+          answer:
+            "Pon el signo menos y el índice entre llaves: s_{-i}. Sin llaves, s_-i solo baja el signo menos. Lo mismo vale para perfiles como (s_i', s_{-i}) y mejores respuestas como BR_i(s_{-i}).",
+        },
+        {
+          question: "¿Cómo marco un equilibrio de Nash en LaTeX?",
+          answer:
+            "Usa un asterisco como superíndice: s^* para el perfil y s_i^* para la estrategia de equilibrio de un jugador. La condición de equilibrio es u_i(s_i^*, s_{-i}^*) \\geq u_i(s_i, s_{-i}^*) para todo s_i \\in S_i.",
+        },
+      ],
+    },
+    geometry: {
+      title: "Símbolos de geometría en LaTeX: perpendicular, paralelo, ángulo y triángulo",
+      intro: (
+        <IntroP>
+          Los símbolos de geometría en LaTeX están en su mayoría integrados. Perpendicular, que es
+          también el símbolo de ortogonalidad, es <Cmd>{"\\perp"}</Cmd> (⊥), paralelo es{" "}
+          <Cmd>{"\\parallel"}</Cmd> (∥), un ángulo es <Cmd>{"\\angle ABC"}</Cmd> y un triángulo es{" "}
+          <Cmd>{"\\triangle ABC"}</Cmd>. Congruente es <Cmd>{"\\cong"}</Cmd> y semejante es{" "}
+          <Cmd>{"\\sim"}</Cmd>. Un segmento lleva una barra, <Cmd>{"\\overline{AB}"}</Cmd>, una
+          semirrecta o un vector lleva una flecha, <Cmd>{"\\overrightarrow{AB}"}</Cmd>, y el signo
+          de grado es un círculo en superíndice, <Cmd>{"90^\\circ"}</Cmd>. Solo unos pocos extras,
+          como <Cmd>{"\\measuredangle"}</Cmd> y <Cmd>{"\\nparallel"}</Cmd>, necesitan amssymb. La
+          tabla recoge los símbolos de geometría más usados, con el paquete que necesita cada uno;
+          la lista completa aparece más abajo.
+        </IntroP>
+      ),
+      quickRefHeading: "Referencia rápida: los símbolos de geometría más usados",
+      use: {
+        "\\perp": "Perpendicular, ortogonal",
+        "\\parallel": "Paralelo",
+        "\\nparallel": "No paralelo",
+        "\\angle ABC": "Ángulo",
+        "\\measuredangle ABC": "Ángulo medido",
+        "\\triangle ABC": "Triángulo",
+        "\\cong": "Congruente",
+        "\\sim": "Semejante",
+        "\\overline{AB}": "Segmento",
+        "\\overrightarrow{AB}": "Semirrecta o vector",
+        "\\overleftrightarrow{AB}": "Recta que pasa por A y B",
+        "90^\\circ": "Signo de grado",
+      },
+      faqHeading: "Preguntas frecuentes sobre los símbolos de geometría en LaTeX",
+      faq: [
+        {
+          question: "¿Cómo escribo el símbolo de perpendicular u ortogonal en LaTeX?",
+          answer:
+            "Usa \\perp en modo matemático: $AB \\perp CD$ imprime AB ⊥ CD. El mismo comando sirve para vectores ortogonales, u \\perp v, y para el complemento ortogonal V^\\perp. Está integrado, así que no necesita ningún paquete.",
+        },
+        {
+          question: "¿Cómo escribo el símbolo de triángulo en LaTeX?",
+          answer:
+            "\\triangle imprime △, como en $\\triangle ABC$, y no necesita paquetes. amssymb añade el más pequeño \\vartriangle y el relleno \\blacktriangle.",
+        },
+        {
+          question: "¿Cómo escribo el símbolo de grado en LaTeX?",
+          answer:
+            "En modo matemático escribe un círculo como superíndice: $90^\\circ$. En texto, \\textdegree imprime °, y el paquete siunitx da un resultado uniforme con \\ang{45} o \\qty{90}{\\degree}.",
+        },
+      ],
+    },
+    "graph-theory": {
+      title: "Símbolos de teoría de grafos en LaTeX: vértices, aristas, grado y coloración",
+      intro: (
+        <IntroP>
+          La notación de teoría de grafos en LaTeX consiste sobre todo en letras normales y
+          operadores integrados. Un grafo es <Cmd>{"G = (V, E)"}</Cmd>, la adyacencia es{" "}
+          <Cmd>{"u \\sim v"}</Cmd>, el grado de un vértice es <Cmd>{"\\deg(v)"}</Cmd> (el operador{" "}
+          <Cmd>{"\\deg"}</Cmd> está integrado), y los grafos completos y bipartitos completos son{" "}
+          <Cmd>{"K_n"}</Cmd> y <Cmd>{"K_{m,n}"}</Cmd>. Los invariantes de grafos usan letras
+          griegas: el número cromático <Cmd>{"\\chi(G)"}</Cmd>, el número de clique{" "}
+          <Cmd>{"\\omega(G)"}</Cmd>, el número de independencia <Cmd>{"\\alpha(G)"}</Cmd>, y los
+          grados máximo y mínimo <Cmd>{"\\Delta(G)"}</Cmd> y <Cmd>{"\\delta(G)"}</Cmd>. Para
+          dibujar el grafo en sí, usa TikZ. La tabla recoge los símbolos de teoría de grafos más
+          usados; todos están integrados, y la lista completa aparece más abajo.
+        </IntroP>
+      ),
+      quickRefHeading: "Referencia rápida: los símbolos de teoría de grafos más usados",
+      use: {
+        "G = (V, E)": "Grafo con conjunto de vértices V y conjunto de aristas E",
+        "u \\sim v": "u es adyacente a v",
+        "\\deg(v)": "Grado de un vértice",
+        "\\deg^{+}(v)": "Grado de salida (\\deg^{-} para el grado de entrada)",
+        "N(v)": "Vecindad de v",
+        "K_n": "Grafo completo",
+        "K_{m,n}": "Grafo bipartito completo",
+        "\\chi(G)": "Número cromático",
+        "\\omega(G)": "Número de clique",
+        "\\alpha(G)": "Número de independencia",
+        "\\Delta(G)": "Grado máximo (\\delta(G) para el mínimo)",
+        "G \\cong H": "Grafos isomorfos",
+      },
+      faqHeading: "Preguntas frecuentes sobre los símbolos de teoría de grafos en LaTeX",
+      faq: [
+        {
+          question: "¿Cómo escribo el grado de un vértice en LaTeX?",
+          answer:
+            "Usa el operador integrado \\deg, que imprime deg en letra recta con el espaciado correcto: $\\deg(v)$. Para grafos dirigidos, \\deg^{+}(v) y \\deg^{-}(v) dan el grado de salida y el grado de entrada, y el lema del apretón de manos se escribe \\sum_{v \\in V} \\deg(v) = 2|E|.",
+        },
+        {
+          question: "¿Cómo dibujo un grafo en LaTeX?",
+          answer:
+            "Carga \\usepackage{tikz}, coloca los vértices con \\node[circle,draw] (a) at (0,0) {a}; y únelos con \\draw (a) -- (b);. Para grafos más grandes, la biblioteca graphs de TikZ y el paquete tkz-graph simplifican la sintaxis.",
+        },
+        {
+          question: "¿Cómo escribo el número cromático en LaTeX?",
+          answer:
+            "El número cromático es \\chi(G), con la letra griega ji. El índice cromático (número cromático de aristas) se suele escribir \\chi'(G), el número de clique \\omega(G) y el número de independencia \\alpha(G). Todos están integrados.",
+        },
+      ],
+    },
+    latin: {
+      title: "Letras latinas en LaTeX: letras especiales y acentos",
+      intro: (
+        <IntroP>
+          Las letras latinas que van más allá de la A a la Z, como las ligaduras æ y œ, las
+          escandinavas ø y å, la ß alemana y la ł polaca, tienen cada una un comando corto en
+          LaTeX: <Cmd>{"\\ae"}</Cmd>, <Cmd>{"\\oe"}</Cmd>, <Cmd>{"\\o"}</Cmd>, <Cmd>{"\\aa"}</Cmd>,{" "}
+          <Cmd>{"\\ss"}</Cmd> y <Cmd>{"\\l"}</Cmd>, con versiones en mayúscula como{" "}
+          <Cmd>{"\\AE"}</Cmd> y <Cmd>{"\\O"}</Cmd>. Las letras acentuadas combinan un comando de
+          acento con la letra base, por ejemplo <Cmd>{"\\'e"}</Cmd> para é y <Cmd>{"\\~n"}</Cmd>{" "}
+          para ñ. Todos están integrados y funcionan en modo texto. La tabla recoge los símbolos
+          latinos más usados; la lista completa aparece más abajo.
+        </IntroP>
+      ),
+      quickRefHeading: "Referencia rápida: letras especiales y acentos",
+      use: {
+        "\\ae": "Ligadura æ (\\AE para Æ)",
+        "\\oe": "Ligadura œ (\\OE para Œ)",
+        "\\o": "O barrada ø (\\O para Ø)",
+        "\\aa": "A con anillo å (\\AA para Å)",
+        "\\ss": "Eszett alemana ß",
+        "\\l": "Ł polaca ł (\\L para Ł)",
+        "\\i": "I sin punto, base para acentos",
+        "\\'e": "Acento agudo é",
+        "\\\"o": "Diéresis ö",
+        "\\~n": "Tilde ñ",
+        "\\c{c}": "Cedilla ç",
+        "\\v{s}": "Carón (háček) š",
+      },
+      faqHeading: "Preguntas frecuentes sobre las letras latinas en LaTeX",
+      faq: [
+        {
+          question: "¿Cómo escribo letras latinas especiales como æ, ø y ß en LaTeX?",
+          answer:
+            "Cada una tiene un comando integrado de modo texto: \\ae y \\AE para æ y Æ, \\oe y \\OE para œ y Œ, \\o y \\O para ø y Ø, \\aa y \\AA para å y Å, \\ss para ß, y \\l y \\L para ł y Ł. Desde 2018 LaTeX también lee UTF-8, así que puedes escribir las letras directamente.",
+        },
+        {
+          question: "¿Cómo uso estos caracteres latinos en modo matemático?",
+          answer:
+            "Los comandos solo funcionan en modo texto, así que enciérralos en \\text{...} de amsmath, como en $x_{\\text{\\ae}}$. En modo matemático las letras sin punto tienen sus propios comandos, \\imath y \\jmath, que se usan para vectores con acento como \\hat{\\imath}.",
+        },
+        {
+          question: "¿Por qué las letras acentuadas no se copian ni se dividen bien en mi PDF?",
+          answer:
+            "Con la codificación de fuente OT1 predeterminada, LaTeX construye las letras acentuadas a partir de dos piezas. Añade \\usepackage[T1]{fontenc} al preámbulo para que é, ö y ñ sean glifos únicos que se dividan en sílabas, se busquen y se copien correctamente.",
+        },
+      ],
+    },
+    "linear-algebra": {
+      title: "Símbolos de álgebra lineal en LaTeX: matrices, vectores, traspuesta y normas",
+      intro: (
+        <IntroP>
+          El álgebra lineal en LaTeX empieza con los entornos de matrices de amsmath:{" "}
+          <Cmd>{"pmatrix"}</Cmd> para paréntesis, <Cmd>{"bmatrix"}</Cmd> para corchetes y{" "}
+          <Cmd>{"vmatrix"}</Cmd> para un determinante. Un vector es <Cmd>{"\\mathbf{v}"}</Cmd> o{" "}
+          <Cmd>{"\\vec{v}"}</Cmd>, la traspuesta es <Cmd>{"A^\\top"}</Cmd> (o <Cmd>{"A^T"}</Cmd>),
+          la inversa <Cmd>{"A^{-1}"}</Cmd>, la traspuesta conjugada <Cmd>{"A^\\dagger"}</Cmd> y la
+          norma <Cmd>{"\\|x\\|"}</Cmd>. El determinante <Cmd>{"\\det"}</Cmd> está integrado,
+          mientras que la traza y el rango se escriben mejor con{" "}
+          <Cmd>{"\\operatorname{tr}"}</Cmd> y <Cmd>{"\\operatorname{rank}"}</Cmd>. La tabla recoge
+          los símbolos de álgebra lineal más usados, con el paquete que necesita cada uno; la
+          lista completa aparece más abajo.
+        </IntroP>
+      ),
+      quickRefHeading: "Referencia rápida: matrices, vectores y operaciones",
+      use: {
+        "\\begin{pmatrix} a & b \\\\ c & d \\end{pmatrix}": "Matriz entre paréntesis",
+        "\\begin{bmatrix} 1 & 0 \\\\ 0 & 1 \\end{bmatrix}": "Matriz entre corchetes",
+        "\\begin{vmatrix} a & b \\\\ c & d \\end{vmatrix}": "Barras de determinante",
+        "\\mathbf{v}": "Vector en negrita",
+        "\\vec{v}": "Vector con flecha",
+        "A^\\top": "Traspuesta",
+        "A^{-1}": "Inversa",
+        "A^\\dagger": "Traspuesta conjugada",
+        "\\det(A)": "Determinante",
+        "\\operatorname{tr}(A)": "Traza",
+        "\\|x\\|_2": "Norma euclídea",
+        "\\langle u, v \\rangle": "Producto escalar (producto interno)",
+      },
+      faqHeading: "Preguntas frecuentes sobre el álgebra lineal en LaTeX",
+      faq: [
+        {
+          question: "¿Cómo escribo una matriz en LaTeX?",
+          answer:
+            "Carga amsmath y usa un entorno de matrices en modo matemático, separando las columnas con & y las filas con \\\\: \\begin{pmatrix} a & b \\\\ c & d \\end{pmatrix}. pmatrix da paréntesis, bmatrix corchetes, Bmatrix llaves, vmatrix barras simples para un determinante y Vmatrix barras dobles.",
+        },
+        {
+          question: "¿Cómo escribo la traspuesta en LaTeX?",
+          answer:
+            "Escribe A^\\top, que imprime una T pequeña, o simplemente A^T, o A^\\intercal de amssymb. Elige una forma y úsala de manera coherente; A^\\top es habitual en los textos actuales porque no se confunde con una variable T.",
+        },
+        {
+          question: "¿Cómo escribo un vector en LaTeX?",
+          answer:
+            "Usa \\mathbf{v} para un vector en negrita o \\vec{v} para un acento de flecha; \\boldsymbol{v} de amsmath también funciona con letras griegas. Un vector columna es una matriz de una sola columna: \\begin{pmatrix} x \\\\ y \\end{pmatrix}.",
+        },
+      ],
+    },
+    "machine-learning": {
+      title: "Símbolo del gradiente en LaTeX y otra notación de aprendizaje automático",
+      intro: (
+        <IntroP>
+          El símbolo del gradiente en LaTeX es <Cmd>{"\\nabla"}</Cmd>, que imprime &nabla; y no
+          necesita ningún paquete: escribe <Cmd>{"\\nabla f"}</Cmd> para el gradiente de{" "}
+          <Cmd>{"f"}</Cmd>, o <Cmd>{"\\nabla_\\theta \\mathcal{L}"}</Cmd> para el gradiente de una
+          función de pérdida respecto a los parámetros. Las derivadas parciales usan{" "}
+          <Cmd>{"\\partial"}</Cmd>, las predicciones son <Cmd>{"\\hat{y}"}</Cmd>, la esperanza es{" "}
+          <Cmd>{"\\mathbb{E}"}</Cmd> y el argmax es <Cmd>{"\\operatorname*{arg\\,max}"}</Cmd>. La
+          tabla recoge los comandos más usados para escribir un gradiente en LaTeX, con el paquete
+          que necesita cada uno; la lista completa de símbolos de aprendizaje automático aparece
+          más abajo.
+        </IntroP>
+      ),
+      quickRefHeading: "Referencia rápida: gradientes, pérdidas y optimización",
+      use: {
+        "\\nabla": "Símbolo del gradiente (nabla)",
+        "\\nabla_\\theta \\mathcal{L}": "Gradiente de la pérdida respecto a θ",
+        "\\partial": "Derivada parcial",
+        "\\frac{\\partial \\mathcal{L}}{\\partial w}": "Derivada parcial de la pérdida",
+        "\\mathcal{L}": "Función de pérdida",
+        "\\theta": "Parámetros del modelo",
+        "\\hat{y}": "Predicción, estimación",
+        "\\mathbb{E}": "Esperanza",
+        "\\operatorname*{arg\\,max}_\\theta": "Argmax con el subíndice debajo",
+        "\\operatorname*{arg\\,min}_\\theta": "Argmin con el subíndice debajo",
+        "\\|w\\|_2": "Norma L2 de los pesos",
+        "\\odot": "Producto de Hadamard (elemento a elemento)",
+      },
+      faqHeading: "Preguntas frecuentes sobre la notación de aprendizaje automático en LaTeX",
+      faq: [
+        {
+          question: "¿Cómo escribo el símbolo del gradiente en LaTeX?",
+          answer:
+            "El símbolo del gradiente ∇ es \\nabla, está integrado en LaTeX y se usa en modo matemático: $\\nabla f$. Pon la variable respecto a la que derivas como subíndice, como en \\nabla_\\theta \\mathcal{L}(\\theta), y escribe el laplaciano como \\nabla^2 f. No necesita ningún paquete.",
+        },
+        {
+          question: "¿Cómo escribo una derivada parcial en LaTeX?",
+          answer:
+            "Usa \\partial: \\frac{\\partial f}{\\partial x} para una primera derivada y \\frac{\\partial^2 f}{\\partial x^2} para una segunda derivada. Una componente del gradiente se escribe igual, por ejemplo \\frac{\\partial \\mathcal{L}}{\\partial w_i}.",
+        },
+        {
+          question: "¿Cómo escribo argmax y argmin en LaTeX?",
+          answer:
+            "Con amsmath, escribe \\operatorname*{arg\\,max}_\\theta f(\\theta); el asterisco coloca el subíndice debajo en las fórmulas destacadas. Si lo usas a menudo, decláralo una vez en el preámbulo con \\DeclareMathOperator*{\\argmax}{arg\\,max} y luego escribe \\argmax_\\theta. El atajo \\arg\\max_\\theta también funciona, pero entonces el subíndice queda solo debajo de max y no debajo de todo arg max.",
+        },
+        {
+          question: "¿Cómo escribo la esperanza y la función de pérdida en LaTeX?",
+          answer:
+            "La esperanza es la E de pizarra \\mathbb{E}, que necesita \\usepackage{amssymb}, como en \\mathbb{E}_{x \\sim p}[f(x)]. La función de pérdida suele ser una L caligráfica, \\mathcal{L}, que está integrada.",
+        },
+      ],
+    },
+    "modal-logic": {
+      title: "Símbolos de lógica modal en LaTeX: caja, diamante y semántica de Kripke",
+      intro: (
+        <IntroP>
+          Los dos símbolos básicos de la lógica modal en LaTeX son <Cmd>{"\\Box"}</Cmd> para la
+          necesidad (□) y <Cmd>{"\\Diamond"}</Cmd> para la posibilidad (◇), ambos de amssymb;{" "}
+          <Cmd>{"\\Box p"}</Cmd> se lee «es necesario que p» y <Cmd>{"\\Diamond p"}</Cmd> «es
+          posible que p». La semántica de Kripke usa <Cmd>{"\\models"}</Cmd> (integrado) o{" "}
+          <Cmd>{"\\Vdash"}</Cmd>, como en <Cmd>{"\\mathcal{M}, w \\models p"}</Cmd>, con una
+          relación de accesibilidad <Cmd>{"wRv"}</Cmd>. La lógica epistémica escribe el
+          conocimiento como <Cmd>{"K_a p"}</Cmd>, y la lógica temporal añade{" "}
+          <Cmd>{"\\bigcirc p"}</Cmd> para «siguiente» y <Cmd>{"p \\mathbin{\\mathcal{U}} q"}</Cmd>{" "}
+          para «hasta». La tabla recoge los símbolos de lógica modal más usados, con el paquete
+          que necesita cada uno; la lista completa aparece más abajo.
+        </IntroP>
+      ),
+      quickRefHeading: "Referencia rápida: operadores modales, epistémicos y temporales",
+      use: {
+        "\\Box p": "Necesariamente p",
+        "\\Diamond p": "Posiblemente p",
+        "\\Box(p \\to q)": "Necesidad de una implicación (axioma K)",
+        "\\neg\\Box\\neg p": "No necesariamente no p, equivale a \\Diamond p",
+        "\\mathcal{M}, w \\models p": "p es verdadera en el mundo w",
+        "w \\Vdash p": "Forzamiento, satisfacción",
+        "wRv": "Relación de accesibilidad",
+        "K_a p": "El agente a sabe que p",
+        "B_a p": "El agente a cree que p",
+        "C_G p": "Conocimiento común en el grupo G",
+        "\\bigcirc p": "Siguiente (lógica temporal)",
+        "p \\mathbin{\\mathcal{U}} q": "Hasta (lógica temporal)",
+      },
+      faqHeading: "Preguntas frecuentes sobre los símbolos de lógica modal en LaTeX",
+      faq: [
+        {
+          question: "¿Cómo escribo los símbolos de caja y diamante en LaTeX?",
+          answer:
+            "Carga \\usepackage{amssymb} y escribe \\Box p para la necesidad y \\Diamond p para la posibilidad. El paquete latexsym ofrece los mismos dos comandos. Ten en cuenta que el comando integrado \\diamond es un pequeño operador binario, no el diamante modal.",
+        },
+        {
+          question: "¿Cómo escribo el símbolo de satisfacción (doble torniquete) en LaTeX?",
+          answer:
+            "\\models está integrado e imprime ⊨, como en $\\mathcal{M}, w \\models \\varphi$. amssymb añade \\vDash (⊨), \\Vdash (⊩) para el forzamiento y \\nvDash para «no satisface»; \\vdash (⊢) para la derivabilidad está integrado.",
+        },
+        {
+          question: "¿Cómo escribo «hasta» y «siguiente» de la lógica temporal en LaTeX?",
+          answer:
+            "Usa \\bigcirc p para «siguiente», y convierte la U caligráfica en un operador binario para «hasta»: p \\mathbin{\\mathcal{U}} q, que da el espaciado correcto. «Siempre» y «finalmente» suelen escribirse \\Box p y \\Diamond p, o \\mathbf{G} p y \\mathbf{F} p.",
+        },
+      ],
+    },
+    "number-theory": {
+      title: "Símbolos de teoría de números en LaTeX",
+      intro: (
+        <IntroP>
+          El módulo y la operación mod en LaTeX tienen varias formas: <Cmd>{"\\bmod"}</Cmd> para un
+          resto, <Cmd>{"\\pmod{n}"}</Cmd> tras una congruencia, y <Cmd>{"\\lvert z \\rvert"}</Cmd>{" "}
+          para el módulo (valor absoluto) de un número. La tabla recoge los ocho comandos más
+          usados, con el paquete que necesita cada uno; la lista completa de símbolos de teoría de
+          números aparece más abajo.
+        </IntroP>
+      ),
+      quickRefHeading: "Referencia rápida: divisibilidad y aritmética modular",
+      use: {
+        "a \\bmod n": "Módulo como operación binaria",
+        "a \\equiv b \\pmod{n}": "Congruencia con (mod n)",
+        "a \\equiv b \\mod{n}": "Congruencia sin paréntesis",
+        "\\lvert z \\rvert": "Módulo / valor absoluto",
+        "a \\mid b": "a divide a b",
+        "a \\nmid b": "a no divide a b",
+        "\\gcd(a, b)": "Máximo común divisor",
+        "\\operatorname{lcm}(a, b)": "Mínimo común múltiplo",
+      },
+      faqHeading: "Preguntas frecuentes sobre los símbolos de teoría de números en LaTeX",
+      faq: [
+        {
+          question: "¿Cómo escribo mod (módulo) en LaTeX?",
+          answer:
+            "Usa \\bmod para la operación binaria, como en a \\bmod n, y \\pmod{n} tras una congruencia: a \\equiv b \\pmod{n} añade los paréntesis y el espaciado por ti. amsmath también ofrece \\mod{n} (sin paréntesis) y \\pod{n} (paréntesis sin la palabra mod).",
+        },
+        {
+          question: "¿Cómo escribo el módulo (valor absoluto) en LaTeX?",
+          answer:
+            "Escribe \\lvert z \\rvert con amsmath, o \\left| z \\right| cuando las barras deban crecer con un contenido alto. Si lo usas a menudo, mathtools te permite declarar \\DeclarePairedDelimiter{\\abs}{\\lvert}{\\rvert} y luego escribir \\abs{z}.",
+        },
+        {
+          question: "¿Cómo escribo «divide a» en LaTeX?",
+          answer:
+            "Usa \\mid, como en a \\mid b, que LaTeX espacia como una relación; una | sin más queda demasiado apretada. La negación \\nmid (a no divide a b) necesita \\usepackage{amssymb}.",
+        },
+      ],
+    },
+    operators: {
+      title: "Operadores en LaTeX: más en círculo, por, punto y operadores grandes",
+      intro: (
+        <IntroP>
+          Los operadores de LaTeX se dividen en dos grupos. Los operadores binarios se colocan
+          entre dos términos con un espaciado medio: <Cmd>{"\\times"}</Cmd>, <Cmd>{"\\cdot"}</Cmd>,{" "}
+          <Cmd>{"\\ast"}</Cmd>, <Cmd>{"\\circ"}</Cmd> y la familia de operadores en círculo{" "}
+          <Cmd>{"\\oplus"}</Cmd> (más en círculo, ⊕), <Cmd>{"\\otimes"}</Cmd> (⊗),{" "}
+          <Cmd>{"\\odot"}</Cmd> (⊙) y <Cmd>{"\\ominus"}</Cmd>. Los operadores grandes admiten
+          límites y crecen en las fórmulas destacadas: <Cmd>{"\\sum"}</Cmd>, <Cmd>{"\\prod"}</Cmd>,{" "}
+          <Cmd>{"\\bigoplus"}</Cmd>, <Cmd>{"\\bigotimes"}</Cmd> y <Cmd>{"\\bigcup"}</Cmd>. Todos
+          están integrados. Los operadores con nombre como <Cmd>{"\\max"}</Cmd>,{" "}
+          <Cmd>{"\\sin"}</Cmd> y <Cmd>{"\\det"}</Cmd> están predefinidos, y puedes declarar los
+          tuyos con <Cmd>{"\\DeclareMathOperator"}</Cmd> de amsmath. La tabla recoge los
+          operadores de LaTeX más usados; la lista completa aparece más abajo.
+        </IntroP>
+      ),
+      quickRefHeading: "Referencia rápida: operadores binarios y grandes",
+      use: {
+        "\\oplus": "Más en círculo: suma directa, XOR",
+        "\\otimes": "Por en círculo: producto tensorial",
+        "\\odot": "Punto en círculo: producto de Hadamard",
+        "\\ominus": "Menos en círculo",
+        "\\oslash": "Barra en círculo",
+        "\\times": "Producto vectorial, multiplicación",
+        "\\cdot": "Punto centrado",
+        "\\ast": "Operador asterisco, convolución",
+        "\\circ": "Composición",
+        "\\star": "Operador estrella",
+        "\\bigoplus_{i=1}^{n} V_i": "Suma directa sobre un índice",
+        "\\bigotimes_{i=1}^{n} V_i": "Producto tensorial sobre un índice",
+      },
+      faqHeading: "Preguntas frecuentes sobre los operadores en LaTeX",
+      faq: [
+        {
+          question: "¿Cómo escribo el más en círculo en LaTeX?",
+          answer:
+            "Usa \\oplus para ⊕, el más en círculo que se usa para sumas directas y XOR. Es un operador binario integrado: $A \\oplus B$. Para una suma directa de muchos términos, usa el operador grande \\bigoplus_{i=1}^{n} V_i.",
+        },
+        {
+          question: "¿Cómo escribo el operador odot (punto en círculo) en LaTeX?",
+          answer:
+            "\\odot imprime ⊙ y se usa para el producto de Hadamard (elemento a elemento), $A \\odot B$. La versión grande es \\bigodot. Ambos están integrados.",
+        },
+        {
+          question: "¿Cómo defino un operador nuevo en LaTeX?",
+          answer:
+            "Carga amsmath y escribe \\DeclareMathOperator{\\Tr}{Tr} en el preámbulo; entonces \\Tr(A) imprime Tr en letra recta con el espaciado de operador. Usa \\DeclareMathOperator* cuando los límites deban ir debajo, como en \\argmax. Para un uso puntual, \\operatorname{Tr} hace lo mismo dentro de la fórmula.",
+        },
+      ],
+    },
+    optimization: {
+      title: "Símbolos de optimización en LaTeX: argmax, argmin y restricciones",
+      intro: (
+        <IntroP>
+          La notación de optimización en LaTeX gira en torno a <Cmd>{"\\min"}</Cmd>,{" "}
+          <Cmd>{"\\max"}</Cmd> y sus versiones arg. <Cmd>{"\\min_{x}"}</Cmd> y{" "}
+          <Cmd>{"\\max_{x}"}</Cmd> están integrados y colocan la variable debajo del operador en
+          las fórmulas destacadas, pero no existe un <Cmd>{"\\argmax"}</Cmd> integrado: escribe{" "}
+          <Cmd>{"\\operatorname*{arg\\,max}_x"}</Cmd> o declara <Cmd>{"\\argmax"}</Cmd> una vez con{" "}
+          <Cmd>{"\\DeclareMathOperator*"}</Cmd> de amsmath. Las restricciones siguen a{" "}
+          <Cmd>{"\\text{s.t.}"}</Cmd> («sujeto a»), el lagrangiano es{" "}
+          <Cmd>{"\\mathcal{L}(x, \\lambda)"}</Cmd>, el óptimo es <Cmd>{"x^*"}</Cmd>, y las
+          restricciones semidefinidas usan <Cmd>{"\\succeq 0"}</Cmd>. La tabla recoge los símbolos
+          de optimización más usados, con el paquete que necesita cada uno; la lista completa
+          aparece más abajo.
+        </IntroP>
+      ),
+      quickRefHeading: "Referencia rápida: objetivos, restricciones y optimalidad",
+      use: {
+        "\\operatorname*{arg\\,max}_{x} f(x)": "Argmax con la variable debajo",
+        "\\operatorname*{arg\\,min}_{x} f(x)": "Argmin con la variable debajo",
+        "\\min_{x \\in \\mathcal{X}} f(x)": "Minimizar sobre un conjunto",
+        "\\max_{x} f(x)": "Maximizar",
+        "\\text{s.t.}": "Sujeto a (en español también \\text{s.a.})",
+        "g_i(x) \\leq 0": "Restricción de desigualdad",
+        "h_j(x) = 0": "Restricción de igualdad",
+        "\\mathcal{L}(x, \\lambda)": "Lagrangiano",
+        "\\nabla f(x^*) = 0": "Condición de optimalidad de primer orden",
+        "\\nabla^2 f(x)": "Matriz hessiana",
+        "X \\succeq 0": "Semidefinida positiva",
+        "\\lambda_i \\geq 0": "Variables duales (multiplicadores)",
+      },
+      faqHeading: "Preguntas frecuentes sobre los símbolos de optimización en LaTeX",
+      faq: [
+        {
+          question: "¿Cómo escribo argmax en LaTeX?",
+          answer:
+            "Escribe \\operatorname*{arg\\,max}_{x} f(x) con amsmath; el asterisco coloca x debajo del operador en las fórmulas destacadas. Para reutilizarlo, añade \\DeclareMathOperator*{\\argmax}{arg\\,max} al preámbulo y escribe \\argmax_x f(x). \\arg\\max también imprime arg max, pero su subíndice se asocia solo a max.",
+        },
+        {
+          question: "¿Cómo escribo un problema de optimización con restricciones en LaTeX?",
+          answer:
+            "Pon el objetivo y las restricciones en un entorno aligned: \\min_{x} \\quad & f(x) \\\\ \\text{s.a.} \\quad & g(x) \\leq 0. El paquete optidef ofrece los entornos mini y maxi, que alinean el objetivo y las restricciones por ti.",
+        },
+        {
+          question: "¿Cómo escribo «sujeto a» en LaTeX?",
+          answer:
+            "Usa \\text{s.a.} o \\text{sujeto a} de amsmath (en inglés, \\text{s.t.}) para que las palabras aparezcan en texto recto con el espaciado normal. Si escribes s.a. directamente en modo matemático, se imprimen las variables s y a en cursiva.",
+        },
+      ],
+    },
+    order: {
+      title: "Menor que, mayor que y menor o igual que en LaTeX",
+      intro: (
+        <IntroP>
+          En LaTeX, los signos menor que y mayor que se escriben directamente en modo matemático
+          como <Cmd>{"<"}</Cmd> y <Cmd>{">"}</Cmd>. Menor o igual que en LaTeX es{" "}
+          <Cmd>{"\\leq"}</Cmd> (o el alias <Cmd>{"\\le"}</Cmd>), mayor o igual que es{" "}
+          <Cmd>{"\\geq"}</Cmd> (<Cmd>{"\\ge"}</Cmd>) y distinto de es <Cmd>{"\\neq"}</Cmd>; los
+          tres están integrados, así que <Cmd>{"$a \\leq b$"}</Cmd> funciona en cualquier
+          documento. Mucho menor que es <Cmd>{"\\ll"}</Cmd>, y las formas inclinadas, aproximadas
+          y negadas vienen de amssymb. La tabla recoge los símbolos de desigualdad más usados, con
+          el paquete que necesita cada uno; la lista completa de símbolos de orden aparece más
+          abajo.
+        </IntroP>
+      ),
+      quickRefHeading: "Referencia rápida: desigualdades y orden",
+      use: {
+        "<": "Menor que (se escribe directamente)",
+        ">": "Mayor que (se escribe directamente)",
+        "\\leq": "Menor o igual que (alias \\le)",
+        "\\geq": "Mayor o igual que (alias \\ge)",
+        "\\neq": "Distinto de (alias \\ne)",
+        "\\ll": "Mucho menor que",
+        "\\gg": "Mucho mayor que",
+        "\\leqslant": "Menor o igual que, inclinado",
+        "\\lesssim": "Menor o aproximadamente igual que",
+        "\\not<": "No menor que",
+        "\\nleq": "No menor ni igual que",
+        "\\prec": "Precede (orden parcial); \\succ para «sucede»",
+      },
+      faqHeading: "Preguntas frecuentes sobre los símbolos de desigualdad en LaTeX",
+      faq: [
+        {
+          question: "¿Cómo escribo menor o igual que en LaTeX?",
+          answer:
+            "Escribe \\leq, o su alias más corto \\le, en modo matemático: $a \\leq b$. Mayor o igual que es \\geq o \\ge. Ambos están integrados. Para el estilo inclinado habitual en los textos europeos, carga amssymb y usa \\leqslant y \\geqslant.",
+        },
+        {
+          question: "¿Cómo escribo el símbolo menor que en LaTeX?",
+          answer:
+            "En modo matemático escribe < directamente: $a < b$. En el texto corrido, fuera del modo matemático, la codificación de fuente OT1 predeterminada imprime ¡ en lugar de <, así que enciérralo como $<$, usa \\textless (y \\textgreater para >) o carga \\usepackage[T1]{fontenc}.",
+        },
+        {
+          question: "¿Cómo escribo «no menor que» o «distinto de» en LaTeX?",
+          answer:
+            "Distinto de es \\neq o \\ne. Para las demás relaciones, antepón \\not al símbolo, como en \\not<, o carga amssymb para las negaciones específicas \\nless, \\ngtr, \\nleq y \\ngeq, que quedan más limpias que una barra superpuesta.",
+        },
+        {
+          question: "¿Qué diferencia hay entre \\leq y \\le en LaTeX?",
+          answer:
+            "Ninguna: \\le es un alias de \\leq y ambos imprimen ≤, igual que \\ge es un alias de \\geq y \\ne un alias de \\neq. Usa el que prefieras, pero de forma coherente.",
+        },
+      ],
+    },
+    relations: {
+      title: "Símbolos de relación en LaTeX: distinto de, aproximadamente igual y menor que",
+      intro: (
+        <IntroP>
+          Los símbolos de relación en LaTeX comparan dos expresiones, y los habituales están
+          todos integrados. Distinto de en LaTeX es <Cmd>{"\\neq"}</Cmd> (≠), aproximadamente
+          igual es <Cmd>{"\\approx"}</Cmd> (≈), menor que y mayor que se escriben como{" "}
+          <Cmd>{"<"}</Cmd> y <Cmd>{">"}</Cmd>, y menor o igual que es <Cmd>{"\\leq"}</Cmd> (≤). La
+          equivalencia es <Cmd>{"\\equiv"}</Cmd>, semejante es <Cmd>{"\\sim"}</Cmd>, congruente es{" "}
+          <Cmd>{"\\cong"}</Cmd> y proporcional a es <Cmd>{"\\propto"}</Cmd>. Puedes negar cualquier
+          relación anteponiendo <Cmd>{"\\not"}</Cmd>, o cargar amssymb para formas específicas como{" "}
+          <Cmd>{"\\nleq"}</Cmd> e inclinadas como <Cmd>{"\\leqslant"}</Cmd>. La tabla recoge las
+          relaciones más usadas, con el paquete que necesita cada una; la lista completa aparece
+          más abajo.
+        </IntroP>
+      ),
+      quickRefHeading: "Referencia rápida: los símbolos de relación más usados",
+      use: {
+        "\\neq": "Distinto de (alias \\ne)",
+        "\\approx": "Aproximadamente igual",
+        "<": "Menor que",
+        ">": "Mayor que",
+        "\\leq": "Menor o igual que",
+        "\\geq": "Mayor o igual que",
+        "\\equiv": "Equivalente, idéntico, congruente módulo n",
+        "\\sim": "Semejante, «se distribuye como»",
+        "\\cong": "Congruente, isomorfo",
+        "\\propto": "Proporcional a",
+        "\\ll": "Mucho menor que (\\gg para mucho mayor que)",
+        "\\leqslant": "Menor o igual que, inclinado",
+      },
+      faqHeading: "Preguntas frecuentes sobre los símbolos de relación en LaTeX",
+      faq: [
+        {
+          question: "¿Cómo escribo «distinto de» en LaTeX?",
+          answer:
+            "Usa \\neq (o su alias \\ne) en modo matemático: $a \\neq b$ imprime a ≠ b. No necesita ningún paquete. Para otras relaciones negadas antepón \\not, como en \\not\\equiv, o usa las versiones específicas de amssymb, como \\nleq y \\ncong.",
+        },
+        {
+          question: "¿Cómo escribo «aproximadamente igual» en LaTeX?",
+          answer:
+            "\\approx imprime ≈ y es el símbolo estándar de aproximadamente igual: $\\pi \\approx 3.14$. Sus parientes cercanos son \\simeq (≃), \\cong (≅), \\sim (∼) y \\doteq (≐), todos integrados, y \\approxeq (≊) de amssymb.",
+        },
+        {
+          question: "¿Cómo escribo «menor que» en LaTeX?",
+          answer:
+            "En modo matemático escribe < y > directamente: $a < b$. En el texto corrido, fuera del modo matemático, usa \\textless y \\textgreater o encierra el signo en $...$, ya que con la antigua codificación de fuente OT1 un < sin más puede imprimirse como un signo de exclamación invertido.",
+        },
+      ],
+    },
+    "special-functions": {
+      title: "Funciones especiales en LaTeX: gamma, beta, zeta, erf y Bessel",
+      intro: (
+        <IntroP>
+          Las funciones especiales en LaTeX se escriben con letras griegas o con nombres en letra
+          recta. La función gamma es <Cmd>{"\\Gamma(z)"}</Cmd>, la función zeta de Riemann{" "}
+          <Cmd>{"\\zeta(s)"}</Cmd>, la función digamma <Cmd>{"\\psi(x)"}</Cmd> y la delta de Dirac{" "}
+          <Cmd>{"\\delta(x)"}</Cmd>. Las funciones con nombres de letras latinas deben ir en letra
+          recta: no existe un <Cmd>{"\\erf"}</Cmd> integrado, así que escribe{" "}
+          <Cmd>{"\\operatorname{erf}(x)"}</Cmd> o decláralo una vez con{" "}
+          <Cmd>{"\\DeclareMathOperator"}</Cmd> de amsmath. Las funciones de Bessel y los
+          polinomios ortogonales son letras con índices, como <Cmd>{"J_n(x)"}</Cmd> y{" "}
+          <Cmd>{"P_n(x)"}</Cmd>, y la función hipergeométrica es{" "}
+          <Cmd>{"{}_2F_1(a, b; c; z)"}</Cmd>. La tabla recoge las funciones especiales más usadas,
+          con el paquete que necesita cada una; la lista completa aparece más abajo.
+        </IntroP>
+      ),
+      quickRefHeading: "Referencia rápida: las funciones especiales más usadas",
+      use: {
+        "\\Gamma(z)": "Función gamma",
+        "\\mathrm{B}(x, y)": "Función beta (B mayúscula recta)",
+        "\\zeta(s)": "Función zeta de Riemann",
+        "\\operatorname{erf}(x)": "Función error",
+        "\\operatorname{erfc}(x)": "Función error complementaria",
+        "J_n(x)": "Función de Bessel de primera especie",
+        "Y_n(x)": "Función de Bessel de segunda especie",
+        "P_n(x)": "Polinomio de Legendre",
+        "H_n(x)": "Polinomio de Hermite",
+        "{}_2F_1(a, b; c; z)": "Función hipergeométrica de Gauss",
+        "\\psi(x)": "Función digamma",
+        "\\delta(x)": "Delta de Dirac",
+      },
+      faqHeading: "Preguntas frecuentes sobre las funciones especiales en LaTeX",
+      faq: [
+        {
+          question: "¿Cómo escribo la función gamma en LaTeX?",
+          answer:
+            "Usa la letra griega mayúscula: $\\Gamma(z) = \\int_0^\\infty t^{z-1} e^{-t}\\,dt$. No necesita ningún paquete. La función beta suele escribirse con una B recta, \\mathrm{B}(x, y), para que no se confunda con una variable.",
+        },
+        {
+          question: "¿Cómo escribo la función error erf en LaTeX?",
+          answer:
+            "LaTeX no tiene un comando \\erf. Usa \\operatorname{erf}(x) de amsmath, o añade \\DeclareMathOperator{\\erf}{erf} al preámbulo y escribe \\erf(x). Así erf aparece en letra recta con el espaciado de operador, a diferencia de erf escrito tal cual, que imprime tres variables en cursiva.",
+        },
+        {
+          question: "¿Cómo escribo la función hipergeométrica en LaTeX?",
+          answer:
+            "Usa un grupo vacío para colocar el subíndice a la izquierda: {}_2F_1(a, b; c; z). El paquete mathtools también ofrece \\prescript{}{2}{F}_{1} para los índices previos, y la forma generalizada {}_pF_q sigue el mismo patrón.",
+        },
+      ],
+    },
+    summation: {
+      title: "Sumatoria en LaTeX: notación sigma, productos y límites",
+      intro: (
+        <IntroP>
+          Una sumatoria en LaTeX se escribe con <Cmd>{"\\sum"}</Cmd>, que imprime la sigma
+          mayúscula (Σ) como operador grande: <Cmd>{"\\sum_{i=1}^{n} a_i"}</Cmd> coloca el índice
+          debajo y el límite superior encima. El símbolo de producto funciona igual con{" "}
+          <Cmd>{"\\prod_{i=1}^{n}"}</Cmd>. En las fórmulas destacadas los límites van encima y
+          debajo del signo; en las fórmulas en línea pasan al lado, salvo que añadas{" "}
+          <Cmd>{"\\limits"}</Cmd> o <Cmd>{"\\displaystyle"}</Cmd>. Las condiciones de varias
+          líneas bajo una sumatoria usan <Cmd>{"\\substack"}</Cmd> de amsmath, y los operadores
+          grandes de conjuntos <Cmd>{"\\bigcup"}</Cmd> y <Cmd>{"\\bigcap"}</Cmd> siguen las mismas
+          reglas. La tabla recoge los símbolos de sumatoria más usados, con el paquete que
+          necesita cada uno; la lista completa aparece más abajo.
+        </IntroP>
+      ),
+      quickRefHeading: "Referencia rápida: sumatorias, productos y límites",
+      use: {
+        "\\sum_{i=1}^{n} a_i": "Sumatoria (notación sigma)",
+        "\\sum_{n=1}^{\\infty} \\frac{1}{n^2}": "Serie infinita",
+        "\\prod_{i=1}^{n} x_i": "Producto",
+        "\\coprod": "Coproducto",
+        "\\sum\\limits_{i=1}^{n}": "Límites encima y debajo en una fórmula en línea",
+        "\\displaystyle\\sum_{i=1}^{n}": "Sumatoria de tamaño destacado en una fórmula en línea",
+        "\\sum_{i=1}^{n} \\sum_{j=1}^{m} a_{ij}": "Sumatoria doble",
+        "\\sum_{\\substack{i < j \\\\ i \\neq k}}": "Condiciones en varias líneas",
+        "\\bigcup_{i \\in I} A_i": "Unión sobre un índice",
+        "\\bigcap_{i=1}^{n} A_i": "Intersección sobre un índice",
+        "\\sum_{k=0}^{n} \\binom{n}{k}": "Suma de coeficientes binomiales",
+      },
+      faqHeading: "Preguntas frecuentes sobre la sumatoria en LaTeX",
+      faq: [
+        {
+          question: "¿Cómo escribo una sumatoria en LaTeX?",
+          answer:
+            "Usa \\sum con un subíndice y un superíndice en modo matemático: $\\sum_{i=1}^{n} a_i$. Encierra entre llaves los límites de más de un carácter. En una ecuación destacada (\\[...\\]) los límites aparecen encima y debajo de la sigma; en línea aparecen al lado.",
+        },
+        {
+          question: "¿Cómo pongo los límites encima y debajo de la sumatoria en una fórmula en línea?",
+          answer:
+            "Añade \\limits después del operador, \\sum\\limits_{i=1}^{n}, o da a toda la sumatoria tamaño destacado con \\displaystyle\\sum_{i=1}^{n}. Úsalo con moderación, porque aumenta el interlineado del párrafo.",
+        },
+        {
+          question: "¿Cómo escribo el símbolo de producto en LaTeX?",
+          answer:
+            "\\prod imprime el símbolo de producto ∏ y admite límites igual que \\sum: $\\prod_{i=1}^{n} x_i$. No uses \\Pi, que es la letra griega: no crece en las fórmulas destacadas ni coloca bien sus límites.",
+        },
+      ],
+    },
+    tensors: {
+      title: "Notación tensorial en LaTeX: índices, convenio de suma de Einstein y el paquete tensor",
+      intro: (
+        <IntroP>
+          La notación tensorial en LaTeX se construye con superíndices y subíndices:{" "}
+          <Cmd>{"T^{ij}_{kl}"}</Cmd> para un tensor con dos índices superiores y dos inferiores,{" "}
+          <Cmd>{"g_{\\mu\\nu}"}</Cmd> para la métrica y <Cmd>{"\\delta^i_j"}</Cmd> para la delta
+          de Kronecker. Cuando importa el orden de los índices mixtos, escalónalos con un grupo
+          vacío, <Cmd>{"T^{i}{}_{j}"}</Cmd>, o carga el paquete tensor y escribe{" "}
+          <Cmd>{"\\tensor{T}{^i_j}"}</Cmd>. El símbolo de Levi-Civita es{" "}
+          <Cmd>{"\\epsilon_{ijk}"}</Cmd>, el producto tensorial es <Cmd>{"\\otimes"}</Cmd>, y el
+          convenio de suma de Einstein consiste simplemente en repetir un índice,{" "}
+          <Cmd>{"A^i B_i"}</Cmd>. La tabla recoge los símbolos tensoriales más usados, con el
+          paquete que necesita cada uno; la lista completa aparece más abajo.
+        </IntroP>
+      ),
+      quickRefHeading: "Referencia rápida: índices y operaciones con tensores",
+      use: {
+        "T^{ij}_{kl}": "Tensor con índices superiores e inferiores",
+        "T^{i}{}_{j}": "Índices escalonados (el orden importa)",
+        "\\tensor{T}{^i_j^k}": "Índices escalonados de forma sencilla",
+        "g_{\\mu\\nu}": "Tensor métrico",
+        "\\delta^i_j": "Delta de Kronecker",
+        "\\epsilon_{ijk}": "Símbolo de Levi-Civita",
+        "A^i B_i": "Convenio de suma de Einstein (índice repetido)",
+        "A \\otimes B": "Producto tensorial",
+        "\\partial_\\mu": "Derivada parcial respecto a una coordenada",
+        "\\nabla_\\mu T^{\\nu}": "Derivada covariante",
+        "T_{(ij)}": "Simetrización",
+        "T_{[ij]}": "Antisimetrización",
+      },
+      faqHeading: "Preguntas frecuentes sobre la notación tensorial en LaTeX",
+      faq: [
+        {
+          question: "¿Cómo escribo un tensor con índices superiores e inferiores en LaTeX?",
+          answer:
+            "Combina superíndices y subíndices: $T^{ij}_{kl}$. Si importa el orden horizontal de los índices, inserta un grupo vacío para que no se apilen: T^{i}{}_{j} coloca j después de i. El paquete tensor lo automatiza con \\tensor{T}{^i_j} y T\\indices{^i_j}.",
+        },
+        {
+          question: "¿Cómo escribo la delta de Kronecker y el símbolo de Levi-Civita en LaTeX?",
+          answer:
+            "La delta de Kronecker es \\delta_{ij} o \\delta^i_j, y el símbolo de Levi-Civita es \\epsilon_{ijk} o \\varepsilon_{ijk}, según la forma de épsilon que use tu campo. Ambos son letras griegas integradas con índices.",
+        },
+        {
+          question: "¿Cómo escribo el convenio de suma de Einstein en LaTeX?",
+          answer:
+            "No hay ningún comando especial: repetir un índice arriba y abajo implica la suma, así que A^i B_i significa \\sum_i A^i B_i. Escribe el \\sum explícito solo cuando quieras mostrarlo, y usa índices griegos como \\mu y \\nu para las componentes del espacio-tiempo.",
+        },
+      ],
+    },
+    topology: {
+      title: "Símbolos de topología en LaTeX: clausura, frontera, homeomorfismo y aleph",
+      intro: (
+        <IntroP>
+          Los símbolos de topología en LaTeX están en su mayoría integrados. La clausura (adherencia)
+          de un conjunto es <Cmd>{"\\overline{A}"}</Cmd>, su frontera es <Cmd>{"\\partial A"}</Cmd>{" "}
+          y su interior es <Cmd>{"A^\\circ"}</Cmd> o <Cmd>{"\\operatorname{int} A"}</Cmd>. La
+          relación de homeomorfismo suele escribirse <Cmd>{"\\cong"}</Cmd> (≅), la equivalencia
+          homotópica <Cmd>{"\\simeq"}</Cmd>, el grupo fundamental <Cmd>{"\\pi_1(X)"}</Cmd> y la
+          homología <Cmd>{"H_n(X)"}</Cmd>. La notación de conjuntos se mantiene: pertenece a es{" "}
+          <Cmd>{"\\in"}</Cmd> y subconjunto o igual es <Cmd>{"\\subseteq"}</Cmd>. Para los
+          cardinales, <Cmd>{"\\aleph_0"}</Cmd> está integrado y <Cmd>{"\\beth"}</Cmd> viene de
+          amssymb. La tabla recoge los símbolos de topología más usados, con el paquete que
+          necesita cada uno; la lista completa aparece más abajo.
+        </IntroP>
+      ),
+      quickRefHeading: "Referencia rápida: los símbolos de topología más usados",
+      use: {
+        "\\overline{A}": "Clausura (adherencia)",
+        "\\partial A": "Frontera",
+        "A^\\circ": "Interior (también \\operatorname{int} A)",
+        "X \\cong Y": "Homeomorfos",
+        "X \\simeq Y": "Homotópicamente equivalentes",
+        "\\pi_1(X, x_0)": "Grupo fundamental",
+        "H_n(X)": "n-ésimo grupo de homología",
+        "\\mathcal{T}": "Topología sobre un conjunto",
+        "x \\in U \\subseteq X": "Pertenece a, subconjunto o igual",
+        "S^n": "n-esfera",
+        "\\aleph_0": "Alef cero (cardinal numerable)",
+        "\\beth_1": "Número bet",
+      },
+      faqHeading: "Preguntas frecuentes sobre los símbolos de topología en LaTeX",
+      faq: [
+        {
+          question: "¿Cómo escribo el símbolo de homeomorfismo en LaTeX?",
+          answer:
+            "La mayoría de los textos usa \\cong (≅): $X \\cong Y$. Algunos autores usan \\approx (≈) o \\simeq (≃), aunque \\simeq suele indicar equivalencia homotópica. Los tres están integrados; indica tu convención una vez si puede haber ambigüedad.",
+        },
+        {
+          question: "¿Cómo escribo el símbolo bet en LaTeX?",
+          answer:
+            "\\beth imprime ℶ y necesita \\usepackage{amssymb}, que también ofrece \\gimel y \\daleth. \\aleph (ℵ) está integrado. Los cardinales llevan subíndices como de costumbre: \\aleph_0, \\beth_1, y \\mathfrak{c} (amssymb) para la cardinalidad del continuo.",
+        },
+        {
+          question: "¿Cómo escribo la clausura y el interior de un conjunto en LaTeX?",
+          answer:
+            "La clausura es \\overline{A}, o \\bar{A} para una sola letra, o \\operatorname{cl}(A). El interior es A^\\circ o \\operatorname{int}(A) con amsmath, y la frontera es \\partial A. Usa \\overline en lugar de \\bar para todo lo que tenga más de una letra.",
+        },
+      ],
+    },
+    trigonometry: {
+      title: "Trigonometría en LaTeX: seno, coseno, tangente y funciones trigonométricas inversas",
+      intro: (
+        <IntroP>
+          Las funciones trigonométricas de LaTeX tienen sus propios comandos: <Cmd>{"\\sin"}</Cmd>,{" "}
+          <Cmd>{"\\cos"}</Cmd>, <Cmd>{"\\tan"}</Cmd>, <Cmd>{"\\cot"}</Cmd>, <Cmd>{"\\sec"}</Cmd> y{" "}
+          <Cmd>{"\\csc"}</Cmd>, además de las inversas <Cmd>{"\\arcsin"}</Cmd>,{" "}
+          <Cmd>{"\\arccos"}</Cmd> y <Cmd>{"\\arctan"}</Cmd> y las hiperbólicas{" "}
+          <Cmd>{"\\sinh"}</Cmd>, <Cmd>{"\\cosh"}</Cmd> y <Cmd>{"\\tanh"}</Cmd>. Usa siempre el
+          comando en lugar de escribir sin, porque el comando pone el nombre en letra recta con el
+          espaciado correcto, mientras que sin escrito tal cual imprime tres variables en cursiva.
+          Las potencias van justo después del nombre, <Cmd>{"\\sin^2 \\theta"}</Cmd>, y los grados
+          son un círculo en superíndice, <Cmd>{"30^\\circ"}</Cmd>. La tabla recoge los símbolos
+          trigonométricos más usados, con el paquete que necesita cada uno; la lista completa
+          aparece más abajo.
+        </IntroP>
+      ),
+      quickRefHeading: "Referencia rápida: funciones e identidades trigonométricas",
+      use: {
+        "\\sin \\theta": "Seno",
+        "\\cos \\theta": "Coseno",
+        "\\tan \\theta": "Tangente",
+        "\\sec \\theta": "Secante (\\csc cosecante, \\cot cotangente)",
+        "\\arcsin x": "Arcoseno",
+        "\\arccos x": "Arcocoseno",
+        "\\arctan x": "Arcotangente",
+        "\\sin^{-1} x": "Arcoseno, notación de potencia",
+        "\\sin^2 \\theta + \\cos^2 \\theta = 1": "Identidad pitagórica",
+        "\\sinh x": "Seno hiperbólico (\\cosh, \\tanh)",
+        "30^\\circ": "Grados",
+        "\\operatorname{arcsec} x": "Arcosecante (no integrado)",
+      },
+      faqHeading: "Preguntas frecuentes sobre la trigonometría en LaTeX",
+      faq: [
+        {
+          question: "¿Cómo escribo seno, coseno y tangente en LaTeX?",
+          answer:
+            "Usa los comandos integrados en modo matemático: $\\sin x$, $\\cos x$, $\\tan x$, y \\cot, \\sec y \\csc para las recíprocas. Escribir sin sin barra invertida imprime el producto en cursiva s·i·n, y por eso existen los comandos.",
+        },
+        {
+          question: "¿Cómo escribo funciones trigonométricas inversas como el arcoseno en LaTeX?",
+          answer:
+            "\\arcsin, \\arccos y \\arctan están integrados, igual que \\sinh, \\cosh, \\tanh y \\coth. \\arcsec, \\arccsc, \\arccot, \\sech y \\csch no lo están: escribe \\operatorname{arcsec} x, o añade \\DeclareMathOperator{\\arcsec}{arcsec} al preámbulo con amsmath. La notación de potencia \\sin^{-1} x también funciona.",
+        },
+        {
+          question: "¿Cómo escribo seno al cuadrado y grados en LaTeX?",
+          answer:
+            "Pon el exponente justo después del comando: \\sin^2 \\theta. Para los grados usa un círculo como superíndice, $30^\\circ$, o \\ang{30} de siunitx para un formato uniforme en el texto y las tablas.",
+        },
+      ],
+    },
+    units: {
+      title: "Unidades en LaTeX: siunitx, símbolo de grado y unidades del SI",
+      intro: (
+        <IntroP>
+          Las unidades en LaTeX son más fáciles con el paquete siunitx:{" "}
+          <Cmd>{"\\qty{9.81}{\\metre\\per\\second\\squared}"}</Cmd> compone un número y su unidad
+          con letras rectas y el espaciado correcto, <Cmd>{"\\unit{\\kilo\\gram}"}</Cmd> imprime
+          una unidad sola y <Cmd>{"\\num{6.022e23}"}</Cmd> da formato a un número. Sin siunitx,
+          pon las unidades en letra recta a mano, como en <Cmd>{"9.81\\,\\mathrm{m/s^2}"}</Cmd>,
+          con un espacio fino <Cmd>{"\\,"}</Cmd> entre el número y la unidad. El símbolo de grado
+          es <Cmd>{"^\\circ"}</Cmd> en modo matemático o{" "}
+          <Cmd>{"\\qty{20}{\\degreeCelsius}"}</Cmd> con siunitx, y el ångström es{" "}
+          <Cmd>{"\\AA"}</Cmd>. La tabla recoge los comandos de unidades más usados, con el paquete
+          que necesita cada uno; la lista completa aparece más abajo.
+        </IntroP>
+      ),
+      quickRefHeading: "Referencia rápida: unidades con y sin siunitx",
+      use: {
+        "\\qty{9.81}{\\metre\\per\\second\\squared}": "Magnitud con unidad",
+        "\\unit{\\kilo\\gram}": "Unidad sola",
+        "\\num{6.022e23}": "Número con formato",
+        "\\qty{20}{\\degreeCelsius}": "Grados Celsius",
+        "\\ang{45}": "Ángulo en grados",
+        "\\qty{10}{\\micro\\metre}": "Prefijo del SI (micrómetro)",
+        "\\qty{5}{\\kilo\\ohm}": "Kiloohmio",
+        "9.81\\,\\mathrm{m/s^2}": "Unidades a mano, sin paquete",
+        "^\\circ": "Signo de grado en modo matemático",
+        "\\AA": "Ångström (modo texto)",
+        "\\textdegree": "Signo de grado en modo texto",
+        "\\hbar": "Constante de Planck reducida",
+      },
+      faqHeading: "Preguntas frecuentes sobre las unidades en LaTeX",
+      faq: [
+        {
+          question: "¿Cómo escribo unidades en LaTeX?",
+          answer:
+            "Carga \\usepackage{siunitx} y escribe \\qty{3.0}{\\metre\\per\\second} para un valor con unidad, \\unit{\\kilo\\gram} para una unidad sola y \\num{1.5e-3} para un número. La versión 3 de siunitx usa \\qty y \\unit; los antiguos \\SI y \\si siguen funcionando. Sin el paquete, escribe 3.0\\,\\mathrm{m/s}.",
+        },
+        {
+          question: "¿Cómo escribo el símbolo de grado en LaTeX?",
+          answer:
+            "En modo matemático usa un círculo como superíndice: $90^\\circ$, o $20^\\circ\\mathrm{C}$ para la temperatura. En texto, \\textdegree imprime °. Con siunitx, \\ang{90} y \\qty{20}{\\degreeCelsius} dan un espaciado uniforme en todas partes.",
+        },
+        {
+          question: "¿siunitx entra en conflicto con el paquete physics?",
+          answer:
+            "Ambos paquetes definen un comando \\qty, así que cargarlos juntos provoca un conflicto. Si necesitas physics, usa para las magnitudes con unidades la forma antigua de siunitx \\SI{9.81}{\\metre\\per\\second\\squared}, que la versión 3 de siunitx sigue admitiendo.",
+        },
+      ],
+    },
+    accents: {
+      title: "Acentos y letras especiales en LaTeX",
+      intro: (
+        <>
+          <IntroP>
+            En el texto, LaTeX construye las letras acentuadas a partir de un comando y la letra
+            base: el acento agudo <Cmd>{"\\'e"}</Cmd> (é), el grave <Cmd>{"\\`e"}</Cmd> (è), el
+            circunflejo <Cmd>{"\\^e"}</Cmd> (ê), la diéresis <Cmd>{"\\\"o"}</Cmd> (ö), la tilde{" "}
+            <Cmd>{"\\~n"}</Cmd> (ñ), la cedilla <Cmd>{"\\c{c}"}</Cmd> (ç), el carón{" "}
+            <Cmd>{"\\v{s}"}</Cmd> (š), la breve <Cmd>{"\\u{a}"}</Cmd> (ă), el doble acento agudo
+            húngaro <Cmd>{"\\H{o}"}</Cmd> (ő), el punto superior <Cmd>{"\\.z"}</Cmd> (ż), el macrón{" "}
+            <Cmd>{"\\=a"}</Cmd> (ā), el punto inferior <Cmd>{"\\d{a}"}</Cmd>, la barra inferior{" "}
+            <Cmd>{"\\b{a}"}</Cmd>, el anillo <Cmd>{"\\r{a}"}</Cmd> (å) y el ogonek{" "}
+            <Cmd>{"\\k{e}"}</Cmd> (ę). Algunas letras completas tienen su propio comando:{" "}
+            <Cmd>{"\\l"}</Cmd> (ł), <Cmd>{"\\o"}</Cmd> (ø), <Cmd>{"\\ae"}</Cmd> (æ) y{" "}
+            <Cmd>{"\\ss"}</Cmd> (ß). Para acentuar una i o una j, usa las formas sin punto{" "}
+            <Cmd>{"\\i"}</Cmd> y <Cmd>{"\\j"}</Cmd>, como en <Cmd>{"\\'{\\i}"}</Cmd> para í, de
+            modo que el acento no choque con el punto.
+          </IntroP>
+          <IntroP>
+            El modo matemático usa un conjunto distinto, que se coloca sobre una variable y no
+            sobre una letra del texto: <Cmd>{"\\hat{x}"}</Cmd>, <Cmd>{"\\bar{x}"}</Cmd>,{" "}
+            <Cmd>{"\\vec{v}"}</Cmd>, <Cmd>{"\\tilde{x}"}</Cmd>, <Cmd>{"\\dot{x}"}</Cmd> y{" "}
+            <Cmd>{"\\ddot{x}"}</Cmd> para derivadas, <Cmd>{"\\acute"}</Cmd>,{" "}
+            <Cmd>{"\\grave"}</Cmd>, <Cmd>{"\\breve"}</Cmd> y <Cmd>{"\\check"}</Cmd>. Para más de un
+            carácter, LaTeX básico ofrece los acentos extensibles <Cmd>{"\\widehat{xy}"}</Cmd> y{" "}
+            <Cmd>{"\\widetilde{xy}"}</Cmd>, además de <Cmd>{"\\overline{z}"}</Cmd> para conjugados
+            y <Cmd>{"\\overrightarrow{AB}"}</Cmd> para vectores; ninguno necesita amsmath.
+          </IntroP>
+          <IntroP>
+            Desde 2018 LaTeX lee UTF-8 de forma predeterminada, así que puedes escribir é, ö o ñ
+            directamente en el código fuente (las instalaciones antiguas necesitan{" "}
+            <Cmd>{"\\usepackage[utf8]{inputenc}"}</Cmd>). Añade{" "}
+            <Cmd>{"\\usepackage[T1]{fontenc}"}</Cmd> para que las letras acentuadas sean glifos
+            únicos que se dividan en sílabas y se copien correctamente, en lugar de componerse a
+            partir de dos piezas. Para un ejemplo práctico, consulta nuestra guía de{" "}
+            <IntroLink
+              href="https://www.useoctree.com/blog/spanish-characters-latex-accents-special-letters"
+              external
+            >
+              caracteres del español y acentos en LaTeX
+            </IntroLink>
+            , o la introducción a los{" "}
+            <IntroLink href="https://www.useoctree.com/learn/special-characters" external>
+              caracteres especiales en LaTeX
+            </IntroLink>
+            . Haz clic en cualquier tarjeta de abajo para copiar su comando.
+          </IntroP>
+        </>
+      ),
+    },
   },
 };
 

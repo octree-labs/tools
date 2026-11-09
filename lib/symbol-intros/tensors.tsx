@@ -11,7 +11,7 @@ import {
   type QuickRefRow,
 } from "./ui";
 
-const quickRef: QuickRefRow[] = [
+export const quickRef: QuickRefRow[] = [
   { latex: "T^{ij}_{kl}", use: "Tensor with upper and lower indices" },
   { latex: "T^{i}{}_{j}", use: "Staggered indices (order matters)" },
   {

@@ -11,7 +11,7 @@ import {
   type QuickRefRow,
 } from "./ui";
 
-const quickRef: QuickRefRow[] = [
+export const quickRef: QuickRefRow[] = [
   { latex: "G = (V, E)", use: "Graph with vertex set V and edge set E" },
   { latex: "u \\sim v", use: "u is adjacent to v" },
   { latex: "\\deg(v)", use: "Degree of a vertex" },

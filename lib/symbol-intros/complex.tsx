@@ -11,7 +11,7 @@ import {
   type QuickRefRow,
 } from "./ui";
 
-const quickRef: QuickRefRow[] = [
+export const quickRef: QuickRefRow[] = [
   { latex: "\\mathbb{C}", use: "Set of complex numbers", pkg: "amssymb" },
   { latex: "z = a + bi", use: "Rectangular form" },
   { latex: "\\bar{z}", use: "Complex conjugate (one letter)" },

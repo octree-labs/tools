@@ -11,7 +11,7 @@ import {
   type QuickRefRow,
 } from "./ui";
 
-const quickRef: QuickRefRow[] = [
+export const quickRef: QuickRefRow[] = [
   { latex: "a \\bmod n", use: "Modulo as a binary operation" },
   { latex: "a \\equiv b \\pmod{n}", use: "Congruence with (mod n)" },
   { latex: "a \\equiv b \\mod{n}", use: "Congruence without parentheses", pkg: "amsmath" },

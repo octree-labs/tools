@@ -11,7 +11,7 @@ import {
   type QuickRefRow,
 } from "./ui";
 
-const quickRef: QuickRefRow[] = [
+export const quickRef: QuickRefRow[] = [
   { latex: "\\perp", use: "Perpendicular, orthogonal" },
   { latex: "\\parallel", use: "Parallel" },
   { latex: "\\nparallel", use: "Not parallel", pkg: "amssymb" },

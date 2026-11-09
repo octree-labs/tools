@@ -11,7 +11,7 @@ import {
   type QuickRefRow,
 } from "./ui";
 
-const quickRef: QuickRefRow[] = [
+export const quickRef: QuickRefRow[] = [
   { latex: "\\oplus", use: "Circle plus: direct sum, XOR" },
   { latex: "\\otimes", use: "Circle times: tensor product" },
   { latex: "\\odot", use: "Circle dot: Hadamard product" },

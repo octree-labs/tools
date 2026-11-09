@@ -11,7 +11,7 @@ import {
   type QuickRefRow,
 } from "./ui";
 
-const quickRef: QuickRefRow[] = [
+export const quickRef: QuickRefRow[] = [
   { latex: "\\left( \\frac{a}{b} \\right)", use: "Parentheses that grow to fit the content" },
   { latex: "\\{ x \\}", use: "Curly braces (escaped)" },
   { latex: "\\langle x \\rangle", use: "Angle brackets, inner product" },

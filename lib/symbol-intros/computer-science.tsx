@@ -11,7 +11,7 @@ import {
   type QuickRefRow,
 } from "./ui";
 
-const quickRef: QuickRefRow[] = [
+export const quickRef: QuickRefRow[] = [
   { latex: "O(n \\log n)", use: "Big O (upper bound)" },
   { latex: "\\mathcal{O}(n)", use: "Big O, calligraphic style" },
   { latex: "\\Omega(n)", use: "Big Omega (lower bound)" },
