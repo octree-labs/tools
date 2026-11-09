@@ -1,11 +1,16 @@
 import LatexToMarkdownClient from "./client";
 import LatexToMarkdownSeoContent from "./seo-content";
 
-export default function LatexToMarkdownPage() {
+export default async function LatexToMarkdownPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
   return (
     <>
       <LatexToMarkdownClient />
-      <LatexToMarkdownSeoContent />
+      <LatexToMarkdownSeoContent locale={locale} />
     </>
   );
 }

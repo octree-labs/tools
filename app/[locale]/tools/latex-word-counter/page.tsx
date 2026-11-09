@@ -1,11 +1,16 @@
 import LatexWordCounterClient from "./client";
 import LatexWordCounterSeoContent from "./seo-content";
 
-export default function LatexWordCounterPage() {
+export default async function LatexWordCounterPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
   return (
     <>
       <LatexWordCounterClient />
-      <LatexWordCounterSeoContent />
+      <LatexWordCounterSeoContent locale={locale} />
     </>
   );
 }

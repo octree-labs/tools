@@ -229,7 +229,12 @@ function ConverterCard({ converter }: { converter: Converter }) {
   );
 }
 
-export default function LatexConverterPage() {
+export default async function LatexConverterPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
   const allConverters = [...toLatex, ...fromLatex];
 
   return (
@@ -311,7 +316,7 @@ export default function LatexConverterPage() {
           <OctreeCTA source="tools:latex-converter" />
         </div>
       </div>
-      <LatexConverterSeoContent />
+      <LatexConverterSeoContent locale={locale} />
     </div>
   );
 }

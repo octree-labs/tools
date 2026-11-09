@@ -195,7 +195,7 @@
     },
     "citationGenerator": {
       "title": "LaTeX Citation Generator",
-      "subtitle": "Gumawa ng BibTeX citations mula sa article details, DOIs, o URLs",
+      "subtitle": "Gumawa ng BibTeX citations mula sa mga detalyeng ipe-paste mo",
       "citationDetailsLabel": "Mga Detalye ng Citation",
       "citationDetailsHint": "Ilagay ang article details, DOI, o URL",
       "placeholder": "Ilagay ang mga detalye ng citation...",
@@ -438,7 +438,7 @@
     },
     "citationGenerator": {
       "title": "Citation Generator",
-      "description": "Gumawa ng BibTeX citations mula sa DOIs o article details"
+      "description": "Gumawa ng BibTeX citations mula sa mga detalyeng ipe-paste mo"
     },
     "mathmlToLatex": {
       "title": "MathML sa LaTeX",
@@ -1156,7 +1156,7 @@
       },
       "citationGenerator": {
         "title": "Generator ng LaTeX Citation - BibTeX Generator",
-        "description": "Gumawa ng BibTeX citations mula sa DOIs, URLs, o detalye ng artikulo. Libreng LaTeX citation tool.",
+        "description": "Gumawa ng BibTeX citations mula sa mga detalyeng ipe-paste mo: pamagat, mga may-akda, taon at publikasyon. Libreng LaTeX citation tool.",
         "keywords": "LaTeX citation generator, BibTeX generator, DOI sa BibTeX, citation generator, reference generator, bibliography generator, cite generator, APA citation LaTeX, MLA citation LaTeX, Chicago citation, IEEE citation, Harvard referencing LaTeX, paano gumawa ng citation, libreng reference generator, aklatan citation, journal citation, book citation, website citation, research paper citation, thesis bibliography, academic referencing, cita ng libro, sanggunian generator, reference list maker"
       },
       "latexPreview": {

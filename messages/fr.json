@@ -185,7 +185,7 @@
       },
       "citationGenerator": {
         "title": "Générateur de citations LaTeX",
-        "subtitle": "Générez des citations BibTeX à partir de détails d'article, DOI ou URL",
+        "subtitle": "Générez des citations BibTeX à partir des informations que vous collez",
         "citationDetailsLabel": "Détails de la citation",
         "citationDetailsHint": "Entrez les détails de l'article, DOI ou URL",
         "placeholder": "Entrez les détails de la citation...",
@@ -428,7 +428,7 @@
       },
       "citationGenerator": {
         "title": "Générateur de citations",
-        "description": "Générez des citations BibTeX à partir de DOI ou de détails d'article"
+        "description": "Générez des citations BibTeX à partir des informations que vous collez"
       },
       "mathmlToLatex": {
         "title": "MathML vers LaTeX",
@@ -1000,7 +1000,7 @@
         },
         "citationGenerator": {
           "title": "Générateur de Citations LaTeX - Générateur BibTeX",
-          "description": "Générez des citations BibTeX à partir de DOIs, URLs ou détails d'articles. Outil de citation LaTeX gratuit.",
+          "description": "Générez des citations BibTeX à partir des informations que vous collez : titre, auteurs, année et lieu de publication. Outil de citation LaTeX gratuit.",
           "keywords": "générateur de citations LaTeX, générateur BibTeX, DOI vers BibTeX, générateur de citations, générateur de références, générateur de bibliographie, générateur de citations académiques, citation APA LaTeX, citation MLA LaTeX, citation Chicago, citation IEEE, référencement Harvard LaTeX, créer bibliographie"
         },
         "latexPreview": {

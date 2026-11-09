@@ -191,7 +191,7 @@
       },
       "citationGenerator": {
         "title": "Generador de citas LaTeX",
-        "subtitle": "Genere citas BibTeX a partir de detalles de artículos, DOI o URL",
+        "subtitle": "Genere citas BibTeX a partir de los datos que pegue",
         "citationDetailsLabel": "Detalles de la cita",
         "citationDetailsHint": "Ingrese los detalles del artículo, DOI o URL",
         "placeholder": "Ingrese los detalles de la cita...",
@@ -780,7 +780,7 @@
       },
       "citationGenerator": {
         "title": "Generador de Citas",
-        "description": "Genera citas BibTeX a partir de DOIs o detalles de artículos"
+        "description": "Genera citas BibTeX a partir de los datos que pegues"
       },
       "mathmlToLatex": {
         "title": "MathML a LaTeX",
@@ -1006,7 +1006,7 @@
         },
         "citationGenerator": {
           "title": "Generador de Citas LaTeX - Generador BibTeX",
-          "description": "Genera citas BibTeX desde DOIs, URLs o detalles de artículos. Herramienta de citas LaTeX gratuita.",
+          "description": "Genera citas BibTeX a partir de los datos que pegues: título, autores, año y revista o editorial. Herramienta de citas LaTeX gratuita.",
           "keywords": "generador de citas LaTeX, generador BibTeX, DOI a BibTeX, generador de citas, generador de referencias, generador de bibliografía, generador de citas bibliográficas, cita APA LaTeX, cita MLA LaTeX, cita Chicago, cita IEEE, referencia Harvard LaTeX"
         },
         "latexPreview": {

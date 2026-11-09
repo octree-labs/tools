@@ -195,7 +195,7 @@
     },
     "citationGenerator": {
       "title": "LaTeX Citation Generator",
-      "subtitle": "Generate BibTeX citations from article details, DOIs, or URLs",
+      "subtitle": "Generate BibTeX citations from the details you paste",
       "citationDetailsLabel": "Citation Details",
       "citationDetailsHint": "Enter article details, DOI, or URL",
       "placeholder": "Enter citation details...",
@@ -438,7 +438,7 @@
     },
     "citationGenerator": {
       "title": "Citation Generator",
-      "description": "Generate BibTeX citations from DOIs or article details"
+      "description": "Generate BibTeX citations from the details you paste"
     },
     "mathmlToLatex": {
       "title": "MathML to LaTeX",
@@ -1156,7 +1156,7 @@
       },
       "citationGenerator": {
         "title": "LaTeX Citation Generator - BibTeX Generator",
-        "description": "Generate BibTeX citations from DOIs, URLs, or article details. Free LaTeX citation tool.",
+        "description": "Generate BibTeX citations from the details you paste: title, authors, year and venue. Free LaTeX citation tool.",
         "keywords": "LaTeX citation generator, BibTeX generator, DOI to BibTeX, citation generator, reference generator, bibliography generator, cite generator, APA citation LaTeX, MLA citation LaTeX, Chicago citation, IEEE citation, Harvard referencing LaTeX"
       },
       "latexPreview": {

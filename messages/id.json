@@ -195,7 +195,7 @@
     },
     "citationGenerator": {
       "title": "Generator Sitasi LaTeX",
-      "subtitle": "Hasilkan sitasi BibTeX dari detail artikel, DOI, atau URL",
+      "subtitle": "Hasilkan sitasi BibTeX dari detail yang Anda tempel",
       "citationDetailsLabel": "Detail Sitasi",
       "citationDetailsHint": "Masukkan detail artikel, DOI, atau URL",
       "placeholder": "Masukkan detail sitasi...",
@@ -438,7 +438,7 @@
     },
     "citationGenerator": {
       "title": "Generator Sitasi",
-      "description": "Hasilkan sitasi BibTeX dari DOI atau detail artikel"
+      "description": "Hasilkan sitasi BibTeX dari detail yang Anda tempel"
     },
     "mathmlToLatex": {
       "title": "MathML ke LaTeX",
@@ -1156,7 +1156,7 @@
       },
       "citationGenerator": {
         "title": "Generator Sitasi LaTeX - Generator BibTeX",
-        "description": "Hasilkan sitasi BibTeX dari DOI, URL, atau detail artikel. Alat sitasi LaTeX gratis.",
+        "description": "Hasilkan sitasi BibTeX dari detail yang Anda tempel: judul, penulis, tahun, dan jurnal atau penerbit. Alat sitasi LaTeX gratis.",
         "keywords": "generator sitasi LaTeX, generator BibTeX, DOI ke BibTeX, generator sitasi, generator referensi, generator bibliografi, generator kutipan, sitasi APA LaTeX, sitasi MLA LaTeX, sitasi Chicago, sitasi IEEE, referensi Harvard LaTeX"
       },
       "latexPreview": {

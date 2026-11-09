@@ -1,6 +1,6 @@
-import { ToolSeoContent } from "@/components/ToolSeoContent";
 import { Cmd, IntroLink } from "@/lib/symbol-intros/ui";
 import type { FaqJsonLdItem } from "@/lib/json-ld";
+import { LocalizedToolSeoContent } from "@/lib/tool-seo";
 
 const steps = [
   {
@@ -73,9 +73,11 @@ const faq: FaqJsonLdItem[] = [
   },
 ];
 
-export default function MermaidToLatexSeoContent() {
+export default function MermaidToLatexSeoContent({ locale }: { locale?: string }) {
   return (
-    <ToolSeoContent
+    <LocalizedToolSeoContent
+      slug="mermaid-to-latex"
+      locale={locale}
       heading="Mermaid to TikZ"
       intro={
         <>

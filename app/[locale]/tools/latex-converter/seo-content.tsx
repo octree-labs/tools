@@ -1,6 +1,6 @@
-import { ToolSeoContent } from "@/components/ToolSeoContent";
 import { IntroLink } from "@/lib/symbol-intros/ui";
 import type { FaqJsonLdItem } from "@/lib/json-ld";
+import { LocalizedToolSeoContent } from "@/lib/tool-seo";
 
 const steps = [
   {
@@ -55,9 +55,11 @@ const faq: FaqJsonLdItem[] = [
   },
 ];
 
-export default function LatexConverterSeoContent() {
+export default function LatexConverterSeoContent({ locale }: { locale?: string }) {
   return (
-    <ToolSeoContent
+    <LocalizedToolSeoContent
+      slug="latex-converter"
+      locale={locale}
       heading="LaTeX converters: convert to and from LaTeX online"
       intro={
         <>

@@ -195,7 +195,7 @@
     },
     "citationGenerator": {
       "title": "LaTeX引用生成",
-      "subtitle": "記事の詳細、DOI、またはURLからBibTeX引用を生成",
+      "subtitle": "貼り付けた文献情報からBibTeX引用を生成",
       "citationDetailsLabel": "引用の詳細",
       "citationDetailsHint": "記事の詳細、DOI、またはURLを入力",
       "placeholder": "引用の詳細を入力...",
@@ -438,7 +438,7 @@
     },
     "citationGenerator": {
       "title": "引用生成",
-      "description": "DOIや記事詳細からBibTeX引用を生成"
+      "description": "貼り付けた文献情報からBibTeX引用を生成"
     },
     "mathmlToLatex": {
       "title": "MathMLからLaTeX",
@@ -1156,7 +1156,7 @@
       },
       "citationGenerator": {
         "title": "LaTeX引用生成 - BibTeX生成",
-        "description": "DOI、URL、または記事詳細からBibTeX引用を生成。無料LaTeX引用ツール。",
+        "description": "貼り付けた文献情報（タイトル、著者、年、掲載誌や出版社）からBibTeX引用を生成。無料LaTeX引用ツール。",
         "keywords": "LaTeX引用生成, BibTeX生成, DOIからBibTeX, 引用生成, 参考文献生成, 文献目録生成, 引用生成器, APA引用LaTeX, MLA引用LaTeX, シカゴ引用, IEEE引用, ハーバード参照LaTeX"
       },
       "latexPreview": {

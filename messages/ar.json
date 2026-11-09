@@ -185,7 +185,7 @@
       },
       "citationGenerator": {
         "title": "مولد استشهادات LaTeX",
-        "subtitle": "قم بإنشاء استشهادات BibTeX من تفاصيل المقال أو DOI أو URL",
+        "subtitle": "أنشئ استشهادات BibTeX من التفاصيل التي تلصقها",
         "citationDetailsLabel": "تفاصيل الاستشهاد",
         "citationDetailsHint": "أدخل تفاصيل المقال أو DOI أو URL",
         "placeholder": "أدخل تفاصيل الاستشهاد...",
@@ -428,7 +428,7 @@
       },
       "citationGenerator": {
         "title": "مولد الاستشهادات",
-        "description": "إنشاء استشهادات BibTeX من DOIs أو تفاصيل المقالات"
+        "description": "أنشئ استشهادات BibTeX من التفاصيل التي تلصقها"
       },
       "mathmlToLatex": {
         "title": "MathML إلى LaTeX",
@@ -742,7 +742,7 @@
         },
         "citationGenerator": {
           "title": "مولد الاستشهادات LaTeX - مولد BibTeX",
-          "description": "أنشئ استشهادات BibTeX من DOIs أو URLs أو تفاصيل المقالات. أداة استشهاد LaTeX مجانية.",
+          "description": "أنشئ استشهادات BibTeX من التفاصيل التي تلصقها: العنوان والمؤلفون والسنة ومكان النشر. أداة استشهاد LaTeX مجانية.",
           "keywords": "مولد استشهادات LaTeX، مولد BibTeX، DOI إلى BibTeX، مولد الاستشهادات، مولد المراجع، مولد قائمة المراجع، مولد الاقتباسات، استشهاد APA LaTeX، استشهاد MLA LaTeX، استشهاد Chicago، استشهاد IEEE، مرجع Harvard LaTeX، توثيق المراجع، إنشاء قائمة مراجع، تنسيق المصادر العلمية"
         },
         "latexPreview": {

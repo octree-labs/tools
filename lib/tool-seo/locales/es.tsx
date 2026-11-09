@@ -1,4 +1,5 @@
 import { Cmd, IntroLink } from "@/lib/symbol-intros/ui";
+import { GuideCode, GuidePre, GuideTable } from "@/lib/template-guides/ui";
 import type { ToolSeoLocale } from "..";
 
 const translations: ToolSeoLocale = {
@@ -757,6 +758,1224 @@ const translations: ToolSeoLocale = {
         texto plano se escriben directamente en el cuadro de arriba; para seguir editando el
         resultado como documento completo, usa el{" "}
         <IntroLink href="/tools/latex-preview">editor de LaTeX en línea</IntroLink>.
+      </>
+    ),
+  },
+
+  "arxiv-to-latex": {
+    heading: "De arXiv a LaTeX: descargar el código fuente LaTeX de cualquier artículo",
+    intro: (
+      <>
+        <p>
+          La mayoría de los artículos de arXiv se escribieron en LaTeX, y arXiv conserva el código
+          fuente que subieron los autores: los archivos .tex, la bibliografía, los archivos de
+          estilo y las figuras. Esta herramienta obtiene ese código fuente LaTeX de arXiv por ti.
+          Pega un ID o un enlace y podrás explorar los archivos, leer el archivo .tex principal y
+          descargar el código fuente como .zip, sin tener que descomprimir tú mismo un .tar.gz.
+        </p>
+        <p>
+          Las descargas llegan directamente del servicio de e-prints de arXiv y no se guarda nada.
+          Se admiten códigos fuente de hasta 30 MB y 200 archivos. Los artículos enviados solo
+          como PDF no tienen TeX que descargar; la herramienta lo indica y te sugiere un conversor.
+        </p>
+      </>
+    ),
+    stepsHeading: "Cómo descargar el código fuente TeX de arXiv",
+    steps: [
+      {
+        title: "Pega el ID o el enlace de arXiv",
+        body: "Introduce un ID como 2401.12345, un ID del formato antiguo como hep-th/9711200 o cualquier enlace arxiv.org/abs o arxiv.org/pdf. Añade una versión (2401.12345v2) para obtener esa revisión exacta; sin ella, obtienes la más reciente.",
+      },
+      {
+        title: "Explora el código fuente LaTeX",
+        body: "La herramienta descarga el e-print del artículo desde arXiv, lo descomprime y muestra todos los archivos. El archivo .tex principal, el que contiene \\documentclass y \\begin{document}, se abre en el visor; haz clic en cualquier otro archivo .tex, .bib o .sty para leerlo.",
+      },
+      {
+        title: "Descárgalo o edítalo",
+        body: "Descarga el código fuente de arXiv como .zip, o abre el archivo principal en Octree con sus archivos \\input e \\include ya integrados. Sube las figuras del .zip para compilarlo con imágenes.",
+      },
+    ],
+    faqHeading: "Preguntas frecuentes sobre el código fuente LaTeX de arXiv",
+    faq: [
+      {
+        question: "¿Cómo descargo el código fuente LaTeX de un artículo de arXiv?",
+        answer:
+          "Pega el ID o la URL de arXiv del artículo en la herramienta de esta página. Obtiene el código fuente que los autores subieron a arXiv, enumera todos los archivos, muestra el archivo .tex principal y te permite descargarlo todo como .zip. En el propio arxiv.org, los mismos archivos están en el enlace TeX Source de la página del resumen del artículo, empaquetados como .tar.gz.",
+      },
+      {
+        question: "¿Por qué un artículo dice que no tiene código fuente LaTeX?",
+        answer:
+          "Algunos autores solo suben un PDF a arXiv, así que no hay ningún archivo .tex que descargar. Para esos artículos, el conversor de PDF a LaTeX puede recrear el texto y las matemáticas como LaTeX editable, aunque no recupera el código fuente original.",
+      },
+      {
+        question: "¿Cuál es el archivo .tex principal?",
+        answer:
+          "El código fuente de arXiv suele contener varios archivos .tex. La herramienta elige el que el archivo 00README de arXiv marca como principal (top level), si lo hay; si no, el archivo con \\documentclass y \\begin{document} que ningún otro archivo carga con \\input. Las secciones incluidas con \\input o \\include aparecen como archivos separados en el árbol.",
+      },
+      {
+        question: "¿Puedo reutilizar el código fuente LaTeX de un artículo de arXiv?",
+        answer:
+          "El código fuente sirve para ver cómo se compuso un artículo, comprobar una ecuación o tomar prestada una macro. Reutilizar texto, figuras o el artículo completo depende de la licencia que los autores eligieron en arXiv, que aparece en la página del resumen; en cualquier caso, cita a los autores.",
+      },
+    ],
+    related: (
+      <>
+        ¿No hay código fuente en arXiv? Prueba el{" "}
+        <IntroLink href="/tools/pdf-to-latex">conversor de PDF a LaTeX</IntroLink>. Edita y compila
+        el código en el <IntroLink href="/tools/latex-preview">editor de LaTeX en línea</IntroLink>{" "}
+        o cuenta sus palabras con el{" "}
+        <IntroLink href="/tools/latex-word-counter">contador de palabras de LaTeX</IntroLink>.
+      </>
+    ),
+  },
+
+  "citation-generator": {
+    heading: "Generador de citas BibTeX",
+    intro: (
+      <>
+        <p>
+          Este generador de citas BibTeX convierte los datos de un libro, un artículo de revista,
+          una ponencia de congreso o una página web en una entrada BibTeX que puedes pegar en un
+          archivo .bib y citar desde LaTeX. Pega campos estructurados o una referencia en texto
+          libre, y el generador escribe una entrada con un tipo de entrada, una clave de cita y
+          los campos que puede identificar: autor, título, año, revista o booktitle, volumen,
+          páginas, editorial y DOI.
+        </p>
+        <p>
+          Un modelo de IA (OpenAI gpt-4o-mini) escribe las entradas a partir del texto que pegas.
+          No consulta Crossref, PubMed ni el catálogo de ninguna biblioteca, así que un DOI o una
+          URL sin más datos no bastan para obtener un resultado fiable: incluye el título y los
+          autores, y compara el resultado con la fuente. La herramienta es gratuita, no necesita
+          cuenta y exporta un archivo references.bib que funciona con BibTeX, natbib y biblatex.
+        </p>
+      </>
+    ),
+    stepsHeading: "Cómo generar una cita BibTeX",
+    steps: [
+      {
+        title: "Describe la fuente",
+        body: "Pega el título, los autores, el año y la revista, editorial o congreso de un libro, un artículo o una ponencia, en cualquier orden o como una referencia en texto libre. También puedes incluir un DOI o una URL, pero añade los datos que tengas, porque el generador no los consulta.",
+      },
+      {
+        title: "Genera la entrada BibTeX",
+        body: (
+          <>
+            Haz clic en &quot;Generar BibTeX&quot;. La IA elige el tipo de entrada (
+            <Cmd>@article</Cmd>, <Cmd>@book</Cmd>, <Cmd>@inproceedings</Cmd>, etc.), escribe una
+            clave de cita como <Cmd>goodfellow2016deep</Cmd> y rellena los campos que puede
+            identificar.
+          </>
+        ),
+      },
+      {
+        title: "Revísala y guárdala",
+        body: (
+          <>
+            Compara los campos con la página de la editorial; después copia la entrada o haz clic
+            en &quot;Exportar como .bib&quot; para descargar <Cmd>references.bib</Cmd>. La pestaña
+            Vista previa abre en Octree un documento de prueba con natbib que cita todas las
+            claves.
+          </>
+        ),
+      },
+    ],
+    tipsHeading: "Errores comunes de BibTeX y cómo solucionarlos",
+    tips: [
+      {
+        title: "Citation undefined",
+        body: (
+          <>
+            La clave de <Cmd>\cite{"{...}"}</Cmd> debe coincidir exactamente con la que sigue a{" "}
+            <Cmd>@article{"{"}</Cmd>, y el documento necesita{" "}
+            <Cmd>\bibliography{"{references}"}</Cmd> con un estilo como{" "}
+            <Cmd>\bibliographystyle{"{plain}"}</Cmd>. Ejecuta BibTeX y después LaTeX dos veces.
+          </>
+        ),
+      },
+      {
+        title: "Nombres en el orden incorrecto",
+        body: (
+          <>
+            Separa los autores con <Cmd>and</Cmd>, no con comas:{" "}
+            <Cmd>author = {"{Smith, John and Doe, Jane}"}</Cmd>. Una coma dentro de un nombre
+            indica el orden Apellido, Nombre.
+          </>
+        ),
+      },
+      {
+        title: "Desaparecen las mayúsculas",
+        body: (
+          <>
+            Muchos estilos pasan los títulos a minúsculas. Encierra las siglas y los nombres
+            propios entre llaves, por ejemplo <Cmd>{"{BERT}"}</Cmd> o <Cmd>{"{Bayesian}"}</Cmd>,
+            para conservar sus mayúsculas.
+          </>
+        ),
+      },
+    ],
+    faqHeading: "Preguntas frecuentes sobre el generador de citas BibTeX",
+    faq: [
+      {
+        question: "¿Cómo genero una cita BibTeX?",
+        answer:
+          "Pega los datos de la fuente (título, autores, año, revista o editorial) en el cuadro y haz clic en \"Generar BibTeX\". La herramienta devuelve una entrada BibTeX completa con un tipo de entrada, una clave de cita y los campos correspondientes, que puedes copiar o descargar como references.bib.",
+      },
+      {
+        question: "¿Puede crear una entrada BibTeX a partir de un DOI o una URL?",
+        answer:
+          "Puedes pegar un DOI o una URL, pero el generador no los busca en Crossref ni en la web: un modelo de IA escribe la entrada a partir del texto que le das. Con un artículo conocido suele rellenar bien los campos, pero puede equivocarse, así que revisa cada campo o pega el título, los autores y la revista o congreso junto con el DOI.",
+      },
+      {
+        question: "¿Genera citas en formato APA, MLA o IEEE?",
+        answer:
+          "Solo genera BibTeX. El estilo de cita se elige en tu documento LaTeX, por ejemplo con \\bibliographystyle{IEEEtran} o \\bibliographystyle{apalike}, o con biblatex y style=apa, así que la misma entrada .bib puede imprimirse en cualquier estilo.",
+      },
+      {
+        question: "¿El generador de BibTeX es gratis?",
+        answer:
+          "Sí. Es gratis y no necesita cuenta. En esta página no se guarda nada, así que copia la entrada o exporta el archivo .bib antes de salir.",
+      },
+    ],
+    related: (
+      <>
+        Consulta ejemplos prácticos en la{" "}
+        <IntroLink href="https://www.useoctree.com/learn/bibliography-examples" external>
+          guía de bibliografías en LaTeX
+        </IntroLink>
+        , empieza un artículo con las <IntroLink href="/templates">plantillas de LaTeX</IntroLink>{" "}
+        o compila tu documento en el{" "}
+        <IntroLink href="/tools/latex-preview">editor de LaTeX en línea</IntroLink>.
+      </>
+    ),
+  },
+
+  "html-to-latex": {
+    heading: "Conversor de HTML a LaTeX: convertir HTML a LaTeX en línea",
+    intro: (
+      <>
+        <p>
+          Este conversor de HTML a LaTeX transforma marcado web en un documento LaTeX completo y
+          compilable. Pega HTML en el editor y un modelo de IA (OpenAI gpt-4o-mini) traduce cada
+          elemento a su equivalente en LaTeX: los encabezados <Cmd>{"<h1>"}</Cmd> a{" "}
+          <Cmd>{"<h3>"}</Cmd> pasan a secciones, <Cmd>{"<ul>"}</Cmd> y <Cmd>{"<ol>"}</Cmd> a
+          itemize y enumerate, <Cmd>{"<table>"}</Cmd> a tabular, y <Cmd>{"<strong>"}</Cmd>,{" "}
+          <Cmd>{"<em>"}</Cmd>, <Cmd>{"<code>"}</Cmd> y los enlaces a sus comandos de LaTeX, con
+          amsmath, amssymb y hyperref en el preámbulo.
+        </p>
+        <p>
+          La pestaña Vista previa compila el resultado con una distribución completa de TeX Live
+          en el servicio de compilación de Octree, así que puedes ver el PDF antes de descargar el
+          archivo .tex. La herramienta acepta marcado pegado, no una URL, y cada conversión
+          devuelve unos 2000 tokens de LaTeX, así que conviene convertir las páginas largas por
+          partes. Es gratis y no necesita cuenta.
+        </p>
+      </>
+    ),
+    stepsHeading: "Cómo convertir HTML a LaTeX",
+    steps: [
+      {
+        title: "Pega tu HTML",
+        body: "Sustituye el ejemplo por tu propio marcado: una página completa, un fragmento de un artículo o el código de una tabla copiado de un sitio web o de una exportación de un CMS.",
+      },
+      {
+        title: "Convierte a LaTeX",
+        body: (
+          <>
+            Haz clic en &quot;Convertir a LaTeX&quot;. El LaTeX va apareciendo en la pestaña
+            Código como un documento completo, desde <Cmd>\documentclass{"{article}"}</Cmd> hasta{" "}
+            <Cmd>\end{"{document}"}</Cmd>.
+          </>
+        ),
+      },
+      {
+        title: "Previsualiza y exporta",
+        body: "Abre la pestaña Vista previa para compilar el documento a PDF; después expórtalo como archivo .tex o como PDF, o ábrelo en Octree para seguir editándolo.",
+      },
+    ],
+    tipsHeading: "Consejos para una conversión limpia",
+    tips: [
+      {
+        title: "Quita lo que LaTeX no puede usar",
+        body: "Elimina scripts, estilos en línea, menús de navegación y anuncios antes de convertir. El CSS de párrafo, como colores y fuentes, no tiene un equivalente directo en LaTeX, y una entrada más corta deja más espacio para el contenido.",
+      },
+      {
+        title: "Las imágenes quedan como marcadores",
+        body: (
+          <>
+            Una etiqueta <Cmd>{"<img>"}</Cmd> solo puede convertirse en una línea{" "}
+            <Cmd>\includegraphics</Cmd>; el archivo de imagen no se descarga, así que la vista
+            previa no puede mostrarlo. Añade los archivos en Octree o comenta esas líneas.
+          </>
+        ),
+      },
+      {
+        title: "Caracteres especiales",
+        body: (
+          <>
+            Si la compilación falla en un símbolo, comprueba que <Cmd>&amp;</Cmd>, <Cmd>%</Cmd>,{" "}
+            <Cmd>#</Cmd> y <Cmd>_</Cmd> del texto se hayan escapado como <Cmd>\&amp;</Cmd>,{" "}
+            <Cmd>\%</Cmd>, <Cmd>\#</Cmd> y <Cmd>\_</Cmd>.
+          </>
+        ),
+      },
+    ],
+    faqHeading: "Preguntas frecuentes sobre convertir HTML a LaTeX",
+    faq: [
+      {
+        question: "¿Cómo convierto HTML a LaTeX?",
+        answer:
+          "Pega el HTML en el editor de esta página y haz clic en \"Convertir a LaTeX\". Los encabezados pasan a comandos \\section, las listas a itemize o enumerate, las tablas a tabular, y la negrita, la cursiva y los enlaces a \\textbf, \\emph y \\href. Revisa el resultado en la pestaña Vista previa y descarga el .tex o el PDF.",
+      },
+      {
+        question: "¿Esta herramienta puede convertir LaTeX a HTML?",
+        answer:
+          "No, solo convierte de HTML a LaTeX. Para pasar de LaTeX a HTML, lo habitual es usar una herramienta TeX local como make4ht o htlatex, de TeX4ht, o Pandoc (pandoc paper.tex -o paper.html). Para publicar en la web, el conversor de LaTeX a Markdown de este sitio es otra opción.",
+      },
+      {
+        question: "¿Qué longitud puede tener el HTML?",
+        answer:
+          "No hay un límite fijo de entrada, pero cada conversión devuelve unos 2000 tokens de LaTeX, aproximadamente unas pocas páginas. Convierte las páginas largas sección por sección, o quita antes los scripts, los estilos y la navegación para enviar solo el contenido.",
+      },
+      {
+        question: "¿El conversor de HTML a LaTeX es gratis?",
+        answer:
+          "Sí, es gratis y no necesita cuenta. La conversión usa un modelo de IA (OpenAI gpt-4o-mini), así que revisa el resultado, sobre todo las tablas con celdas combinadas.",
+      },
+    ],
+    related: (
+      <>
+        ¿Necesitas otro formato? Consulta todos los{" "}
+        <IntroLink href="/tools/latex-converter">conversores de LaTeX</IntroLink>, convierte{" "}
+        <IntroLink href="/tools/markdown-to-latex">Markdown a LaTeX</IntroLink> o aprende lo básico
+        en la{" "}
+        <IntroLink href="https://www.useoctree.com/learn/tables" external>
+          guía de tablas en LaTeX
+        </IntroLink>
+        .
+      </>
+    ),
+  },
+
+  "latex-to-word": {
+    heading: "Convertir LaTeX a Word (DOCX) en línea",
+    intro: (
+      <>
+        <p>
+          Este conversor de LaTeX a Word transforma un documento .tex en un archivo .docx de
+          Microsoft Word editable. Funciona en dos pasadas. Primero, un modelo de IA (OpenAI
+          gpt-4o-mini) lee tu LaTeX y lo reescribe como HTML semántico limpio: conserva los
+          encabezados <GuideCode>\section</GuideCode>, las listas, las tablas{" "}
+          <GuideCode>tabular</GuideCode>, la negrita y la cursiva, los enlaces y las notas al pie,
+          y descarta el preámbulo y los comandos de maquetación que no significan nada en Word.
+          Después, ese HTML se traduce de forma determinista a los elementos propios de Word:
+          estilos Título 1 a 6, listas con viñetas y numeradas, tablas con fila de encabezado y
+          texto con formato.
+        </p>
+        <p>
+          El resultado es un .docx nativo, así que el control de cambios, los comentarios y la
+          tabla de contenido funcionan como en cualquier archivo de Word. Las matemáticas se
+          escriben como texto Unicode legible en lugar de ecuaciones de Word, las figuras se
+          sustituyen por sus pies de figura y la entrada está limitada a 60 000 caracteres. El
+          conversor es gratuito, no necesita cuenta y no guarda nada una vez enviado el archivo.
+        </p>
+        <GuideTable
+          headers={["LaTeX", "Resultado en Word"]}
+          rows={[
+            [<GuideCode key="1">\title, \section, \subsection</GuideCode>, "Estilos Título, Título 1 y Título 2"],
+            [<GuideCode key="2">itemize, enumerate, description</GuideCode>, "Listas con viñetas y numeradas, con los niveles anidados"],
+            [<GuideCode key="3">tabular, booktabs, longtable</GuideCode>, "Tabla de Word con fila de encabezado en negrita; título encima"],
+            [<GuideCode key="4">\textbf, \emph, \underline, \texttt</GuideCode>, "Texto en negrita, cursiva, subrayado y monoespaciado"],
+            [<GuideCode key="5">$inline math$</GuideCode>, "Texto legible con símbolos Unicode, superíndices y subíndices"],
+            [<GuideCode key="6">equation, align, \[ \]</GuideCode>, "Un párrafo centrado por cada línea de ecuación, con su número"],
+            [<GuideCode key="7">\href, \url, \footnote</GuideCode>, "Hipervínculo en el que se puede hacer clic; texto de la nota al pie entre paréntesis"],
+            [<GuideCode key="8">\cite, thebibliography</GuideCode>, "Marcadores [clave] y una sección References numerada"],
+            [<GuideCode key="9">figure, \includegraphics</GuideCode>, "Solo el pie de figura (los archivos de imagen no se suben)"],
+          ]}
+        />
+      </>
+    ),
+    stepsHeading: "Cómo convertir LaTeX a Word",
+    steps: [
+      {
+        title: "Pega tu LaTeX",
+        body: "Pega el contenido de tu archivo .tex, un documento completo o un fragmento, de hasta 60 000 caracteres.",
+      },
+      {
+        title: "Convierte a Word",
+        body: "Haz clic en \"Convert to Word\" (convertir a Word). Cuando termina la conversión, document.docx se descarga automáticamente; el botón de descarga sigue disponible para obtener otra copia.",
+      },
+      {
+        title: "Ábrelo en Word",
+        body: "Abre el archivo en Microsoft Word, Google Docs, LibreOffice o Pages. Los encabezados usan los estilos de título propios de Word, así que el panel de navegación y la tabla de contenido funcionan desde el primer momento.",
+      },
+    ],
+    tipsHeading: "Límites y cómo sortearlos",
+    tips: [
+      {
+        title: "Las ecuaciones quedan como texto plano",
+        body: (
+          <>
+            Las matemáticas se convierten en texto Unicode legible, como x² + y² = r², no en
+            ecuaciones de Word editables. Para obtener ecuaciones nativas de Word (OMML), ejecuta
+            Pandoc en local:{" "}
+            <Cmd>pandoc paper.tex -o paper.docx --citeproc --bibliography=refs.bib</Cmd>, o
+            renderiza una fórmula clave con el{" "}
+            <IntroLink href="/tools/latex-to-png">conversor de LaTeX a PNG</IntroLink>.
+          </>
+        ),
+      },
+      {
+        title: "Las figuras aparecen como pies de figura",
+        body: "Los archivos de imagen no se suben junto con el texto, así que cada figura se sustituye por su pie. Inserta las imágenes en Word después.",
+      },
+      {
+        title: "La entrada es demasiado larga",
+        body: "El límite es de 60 000 caracteres. Convierte una tesis capítulo a capítulo y pega las partes en un mismo archivo de Word.",
+      },
+    ],
+    faqHeading: "Preguntas frecuentes sobre convertir LaTeX a Word",
+    faq: [
+      {
+        question: "¿Cómo convierto un archivo LaTeX a Word?",
+        answer:
+          "Pega el contenido de tu archivo .tex en el editor y haz clic en \"Convert to Word\" (convertir a Word). El conversor lee la estructura del LaTeX, la reconstruye como un documento de Word con encabezados reales, listas, tablas y formato de texto, y descarga document.docx en tu ordenador. Ábrelo en Microsoft Word, Google Docs, LibreOffice o Pages.",
+      },
+      {
+        question: "¿Qué pasa con las ecuaciones al convertir LaTeX a Word?",
+        answer:
+          "Las matemáticas en línea y destacadas se convierten en texto plano legible con símbolos Unicode (por ejemplo x² + y² = r² o ∫ f(x) dx), y las ecuaciones destacadas quedan centradas en su propia línea. No son objetos de ecuación nativos de Word. Si necesitas ecuaciones de Word editables (OMML), ejecuta Pandoc en local: pandoc paper.tex -o paper.docx. Para una fórmula con un aspecto perfecto, renderízala con la herramienta de LaTeX a PNG y pega la imagen.",
+      },
+      {
+        question: "¿Se conservan las tablas, las listas y la bibliografía?",
+        answer:
+          "Las tablas (tabular, booktabs, longtable) se convierten en tablas reales de Word con fila de encabezado; itemize y enumerate pasan a listas con viñetas y numeradas; se conservan la negrita, la cursiva, el subrayado, el texto monoespaciado, los enlaces y las notas al pie. Las citas aparecen como [clave] o como texto autor-año, y un entorno thebibliography se convierte en una sección References numerada. Las figuras se sustituyen por sus pies porque el conversor no tiene acceso a los archivos de imagen.",
+      },
+      {
+        question: "¿Convertir LaTeX a Word es gratis? ¿Se guarda mi documento?",
+        answer:
+          "El conversor es gratuito y no requiere registro. Tu LaTeX se envía a nuestro servidor para convertirlo, y el archivo de Word se genera en memoria y se devuelve a tu navegador; no se conserva nada una vez enviada la respuesta. Se admiten documentos de hasta 60 000 caracteres, lo que cubre un artículo típico o un capítulo de tesis.",
+      },
+    ],
+    related: (
+      <>
+        ¿Necesitas Markdown para Notion o GitHub? Usa el{" "}
+        <IntroLink href="/tools/latex-to-markdown">conversor de LaTeX a Markdown</IntroLink>,
+        compila un PDF en el{" "}
+        <IntroLink href="/tools/latex-preview">editor de LaTeX en línea</IntroLink> o consulta
+        todos los <IntroLink href="/tools/latex-converter">conversores de LaTeX</IntroLink>.
+      </>
+    ),
+  },
+
+  "latex-to-png": {
+    heading: "Convertir LaTeX a PNG: ecuaciones y fórmulas como imagen",
+    intro: (
+      <>
+        <p>
+          Este conversor de LaTeX a PNG convierte una ecuación, una figura TikZ o la primera
+          página de un documento en una imagen PNG. Tu código se compila con una instalación
+          completa de TeX Live en el servicio de compilación de Octree, el mismo que usa el{" "}
+          <IntroLink href="/tools/latex-preview">editor de LaTeX en línea</IntroLink>, así que
+          tienes disponibles todos los paquetes que usarías en local. El PDF vuelve a tu
+          navegador, donde pdf.js rasteriza su primera página con los DPI que elegiste y genera un
+          PNG con fondo transparente o blanco. No interviene ninguna IA y no se guarda nada una
+          vez terminada la compilación.
+        </p>
+        <p>
+          Para una sola fórmula, la clase <GuideCode>standalone</GuideCode> con la opción{" "}
+          <GuideCode>preview</GuideCode> recorta la página a la ecuación, y{" "}
+          <GuideCode>border=4pt</GuideCode> añade un pequeño margen alrededor. Usa la imagen en
+          diapositivas, en Word y Google Docs, en archivos README, en Notion, en Slack o en un
+          correo, en cualquier sitio que no sepa componer matemáticas. Es gratis y no necesita
+          cuenta.
+        </p>
+        <GuidePre>{`\\documentclass[preview,border=4pt]{standalone}
+\\usepackage{amsmath,amssymb}
+\\begin{document}
+$\\displaystyle \\hat{H}\\psi = E\\psi$
+\\end{document}`}</GuidePre>
+      </>
+    ),
+    stepsHeading: "Cómo convertir LaTeX a PNG",
+    steps: [
+      {
+        title: "Escribe la ecuación o el documento",
+        body: (
+          <>
+            Edita el ejemplo, que usa{" "}
+            <Cmd>\documentclass[preview,border=4pt]{"{standalone}"}</Cmd> para que la imagen se
+            recorte a la fórmula, o pega cualquier documento completo.
+          </>
+        ),
+      },
+      {
+        title: "Elige la resolución y el fondo",
+        body: "Elige 1× (96 DPI), 2× (192 DPI) o 4× (384 DPI), y deja activada la opción \"Transparent background\" (fondo transparente) para diapositivas y temas oscuros, o desactívala para un fondo blanco.",
+      },
+      {
+        title: "Convierte y guarda",
+        body: "Haz clic en \"Convert to PNG\" (convertir a PNG). Descarga latex.png o copia la imagen al portapapeles y pégala en PowerPoint, Google Docs, Notion o Slack.",
+      },
+    ],
+    tipsHeading: "Consejos para obtener mejores imágenes",
+    tips: [
+      {
+        title: "La fórmula toca el borde",
+        body: (
+          <>
+            Aumenta <Cmd>border=4pt</Cmd> en las opciones de la clase de documento. Usa{" "}
+            <Cmd>$\displaystyle ...$</Cmd> en línea en lugar de <Cmd>\[ ... \]</Cmd>, que ocupa
+            todo el ancho de la línea.
+          </>
+        ),
+      },
+      {
+        title: "Imagen para una diapositiva oscura",
+        body: (
+          <>
+            Carga <Cmd>xcolor</Cmd> y escribe <Cmd>\color{"{white}"}</Cmd> antes de la fórmula;
+            con el fondo transparente, el texto blanco queda bien sobre cualquier tema oscuro.
+          </>
+        ),
+      },
+      {
+        title: "Solo aparece una página",
+        body: "Solo se renderiza la primera página del PDF. Haz una conversión por ecuación, o compila un documento de varias páginas como PDF en el editor de LaTeX en línea.",
+      },
+    ],
+    faqHeading: "Preguntas frecuentes sobre convertir LaTeX a PNG",
+    faq: [
+      {
+        question: "¿Cómo convierto una ecuación LaTeX en una imagen PNG?",
+        answer:
+          "Pega tu ecuación dentro de un documento standalone (el ejemplo por defecto usa \\documentclass[preview,border=4pt]{standalone}), elige una resolución y haz clic en \"Convert to PNG\" (convertir a PNG). El LaTeX se compila a PDF en nuestro servidor, la primera página se renderiza en tu navegador y puedes descargar el PNG o copiarlo directamente al portapapeles.",
+      },
+      {
+        question: "¿Puedo obtener un PNG de LaTeX con fondo transparente?",
+        answer:
+          "Sí. Deja activada la opción \"Transparent background\" (fondo transparente). Como la clase standalone no pinta un color de página, todos los píxeles fuera de la fórmula quedan transparentes, así que la imagen se integra limpiamente en diapositivas oscuras, fondos de color y páginas web. Desmárcala para obtener un fondo blanco opaco.",
+      },
+      {
+        question: "¿Qué resolución elijo para diapositivas o para imprimir?",
+        answer:
+          "1× (96 DPI) basta para una vista previa rápida o un mensaje de chat. Usa 2× (192 DPI) para Google Slides, PowerPoint, Word, Google Docs y Notion, donde la imagen se muestra aproximadamente a su tamaño natural en pantallas de alta densidad. Usa 4× (384 DPI) cuando la imagen se vaya a imprimir o ampliar.",
+      },
+      {
+        question: "¿Funciona con un documento LaTeX completo y no solo con una ecuación?",
+        answer:
+          "Sí. Funciona cualquier documento que compile con pdflatex, incluidos article, beamer o figuras TikZ. Solo la primera página se convierte a PNG; para documentos de varias páginas, usa la herramienta de vista previa de LaTeX para compilar y descargar el PDF completo.",
+      },
+    ],
+    related: (
+      <>
+        ¿Necesitas el documento entero? Compílalo en el{" "}
+        <IntroLink href="/tools/latex-preview">editor de LaTeX en línea</IntroLink>, conviértelo en
+        un <IntroLink href="/tools/latex-to-word">archivo de Word</IntroLink> o busca comandos en la{" "}
+        <IntroLink href="https://www.useoctree.com/learn/mathematical-expressions" external>
+          guía de matemáticas en LaTeX
+        </IntroLink>
+        .
+      </>
+    ),
+  },
+
+  "markdown-to-latex": {
+    heading: "Convertir Markdown a LaTeX en línea",
+    intro: (
+      <>
+        <p>
+          Este conversor de Markdown a LaTeX transforma texto .md en un documento LaTeX completo y
+          compilable. Un modelo de IA (OpenAI gpt-4o-mini) reescribe los encabezados como
+          secciones, la negrita y la cursiva como <Cmd>\textbf</Cmd> y <Cmd>\textit</Cmd>, las
+          listas con viñetas y numeradas como itemize y enumerate, las tablas como tabular, los
+          bloques de código como listados de código y los enlaces como hipervínculos, y carga
+          paquetes como booktabs, listings y hyperref, mientras conserva las matemáticas en línea
+          y destacadas como matemáticas de LaTeX.
+        </p>
+        <p>
+          La pestaña Vista previa compila el resultado con una distribución completa de TeX Live
+          en el servicio de compilación de Octree, así que ves el PDF antes de descargar el
+          archivo .tex. La entrada es texto pegado, y cada conversión devuelve unos 2000 tokens de
+          LaTeX, suficiente para unas pocas páginas; divide los archivos más largos. Es gratis, no
+          necesita cuenta y sirve para archivos README, apuntes de clase y borradores escritos en
+          Obsidian, Notion o Typora que tienen que convertirse en un artículo o en un capítulo de
+          tesis.
+        </p>
+      </>
+    ),
+    stepsHeading: "Cómo convertir Markdown a LaTeX",
+    steps: [
+      {
+        title: "Pega tu Markdown",
+        body: "Sustituye el ejemplo por tu propio contenido .md: notas de Obsidian o Notion, un README o un borrador con encabezados, listas, tablas, bloques de código y matemáticas.",
+      },
+      {
+        title: "Convierte a LaTeX",
+        body: (
+          <>
+            Haz clic en &quot;Convertir a LaTeX&quot;. Un documento completo va apareciendo en la
+            pestaña Código, con los encabezados <Cmd>#</Cmd> como <Cmd>\section</Cmd>, las listas
+            como itemize y enumerate, y las matemáticas <Cmd>$...$</Cmd> y <Cmd>$$...$$</Cmd>{" "}
+            conservadas como matemáticas de LaTeX.
+          </>
+        ),
+      },
+      {
+        title: "Previsualiza y exporta",
+        body: "Abre la pestaña Vista previa para compilarlo a PDF; después exporta el archivo .tex o el PDF, o ábrelo en Octree para seguir escribiendo.",
+      },
+    ],
+    tipsHeading: "Problemas comunes y cómo solucionarlos",
+    tips: [
+      {
+        title: "Undefined control sequence en las matemáticas",
+        body: (
+          <>
+            Las matemáticas de Markdown se copian tal cual, así que los comandos exclusivos de
+            KaTeX o un <Cmd>\mathbb</Cmd> sin amssymb pueden fallar. El log indica la línea;
+            corrige el comando o añade el paquete.
+          </>
+        ),
+      },
+      {
+        title: "Las imágenes no aparecen",
+        body: (
+          <>
+            <Cmd>![alt](image.png)</Cmd> se convierte en una línea <Cmd>\includegraphics</Cmd>,
+            pero el archivo de imagen no se sube. Súbelo en Octree o comenta la línea para
+            compilar.
+          </>
+        ),
+      },
+      {
+        title: "Los documentos largos se cortan",
+        body: "Cada conversión devuelve unos 2000 tokens de LaTeX. Convierte un archivo largo capítulo a capítulo o sección a sección y une las partes.",
+      },
+    ],
+    faqHeading: "Preguntas frecuentes sobre convertir Markdown a LaTeX",
+    faq: [
+      {
+        question: "¿Cómo convierto Markdown a LaTeX en línea?",
+        answer:
+          "Pega tu Markdown en el editor de esta página y haz clic en \"Convertir a LaTeX\". La herramienta devuelve un documento LaTeX completo con los paquetes que necesita, que puedes previsualizar como PDF y descargar como archivo .tex. No hace falta instalar nada ni tener cuenta.",
+      },
+      {
+        question: "¿Conserva las ecuaciones matemáticas?",
+        answer:
+          "Sí. Las matemáticas en línea entre $...$ y las destacadas entre $$...$$ se conservan como matemáticas de LaTeX, y amsmath y amssymb se cargan en el preámbulo, así que las ecuaciones escritas para MathJax o KaTeX suelen compilar sin cambios.",
+      },
+      {
+        question: "¿En qué se diferencia de Pandoc?",
+        answer:
+          "Pandoc (pandoc notes.md -o notes.tex) es un conversor determinista de línea de comandos que se instala en local. Esta herramienta funciona en el navegador, usa un modelo de IA (OpenAI gpt-4o-mini) para escribir el LaTeX y compila al momento una vista previa en PDF. Revisa el resultado, porque la IA puede reformular o reestructurar el contenido.",
+      },
+      {
+        question: "¿Puedo convertir un archivo .md a .tex?",
+        answer:
+          "Abre el archivo .md en cualquier editor de texto, copia su contenido en el conversor y haz clic en \"Convertir a LaTeX\"; después usa \"Exportar\" para descargar document.tex. La página acepta texto pegado, no la subida de archivos.",
+      },
+    ],
+    related: (
+      <>
+        ¿Vas en la dirección contraria? Usa el{" "}
+        <IntroLink href="/tools/latex-to-markdown">conversor de LaTeX a Markdown</IntroLink>,
+        consulta todos los <IntroLink href="/tools/latex-converter">conversores de LaTeX</IntroLink>{" "}
+        o lee la{" "}
+        <IntroLink href="https://www.useoctree.com/learn/latex" external>
+          introducción a LaTeX
+        </IntroLink>
+        .
+      </>
+    ),
+  },
+
+  "latex-converter": {
+    heading: "Conversores de LaTeX: convertir a LaTeX y desde LaTeX en línea",
+    intro: (
+      <>
+        <p>
+          Los conversores de LaTeX de Octree cubren los formatos que más a menudo hay que pasar a
+          LaTeX o sacar de LaTeX. A LaTeX: Markdown, HTML, MathML y diagramas Mermaid, tablas CSV
+          de Excel o Google Sheets, PDF, fotos de ecuaciones, imágenes de diagramas y artículos de
+          arXiv. Desde LaTeX: Markdown para GitHub y Notion, Word .docx para revisores y
+          plataformas de envío, imágenes PNG para diapositivas y PDF a través del editor de LaTeX
+          en línea.
+        </p>
+        <p>
+          Todos los conversores son gratuitos, funcionan en el navegador y no necesitan cuenta. La
+          mayoría usa un modelo de IA, porque trasladar un formato a otro exige criterio; los
+          resultados en LaTeX se compilan con una distribución completa de TeX Live en el servicio
+          de compilación de Octree, así que puedes revisar el PDF antes de descargarlo. arXiv a
+          LaTeX, LaTeX a PNG y LaTeX a PDF no usan IA en absoluto. La tabla de arriba recoge cada
+          conversor con su entrada, su salida y su mejor uso.
+        </p>
+      </>
+    ),
+    stepsHeading: "Cómo usar los conversores de LaTeX",
+    steps: [
+      {
+        title: "Parte de lo que tienes",
+        body: "Elige la tarjeta que corresponde a tu entrada: Markdown, HTML, MathML, Mermaid, un archivo CSV, un PDF, una imagen o un ID de arXiv para obtener LaTeX, o un documento LaTeX para obtener Markdown, Word, PNG o PDF.",
+      },
+      {
+        title: "Pega o sube y convierte",
+        body: "Cada conversor se abre en su propia página. Pega tu contenido o sube tu archivo y haz clic en convertir; los conversores con IA muestran el resultado a medida que se escribe.",
+      },
+      {
+        title: "Revisa el resultado y exporta",
+        body: "Los resultados en LaTeX incluyen una vista previa compilada en PDF, así que puedes revisarlos antes de descargar el archivo .tex. Abre un resultado en LaTeX en Octree para seguir editándolo.",
+      },
+    ],
+    tipsHeading: "Consejos para mejores conversiones",
+    tips: [
+      {
+        title: "Revisa el resultado de la IA",
+        body: "Los conversores con IA se las arreglan con entradas desordenadas y paquetes poco habituales, pero pueden reformular u omitir contenido. Compara la vista previa con tu original antes de entregar nada.",
+      },
+      {
+        title: "Convierte los documentos largos por partes",
+        body: "Los conversores de Markdown, HTML, Mermaid, CSV y LaTeX a Markdown devuelven unos 2000 tokens por conversión, aproximadamente unas pocas páginas, y LaTeX a Word acepta hasta 60 000 caracteres. Divide una tesis por capítulos.",
+      },
+      {
+        title: "Las figuras van por separado",
+        body: "Ningún conversor sube los archivos de imagen junto con el texto. Las figuras se convierten en líneas \\includegraphics, enlaces a imágenes o pies de figura, así que añade los archivos después.",
+      },
+    ],
+    faqHeading: "Preguntas frecuentes sobre los conversores de LaTeX",
+    faq: [
+      {
+        question: "¿Qué es un conversor de LaTeX?",
+        answer:
+          "Un conversor de LaTeX traduce entre código LaTeX y otro formato. Los conversores a LaTeX toman Markdown, HTML, MathML, Mermaid, tablas CSV, PDF o imágenes y generan código .tex; los conversores desde LaTeX toman código .tex y generan Markdown, imágenes PNG, documentos de Word o PDF. Esta página reúne todos los conversores gratuitos de Octree en ambas direcciones.",
+      },
+      {
+        question: "¿Qué conversores usan IA y cuáles son deterministas?",
+        answer:
+          "Markdown, HTML, MathML, Mermaid, tabla (CSV), PDF, imagen y ecuación a LaTeX, y LaTeX a Markdown, usan un modelo de IA. LaTeX a Word usa IA en una primera pasada y después genera el .docx de forma determinista. arXiv a LaTeX, LaTeX a PNG y LaTeX a PDF no usan IA: descargan o compilan tu entrada tal cual.",
+      },
+      {
+        question: "¿Cómo convierto LaTeX a Word o a PDF gratis?",
+        answer:
+          "Para Word, abre el conversor de LaTeX a Word, pega tu documento y descarga document.docx. Para PDF, abre el editor de LaTeX en línea, pega tu documento y descarga el PDF compilado. Ambos son gratuitos y no necesitan cuenta.",
+      },
+      {
+        question: "¿Hay un límite de tamaño del documento?",
+        answer:
+          "LaTeX a Word acepta hasta 60 000 caracteres y PDF a LaTeX acepta PDF de hasta 3 MB y 20 páginas. Los conversores de Markdown, HTML, Mermaid, CSV y LaTeX a Markdown devuelven unos 2000 tokens por conversión, aproximadamente unas pocas páginas, así que convierte los documentos largos por partes. Las herramientas basadas en compilación aceptan cualquier documento que compile dentro del límite de tiempo del servidor.",
+      },
+    ],
+    related: (
+      <>
+        ¿Empiezas con LaTeX? Lee la{" "}
+        <IntroLink href="https://www.useoctree.com/learn/latex" external>
+          introducción a LaTeX
+        </IntroLink>
+        , edita un documento en el{" "}
+        <IntroLink href="/tools/latex-preview">editor de LaTeX en línea</IntroLink> o explora la{" "}
+        <IntroLink href="/">lista completa de herramientas de LaTeX</IntroLink>.
+      </>
+    ),
+  },
+
+  "latex-to-markdown": {
+    heading: "Conversor de LaTeX a Markdown: convertir LaTeX a Markdown en línea",
+    intro: (
+      <>
+        <p>
+          Este conversor de LaTeX a Markdown transforma un documento o fragmento .tex en Markdown
+          limpio y estándar. Un modelo de IA (OpenAI gpt-4o-mini) reescribe las secciones como
+          encabezados <Cmd>#</Cmd>, itemize y enumerate como listas, las tablas tabular y booktabs
+          como tablas de Markdown, <Cmd>\textbf</Cmd> y <Cmd>\emph</Cmd> como negrita y cursiva,
+          los entornos de código como bloques de código delimitados y <Cmd>\href</Cmd> como
+          enlaces. Las matemáticas se quedan en LaTeX entre <Cmd>$...$</Cmd> y{" "}
+          <Cmd>$$...$$</Cmd>, que GitHub, Obsidian y otros renderizadores con KaTeX o MathJax
+          muestran correctamente.
+        </p>
+        <p>
+          La herramienta es gratuita, no necesita cuenta y acepta texto pegado. Cada conversión
+          devuelve unos 2000 tokens de Markdown, así que convierte los artículos largos por partes.
+          Las figuras se convierten en enlaces a imágenes cuando es posible y las citas no se
+          resuelven con un archivo .bib, así que cuenta con corregirlas a mano. Úsala para
+          publicar un artículo en un blog, convertir apuntes de clase en un README o pasar notas
+          de LaTeX a Notion u Obsidian.
+        </p>
+      </>
+    ),
+    stepsHeading: "Cómo convertir LaTeX a Markdown",
+    steps: [
+      {
+        title: "Pega tu LaTeX",
+        body: "Pega un documento .tex completo o solo un fragmento, como una sección, una tabla o una lista. No hace falta el preámbulo.",
+      },
+      {
+        title: "Convierte a Markdown",
+        body: "Haz clic en \"Convertir a Markdown\". El Markdown va apareciendo en el editor de salida a medida que se escribe.",
+      },
+      {
+        title: "Cópialo o descárgalo",
+        body: "Copia el Markdown del editor de salida o usa \"Exportar como Markdown\" para descargar document.md para GitHub, Obsidian, Notion o un sitio estático.",
+      },
+    ],
+    tipsHeading: "Consejos para una conversión limpia",
+    tips: [
+      {
+        title: "Las matemáticas necesitan un renderizador",
+        body: (
+          <>
+            Las ecuaciones se quedan como <Cmd>$...$</Cmd> y <Cmd>$$...$$</Cmd>. GitHub, Obsidian,
+            Jupyter y la mayoría de los generadores de sitios estáticos con KaTeX o MathJax las
+            renderizan; los visores de Markdown simples muestran el LaTeX sin procesar.
+          </>
+        ),
+      },
+      {
+        title: "Macros personalizadas",
+        body: (
+          <>
+            Los comandos definidos con <Cmd>\newcommand</Cmd> no tienen equivalente en Markdown.
+            Incluye las definiciones en la entrada para que el conversor pueda expandirlas, y
+            revisa el resultado.
+          </>
+        ),
+      },
+      {
+        title: "Figuras y citas",
+        body: (
+          <>
+            Las figuras se convierten, cuando es posible, en enlaces de imagen de Markdown a los
+            nombres de archivo originales, y las claves de <Cmd>\cite</Cmd> no se resuelven con un
+            archivo .bib. Sube las imágenes junto al archivo .md y corrige las referencias a mano.
+          </>
+        ),
+      },
+    ],
+    faqHeading: "Preguntas frecuentes sobre convertir LaTeX a Markdown",
+    faq: [
+      {
+        question: "¿Cómo convierto LaTeX a Markdown?",
+        answer:
+          "Pega tu LaTeX en el editor de la izquierda y haz clic en \"Convertir a Markdown\". Las secciones pasan a encabezados #, itemize y enumerate a listas, tabular a una tabla de Markdown, \\textbf y \\emph a negrita y cursiva, y los entornos de código a bloques de código delimitados. Copia el resultado o exporta document.md.",
+      },
+      {
+        question: "¿Se conservan las ecuaciones?",
+        answer:
+          "Sí. Las matemáticas en línea se conservan como $...$ y las destacadas como $$...$$, escritas en LaTeX, así que se renderizan en cualquier lugar donde se muestre Markdown con MathJax o KaTeX, incluidos GitHub, Obsidian y los notebooks de Jupyter.",
+      },
+      {
+        question: "¿Qué longitud puede tener el LaTeX de entrada?",
+        answer:
+          "No hay un límite fijo de entrada, pero cada conversión devuelve unos 2000 tokens de Markdown, aproximadamente unas pocas páginas. Convierte una tesis o un artículo largo capítulo a capítulo o sección a sección.",
+      },
+      {
+        question: "¿Es gratis? ¿Es mejor que Pandoc?",
+        answer:
+          "Es gratis y no necesita cuenta. Usa un modelo de IA (OpenAI gpt-4o-mini), que se las arregla con paquetes poco habituales y código desordenado, pero conviene revisar el resultado. Pandoc (pandoc paper.tex -o paper.md) es determinista y mejor para documentos muy largos, pero hay que instalarlo en local.",
+      },
+    ],
+    related: (
+      <>
+        ¿Vas en la dirección contraria? Usa el{" "}
+        <IntroLink href="/tools/markdown-to-latex">conversor de Markdown a LaTeX</IntroLink>,
+        exporta a <IntroLink href="/tools/latex-to-word">Word</IntroLink> o consulta todos los{" "}
+        <IntroLink href="/tools/latex-converter">conversores de LaTeX</IntroLink>.
+      </>
+    ),
+  },
+
+  "latex-word-counter": {
+    heading: "Contar palabras en LaTeX en línea: contador de palabras para archivos .tex",
+    intro: (
+      <p>
+        Contar palabras en LaTeX es más difícil que en un procesador de textos: un recuento simple
+        de un archivo .tex también cuenta comandos como <Cmd>\begin{"{itemize}"}</Cmd>, etiquetas
+        y ecuaciones. Este contador de palabras de LaTeX gratuito lee el código fuente como debe
+        hacerlo una herramienta que entiende TeX, ignorando el marcado y las matemáticas, y te da
+        el recuento de palabras del texto que el lector ve realmente.
+      </p>
+    ),
+    stepsHeading: "Cómo contar palabras en LaTeX",
+    steps: [
+      {
+        title: "Pega tu código LaTeX",
+        body: "Pega en el editor el archivo .tex completo, con el preámbulo incluido, o solo la sección que quieras medir.",
+      },
+      {
+        title: "Deja que cuente",
+        body: "El recuento se actualiza automáticamente mientras escribes. Tu código pasa por texcount, el contador que incluye TeX Live y que usa Overleaf, así que los comandos y el marcado se eliminan correctamente.",
+      },
+      {
+        title: "Lee el desglose",
+        body: "Consulta el total de palabras y los recuentos separados de cuerpo de texto, encabezados y leyendas, y usa el que te pida tu revista, tu asignatura o la oficina de tesis.",
+      },
+    ],
+    tipsHeading: "Qué se cuenta",
+    tips: [
+      {
+        title: "Cuerpo de texto",
+        body: "Las palabras de párrafos, listas y notas al pie, incluido el texto dentro de comandos de formato como \\textbf{...} y \\emph{...}. Es la cifra principal a la que se refieren la mayoría de los límites de palabras.",
+      },
+      {
+        title: "Encabezados",
+        body: "Las palabras de \\section, \\subsection, \\chapter y encabezados similares, que se muestran por separado para que puedas incluirlas o excluirlas.",
+      },
+      {
+        title: "Leyendas",
+        body: "Las palabras de los pies de figuras y tablas escritos con \\caption{...}, también por separado.",
+      },
+      {
+        title: "Lo que no se cuenta",
+        body: "Los comandos y sus opciones, las etiquetas, las referencias y las claves de cita (\\label, \\ref, \\cite), los comentarios tras % y las matemáticas: las fórmulas en línea $...$ y las ecuaciones destacadas son fórmulas, no palabras, así que una ecuación nunca infla el total.",
+      },
+    ],
+    faqHeading: "Preguntas frecuentes sobre contar palabras en LaTeX",
+    faq: [
+      {
+        question: "¿Cómo obtengo el recuento de palabras de un documento LaTeX?",
+        answer:
+          "Pega tu código .tex en el contador de palabras de LaTeX de arriba y el recuento aparece al instante, con totales separados para cuerpo de texto, encabezados y leyendas. Sin conexión, ejecuta texcount sobre el archivo desde la línea de comandos: texcount -inc -total main.tex.",
+      },
+      {
+        question: "¿El recuento de palabras de LaTeX incluye las ecuaciones?",
+        answer:
+          "No. Las matemáticas en línea como $E = mc^2$ y las ecuaciones destacadas se tratan como fórmulas y no como palabras, así que no se suman al recuento.",
+      },
+      {
+        question: "¿Cómo se compara con texcount y con el recuento de palabras de Overleaf?",
+        answer:
+          "Ejecuta texcount, el script de Perl que incluyen TeX Live y MiKTeX, así que las cifras coinciden con texcount -total en tu ordenador; el recuento de palabras de Overleaf también se basa en texcount, así que los totales deberían ser muy parecidos. La diferencia es que no necesitas una instalación local de TeX ni una cuenta.",
+      },
+      {
+        question: "¿La bibliografía y los comentarios se incluyen en el recuento?",
+        answer:
+          "No. Los comentarios tras % se ignoran, y texcount omite la bibliografía por defecto, así que las referencias de \\bibliography o de un entorno thebibliography no se cuentan. Las claves de cita dentro de \\cite{...} tampoco cuentan como palabras.",
+      },
+    ],
+    related: (
+      <>
+        ¿Necesitas el documento en otro formato? Prueba el{" "}
+        <IntroLink href="/tools/latex-to-word">conversor de LaTeX a Word</IntroLink> si tu entrega
+        exige un .docx, o consulta la{" "}
+        <IntroLink href="/symbols">referencia de símbolos de LaTeX</IntroLink>.
+      </>
+    ),
+  },
+
+  "mathml-to-latex": {
+    heading: "Convertir MathML a LaTeX en línea",
+    intro: (
+      <>
+        <p>
+          Este conversor de MathML a LaTeX transforma marcado MathML en matemáticas LaTeX que
+          puedes pegar en un artículo. Pega un elemento <Cmd>{"<math>"}</Cmd> y un modelo de IA
+          (OpenAI gpt-4o-mini) reescribe el árbol como código amsmath: <Cmd>{"<mfrac>"}</Cmd> pasa
+          a <Cmd>\frac</Cmd>, <Cmd>{"<msqrt>"}</Cmd> a <Cmd>\sqrt</Cmd>, <Cmd>{"<msup>"}</Cmd> y{" "}
+          <Cmd>{"<msub>"}</Cmd> a superíndices y subíndices, y <Cmd>{"<mtable>"}</Cmd> a una matriz
+          o a un bloque alineado. Las letras griegas y los operadores escritos como caracteres
+          Unicode suelen volver como sus comandos de LaTeX.
+        </p>
+        <p>
+          El resultado es un documento LaTeX completo, y la pestaña Vista previa lo compila con
+          una distribución completa de TeX Live en el servicio de compilación de Octree para que
+          puedas revisar cada símbolo. El editor resalta el XML, así que también sirve como
+          editor de MathML en línea sencillo. Cada conversión devuelve hasta unos 1500 tokens de
+          LaTeX, más que suficiente para unas cuantas ecuaciones. Es gratis y no necesita cuenta.
+        </p>
+      </>
+    ),
+    stepsHeading: "Cómo convertir MathML a LaTeX",
+    steps: [
+      {
+        title: "Pega el MathML",
+        body: (
+          <>
+            Pega un elemento <Cmd>{"<math>"}</Cmd> copiado de una página web, una exportación de
+            Word o MathType, o MathML de un archivo EPUB o JATS XML.
+          </>
+        ),
+      },
+      {
+        title: "Convierte a LaTeX",
+        body: "Haz clic en \"Convertir a LaTeX\". La ecuación vuelve dentro de un documento LaTeX completo que carga amsmath y amssymb.",
+      },
+      {
+        title: "Revisa la vista previa",
+        body: "Abre la pestaña Vista previa para compilar el documento y comparar la ecuación compuesta con el original; después copia las matemáticas, exporta el archivo .tex o el PDF, o ábrelo en Octree.",
+      },
+    ],
+    tipsHeading: "Consejos para convertir MathML",
+    tips: [
+      {
+        title: "Copia el elemento math completo",
+        body: (
+          <>
+            Incluye todo desde <Cmd>{"<math>"}</Cmd> hasta <Cmd>{"</math>"}</Cmd>. Un fragmento que
+            empieza en mitad de un <Cmd>{"<mrow>"}</Cmd> puede perder paréntesis o términos.
+          </>
+        ),
+      },
+      {
+        title: "Sacar MathML de Word",
+        body: "Word guarda las ecuaciones como OMML, no como MathML. En Word para Windows, activa Opciones de ecuación > Copiar MathML en el Portapapeles como texto sin formato; después copia la ecuación y pégala aquí.",
+      },
+      {
+        title: "Si solo quieres la ecuación",
+        body: (
+          <>
+            Copia las líneas entre <Cmd>\begin{"{document}"}</Cmd> y{" "}
+            <Cmd>\end{"{document}"}</Cmd> en tu propio archivo; el preámbulo solo necesita{" "}
+            <Cmd>\usepackage{"{amsmath,amssymb}"}</Cmd>.
+          </>
+        ),
+      },
+    ],
+    faqHeading: "Preguntas frecuentes sobre convertir MathML a LaTeX",
+    faq: [
+      {
+        question: "¿Cómo convierto MathML a LaTeX?",
+        answer:
+          "Pega el marcado MathML en el editor y haz clic en \"Convertir a LaTeX\". Elementos como mfrac, msqrt, msup, msub, mover y mtable se reescriben como \\frac, \\sqrt, superíndices, subíndices, acentos y matrices, y el resultado se muestra como un documento LaTeX completo que puedes compilar en la pestaña Vista previa.",
+      },
+      {
+        question: "¿Admite Content MathML?",
+        answer:
+          "Está pensado para Presentation MathML, el tipo que exportan los navegadores, Word y MathType. Content MathML (apply, ci, cn) también suele convertirse, porque un modelo de IA lee el marcado, pero revisa el resultado en la vista previa.",
+      },
+      {
+        question: "¿Puedo convertir varias ecuaciones a la vez?",
+        answer:
+          "Sí. Pega varios elementos math uno tras otro y se convierten en un solo documento. Cada conversión devuelve hasta unos 1500 tokens de LaTeX, así que divide los archivos muy largos.",
+      },
+      {
+        question: "¿El conversor de MathML a LaTeX es gratis?",
+        answer:
+          "Sí, es gratis y no necesita cuenta. La conversión usa OpenAI gpt-4o-mini, y la vista previa compila con una distribución completa de TeX Live, así que puedes comprobar la ecuación antes de usarla.",
+      },
+    ],
+    related: (
+      <>
+        Escribe ecuaciones a mano con la{" "}
+        <IntroLink href="https://www.useoctree.com/learn/mathematical-expressions" external>
+          guía de matemáticas en LaTeX
+        </IntroLink>
+        , convierte una imagen de una ecuación con{" "}
+        <IntroLink href="/tools/math-to-latex">matemáticas a LaTeX</IntroLink> o consulta todos
+        los <IntroLink href="/tools/latex-converter">conversores de LaTeX</IntroLink>.
+      </>
+    ),
+  },
+
+  "mermaid-to-latex": {
+    heading: "Convertir Mermaid a TikZ: diagramas Mermaid en LaTeX",
+    intro: (
+      <>
+        <p>
+          Este conversor transforma código de diagramas Mermaid en TikZ, para que un diagrama de
+          flujo esbozado en un archivo Markdown, un README de GitHub o Notion pueda ir a un
+          artículo en LaTeX como gráfico vectorial nativo. Pega la definición de Mermaid y un
+          modelo de IA (OpenAI gpt-4o-mini) reescribe cada nodo, etiqueta y flecha como un{" "}
+          <Cmd>tikzpicture</Cmd>, con posiciones explícitas para que los nodos no se solapen,
+          dentro de un documento standalone o article completo que carga tikz y las bibliotecas
+          que necesita.
+        </p>
+        <p>
+          La pestaña Vista previa compila el diagrama con una distribución completa de TeX Live en
+          el servicio de compilación de Octree, así que puedes revisar la disposición antes de
+          exportar el archivo .tex o el PDF. Mermaid distribuye los diagramas automáticamente y
+          TikZ no, así que los diagramas grandes pueden necesitar ajustes de espaciado. Los
+          diagramas de flujo funcionan mejor; cada conversión devuelve hasta unos 2000 tokens de
+          LaTeX. Es gratis y no necesita cuenta.
+        </p>
+      </>
+    ),
+    stepsHeading: "Cómo convertir Mermaid a TikZ",
+    steps: [
+      {
+        title: "Pega el código Mermaid",
+        body: (
+          <>
+            Pega la definición del diagrama, empezando por su tipo, como <Cmd>graph TD</Cmd>,{" "}
+            <Cmd>flowchart LR</Cmd> o <Cmd>sequenceDiagram</Cmd>, sin el bloque{" "}
+            <Cmd>```mermaid</Cmd> que lo rodea.
+          </>
+        ),
+      },
+      {
+        title: "Convierte a TikZ",
+        body: "Haz clic en \"Convertir a LaTeX\". La IA reescribe los nodos, las etiquetas y las flechas como un tikzpicture dentro de un documento LaTeX completo.",
+      },
+      {
+        title: "Previsualiza, ajusta y exporta",
+        body: "Abre la pestaña Vista previa para compilar el diagrama a PDF. Si algo se solapa, edita las distancias o las posiciones de los nodos en el código; después exporta diagram.tex o diagram.pdf, o ábrelo en Octree.",
+      },
+    ],
+    tipsHeading: "Problemas comunes y cómo solucionarlos",
+    tips: [
+      {
+        title: "Los nodos se solapan",
+        body: (
+          <>
+            Aumenta <Cmd>node distance</Cmd> en las opciones del tikzpicture o cambia la colocación
+            de un nodo, por ejemplo de <Cmd>below of=</Cmd> a <Cmd>right of=</Cmd>. TikZ no
+            distribuye los grafos automáticamente como hace Mermaid.
+          </>
+        ),
+      },
+      {
+        title: "Biblioteca no cargada",
+        body: (
+          <>
+            Un error sobre una punta de flecha o una forma desconocida suele indicar que falta un{" "}
+            <Cmd>\usetikzlibrary</Cmd>, por ejemplo <Cmd>arrows.meta</Cmd>, <Cmd>shapes</Cmd> o{" "}
+            <Cmd>positioning</Cmd>. Añádelo al preámbulo.
+          </>
+        ),
+      },
+      {
+        title: "Empieza por algo pequeño",
+        body: "Los diagramas de flujo son los que se convierten de forma más fiable. Para diagramas grandes o complejos, convierte una parte cada vez y combina los tikzpicture.",
+      },
+    ],
+    faqHeading: "Preguntas frecuentes sobre convertir Mermaid a LaTeX",
+    faq: [
+      {
+        question: "¿Cómo uso un diagrama Mermaid en LaTeX?",
+        answer:
+          "LaTeX no puede renderizar Mermaid directamente. Pega el código Mermaid en este conversor y reescribirá el diagrama en TikZ, el paquete de dibujo nativo de LaTeX. Copia el tikzpicture en tu documento y carga el paquete tikz, o exporta el archivo .tex completo.",
+      },
+      {
+        question: "¿Qué tipos de diagramas Mermaid se admiten?",
+        answer:
+          "Los diagramas de flujo y los grafos (graph y flowchart) son los que se convierten de forma más fiable. Los diagramas de secuencia, de estados y de clases también pueden convertirse, ya que un modelo de IA lee el código, pero cuenta con tener que ajustar posiciones en el resultado TikZ.",
+      },
+      {
+        question: "¿Por qué convertir Mermaid a TikZ en vez de usar una imagen?",
+        answer:
+          "Un diagrama TikZ es un gráfico vectorial dibujado por el propio LaTeX, así que usa la misma fuente que tu texto, se ve nítido con cualquier zoom y se puede editar en el código fuente. Un PNG o SVG exportado no se puede cambiar sin volver a Mermaid.",
+      },
+      {
+        question: "¿El conversor de Mermaid a LaTeX es gratis?",
+        answer:
+          "Sí, es gratis y no necesita cuenta. La conversión usa OpenAI gpt-4o-mini y devuelve hasta unos 2000 tokens de LaTeX, y la vista previa compila con una distribución completa de TeX Live.",
+      },
+    ],
+    related: (
+      <>
+        Aprende los comandos de dibujo en la{" "}
+        <IntroLink href="https://www.useoctree.com/learn/tikz" external>
+          guía de TikZ
+        </IntroLink>
+        , describe un diagrama con palabras al{" "}
+        <IntroLink href="/tools/tikz-generator">generador de TikZ</IntroLink> o redibuja un boceto
+        con <IntroLink href="/tools/image-to-tikz">imagen a TikZ</IntroLink>.
+      </>
+    ),
+  },
+
+  "pgfplots-generator": {
+    heading: "Generador de PGFPlots: crea gráficas pgfplots en LaTeX con IA",
+    intro: (
+      <>
+        <p>
+          Este generador de PGFPlots convierte una descripción en lenguaje natural de una gráfica
+          en código pgfplots. Describe una función, un conjunto de datos o un tipo de gráfica, y un
+          modelo de IA (OpenAI GPT-5) escribe un documento LaTeX completo con un entorno{" "}
+          <Cmd>tikzpicture</Cmd> y <Cmd>axis</Cmd> comentado: gráficas de líneas y de funciones,
+          gráficos de barras, diagramas de dispersión, histogramas y superficies 3D, con las
+          etiquetas de los ejes, los rangos, la leyenda y los colores que pediste.
+        </p>
+        <p>
+          La pestaña Vista previa compila la gráfica con una distribución completa de TeX Live en
+          el servicio de compilación de Octree, así que ves el PDF antes de exportar el archivo
+          .tex. Como la gráfica la dibuja LaTeX, usa la fuente de tu documento y se ve nítida a
+          cualquier tamaño, a diferencia de una imagen pegada desde una hoja de cálculo. El
+          generador es gratuito y no necesita cuenta; el código que escribe es tuyo para editarlo,
+          desde las etiquetas de las marcas hasta los estilos de las gráficas.
+        </p>
+      </>
+    ),
+    stepsHeading: "Cómo generar una gráfica pgfplots",
+    steps: [
+      {
+        title: "Describe la gráfica",
+        body: "Indica qué dibujar: la función o los datos, el tipo de gráfica (líneas, barras, dispersión, área, histograma o superficie 3D), los rangos de los ejes, las etiquetas, la leyenda y los colores. También puedes pegar una pequeña tabla de números.",
+      },
+      {
+        title: "Genera el código",
+        body: (
+          <>
+            Haz clic en &quot;Generar gráfico&quot;. La IA escribe un documento completo con{" "}
+            <Cmd>\pgfplotsset{"{compat=1.18}"}</Cmd> y un entorno <Cmd>axis</Cmd> comentado.
+          </>
+        ),
+      },
+      {
+        title: "Previsualiza y exporta",
+        body: "Abre la pestaña Vista previa para compilar la gráfica a PDF. Edita el código para ajustarla y después exporta pgfplot.tex o pgfplot.pdf, o ábrela en Octree.",
+      },
+    ],
+    tipsHeading: "Errores comunes de pgfplots y cómo solucionarlos",
+    tips: [
+      {
+        title: "Dimension too large",
+        body: (
+          <>
+            Una función que crece muy deprisa, como <Cmd>exp(x)</Cmd> en un dominio amplio,
+            desborda la aritmética de TeX. Reduce el <Cmd>domain</Cmd>, usa{" "}
+            <Cmd>restrict y to domain</Cmd> o un eje logarítmico.
+          </>
+        ),
+      },
+      {
+        title: "Curvas con picos",
+        body: (
+          <>
+            Aumenta <Cmd>samples</Cmd>, por ejemplo <Cmd>samples=200</Cmd>, para obtener curvas
+            suaves. Mantenlo más bajo en las gráficas 3D, que compilan mucho más despacio.
+          </>
+        ),
+      },
+      {
+        title: "Representar tus propios datos",
+        body: (
+          <>
+            Sustituye las coordenadas generadas por tus valores con <Cmd>\addplot table</Cmd> o{" "}
+            <Cmd>\addplot coordinates</Cmd>; el estilo de los ejes se mantiene igual.
+          </>
+        ),
+      },
+    ],
+    faqHeading: "Preguntas frecuentes sobre el generador de PGFPlots",
+    faq: [
+      {
+        question: "¿Qué es un generador de PGFPlots?",
+        answer:
+          "Escribe código pgfplots por ti. pgfplots es el paquete de LaTeX para dibujar gráficas con TikZ; en lugar de aprender sus opciones de ejes, describes la gráfica en lenguaje natural y obtienes un documento completo que puedes compilar, editar y pegar en un artículo.",
+      },
+      {
+        question: "¿Qué tipos de gráficas puede crear?",
+        answer:
+          "Todo lo que pgfplots puede dibujar: gráficas de funciones, gráficos de líneas, gráficos de barras, diagramas de dispersión, histogramas, barras de error, gráficas de área y superficies o mallas 3D. Describe los datos, los ejes y el estilo que quieres y el código los refleja.",
+      },
+      {
+        question: "¿Cómo pongo la gráfica en mi documento LaTeX?",
+        answer:
+          "Añade \\usepackage{pgfplots} y \\pgfplotsset{compat=1.18} a tu preámbulo y copia el entorno tikzpicture del código generado en tu documento, normalmente dentro de un entorno figure con un pie de figura.",
+      },
+      {
+        question: "¿El generador de PGFPlots es gratis?",
+        answer:
+          "Sí, es gratis y no necesita cuenta. El código lo escribe un modelo de IA (OpenAI GPT-5) y se compila con una distribución completa de TeX Live, así que comprueba en la vista previa que coincide con lo que pediste.",
+      },
+    ],
+    related: (
+      <>
+        Aprende las opciones de los ejes en la{" "}
+        <IntroLink href="https://www.useoctree.com/learn/pgfplots" external>
+          guía de pgfplots
+        </IntroLink>
+        , dibuja diagramas con el{" "}
+        <IntroLink href="/tools/tikz-generator">generador de TikZ</IntroLink> o convierte un CSV en
+        una tabla con el <IntroLink href="/tools/table-to-latex">generador de tablas LaTeX</IntroLink>.
       </>
     ),
   },

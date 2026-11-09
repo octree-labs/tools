@@ -1,5 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
+import { readdirSync, existsSync } from 'node:fs';
+import { join } from 'node:path';
 import './helpers/react-global';
 import cn from '../lib/tool-seo/locales/cn';
 import es from '../lib/tool-seo/locales/es';
@@ -9,19 +11,15 @@ import { getToolSeoTranslation } from '../lib/tool-seo';
 import { toLanguageTag } from '../lib/seo';
 
 const locales = { cn, es, fr, ru };
-const translatedTools = [
-  'latex-preview',
-  'math-to-latex',
-  'pdf-to-latex',
-  'image-to-tikz',
-  'tikz-generator',
-  'equation-to-latex',
-  'ai-latex-generator',
-  'table-to-latex',
-];
+// Every tool page with an SEO block (app/[locale]/tools/<slug>/seo-content.tsx)
+// must have a translation in every locale file.
+const toolsDir = join(__dirname, '..', 'app', '[locale]', 'tools');
+const translatedTools = readdirSync(toolsDir).filter((slug) =>
+  existsSync(join(toolsDir, slug, 'seo-content.tsx')),
+);
 
 for (const [code, locale] of Object.entries(locales)) {
-  test(`${code}: translates the most-visited tool pages`, () => {
+  test(`${code}: translates every tool page's SEO block`, () => {
     assert.deepEqual(Object.keys(locale).sort(), [...translatedTools].sort());
   });
 
@@ -41,9 +39,13 @@ for (const [code, locale] of Object.entries(locales)) {
   });
 }
 
+test('every tool has a seo-content.tsx block', () => {
+  assert.ok(translatedTools.length >= 20, `found only ${translatedTools.length} tools`);
+});
+
 test('English and untranslated locales fall back to the English block', () => {
   assert.equal(getToolSeoTranslation('latex-preview', 'en'), undefined);
   assert.equal(getToolSeoTranslation('latex-preview', 'de'), undefined);
-  assert.equal(getToolSeoTranslation('latex-to-word', 'cn'), undefined);
+  assert.equal(getToolSeoTranslation('latex-to-word', 'it'), undefined);
   assert.equal(toLanguageTag('cn'), 'zh');
 });

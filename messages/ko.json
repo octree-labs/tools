@@ -195,7 +195,7 @@
     },
     "citationGenerator": {
       "title": "LaTeX 인용 생성기",
-      "subtitle": "논문 세부 정보, DOI 또는 URL에서 BibTeX 인용 생성",
+      "subtitle": "붙여넣은 문헌 정보로 BibTeX 인용 생성",
       "citationDetailsLabel": "인용 세부 정보",
       "citationDetailsHint": "논문 세부 정보, DOI 또는 URL을 입력하세요",
       "placeholder": "인용 세부 정보 입력...",
@@ -418,7 +418,7 @@
     "imageToTikz": { "title": "이미지를 TikZ로", "description": "AI로 이미지를 TikZ 다이어그램으로 변환" },
     "latexPreview": { "title": "LaTeX 미리보기", "description": "PDF 미리보기가 있는 실시간 LaTeX 편집기" },
     "markdownToLatex": { "title": "Markdown을 LaTeX로", "description": "Markdown 문서를 LaTeX 형식으로 변환" },
-    "citationGenerator": { "title": "인용 생성기", "description": "DOI나 논문 세부 정보에서 BibTeX 인용 생성" },
+    "citationGenerator": { "title": "인용 생성기", "description": "붙여넣은 문헌 정보로 BibTeX 인용 생성" },
     "mathmlToLatex": { "title": "MathML을 LaTeX로", "description": "MathML 마크업을 LaTeX 형식으로 변환" },
     "aiLatexGenerator": { "title": "AI LaTeX 생성기", "description": "텍스트 설명에서 LaTeX 코드 생성" },
     "htmlToLatex": { "title": "HTML을 LaTeX로", "description": "HTML 마크업을 LaTeX 형식으로 변환" },
@@ -634,7 +634,7 @@
       },
       "citationGenerator": {
         "title": "LaTeX 인용 생성기 - BibTeX 생성기",
-        "description": "DOI, URL 또는 논문 세부 정보에서 BibTeX 인용을 생성합니다. 무료 LaTeX 인용 도구.",
+        "description": "붙여넣은 문헌 정보(제목, 저자, 연도, 학술지 또는 출판사)로 BibTeX 인용을 생성합니다. 무료 LaTeX 인용 도구.",
         "keywords": "LaTeX 인용 생성기, BibTeX 생성기, DOI BibTeX 변환, 인용 생성기, 참고문헌 생성기, 서지 생성기, 인용문 생성기, APA 인용 LaTeX, MLA 인용 LaTeX, 시카고 인용, IEEE 인용, 하버드 참고문헌 LaTeX, 논문 인용, 학술 인용"
       },
       "latexPreview": {

@@ -1,11 +1,16 @@
 import LatexToWordTool from './LatexToWordTool';
 import LatexToWordSeoContent from './seo-content';
 
-export default function LatexToWordPage() {
+export default async function LatexToWordPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
   return (
     <div className="min-h-screen bg-gray-50">
       <LatexToWordTool />
-      <LatexToWordSeoContent />
+      <LatexToWordSeoContent locale={locale} />
     </div>
   );
 }
