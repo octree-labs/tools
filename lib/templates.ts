@@ -2702,6 +2702,7 @@ Future enhancements could include [future work].
     slug: "article-template",
     previewUrl: "/templates/article-template.pdf",
     category: "Academic",
+    seoTitle: "Article Template for LaTeX & Overleaf | Free Download",
     code: String.raw`\documentclass[11pt]{article}
 \usepackage[margin=1in]{geometry}
 \usepackage{amsmath,amssymb}

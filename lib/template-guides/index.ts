@@ -1,9 +1,15 @@
 import type { ComponentType } from "react";
+import Aaai2026Guide from "./aaai-2026";
 import Aaai2027Guide from "./aaai-2027";
 import AcademicCvGuide from "./academic-cv";
+import Acl2026Guide from "./acl-2026";
+import AcmChi2026Guide from "./acm-chi-2026";
+import AlgorithmGuide from "./algorithm";
 import AnnotatedBibliographyGuide from "./annotated-bibliography";
 import ApaStudentPaperGuide from "./apa-student-paper";
 import ApaTitlePageGuide from "./apa-title-page";
+import ArticleTemplateGuide from "./article-template";
+import AssignmentGuide from "./assignment";
 import AtsResumeGuide from "./ats-resume";
 import BeamerDarkGuide from "./beamer-dark";
 import BeamerPresentationGuide from "./beamer-presentation";
@@ -65,11 +71,17 @@ import Www2026Guide from "./www-2026";
  * and registering it here.
  */
 const templateGuides: Record<string, ComponentType> = {
+  "aaai-2026": Aaai2026Guide,
   "aaai-2027": Aaai2027Guide,
   "academic-cv": AcademicCvGuide,
+  "acl-2026": Acl2026Guide,
+  "acm-chi-2026": AcmChi2026Guide,
+  "algorithm": AlgorithmGuide,
   "annotated-bibliography": AnnotatedBibliographyGuide,
   "apa-student-paper": ApaStudentPaperGuide,
   "apa-title-page": ApaTitlePageGuide,
+  "article-template": ArticleTemplateGuide,
+  "assignment": AssignmentGuide,
   "ats-resume": AtsResumeGuide,
   "beamer-dark": BeamerDarkGuide,
   "beamer-presentation": BeamerPresentationGuide,
