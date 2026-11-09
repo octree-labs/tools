@@ -6,6 +6,14 @@ import cnArrows from "./cn/arrows";
 import esArrows from "./es/arrows";
 import frArrows from "./fr/arrows";
 import ruArrows from "./ru/arrows";
+import cnBoolean from "./cn/boolean";
+import esBoolean from "./es/boolean";
+import frBoolean from "./fr/boolean";
+import ruBoolean from "./ru/boolean";
+import cnComputerScience from "./cn/computer-science";
+import esComputerScience from "./es/computer-science";
+import frComputerScience from "./fr/computer-science";
+import ruComputerScience from "./ru/computer-science";
 import cnFinance from "./cn/finance";
 import esFinance from "./es/finance";
 import frFinance from "./fr/finance";
@@ -129,6 +137,8 @@ export type { SymbolPageTranslation, SymbolPageTranslations } from "./types";
 const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
   cn: {
     "arrows": cnArrows,
+    "boolean": cnBoolean,
+    "computer-science": cnComputerScience,
     "finance": cnFinance,
     "functions": cnFunctions,
     "game-theory": cnGameTheory,
@@ -159,6 +169,8 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
   },
   es: {
     "arrows": esArrows,
+    "boolean": esBoolean,
+    "computer-science": esComputerScience,
     "finance": esFinance,
     "functions": esFunctions,
     "game-theory": esGameTheory,
@@ -189,6 +201,8 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
   },
   fr: {
     "arrows": frArrows,
+    "boolean": frBoolean,
+    "computer-science": frComputerScience,
     "finance": frFinance,
     "functions": frFunctions,
     "game-theory": frGameTheory,
@@ -219,6 +233,8 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
   },
   ru: {
     "arrows": ruArrows,
+    "boolean": ruBoolean,
+    "computer-science": ruComputerScience,
     "finance": ruFinance,
     "functions": ruFunctions,
     "game-theory": ruGameTheory,
