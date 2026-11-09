@@ -2,7 +2,7 @@
 
 import { Suspense } from "react";
 import Link from "next/link";
-import { useRouter, useSearchParams, usePathname, useSelectedLayoutSegment } from "next/navigation";
+import { useRouter, useSearchParams, usePathname, useSelectedLayoutSegments } from "next/navigation";
 import { symbolSlugToTranslationKey } from "@/lib/symbol-categories";
 import { useTranslations } from 'next-intl';
 
@@ -47,7 +47,8 @@ function SymbolsLayoutContent({
     const t = useTranslations('symbols');
     // Category pages get their own h1 ("Greek Symbols") instead of sharing the
     // generic hub heading across all 37 categories.
-    const segment = useSelectedLayoutSegment();
+    const segments = useSelectedLayoutSegments();
+    const segment = segments[0] ?? null;
     const categoryKey = segment ? symbolSlugToTranslationKey[segment] : undefined;
     const heading = categoryKey && t.has(`categories.${categoryKey}.title`)
         ? t(`categories.${categoryKey}.title`)
@@ -55,6 +56,18 @@ function SymbolsLayoutContent({
     const subheading = categoryKey && t.has(`categories.${categoryKey}.description`)
         ? t(`categories.${categoryKey}.description`)
         : t('description');
+
+    // Per-symbol pages (/symbols/<category>/<symbol>) render their own h1 and
+    // breadcrumbs, so they only get the page background here.
+    if (segments.length > 1) {
+        return (
+            <div className="min-h-screen bg-gray-50">
+                <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-16">
+                    {children}
+                </div>
+            </div>
+        );
+    }
 
     return (
         <div className="min-h-screen bg-gray-50">
