@@ -19,10 +19,16 @@ import BusinessCardGuide from "./business-card";
 import BusinessPlanGuide from "./business-plan";
 import BusinessReportGuide from "./business-report";
 import CalendarGuide from "./calendar";
+import CertificateGuide from "./certificate";
 import CornellNotesGuide from "./cornell-notes";
 import ConferencePosterGuide from "./conference-poster";
 import CoverLetterGuide from "./cover-letter";
+import Cvpr2026Guide from "./cvpr-2026";
+import DissertationGuide from "./dissertation";
+import Eccv2026Guide from "./eccv-2026";
 import Emnlp2026Guide from "./emnlp-2026";
+import EssayGuide from "./essay";
+import FlyerGuide from "./flyer";
 import HarvardResumeGuide from "./harvard-resume";
 import Icml2026Guide from "./icml-2026";
 import IeeeConferenceGuide from "./ieee-conference";
@@ -97,10 +103,16 @@ const templateGuides: Record<string, ComponentType> = {
   "business-plan": BusinessPlanGuide,
   "business-report": BusinessReportGuide,
   "calendar": CalendarGuide,
+  "certificate": CertificateGuide,
   "cornell-notes": CornellNotesGuide,
   "conference-poster": ConferencePosterGuide,
   "cover-letter": CoverLetterGuide,
+  "cvpr-2026": Cvpr2026Guide,
+  "dissertation": DissertationGuide,
+  "eccv-2026": Eccv2026Guide,
   "emnlp-2026": Emnlp2026Guide,
+  "essay": EssayGuide,
+  "flyer": FlyerGuide,
   "harvard-resume": HarvardResumeGuide,
   "icml-2026": Icml2026Guide,
   "ieee-conference": IeeeConferenceGuide,

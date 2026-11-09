@@ -59,7 +59,7 @@ export default function BusinessCardGuide() {
         only <GuideCode>xcolor</GuideCode> and <GuideCode>graphicx</GuideCode>, so
         the layout is easy to follow and to change. Keeping cards in LaTeX is handy
         when you already set your CV or letterhead in LaTeX and want the same fonts
-        and colours, or when you need to produce a batch of cards for a team.
+        and colours.
       </GuideP>
 
       <GuideH2 id="included">What is included</GuideH2>

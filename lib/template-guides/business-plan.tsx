@@ -59,9 +59,7 @@ export default function BusinessPlanGuide() {
         Writing a business plan in LaTeX keeps numbering, cross-references and the
         contents page correct as the plan grows, and the colour is defined once as{" "}
         <GuideCode>businessblue</GuideCode>, so restyling the plan for your brand
-        takes one line. <GuideCode>booktabs</GuideCode> and{" "}
-        <GuideCode>hyperref</GuideCode> are already loaded for cleaner tables and a
-        clickable contents page. If what you need is a report on results rather than a
+        takes one line. If what you need is a report on results rather than a
         plan, see the{" "}
         <GuideLink href="/templates/business-report">business report template</GuideLink>.
       </GuideP>
