@@ -108,7 +108,7 @@ const text: SymbolPageTranslations = {
     name: "当且仅当符号",
     meaning: "输出用于逻辑等价的长双向双线箭头，读作“当且仅当”。",
     usage:
-      "\\iff 输出两侧带额外宽间距的 \\Longleftrightarrow。它连接两个相互蕴含的命题，例如定理 n \\text{ is even} \\iff n^2 \\text{ is even}。逻辑学教材在公式内部通常更喜欢用 \\leftrightarrow 或 \\Leftrightarrow 表示双条件，而把 \\iff 留给文字叙述中的命题。由于有这些留白，\\iff 在紧凑的下标或集合构造式条件中显得过于松散。不要把它与 \\equiv 混淆，后者表示恒等或模 n 同余。",
+      "\\iff 输出两侧带额外宽间距的 \\Longleftrightarrow。它连接两个相互蕴含的命题，例如定理 n \\text{ 为偶数} \\iff n^2 \\text{ 为偶数}。逻辑学教材在公式内部通常更喜欢用 \\leftrightarrow 或 \\Leftrightarrow 表示双条件，而把 \\iff 留给文字叙述中的命题。由于有这些留白，\\iff 在紧凑的下标或集合构造式条件中显得过于松散。不要把它与 \\equiv 混淆，后者表示恒等或模 n 同余。",
   },
   "for-all": {
     name: "全称量词",

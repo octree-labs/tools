@@ -8,7 +8,7 @@ const text: SymbolPageTranslations = {
     usage: "\\varnothing et \\emptyset ont le même sens, l’ensemble vide, mais un aspect différent : en Computer Modern, \\emptyset est un zéro étroit et haut barré, tandis que \\varnothing est un cercle rond barré que beaucoup de mathématiciens préfèrent. Utilisez-en un seul de façon cohérente, par exemple A \\cap B = \\varnothing pour des ensembles disjoints. Ce n’est ni la lettre grecque \\phi ou \\varphi, ni la lettre scandinave \\O : évitez donc de les utiliser à sa place. Certains auteurs redéfinissent \\emptyset en \\varnothing dans le préambule, afin que toutes les occurrences changent d’un coup.",
   },
   "contains": {
-    name: "Contient",
+    name: "Sur-ensemble",
     meaning: "Relation d’appartenance inversée : l’ensemble de gauche contient l’élément de droite.",
     usage: "A \\ni x dit la même chose que x \\in A, mais avec l’ensemble en premier, ce qui se lit naturellement dans des tournures comme un voisinage U \\ni x. Des textes anciens et certains logiciens employaient aussi \\ni pour « tel que », bien que \\mid ou un deux-points soient aujourd’hui la norme. \\owns est un alias de \\ni. On le nie avec \\not\\ni. Ne le confondez pas avec la lettre epsilon ni avec un \\in retourné à la main : \\ni est une véritable relation, avec l’espacement correspondant.",
   },

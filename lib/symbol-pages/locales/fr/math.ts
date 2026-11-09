@@ -68,7 +68,7 @@ const text: SymbolPageTranslations = {
     usage: "Utilisez \\approx pour les approximations numériques comme \\pi \\approx 3.14159 et pour les développements au premier ordre, tels que \\sin x \\approx x pour x petit. C’est une relation : TeX lui donne donc un espacement épais, comme à =. Plusieurs symboles semblables ont d’autres sens : \\simeq signifie souvent asymptotiquement égal ou isomorphe, \\sim signifie équivalent asymptotiquement ou « suit la loi », \\cong désigne la congruence ou l’isomorphisme, et \\approxeq est une variante plus rare. Dans les textes de finance et d’ingénierie, \\approx marque généralement des résultats arrondis ; indiquez la précision, par exemple à trois décimales, pour que le lecteur sache à quel point l’estimation est approximative.",
   },
   "not-equal": {
-    name: "Différent de",
+    name: "Signe différent",
     meaning: "Indique que deux quantités ne sont pas égales ; c’est la négation du signe égal.",
     usage: "\\neq et son alias court \\ne produisent le même signe égal barré, et l’un ou l’autre convient. On le trouve dans des conditions comme x \\neq 0, dans des affirmations de distinction i \\neq j et, dans les articles orientés programmation, comme test d’inégalité. Écrire \\not= fonctionne aussi, mais la position de la barre peut différer légèrement du glyphe dédié. En informatique, évitez de taper != en mode mathématique : cela s’imprime comme un point d’exclamation suivi d’un signe égal. Pour « non équivalent » ou « non congru », utilisez \\not\\equiv ou \\ncong plutôt que \\neq.",
   },

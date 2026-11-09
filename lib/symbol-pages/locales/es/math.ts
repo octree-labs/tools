@@ -68,7 +68,7 @@ const text: SymbolPageTranslations = {
     usage: "Usa \\approx para aproximaciones numéricas como \\pi \\approx 3.14159 y para desarrollos de primer orden como \\sin x \\approx x para x pequeño. Es una relación, así que TeX le da un espaciado amplio, como a =. Varios símbolos parecidos tienen otros significados: \\simeq suele significar asintóticamente igual o isomorfo, \\sim significa asintótico o «se distribuye como», \\cong denota congruencia o isomorfismo, y \\approxeq es una variante menos frecuente. En textos de finanzas e ingeniería, \\approx suele marcar resultados redondeados; indica la precisión, por ejemplo hasta tres cifras decimales, para que el lector sepa cuán aproximada es la estimación.",
   },
   "not-equal": {
-    name: "Distinto de",
+    name: "Signo distinto de",
     meaning: "Indica que dos cantidades no son iguales; es la negación del signo igual.",
     usage: "\\neq y su alias corto \\ne producen el mismo signo igual tachado, y se puede usar cualquiera de los dos. Aparece en condiciones como x \\neq 0, en afirmaciones de distinción i \\neq j y, en artículos orientados a la programación, como prueba de desigualdad. Escribir \\not= también funciona, pero la posición de la barra puede diferir ligeramente de la del glifo dedicado. En textos de informática, evita teclear != en modo matemático; se imprime como un signo de exclamación seguido de un signo igual. Para «no equivalente» o «no congruente», usa \\not\\equiv o \\ncong en lugar de \\neq.",
   },
@@ -83,33 +83,33 @@ const text: SymbolPageTranslations = {
     usage: "\\geq y su alias \\ge son intercambiables. Teclear >= en modo matemático imprime dos caracteres separados, así que usa el comando. Los contextos habituales son las cotas inferiores como n \\geq 1, la desigualdad entre las medias aritmética y geométrica (AM-GM) y las restricciones en optimización como x_i \\geq 0. Algunas revistas prefieren la forma inclinada \\geqslant, y \\geqq tiene doble barra. En teoría del orden, la relación inversa \\succeq generaliza \\geq. Mantén, siempre que puedas, una cadena de desigualdades en un solo sentido, ya que a \\leq b \\leq c se lee más fácilmente que una mezcla de \\leq y \\geq.",
   },
   "implies": {
-    name: "Implica",
+    name: "Implicación",
     meaning: "Escribe una flecha doble larga para la implicación lógica: el enunciado de la izquierda implica el de la derecha.",
     usage: "\\implies produce \\Longrightarrow rodeada de un espaciado extra amplio, adecuado para implicaciones entre enunciados completos, como en x > 2 \\implies x^2 > 4. Para la implicación entre fórmulas dentro de una expresión lógica, muchos lógicos prefieren la más corta \\Rightarrow o \\to, sin ese hueco amplio. Su recíproca es \\impliedby. En las demostraciones, evita encadenar varias \\implies seguidas a lo largo de una página; las frases completas con «por tanto» suelen leerse mejor. En la notación de la lógica proposicional, p \\to q es más habitual que p \\implies q.",
     example: "x^2 = 4 \\implies x = 2 \\text{ o } x = -2",
   },
   "if-and-only-if": {
-    name: "Si y solo si",
+    name: "Equivalencia (si y solo si)",
     meaning: "Escribe una flecha larga de doble trazo con dos puntas para la equivalencia lógica, que se lee «si y solo si».",
-    usage: "\\iff produce \\Longleftrightarrow con un espaciado extra amplio a ambos lados. Une dos enunciados que se implican mutuamente, como en un teorema del tipo n \\text{ is even} \\iff n^2 \\text{ is even}. Los textos de lógica suelen preferir \\leftrightarrow o \\Leftrightarrow para el bicondicional dentro de las fórmulas, y reservan \\iff para los enunciados en prosa. Debido a ese relleno, \\iff queda demasiado holgado dentro de subíndices compactos o de condiciones en notación de conjuntos por comprensión. No lo confundas con \\equiv, que significa idénticamente igual o congruente módulo n.",
+    usage: "\\iff produce \\Longleftrightarrow con un espaciado extra amplio a ambos lados. Une dos enunciados que se implican mutuamente, como en un teorema del tipo n \\text{ es par} \\iff n^2 \\text{ es par}. Los textos de lógica suelen preferir \\leftrightarrow o \\Leftrightarrow para el bicondicional dentro de las fórmulas, y reservan \\iff para los enunciados en prosa. Debido a ese relleno, \\iff queda demasiado holgado dentro de subíndices compactos o de condiciones en notación de conjuntos por comprensión. No lo confundas con \\equiv, que significa idénticamente igual o congruente módulo n.",
   },
   "for-all": {
-    name: "Para todo",
+    name: "Cuantificador universal",
     meaning: "Da el cuantificador universal ∀, que se lee «para todo» o «para cada».",
     usage: "\\forall encabeza los enunciados cuantificados universalmente, como en la definición épsilon-delta \\forall \\varepsilon > 0\\ \\exists \\delta > 0. TeX lo trata como un símbolo ordinario, así que no hay espacio automático después de la variable ligada; añade \\, o \\ o un separador como dos puntos o un punto, según tu convención. En demostraciones con mucha prosa, muchas guías de estilo prefieren escribir «para todo» con palabras en lugar de \\forall. En el cálculo lambda tipado y en la teoría de tipos también introduce tipos polimórficos, por ejemplo \\forall \\alpha.\\, \\alpha \\to \\alpha.",
   },
   "exists": {
-    name: "Existe",
+    name: "Cuantificador existencial",
     meaning: "Da el cuantificador existencial ∃, que se lee «existe» o «para algún».",
     usage: "\\exists afirma que al menos un elemento cumple una propiedad, como en \\exists x \\in \\mathbb{R} : x^2 = 2. La unicidad se escribe \\exists! (existe exactamente uno), y \\nexists da el símbolo negado, «no existe». Al igual que \\forall, es un símbolo ordinario, así que inserta un espacio fino o dos puntos después de la variable ligada para facilitar la lectura. El orden de los cuantificadores importa: \\forall x\\, \\exists y difiere de \\exists y\\, \\forall x, así que mantenlos en la secuencia deseada. En la escritura de lógica formal, los paréntesis alrededor del alcance, \\exists x\\,(P(x)), evitan ambigüedades.",
   },
   "element-of": {
-    name: "Pertenece a",
+    name: "Pertenencia",
     meaning: "Indica pertenencia: el elemento de la izquierda pertenece al conjunto de la derecha.",
     usage: "\\in es la relación básica de pertenencia a un conjunto, como en x \\in \\mathbb{R} o n \\in \\mathbb{N}, y recibe espaciado de relación. Su simétrico \\ni se lee «contiene como elemento», y \\notin es su negación. No lo confundas con \\epsilon ni con \\varepsilon, que son letras griegas de aspecto parecido pero con espaciado y significado distintos. En sumas y en la notación de conjuntos por comprensión liga el índice, como en \\sum_{x \\in S} f(x) o \\{x \\in X : f(x) > 0\\}. Para las relaciones de inclusión entre dos conjuntos usa \\subseteq, no \\in.",
   },
   "not-element-of": {
-    name: "No pertenece a",
+    name: "No pertenencia",
     meaning: "Indica no pertenencia: el elemento de la izquierda no pertenece al conjunto dado.",
     usage: "\\notin es una versión tachada específica de \\in, compuesta como relación, como en \\sqrt{2} \\notin \\mathbb{Q}. Escribir \\not\\in da un resultado parecido, pero \\notin coloca mejor la barra y es la opción estándar. Sus compañeros naturales son \\in y \\ni, y para la inclusión negada se usaría \\not\\subset o \\nsubseteq. Entre las frases típicas están las demostraciones por reducción al absurdo y las descripciones de complementarios, como x \\in A^c \\iff x \\notin A. En los cuantificadores, \\forall x \\notin S es una abreviatura aceptable, pero explicitar el dominio es más claro.",
   },
@@ -144,7 +144,7 @@ const text: SymbolPageTranslations = {
     usage: "\\nabla f es el gradiente, \\nabla \\cdot \\mathbf{F} la divergencia, \\nabla \\times \\mathbf{F} el rotacional, y \\nabla^2 o \\Delta el laplaciano. En aprendizaje automático, \\nabla_\\theta L(\\theta) denota el gradiente de una función de pérdida respecto de los parámetros, como en el descenso de gradiente \\theta \\leftarrow \\theta - \\eta \\nabla_\\theta L. Los geómetras diferenciales usan \\nabla para una conexión o una derivada covariante, \\nabla_X Y. Es un símbolo ordinario, así que no se inserta espaciado adicional. Algunos autores lo ponen en negrita con \\boldsymbol{\\nabla} para subrayar que es un operador vectorial.",
   },
   "plus-minus": {
-    name: "Más menos",
+    name: "Más o menos",
     meaning: "Da el signo más o menos ±, para dos alternativas o para una tolerancia alrededor de un valor.",
     usage: "\\pm aparece en la fórmula cuadrática x = \\frac{-b \\pm \\sqrt{b^2-4ac}}{2a} y en la incertidumbre de medida, como 9.81 \\pm 0.02. Su contrapartida \\mp (menos más) se usa cuando los signos deben alternarse a la vez, como en \\cos(a \\pm b) = \\cos a \\cos b \\mp \\sin a \\sin b. Es un operador binario, así que TeX lo espacia como +. En las tablas de resultados experimentales, alinea los números en torno al signo \\pm para facilitar la lectura. Los textos de finanzas lo usan para rangos como una rentabilidad del 5\\% \\pm 2\\%.",
   },

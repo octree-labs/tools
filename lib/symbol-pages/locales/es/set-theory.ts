@@ -8,12 +8,12 @@ const text: SymbolPageTranslations = {
     usage: "\\varnothing y \\emptyset significan lo mismo, el conjunto vacío, pero tienen un aspecto distinto: \\emptyset en Computer Modern es un cero estrecho y alto con una barra, mientras que \\varnothing es un círculo redondo con una barra que muchos matemáticos prefieren. Usa uno de forma coherente, por ejemplo A \\cap B = \\varnothing para conjuntos disjuntos. No es la letra griega \\phi ni \\varphi, ni la letra escandinava \\O, así que evita usarlas como sustitutos. Algunos autores redefinen \\emptyset como \\varnothing en el preámbulo para que todas las apariciones cambien a la vez.",
   },
   "contains": {
-    name: "Contiene",
+    name: "Superconjunto",
     meaning: "Relación de pertenencia invertida: el conjunto de la izquierda contiene el elemento de la derecha.",
     usage: "A \\ni x dice lo mismo que x \\in A, con el conjunto en primer lugar, lo que resulta natural en expresiones como un entorno U \\ni x. Los textos antiguos y algunos lógicos también usaban \\ni para «tal que», aunque hoy lo estándar es \\mid o dos puntos. \\owns es un alias de \\ni. Se niega con \\not\\ni. No lo confundas con la letra épsilon ni con un \\in girado a mano; \\ni es una relación propiamente dicha, con el espaciado correspondiente.",
   },
   "not-subset": {
-    name: "No es subconjunto",
+    name: "No inclusión",
     meaning: "Signo de subconjunto tachado: el conjunto de la izquierda no es subconjunto del de la derecha.",
     usage: "\\not\\subset superpone una barra a \\subset mediante el prefijo genérico \\not. El resultado es aceptable, aunque la barra a veces queda descentrada; los glifos dedicados \\nsubseteq (no es subconjunto ni igual) y \\nsubset, presente en algunos paquetes de símbolos, se ven mejor. Como el propio \\subset es ambiguo entre la inclusión estricta y la no estricta, \\nsubseteq suele ser la negación más clara. Ejemplo: \\mathbb{Q} \\not\\subset \\mathbb{Z}, porque 1/2 es racional pero no entero. Escribe \\not justo antes de la relación, sin espacio ni llaves, para que se combinen correctamente.",
     example: "\\mathbb{Q} \\not\\subset \\mathbb{Z} \\text{ ya que } \\tfrac{1}{2} \\notin \\mathbb{Z}",
