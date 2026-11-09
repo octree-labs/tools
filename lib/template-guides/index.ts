@@ -49,6 +49,10 @@ import ResearchStatementGuide from "./research-statement";
 import ResumeGuide from "./resume";
 import ScientificReportGuide from "./scientific-report";
 import StatementOfPurposeGuide from "./statement-of-purpose";
+import SyllabusGuide from "./syllabus";
+import TableTemplateGuide from "./table-template";
+import TechnicalReportGuide from "./technical-report";
+import ThesisGuide from "./thesis";
 
 /**
  * Long-form guides rendered below the preview on template pages.
@@ -108,6 +112,10 @@ const templateGuides: Record<string, ComponentType> = {
   resume: ResumeGuide,
   "scientific-report": ScientificReportGuide,
   "statement-of-purpose": StatementOfPurposeGuide,
+  "syllabus": SyllabusGuide,
+  "table-template": TableTemplateGuide,
+  "technical-report": TechnicalReportGuide,
+  "thesis": ThesisGuide,
 };
 
 export function getTemplateGuide(slug: string): ComponentType | undefined {

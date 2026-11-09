@@ -2392,6 +2392,7 @@ Key takeaways from today's lecture:
     slug: "quiz-template",
     previewUrl: "/templates/quiz-template.pdf",
     category: "Education",
+    seoTitle: "Quiz LaTeX Template | Free Download & Preview",
     code: String.raw`\documentclass[12pt]{article}
 \usepackage[margin=1in]{geometry}
 \usepackage{amsmath}
@@ -4715,6 +4716,7 @@ Researcher Name | Email | Phone
     slug: "table-template",
     previewUrl: "/templates/table-template.pdf",
     category: "Other",
+    seoTitle: "LaTeX Table Templates & Examples | Free Download",
     code: String.raw`\documentclass[11pt]{article}
 \usepackage[margin=1in]{geometry}
 \usepackage{booktabs}
