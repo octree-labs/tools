@@ -30,10 +30,22 @@ import cnSpecialFunctions from "./cn/special-functions";
 import esSpecialFunctions from "./es/special-functions";
 import frSpecialFunctions from "./fr/special-functions";
 import ruSpecialFunctions from "./ru/special-functions";
+import cnSummation from "./cn/summation";
+import esSummation from "./es/summation";
+import frSummation from "./fr/summation";
+import ruSummation from "./ru/summation";
 import cnTensors from "./cn/tensors";
 import esTensors from "./es/tensors";
 import frTensors from "./fr/tensors";
 import ruTensors from "./ru/tensors";
+import cnTopology from "./cn/topology";
+import esTopology from "./es/topology";
+import frTopology from "./fr/topology";
+import ruTopology from "./ru/topology";
+import cnTrigonometry from "./cn/trigonometry";
+import esTrigonometry from "./es/trigonometry";
+import frTrigonometry from "./fr/trigonometry";
+import ruTrigonometry from "./ru/trigonometry";
 import cnUnits from "./cn/units";
 import esUnits from "./es/units";
 import frUnits from "./fr/units";
@@ -59,7 +71,10 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "relations": cnRelations,
     "set-theory": cnSetTheory,
     "special-functions": cnSpecialFunctions,
+    "summation": cnSummation,
     "tensors": cnTensors,
+    "topology": cnTopology,
+    "trigonometry": cnTrigonometry,
     "units": cnUnits,
   },
   es: {
@@ -70,7 +85,10 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "relations": esRelations,
     "set-theory": esSetTheory,
     "special-functions": esSpecialFunctions,
+    "summation": esSummation,
     "tensors": esTensors,
+    "topology": esTopology,
+    "trigonometry": esTrigonometry,
     "units": esUnits,
   },
   fr: {
@@ -81,7 +99,10 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "relations": frRelations,
     "set-theory": frSetTheory,
     "special-functions": frSpecialFunctions,
+    "summation": frSummation,
     "tensors": frTensors,
+    "topology": frTopology,
+    "trigonometry": frTrigonometry,
     "units": frUnits,
   },
   ru: {
@@ -92,7 +113,10 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "relations": ruRelations,
     "set-theory": ruSetTheory,
     "special-functions": ruSpecialFunctions,
+    "summation": ruSummation,
     "tensors": ruTensors,
+    "topology": ruTopology,
+    "trigonometry": ruTrigonometry,
     "units": ruUnits,
   },
 };

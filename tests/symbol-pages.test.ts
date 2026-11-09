@@ -218,7 +218,10 @@ const TRANSLATED_CATEGORIES: string[] = [
   'relations',
   'set-theory',
   'special-functions',
+  'summation',
   'tensors',
+  'topology',
+  'trigonometry',
   'units',
 ];
 
