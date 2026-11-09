@@ -28,6 +28,14 @@ import OrderIntro from "./order";
 import PhysicsIntro from "./physics";
 import ProbabilityIntro from "./probability";
 import QuantifiersIntro from "./quantifiers";
+import RelationsIntro from "./relations";
+import SetTheoryIntro from "./set-theory";
+import SpecialFunctionsIntro from "./special-functions";
+import SummationIntro from "./summation";
+import TensorsIntro from "./tensors";
+import TopologyIntro from "./topology";
+import TrigonometryIntro from "./trigonometry";
+import UnitsIntro from "./units";
 
 /**
  * Editorial intros rendered above the symbol grid on category pages.
@@ -67,6 +75,14 @@ const symbolIntros: Record<string, ComponentType> = {
   physics: PhysicsIntro,
   probability: ProbabilityIntro,
   quantifiers: QuantifiersIntro,
+  relations: RelationsIntro,
+  "set-theory": SetTheoryIntro,
+  "special-functions": SpecialFunctionsIntro,
+  summation: SummationIntro,
+  tensors: TensorsIntro,
+  topology: TopologyIntro,
+  trigonometry: TrigonometryIntro,
+  units: UnitsIntro,
 };
 
 export function getSymbolIntro(slug: string): ComponentType | undefined {

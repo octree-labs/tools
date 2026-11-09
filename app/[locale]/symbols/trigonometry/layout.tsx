@@ -2,9 +2,15 @@ import { Metadata } from "next";
 import { generateSymbolMetadata } from '@/lib/generate-symbol-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "LaTeX Trigonometry Symbols - Sin, Cos, Tan, Inverse Trig | Free",
-  description: "Complete list of LaTeX trigonometry symbols. Copy-paste sin, cos, tan, arcsin, arccos, arctan, hyperbolic functions with LaTeX commands.",
+  title: "LaTeX Trigonometry - Sin, Cos, Tan, Arcsin & Degrees",
+  description: "LaTeX trigonometry symbols, copy-ready: \\sin, \\cos, \\tan, \\sec, \\csc, \\cot, inverse \\arcsin and \\arctan, hyperbolic functions, \\sin^2 and degrees.",
   keywords: [
+    "latex trigonometry",
+    "trig functions latex",
+    "sin latex",
+    "cos latex",
+    "arcsin latex",
+    "sin squared latex",
     "trigonometry symbols",
     "trig notation latex",
     "latex sin cos tan",
@@ -25,8 +31,8 @@ const defaultMetadata: Metadata = {
     "calculus symbols",
   ],
   openGraph: {
-    title: "LaTeX Trigonometry Symbols - Complete Symbol Reference",
-    description: "Copy-paste LaTeX code for sine, cosine, tangent, and trigonometric functions.",
+    title: "LaTeX Trigonometry - Sin, Cos, Tan, Arcsin & Degrees",
+    description: "How to write trig functions, inverse trig functions and degrees in LaTeX.",
   },
 };
 
