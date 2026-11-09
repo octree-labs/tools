@@ -35,7 +35,7 @@ const translations: ToolSeoLocale = {
       },
       {
         title: "保存结果",
-        body: "点击 Open in Octree（在 Octree 中打开），即可把文档保存为项目、添加图片和 .bib 文件，或让 AI 帮你修改。",
+        body: "点击“在 Octree 中打开”，即可把文档保存为项目、添加图片和 .bib 文件，或让 AI 帮你修改。",
       },
     ],
     tipsHeading: "常见 LaTeX 错误及解决方法",
@@ -478,7 +478,7 @@ const translations: ToolSeoLocale = {
       },
       {
         title: "生成 LaTeX 代码",
-        body: "点击 Generate LaTeX（生成 LaTeX）。代码会以完整文档的形式逐步输出，文档类、宏包和结构都已就绪。",
+        body: "点击“生成 LaTeX”。代码会以完整文档的形式逐步输出，文档类、宏包和结构都已就绪。",
       },
       {
         title: "预览后复制或继续编辑",
@@ -551,7 +551,7 @@ const translations: ToolSeoLocale = {
           LaTeX 最快的方法：先把工作表另存为 CSV，因为工具不能直接读取 .xlsx 文件。
         </p>
         <p>
-          Preview（预览）标签页会用 Octree 编译服务上的完整 TeX Live 发行版编译表格，让你在导出 .tex 文件、PDF 或 JPG
+          “预览”标签页会用 Octree 编译服务上的完整 TeX Live 发行版编译表格，让你在导出 .tex 文件、PDF 或 JPG
           图片之前先看到效果。文件在浏览器中读取并以文本形式发送，每次转换返回约 2,000 个 token 的 LaTeX，足以容纳几十行的结果表。完全免费，无需账号。
         </p>
       </>
@@ -560,15 +560,15 @@ const translations: ToolSeoLocale = {
     steps: [
       {
         title: "将表格保存为 CSV",
-        body: "在 Excel 中选择 File > Save As > CSV (Comma delimited)；在 Google Sheets 中选择 File > Download > Comma-separated values。请保持表头行位于第一行。",
+        body: "在 Excel 中选择“文件 > 另存为 > CSV UTF-8(逗号分隔)”；在 Google 表格中选择“文件 > 下载 > 逗号分隔值 (.csv)”。请保持表头行位于第一行。",
       },
       {
         title: "上传 .csv 文件",
-        body: "把文件拖到上传区域，或点击选择文件。LaTeX 表格会以完整文档的形式逐步输出到 Code（代码）标签页。",
+        body: "把文件拖到上传区域，或点击选择文件。LaTeX 表格会以完整文档的形式逐步输出到 “代码”标签页。",
       },
       {
         title: "预览并导出",
-        body: "打开 Preview 标签页把表格编译为 PDF，然后导出 .tex 文件、PDF 或 JPG 图片，或在 Octree 中打开，把表格放进你的论文。",
+        body: "打开“预览”标签页把表格编译为 PDF，然后导出 .tex 文件、PDF 或 JPG 图片，或在 Octree 中打开，把表格放进你的论文。",
       },
     ],
     tipsHeading: "常见表格问题及解决方法",
@@ -601,7 +601,7 @@ const translations: ToolSeoLocale = {
       {
         question: "如何把 Excel 表格转换成 LaTeX？",
         answer:
-          "在 Excel 中把工作表另存为 CSV 文件（File > Save As > CSV），然后在这里上传 .csv 文件。本工具不能直接读取 .xlsx 文件，但工作表导出的 CSV 包含相同的单元格数值。你会得到一份完整 LaTeX 文档中的 booktabs 表格，可以预览、下载并粘贴到论文中。",
+          "在 Excel 中把工作表另存为 CSV 文件（文件 > 另存为 > CSV），然后在这里上传 .csv 文件。本工具不能直接读取 .xlsx 文件，但工作表导出的 CSV 包含相同的单元格数值。你会得到一份完整 LaTeX 文档中的 booktabs 表格，可以预览、下载并粘贴到论文中。",
       },
       {
         question: "LaTeX 表格生成器支持哪些文件格式？",
@@ -648,7 +648,7 @@ const translations: ToolSeoLocale = {
       },
       {
         title: "转换为 LaTeX",
-        body: "点击 Convert（转换）。AI 会识别公式中的分式、根号、求和、积分、矩阵和希腊字母，并使用 amsmath 写出标准 LaTeX，输出可在 Overleaf、Octree 或任何 TeX 发行版中编译。",
+        body: "点击“转换为 LaTeX”。AI 会识别公式中的分式、根号、求和、积分、矩阵和希腊字母，并使用 amsmath 写出标准 LaTeX，输出可在 Overleaf、Octree 或任何 TeX 发行版中编译。",
       },
       {
         title: "检查预览并复制代码",
@@ -683,7 +683,7 @@ const translations: ToolSeoLocale = {
       {
         question: "如何把公式转换成 LaTeX？",
         answer:
-          "以纯文本或数学写法输入公式，或上传公式图片，然后点击 Convert to LaTeX（转换为 LaTeX）。转换工具会返回使用 amsmath 的 LaTeX 代码，并显示渲染预览，方便你在复制到文档之前检查。",
+          "以纯文本或数学写法输入公式，或上传公式图片，然后点击“转换为 LaTeX”。转换工具会返回使用 amsmath 的 LaTeX 代码，并显示渲染预览，方便你在复制到文档之前检查。",
       },
       {
         question: "可以把手写公式转换成 LaTeX 吗？",
@@ -703,8 +703,8 @@ const translations: ToolSeoLocale = {
     ],
     related: (
       <>
-        想了解输出中用到的命令？浏览 <IntroLink href="/symbols">LaTeX 符号大全</IntroLink>，或者试试处理纯文本数学写法的{" "}
-        <IntroLink href="/tools/math-to-latex">数学公式转 LaTeX 工具</IntroLink>。
+        想了解输出中用到的命令？浏览 <IntroLink href="/symbols">LaTeX 符号大全</IntroLink>。纯文本数学写法直接输入上方的输入框即可；如需把结果当作完整文档继续编辑，请使用
+        <IntroLink href="/tools/latex-preview">在线 LaTeX 编辑器</IntroLink>。
       </>
     ),
   },

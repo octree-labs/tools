@@ -21,7 +21,7 @@ const steps = [
   {
     title: "Convert to LaTeX",
     body:
-      "Click Convert. The AI reads the equation, recognises fractions, roots, sums, integrals, matrices and Greek letters, and writes standard LaTeX using amsmath, so the output compiles in Overleaf, Octree or any TeX distribution.",
+      "Click Convert to LaTeX. The AI reads the equation, recognises fractions, roots, sums, integrals, matrices and Greek letters, and writes standard LaTeX using amsmath, so the output compiles in Overleaf, Octree or any TeX distribution.",
   },
   {
     title: "Check the preview and copy the code",
@@ -127,12 +127,13 @@ export default function EquationToLatexSeoContent({ locale = "en" }: { locale?: 
           Looking for the commands behind the output? Browse the{" "}
           <Link href="/symbols" className="text-blue-600 hover:text-blue-700 underline underline-offset-2">
             LaTeX symbol reference
-          </Link>{" "}
-          or try the{" "}
-          <Link href="/tools/math-to-latex" className="text-blue-600 hover:text-blue-700 underline underline-offset-2">
-            math to LaTeX converter
-          </Link>{" "}
-          for plain-text math notation.
+          </Link>
+          . Plain-text math goes straight into the box above; to keep editing the result as a
+          full document, use the{" "}
+          <Link href="/tools/latex-preview" className="text-blue-600 hover:text-blue-700 underline underline-offset-2">
+            online LaTeX editor
+          </Link>
+          .
         </p>
 
         <script

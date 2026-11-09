@@ -40,7 +40,7 @@ const translations: ToolSeoLocale = {
       },
       {
         title: "Conserva el resultado",
-        body: "Haz clic en \"Open in Octree\" (abrir en Octree) para guardar el documento como proyecto, añadir imágenes y archivos .bib o pedirle a la IA que lo edite.",
+        body: "Haz clic en \"Abrir en Octree\" para guardar el documento como proyecto, añadir imágenes y archivos .bib o pedirle a la IA que lo edite.",
       },
     ],
     tipsHeading: "Errores comunes de LaTeX y cómo solucionarlos",
@@ -516,7 +516,7 @@ const translations: ToolSeoLocale = {
       },
       {
         title: "Genera el código LaTeX",
-        body: "Haz clic en \"Generate LaTeX\" (generar LaTeX). El código va apareciendo como un documento completo, con la clase de documento, los paquetes y la estructura ya preparados.",
+        body: "Haz clic en \"Generar LaTeX\". El código va apareciendo como un documento completo, con la clase de documento, los paquetes y la estructura ya preparados.",
       },
       {
         title: "Previsualiza y luego copia o sigue editando",
@@ -593,7 +593,7 @@ const translations: ToolSeoLocale = {
           se leen directamente.
         </p>
         <p>
-          La pestaña Preview compila la tabla con una distribución completa de TeX Live en el
+          La pestaña Vista previa compila la tabla con una distribución completa de TeX Live en el
           servicio de compilación de Octree, así que ves el resultado antes de exportar el archivo
           .tex, un PDF o una imagen JPG. El archivo se lee en tu navegador y se envía como texto, y
           cada conversión devuelve unos 2000 tokens de LaTeX, suficiente para una tabla de
@@ -609,11 +609,11 @@ const translations: ToolSeoLocale = {
       },
       {
         title: "Sube el archivo .csv",
-        body: "Arrastra el archivo al área de carga o haz clic para elegirlo. La tabla LaTeX va apareciendo en la pestaña Code como un documento completo.",
+        body: "Arrastra el archivo al área de carga o haz clic para elegirlo. La tabla LaTeX va apareciendo en la pestaña Código como un documento completo.",
       },
       {
         title: "Previsualiza y exporta",
-        body: "Abre la pestaña Preview para compilar la tabla a PDF y luego exporta el archivo .tex, el PDF o una imagen JPG, o ábrelo en Octree para colocar la tabla en tu artículo.",
+        body: "Abre la pestaña Vista previa para compilar la tabla a PDF y luego exporta el archivo .tex, el PDF o una imagen JPG, o ábrelo en Octree para colocar la tabla en tu artículo.",
       },
     ],
     tipsHeading: "Problemas comunes con tablas y cómo solucionarlos",
@@ -697,7 +697,7 @@ const translations: ToolSeoLocale = {
       },
       {
         title: "Convierte a LaTeX",
-        body: "Haz clic en \"Convert\" (convertir). La IA lee la ecuación, reconoce fracciones, raíces, sumatorios, integrales, matrices y letras griegas, y escribe LaTeX estándar con amsmath, así que el resultado compila en Overleaf, Octree o cualquier distribución de TeX.",
+        body: "Haz clic en \"Convertir a LaTeX\". La IA lee la ecuación, reconoce fracciones, raíces, sumatorios, integrales, matrices y letras griegas, y escribe LaTeX estándar con amsmath, así que el resultado compila en Overleaf, Octree o cualquier distribución de TeX.",
       },
       {
         title: "Revisa la vista previa y copia el código",
@@ -732,7 +732,7 @@ const translations: ToolSeoLocale = {
       {
         question: "¿Cómo convierto una ecuación a LaTeX?",
         answer:
-          "Escribe la ecuación en texto plano o en notación matemática, o sube una imagen de ella, y haz clic en Convert to LaTeX. El conversor devuelve código LaTeX que usa amsmath y muestra una vista previa renderizada para que puedas revisarla antes de copiarla en tu documento.",
+          "Escribe la ecuación en texto plano o en notación matemática, o sube una imagen de ella, y haz clic en \"Convertir a LaTeX\". El conversor devuelve código LaTeX que usa amsmath y muestra una vista previa renderizada para que puedas revisarla antes de copiarla en tu documento.",
       },
       {
         question: "¿Puede convertir una ecuación escrita a mano a LaTeX?",
@@ -753,9 +753,10 @@ const translations: ToolSeoLocale = {
     related: (
       <>
         ¿Buscas los comandos que hay detrás del resultado? Consulta la{" "}
-        <IntroLink href="/symbols">referencia de símbolos de LaTeX</IntroLink> o prueba el{" "}
-        <IntroLink href="/tools/math-to-latex">conversor de matemáticas a LaTeX</IntroLink> para
-        notación matemática en texto plano.
+        <IntroLink href="/symbols">referencia de símbolos de LaTeX</IntroLink>. Las matemáticas en
+        texto plano se escriben directamente en el cuadro de arriba; para seguir editando el
+        resultado como documento completo, usa el{" "}
+        <IntroLink href="/tools/latex-preview">editor de LaTeX en línea</IntroLink>.
       </>
     ),
   },

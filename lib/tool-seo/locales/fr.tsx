@@ -40,7 +40,7 @@ const translations: ToolSeoLocale = {
       },
       {
         title: "Conservez le résultat",
-        body: "Cliquez sur « Open in Octree » pour enregistrer le document comme projet, ajouter des images et des fichiers .bib, ou demander à l’IA de le modifier.",
+        body: "Cliquez sur « Ouvrir dans Octree » pour enregistrer le document comme projet, ajouter des images et des fichiers .bib, ou demander à l’IA de le modifier.",
       },
     ],
     tipsHeading: "Erreurs LaTeX courantes et comment les corriger",
@@ -515,7 +515,7 @@ const translations: ToolSeoLocale = {
       },
       {
         title: "Générez le code LaTeX",
-        body: "Cliquez sur « Generate LaTeX ». Le code s’affiche progressivement sous forme de document complet, avec la classe de document, les packages et la structure déjà en place.",
+        body: "Cliquez sur « Générer LaTeX ». Le code s’affiche progressivement sous forme de document complet, avec la classe de document, les packages et la structure déjà en place.",
       },
       {
         title: "Prévisualisez, puis copiez ou continuez l’édition",
@@ -592,7 +592,7 @@ const translations: ToolSeoLocale = {
           directement.
         </p>
         <p>
-          L’onglet « Preview » compile le tableau avec une distribution TeX Live complète sur le
+          L’onglet « Aperçu » compile le tableau avec une distribution TeX Live complète sur le
           service de compilation d’Octree : vous voyez le résultat avant d’exporter le fichier .tex,
           un PDF ou une image JPG. Le fichier est lu dans votre navigateur et envoyé sous forme de
           texte, et chaque conversion renvoie environ 2 000 tokens de LaTeX, de quoi contenir un
@@ -605,7 +605,7 @@ const translations: ToolSeoLocale = {
     steps: [
       {
         title: "Enregistrez votre tableau en CSV",
-        body: "Dans Excel, choisissez Fichier > Enregistrer sous > CSV (délimité par des virgules) ; dans Google Sheets, Fichier > Télécharger > Valeurs séparées par des virgules. Gardez la ligne d’en-tête en première ligne.",
+        body: "Dans Excel, choisissez Fichier > Enregistrer sous > CSV UTF-8 (délimité par des virgules) ; dans Google Sheets, Fichier > Télécharger > Valeurs séparées par des virgules. Gardez la ligne d’en-tête en première ligne.",
       },
       {
         title: "Importez le fichier .csv",
@@ -613,7 +613,7 @@ const translations: ToolSeoLocale = {
       },
       {
         title: "Prévisualisez et exportez",
-        body: "Ouvrez l’onglet « Preview » pour compiler le tableau en PDF, puis exportez le fichier .tex, le PDF ou une image JPG, ou ouvrez-le dans Octree pour placer le tableau dans votre article.",
+        body: "Ouvrez l’onglet « Aperçu » pour compiler le tableau en PDF, puis exportez le fichier .tex, le PDF ou une image JPG, ou ouvrez-le dans Octree pour placer le tableau dans votre article.",
       },
     ],
     tipsHeading: "Problèmes de tableaux courants et comment les corriger",
@@ -697,7 +697,7 @@ const translations: ToolSeoLocale = {
       },
       {
         title: "Convertissez en LaTeX",
-        body: "Cliquez sur « Convert ». L’IA lit l’équation, reconnaît fractions, racines, sommes, intégrales, matrices et lettres grecques, et écrit du LaTeX standard avec amsmath : le résultat compile dans Overleaf, Octree ou n’importe quelle distribution TeX.",
+        body: "Cliquez sur « Convertir en LaTeX ». L’IA lit l’équation, reconnaît fractions, racines, sommes, intégrales, matrices et lettres grecques, et écrit du LaTeX standard avec amsmath : le résultat compile dans Overleaf, Octree ou n’importe quelle distribution TeX.",
       },
       {
         title: "Vérifiez l’aperçu et copiez le code",
@@ -732,7 +732,7 @@ const translations: ToolSeoLocale = {
       {
         question: "Comment convertir une équation en LaTeX ?",
         answer:
-          "Tapez l’équation en texte brut ou en notation mathématique, ou importez-en une image, puis cliquez sur « Convert to LaTeX ». Le convertisseur renvoie du code LaTeX qui utilise amsmath et affiche un aperçu rendu pour que vous puissiez le vérifier avant de le copier dans votre document.",
+          "Tapez l’équation en texte brut ou en notation mathématique, ou importez-en une image, puis cliquez sur « Convertir en LaTeX ». Le convertisseur renvoie du code LaTeX qui utilise amsmath et affiche un aperçu rendu pour que vous puissiez le vérifier avant de le copier dans votre document.",
       },
       {
         question: "Peut-on convertir une équation manuscrite en LaTeX ?",
@@ -753,9 +753,10 @@ const translations: ToolSeoLocale = {
     related: (
       <>
         Vous cherchez les commandes derrière le résultat ? Parcourez la{" "}
-        <IntroLink href="/symbols">référence des symboles LaTeX</IntroLink> ou essayez le{" "}
-        <IntroLink href="/tools/math-to-latex">convertisseur de maths en LaTeX</IntroLink> pour la
-        notation mathématique en texte brut.
+        <IntroLink href="/symbols">référence des symboles LaTeX</IntroLink>. Les maths en texte
+        brut se tapent directement dans le champ ci-dessus ; pour continuer à éditer le résultat
+        comme document complet, utilisez l’
+        <IntroLink href="/tools/latex-preview">éditeur LaTeX en ligne</IntroLink>.
       </>
     ),
   },
