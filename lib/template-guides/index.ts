@@ -25,9 +25,15 @@ import LiteratureReviewGuide from "./literature-review";
 import ManuscriptGuide from "./manuscript";
 import MathCheatSheetGuide from "./math-cheat-sheet";
 import MathExamGuide from "./math-exam";
+import MathExercisesGuide from "./math-exercises";
+import MathNotesGuide from "./math-notes";
+import MathProblemSetGuide from "./math-problem-set";
+import MathematicalDocumentGuide from "./mathematical-document";
 import MeetingMinutesGuide from "./meeting-minutes";
+import MemoGuide from "./memo";
 import MlaPaperGuide from "./mla-paper";
 import MlaWorksCitedGuide from "./mla-works-cited";
+import MotivationLetterGuide from "./motivation-letter";
 import Neurips2026Guide from "./neurips-2026";
 import Neurips2027Guide from "./neurips-2027";
 import ResearchProposalGuide from "./research-proposal";
@@ -67,9 +73,15 @@ const templateGuides: Record<string, ComponentType> = {
   "manuscript": ManuscriptGuide,
   "math-cheat-sheet": MathCheatSheetGuide,
   "math-exam": MathExamGuide,
+  "math-exercises": MathExercisesGuide,
+  "math-notes": MathNotesGuide,
+  "math-problem-set": MathProblemSetGuide,
+  "mathematical-document": MathematicalDocumentGuide,
   "meeting-minutes": MeetingMinutesGuide,
+  "memo": MemoGuide,
   "mla-paper": MlaPaperGuide,
   "mla-works-cited": MlaWorksCitedGuide,
+  "motivation-letter": MotivationLetterGuide,
   "neurips-2026": Neurips2026Guide,
   "neurips-2027": Neurips2027Guide,
   "research-proposal": ResearchProposalGuide,
