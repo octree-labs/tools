@@ -1,5 +1,6 @@
 import { NextRequest } from 'next/server';
 import { parseConvertRequest, type UploadKind } from '@/lib/convert-input';
+import { streamTextResponse } from '@/lib/openai-stream';
 
 // PDFs take longer than a single handwritten equation.
 export const maxDuration = 60;
@@ -73,48 +74,5 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  const reader = response.body.getReader();
-  const decoder = new TextDecoder();
-  const encoder = new TextEncoder();
-
-  const stream = new ReadableStream({
-    async start(controller) {
-      let buffer = '';
-      try {
-        while (true) {
-          const { done, value } = await reader.read();
-          if (done) break;
-
-          buffer += decoder.decode(value, { stream: true });
-          const lines = buffer.split('\n');
-          // Keep a possibly incomplete trailing line for the next chunk.
-          buffer = lines.pop() ?? '';
-
-          for (const line of lines) {
-            if (!line.startsWith('data: ')) continue;
-            const data = line.slice(6).trim();
-            if (data === '[DONE]') continue;
-            try {
-              const content = JSON.parse(data).choices?.[0]?.delta?.content;
-              if (content) controller.enqueue(encoder.encode(content));
-            } catch {
-              // Skip invalid JSON
-            }
-          }
-        }
-      } catch (error) {
-        console.error('convert: stream error', error);
-        controller.error(error);
-        return;
-      }
-      controller.close();
-    },
-  });
-
-  return new Response(stream, {
-    headers: {
-      'Content-Type': 'text/plain; charset=utf-8',
-      'Cache-Control': 'no-cache',
-    },
-  });
+  return streamTextResponse(response);
 }
