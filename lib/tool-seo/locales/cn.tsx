@@ -1260,6 +1260,535 @@ $\\displaystyle \\hat{H}\\psi = E\\psi$
     ),
   },
 
+  "latex-converter": {
+    heading: "LaTeX 转换器：在线在 LaTeX 与其他格式之间互相转换",
+    intro: (
+      <>
+        <p>
+          Octree 的 LaTeX 转换器覆盖了人们最常需要转入和转出 LaTeX 的格式。转为 LaTeX：Markdown、HTML、MathML 和 Mermaid 图，Excel 或 Google 表格中的 CSV 表格，PDF，公式照片，示意图图片以及 arXiv 论文。从 LaTeX 转出：用于 GitHub 和 Notion 的 Markdown，供审稿人和投稿系统使用的 Word .docx，用于幻灯片的 PNG 图片，以及通过在线 LaTeX 编辑器得到的 PDF。
+        </p>
+        <p>
+          每个转换工具都免费、在浏览器中运行、无需账号。其中大多数使用 AI 模型，因为把一种格式映射到另一种格式需要判断；输出为 LaTeX 的结果会由 Octree 编译服务上的完整 TeX Live 发行版编译，让你在下载前先核对 PDF。arXiv 转 LaTeX、LaTeX 转 PNG 和 LaTeX 转 PDF 完全不使用 AI。上方的表格列出了每个转换工具的输入、输出和最佳用途。
+        </p>
+      </>
+    ),
+    stepsHeading: "如何使用 LaTeX 转换工具",
+    steps: [
+      {
+        title: "从你手头的格式开始",
+        body: "选择与输入相符的卡片：从 Markdown、HTML、MathML、Mermaid、CSV 文件、PDF、图片或 arXiv 编号得到 LaTeX，或从 LaTeX 文档得到 Markdown、Word、PNG 或 PDF。",
+      },
+      {
+        title: "粘贴或上传后转换",
+        body: "每个转换工具都有独立的页面。粘贴内容或上传文件后点击转换按钮；AI 转换工具会边生成边逐步输出结果。",
+      },
+      {
+        title: "检查结果并导出",
+        body: "输出为 LaTeX 的结果都附有编译好的 PDF 预览，方便你在下载 .tex 文件前检查。在 Octree 中打开 LaTeX 结果即可继续编辑。",
+      },
+    ],
+    tipsHeading: "提高转换效果的技巧",
+    tips: [
+      {
+        title: "校对 AI 的输出",
+        body: "AI 转换工具能处理杂乱的输入和不常见的宏包，但可能改写或遗漏内容。提交任何内容之前，请将预览与原文对照。",
+      },
+      {
+        title: "长文档分段转换",
+        body: "Markdown、HTML、Mermaid、CSV 转 LaTeX 以及 LaTeX 转 Markdown 工具每次转换返回约 2,000 个 token，大约几页内容；LaTeX 转 Word 最多接受 60,000 个字符。学位论文请按章拆分。",
+      },
+      {
+        title: "图片需要单独处理",
+        body: "所有转换工具都不会随文本上传图片文件。图片会变成 \\includegraphics 行、图片链接或图注，之后请另行添加图片文件。",
+      },
+    ],
+    faqHeading: "LaTeX 转换器常见问题",
+    faq: [
+      {
+        question: "什么是 LaTeX 转换器？",
+        answer:
+          "LaTeX 转换器用于在 LaTeX 源码和其他格式之间进行转换。转为 LaTeX 的工具接受 Markdown、HTML、MathML、Mermaid、CSV 表格、PDF 或图片，生成 .tex 代码；从 LaTeX 转出的工具接受 .tex 源码，生成 Markdown、PNG 图片、Word 文档或 PDF。本页汇集了 Octree 所有双向的免费转换工具。",
+      },
+      {
+        question: "哪些转换工具使用 AI，哪些是确定性的？",
+        answer:
+          "Markdown、HTML、MathML、Mermaid、表格（CSV）、PDF、图片和公式转 LaTeX，以及 LaTeX 转 Markdown，都使用 AI 模型。LaTeX 转 Word 先用 AI 完成第一步，再以确定性的方式生成 .docx。arXiv 转 LaTeX、LaTeX 转 PNG 和 LaTeX 转 PDF 不使用 AI：它们会如实下载或编译你的输入。",
+      },
+      {
+        question: "如何免费把 LaTeX 转换为 Word 或 PDF？",
+        answer:
+          "转 Word：打开 LaTeX 转 Word 工具，粘贴文档并下载 document.docx。转 PDF：打开在线 LaTeX 编辑器，粘贴文档并下载编译好的 PDF。两者都免费，无需账号。",
+      },
+      {
+        question: "文档大小有限制吗？",
+        answer:
+          "LaTeX 转 Word 最多接受 60,000 个字符，PDF 转 LaTeX 接受不超过 3 MB、20 页的 PDF。Markdown、HTML、Mermaid、CSV 转 LaTeX 以及 LaTeX 转 Markdown 工具每次转换输出约 2,000 个 token，大约几页内容，因此长文档请分段转换。基于编译的工具接受任何能在服务器时间限制内编译完成的文档。",
+      },
+    ],
+    related: (
+      <>
+        刚接触 LaTeX？阅读{" "}
+        <IntroLink href="https://www.useoctree.com/learn/latex" external>
+          LaTeX 入门介绍
+        </IntroLink>
+        ，在 <IntroLink href="/tools/latex-preview">在线 LaTeX 编辑器</IntroLink>中编辑文档，或浏览{" "}
+        <IntroLink href="/">全部 LaTeX 工具</IntroLink>。
+      </>
+    ),
+  },
+
+  "latex-to-markdown": {
+    heading: "LaTeX 转 Markdown：在线 LaTeX 转 Markdown 转换器",
+    intro: (
+      <>
+        <p>
+          这款 LaTeX 转 Markdown 转换器可以把 .tex 文档或代码片段转换为干净、标准的 Markdown。AI 模型（OpenAI gpt-4o-mini）会把章节改写为 <Cmd>#</Cmd>
+          标题，把 itemize 和 enumerate 改写为列表，把 tabular 和 booktabs 表格改写为 Markdown 表格，把 <Cmd>\textbf</Cmd> 和 <Cmd>\emph</Cmd>
+          改写为粗体和斜体，把代码环境改写为围栏代码块，把 <Cmd>\href</Cmd> 改写为链接。数学公式保留为 <Cmd>$...$</Cmd> 和 <Cmd>$$...$$</Cmd>
+          之间的 LaTeX，GitHub、Obsidian 以及其他使用 KaTeX 或 MathJax 的渲染器都能显示。
+        </p>
+        <p>
+          本工具免费、无需账号，接受粘贴的文本。每次转换返回约 2,000 个 token 的 Markdown，因此长论文请分段转换。图片会尽可能转换为图片链接，引用不会根据 .bib 文件解析，这些地方需要手动修改。你可以用它把论文发到博客、把课堂笔记变成 README，或把 LaTeX 笔记搬进 Notion 或 Obsidian。
+        </p>
+      </>
+    ),
+    stepsHeading: "如何将 LaTeX 转换为 Markdown",
+    steps: [
+      {
+        title: "粘贴 LaTeX 代码",
+        body: "粘贴完整的 .tex 文档，或只粘贴一个片段，例如一个章节、一张表格或一个列表。不需要导言区。",
+      },
+      {
+        title: "转换为 Markdown",
+        body: "点击“转换为 Markdown”。Markdown 会边生成边逐步输出到输出编辑器中。",
+      },
+      {
+        title: "复制或下载",
+        body: "从输出编辑器中复制 Markdown，或使用“导出为 Markdown”下载 document.md，用于 GitHub、Obsidian、Notion 或静态网站。",
+      },
+    ],
+    tipsHeading: "让转换结果更干净的技巧",
+    tips: [
+      {
+        title: "公式需要渲染器",
+        body: (
+          <>
+            公式会保留为 <Cmd>$...$</Cmd> 和 <Cmd>$$...$$</Cmd>。GitHub、Obsidian、Jupyter 以及大多数配置了 KaTeX 或 MathJax 的静态网站生成器都能渲染它们；普通的 Markdown 查看器则会显示原始 LaTeX。
+          </>
+        ),
+      },
+      {
+        title: "自定义宏",
+        body: (
+          <>
+            用 <Cmd>\newcommand</Cmd> 定义的命令在 Markdown 中没有对应写法。请把这些定义一并放进输入，让转换工具可以展开它们，并检查结果。
+          </>
+        ),
+      },
+      {
+        title: "图片和引用",
+        body: (
+          <>
+            图片会尽可能转换为指向原始文件名的 Markdown 图片链接，<Cmd>\cite</Cmd>
+            的键也不会根据 .bib 文件解析。请把图片上传到 .md 文件旁边，并手动修正参考文献。
+          </>
+        ),
+      },
+    ],
+    faqHeading: "LaTeX 转 Markdown 常见问题",
+    faq: [
+      {
+        question: "如何把 LaTeX 转换成 Markdown？",
+        answer:
+          "把 LaTeX 粘贴到左侧编辑器中，然后点击“转换为 Markdown”。章节会变成 # 标题，itemize 和 enumerate 变成列表，tabular 变成 Markdown 表格，\\textbf 和 \\emph 变成粗体和斜体，代码环境变成围栏代码块。复制结果，或导出 document.md。",
+      },
+      {
+        question: "公式会保留吗？",
+        answer:
+          "会。行内公式保留为 $...$，行间公式保留为 $$...$$，内容仍是 LaTeX 写法，因此在任何用 MathJax 或 KaTeX 显示 Markdown 的地方都能渲染，包括 GitHub、Obsidian 和 Jupyter 笔记本。",
+      },
+      {
+        question: "LaTeX 输入最长可以有多长？",
+        answer:
+          "输入长度没有固定上限，但每次转换返回约 2,000 个 token 的 Markdown，大约几页内容。学位论文或长篇论文请按章或按节逐次转换。",
+      },
+      {
+        question: "它免费吗？比 Pandoc 更好吗？",
+        answer:
+          "免费，而且无需账号。它使用 AI 模型（OpenAI gpt-4o-mini），能应对不常见的宏包和杂乱的源码，但输出需要校对。Pandoc（pandoc paper.tex -o paper.md）是确定性的，更适合很长的文档，但需要在本地安装。",
+      },
+    ],
+    related: (
+      <>
+        需要反向转换？请使用 <IntroLink href="/tools/markdown-to-latex">Markdown 转 LaTeX 工具</IntroLink>，导出为{" "}
+        <IntroLink href="/tools/latex-to-word">Word</IntroLink>，或查看所有{" "}
+        <IntroLink href="/tools/latex-converter">LaTeX 转换工具</IntroLink>。
+      </>
+    ),
+  },
+
+  "latex-word-counter": {
+    heading: "LaTeX 字数统计：在线统计 LaTeX 文档字数",
+    intro: (
+      <p>
+        统计 LaTeX 的字数比在文字处理软件中更难：直接统计 .tex 文件，会把 <Cmd>\begin{"{itemize}"}</Cmd>
+        这样的命令、标签和公式也算进去。这款免费的 LaTeX 字数统计工具会像懂 TeX 的工具那样读取源码，忽略标记和数学公式，统计读者实际看到的文字。
+      </p>
+    ),
+    stepsHeading: "如何统计 LaTeX 字数",
+    steps: [
+      {
+        title: "粘贴 LaTeX 源码",
+        body: "把整个 .tex 文件（包括导言区）粘贴到编辑器中，或只粘贴你想统计的那一节。",
+      },
+      {
+        title: "自动统计",
+        body: "字数会随着输入自动更新。你的源码会交给 texcount 处理，这是 TeX Live 自带、Overleaf 也在使用的统计工具，因此命令和标记都能被正确剔除。",
+      },
+      {
+        title: "查看分类统计",
+        body: "查看总字数，以及正文、标题和图注各自的字数，按期刊、课程或学位论文管理部门的要求取用相应的数字。",
+      },
+    ],
+    tipsHeading: "统计哪些内容",
+    tips: [
+      {
+        title: "正文",
+        body: "段落、列表和脚注中的文字，包括 \\textbf{...}、\\emph{...} 等格式命令内部的文字。大多数字数限制指的就是这个数字。",
+      },
+      {
+        title: "标题",
+        body: "\\section、\\subsection、\\chapter 等标题中的文字，单独列出，方便你决定计入还是排除。",
+      },
+      {
+        title: "图注",
+        body: "用 \\caption{...} 编写的图表标题中的文字，同样单独列出。",
+      },
+      {
+        title: "不计入的内容",
+        body: "命令及其选项、标签、交叉引用和引用键（\\label、\\ref、\\cite）、% 之后的注释，以及数学公式：行内 $...$ 和行间公式属于公式而不是文字，因此公式不会让总字数虚高。",
+      },
+    ],
+    faqHeading: "LaTeX 字数统计常见问题",
+    faq: [
+      {
+        question: "如何统计 LaTeX 文档的字数？",
+        answer:
+          "把 .tex 源码粘贴到上方的 LaTeX 字数统计工具中，字数会立即显示，并分别给出正文、标题和图注的统计。离线时可以在命令行中对文件运行 texcount：texcount -inc -total main.tex。",
+      },
+      {
+        question: "LaTeX 字数统计包括公式吗？",
+        answer:
+          "不包括。$E = mc^2$ 这样的行内公式和行间公式都被视为公式而不是文字，因此不会计入字数。",
+      },
+      {
+        question: "它和 texcount 以及 Overleaf 的字数统计相比如何？",
+        answer:
+          "它运行的就是 texcount，即 TeX Live 和 MiKTeX 自带的 Perl 脚本，因此结果与你在本机运行 texcount -total 一致；Overleaf 的字数统计同样基于 texcount，所以总数应该非常接近。区别在于你无需在本地安装 TeX，也无需账号。",
+      },
+      {
+        question: "参考文献和注释会计入字数吗？",
+        answer:
+          "不会。% 之后的注释会被忽略，texcount 默认也会跳过参考文献，因此 \\bibliography 或 thebibliography 环境中的参考文献不会被统计。\\cite{...} 中的引用键同样不算作文字。",
+      },
+    ],
+    related: (
+      <>
+        需要把文档转换为其他格式？如果投稿需要 .docx，可以试试{" "}
+        <IntroLink href="/tools/latex-to-word">LaTeX 转 Word 工具</IntroLink>，或浏览{" "}
+        <IntroLink href="/symbols">LaTeX 符号大全</IntroLink>。
+      </>
+    ),
+  },
+
+  "mathml-to-latex": {
+    heading: "MathML 转 LaTeX：在线转换 MathML 公式",
+    intro: (
+      <>
+        <p>
+          这款 MathML 转 LaTeX 转换器可以把 MathML 标记转换为能直接粘贴到论文中的 LaTeX 数学公式。粘贴一个 <Cmd>{"<math>"}</Cmd>
+          元素，AI 模型（OpenAI gpt-4o-mini）就会把整棵树改写为 amsmath 代码：<Cmd>{"<mfrac>"}</Cmd> 变为 <Cmd>\frac</Cmd>，
+          <Cmd>{"<msqrt>"}</Cmd> 变为 <Cmd>\sqrt</Cmd>，<Cmd>{"<msup>"}</Cmd> 和 <Cmd>{"<msub>"}</Cmd>
+          变为上标和下标，<Cmd>{"<mtable>"}</Cmd>
+          变为矩阵或对齐块。以 Unicode 字符给出的希腊字母和运算符通常会转换为对应的 LaTeX 命令。
+        </p>
+        <p>
+          输出是一份完整的 LaTeX 文档，“预览”标签页会用 Octree 编译服务上的完整 TeX Live 发行版编译它，方便你核对每个符号。编辑器支持 XML 高亮，因此也可以当作简单的在线 MathML 编辑器使用。每次转换最多返回约 1,500 个 token 的 LaTeX，足够容纳几个公式。完全免费，无需账号。
+        </p>
+      </>
+    ),
+    stepsHeading: "如何将 MathML 转换为 LaTeX",
+    steps: [
+      {
+        title: "粘贴 MathML",
+        body: (
+          <>
+            粘贴从网页复制的 <Cmd>{"<math>"}</Cmd> 元素、从 Word 或 MathType 导出的内容，或 EPUB、JATS XML 文件中的 MathML。
+          </>
+        ),
+      },
+      {
+        title: "转换为 LaTeX",
+        body: "点击“转换为 LaTeX”。公式会放在一份加载了 amsmath 和 amssymb 的完整 LaTeX 文档中返回。",
+      },
+      {
+        title: "检查预览",
+        body: "打开“预览”标签页编译文档，把排版后的公式与原式对照，然后复制公式、导出 .tex 文件或 PDF，或在 Octree 中打开。",
+      },
+    ],
+    tipsHeading: "MathML 转换技巧",
+    tips: [
+      {
+        title: "复制完整的 math 元素",
+        body: (
+          <>
+            请包含从 <Cmd>{"<math>"}</Cmd> 到 <Cmd>{"</math>"}</Cmd> 的全部内容。从 <Cmd>{"<mrow>"}</Cmd>
+            中间开始的片段可能会丢失括号或某些项。
+          </>
+        ),
+      },
+      {
+        title: "从 Word 中获取 MathML",
+        body: "Word 以 OMML 而不是 MathML 存储公式。在 Windows 版 Word 中，打开“公式选项”，启用“将 MathML 以纯文本形式复制到剪贴板”，然后复制公式并粘贴到这里。",
+      },
+      {
+        title: "只需要公式本身",
+        body: (
+          <>
+            把 <Cmd>\begin{"{document}"}</Cmd> 和 <Cmd>\end{"{document}"}</Cmd>
+            之间的内容复制到你自己的文件中；导言区只需要 <Cmd>\usepackage{"{amsmath,amssymb}"}</Cmd>。
+          </>
+        ),
+      },
+    ],
+    faqHeading: "MathML 转 LaTeX 常见问题",
+    faq: [
+      {
+        question: "如何把 MathML 转换成 LaTeX？",
+        answer:
+          "把 MathML 标记粘贴到编辑器中，然后点击“转换为 LaTeX”。mfrac、msqrt、msup、msub、mover 和 mtable 等元素会被改写为 \\frac、\\sqrt、上标、下标、重音符号和矩阵，结果以完整 LaTeX 文档的形式显示，可以在“预览”标签页中编译。",
+      },
+      {
+        question: "支持 Content MathML 吗？",
+        answer:
+          "本工具是为 Presentation MathML 设计的，也就是浏览器、Word 和 MathType 导出的那种。Content MathML（apply、ci、cn）通常也能转换，因为读取标记的是 AI 模型，但请在预览中检查结果。",
+      },
+      {
+        question: "可以一次转换多个公式吗？",
+        answer:
+          "可以。把多个 math 元素依次粘贴进来，它们会被转换到同一份文档中。每次转换最多返回约 1,500 个 token 的 LaTeX，因此很长的文件请拆分转换。",
+      },
+      {
+        question: "MathML 转 LaTeX 转换器免费吗？",
+        answer:
+          "免费，而且无需账号。转换使用 OpenAI gpt-4o-mini，预览使用完整的 TeX Live 发行版编译，因此你可以在使用前确认公式无误。",
+      },
+    ],
+    related: (
+      <>
+        借助{" "}
+        <IntroLink href="https://www.useoctree.com/learn/mathematical-expressions" external>
+          LaTeX 数学公式指南
+        </IntroLink>
+        手写公式，用 <IntroLink href="/tools/math-to-latex">数学公式转 LaTeX</IntroLink>
+        转换公式图片，或查看所有 <IntroLink href="/tools/latex-converter">LaTeX 转换工具</IntroLink>。
+      </>
+    ),
+  },
+
+  "mermaid-to-latex": {
+    heading: "Mermaid 转 TikZ：把 Mermaid 图转换为 LaTeX",
+    intro: (
+      <>
+        <p>
+          这款转换工具可以把 Mermaid 图代码转换为 TikZ，让你在 Markdown 文件、GitHub README 或 Notion 中画好的流程图，以原生矢量图形的形式放进 LaTeX 论文。粘贴 Mermaid 定义，AI 模型（OpenAI gpt-4o-mini）会把每个节点、标签和箭头改写为一个
+          <Cmd>tikzpicture</Cmd>
+          ，并给出明确的位置以避免节点重叠，整体放在一份加载了 tikz 及所需库的完整 standalone 或 article 文档中。
+        </p>
+        <p>
+          “预览”标签页会用 Octree 编译服务上的完整 TeX Live 发行版编译该图，让你在导出 .tex 文件或 PDF 之前检查布局。Mermaid 会自动排布图形而 TikZ 不会，因此大型图可能需要调整间距。流程图的效果最好；每次转换最多返回约 2,000 个 token 的 LaTeX。完全免费，无需账号。
+        </p>
+      </>
+    ),
+    stepsHeading: "如何将 Mermaid 转换为 TikZ",
+    steps: [
+      {
+        title: "粘贴 Mermaid 代码",
+        body: (
+          <>
+            粘贴以图类型开头的图定义，例如 <Cmd>graph TD</Cmd>、<Cmd>flowchart LR</Cmd> 或 <Cmd>sequenceDiagram</Cmd>
+            ，不要包含外层的 <Cmd>```mermaid</Cmd> 代码围栏。
+          </>
+        ),
+      },
+      {
+        title: "转换为 TikZ",
+        body: "点击“转换为 LaTeX”。AI 会把节点、标签和箭头改写为一个 tikzpicture，放在完整的 LaTeX 文档中。",
+      },
+      {
+        title: "预览、调整并导出",
+        body: "打开“预览”标签页把图编译为 PDF。如有重叠，在代码中修改节点间距或位置，然后导出 diagram.tex 或 diagram.pdf，或在 Octree 中打开。",
+      },
+    ],
+    tipsHeading: "常见问题及解决方法",
+    tips: [
+      {
+        title: "节点重叠",
+        body: (
+          <>
+            在 tikzpicture 选项中增大 <Cmd>node distance</Cmd>，或修改节点的放置方式，例如把 <Cmd>below of=</Cmd> 改为{" "}
+            <Cmd>right of=</Cmd>。TikZ 不会像 Mermaid 那样自动排布图形。
+          </>
+        ),
+      },
+      {
+        title: "未加载所需的库",
+        body: (
+          <>
+            出现未知箭头或形状的错误，通常意味着缺少 <Cmd>\usetikzlibrary</Cmd>，例如 <Cmd>arrows.meta</Cmd>、<Cmd>shapes</Cmd> 或{" "}
+            <Cmd>positioning</Cmd>。把它添加到导言区即可。
+          </>
+        ),
+      },
+      {
+        title: "从小图开始",
+        body: "流程图的转换最可靠。对于大型或复杂的图，请一次转换一部分，再把各个 tikzpicture 组合起来。",
+      },
+    ],
+    faqHeading: "Mermaid 转 LaTeX 常见问题",
+    faq: [
+      {
+        question: "如何在 LaTeX 中使用 Mermaid 图？",
+        answer:
+          "LaTeX 无法直接渲染 Mermaid。把 Mermaid 代码粘贴到本转换工具中，它会把图改写为 TikZ，也就是 LaTeX 原生使用的绘图宏包。把 tikzpicture 复制到你的文档中并加载 tikz 宏包，或者导出完整的 .tex 文件。",
+      },
+      {
+        question: "支持哪些 Mermaid 图类型？",
+        answer:
+          "流程图和图（graph 和 flowchart）的转换最可靠。时序图、状态图和类图也能转换，因为读取代码的是 AI 模型，但 TikZ 输出中的位置可能需要调整。",
+      },
+      {
+        question: "为什么要把 Mermaid 转换为 TikZ，而不是直接用图片？",
+        answer:
+          "TikZ 图是由 LaTeX 自己绘制的矢量图形，因此与正文字体相同，任意缩放都保持清晰，并且可以在源码中编辑。导出的 PNG 或 SVG 则必须回到 Mermaid 才能修改。",
+      },
+      {
+        question: "Mermaid 转 LaTeX 转换器免费吗？",
+        answer:
+          "免费，而且无需账号。转换使用 OpenAI gpt-4o-mini，每次最多返回约 2,000 个 token 的 LaTeX，预览使用完整的 TeX Live 发行版编译。",
+      },
+    ],
+    related: (
+      <>
+        在{" "}
+        <IntroLink href="https://www.useoctree.com/learn/tikz" external>
+          TikZ 指南
+        </IntroLink>
+        中学习绘图命令，用 <IntroLink href="/tools/tikz-generator">TikZ 生成器</IntroLink>根据文字描述绘图，或用{" "}
+        <IntroLink href="/tools/image-to-tikz">图片转 TikZ</IntroLink> 重绘草图。
+      </>
+    ),
+  },
+
+  "pgfplots-generator": {
+    heading: "PGFPlots 生成器：用文字描述在线生成 LaTeX 图表",
+    intro: (
+      <>
+        <p>
+          这款 PGFPlots 生成器可以把对图表的自然语言描述转换为 pgfplots 代码。描述一个函数、一组数据点或一种图表类型，AI 模型（OpenAI GPT-5）就会写出一份完整的 LaTeX 文档，其中包含带注释的
+          <Cmd>tikzpicture</Cmd> 和 <Cmd>axis</Cmd>
+          环境：折线图和函数图、柱状图、散点图、直方图以及三维曲面图，并按你的要求设置坐标轴标签、范围、图例和颜色。
+        </p>
+        <p>
+          “预览”标签页会用 Octree 编译服务上的完整 TeX Live 发行版编译图表，让你在导出 .tex 文件之前先看到 PDF。由于图表由 LaTeX 绘制，它与文档使用相同的字体，并且在任意尺寸下都保持清晰，这一点是从电子表格粘贴过来的图片做不到的。生成器免费、无需账号；生成的代码完全归你修改，从刻度标签到绘图样式都可以调整。
+        </p>
+      </>
+    ),
+    stepsHeading: "如何生成 pgfplots 图表",
+    steps: [
+      {
+        title: "描述图表",
+        body: "说明要画什么：函数或数据点、图表类型（折线图、柱状图、散点图、面积图、直方图或三维曲面图）、坐标轴范围、标签、图例和颜色。直接粘贴一小张数据表也可以。",
+      },
+      {
+        title: "生成代码",
+        body: (
+          <>
+            点击“生成图表”。AI 会写出一份完整的文档，包含 <Cmd>\pgfplotsset{"{compat=1.18}"}</Cmd> 和一个带注释的{" "}
+            <Cmd>axis</Cmd> 环境。
+          </>
+        ),
+      },
+      {
+        title: "预览并导出",
+        body: "打开“预览”标签页把图表编译为 PDF。修改代码进行微调，然后导出 pgfplot.tex 或 pgfplot.pdf，或在 Octree 中打开。",
+      },
+    ],
+    tipsHeading: "常见 pgfplots 错误及解决方法",
+    tips: [
+      {
+        title: "Dimension too large",
+        body: (
+          <>
+            增长极快的函数，例如定义域很宽的 <Cmd>exp(x)</Cmd>，会导致 TeX 运算溢出。请缩小 <Cmd>domain</Cmd>、设置{" "}
+            <Cmd>restrict y to domain</Cmd>，或使用对数坐标轴。
+          </>
+        ),
+      },
+      {
+        title: "曲线呈锯齿状",
+        body: (
+          <>
+            提高 <Cmd>samples</Cmd>，例如设为 <Cmd>samples=200</Cmd>
+            ，即可得到平滑的曲线。三维图的编译要慢得多，请保持较低的取值。
+          </>
+        ),
+      },
+      {
+        title: "绘制你自己的数据",
+        body: (
+          <>
+            用 <Cmd>\addplot table</Cmd> 或 <Cmd>\addplot coordinates</Cmd>
+            把生成的坐标替换为你的数值；坐标轴样式保持不变。
+          </>
+        ),
+      },
+    ],
+    faqHeading: "PGFPlots 生成器常见问题",
+    faq: [
+      {
+        question: "什么是 PGFPlots 生成器？",
+        answer:
+          "它会替你编写 pgfplots 代码。pgfplots 是基于 TikZ 绘制图表的 LaTeX 宏包；你无需学习它的坐标轴选项，只要用自然语言描述图表，就能得到一份可以编译、编辑并粘贴到论文中的完整文档。",
+      },
+      {
+        question: "它能生成哪些类型的图表？",
+        answer:
+          "凡是 pgfplots 能画的都可以：函数图、折线图、柱状图、散点图、直方图、误差棒、面积图以及三维曲面图或网格图。描述你想要的数据、坐标轴和样式，代码就会相应体现。",
+      },
+      {
+        question: "如何把图表放进我的 LaTeX 文档？",
+        answer:
+          "在导言区添加 \\usepackage{pgfplots} 和 \\pgfplotsset{compat=1.18}，然后把生成代码中的 tikzpicture 环境复制到文档中，通常放在带图注的 figure 环境里。",
+      },
+      {
+        question: "PGFPlots 生成器免费吗？",
+        answer:
+          "免费，而且无需账号。代码由 AI 模型（OpenAI GPT-5）编写，并用完整的 TeX Live 发行版编译，因此请对照你的要求检查预览。",
+      },
+    ],
+    related: (
+      <>
+        在{" "}
+        <IntroLink href="https://www.useoctree.com/learn/pgfplots" external>
+          pgfplots 指南
+        </IntroLink>
+        中学习坐标轴选项，用 <IntroLink href="/tools/tikz-generator">TikZ 生成器</IntroLink>绘制示意图，或用{" "}
+        <IntroLink href="/tools/table-to-latex">LaTeX 表格生成器</IntroLink>把 CSV 转换为表格。
+      </>
+    ),
+  },
+
 };
 
 export default translations;
