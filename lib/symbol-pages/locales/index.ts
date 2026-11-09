@@ -6,6 +6,18 @@ import cnArrows from "./cn/arrows";
 import esArrows from "./es/arrows";
 import frArrows from "./fr/arrows";
 import ruArrows from "./ru/arrows";
+import cnFinance from "./cn/finance";
+import esFinance from "./es/finance";
+import frFinance from "./fr/finance";
+import ruFinance from "./ru/finance";
+import cnFunctions from "./cn/functions";
+import esFunctions from "./es/functions";
+import frFunctions from "./fr/functions";
+import ruFunctions from "./ru/functions";
+import cnGameTheory from "./cn/game-theory";
+import esGameTheory from "./es/game-theory";
+import frGameTheory from "./fr/game-theory";
+import ruGameTheory from "./ru/game-theory";
 import cnMath from "./cn/math";
 import esMath from "./es/math";
 import frMath from "./fr/math";
@@ -65,6 +77,9 @@ export type { SymbolPageTranslation, SymbolPageTranslations } from "./types";
 const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
   cn: {
     "arrows": cnArrows,
+    "finance": cnFinance,
+    "functions": cnFunctions,
+    "game-theory": cnGameTheory,
     "math": cnMath,
     "probability": cnProbability,
     "quantifiers": cnQuantifiers,
@@ -79,6 +94,9 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
   },
   es: {
     "arrows": esArrows,
+    "finance": esFinance,
+    "functions": esFunctions,
+    "game-theory": esGameTheory,
     "math": esMath,
     "probability": esProbability,
     "quantifiers": esQuantifiers,
@@ -93,6 +111,9 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
   },
   fr: {
     "arrows": frArrows,
+    "finance": frFinance,
+    "functions": frFunctions,
+    "game-theory": frGameTheory,
     "math": frMath,
     "probability": frProbability,
     "quantifiers": frQuantifiers,
@@ -107,6 +128,9 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
   },
   ru: {
     "arrows": ruArrows,
+    "finance": ruFinance,
+    "functions": ruFunctions,
+    "game-theory": ruGameTheory,
     "math": ruMath,
     "probability": ruProbability,
     "quantifiers": ruQuantifiers,
