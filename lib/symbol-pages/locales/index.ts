@@ -6,14 +6,26 @@ import cnArrows from "./cn/arrows";
 import esArrows from "./es/arrows";
 import frArrows from "./fr/arrows";
 import ruArrows from "./ru/arrows";
-import cnSetTheory from "./cn/set-theory";
-import esSetTheory from "./es/set-theory";
-import frSetTheory from "./fr/set-theory";
-import ruSetTheory from "./ru/set-theory";
 import cnMath from "./cn/math";
 import esMath from "./es/math";
 import frMath from "./fr/math";
 import ruMath from "./ru/math";
+import cnProbability from "./cn/probability";
+import esProbability from "./es/probability";
+import frProbability from "./fr/probability";
+import ruProbability from "./ru/probability";
+import cnQuantifiers from "./cn/quantifiers";
+import esQuantifiers from "./es/quantifiers";
+import frQuantifiers from "./fr/quantifiers";
+import ruQuantifiers from "./ru/quantifiers";
+import cnSetTheory from "./cn/set-theory";
+import esSetTheory from "./es/set-theory";
+import frSetTheory from "./fr/set-theory";
+import ruSetTheory from "./ru/set-theory";
+import cnUnits from "./cn/units";
+import esUnits from "./es/units";
+import frUnits from "./fr/units";
+import ruUnits from "./ru/units";
 
 export type { SymbolPageTranslation, SymbolPageTranslations } from "./types";
 
@@ -27,10 +39,38 @@ export type { SymbolPageTranslation, SymbolPageTranslations } from "./types";
  * (every slug of the category, see ./types.ts) and register it below.
  */
 const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
-  cn: { "math": cnMath, "set-theory": cnSetTheory, "arrows": cnArrows },
-  es: { "math": esMath, "set-theory": esSetTheory, "arrows": esArrows },
-  fr: { "math": frMath, "set-theory": frSetTheory, "arrows": frArrows },
-  ru: { "math": ruMath, "set-theory": ruSetTheory, "arrows": ruArrows },
+  cn: {
+    "arrows": cnArrows,
+    "math": cnMath,
+    "probability": cnProbability,
+    "quantifiers": cnQuantifiers,
+    "set-theory": cnSetTheory,
+    "units": cnUnits,
+  },
+  es: {
+    "arrows": esArrows,
+    "math": esMath,
+    "probability": esProbability,
+    "quantifiers": esQuantifiers,
+    "set-theory": esSetTheory,
+    "units": esUnits,
+  },
+  fr: {
+    "arrows": frArrows,
+    "math": frMath,
+    "probability": frProbability,
+    "quantifiers": frQuantifiers,
+    "set-theory": frSetTheory,
+    "units": frUnits,
+  },
+  ru: {
+    "arrows": ruArrows,
+    "math": ruMath,
+    "probability": ruProbability,
+    "quantifiers": ruQuantifiers,
+    "set-theory": ruSetTheory,
+    "units": ruUnits,
+  },
 };
 
 /** Locales that have translated symbol copy for at least one category. */

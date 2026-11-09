@@ -210,7 +210,14 @@ test('locales without any translated symbol copy stay noindex everywhere', () =>
 });
 
 /** Categories whose body copy is translated in every SYMBOL_PAGE_TEXT_LOCALES locale. */
-const TRANSLATED_CATEGORIES: string[] = ['math', 'set-theory', 'arrows'];
+const TRANSLATED_CATEGORIES: string[] = [
+  'arrows',
+  'math',
+  'probability',
+  'quantifiers',
+  'set-theory',
+  'units',
+];
 
 test('translated categories are complete in cn, es, fr and ru, and nothing else is', () => {
   assert.deepEqual([...SYMBOL_PAGE_TEXT_LOCALES].sort(), ['cn', 'es', 'fr', 'ru']);
