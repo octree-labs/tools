@@ -18,10 +18,18 @@ import cnCombinatorics from "./cn/combinatorics";
 import esCombinatorics from "./es/combinatorics";
 import frCombinatorics from "./fr/combinatorics";
 import ruCombinatorics from "./ru/combinatorics";
+import cnComplex from "./cn/complex";
+import esComplex from "./es/complex";
+import frComplex from "./fr/complex";
+import ruComplex from "./ru/complex";
 import cnComputerScience from "./cn/computer-science";
 import esComputerScience from "./es/computer-science";
 import frComputerScience from "./fr/computer-science";
 import ruComputerScience from "./ru/computer-science";
+import cnDifferentialGeometry from "./cn/differential-geometry";
+import esDifferentialGeometry from "./es/differential-geometry";
+import frDifferentialGeometry from "./fr/differential-geometry";
+import ruDifferentialGeometry from "./ru/differential-geometry";
 import cnFinance from "./cn/finance";
 import esFinance from "./es/finance";
 import frFinance from "./fr/finance";
@@ -148,7 +156,9 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "boolean": cnBoolean,
     "chemistry": cnChemistry,
     "combinatorics": cnCombinatorics,
+    "complex": cnComplex,
     "computer-science": cnComputerScience,
+    "differential-geometry": cnDifferentialGeometry,
     "finance": cnFinance,
     "functions": cnFunctions,
     "game-theory": cnGameTheory,
@@ -182,7 +192,9 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "boolean": esBoolean,
     "chemistry": esChemistry,
     "combinatorics": esCombinatorics,
+    "complex": esComplex,
     "computer-science": esComputerScience,
+    "differential-geometry": esDifferentialGeometry,
     "finance": esFinance,
     "functions": esFunctions,
     "game-theory": esGameTheory,
@@ -216,7 +228,9 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "boolean": frBoolean,
     "chemistry": frChemistry,
     "combinatorics": frCombinatorics,
+    "complex": frComplex,
     "computer-science": frComputerScience,
+    "differential-geometry": frDifferentialGeometry,
     "finance": frFinance,
     "functions": frFunctions,
     "game-theory": frGameTheory,
@@ -250,7 +264,9 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "boolean": ruBoolean,
     "chemistry": ruChemistry,
     "combinatorics": ruCombinatorics,
+    "complex": ruComplex,
     "computer-science": ruComputerScience,
+    "differential-geometry": ruDifferentialGeometry,
     "finance": ruFinance,
     "functions": ruFunctions,
     "game-theory": ruGameTheory,
