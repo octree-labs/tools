@@ -13,6 +13,12 @@ import AssignmentGuide from "./assignment";
 import AtsResumeGuide from "./ats-resume";
 import BeamerDarkGuide from "./beamer-dark";
 import BeamerPresentationGuide from "./beamer-presentation";
+import BibliographyGuide from "./bibliography";
+import BookChapterGuide from "./book-chapter";
+import BusinessCardGuide from "./business-card";
+import BusinessPlanGuide from "./business-plan";
+import BusinessReportGuide from "./business-report";
+import CalendarGuide from "./calendar";
 import CornellNotesGuide from "./cornell-notes";
 import ConferencePosterGuide from "./conference-poster";
 import CoverLetterGuide from "./cover-letter";
@@ -85,6 +91,12 @@ const templateGuides: Record<string, ComponentType> = {
   "ats-resume": AtsResumeGuide,
   "beamer-dark": BeamerDarkGuide,
   "beamer-presentation": BeamerPresentationGuide,
+  "bibliography": BibliographyGuide,
+  "book-chapter": BookChapterGuide,
+  "business-card": BusinessCardGuide,
+  "business-plan": BusinessPlanGuide,
+  "business-report": BusinessReportGuide,
+  "calendar": CalendarGuide,
   "cornell-notes": CornellNotesGuide,
   "conference-poster": ConferencePosterGuide,
   "cover-letter": CoverLetterGuide,
