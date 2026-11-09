@@ -9,11 +9,11 @@ const steps = [
   },
   {
     title: "Paste or upload and convert",
-    body: "Each converter opens on its own page with an example. Replace it with your content and click convert; AI converters stream the result as it is written.",
+    body: "Each converter opens on its own page. Paste your content or upload your file and click convert; AI converters stream the result as it is written.",
   },
   {
     title: "Check the result and export",
-    body: "LaTeX outputs come with a compiled PDF preview, so you can check them before downloading the .tex file. Open any result in Octree to keep editing it.",
+    body: "LaTeX outputs come with a compiled PDF preview, so you can check them before downloading the .tex file. Open a LaTeX result in Octree to keep editing it.",
   },
 ];
 

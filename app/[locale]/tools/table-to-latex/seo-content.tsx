@@ -13,7 +13,7 @@ const steps = [
   },
   {
     title: "Preview and export",
-    body: "Open the Preview tab to compile the table to PDF, then export the .tex file, the PDF or a PNG image, or open it in Octree to place the table in your paper.",
+    body: "Open the Preview tab to compile the table to PDF, then export the .tex file, the PDF or a JPG image, or open it in Octree to place the table in your paper.",
   },
 ];
 
@@ -84,7 +84,7 @@ export default function TableToLatexSeoContent() {
           <p>
             The Preview tab compiles the table with a full TeX Live distribution on the Octree
             compile service, so you see the result before you export the .tex file, a PDF or a
-            PNG. The file is read in your browser and sent as text, and each conversion returns
+            JPG image. The file is read in your browser and sent as text, and each conversion returns
             about 2,000 tokens of LaTeX, which fits a results table of a few dozen rows. It is
             free and needs no account.
           </p>

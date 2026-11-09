@@ -82,8 +82,8 @@ export default function MathmlToLatexSeoContent() {
             rewrites the tree as amsmath code: <Cmd>{"<mfrac>"}</Cmd> becomes <Cmd>\frac</Cmd>,{" "}
             <Cmd>{"<msqrt>"}</Cmd> becomes <Cmd>\sqrt</Cmd>, <Cmd>{"<msup>"}</Cmd> and{" "}
             <Cmd>{"<msub>"}</Cmd> become superscripts and subscripts, and <Cmd>{"<mtable>"}</Cmd>{" "}
-            becomes a matrix or aligned block. Greek letters and operators written as Unicode
-            characters become their LaTeX commands.
+            becomes a matrix or aligned block. Greek letters and operators given as Unicode
+            characters usually come back as their LaTeX commands.
           </p>
           <p>
             The output is a complete LaTeX document, and the Preview tab compiles it with a full
