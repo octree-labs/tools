@@ -42,10 +42,22 @@ import cnLogic from "./cn/logic";
 import esLogic from "./es/logic";
 import frLogic from "./fr/logic";
 import ruLogic from "./ru/logic";
+import cnMachineLearning from "./cn/machine-learning";
+import esMachineLearning from "./es/machine-learning";
+import frMachineLearning from "./fr/machine-learning";
+import ruMachineLearning from "./ru/machine-learning";
 import cnMath from "./cn/math";
 import esMath from "./es/math";
 import frMath from "./fr/math";
 import ruMath from "./ru/math";
+import cnModalLogic from "./cn/modal-logic";
+import esModalLogic from "./es/modal-logic";
+import frModalLogic from "./fr/modal-logic";
+import ruModalLogic from "./ru/modal-logic";
+import cnNumberTheory from "./cn/number-theory";
+import esNumberTheory from "./es/number-theory";
+import frNumberTheory from "./fr/number-theory";
+import ruNumberTheory from "./ru/number-theory";
 import cnOrder from "./cn/order";
 import esOrder from "./es/order";
 import frOrder from "./fr/order";
@@ -114,7 +126,10 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "latin": cnLatin,
     "linear-algebra": cnLinearAlgebra,
     "logic": cnLogic,
+    "machine-learning": cnMachineLearning,
     "math": cnMath,
+    "modal-logic": cnModalLogic,
+    "number-theory": cnNumberTheory,
     "order": cnOrder,
     "probability": cnProbability,
     "quantifiers": cnQuantifiers,
@@ -138,7 +153,10 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "latin": esLatin,
     "linear-algebra": esLinearAlgebra,
     "logic": esLogic,
+    "machine-learning": esMachineLearning,
     "math": esMath,
+    "modal-logic": esModalLogic,
+    "number-theory": esNumberTheory,
     "order": esOrder,
     "probability": esProbability,
     "quantifiers": esQuantifiers,
@@ -162,7 +180,10 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "latin": frLatin,
     "linear-algebra": frLinearAlgebra,
     "logic": frLogic,
+    "machine-learning": frMachineLearning,
     "math": frMath,
+    "modal-logic": frModalLogic,
+    "number-theory": frNumberTheory,
     "order": frOrder,
     "probability": frProbability,
     "quantifiers": frQuantifiers,
@@ -186,7 +207,10 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "latin": ruLatin,
     "linear-algebra": ruLinearAlgebra,
     "logic": ruLogic,
+    "machine-learning": ruMachineLearning,
     "math": ruMath,
+    "modal-logic": ruModalLogic,
+    "number-theory": ruNumberTheory,
     "order": ruOrder,
     "probability": ruProbability,
     "quantifiers": ruQuantifiers,
