@@ -23,11 +23,20 @@ export function crc32(data: Uint8Array): number {
   return (crc ^ 0xffffffff) >>> 0;
 }
 
-export function buildZip(entries: ZipEntry[]): Uint8Array {
+export class ZipTooLargeError extends Error {
+  constructor() {
+    super('The zip would be larger than the allowed size.');
+    this.name = 'ZipTooLargeError';
+  }
+}
+
+/** Build a zip; throws ZipTooLargeError once the output would exceed `maxBytes`. */
+export function buildZip(entries: ZipEntry[], maxBytes = Infinity): Uint8Array {
   const encoder = new TextEncoder();
   const locals: Uint8Array[] = [];
   const centrals: Uint8Array[] = [];
   let offset = 0;
+  let centralBytes = 0;
 
   for (const entry of entries) {
     const name = encoder.encode(entry.path);
@@ -71,6 +80,8 @@ export function buildZip(entries: ZipEntry[]): Uint8Array {
     locals.push(local, stored);
     centrals.push(central);
     offset += local.length + stored.length;
+    centralBytes += central.length;
+    if (offset + centralBytes + 22 > maxBytes) throw new ZipTooLargeError();
   }
 
   const centralSize = centrals.reduce((n, c) => n + c.length, 0);

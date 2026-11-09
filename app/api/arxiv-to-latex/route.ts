@@ -4,7 +4,7 @@ import { ArchiveError, type ArchiveFile } from '@/lib/arxiv/tar';
 import { unpackEprint } from '@/lib/arxiv/eprint';
 import { ArxivFetchError, fetchEprint } from '@/lib/arxiv/fetch-eprint';
 import { decodeText, findMainTex, flattenLatex, type TexSource } from '@/lib/arxiv/latex';
-import { buildZip } from '@/lib/arxiv/zip';
+import { buildZip, ZipTooLargeError } from '@/lib/arxiv/zip';
 import type { ArxivErrorBody, ArxivSourceResponse } from '@/lib/arxiv/types';
 import { clientIp, createRateLimiter, createUpstreamThrottle } from '@/lib/rate-limit';
 
@@ -14,8 +14,11 @@ export const dynamic = 'force-dynamic';
 
 /** Matches the app's /api/drafts cap, so Open in Octree never posts a draft it would reject. */
 const DRAFT_MAX_CHARS = 200_000;
-/** Text sent back for the viewer; keeps the JSON well under Vercel's 4.5 MB response limit. */
-const CONTENTS_BUDGET_CHARS = 2_000_000;
+/**
+ * JSON bytes of text sent back for the viewer; keeps the response under Vercel's 4.5 MB limit
+ * (measured as encoded JSON: backslashes double, non-ASCII is 2-3 bytes).
+ */
+const CONTENTS_BUDGET_BYTES = 3_000_000;
 /** Largest zip served (Vercel caps function responses at 4.5 MB). */
 const MAX_ZIP_BYTES = 4 * 1024 * 1024;
 
@@ -89,7 +92,10 @@ async function loadSource(request: NextRequest, input: string | null): Promise<L
     }
     return { ok: true, id, files: eprint.files, skipped: eprint.skipped, compressedBytes: raw.length };
   } catch (err) {
-    if (err instanceof ArxivFetchError) return { ok: false, response: errorJson(err.status, err.message, err.code) };
+    if (err instanceof ArxivFetchError) {
+      const headers = err.retryAfterSeconds ? { 'Retry-After': String(err.retryAfterSeconds) } : undefined;
+      return { ok: false, response: errorJson(err.status, err.message, err.code, headers) };
+    }
     if (err instanceof ArchiveError) {
       const status = err.code === 'too_many_files' || err.code === 'too_large' ? 413 : 422;
       const message =
@@ -119,16 +125,20 @@ function buildResponse(id: string, files: ArchiveFile[], skipped: string[], comp
   // Main file first, then other .tex, then the rest, until the budget runs out.
   const priority = (p: string) => (p === mainFile ? 0 : /\.(tex|ltx)$/i.test(p) ? 1 : /\.(bib|bbl)$/i.test(p) ? 2 : 3);
   const contents: Record<string, string> = {};
-  let used = 0;
+  const jsonBytes = (s: string) => Buffer.byteLength(JSON.stringify(s));
+  // The Octree payload and the listing share the same response.
+  let used = Buffer.byteLength(JSON.stringify(listing)) + Buffer.byteLength(JSON.stringify(skipped));
+  const octreeReserve = DRAFT_MAX_CHARS * 2;
   for (const t of [...texts].sort((a, b) => priority(a.path) - priority(b.path))) {
-    if (used + t.text.length > CONTENTS_BUDGET_CHARS) continue;
+    const cost = t.text.length > CONTENTS_BUDGET_BYTES ? Infinity : jsonBytes(t.text) + jsonBytes(t.path);
+    if (used + cost > CONTENTS_BUDGET_BYTES - octreeReserve) continue;
     contents[t.path] = t.text;
-    used += t.text.length;
+    used += cost;
   }
 
   let octree: ArxivSourceResponse['octree'] = null;
   if (mainFile) {
-    const flat = flattenLatex(mainFile, texts);
+    const flat = flattenLatex(mainFile, texts, { maxChars: DRAFT_MAX_CHARS });
     const mainText = texts.find((t) => t.path === mainFile)?.text ?? '';
     if (flat.latex.length <= DRAFT_MAX_CHARS) {
       octree = { latex: flat.latex, mode: 'flattened', inlined: flat.inlined, missing: flat.missing };
@@ -171,13 +181,20 @@ export async function GET(request: NextRequest) {
   const loaded = await loadSource(request, params.get('id'));
   if (!loaded.ok) return loaded.response;
 
-  const zip = buildZip([...loaded.files].sort((a, b) => a.path.localeCompare(b.path)));
-  if (zip.length > MAX_ZIP_BYTES) {
-    return errorJson(
+  const tooLarge = () =>
+    errorJson(
       413,
       'This source is too large to repackage here. Download the original archive from arXiv instead.',
       'zip_too_large',
     );
+  // Same rule as zipAvailable; refuse before deflating anything.
+  if (loaded.compressedBytes > MAX_ZIP_BYTES * 0.9) return tooLarge();
+  let zip: Uint8Array;
+  try {
+    zip = buildZip([...loaded.files].sort((a, b) => a.path.localeCompare(b.path)), MAX_ZIP_BYTES);
+  } catch (err) {
+    if (err instanceof ZipTooLargeError) return tooLarge();
+    throw err;
   }
   const name = `arXiv-${loaded.id.replace(/[^\w.-]+/g, '_')}.zip`;
   return new Response(zip as unknown as BodyInit, {

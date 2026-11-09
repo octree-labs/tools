@@ -14,8 +14,10 @@ const FETCH_TIMEOUT_MS = 30_000;
 export class ArxivFetchError extends Error {
   constructor(
     message: string,
-    readonly code: 'not_found' | 'upstream_error' | 'timeout' | 'too_large',
+    readonly code: 'not_found' | 'upstream_error' | 'timeout' | 'too_large' | 'arxiv_busy',
     readonly status: number,
+    /** Seconds to wait before retrying, when arXiv said so. */
+    readonly retryAfterSeconds?: number,
   ) {
     super(message);
     this.name = 'ArxivFetchError';
@@ -46,11 +48,24 @@ export async function fetchEprint(idWithVersion: string): Promise<Uint8Array> {
   if (response.status === 404 || response.status === 410) {
     throw new ArxivFetchError('No arXiv paper with this ID was found. Check the ID and version.', 'not_found', 404);
   }
+  if (response.status === 429 || response.status === 503) {
+    await response.body?.cancel();
+    const header = Number(response.headers.get('retry-after'));
+    const retry = Number.isFinite(header) && header > 0 ? Math.min(Math.ceil(header), 600) : 30;
+    throw new ArxivFetchError(
+      `arXiv is limiting downloads right now. Please try again in about ${retry} seconds.`,
+      'arxiv_busy',
+      503,
+      retry,
+    );
+  }
   if (!response.ok) {
+    await response.body?.cancel();
     throw new ArxivFetchError(`arXiv answered with HTTP ${response.status}. Please try again later.`, 'upstream_error', 502);
   }
   const type = response.headers.get('content-type') || '';
   if (type.startsWith('text/html')) {
+    await response.body?.cancel();
     // arXiv answers some missing or withdrawn IDs with an HTML page.
     throw new ArxivFetchError('No source is available for this arXiv ID. Check the ID and version.', 'not_found', 404);
   }

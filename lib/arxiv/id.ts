@@ -68,7 +68,13 @@ export function parseArxivId(input: string): ArxivId | null {
   const host = url.hostname.toLowerCase();
   if (host !== 'arxiv.org' && !host.endsWith('.arxiv.org')) return null;
 
-  const match = URL_PATH.exec(decodeURIComponent(url.pathname));
+  let path: string;
+  try {
+    path = decodeURIComponent(url.pathname);
+  } catch {
+    return null; // malformed %-escape
+  }
+  const match = URL_PATH.exec(path);
   return match ? parseBare(match[1]) : null;
 }
 

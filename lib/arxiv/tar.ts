@@ -120,9 +120,16 @@ export function parseTar(buf: Uint8Array, limits: TarLimits): TarResult {
   let offset = 0;
   let longName: string | null = null;
   let paxPath: string | null = null;
+  // Links, directories and metadata headers are not counted as files, but each one still costs
+  // work and (for links/devices) a `skipped` string sent to the browser, so bound them too.
+  const maxEntries = limits.maxFiles * 10;
+  let entries = 0;
 
   while (offset + BLOCK <= buf.length) {
     if (isZeroBlock(buf, offset)) break;
+    if (++entries > maxEntries) {
+      throw new ArchiveError(`The source has more than ${limits.maxFiles} files.`, 'too_many_files');
+    }
     if (!headerChecksumOk(buf, offset)) throw new ArchiveError('The archive is corrupt.', 'corrupt');
     const header = offset;
 

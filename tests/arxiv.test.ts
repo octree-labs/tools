@@ -5,7 +5,7 @@ import { formatArxivId, parseArxivId } from '../lib/arxiv/id';
 import { ArchiveError, parseTar, safeArchivePath } from '../lib/arxiv/tar';
 import { unpackEprint } from '../lib/arxiv/eprint';
 import { findMainTex, flattenLatex } from '../lib/arxiv/latex';
-import { buildZip, crc32 } from '../lib/arxiv/zip';
+import { buildZip, crc32, ZipTooLargeError } from '../lib/arxiv/zip';
 import { createUpstreamThrottle } from '../lib/rate-limit';
 
 // --- helpers -----------------------------------------------------------------
@@ -271,6 +271,82 @@ test('flattenLatex stops on cycles and never escapes the source', () => {
   const { latex } = flattenLatex('main.tex', files);
   assert.equal((latex.match(/%% >>> a\.tex/g) || []).length, 1);
   assert.match(latex, /\\input\{\.\.\/\.\.\/etc\/passwd\}/);
+});
+
+// --- review hardening ---------------------------------------------------------
+
+function paxRecord(key: string, value: string): string {
+  const body = ` ${key}=${value}\n`;
+  let len = body.length + 1;
+  while (`${len}${body}`.length !== len) len++;
+  return `${len}${body}`;
+}
+
+test('id parser: malformed percent-escapes and look-alike hosts are rejected, not thrown', () => {
+  assert.equal(parseArxivId('https://arxiv.org/abs/%E0%A4%A'), null);
+  assert.equal(parseArxivId('https://arxiv.org.evil.com/abs/2401.12345'), null);
+  assert.equal(parseArxivId('https://evil.com/arxiv.org/abs/2401.12345'), null);
+  assert.equal(parseArxivId('2401.12345/../../x'), null);
+  assert.deepEqual(parseArxivId('https://arxiv.org/abs/2401.12345?x=@evil.com'), { id: '2401.12345' });
+});
+
+test('tar: absolute paths, pax path traversal and device files', () => {
+  assert.throws(() => parseTar(makeTar([{ name: '/etc/passwd', body: 'x' }]), LIMITS), ArchiveError);
+  const pax = makeTar([
+    { name: 'PaxHeaders/x', type: 'x', body: paxRecord('path', '../../evil.tex') },
+    { name: 'harmless.tex', body: 'x' },
+  ]);
+  assert.throws(() => parseTar(pax, LIMITS), (e: ArchiveError) => e.code === 'unsafe_path');
+  const dev = parseTar(makeTar([{ name: 'dev/null', type: '3' }, { name: 'fifo', type: '6' }, { name: 'a.tex', body: 'a' }]), LIMITS);
+  assert.deepEqual(dev.files.map((f) => f.path), ['a.tex']);
+  assert.equal(dev.skipped.length, 2);
+});
+
+test('tar: thousands of link entries cannot bypass the file cap', () => {
+  const entries = Array.from({ length: 50 }, (_, i) => ({ name: `l${i}`, type: '2', linkname: 'x' }));
+  assert.throws(() => parseTar(makeTar(entries), { maxFiles: 4, maxTotalBytes: 1e6 }), (e: ArchiveError) => e.code === 'too_many_files');
+});
+
+test('findMainTex: a standalone figure never wins, the file with more \\inputs does', () => {
+  const files = [
+    { path: 'fig.tex', text: '\\documentclass{standalone}\\begin{document}x\\end{document}' + 'x'.repeat(5000) },
+    { path: 'supp.tex', text: '\\documentclass{article}\\begin{document}\\end{document}' + 'y'.repeat(5000) },
+    { path: 'neurips.tex', text: '\\documentclass{article}\\begin{document}\\input{a}\\input{b}\\end{document}' },
+    { path: 'a.tex', text: 'A' },
+    { path: 'b.tex', text: 'B' },
+  ];
+  assert.equal(findMainTex(files), 'neurips.tex');
+});
+
+test('flattenLatex: \\import / \\subimport resolve nested \\input in the imported folder', () => {
+  const files = [
+    { path: 'main.tex', text: '\\begin{document}\n\\import{chapters/}{one}\n\\end{document}' },
+    { path: 'chapters/one.tex', text: 'One \\input{part} \\subimport{deep/}{two.tex}' },
+    { path: 'chapters/part.tex', text: 'Part' },
+    { path: 'chapters/deep/two.tex', text: 'Two' },
+  ];
+  const { latex, inlined, missing } = flattenLatex('main.tex', files);
+  assert.match(latex, /One/);
+  assert.match(latex, /Part/);
+  assert.match(latex, /Two/);
+  assert.deepEqual(missing, []);
+  assert.deepEqual(inlined.sort(), ['chapters/deep/two.tex', 'chapters/one.tex', 'chapters/part.tex']);
+});
+
+test('flattenLatex: fan-out is bounded by maxChars (no exponential blow-up)', () => {
+  const fan = Array.from({ length: 30 }, () => '\\input{b}').join('\n');
+  const files = [
+    { path: 'main.tex', text: fan },
+    { path: 'b.tex', text: Array.from({ length: 30 }, () => '\\input{c}').join('\n') },
+    { path: 'c.tex', text: 'z'.repeat(10_000) },
+  ];
+  const { latex } = flattenLatex('main.tex', files, { maxChars: 200_000 });
+  assert.ok(latex.length < 300_000, `got ${latex.length}`);
+});
+
+test('buildZip stops once the output passes maxBytes', () => {
+  const noise = new Uint8Array(100_000).map(() => Math.floor(Math.random() * 256));
+  assert.throws(() => buildZip([{ path: 'a', data: noise }, { path: 'b', data: noise }], 150_000), ZipTooLargeError);
 });
 
 // --- zip and throttle ----------------------------------------------------------
