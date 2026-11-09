@@ -2,6 +2,10 @@ import { DEFAULT_LOCALE, LOCALES } from "@/lib/i18n/config";
 import { getSymbolCopy } from "../content";
 import { getSymbolPageRef, type SymbolPageRef } from "../index";
 import type { SymbolPageTranslation, SymbolPageTranslations } from "./types";
+import cnMath from "./cn/math";
+import esMath from "./es/math";
+import frMath from "./fr/math";
+import ruMath from "./ru/math";
 
 export type { SymbolPageTranslation, SymbolPageTranslations } from "./types";
 
@@ -15,10 +19,10 @@ export type { SymbolPageTranslation, SymbolPageTranslations } from "./types";
  * (every slug of the category, see ./types.ts) and register it below.
  */
 const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
-  cn: {},
-  es: {},
-  fr: {},
-  ru: {},
+  cn: { "math": cnMath },
+  es: { "math": esMath },
+  fr: { "math": frMath },
+  ru: { "math": ruMath },
 };
 
 /** Locales that have translated symbol copy for at least one category. */
