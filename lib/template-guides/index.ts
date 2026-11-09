@@ -53,6 +53,9 @@ import SyllabusGuide from "./syllabus";
 import TableTemplateGuide from "./table-template";
 import TechnicalReportGuide from "./technical-report";
 import ThesisGuide from "./thesis";
+import WhitePaperGuide from "./white-paper";
+import WorksheetGuide from "./worksheet";
+import Www2026Guide from "./www-2026";
 
 /**
  * Long-form guides rendered below the preview on template pages.
@@ -116,6 +119,9 @@ const templateGuides: Record<string, ComponentType> = {
   "table-template": TableTemplateGuide,
   "technical-report": TechnicalReportGuide,
   "thesis": ThesisGuide,
+  "white-paper": WhitePaperGuide,
+  "worksheet": WorksheetGuide,
+  "www-2026": Www2026Guide,
 };
 
 export function getTemplateGuide(slug: string): ComponentType | undefined {
