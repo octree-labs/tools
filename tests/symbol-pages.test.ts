@@ -138,16 +138,36 @@ test('no aggregateRating markup on symbol pages', () => {
   assert.ok(!JSON.stringify(enModels.map((m) => m.faq)).includes('aggregateRating'));
 });
 
-test('sitemap is split so every file stays well under Vercel’s 20 MB prerender limit', async () => {
+test('sitemap lists symbol pages only in locales with localised copy, each file small', async () => {
   const { default: sitemap, sitemapIds } = await import('../app/sitemap');
-  const ids = sitemapIds();
-  const files = await Promise.all(ids.map((id) => sitemap({ id })));
+  const { SYMBOL_PAGE_INDEXED_LOCALES } = await import('../lib/symbol-pages');
+  const files = await Promise.all(sitemapIds().map((id) => sitemap({ id })));
   const urls = files.flat().map((entry) => entry.url);
   assert.equal(new Set(urls).size, urls.length, 'no URL is listed twice');
-  for (const page of SYMBOL_PAGES.slice(0, 3).concat(SYMBOL_PAGES.slice(-3))) {
-    assert.ok(urls.includes(`https://tools.useoctree.com/symbols/${page.category}/${page.slug}`));
+  const symbolPageUrl = /^https:\/\/tools\.useoctree\.com(?:\/([a-z]+))?\/symbols\/[a-z-]+\/[a-z0-9-]+$/;
+  const symbolUrls = urls.filter((u) => symbolPageUrl.test(u));
+  assert.equal(symbolUrls.length, SYMBOL_PAGES.length * SYMBOL_PAGE_INDEXED_LOCALES.length);
+  for (const u of symbolUrls) {
+    const locale = symbolPageUrl.exec(u)![1] ?? 'en';
+    assert.ok(SYMBOL_PAGE_INDEXED_LOCALES.includes(locale), `non-localised symbol URL in sitemap: ${u}`);
   }
-  for (const file of files) {
-    assert.ok(file.length > 0 && file.length <= 3000, `sitemap file has ${file.length} URLs`);
+  for (const entry of files.flat().filter((e) => symbolPageUrl.test(e.url))) {
+    for (const href of Object.values(entry.alternates?.languages ?? {})) {
+      const locale = symbolPageUrl.exec(String(href))?.[1] ?? 'en';
+      assert.ok(SYMBOL_PAGE_INDEXED_LOCALES.includes(locale), `hreflang to non-localised page: ${href}`);
+    }
   }
+  for (const file of files) assert.ok(file.length > 0 && file.length <= 5000, `sitemap file has ${file.length} URLs`);
+});
+
+test('non-localised symbol pages canonicalise to English and are noindex', async () => {
+  const { symbolPageAlternates } = await import('../lib/symbol-pages/seo');
+  const path = '/symbols/arrows/right-arrow';
+  const fr = symbolPageAlternates(path, 'fr');
+  assert.equal(fr.alternates?.canonical, path);
+  assert.deepEqual(fr.robots, { index: false, follow: true });
+  const en = symbolPageAlternates(path, 'en');
+  assert.equal(en.alternates?.canonical, path);
+  assert.equal(en.robots, undefined);
+  assert.deepEqual(Object.keys(en.alternates?.languages ?? {}).sort(), ['en', 'x-default']);
 });

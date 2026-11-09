@@ -1,7 +1,21 @@
+import { DEFAULT_LOCALE } from "@/lib/i18n/config";
 import { SYMBOL_CATEGORIES } from "./catalog";
 import nameOverrides from "./names.json";
 
 export { SYMBOL_CATEGORIES } from "./catalog";
+
+/**
+ * Locales whose symbol pages are real alternates: title AND body copy in
+ * that language. The body copy (./content.json) is English only, so this is
+ * just English; every other locale's symbol page canonicalises to the English
+ * URL, is noindex, and is left out of the sitemap and of hreflang. Add a
+ * locale here only together with translated content for it.
+ */
+export const SYMBOL_PAGE_INDEXED_LOCALES: readonly string[] = [DEFAULT_LOCALE];
+
+export function isSymbolPageIndexedLocale(locale: string): boolean {
+  return SYMBOL_PAGE_INDEXED_LOCALES.includes(locale);
+}
 
 /**
  * One entry per distinct LaTeX command in lib/symbols.ts. This module is

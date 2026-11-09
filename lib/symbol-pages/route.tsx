@@ -2,13 +2,15 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
 import { DEFAULT_LOCALE } from "@/lib/i18n/config";
-import { generateAlternates, withDefaultOgImage } from "@/lib/seo";
+import { withDefaultOgImage } from "@/lib/seo";
 import { SymbolPageView } from "@/components/symbol-page/SymbolPageView";
 import { SYMBOL_PAGES, getSymbolPageRef } from "./index";
+import { symbolPageAlternates } from "./seo";
 import { getSymbolPageT } from "./i18n";
 import { buildSymbolPageModel } from "./model";
 
 type Params = { locale: string; symbol: string };
+
 
 /**
  * Route handlers shared by every app/[locale]/symbols/<category>/[symbol]
@@ -44,7 +46,7 @@ export function symbolPageRoute(category: string) {
         `${ref.latex} latex`,
         `how to write ${ref.name.toLowerCase()} in latex`,
       ],
-      alternates: generateAlternates(`/symbols/${category}/${ref.slug}`, locale),
+      ...symbolPageAlternates(`/symbols/${category}/${ref.slug}`, locale),
       openGraph: { title: model.title, description: model.metaDescription, type: "article" },
       twitter: { title: model.title, description: model.metaDescription },
     });
