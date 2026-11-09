@@ -2,9 +2,15 @@ import { Metadata } from "next";
 import { generateSymbolMetadata } from '@/lib/generate-symbol-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "LaTeX Function & Mapping Symbols - Arrows, Composition | Free",
-  description: "Complete list of LaTeX function and mapping symbols. Copy-paste f(x), →, ↦, ∘, injective, surjective notation with LaTeX commands.",
+  title: "Function Composition & Isomorphism in LaTeX - ∘, ≅, ↦",
+  description: "Function composition in LaTeX is \\circ and isomorphism is \\cong. Copy-ready commands for f \\colon A \\to B, \\mapsto, \\simeq, identity, inverse and injections.",
   keywords: [
+    "isomorphism latex",
+    "latex isomorphism",
+    "composition function latex",
+    "function composition latex",
+    "latex circ",
+    "latex cong",
     "function notation symbols",
     "mapping symbols latex",
     "latex function",
@@ -26,8 +32,8 @@ const defaultMetadata: Metadata = {
     "latex symbols",
   ],
   openGraph: {
-    title: "LaTeX Functions & Mapping Symbols - Complete Symbol Reference",
-    description: "Copy-paste LaTeX code for function notation, mappings, and composition.",
+    title: "Function Composition & Isomorphism in LaTeX",
+    description: "Copy-paste LaTeX for composition ∘, isomorphism ≅, maps-to ↦ and function notation.",
   },
 };
 

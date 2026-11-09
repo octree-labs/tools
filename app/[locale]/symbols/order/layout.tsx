@@ -2,9 +2,15 @@ import { Metadata } from "next";
 import { generateSymbolMetadata } from '@/lib/generate-symbol-metadata';
 
 const defaultMetadata: Metadata = {
-  title: "LaTeX Inequalities & Order Theory Symbols | Free Symbol Reference",
-  description: "Complete list of LaTeX inequality and order symbols. Copy-paste ≺, ≻, ⪯, ⪰, ≤, ≥, ≪, ≫, min, max, inf, sup with LaTeX commands.",
+  title: "Less Than or Equal To in LaTeX (\\leq) - Inequality Symbols",
+  description: "Less than, greater than and less than or equal to in LaTeX: <, >, \\leq, \\geq, \\neq, \\ll, \\lesssim, \\prec and negations, with copy-ready commands and packages.",
   keywords: [
+    "latex less than",
+    "less than or equal to in latex",
+    "less than or equal to latex",
+    "greater than or equal to latex",
+    "leq latex",
+    "latex not equal",
     "order symbols",
     "inequality notation math",
     "latex inequality",
@@ -25,8 +31,8 @@ const defaultMetadata: Metadata = {
     "comparison symbols",
   ],
   openGraph: {
-    title: "LaTeX Inequalities & Order Theory Symbols - Complete Symbol Reference",
-    description: "Copy-paste LaTeX code for inequalities, ordering, and bounds notation.",
+    title: "Less Than, Greater Than & ≤ in LaTeX - Inequality Symbols",
+    description: "Copy-paste LaTeX for less than, less than or equal to, not equal and order symbols.",
   },
 };
 

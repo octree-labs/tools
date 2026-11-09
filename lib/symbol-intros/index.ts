@@ -5,9 +5,12 @@ import BooleanIntro from "./boolean";
 import CombinatoricsIntro from "./combinatorics";
 import ComplexIntro from "./complex";
 import FunctionsIntro from "./functions";
+import LatinIntro from "./latin";
 import LogicIntro from "./logic";
+import MachineLearningIntro from "./machine-learning";
 import NumberTheoryIntro from "./number-theory";
 import OrderIntro from "./order";
+import PhysicsIntro from "./physics";
 import ProbabilityIntro from "./probability";
 
 /**
@@ -25,9 +28,12 @@ const symbolIntros: Record<string, ComponentType> = {
   combinatorics: CombinatoricsIntro,
   complex: ComplexIntro,
   functions: FunctionsIntro,
+  latin: LatinIntro,
   logic: LogicIntro,
+  "machine-learning": MachineLearningIntro,
   "number-theory": NumberTheoryIntro,
   order: OrderIntro,
+  physics: PhysicsIntro,
   probability: ProbabilityIntro,
 };
 
