@@ -30,6 +30,14 @@ import cnGreek from "./cn/greek";
 import esGreek from "./es/greek";
 import frGreek from "./fr/greek";
 import ruGreek from "./ru/greek";
+import cnLatin from "./cn/latin";
+import esLatin from "./es/latin";
+import frLatin from "./fr/latin";
+import ruLatin from "./ru/latin";
+import cnLinearAlgebra from "./cn/linear-algebra";
+import esLinearAlgebra from "./es/linear-algebra";
+import frLinearAlgebra from "./fr/linear-algebra";
+import ruLinearAlgebra from "./ru/linear-algebra";
 import cnMath from "./cn/math";
 import esMath from "./es/math";
 import frMath from "./fr/math";
@@ -95,6 +103,8 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "geometry": cnGeometry,
     "graph-theory": cnGraphTheory,
     "greek": cnGreek,
+    "latin": cnLatin,
+    "linear-algebra": cnLinearAlgebra,
     "math": cnMath,
     "probability": cnProbability,
     "quantifiers": cnQuantifiers,
@@ -115,6 +125,8 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "geometry": esGeometry,
     "graph-theory": esGraphTheory,
     "greek": esGreek,
+    "latin": esLatin,
+    "linear-algebra": esLinearAlgebra,
     "math": esMath,
     "probability": esProbability,
     "quantifiers": esQuantifiers,
@@ -135,6 +147,8 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "geometry": frGeometry,
     "graph-theory": frGraphTheory,
     "greek": frGreek,
+    "latin": frLatin,
+    "linear-algebra": frLinearAlgebra,
     "math": frMath,
     "probability": frProbability,
     "quantifiers": frQuantifiers,
@@ -155,6 +169,8 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "geometry": ruGeometry,
     "graph-theory": ruGraphTheory,
     "greek": ruGreek,
+    "latin": ruLatin,
+    "linear-algebra": ruLinearAlgebra,
     "math": ruMath,
     "probability": ruProbability,
     "quantifiers": ruQuantifiers,

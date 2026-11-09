@@ -218,6 +218,8 @@ const TRANSLATED_CATEGORIES: string[] = [
   'geometry',
   'graph-theory',
   'greek',
+  'latin',
+  'linear-algebra',
   'math',
   'probability',
   'quantifiers',
