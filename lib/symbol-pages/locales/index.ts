@@ -2,6 +2,10 @@ import { DEFAULT_LOCALE, LOCALES } from "@/lib/i18n/config";
 import { getSymbolCopy } from "../content";
 import { getSymbolPageRef, type SymbolPageRef } from "../index";
 import type { SymbolPageTranslation, SymbolPageTranslations } from "./types";
+import cnArrows from "./cn/arrows";
+import esArrows from "./es/arrows";
+import frArrows from "./fr/arrows";
+import ruArrows from "./ru/arrows";
 import cnSetTheory from "./cn/set-theory";
 import esSetTheory from "./es/set-theory";
 import frSetTheory from "./fr/set-theory";
@@ -23,10 +27,10 @@ export type { SymbolPageTranslation, SymbolPageTranslations } from "./types";
  * (every slug of the category, see ./types.ts) and register it below.
  */
 const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
-  cn: { "math": cnMath, "set-theory": cnSetTheory },
-  es: { "math": esMath, "set-theory": esSetTheory },
-  fr: { "math": frMath, "set-theory": frSetTheory },
-  ru: { "math": ruMath, "set-theory": ruSetTheory },
+  cn: { "math": cnMath, "set-theory": cnSetTheory, "arrows": cnArrows },
+  es: { "math": esMath, "set-theory": esSetTheory, "arrows": esArrows },
+  fr: { "math": frMath, "set-theory": frSetTheory, "arrows": frArrows },
+  ru: { "math": ruMath, "set-theory": ruSetTheory, "arrows": ruArrows },
 };
 
 /** Locales that have translated symbol copy for at least one category. */
