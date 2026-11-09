@@ -36,6 +36,12 @@ import MlaWorksCitedGuide from "./mla-works-cited";
 import MotivationLetterGuide from "./motivation-letter";
 import Neurips2026Guide from "./neurips-2026";
 import Neurips2027Guide from "./neurips-2027";
+import NewsletterGuide from "./newsletter";
+import ObituaryGuide from "./obituary";
+import PosterGuide from "./poster";
+import ProjectReportGuide from "./project-report";
+import QuestionnaireGuide from "./questionnaire";
+import QuizTemplateGuide from "./quiz-template";
 import ResearchProposalGuide from "./research-proposal";
 import ResumeGuide from "./resume";
 
@@ -84,6 +90,12 @@ const templateGuides: Record<string, ComponentType> = {
   "motivation-letter": MotivationLetterGuide,
   "neurips-2026": Neurips2026Guide,
   "neurips-2027": Neurips2027Guide,
+  "newsletter": NewsletterGuide,
+  "obituary": ObituaryGuide,
+  "poster": PosterGuide,
+  "project-report": ProjectReportGuide,
+  "questionnaire": QuestionnaireGuide,
+  "quiz-template": QuizTemplateGuide,
   "research-proposal": ResearchProposalGuide,
   resume: ResumeGuide,
 };

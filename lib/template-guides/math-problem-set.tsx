@@ -56,8 +56,8 @@ export default function MathProblemSetGuide() {
         labelled (a), (b). The document is the standard <GuideCode>article</GuideCode>{" "}
         class at 12 pt with one-inch margins and the AMS packages for mathematics,
         which makes it a homework and problem set template for Overleaf, Octree or any
-        local TeX install. Students can keep the problem statements and type a solution
-        under each item; instructors can swap in new problems every week and keep the
+        local TeX install. Students can type a solution
+        under each problem; instructors can swap in new problems every week and keep the
         same layout for the whole term.
       </GuideP>
 
