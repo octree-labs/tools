@@ -6,6 +6,7 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 import { templates } from "@/lib/templates";
 import { openInOctree } from "@/lib/open-in-octree";
+import { templateFiles } from "@/lib/template-files";
 import { EVENTS, track } from "@/lib/analytics";
 import { useCtaImpression } from "@/hooks/use-cta-impression";
 import { getTemplateJsonLd } from "@/lib/json-ld";
@@ -141,6 +142,7 @@ export default function TemplatePage({
                   onClick={() =>
                     openInOctree({
                       latex: template.code,
+                      files: templateFiles(template.code) ?? undefined,
                       title: translatedTitle,
                       source: "tools:templates",
                       templateSlug: slug,
@@ -237,6 +239,7 @@ export default function TemplatePage({
                     onClick={() =>
                       openInOctree({
                         latex: template.code,
+                        files: templateFiles(template.code) ?? undefined,
                         title: translatedTitle,
                         source: "tools:templates",
                         templateSlug: slug,

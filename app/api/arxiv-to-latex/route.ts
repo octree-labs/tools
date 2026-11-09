@@ -7,6 +7,7 @@ import { decodeText, findMainTex, flattenLatex, type TexSource } from '@/lib/arx
 import { buildZip, ZipTooLargeError } from '@/lib/arxiv/zip';
 import type { ArxivErrorBody, ArxivSourceResponse } from '@/lib/arxiv/types';
 import { clientIp, createRateLimiter, createUpstreamThrottle } from '@/lib/rate-limit';
+import { DRAFT_LIMITS, prepareDraftFiles } from '@/lib/draft-files';
 
 export const runtime = 'nodejs';
 export const maxDuration = 60;
@@ -111,6 +112,30 @@ async function loadSource(request: NextRequest, input: string | null): Promise<L
   }
 }
 
+/**
+ * The text files Open in Octree sends as a multi-file draft, main first, taken
+ * from `contents` (already in the response, so the page posts them without a
+ * second copy). Higher-priority files are kept first until the app's caps
+ * (50 files, 2 MB). Null when the paper is effectively a single file.
+ */
+function octreeFileSet(mainFile: string, texts: TexSource[], contents: Record<string, string>): string[] | null {
+  const priority = (p: string) =>
+    p === mainFile ? 0 : /\.(tex|ltx)$/i.test(p) ? 1 : /\.(bib|bbl)$/i.test(p) ? 2 : /\.(sty|cls|bst|clo|cfg|def)$/i.test(p) ? 3 : 4;
+  const candidates = texts
+    .filter((t) => contents[t.path] !== undefined)
+    .sort((a, b) => priority(a.path) - priority(b.path) || a.path.localeCompare(b.path));
+  const picked: { path: string; content: string }[] = [];
+  let bytes = 0;
+  for (const t of candidates) {
+    const size = Buffer.byteLength(t.text, 'utf8');
+    if (picked.length >= DRAFT_LIMITS.maxFiles || bytes + size > DRAFT_LIMITS.maxFilesBytes) continue;
+    picked.push({ path: t.path, content: t.text });
+    bytes += size;
+  }
+  const prepared = prepareDraftFiles(picked, mainFile);
+  return prepared ? prepared.files.map((f) => f.path) : null;
+}
+
 function buildResponse(id: string, files: ArchiveFile[], skipped: string[], compressedBytes: number): ArxivSourceResponse {
   const sorted = [...files].sort((a, b) => a.path.localeCompare(b.path));
   const texts: TexSource[] = [];
@@ -141,10 +166,11 @@ function buildResponse(id: string, files: ArchiveFile[], skipped: string[], comp
     const flat = flattenLatex(mainFile, texts, { maxChars: DRAFT_MAX_CHARS });
     const mainText = texts.find((t) => t.path === mainFile)?.text ?? '';
     if (flat.latex.length <= DRAFT_MAX_CHARS) {
-      octree = { latex: flat.latex, mode: 'flattened', inlined: flat.inlined, missing: flat.missing };
+      octree = { latex: flat.latex, mode: 'flattened', inlined: flat.inlined, missing: flat.missing, files: null };
     } else if (mainText.length <= DRAFT_MAX_CHARS) {
-      octree = { latex: mainText, mode: 'main-only', inlined: [], missing: [] };
+      octree = { latex: mainText, mode: 'main-only', inlined: [], missing: [], files: null };
     }
+    if (octree) octree.files = octreeFileSet(mainFile, texts, contents);
   }
 
   return {

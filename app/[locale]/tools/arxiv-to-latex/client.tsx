@@ -170,6 +170,13 @@ function OpenInOctreeBar({ result }: { result: ArxivSourceResponse }) {
       </div>
     );
   }
+  const fileSet = octree.files
+    ? octree.files.flatMap((path) =>
+        result.contents[path] !== undefined ? [{ path, content: result.contents[path] }] : [],
+      )
+    : null;
+  const multi = fileSet && fileSet.length > 1 ? fileSet : null;
+  const otherCount = multi ? result.files.length - multi.length : 0;
   return (
     <div
       ref={ref}
@@ -177,15 +184,29 @@ function OpenInOctreeBar({ result }: { result: ArxivSourceResponse }) {
       className="mt-4 flex flex-wrap items-center gap-3 rounded-xl border border-blue-200 bg-blue-50/70 p-3"
     >
       <p className="min-w-0 flex-1 text-sm text-gray-700">
-        {octree.mode === 'flattened' && octree.inlined.length > 0
-          ? `Opens ${result.mainFile} as one file in Octree, with ${octree.inlined.length} \\input/\\include file${octree.inlined.length === 1 ? '' : 's'} inlined. `
-          : `Opens ${result.mainFile} in Octree. `}
-        Figures and other files are not carried over yet: upload them from the .zip to compile with images.
+        {multi
+          ? `Opens ${result.mainFile} in Octree with ${multi.length} text files (sub-files, bibliography, styles). `
+          : octree.mode === 'flattened' && octree.inlined.length > 0
+            ? `Opens ${result.mainFile} as one file in Octree, with ${octree.inlined.length} \\input/\\include file${octree.inlined.length === 1 ? '' : 's'} inlined. `
+            : `Opens ${result.mainFile} in Octree. `}
+        {multi && otherCount === 0
+          ? ''
+          : multi
+            ? 'Figures and other binary files are not carried over yet: upload them from the .zip to compile with images.'
+            : 'Figures and other files are not carried over yet: upload them from the .zip to compile with images.'}
       </p>
       <button
         type="button"
         onClick={() =>
-          openInOctree({ latex: octree.latex, title: `arXiv ${result.id}`, source: RESULT_SOURCE })
+          openInOctree({
+            // The flattened single file stays as the fallback for an app
+            // without multi-file drafts (it ignores `files`).
+            latex: octree.latex,
+            files: multi ?? undefined,
+            main: multi ? (result.mainFile ?? undefined) : undefined,
+            title: `arXiv ${result.id}`,
+            source: RESULT_SOURCE,
+          })
         }
         className="inline-flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-medium text-white shadow-sm transition-colors hover:bg-blue-700"
       >

@@ -28,6 +28,12 @@ export interface ArxivSourceResponse {
     mode: 'flattened' | 'main-only';
     inlined: string[];
     missing: string[];
+    /**
+     * Paths (main first, all present in `contents`) sent as a multi-file
+     * draft, so .bib/.cls/sub-files arrive as real files. Null when the paper
+     * is a single file or its main file cannot be used; `latex` then goes alone.
+     */
+    files: string[] | null;
   } | null;
   /** Whether /api/arxiv-to-latex?format=zip can serve this source. */
   zipAvailable: boolean;
