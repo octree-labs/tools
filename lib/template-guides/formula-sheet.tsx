@@ -14,7 +14,7 @@ const faq: GuideFaqItem[] = [
   {
     question: "How do I fit the formula sheet on one page?",
     answer:
-      "As written, the sample runs onto a second page with the Statistics section. Narrow the margins to 0.5 inch in the geometry line and change \\begin{multicols}{2} to \\begin{multicols}{3}; with those two changes the whole sample fits on one letter page. Going down to \\documentclass[10pt]{article} buys more room if you add sections.",
+      "The sample already fits on one letter page with 0.5 inch margins and three columns. When you add sections, go down to \\documentclass[10pt]{article}, cut formulas you know by heart, or set \\begin{multicols}{4} for very short formulas. Check the page count after each addition.",
   },
   {
     question: "Which topics does the formula sheet cover?",
@@ -38,10 +38,10 @@ export default function FormulaSheetGuide() {
     <article>
       <GuideH2 id="what-is-it">A formula sheet template in LaTeX</GuideH2>
       <GuideP>
-        This formula sheet template in LaTeX is a compact two-column reference of the
+        This formula sheet template in LaTeX is a compact three-column, one-page reference of the
         formulas students reach for most in calculus, trigonometry, algebra, geometry
         and introductory statistics. It uses the standard{" "}
-        <GuideCode>article</GuideCode> class at 11 pt with 0.75 inch margins, the{" "}
+        <GuideCode>article</GuideCode> class at 11 pt with 0.5 inch margins, the{" "}
         <GuideCode>multicol</GuideCode> package for newspaper-style columns that
         balance automatically, and <GuideCode>amsmath</GuideCode> for aligned
         equations. Paragraph indentation is switched off so labels and formulas
@@ -59,15 +59,14 @@ export default function FormulaSheetGuide() {
         <GuideCode>n - 1</GuideCode> denominator and the standard deviation. A
         centred header names the sheet and the course. Teachers can hand it out as an
         exam formula sheet; students can trim and extend it into a personal cheat
-        sheet. As written it runs just over one page; the first tip below gets it
-        onto a single sheet. For a denser, boxed layout, see the{" "}
+        sheet. The whole sample fits on a single letter page. For a denser, boxed layout, see the{" "}
         <GuideLink href="/templates/math-cheat-sheet">math cheat sheet template</GuideLink>
         .
       </GuideP>
 
       <GuideH2 id="included">What is included</GuideH2>
       <GuideUl>
-        <li>Two balanced columns with <GuideCode>multicol</GuideCode></li>
+        <li>Three balanced columns with <GuideCode>multicol</GuideCode> on one page</li>
         <li>Calculus: derivatives, rules, integrals, fundamental theorem</li>
         <li>Trigonometry: Pythagorean, angle sum and double angle identities</li>
         <li>Algebra: quadratic formula, exponent and logarithm rules</li>
@@ -95,12 +94,13 @@ export default function FormulaSheetGuide() {
 
       <GuideH2 id="customise">Customise the template</GuideH2>
       <GuideP>
-        <strong>Fit it on one page.</strong> Narrow the margins and switch to three
-        columns; the full sample then fits on a single letter page:
+        <strong>Keep it on one page as it grows.</strong> The sample uses 0.5 inch
+        margins and three columns. If added sections push it onto a second page, drop
+        the font size first; for a two-sided sheet with wider columns, go back to two:
       </GuideP>
-      <GuidePre>{`\\usepackage[margin=0.5in]{geometry}
+      <GuidePre>{`\\documentclass[10pt]{article}
 ...
-\\begin{multicols}{3}`}</GuidePre>
+\\begin{multicols}{2}`}</GuidePre>
       <GuideP>
         <strong>Add a topic.</strong> Copy the pattern of the existing sections: a
         bold label, then an <GuideCode>align*</GuideCode> block with{" "}

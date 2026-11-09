@@ -839,6 +839,7 @@ In the final paragraph, restate your main point and indicate next steps or call 
     slug: "algorithm",
     previewUrl: "/templates/algorithm.pdf",
     category: "Math",
+    seoTitle: "Algorithm Pseudocode LaTeX Template | Free Download",
     code: String.raw`\documentclass[12pt]{article}
 \usepackage[margin=1in]{geometry}
 \usepackage{amsmath,amssymb}
@@ -2463,7 +2464,7 @@ Key takeaways from today's lecture:
     previewUrl: "/templates/formula-sheet.pdf",
     category: "Math",
     code: String.raw`\documentclass[11pt]{article}
-\usepackage[margin=0.75in]{geometry}
+\usepackage[margin=0.5in]{geometry}
 \usepackage{amsmath,amssymb}
 \usepackage{multicol}
 
@@ -2478,7 +2479,7 @@ Key takeaways from today's lecture:
 
 \vspace{0.3cm}
 
-\begin{multicols}{2}
+\begin{multicols}{3}
 
 \section*{Calculus}
 
@@ -3357,10 +3358,11 @@ Date circulated: 14 October 2026 & Date approved: \\
 
 \begin{document}
 
+\noindent
 \begin{minipage}[t]{0.5\textwidth}
 {\Large \textbf{INVOICE}}\\[0.3cm]
 {\color{headerblue}\rule{5cm}{2pt}}
-\end{minipage}
+\end{minipage}%
 \begin{minipage}[t]{0.5\textwidth}
 \raggedleft
 {\large \textbf{Your Company Name}}\\
@@ -3379,7 +3381,7 @@ Client Name\\
 Company Name\\
 456 Client Avenue\\
 City, State 67890
-\end{minipage}
+\end{minipage}%
 \begin{minipage}[t]{0.5\textwidth}
 \raggedleft
 \begin{tabular}{rl}
@@ -5496,6 +5498,11 @@ Don't miss this incredible opportunity to be part of something special. Whether 
 
 \definecolor{cardcolor}{RGB}{41,128,185}
 \pagestyle{empty}
+% No padding around \colorbox and no paragraph indent, so each 3.5 x 2 in
+% design fills its page exactly instead of spilling onto the next one.
+\setlength{\fboxsep}{0pt}
+\setlength{\parindent}{0pt}
+\setlength{\topskip}{0pt}
 
 \begin{document}
 
@@ -5507,7 +5514,7 @@ Don't miss this incredible opportunity to be part of something special. Whether 
 \vspace{0.3in}
 {\Huge \textcolor{white}{\textbf{YOUR NAME}}}\\[0.1in]
 {\Large \textcolor{white}{Professional Title}}\\[0.3in]
-\end{minipage}
+\end{minipage}%
 }
 
 \vfill
@@ -5591,6 +5598,9 @@ City, State 12345
 \definecolor{headercolor}{RGB}{52,73,94}
 \definecolor{weekendcolor}{RGB}{236,240,241}
 
+% Day column for the monthly grid: seven 1.2in columns fit the 10in text width
+\newcolumntype{D}{>{\centering\arraybackslash}p{1.2in}}
+
 \pagestyle{empty}
 
 \begin{document}
@@ -5601,7 +5611,7 @@ City, State 12345
 
 \vspace{0.5cm}
 
-\begin{tabular}{|>{\centering\arraybackslash}p{1.3in}|>{\centering\arraybackslash}p{1.3in}|>{\centering\arraybackslash}p{1.3in}|>{\centering\arraybackslash}p{1.3in}|>{\centering\arraybackslash}p{1.3in}|>{\centering\arraybackslash}p{1.3in}|>{\centering\arraybackslash}p{1.3in}|}
+\begin{tabular}{|D|D|D|D|D|D|D|}
 \hline
 \rowcolor{headercolor}
 \textcolor{white}{\textbf{Sunday}} & \textcolor{white}{\textbf{Monday}} & \textcolor{white}{\textbf{Tuesday}} & \textcolor{white}{\textbf{Wednesday}} & \textcolor{white}{\textbf{Thursday}} & \textcolor{white}{\textbf{Friday}} & \textcolor{white}{\textbf{Saturday}} \\
@@ -5638,7 +5648,7 @@ City, State 12345
 
 \vspace{0.5cm}
 
-\begin{minipage}{0.3\textwidth}
+\begin{minipage}[t]{0.3\textwidth}
 \centering
 \textbf{January}\\
 \begin{tabular}{|c|c|c|c|c|c|c|}
@@ -5654,7 +5664,7 @@ S & M & T & W & T & F & S \\
 \end{tabular}
 \end{minipage}
 \hfill
-\begin{minipage}{0.3\textwidth}
+\begin{minipage}[t]{0.3\textwidth}
 \centering
 \textbf{February}\\
 \begin{tabular}{|c|c|c|c|c|c|c|}
@@ -5670,7 +5680,7 @@ S & M & T & W & T & F & S \\
 \end{tabular}
 \end{minipage}
 \hfill
-\begin{minipage}{0.3\textwidth}
+\begin{minipage}[t]{0.3\textwidth}
 \centering
 \textbf{March}\\
 \begin{tabular}{|c|c|c|c|c|c|c|}
@@ -5689,7 +5699,7 @@ S & M & T & W & T & F & S \\
 
 \vspace{0.5cm}
 
-\begin{minipage}{0.3\textwidth}
+\begin{minipage}[t]{0.3\textwidth}
 \centering
 \textbf{April}\\
 \begin{tabular}{|c|c|c|c|c|c|c|}
@@ -5705,7 +5715,7 @@ S & M & T & W & T & F & S \\
 \end{tabular}
 \end{minipage}
 \hfill
-\begin{minipage}{0.3\textwidth}
+\begin{minipage}[t]{0.3\textwidth}
 \centering
 \textbf{May}\\
 \begin{tabular}{|c|c|c|c|c|c|c|}
@@ -5721,7 +5731,7 @@ S & M & T & W & T & F & S \\
 \end{tabular}
 \end{minipage}
 \hfill
-\begin{minipage}{0.3\textwidth}
+\begin{minipage}[t]{0.3\textwidth}
 \centering
 \textbf{June}\\
 \begin{tabular}{|c|c|c|c|c|c|c|}
@@ -5733,6 +5743,108 @@ S & M & T & W & T & F & S \\
 15 & 16 & 17 & 18 & 19 & 20 & 21 \\
 22 & 23 & 24 & 25 & 26 & 27 & 28 \\
 29 & 30 & & & & & \\
+\hline
+\end{tabular}
+\end{minipage}
+
+\vspace{0.5cm}
+
+\begin{minipage}[t]{0.3\textwidth}
+\centering
+\textbf{July}\\
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+S & M & T & W & T & F & S \\
+\hline
+& & 1 & 2 & 3 & 4 & 5 \\
+6 & 7 & 8 & 9 & 10 & 11 & 12 \\
+13 & 14 & 15 & 16 & 17 & 18 & 19 \\
+20 & 21 & 22 & 23 & 24 & 25 & 26 \\
+27 & 28 & 29 & 30 & 31 & & \\
+\hline
+\end{tabular}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.3\textwidth}
+\centering
+\textbf{August}\\
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+S & M & T & W & T & F & S \\
+\hline
+& & & & & 1 & 2 \\
+3 & 4 & 5 & 6 & 7 & 8 & 9 \\
+10 & 11 & 12 & 13 & 14 & 15 & 16 \\
+17 & 18 & 19 & 20 & 21 & 22 & 23 \\
+24 & 25 & 26 & 27 & 28 & 29 & 30 \\
+31 & & & & & & \\
+\hline
+\end{tabular}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.3\textwidth}
+\centering
+\textbf{September}\\
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+S & M & T & W & T & F & S \\
+\hline
+& 1 & 2 & 3 & 4 & 5 & 6 \\
+7 & 8 & 9 & 10 & 11 & 12 & 13 \\
+14 & 15 & 16 & 17 & 18 & 19 & 20 \\
+21 & 22 & 23 & 24 & 25 & 26 & 27 \\
+28 & 29 & 30 & & & & \\
+\hline
+\end{tabular}
+\end{minipage}
+
+\vspace{0.5cm}
+
+\begin{minipage}[t]{0.3\textwidth}
+\centering
+\textbf{October}\\
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+S & M & T & W & T & F & S \\
+\hline
+& & & 1 & 2 & 3 & 4 \\
+5 & 6 & 7 & 8 & 9 & 10 & 11 \\
+12 & 13 & 14 & 15 & 16 & 17 & 18 \\
+19 & 20 & 21 & 22 & 23 & 24 & 25 \\
+26 & 27 & 28 & 29 & 30 & 31 & \\
+\hline
+\end{tabular}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.3\textwidth}
+\centering
+\textbf{November}\\
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+S & M & T & W & T & F & S \\
+\hline
+& & & & & & 1 \\
+2 & 3 & 4 & 5 & 6 & 7 & 8 \\
+9 & 10 & 11 & 12 & 13 & 14 & 15 \\
+16 & 17 & 18 & 19 & 20 & 21 & 22 \\
+23 & 24 & 25 & 26 & 27 & 28 & 29 \\
+30 & & & & & & \\
+\hline
+\end{tabular}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.3\textwidth}
+\centering
+\textbf{December}\\
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+S & M & T & W & T & F & S \\
+\hline
+& 1 & 2 & 3 & 4 & 5 & 6 \\
+7 & 8 & 9 & 10 & 11 & 12 & 13 \\
+14 & 15 & 16 & 17 & 18 & 19 & 20 \\
+21 & 22 & 23 & 24 & 25 & 26 & 27 \\
+28 & 29 & 30 & 31 & & & \\
 \hline
 \end{tabular}
 \end{minipage}
@@ -5763,6 +5875,19 @@ S & M & T & W & T & F & S \\
 \usepackage{hyperref}
 \usepackage{natbib}
 \usepackage{caption}
+
+% Sample bibliography: LaTeX writes references.bib from this block on the
+% first compile. Replace the entry with your own, or delete the block and
+% add your own references.bib (an existing file is never overwritten).
+\begin{filecontents*}{references.bib}
+@book{russell2020aima,
+  author    = {Stuart Russell and Peter Norvig},
+  title     = {Artificial Intelligence: A Modern Approach},
+  edition   = {4th},
+  publisher = {Pearson},
+  year      = {2020}
+}
+\end{filecontents*}
 
 % AAAI-style title formatting
 \makeatletter
@@ -5796,7 +5921,7 @@ This section introduces the research problem. It should provide context, motivat
 AAAI papers are limited to 7 pages of content plus additional pages for references only. This template follows the two-column format required by AAAI.
 
 \section{Related Work}
-Discuss relevant prior work in this section. Highlight the differences between your approach and existing methods. This helps position your contribution within the broader research landscape.
+Discuss relevant prior work in this section, citing it with \citet{russell2020aima} or \citep{russell2020aima}. Highlight the differences between your approach and existing methods. This helps position your contribution within the broader research landscape.
 
 \section{Methodology}
 Detail your proposed method, algorithm, or system architecture here. Use formal notation and provide sufficient detail for reproducibility.
@@ -5839,7 +5964,9 @@ Summarize the key findings of the paper and suggest directions for future work.
 \section*{Acknowledgments}
 Acknowledgments should be omitted for anonymous submissions.
 
-\bibliographystyle{aaai}
+% The official AAAI author kit ships its own .bst; plainnat is a
+% TeX Live stand-in for drafting.
+\bibliographystyle{plainnat}
 \bibliography{references}
 
 \end{document}`,
@@ -6408,6 +6535,19 @@ Summarize contributions and future directions.
 \usepackage{booktabs}
 \usepackage{hyperref}
 
+% Sample bibliography: LaTeX writes references.bib from this block on the
+% first compile. Replace the entry with your own, or delete the block and
+% add your own references.bib (an existing file is never overwritten).
+\begin{filecontents*}{references.bib}
+@book{siciliano2016handbook,
+  editor    = {Bruno Siciliano and Oussama Khatib},
+  title     = {Springer Handbook of Robotics},
+  edition   = {2nd},
+  publisher = {Springer},
+  year      = {2016}
+}
+\end{filecontents*}
+
 \title{\LARGE \bf ICRA 2026 Paper Title}
 \author{Author 1$^{1}$ and Author 2$^{2}$
 \thanks{$^{1}$A. Author is with Faculty of Electrical Engineering,
@@ -6430,7 +6570,7 @@ The page limit for ICRA is typically 6 pages, with an option to pay for up to 2 
 
 \section{Related Work}
 
-Discuss relevant prior work in robotics, automation, and related fields.
+Discuss relevant prior work in robotics, automation, and related fields~\cite{siciliano2016handbook}.
 
 \section{Methodology}
 
@@ -6479,6 +6619,20 @@ Summarize contributions and discuss future extensions.
   \\providecommand\\BibTeX{{%
     \\normalfont B\\kern-0.5em{\\scshape i\\kern-0.25em b}\\kern-0.8em\\TeX}}}
 
+% Sample bibliography: LaTeX writes sample-base.bib from this block on the
+% first compile. Replace the entry with your own, or delete the block and
+% add your own sample-base.bib (an existing file is never overwritten).
+\\begin{filecontents*}{sample-base.bib}
+@book{norman2013design,
+  author    = {Don Norman},
+  title     = {The Design of Everyday Things},
+  edition   = {Revised and expanded},
+  publisher = {Basic Books},
+  address   = {New York, NY},
+  year      = {2013}
+}
+\\end{filecontents*}
+
 %% \\title{The Name of the Title is Hope}
 \\title{ACM CHI 2026 Submission Template}
 
@@ -6517,7 +6671,7 @@ The abstract should provide a concise summary of the research.
 \\maketitle
 
 \\section{Introduction}
-CHI 2026 uses the single-column ACM template for review. This format is TAPS-ready.
+CHI 2026 uses the single-column ACM template for review. This format is TAPS-ready. Cite related work with \\citet{norman2013design} or \\cite{norman2013design}.
 
 \\section{Accessibility Safe Mode}
 Please ensure all figures have descriptions for accessibility.

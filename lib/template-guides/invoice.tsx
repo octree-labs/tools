@@ -108,19 +108,6 @@ Consulting Services - January & 40 hrs & \\money{150} & \\money{40*150} \\\\
 ...
 & & \\textbf{Tax (8\\%):} & \\money{0.08*11000} \\\\`}</GuidePre>
       <GuideP>
-        <strong>Fix the header width.</strong> The two header minipages are each half
-        the text width, and the paragraph indent plus the space between them make
-        the line 19pt too wide. Add <GuideCode>\noindent</GuideCode> before the first
-        and <GuideCode>%</GuideCode> after its <GuideCode>{"\\end{minipage}"}</GuideCode>,
-        and put the same <GuideCode>%</GuideCode> after the Bill To minipage below:
-      </GuideP>
-      <GuidePre>{`\\noindent
-\\begin{minipage}[t]{0.5\\textwidth}
-{\\Large \\textbf{INVOICE}}\\\\[0.3cm]
-{\\color{headerblue}\\rule{5cm}{2pt}}
-\\end{minipage}%
-\\begin{minipage}[t]{0.5\\textwidth}`}</GuidePre>
-      <GuideP>
         <strong>Add your logo.</strong> graphicx is loaded; put the logo in the
         right-hand header block above the company name:
       </GuideP>

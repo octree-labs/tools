@@ -17,9 +17,9 @@ const faq: GuideFaqItem[] = [
       "No. It is a two-column AAAI-style draft built on the standard article class with Times, 0.75 inch margins and a redefined \\maketitle, so it compiles anywhere without extra files. AAAI papers must be produced with the style file and BibTeX style from the official AAAI author kit on aaai.org. Write here, then move your sections into the kit's preamble before you submit.",
   },
   {
-    question: "Why is the reference list empty or BibTeX reporting an error?",
+    question: "How does the bibliography work?",
     answer:
-      "The template ends with \\bibliographystyle{aaai} and \\bibliography{references}. aaai.bst is not part of TeX Live, so BibTeX cannot find it, and references.bib does not exist until you create it. Either copy the .bst from the AAAI author kit next to your file, or switch to \\bibliographystyle{plainnat} (natbib is already loaded) while drafting, and add a references.bib with at least one cited entry.",
+      "A filecontents* block in the preamble writes a references.bib with one sample entry on the first compile, the Related Work section cites it, and the list is set with \\bibliographystyle{plainnat}, a natbib style in TeX Live. Replace the sample entry with your own, or delete the block and add your own references.bib (an existing file is never overwritten). The official AAAI author kit ships its own .bst, which you switch to when you move the paper into the kit.",
   },
   {
     question: "What is the AAAI 2026 page limit?",
@@ -29,7 +29,7 @@ const faq: GuideFaqItem[] = [
   {
     question: "Does this AAAI template work in Overleaf?",
     answer:
-      "Yes. Every package it loads ships with TeX Live, so it compiles in Overleaf, Octree or a local install with pdfLaTeX, which is the Overleaf default. The only missing pieces are aaai.bst and your references.bib, described above.",
+      "Yes. Every package it loads ships with TeX Live, so it compiles in Overleaf, Octree or a local install with pdfLaTeX, which is the Overleaf default. The sample bibliography is written from the file itself, so no extra files are needed.",
   },
 ];
 
@@ -79,8 +79,9 @@ export default function Aaai2026Guide() {
           <GuideCode>\midrule</GuideCode> and <GuideCode>\bottomrule</GuideCode>
         </li>
         <li>
-          BibTeX set up with <GuideCode>{"\\bibliographystyle{aaai}"}</GuideCode> and{" "}
-          <GuideCode>{"\\bibliography{references}"}</GuideCode>
+          BibTeX with <GuideCode>{"\\bibliographystyle{plainnat}"}</GuideCode> and a
+          sample <GuideCode>references.bib</GuideCode> written by a{" "}
+          <GuideCode>{"filecontents*"}</GuideCode> block
         </li>
       </GuideUl>
 
@@ -92,9 +93,9 @@ export default function Aaai2026Guide() {
           <GuideCode>paper.tex</GuideCode>.
         </li>
         <li>
-          Create <GuideCode>references.bib</GuideCode> next to the file. Until you add
-          the AAAI <GuideCode>.bst</GuideCode>, change the style line to{" "}
-          <GuideCode>{"\\bibliographystyle{plainnat}"}</GuideCode>.
+          Replace the sample entry in the <GuideCode>{"filecontents*"}</GuideCode>{" "}
+          block with your references, or add your own{" "}
+          <GuideCode>references.bib</GuideCode> and delete the block.
         </li>
         <li>
           Compile with pdfLaTeX and BibTeX (<GuideCode>latexmk -pdf paper.tex</GuideCode>
@@ -113,10 +114,10 @@ export default function Aaai2026Guide() {
 
       <GuideH2 id="customise">Customise the template</GuideH2>
       <GuideP>
-        <strong>Get a working bibliography while drafting.</strong> natbib is loaded,
-        so swap the missing AAAI style for <GuideCode>plainnat</GuideCode> and cite
-        with <GuideCode>\citet</GuideCode> (Smith et al. (2024)) or{" "}
-        <GuideCode>\citep</GuideCode> ((Smith et al., 2024)):
+        <strong>Cite with natbib.</strong> The draft uses{" "}
+        <GuideCode>plainnat</GuideCode>; cite with <GuideCode>\citet</GuideCode>{" "}
+        (Smith et al. (2024)) or <GuideCode>\citep</GuideCode> ((Smith et al.,
+        2024)):
       </GuideP>
       <GuidePre>{`As shown by \\citet{smith2024}, ... \\citep{smith2024}.
 

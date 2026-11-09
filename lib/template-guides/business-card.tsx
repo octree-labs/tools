@@ -17,9 +17,9 @@ const faq: GuideFaqItem[] = [
       "3.5 by 2 inches, the standard US business card, set with geometry's paperwidth and paperheight and zero margins. Every page of the PDF is one card, so you can send it straight to a print shop that accepts one card per page.",
   },
   {
-    question: "Why is the first page of the PDF blank?",
+    question: "Why does the preamble set \\fboxsep to 0pt?",
     answer:
-      "The front design is a \\colorbox around a minipage exactly as tall as the card, and \\colorbox adds \\fboxsep padding on every side, so the box is slightly taller than the page and is pushed to page two. Add \\setlength{\\fboxsep}{0pt} to the preamble and the PDF has three pages: front, back and the alternative single-sided design.",
+      "The front design is a \\colorbox around a minipage exactly as tall as the card. By default \\colorbox adds \\fboxsep padding on every side, which would make the box taller than the page and leave a blank first page. With \\fboxsep, \\parindent and \\topskip set to 0pt the PDF has exactly three pages: front, back and the alternative single-sided design. Keep those lines if you change the card size.",
   },
   {
     question: "How do I make a European-size business card?",
@@ -78,11 +78,6 @@ export default function BusinessCardGuide() {
         <li>
           Click <em>Open as Template</em> to edit in Octree, or <em>View Source</em> and
           paste the code into Overleaf or a local <GuideCode>card.tex</GuideCode>.
-        </li>
-        <li>
-          Add <GuideCode>{"\\setlength{\\fboxsep}{0pt}"}</GuideCode> after{" "}
-          <GuideCode>{"\\pagestyle{empty}"}</GuideCode> so the full-height front does
-          not leave a blank first page.
         </li>
         <li>Compile with pdfLaTeX.</li>
         <li>

@@ -14,7 +14,7 @@ const faq: GuideFaqItem[] = [
   {
     question: "Does the template contain a full year?",
     answer:
-      "No. The second page is titled 2025 Year Calendar but contains January to June only, as two rows of three months. Copy a row of three minipages twice more for July to December, or generate the months with the TikZ calendar library shown above, which works out the dates for you.",
+      "Yes. The second page, 2025 Year Calendar, shows all twelve months of 2025 as four rows of three small month tables. For another year, refill the tables or generate the months with the TikZ calendar library shown above, which works out the dates for you.",
   },
   {
     question: "How do I change the month on the monthly page?",
@@ -54,9 +54,8 @@ export default function CalendarGuide() {
         types and <GuideCode>\rowcolor</GuideCode> / <GuideCode>\cellcolor</GuideCode>{" "}
         from xcolor&apos;s <GuideCode>table</GuideCode> option, so every cell is easy
         to find and edit, and you can type appointments straight into a date&apos;s
-        cell. Page two, headed 2025 Year Calendar, shows January to June 2025 as six
-        small month tables in two rows of three. Note that the second page stops at
-        June; you add the remaining months yourself. The preamble also loads{" "}
+        cell. Page two, headed 2025 Year Calendar, shows all twelve months of 2025 as
+        small month tables in four rows of three. The preamble also loads{" "}
         <GuideCode>tikz</GuideCode>, which the sample does not use, so the
         TikZ <GuideCode>calendar</GuideCode> library is available if you would
         rather generate months automatically than type dates by hand. Use it as a
@@ -68,7 +67,7 @@ export default function CalendarGuide() {
       <GuideUl>
         <li>Landscape page with 0.5 inch margins</li>
         <li>A full-page monthly grid with shaded weekends and a notes area</li>
-        <li>Six small month tables (January to June 2025)</li>
+        <li>Twelve small month tables (January to December 2025)</li>
         <li>
           <GuideCode>headercolor</GuideCode> and <GuideCode>weekendcolor</GuideCode>{" "}
           defined once for the whole file
@@ -97,10 +96,10 @@ export default function CalendarGuide() {
 
       <GuideH2 id="customise">Customise the template</GuideH2>
       <GuideP>
-        <strong>Fix the grid width with a column type.</strong> Seven columns of 1.3
-        inches plus padding are slightly wider than the 10 inch text block, which
-        LaTeX reports as an overfull box. Define one column type in the preamble and
-        use 1.2 inch columns:
+        <strong>Resize the day columns in one place.</strong> The monthly grid uses
+        a column type <GuideCode>D</GuideCode> defined once in the preamble, so seven
+        1.2 inch columns fit the 10 inch text block. Change the width there; keep
+        seven times the width plus padding under the text width:
       </GuideP>
       <GuidePre>{`\\newcolumntype{D}{>{\\centering\\arraybackslash}p{1.2in}}
 

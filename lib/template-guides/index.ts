@@ -20,8 +20,8 @@ import BusinessPlanGuide from "./business-plan";
 import BusinessReportGuide from "./business-report";
 import CalendarGuide from "./calendar";
 import CertificateGuide from "./certificate";
-import CornellNotesGuide from "./cornell-notes";
 import ConferencePosterGuide from "./conference-poster";
+import CornellNotesGuide from "./cornell-notes";
 import CoverLetterGuide from "./cover-letter";
 import Cvpr2026Guide from "./cvpr-2026";
 import DissertationGuide from "./dissertation";
@@ -42,8 +42,8 @@ import InteractiveFlashcardGuide from "./interactive-flashcard";
 import InternshipReportGuide from "./internship-report";
 import Interspeech2026Guide from "./interspeech-2026";
 import InvoiceGuide from "./invoice";
-import JfmPaperGuide from "./jfm-paper";
 import JakesResumeGuide from "./jakes-resume";
+import JfmPaperGuide from "./jfm-paper";
 import JournalArticleGuide from "./journal-article";
 import LabReportGuide from "./lab-report";
 import LeafletGuide from "./leaflet";
@@ -99,36 +99,36 @@ const templateGuides: Record<string, ComponentType> = {
   "academic-cv": AcademicCvGuide,
   "acl-2026": Acl2026Guide,
   "acm-chi-2026": AcmChi2026Guide,
-  "algorithm": AlgorithmGuide,
+  algorithm: AlgorithmGuide,
   "annotated-bibliography": AnnotatedBibliographyGuide,
   "apa-student-paper": ApaStudentPaperGuide,
   "apa-title-page": ApaTitlePageGuide,
   "article-template": ArticleTemplateGuide,
-  "assignment": AssignmentGuide,
+  assignment: AssignmentGuide,
   "ats-resume": AtsResumeGuide,
   "beamer-dark": BeamerDarkGuide,
   "beamer-presentation": BeamerPresentationGuide,
-  "bibliography": BibliographyGuide,
+  bibliography: BibliographyGuide,
   "book-chapter": BookChapterGuide,
   "business-card": BusinessCardGuide,
   "business-plan": BusinessPlanGuide,
   "business-report": BusinessReportGuide,
-  "calendar": CalendarGuide,
-  "certificate": CertificateGuide,
-  "cornell-notes": CornellNotesGuide,
+  calendar: CalendarGuide,
+  certificate: CertificateGuide,
   "conference-poster": ConferencePosterGuide,
+  "cornell-notes": CornellNotesGuide,
   "cover-letter": CoverLetterGuide,
   "cvpr-2026": Cvpr2026Guide,
-  "dissertation": DissertationGuide,
+  dissertation: DissertationGuide,
   "eccv-2026": Eccv2026Guide,
   "emnlp-2026": Emnlp2026Guide,
-  "essay": EssayGuide,
-  "flyer": FlyerGuide,
+  essay: EssayGuide,
+  flyer: FlyerGuide,
   "formula-sheet": FormulaSheetGuide,
   "grading-rubric": GradingRubricGuide,
   "grant-proposal": GrantProposalGuide,
   "harvard-resume": HarvardResumeGuide,
-  "homework": HomeworkGuide,
+  homework: HomeworkGuide,
   "iclr-2026": Iclr2026Guide,
   "icml-2026": Icml2026Guide,
   "icra-2026": Icra2026Guide,
@@ -136,9 +136,9 @@ const templateGuides: Record<string, ComponentType> = {
   "interactive-flashcard": InteractiveFlashcardGuide,
   "internship-report": InternshipReportGuide,
   "interspeech-2026": Interspeech2026Guide,
-  "invoice": InvoiceGuide,
-  "jfm-paper": JfmPaperGuide,
+  invoice: InvoiceGuide,
   "jakes-resume": JakesResumeGuide,
+  "jfm-paper": JfmPaperGuide,
   "journal-article": JournalArticleGuide,
   "lab-report": LabReportGuide,
   leaflet: LeafletGuide,

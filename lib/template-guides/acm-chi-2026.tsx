@@ -22,14 +22,14 @@ const faq: GuideFaqItem[] = [
       "manuscript sets the single-column format used for review, review adds line numbers so reviewers can refer to specific lines, and anonymous hides the author names and affiliations in the output while keeping them in your source. Remove review and anonymous once the paper is accepted.",
   },
   {
-    question: "Why does the bibliography fail to build?",
+    question: "Where does the bibliography come from?",
     answer:
-      "The template ends with \\bibliography{sample-base}, the file name from ACM's sample, which is not included. Create your own .bib file, change the argument to its name without the extension, and cite at least one entry. The ACM-Reference-Format style is part of acmart, so it needs no download.",
+      "The template ends with \\bibliography{sample-base}, the file name from ACM's sample. A filecontents* block at the top of the file writes sample-base.bib with one sample entry on the first compile, and the Introduction cites it. Replace that entry with your own, or delete the block and point \\bibliography at your own .bib file. The ACM-Reference-Format style is part of acmart, so it needs no download.",
   },
   {
     question: "Does this CHI template work in Overleaf?",
     answer:
-      "Yes. acmart and ACM-Reference-Format.bst are in TeX Live, so the template compiles in Overleaf, Octree or a local install with pdfLaTeX once you supply a .bib file. acmart sets its own fonts, so do not add font packages such as times.",
+      "Yes. acmart and ACM-Reference-Format.bst are in TeX Live, so the template compiles in Overleaf, Octree or a local install with pdfLaTeX; its sample .bib is written from the file itself. acmart sets its own fonts, so do not add font packages such as times.",
   },
 ];
 
@@ -79,7 +79,8 @@ export default function AcmChi2026Guide() {
           figures
         </li>
         <li>
-          <GuideCode>{"\\bibliographystyle{ACM-Reference-Format}"}</GuideCode>
+          <GuideCode>{"\\bibliographystyle{ACM-Reference-Format}"}</GuideCode> with a
+          sample <GuideCode>sample-base.bib</GuideCode> and one citation
         </li>
       </GuideUl>
 
@@ -90,7 +91,8 @@ export default function AcmChi2026Guide() {
           paste the code into Overleaf or a local <GuideCode>paper.tex</GuideCode>.
         </li>
         <li>
-          Create a <GuideCode>.bib</GuideCode> file and change{" "}
+          Replace the sample entry in the <GuideCode>{"filecontents*"}</GuideCode>{" "}
+          block, or add your own <GuideCode>.bib</GuideCode> file and change{" "}
           <GuideCode>{"\\bibliography{sample-base}"}</GuideCode> to its name.
         </li>
         <li>
