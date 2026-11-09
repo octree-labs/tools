@@ -3090,8 +3090,8 @@
   "example": "T'^{ij} = \\Lambda^i{}_k \\Lambda^j{}_l\\, T^{kl}"
  },
  "\\Diamond": {
-  "meaning": "Possibility operator: \\Diamond p reads \\\"possibly p\\\", true at a world if p holds in some accessible world.",
-  "usage": "It is the dual of necessity, \\Diamond p \\leftrightarrow \\neg\\Box\\neg p, and in the system T we have p \\to \\Diamond p. Temporal logic reads it as \\\"eventually\\\" and dynamic logic writes \\langle a \\rangle p for the same idea. \\Diamond is a large ordinary symbol; \\diamond is a small binary operator and \\lozenge a narrow lozenge, so do not swap them. TeX treats \\Diamond as an ordinary symbol, so \\Diamond p sets with no gap; add \\, only if your house style wants space.",
+  "meaning": "Possibility operator: \\Diamond p reads \"possibly p\", true at a world if p holds in some accessible world.",
+  "usage": "It is the dual of necessity, \\Diamond p \\leftrightarrow \\neg\\Box\\neg p, and in the system T we have p \\to \\Diamond p. Temporal logic reads it as \"eventually\" and dynamic logic writes \\langle a \\rangle p for the same idea. \\Diamond is a large ordinary symbol; \\diamond is a small binary operator and \\lozenge a narrow lozenge, so do not swap them. TeX treats \\Diamond as an ordinary symbol, so \\Diamond p sets with no gap; add \\, only if your house style wants space.",
   "example": "\\Diamond p \\leftrightarrow \\neg \\Box \\neg p"
  },
  "\\neg\\Box": {
@@ -3115,12 +3115,12 @@
   "example": "\\Diamond(p \\land q) \\to \\Diamond p \\land \\Diamond q"
  },
  "K_a p": {
-  "meaning": "Epistemic knowledge operator: K_a p reads \\\"agent a knows that p\\\".",
+  "meaning": "Epistemic knowledge operator: K_a p reads \"agent a knows that p\".",
   "usage": "Epistemic logic usually models knowledge with S5: the truth axiom K_a p \\to p, positive introspection K_a p \\to K_a K_a p, and negative introspection. Semantically K_a p holds when p is true in every world agent a cannot distinguish from the actual one. The dual \\hat{K}_a p or M_a p means a considers p possible. Use an upright K, \\mathsf{K}_a or \\mathrm{K}_a, if italic K clashes with the logic named K, and write multi-letter agent names as \\text{Alice} in the subscript.",
   "example": "K_a p \\to p,\\quad K_a p \\to K_a K_a p"
  },
  "B_a p": {
-  "meaning": "Belief operator: B_a p reads \\\"agent a believes that p\\\", which, unlike knowledge, may be false.",
+  "meaning": "Belief operator: B_a p reads \"agent a believes that p\", which, unlike knowledge, may be false.",
   "usage": "Doxastic logic typically uses KD45: consistency B_a p \\to \\neg B_a\\neg p and both introspection axioms, but no truth axiom, so B_a p \\to p fails. The knowledge-belief link K_a p \\to B_a p is a common bridge principle. Belief revision papers write B_a(p \\mid q) for conditional belief. As with K_a, consider an upright \\mathsf{B} if italic B is used for something else, and do not confuse it with the box \\Box, which is the generic necessity operator.",
   "example": "B_a p \\to \\neg B_a \\neg p"
  },
@@ -3130,13 +3130,13 @@
   "example": "C_G p \\leftrightarrow E_G(p \\land C_G p)"
  },
  "\\Box p": {
-  "meaning": "Temporal \\\"always\\\": \\Box p says p holds now and at every future moment of the run.",
+  "meaning": "Temporal \"always\": \\Box p says p holds now and at every future moment of the run.",
   "usage": "In linear temporal logic, \\Box is often written G (globally), and safety properties take the form \\Box\\neg\\mathit{bad}. It is dual to eventually, \\Box p \\leftrightarrow \\neg\\Diamond\\neg p, and \\Box\\Diamond p expresses that p happens infinitely often. The same box is necessity in alethic modal logic, so state which reading applies. \\Box and \\square give near-identical squares; \\Box is the conventional modal operator and spacing before p is not added automatically. CTL prefixes it with a path quantifier, as in AG p.",
   "example": "\\Box(\\mathit{req} \\to \\Diamond \\mathit{grant})"
  },
  "\\Diamond p": {
-  "meaning": "Temporal \\\"eventually\\\": \\Diamond p says p holds at some present or future moment.",
-  "usage": "Linear temporal logic also writes it F p (future), and it can be defined from until as \\Diamond p \\equiv \\top\\,\\mathcal{U}\\,p. Liveness properties are typically of this shape, such as \\Box(\\mathit{req} \\to \\Diamond\\mathit{grant}). \\Diamond\\Box p means p eventually holds forever. In alethic modal logic the same diamond means \\\"possibly\\\", so state the temporal reading. Use \\Diamond, not \\diamond, which is a smaller binary operator. In computation tree logic it is prefixed by a path quantifier, as in AF p or EF p.",
+  "meaning": "Temporal \"eventually\": \\Diamond p says p holds at some present or future moment.",
+  "usage": "Linear temporal logic also writes it F p (future), and it can be defined from until as \\Diamond p \\equiv \\top\\,\\mathcal{U}\\,p. Liveness properties are typically of this shape, such as \\Box(\\mathit{req} \\to \\Diamond\\mathit{grant}). \\Diamond\\Box p means p eventually holds forever. In alethic modal logic the same diamond means \"possibly\", so state the temporal reading. Use \\Diamond, not \\diamond, which is a smaller binary operator. In computation tree logic it is prefixed by a path quantifier, as in AF p or EF p.",
   "example": "\\Diamond \\Box p \\to \\Box \\Diamond p"
  },
  "p \\mathcal{U} q": {
@@ -3165,12 +3165,12 @@
   "example": "w \\in W,\\quad \\mathcal{M}, w \\models p"
  },
  "O p": {
-  "meaning": "Deontic obligation: O p reads \\\"it ought to be that p\\\" or \\\"p is obligatory\\\".",
+  "meaning": "Deontic obligation: O p reads \"it ought to be that p\" or \"p is obligatory\".",
   "usage": "Standard deontic logic is the normal modal logic KD, with axiom D, O p \\to P p, saying obligations are consistent, while the truth axiom O p \\to p deliberately fails. Contrary-to-duty puzzles such as Chisholm's paradox show its limits and motivate dyadic obligation O(p \\mid q). In math mode O p sets as Op with no space, so write O\\,p or use an upright \\mathbf{O} or \\mathsf{O} to keep it from reading as big-O notation.",
   "example": "\\mathsf{O}\\,p \\to \\mathsf{P}\\,p"
  },
  "P p": {
-  "meaning": "Deontic permission: P p reads \\\"p is permitted\\\", the dual of obligation.",
+  "meaning": "Deontic permission: P p reads \"p is permitted\", the dual of obligation.",
   "usage": "Permission is defined as P p \\leftrightarrow \\neg O\\neg p, and forbidden as F p \\leftrightarrow O\\neg p. In standard deontic logic every obligation is permitted, O p \\to P p. Free choice permission, where P(p \\lor q) should imply P p, is a known puzzle that the standard system does not validate. An italic P collides with probability notation, so many authors use \\mathsf{P} or \\mathbf{P}; add \\, after it to separate the operator from the formula.",
   "example": "\\mathsf{P}\\,p \\leftrightarrow \\neg \\mathsf{O}\\,\\neg p"
  },

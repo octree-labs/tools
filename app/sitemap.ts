@@ -4,8 +4,30 @@ import { LOCALES, DEFAULT_LOCALE } from '@/lib/i18n/config'
 import { toLanguageTag } from '@/lib/seo'
 import { SYMBOL_PAGES, symbolPagePath } from '@/lib/symbol-pages'
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://tools.useoctree.com'
+export const SITEMAP_BASE_URL = 'https://tools.useoctree.com'
+
+/**
+ * Symbol pages per sitemap file. Every URL carries 16 hreflang alternates
+ * (~2 KB each), so one file with all 654 x 16 symbol URLs is ~22 MB, over
+ * Vercel's 20 MB limit for a prerendered body. 150 pages x 16 locales is
+ * ~2.4k URLs, ~5 MB per file.
+ */
+const SYMBOL_PAGES_PER_SITEMAP = 150
+
+/** Sitemap ids: 0 is every non-symbol-page URL, 1..n are symbol pages. */
+export function sitemapIds(): number[] {
+  const chunks = Math.ceil(SYMBOL_PAGES.length / SYMBOL_PAGES_PER_SITEMAP)
+  return Array.from({ length: chunks + 1 }, (_, i) => i)
+}
+
+// Served at /sitemap/<id>.xml; /sitemap.xml (app/sitemap.xml/route.ts) is the index.
+export async function generateSitemaps() {
+  return sitemapIds().map(id => ({ id }))
+}
+
+export default async function sitemap({ id }: { id: number | string }): Promise<MetadataRoute.Sitemap> {
+  const index = Number(id)
+  const baseUrl = SITEMAP_BASE_URL
   
   // All tool routes
   const tools = [
@@ -127,9 +149,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   )
 
   // One page per distinct command (lib/symbol-pages), under its home category
-  const symbolPageUrls = SYMBOL_PAGES.flatMap(page =>
-    generateLocalizedUrls(symbolPagePath(page), 'monthly', 0.6)
-  )
+  if (index > 0) {
+    const start = (index - 1) * SYMBOL_PAGES_PER_SITEMAP
+    return SYMBOL_PAGES.slice(start, start + SYMBOL_PAGES_PER_SITEMAP).flatMap(page =>
+      generateLocalizedUrls(symbolPagePath(page), 'monthly', 0.6)
+    )
+  }
 
   return [
     ...homeUrls,
@@ -139,6 +164,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...toolUrls,
     ...symbolUrls,
     ...templateUrls,
-    ...symbolPageUrls,
   ]
 }

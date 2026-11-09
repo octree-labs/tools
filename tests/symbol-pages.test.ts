@@ -137,3 +137,17 @@ test('no aggregateRating markup on symbol pages', () => {
   for (const file of files) assert.ok(!fs.readFileSync(file, 'utf8').includes('aggregateRating'), file);
   assert.ok(!JSON.stringify(enModels.map((m) => m.faq)).includes('aggregateRating'));
 });
+
+test('sitemap is split so every file stays well under Vercel’s 20 MB prerender limit', async () => {
+  const { default: sitemap, sitemapIds } = await import('../app/sitemap');
+  const ids = sitemapIds();
+  const files = await Promise.all(ids.map((id) => sitemap({ id })));
+  const urls = files.flat().map((entry) => entry.url);
+  assert.equal(new Set(urls).size, urls.length, 'no URL is listed twice');
+  for (const page of SYMBOL_PAGES.slice(0, 3).concat(SYMBOL_PAGES.slice(-3))) {
+    assert.ok(urls.includes(`https://tools.useoctree.com/symbols/${page.category}/${page.slug}`));
+  }
+  for (const file of files) {
+    assert.ok(file.length > 0 && file.length <= 3000, `sitemap file has ${file.length} URLs`);
+  }
+});
