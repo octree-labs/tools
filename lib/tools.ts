@@ -132,7 +132,7 @@ export const tools: Tool[] = [
   {
     id: 15,
     title: "ArXiv to LaTeX",
-    description: "Import arXiv papers directly into Octree",
+    description: "Download the LaTeX source of any arXiv paper",
     href: "/tools/arxiv-to-latex",
     icon: FileDown,
   },
