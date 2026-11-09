@@ -33,6 +33,12 @@ const APP_BINARY_EXTENSIONS = new Set(
   ).split(' '),
 );
 
+/**
+ * The app's path character set (Supabase Storage object keys, minus `?`); it
+ * refuses a draft with any other path, so such files are dropped here.
+ */
+const SAFE_PATH_RE = /^[\w/!\-.*'() &$@=;:+,]+$/;
+
 function extensionOf(path: string): string {
   const base = path.slice(path.lastIndexOf('/') + 1);
   const dot = base.lastIndexOf('.');
@@ -74,10 +80,15 @@ export function prepareDraftFiles(
   const seen = new Set<string>();
   const kept: DraftFile[] = [];
   for (const file of files) {
-    if (typeof file.content !== 'string') continue;
+    // NUL marks a binary file under a text extension; the app refuses it.
+    if (typeof file.content !== 'string' || file.content.includes('\0')) continue;
     const path = normaliseDraftPath(file.path);
-    if (!path || seen.has(path) || APP_BINARY_EXTENSIONS.has(extensionOf(path))) continue;
-    seen.add(path);
+    // The app also refuses case-only duplicates (`Refs.bib` / `refs.bib`).
+    const folded = path?.toLowerCase();
+    if (!path || !folded || !SAFE_PATH_RE.test(path) || seen.has(folded) || APP_BINARY_EXTENSIONS.has(extensionOf(path))) {
+      continue;
+    }
+    seen.add(folded);
     kept.push({ path, content: file.content });
   }
   if (kept.length < 2 || kept.length > DRAFT_LIMITS.maxFiles) return null;

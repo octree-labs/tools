@@ -162,3 +162,19 @@ test('every template with a filecontents block opens as a valid multi-file draft
     assert.equal(prepared.main, 'main.tex');
   }
 });
+
+test('prepareDraftFiles drops paths, case-only duplicates and NUL content the app refuses', () => {
+  const out = prepareDraftFiles([
+    { path: 'paper.tex', content: DOC },
+    { path: 'café.tex', content: 'x' },
+    { path: 'a~b.tex', content: 'x' },
+    { path: 'w[1].bib', content: 'x' },
+    { path: 'Refs.bib', content: '@misc{a}' },
+    { path: 'refs.bib', content: '@misc{b}' },
+    { path: 'data.txt', content: 'PK\u0003\u0004\u0000' },
+    { path: 'sec/intro (v2).tex', content: 'Intro' },
+  ]);
+  assert.deepEqual(out?.files.map((f) => f.path), ['paper.tex', 'Refs.bib', 'sec/intro (v2).tex']);
+  // A main file the app cannot store sends the single flattened file instead.
+  assert.equal(prepareDraftFiles([{ path: 'paper~v2.tex', content: DOC }, { path: 'refs.bib', content: '@misc{a}' }], 'paper~v2.tex'), null);
+});
