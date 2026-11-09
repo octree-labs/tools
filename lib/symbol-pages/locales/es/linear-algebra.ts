@@ -21,7 +21,7 @@ const text: SymbolPageTranslations = {
       "Escribir A^T es rápido y se entiende en todas partes: las ecuaciones normales de mínimos cuadrados A^T A\\mathbf{x} = A^T\\mathbf{b} aparecen así en la mayoría de los libros de álgebra lineal. El inconveniente es la ambigüedad cuando T también es una variable, como un horizonte temporal o una temperatura, ya que A^T podría leerse entonces como una potencia. En ese caso pase a A^{\\top} o a la forma redonda A^{\\mathsf{T}}. Las llaves son necesarias en cuanto el superíndice tiene más de un elemento, así que la inversa de la traspuesta es A^{-T}, no A^-T. Una matriz simétrica es aquella que cumple A^T = A.",
   },
   "inverse": {
-    name: "Inversa",
+    name: "Matriz inversa",
     meaning: "Inversa de la matriz cuadrada A, la matriz cuyo producto con A es la identidad.",
     usage:
       "Cumple AA^{-1} = A^{-1}A = I y solo existe cuando \\det(A) \\neq 0. Las llaves son obligatorias: A^-1 pondría como superíndice solo el signo menos y dejaría el 1 en la línea base. Para una matriz 2 por 2, la fórmula explícita con \\frac{1}{ad-bc} multiplicado por la adjunta suele componerse completa con bmatrix. En los artículos numéricos, los lectores entienden que la inversa rara vez se calcula explícitamente, así que escribir \\mathbf{x} = A^{-1}\\mathbf{b} como notación es correcto. Las pseudoinversas usan A^{+} o A^{\\dagger}, y (AB)^{-1} = B^{-1}A^{-1} invierte el orden.",

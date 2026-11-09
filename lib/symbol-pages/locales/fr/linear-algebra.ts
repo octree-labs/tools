@@ -21,7 +21,7 @@ const text: SymbolPageTranslations = {
       "Écrire A^T est rapide et universellement compris : les équations normales des moindres carrés A^T A\\mathbf{x} = A^T\\mathbf{b} apparaissent sous cette forme dans la plupart des livres d’algèbre linéaire. L’inconvénient est l’ambiguïté lorsque T est aussi une variable, comme un horizon temporel ou une température, car A^T pourrait alors se lire comme une puissance. Dans ce cas, passez à A^{\\top} ou au A^{\\mathsf{T}} droit. Les accolades sont nécessaires dès que l’exposant comporte plus d’un élément : l’inverse de la transposée s’écrit A^{-T}, et non A^-T. Une matrice symétrique est une matrice telle que A^T = A.",
   },
   "inverse": {
-    name: "Inverse",
+    name: "Matrice inverse",
     meaning: "Inverse de la matrice carrée A, la matrice dont le produit avec A est l’identité.",
     usage:
       "Elle vérifie AA^{-1} = A^{-1}A = I et n’existe que si \\det(A) \\neq 0. Les accolades sont indispensables : A^-1 ne mettrait en exposant que le signe moins et laisserait le 1 sur la ligne de base. Pour une matrice 2 × 2, la formule explicite avec \\frac{1}{ad-bc} multiplié par la comatrice transposée est souvent composée en entier avec bmatrix. Dans les articles numériques, les lecteurs savent que l’inverse est rarement calculée explicitement ; écrire \\mathbf{x} = A^{-1}\\mathbf{b} reste donc acceptable comme notation. Les pseudo-inverses s’écrivent A^{+} ou A^{\\dagger}, et (AB)^{-1} = B^{-1}A^{-1} inverse l’ordre.",

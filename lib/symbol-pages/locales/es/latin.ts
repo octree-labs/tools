@@ -102,7 +102,7 @@ const text: SymbolPageTranslations = {
       "La Œ mayúscula aparece al comienzo de palabras francesas y en títulos en mayúsculas, así que se escribe ŒUVRES y no OEUVRES. Teclea el carácter directamente o usa \\OE en modo texto; dentro de una fórmula debe ir en \\text. En versalitas o en encabezados en mayúsculas, comprueba que \\MakeUppercase convierte \\oe en \\OE, cosa que LaTeX hace correctamente. No la confundas con Æ, el ash, que lleva una a en lugar de una o. Grafías inglesas antiguas como Œdipus también la usan.",
   },
   "ae-ligature-lowercase-ash": {
-    name: "Ligadura ae (minúscula, ash)",
+    name: "Ligadura ae (minúscula)",
     meaning: "Escribe la æ minúscula, llamada ash, una letra del danés, el noruego, el islandés y el inglés antiguo; en LaTeX es \\ae.",
     usage:
       "En danés y noruego, æ es una letra de pleno derecho del alfabeto que se ordena después de la z, así que nunca debe sustituirse por ae en los nombres. El inglés la usa en grafías estilizadas como encyclopædia y Cæsar, y el símbolo æ del AFI representa la vocal de cat. En LaTeX usa \\ae o escribe æ directamente; es un comando de texto, así que envuélvelo en \\text dentro de las fórmulas. Separa la letra siguiente con llaves o un espacio, como en \\ae{}ble. Es distinta de œ, que une o y e.",

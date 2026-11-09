@@ -79,7 +79,7 @@ const text: SymbolPageTranslations = {
     name: "Función definida a trozos",
     meaning: "Definición a trozos con el entorno cases, que da reglas distintas en intervalos distintos.",
     usage:
-      "Dentro de cases, cada fila contiene un valor, un & y después su condición, y las filas terminan con \\\; LaTeX añade automáticamente la llave izquierda y ningún delimitador derecho. Usos típicos son el valor absoluto, la activación ReLU, la función signo y el escalón de Heaviside. Envuelve las palabras en \\text{}, como en \\text{si } x > 0, para que se impriman en redonda con el espaciado normal. Las fracciones de las filas se componen por defecto en estilo de texto, así que usa \\dfrac cuando se vean demasiado pequeñas. Asegúrate de que las condiciones cubren el dominio sin solaparse, a menudo terminando con una fila \\text{en otro caso}.",
+      "Dentro de cases, cada fila contiene un valor, un & y después su condición, y las filas terminan con \\\\; LaTeX añade automáticamente la llave izquierda y ningún delimitador derecho. Usos típicos son el valor absoluto, la activación ReLU, la función signo y el escalón de Heaviside. Envuelve las palabras en \\text{}, como en \\text{si } x > 0, para que se impriman en redonda con el espaciado normal. Las fracciones de las filas se componen por defecto en estilo de texto, así que usa \\dfrac cuando se vean demasiado pequeñas. Asegúrate de que las condiciones cubren el dominio sin solaparse, a menudo terminando con una fila \\text{en otro caso}.",
   },
 };
 

@@ -85,7 +85,7 @@ const text: SymbolPageTranslations = {
     name: "Valor actual",
     meaning: "Valor actual de un único flujo de caja C recibido en el instante t, descontado a una tasa r por periodo.",
     usage:
-      "Descontar consiste en dividir un importe futuro entre el factor de crecimiento (1+r)^t, así que 1,000 recibidos dentro de 3 años al 5% valen hoy unos 863.84. Sumar este término sobre los periodos da el VAN y el precio de los bonos. En las fórmulas destacadas, \\frac dibuja una fracción a tamaño completo; en el texto en línea se reduce, así que \\tfrac o la forma con barra C/(1+r)^t pueden leerse mejor. Si el denominador se complica, por ejemplo con un tipo variable (1 + r_t), usa \\prod o mantén el exponente entre llaves: ^{t} es necesario cuando t tiene más de un carácter, como ^{t-1}.",
+      "Descontar consiste en dividir un importe futuro entre el factor de crecimiento (1+r)^t, así que 1000 recibidos dentro de 3 años al 5 % valen hoy unos 863,84. Sumar este término sobre los periodos da el VAN y el precio de los bonos. En las fórmulas destacadas, \\frac dibuja una fracción a tamaño completo; en el texto en línea se reduce, así que \\tfrac o la forma con barra C/(1+r)^t pueden leerse mejor. Si el denominador se complica, por ejemplo con un tipo variable (1 + r_t), usa \\prod o mantén el exponente entre llaves: ^{t} es necesario cuando t tiene más de un carácter, como ^{t-1}.",
   },
   "compound-interest": {
     name: "Interés compuesto",

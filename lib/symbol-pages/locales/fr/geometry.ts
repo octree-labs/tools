@@ -21,7 +21,7 @@ const text: SymbolPageTranslations = {
       "La géométrie sphérique, la navigation et l’astronomie l’utilisent pour les angles formés par des arcs sur une sphère, où la somme des angles d’un triangle dépasse 180^{\\circ}. Le théorème de Girard donne l’aire d’un triangle sphérique sous la forme R^2(A + B + C - \\pi), l’excès sphérique. Sa forme diffère à la fois de \\measuredangle et du simple \\angle : ne les échangez donc pas librement. Certains auteurs le réutilisent pour des angles solides ou orientés, si bien qu’une définition d’une ligne aide le lecteur. C’est un symbole ordinaire : ajoutez \\, s’il est trop collé au nom qui le suit.",
   },
   "not-congruent": {
-    name: "Signe non isométrique",
+    name: "Signe de non-congruence",
     meaning: "Signe de congruence barré : deux figures ou objets ne sont pas isométriques, ou pas isomorphes.",
     usage:
       "En géométrie, \\triangle ABC \\ncong \\triangle DEF indique que les triangles ne sont pas isométriques ; en algèbre, \\cong signifie souvent « isomorphe », donc G \\ncong H indique que deux groupes ne sont pas isomorphes. C’est une relation, l’espacement est donc automatique. Préférez ce glyphe précomposé à \\not\\cong, qui superpose une barre générique parfois décentrée sur le symbole. Parmi les relations niées apparentées figurent \\neq et \\nsim. Si vous employez \\cong pour l’isomorphisme, précisez la catégorie ou la structure lorsqu’elle n’est pas évidente, car deux espaces peuvent être homéomorphes sans être isomorphes en tant que groupes.",

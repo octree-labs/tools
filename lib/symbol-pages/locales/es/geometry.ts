@@ -27,7 +27,7 @@ const text: SymbolPageTranslations = {
       "En geometría, \\triangle ABC \\ncong \\triangle DEF afirma que los triángulos no son congruentes; en álgebra, \\cong suele significar «isomorfo», así que G \\ncong H dice que dos grupos no son isomorfos. Es una relación, de modo que el espaciado es automático. Prefiera este glifo precompuesto a \\not\\cong, que superpone una barra genérica que puede quedar descentrada sobre el símbolo. Entre las relaciones negadas afines están \\neq y \\nsim. Si usa \\cong para el isomorfismo, indique la categoría o la estructura cuando no sea evidente, ya que dos espacios pueden ser homeomorfos sin ser isomorfos como grupos.",
   },
   "similar-or-equal": {
-    name: "Signo de semejante o igual",
+    name: "Signo de semejanza o igualdad",
     meaning: "Tilde sobre una sola raya, que se lee como «homotópicamente equivalente», «asintóticamente igual» o «isomorfo».",
     usage:
       "Su significado depende del campo: los topólogos escriben X \\simeq Y para la equivalencia homotópica, los teóricos de categorías para la equivalencia de categorías y los físicos para la igualdad aproximada. Compárelo con \\cong (tilde sobre dos rayas), reservado normalmente para el isomorfismo o la congruencia, con \\approx (dos tildes) para la aproximación numérica y con \\sim para la equivalencia asintótica o las relaciones de equivalencia. Como las convenciones se solapan, indique cuál usa. Al ser un símbolo de relación, recibe automáticamente un espaciado amplio a ambos lados, así que no hacen falta espacios manuales.",

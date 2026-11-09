@@ -57,8 +57,8 @@ const text: SymbolPageTranslations = {
       "内积推广了点积：在 R^n 中 \\langle x, y \\rangle = \\sum_i x_i y_i，柯西–施瓦茨不等式 |\\langle x, y \\rangle| \\le \\lVert x \\rVert \\lVert y \\rVert 是经典例子。切勿用小于号和大于号代替；< 和 > 是关系符，间距很宽，角度也不对。参数较大时，用 \\left\\langle ... \\right\\rangle 让括号自动缩放。在量子力学中，同样的尖括号用于构成狄拉克符号 \\langle \\psi | \\phi \\rangle，中间带一条竖线。有些书把同一个量写作 (x, y) 或 x \\cdot y。",
   },
   "kronecker-delta": {
-    name: "克罗内克δ",
-    meaning: "克罗内克δ：当指标 i 与 j 相同时取 1，否则取 0。",
+    name: "克罗内克 δ",
+    meaning: "克罗内克 δ：当指标 i 与 j 相同时取 1，否则取 0。",
     usage:
       "它逐元素地表示单位矩阵，I_{ij} = \\delta_{ij}，并表达基的标准正交性，\\langle e_i, e_j \\rangle = \\delta_{ij}。在指标记号中它起替换算子的作用：\\sum_j \\delta_{ij} a_j = a_i，从而简化张量计算。不要把它与狄拉克δ函数 \\delta(x) 混淆，后者是连续变量上的广义函数，尽管二者都用小写 \\delta。给 ij 加花括号才能让两个指标都在下标中；\\delta_ij 只会降低 i，而把 j 留在基线上。在含混合指标的张量计算中，请改写为 \\delta^i_j。",
   },

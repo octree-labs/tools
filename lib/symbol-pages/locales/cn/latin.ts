@@ -99,7 +99,7 @@ const text: SymbolPageTranslations = {
       "大写 Œ 出现在法语单词开头和全大写标题中，因此应写 ŒUVRES 而不是 OEUVRES。可以直接输入该字符，或在文本模式中使用 \\OE；在数学中必须放在 \\text 中。在小型大写字母或大写标题中，请确认 \\MakeUppercase 会把 \\oe 转为 \\OE，LaTeX 能正确处理这一点。不要把它与 Æ（ash）混淆，后者用 a 而不是 o。较旧的英语拼写如 Œdipus 也会使用它。",
   },
   "ae-ligature-lowercase-ash": {
-    name: "ae 连字（小写，ash）",
+    name: "ae 连字（小写）",
     meaning: "写出小写 æ（称为 ash），它是丹麦语、挪威语、冰岛语和古英语的字母；在 LaTeX 中写作 \\ae。",
     usage:
       "在丹麦语和挪威语中，æ 是字母表中的正式字母，排在 z 之后，因此在人名中绝不应替换成 ae。英语在 encyclopædia 和 Cæsar 等风格化拼写中使用它，国际音标 æ 表示 cat 中的元音。在 LaTeX 中请用 \\ae 或直接输入 æ；它是文本命令，在数学中请放在 \\text 中。后面紧跟字母时，请用花括号或空格分隔，如 \\ae{}ble。它不同于由 o 和 e 组成的 œ。",
