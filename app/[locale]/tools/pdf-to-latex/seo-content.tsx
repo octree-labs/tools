@@ -4,27 +4,27 @@ import type { FaqJsonLdItem } from "@/lib/json-ld";
 
 const steps = [
   {
-    title: "Pick a short PDF",
-    body: "A page of equations, a problem set or a handout converts best. Split long documents and upload the pages you need.",
+    title: "Check arXiv first",
+    body: "If the PDF is an arXiv paper, the authors' original LaTeX source is usually available. Download it from the TeX Source link on the paper's arXiv page instead of converting the PDF.",
   },
   {
-    title: "Upload it",
-    body: "Drop the PDF onto the upload box. The AI reads the page and streams LaTeX into the code panel.",
+    title: "Capture the part you need",
+    body: "Take a screenshot of the page or region, saved as PNG or JPEG. One equation block or a short section per image converts best.",
   },
   {
-    title: "Check the preview and keep the code",
-    body: "Open the preview tab to compare the compiled document with your PDF, then copy the code, download it as .tex, or open it in Octree to keep editing.",
+    title: "Convert the image to LaTeX",
+    body: "Upload the screenshot to the math to LaTeX converter. It returns a complete document that loads amsmath and amssymb, and its preview compiles the code so you can compare it with the PDF.",
+  },
+  {
+    title: "Assemble and edit",
+    body: "Paste the pieces into the online LaTeX editor to fix them with a live PDF preview, or open them in Octree to save the document as a project.",
   },
 ];
 
 const tips = [
   {
-    title: "Papers on arXiv already have LaTeX",
-    body: "If the PDF came from arXiv, download the authors' original source with arXiv to LaTeX instead of converting the PDF.",
-  },
-  {
     title: "Figures are not extracted",
-    body: "Images and plots in the PDF are not copied into the output. Add them back with \\includegraphics, or redraw diagrams with image to TikZ.",
+    body: "Images and plots in the PDF are not recreated as LaTeX. Add them back with \\includegraphics, or redraw diagrams with image to TikZ.",
   },
   {
     title: "Proofread the math",
@@ -36,27 +36,27 @@ const faq: FaqJsonLdItem[] = [
   {
     question: "How do I convert a PDF to LaTeX?",
     answer:
-      "Upload the PDF, and the AI returns LaTeX in a complete document that loads amsmath and amssymb. The preview compiles it so you can compare it with the original before you copy or download the code.",
+      "A PDF does not contain its LaTeX source, so the text and math have to be recreated. For arXiv papers, download the original source from the TeX Source link on the paper's arXiv page. For other PDFs, screenshot the page or region you need and upload the image to the math to LaTeX converter, then check the compiled preview against the original.",
   },
   {
-    question: "Is the PDF to LaTeX converter free?",
+    question: "Is converting a PDF to LaTeX free?",
     answer:
-      "Yes. Converting, previewing and downloading need no account. A free Octree account is only needed to save the result as a project.",
+      "Yes. The math to LaTeX converter and the online LaTeX editor need no account. A free Octree account is only needed to save the result as a project.",
   },
   {
-    question: "Can it convert a whole paper or thesis?",
+    question: "Can I convert a whole paper or thesis?",
     answer:
-      "It is built for short, math-heavy documents. Output length per conversion is limited, so convert long documents a few pages at a time, and get arXiv papers from their original source with the arXiv to LaTeX tool.",
+      "Image conversion is built for short, math-heavy passages, and output length per conversion is limited, so work a section at a time. Papers on arXiv are better downloaded from their original source.",
   },
   {
-    question: "Does it keep the exact layout of the PDF?",
+    question: "Does the result keep the exact layout of the PDF?",
     answer:
-      "No. It recreates the text, headings and math as clean, editable LaTeX rather than copying fonts, spacing and page layout, and it does not extract images.",
+      "No. The text, headings and math are recreated as clean, editable LaTeX; fonts, spacing, page layout and images are not copied.",
   },
   {
-    question: "Can it read scanned PDFs?",
+    question: "Can scanned PDFs be converted?",
     answer:
-      "Clear scans of printed or neatly handwritten pages can work. Low-resolution, skewed or faint scans lead to misread symbols, so check the result carefully.",
+      "Screenshots of clear scans of printed or neatly handwritten pages can work. Low-resolution, skewed or faint scans lead to misread symbols, so check the result carefully.",
   },
 ];
 
@@ -67,15 +67,18 @@ export default function PdfToLatexSeoContent() {
       intro={
         <>
           <p>
-            This PDF to LaTeX converter reads a PDF page and writes it back as editable LaTeX
-            code. It is aimed at math: equations, problem sets, lecture handouts and short notes,
-            which come back as text, headings and standard amsmath notation.
+            A PDF stores the finished pages, not the LaTeX that produced them, so converting a PDF
+            to LaTeX means recreating its text and math as editable source. How you do that
+            depends on where the PDF came from: arXiv papers usually come with their original
+            source, and for everything else a screenshot of the page can be converted to LaTeX
+            by AI.
           </p>
           <p>
-            The result is a complete LaTeX document, and the preview compiles it with a full TeX
-            Live distribution on the Octree compile service, using pdfLaTeX. No account is needed.
-            The converter does not keep the original fonts or page layout and does not extract
-            images, and long documents are best converted a few pages at a time.
+            The math to LaTeX converter turns an image of equations, problem sets or lecture notes
+            into a complete LaTeX document and compiles it with a full TeX Live distribution on
+            the Octree compile service. No account is needed. The result does not keep the
+            original fonts, page layout or images, and long documents are best converted a
+            section at a time.
           </p>
         </>
       }
@@ -87,10 +90,10 @@ export default function PdfToLatexSeoContent() {
       faq={faq}
       related={
         <>
-          For papers on arXiv, use{" "}
-          <IntroLink href="/tools/arxiv-to-latex">arXiv to LaTeX</IntroLink> to get the original
-          source. Edit the converted code with a live preview in the{" "}
-          <IntroLink href="/tools/latex-preview">online LaTeX editor</IntroLink>, or read the{" "}
+          Convert screenshots of equations with the{" "}
+          <IntroLink href="/tools/math-to-latex">math to LaTeX converter</IntroLink>, edit the
+          result in the <IntroLink href="/tools/latex-preview">online LaTeX editor</IntroLink>, or
+          read the{" "}
           <IntroLink href="https://www.useoctree.com/learn/mathematical-expressions" external>
             guide to LaTeX math
           </IntroLink>

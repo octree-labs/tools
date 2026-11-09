@@ -51,7 +51,7 @@ const faq: FaqJsonLdItem[] = [
   {
     question: "Can it write a whole paper for me?",
     answer:
-      "It writes the skeleton of a paper: title, abstract, sections, an example table or equation and a bibliography stub. The content is placeholder text, and very long documents may be cut off, so treat the output as a starting point.",
+      "It writes the skeleton of a paper: the document class, packages, sections and placeholder content such as an example equation or table. The content is placeholder text, and very long documents may be cut off, so treat the output as a starting point.",
   },
   {
     question: "What kinds of documents can it generate?",
@@ -69,8 +69,8 @@ export default function AiLatexGeneratorSeoContent() {
           <p>
             This AI LaTeX generator writes LaTeX code from a plain-English description. Ask for a
             beamer deck, a lab report, a two-column article or a table, and it returns a complete
-            document with the right document class, packages such as amsmath, graphicx and
-            booktabs, and a section structure you can fill in.
+            document with the right document class, packages such as amsmath, amssymb and
+            graphicx, and a section structure you can fill in.
           </p>
           <p>
             The preview compiles the code with a full TeX Live distribution on the Octree compile
