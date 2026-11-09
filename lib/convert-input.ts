@@ -13,6 +13,15 @@ export type UploadKind = 'image' | 'pdf';
 export const MAX_UPLOAD_BYTES = 3 * 1024 * 1024;
 export const MAX_UPLOAD_LABEL = '3 MB';
 
+/**
+ * Page ceiling for PDFs. The tools are anonymous and there is no per-IP rate
+ * limiter (an in-memory one does not hold on serverless), so cost per request
+ * is bounded here instead: gpt-4o-mini reads every page as text plus an image,
+ * and the reply is capped at 12k tokens anyway, so longer PDFs only cost more
+ * without converting more.
+ */
+export const MAX_PDF_PAGES = 20;
+
 /** Image types the vision model accepts (HEIC is not one of them). */
 export const IMAGE_MIME_TYPES = ['image/png', 'image/jpeg', 'image/webp', 'image/gif'] as const;
 const IMAGE_EXTENSIONS: Record<string, string> = {
@@ -28,6 +37,7 @@ export const UPLOAD_ERRORS = {
   unsupported_image_only: 'Only image files (JPEG, PNG, WebP, GIF) are supported by this tool.',
   unsupported: 'Only images (JPEG, PNG, WebP, GIF) and PDF files are supported.',
   too_large: `This file is larger than ${MAX_UPLOAD_LABEL}. Open it in Octree to convert larger documents.`,
+  too_many_pages: `This PDF has more than ${MAX_PDF_PAGES} pages. Open it in Octree to convert longer documents.`,
   empty: 'This file is empty.',
   unreadable: 'This file could not be read. Please try another file.',
 } as const;
@@ -95,9 +105,30 @@ export function checkUpload(file: FileLike, allowed: UploadKind[]): UploadCheck 
   return { ok: true, kind, mime };
 }
 
+/**
+ * Best-effort page count from the raw PDF bytes: the largest `/Count` of a
+ * `/Type /Pages` node, else the number of `/Type /Page` objects. Returns null
+ * when neither is visible (e.g. page tree inside compressed object streams);
+ * the byte limit still applies then.
+ */
+export function estimatePdfPages(bytes: Uint8Array): number | null {
+  const text = new TextDecoder('latin1').decode(bytes);
+  let maxCount = 0;
+  for (const m of text.matchAll(/\/Type\s*\/Pages\b[^>]*?\/Count\s+(\d+)|\/Count\s+(\d+)[^>]*?\/Type\s*\/Pages\b/g)) {
+    maxCount = Math.max(maxCount, Number(m[1] ?? m[2]));
+  }
+  if (maxCount > 0) return maxCount;
+  const pages = text.match(/\/Type\s*\/Page(?![a-zA-Z])/g)?.length ?? 0;
+  return pages > 0 ? pages : null;
+}
+
 export type ConvertRequest =
   | { ok: true; kind: UploadKind; mime: string; dataUrl: string; filename: string }
   | { ok: false; status: 400 | 413 | 415; code: string; error: string };
+
+function base64ToBytes(base64: string): Uint8Array {
+  return Uint8Array.from(atob(base64), (c) => c.charCodeAt(0));
+}
 
 const DATA_URL_RE = /^data:([a-z0-9.+/-]+);base64,([A-Za-z0-9+/=\s]+)$/i;
 
@@ -124,6 +155,17 @@ export function parseConvertRequest(body: unknown): ConvertRequest {
   }
   if (bytes > MAX_UPLOAD_BYTES) {
     return { ok: false, status: 413, code: 'file_too_large', error: UPLOAD_ERRORS.too_large };
+  }
+  if (kind === 'pdf') {
+    let pages: number | null;
+    try {
+      pages = estimatePdfPages(base64ToBytes(base64));
+    } catch {
+      return { ok: false, status: 400, code: 'invalid_file', error: 'The file could not be read.' };
+    }
+    if (pages !== null && pages > MAX_PDF_PAGES) {
+      return { ok: false, status: 413, code: 'too_many_pages', error: UPLOAD_ERRORS.too_many_pages };
+    }
   }
   const rawName = (body as { filename?: unknown }).filename;
   const filename =
