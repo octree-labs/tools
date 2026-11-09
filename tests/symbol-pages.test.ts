@@ -213,6 +213,8 @@ test('locales without any translated symbol copy stay noindex everywhere', () =>
 const TRANSLATED_CATEGORIES: string[] = [
   'arrows',
   'boolean',
+  'chemistry',
+  'combinatorics',
   'computer-science',
   'finance',
   'functions',

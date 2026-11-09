@@ -10,6 +10,14 @@ import cnBoolean from "./cn/boolean";
 import esBoolean from "./es/boolean";
 import frBoolean from "./fr/boolean";
 import ruBoolean from "./ru/boolean";
+import cnChemistry from "./cn/chemistry";
+import esChemistry from "./es/chemistry";
+import frChemistry from "./fr/chemistry";
+import ruChemistry from "./ru/chemistry";
+import cnCombinatorics from "./cn/combinatorics";
+import esCombinatorics from "./es/combinatorics";
+import frCombinatorics from "./fr/combinatorics";
+import ruCombinatorics from "./ru/combinatorics";
 import cnComputerScience from "./cn/computer-science";
 import esComputerScience from "./es/computer-science";
 import frComputerScience from "./fr/computer-science";
@@ -138,6 +146,8 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
   cn: {
     "arrows": cnArrows,
     "boolean": cnBoolean,
+    "chemistry": cnChemistry,
+    "combinatorics": cnCombinatorics,
     "computer-science": cnComputerScience,
     "finance": cnFinance,
     "functions": cnFunctions,
@@ -170,6 +180,8 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
   es: {
     "arrows": esArrows,
     "boolean": esBoolean,
+    "chemistry": esChemistry,
+    "combinatorics": esCombinatorics,
     "computer-science": esComputerScience,
     "finance": esFinance,
     "functions": esFunctions,
@@ -202,6 +214,8 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
   fr: {
     "arrows": frArrows,
     "boolean": frBoolean,
+    "chemistry": frChemistry,
+    "combinatorics": frCombinatorics,
     "computer-science": frComputerScience,
     "finance": frFinance,
     "functions": frFunctions,
@@ -234,6 +248,8 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
   ru: {
     "arrows": ruArrows,
     "boolean": ruBoolean,
+    "chemistry": ruChemistry,
+    "combinatorics": ruCombinatorics,
     "computer-science": ruComputerScience,
     "finance": ruFinance,
     "functions": ruFunctions,
