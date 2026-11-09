@@ -3,12 +3,12 @@ import type { SymbolPageTranslations } from "../types";
 /** Spanish copy for /es/symbols/summation/<slug>. */
 const text: SymbolPageTranslations = {
   "summation": {
-    name: "Sumatoria",
+    name: "Sumatorio",
     meaning: "Operador de suma con sigma mayúscula que suma los términos de una sucesión.",
     usage: "Los límites se añaden con _ y ^: \\sum_{i=1}^{n} i = \\frac{n(n+1)}{2}. En las fórmulas destacadas los límites se centran debajo y encima de una sigma agrandada, mientras que en línea quedan a un lado y el signo sigue siendo pequeño; \\limits y \\nolimits cambian este comportamiento. Usa \\sum y no \\Sigma, que es solo la letra griega y ni se escala ni apila los límites. Para condiciones de varias líneas bajo el signo, \\substack{0 \\le i \\le m \\\\ 0 < j < n} las apila de forma ordenada. Una suma con solo subíndice, \\sum_i, es habitual en física y aprendizaje automático cuando el rango es evidente.",
   },
   "summation-to-infinity": {
-    name: "Sumatoria hasta el infinito",
+    name: "Sumatorio hasta el infinito",
     meaning: "Suma con índice desde n = 0 hasta el infinito, la forma empleada para las series de potencias.",
     usage: "Empezar en cero es natural para las series de potencias y de Taylor: e^x = \\sum_{n=0}^{\\infty} \\frac{x^n}{n!} y la serie geométrica \\sum_{n=0}^{\\infty} r^n = \\frac{1}{1-r} para |r| < 1. Comprueba con cuidado el índice inicial, ya que pasar de n = 0 a n = 1 elimina el primer término y cambia la forma cerrada. En modo destacado los límites se apilan; en línea se desplazan junto a la sigma. Cuando el límite superior es infinito, \\sum_{n \\ge 0} es una alternativa compacta. Las funciones generatrices de una sucesión a_n se escriben de la misma manera, \\sum_{n=0}^{\\infty} a_n x^n.",
   },

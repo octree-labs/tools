@@ -28,7 +28,7 @@ const text: SymbolPageTranslations = {
     usage: "在概率论中，X \\sim \\mathcal{N}(0, 1) 读作“X 服从标准正态分布”。在渐近分析中，f \\sim g 表示 f/g \\to 1，如斯特林公式。代数中用 x \\sim y 表示等价关系，几何中用它表示相似三角形。作为关系符，它两侧都有间距；若要在字母上加波浪号重音，请用 \\tilde{x}。相近的符号有 \\simeq（渐近相等或同伦等价）、\\approx（约等于）以及更粗的 \\thicksim。作为表示“大约”的前缀时，如 \\sim 10^3，间距可能显得别扭，可写成 {\\sim}10^3。",
   },
   "congruent": {
-    name: "同构号",
+    name: "全等（同构）符号",
     meaning: "等号上加波浪线，表示结构之间的同构或几何图形的全等。",
     usage: "代数学家用 G \\cong H 表示群同构，用 V \\cong V^{**} 表示有限维空间与其二次对偶同构，几何中则用 \\triangle ABC \\cong \\triangle DEF 表示三角形全等。有些物理和工程文献用它表示“约等于”，但这时 \\approx 更清楚。它不同于 \\simeq（单横线，用于同伦等价或渐近相等），也不同于 \\equiv（三横线）。若要标出映射，可用 \\overset{\\phi}{\\cong} 把它放在符号上方，或使用 \\xrightarrow{\\sim} 这样的箭头。",
   },

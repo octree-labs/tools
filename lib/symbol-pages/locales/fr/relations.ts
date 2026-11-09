@@ -28,7 +28,7 @@ const text: SymbolPageTranslations = {
     usage: "En probabilités, X \\sim \\mathcal{N}(0, 1) se lit « X suit une loi normale centrée réduite ». En analyse asymptotique, f \\sim g signifie f/g \\to 1, comme dans la formule de Stirling. L’algèbre utilise x \\sim y pour une relation d’équivalence, et la géométrie pour des triangles semblables. En tant que relation, il est espacé des deux côtés ; pour un accent tilde sur une lettre, utilisez \\tilde{x}. Ses proches parents sont \\simeq (asymptotiquement égal ou homotopiquement équivalent), \\approx (approximativement) et \\thicksim, une version plus grasse. Comme préfixe signifiant « environ », comme dans \\sim 10^3, l’espacement peut sembler étrange ; écrivez {\\sim}10^3.",
   },
   "congruent": {
-    name: "Isomorphisme (congruence)",
+    name: "Isomorphisme (isométrie)",
     meaning: "Tilde au-dessus d’un signe égal, désignant l’isomorphisme de structures ou l’isométrie de figures géométriques.",
     usage: "Les algébristes écrivent G \\cong H pour des groupes isomorphes et V \\cong V^{**} pour les espaces de dimension finie, tandis que la géométrie utilise \\triangle ABC \\cong \\triangle DEF pour des triangles isométriques. Certains textes de physique et d’ingénierie l’emploient au sens de « approximativement égal », mais \\approx est plus clair pour cela. Il diffère de \\simeq (une seule barre, utilisé pour l’équivalence d’homotopie ou l’égalité asymptotique) et de \\equiv (trois barres). Pour nommer l’application, placez-la au-dessus du symbole avec \\overset{\\phi}{\\cong} ou utilisez une flèche comme \\xrightarrow{\\sim}.",
   },
@@ -43,12 +43,12 @@ const text: SymbolPageTranslations = {
     usage: "\\subsetneq exprime explicitement l’inclusion stricte et lève l’ambiguïté de \\subset, que certains textes considèrent comme large. On le trouve dans des chaînes comme \\mathbb{N} \\subsetneq \\mathbb{Z} \\subsetneq \\mathbb{Q} et dans les arguments de maximalité pour les idéaux. Parmi les variantes figurent \\subsetneqq (double barre barrée) et \\varsubsetneq, dont le trait ne coupe que la barre. Ne le confondez pas avec \\nsubseteq, qui signifie « n’est pas du tout un sous-ensemble ». Son pendant pour les sur-ensembles est \\supsetneq. C’est une relation, donc l’espacement autour est géré automatiquement. Pour démontrer qu’une inclusion est stricte, montrez A \\subseteq B et exhibez un élément de B hors de A.",
   },
   "superset": {
-    name: "Inclusion inverse",
+    name: "Sur-ensemble",
     meaning: "Relation de sur-ensemble : l’ensemble de gauche contient celui de droite (souvent au sens strict, selon la convention).",
     usage: "\\supset est l’image miroir de \\subset : A \\supset B dit que B est inclus dans A. Comme pour \\subset, les auteurs ne s’accordent pas sur le fait qu’il autorise l’égalité ; précisez votre convention ou utilisez \\supseteq et \\supsetneq pour lever le doute. Des textes de logique de traditions plus anciennes, dont les Principia Mathematica, utilisaient \\supset pour l’implication matérielle : vous pourrez donc rencontrer p \\supset q dans des articles de philosophie. Dans un texte nouveau, \\to ou \\implies est plus clair pour l’implication. La négation est \\not\\supset, et \\nsupseteq couvre la version large.",
   },
   "superset-or-equal": {
-    name: "Inclusion inverse large",
+    name: "Sur-ensemble au sens large",
     meaning: "Relation de sur-ensemble au sens large : l’ensemble de gauche contient tous les éléments de l’ensemble de droite.",
     usage: "Lisez A \\supseteq B comme « A contient B », éventuellement avec égalité. Il est naturel lorsque le plus grand ensemble est le sujet, comme dans \\overline{A} \\supseteq A pour les adhérences ou \\ker f \\supseteq \\operatorname{im} g dans les raisonnements sur les suites exactes. C’est simplement \\subseteq lu dans l’autre sens : choisissez la forme qui place l’ensemble important en premier. La version stricte est \\supsetneq, et la négation \\nsupseteq. En théorie des treillis et des ordres, il exprime aussi l’ordre d’inclusion inverse sur des familles d’ensembles.",
   },
