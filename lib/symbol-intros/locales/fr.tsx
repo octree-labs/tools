@@ -95,7 +95,7 @@ const fr: IntroLocale = {
         "\\cdot": "Point centré, multiplication",
         "\\neq": "Différent de",
         "\\leq": "Inférieur ou égal à",
-        "\\approx": "Approximativement égal",
+        "\\approx": "Approximativement égal à",
         "\\infty": "Infini",
         "\\sqrt{x}": "Racine carrée (\\sqrt[n]{x} pour la racine n-ième)",
         "\\frac{a}{b}": "Fraction",

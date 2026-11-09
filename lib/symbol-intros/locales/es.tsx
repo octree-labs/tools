@@ -123,9 +123,9 @@ const es: IntroLocale = {
       title: "Símbolos de teoría de conjuntos en LaTeX: subconjunto, pertenencia, unión y conjunto vacío",
       intro: (
         <IntroP>
-          Los símbolos de teoría de conjuntos en LaTeX están casi todos integrados. Pertenece a es{" "}
-          <Cmd>{"\\in"}</Cmd> (∈) y no pertenece a es <Cmd>{"\\notin"}</Cmd>; subconjunto es{" "}
-          <Cmd>{"\\subset"}</Cmd> (⊂) y subconjunto o igual <Cmd>{"\\subseteq"}</Cmd> (⊆); la unión y
+          Los símbolos de teoría de conjuntos en LaTeX están casi todos integrados. «Pertenece a» es{" "}
+          <Cmd>{"\\in"}</Cmd> (∈) y «no pertenece a» es <Cmd>{"\\notin"}</Cmd>; «subconjunto» es{" "}
+          <Cmd>{"\\subset"}</Cmd> (⊂) y «subconjunto o igual», <Cmd>{"\\subseteq"}</Cmd> (⊆); la unión y
           la intersección son <Cmd>{"\\cup"}</Cmd> y <Cmd>{"\\cap"}</Cmd>, la diferencia de conjuntos
           es <Cmd>{"\\setminus"}</Cmd> y el conjunto vacío es <Cmd>{"\\emptyset"}</Cmd> (∅). Algunos
           extras requieren amssymb: el conjunto vacío más redondo <Cmd>{"\\varnothing"}</Cmd>, el
@@ -161,7 +161,7 @@ const es: IntroLocale = {
         {
           question: "¿Cómo escribo el símbolo de pertenencia en LaTeX?",
           answer:
-            "\\in produce ∈, como en $x \\in A$, y \\notin produce ∉. La forma invertida \\ni (∋) se lee contiene como elemento. Los tres están integrados.",
+            "\\in produce ∈, como en $x \\in A$, y \\notin produce ∉. La forma invertida \\ni (∋) se lee «contiene como elemento». Los tres están integrados.",
         },
         {
           question: "¿Cómo escribo el conjunto vacío en LaTeX?",
@@ -448,8 +448,8 @@ const es: IntroLocale = {
       intro: (
         <IntroP>
           Los cuantificadores en LaTeX son <Cmd>{"\\forall"}</Cmd> (para todo, ∀) y{" "}
-          <Cmd>{"\\exists"}</Cmd> (existe, ∃), ambos integrados; <Cmd>{"\\nexists"}</Cmd> para no
-          existe viene de amssymb, y la existencia única se escribe <Cmd>{"\\exists!"}</Cmd>. Los
+          <Cmd>{"\\exists"}</Cmd> (existe, ∃), ambos integrados; <Cmd>{"\\nexists"}</Cmd> para «no
+          existe» viene de amssymb, y la existencia única se escribe <Cmd>{"\\exists!"}</Cmd>. Los
           enunciados cuantificados suelen combinarlos con la pertenencia, <Cmd>{"\\in"}</Cmd>, y un
           separador como una coma o dos puntos:{" "}
           <Cmd>{"\\forall x \\in \\mathbb{R},\\ x^2 \\geq 0"}</Cmd>. La negación es{" "}
@@ -483,7 +483,7 @@ const es: IntroLocale = {
         {
           question: "¿Cómo escribo «existe» y «no existe» en LaTeX?",
           answer:
-            "Existe es \\exists (∃), integrado. No existe es \\nexists (∄), que necesita \\usepackage{amssymb}; \\not\\exists también funciona sin paquete, pero queda menos limpio. Para la existencia única escribe \\exists!.",
+            "«Existe» es \\exists (∃), integrado. «No existe» es \\nexists (∄), que necesita \\usepackage{amssymb}; \\not\\exists también funciona sin paquete, pero queda menos limpio. Para la existencia única escribe \\exists!.",
         },
         {
           question: "¿Cómo escribo «tal que» en LaTeX?",

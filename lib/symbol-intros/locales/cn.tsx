@@ -82,7 +82,7 @@ const cn: IntroLocale = {
       quickRefHeading: "速查表：常用数学符号",
       use: {
         "\\pm": "正负号",
-        "\\times": "乘号（叉乘）",
+        "\\times": "乘号",
         "\\div": "除号",
         "\\cdot": "居中点，乘法",
         "\\neq": "不等于",
