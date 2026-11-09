@@ -5,6 +5,7 @@ import { SymbolCard } from "@/components/SymbolCard";
 import { useSearchParams } from "next/navigation";
 import { useTranslations } from 'next-intl';
 import { SymbolItem } from "@/lib/symbols";
+import { getSymbolPageRefByLatex, symbolPagePath } from "@/lib/symbol-pages";
 
 interface SymbolCategoryPageProps {
     symbols: SymbolItem[];
@@ -15,6 +16,26 @@ interface SymbolCategoryPageProps {
      * HTML; it is only hidden on the client while a search query is active.
      */
     intro?: ReactNode;
+}
+
+function symbolHref(latex: string): string | undefined {
+    const ref = getSymbolPageRefByLatex(latex);
+    return ref ? symbolPagePath(ref) : undefined;
+}
+
+function SymbolGrid({ symbols }: { symbols: SymbolItem[] }) {
+    return (
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+            {symbols.map((symbol) => (
+                <SymbolCard
+                    key={symbol.latex}
+                    latex={symbol.latex}
+                    name={symbol.name}
+                    href={symbolHref(symbol.latex)}
+                />
+            ))}
+        </div>
+    );
 }
 
 function SymbolCategoryContent({ symbols, categoryKey }: Omit<SymbolCategoryPageProps, "intro">) {
@@ -39,11 +60,7 @@ function SymbolCategoryContent({ symbols, categoryKey }: Omit<SymbolCategoryPage
             </div>
 
             {filteredSymbols.length > 0 ? (
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-                    {filteredSymbols.map((symbol) => (
-                        <SymbolCard key={symbol.latex} latex={symbol.latex} name={symbol.name} />
-                    ))}
-                </div>
+                <SymbolGrid symbols={filteredSymbols} />
             ) : (
                 <div className="text-center py-12">
                     <p className="text-gray-500">
@@ -72,7 +89,10 @@ export default function SymbolCategoryPage({ symbols, categoryKey, intro }: Symb
                     <IntroGate intro={intro} />
                 </Suspense>
             )}
-            <Suspense fallback={<div>Loading...</div>}>
+            {/* The unfiltered grid is the static HTML (useSearchParams opts the
+                filtered view out of prerendering), so every card and its link
+                to the symbol page is crawlable. */}
+            <Suspense fallback={<SymbolGrid symbols={symbols} />}>
                 <SymbolCategoryContent symbols={symbols} categoryKey={categoryKey} />
             </Suspense>
         </>

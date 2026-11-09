@@ -1352,6 +1352,42 @@
         "contentGoesHere": "内容在这里。",
         "summaryOfKeyPoints": "关键点摘要。"
       }
-    }
+    },
+  "symbolPage": {
+    "breadcrumbSymbols": "符号",
+    "title": "LaTeX 中的{name}（{command}）",
+    "metaDescription": "{meaning} 复制 {command}，查看所需宏包并粘贴可编译示例。",
+    "commandLabel": "LaTeX 命令",
+    "packageLabel": "宏包",
+    "packageNone": "无需宏包：LaTeX 内置",
+    "packageNeeded": "添加到导言区",
+    "unicodeLabel": "复制 Unicode 字符",
+    "modeLabel": "模式",
+    "modeMath": "仅限数学模式",
+    "modeText": "仅限文本模式",
+    "modeBoth": "文本模式和数学模式均可",
+    "whereUsed": "用途",
+    "alsoListed": "也收录于",
+    "example": "最小可编译示例",
+    "exampleIntro": "将其粘贴到空白 .tex 文件中，用 pdfLaTeX、XeLaTeX 或 LuaLaTeX 编译。",
+    "exampleIntroUnicode": "将其粘贴到空白 .tex 文件中，用 XeLaTeX 或 LuaLaTeX 编译（其中包含 Unicode 字符）。",
+    "openExample": "在 Octree 中打开此示例",
+    "related": "相关符号",
+    "allInCategory": "全部{category}符号",
+    "faqHeading": "常见问题",
+    "faqHowQ": "如何在 LaTeX 中输入{name}？",
+    "faqHowA": "在数学模式中输入 {command}，例如 ${example}$。{packageSentence}",
+    "faqHowAText": "在正文中输入 {command}，例如 {example}。{packageSentence}",
+    "faqHowNoPkg": "无需加载任何宏包即可在标准 LaTeX 中使用。",
+    "faqHowPkg": "请先用 {usepackage} 加载 {packages}。",
+    "faqPkgQ": "{command} 需要哪个宏包？",
+    "faqPkgNone": "不需要。{command} 是标准 LaTeX 的一部分，导言区只需文档类即可编译。",
+    "faqPkg": "{command} 需要 {packages}：在文档开始前把 {usepackage} 加入导言区。",
+    "faqModeQ": "{command} 能在文本模式中使用，还是只能用于数学模式？",
+    "faqModeMath": "只能用于数学模式。在 $...$ 之外，LaTeX 会报错 \"Missing $ inserted\"，所以在正文中请写 ${command}$。",
+    "faqModeMathUnicode": "如果只需要在正文中显示该字形，可以直接粘贴 Unicode 字符 {char}（需使用 XeLaTeX 或 LuaLaTeX 以及包含该字形的字体）。",
+    "faqModeTextOnly": "{command} 是文本模式命令：在正文中使用，或在公式中用 \\text 包裹。",
+    "faqModeBoth": "两者皆可。{command} 在正文和 $...$ 中都能编译；在公式中请保持数学模式，以获得数学字体和间距。"
   }
+}
   

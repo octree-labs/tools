@@ -1344,6 +1344,42 @@
         "contentGoesHere": "Le contenu va ici.",
         "summaryOfKeyPoints": "Résumé des points clés."
       }
-    }
+    },
+  "symbolPage": {
+    "breadcrumbSymbols": "Symboles",
+    "title": "{name} en LaTeX ({command})",
+    "metaDescription": "{meaning} Copiez {command}, voyez quel paquet il faut et collez un exemple compilable.",
+    "commandLabel": "Commande LaTeX",
+    "packageLabel": "Paquet",
+    "packageNone": "Aucun paquet nécessaire : intégré à LaTeX",
+    "packageNeeded": "À ajouter au préambule",
+    "unicodeLabel": "Copier le caractère Unicode",
+    "modeLabel": "Mode",
+    "modeMath": "Mode mathématique uniquement",
+    "modeText": "Mode texte uniquement",
+    "modeBoth": "Mode texte et mode mathématique",
+    "whereUsed": "Où il est utilisé",
+    "alsoListed": "Également dans",
+    "example": "Exemple minimal compilable",
+    "exampleIntro": "Collez-le dans un fichier .tex vide et compilez avec pdfLaTeX, XeLaTeX ou LuaLaTeX.",
+    "exampleIntroUnicode": "Collez-le dans un fichier .tex vide et compilez avec XeLaTeX ou LuaLaTeX (il contient un caractère Unicode).",
+    "openExample": "Ouvrir cet exemple dans Octree",
+    "related": "Symboles associés",
+    "allInCategory": "Tous : {category}",
+    "faqHeading": "Questions fréquentes",
+    "faqHowQ": "Comment écrire {name} en LaTeX ?",
+    "faqHowA": "Tapez {command} en mode mathématique, par exemple ${example}$. {packageSentence}",
+    "faqHowAText": "Tapez {command} dans le texte, par exemple {example}. {packageSentence}",
+    "faqHowNoPkg": "La commande fonctionne en LaTeX standard sans charger de paquet.",
+    "faqHowPkg": "Chargez d’abord {packages} avec {usepackage}.",
+    "faqPkgQ": "Quel paquet faut-il pour {command} ?",
+    "faqPkgNone": "Aucun. {command} fait partie de LaTeX standard : le préambule n’a besoin que de la classe de document.",
+    "faqPkg": "{command} nécessite {packages} : ajoutez {usepackage} au préambule avant le début du document.",
+    "faqModeQ": "Peut-on utiliser {command} en mode texte, ou seulement en mode mathématique ?",
+    "faqModeMath": "Seulement en mode mathématique. Hors de $...$, LaTeX s’arrête avec \"Missing $ inserted\" : dans le texte, écrivez ${command}$.",
+    "faqModeMathUnicode": "Si vous voulez seulement le glyphe dans le texte, collez le caractère Unicode {char} (avec XeLaTeX ou LuaLaTeX et une police qui le contient).",
+    "faqModeTextOnly": "{command} est une commande du mode texte : utilisez-la dans le texte, ou entourez-la de \\text dans une formule.",
+    "faqModeBoth": "Les deux. {command} compile dans le texte comme dans $...$ ; dans une formule, gardez le mode mathématique pour les polices et l’espacement mathématiques."
   }
+}
   

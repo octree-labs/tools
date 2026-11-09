@@ -1,5 +1,7 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
+import { Link as LocaleLink } from "@/src/i18n/navigation";
+import { getSymbolPageRefByLatex, symbolPagePath } from "@/lib/symbol-pages";
 import { CopyLatexButton } from "@/components/CopyLatexButton";
 import KatexPreview from "@/components/KatexPreview";
 import { getFaqJsonLd, serializeJsonLd, type FaqJsonLdItem } from "@/lib/json-ld";
@@ -88,7 +90,7 @@ export function QuickRefTable({
                 <KatexPreview latex={row.preview ?? row.latex} displayMode={false} />
               </td>
               <td className="px-4 py-2">
-                <code className="font-mono text-gray-800 whitespace-nowrap">{row.latex}</code>
+                <QuickRefCommand latex={row.latex} />
               </td>
               <td className="px-4 py-2">{row.use}</td>
               <td className="px-4 py-2 whitespace-nowrap">{row.pkg ?? labels.builtIn}</td>
@@ -100,6 +102,18 @@ export function QuickRefTable({
         </tbody>
       </table>
     </div>
+  );
+}
+
+/** The command cell; links to the symbol's own page when it has one. */
+function QuickRefCommand({ latex }: { latex: string }) {
+  const code = <code className="font-mono text-gray-800 whitespace-nowrap">{latex}</code>;
+  const ref = getSymbolPageRefByLatex(latex);
+  if (!ref) return code;
+  return (
+    <LocaleLink href={symbolPagePath(ref)} className="hover:underline text-blue-700" title={ref.name}>
+      {code}
+    </LocaleLink>
   );
 }
 

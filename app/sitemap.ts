@@ -2,9 +2,36 @@ import { MetadataRoute } from 'next'
 import { templates as templateList } from '@/lib/templates'
 import { LOCALES, DEFAULT_LOCALE } from '@/lib/i18n/config'
 import { toLanguageTag } from '@/lib/seo'
+import { SYMBOL_PAGES, SYMBOL_PAGE_INDEXED_LOCALES, symbolPagePath } from '@/lib/symbol-pages'
+import { notFound } from 'next/navigation'
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://tools.useoctree.com'
+export const SITEMAP_BASE_URL = 'https://tools.useoctree.com'
+
+/**
+ * Symbol pages per sitemap file. Only the indexed locales are listed (see
+ * SYMBOL_PAGE_INDEXED_LOCALES), so today one file holds them all. Keep each
+ * file well under Vercel's 20 MB prerender limit and the 50k-URL cap if
+ * locales are added.
+ */
+const SYMBOL_PAGES_PER_SITEMAP = 1000
+
+/** Sitemap ids: 0 is every non-symbol-page URL, 1..n are symbol pages. */
+export function sitemapIds(): number[] {
+  const chunks = Math.ceil(SYMBOL_PAGES.length / SYMBOL_PAGES_PER_SITEMAP)
+  return Array.from({ length: chunks + 1 }, (_, i) => i)
+}
+
+// Served at /sitemap/<id>.xml; /sitemap.xml (app/sitemap.xml/route.ts) is the index.
+export const dynamicParams = false
+
+export async function generateSitemaps() {
+  return sitemapIds().map(id => ({ id }))
+}
+
+export default async function sitemap({ id }: { id: number | string }): Promise<MetadataRoute.Sitemap> {
+  const index = Number(id)
+  if (!sitemapIds().includes(index)) notFound()
+  const baseUrl = SITEMAP_BASE_URL
   
   // All tool routes
   const tools = [
@@ -124,6 +151,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const templateUrls = templates.flatMap(template => 
     generateLocalizedUrls(`/templates/${template}`, 'monthly', 0.7)
   )
+
+  // One page per distinct command (lib/symbol-pages), under its home category
+  if (index > 0) {
+    const start = (index - 1) * SYMBOL_PAGES_PER_SITEMAP
+    return SYMBOL_PAGES.slice(start, start + SYMBOL_PAGES_PER_SITEMAP).flatMap(page => {
+      const path = symbolPagePath(page)
+      const languages = Object.fromEntries([
+        ...SYMBOL_PAGE_INDEXED_LOCALES.map(locale => [toLanguageTag(locale), getLocalizedUrl(path, locale)]),
+        ['x-default', getLocalizedUrl(path, DEFAULT_LOCALE)],
+      ])
+      return SYMBOL_PAGE_INDEXED_LOCALES.map(locale => ({
+        url: getLocalizedUrl(path, locale),
+        lastModified: new Date(),
+        changeFrequency: 'monthly' as const,
+        priority: locale === DEFAULT_LOCALE ? 0.6 : 0.5,
+        alternates: { languages },
+      }))
+    })
+  }
 
   return [
     ...homeUrls,
