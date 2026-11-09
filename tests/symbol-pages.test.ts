@@ -215,7 +215,10 @@ const TRANSLATED_CATEGORIES: string[] = [
   'math',
   'probability',
   'quantifiers',
+  'relations',
   'set-theory',
+  'special-functions',
+  'tensors',
   'units',
 ];
 

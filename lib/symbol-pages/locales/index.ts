@@ -18,10 +18,22 @@ import cnQuantifiers from "./cn/quantifiers";
 import esQuantifiers from "./es/quantifiers";
 import frQuantifiers from "./fr/quantifiers";
 import ruQuantifiers from "./ru/quantifiers";
+import cnRelations from "./cn/relations";
+import esRelations from "./es/relations";
+import frRelations from "./fr/relations";
+import ruRelations from "./ru/relations";
 import cnSetTheory from "./cn/set-theory";
 import esSetTheory from "./es/set-theory";
 import frSetTheory from "./fr/set-theory";
 import ruSetTheory from "./ru/set-theory";
+import cnSpecialFunctions from "./cn/special-functions";
+import esSpecialFunctions from "./es/special-functions";
+import frSpecialFunctions from "./fr/special-functions";
+import ruSpecialFunctions from "./ru/special-functions";
+import cnTensors from "./cn/tensors";
+import esTensors from "./es/tensors";
+import frTensors from "./fr/tensors";
+import ruTensors from "./ru/tensors";
 import cnUnits from "./cn/units";
 import esUnits from "./es/units";
 import frUnits from "./fr/units";
@@ -44,7 +56,10 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "math": cnMath,
     "probability": cnProbability,
     "quantifiers": cnQuantifiers,
+    "relations": cnRelations,
     "set-theory": cnSetTheory,
+    "special-functions": cnSpecialFunctions,
+    "tensors": cnTensors,
     "units": cnUnits,
   },
   es: {
@@ -52,7 +67,10 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "math": esMath,
     "probability": esProbability,
     "quantifiers": esQuantifiers,
+    "relations": esRelations,
     "set-theory": esSetTheory,
+    "special-functions": esSpecialFunctions,
+    "tensors": esTensors,
     "units": esUnits,
   },
   fr: {
@@ -60,7 +78,10 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "math": frMath,
     "probability": frProbability,
     "quantifiers": frQuantifiers,
+    "relations": frRelations,
     "set-theory": frSetTheory,
+    "special-functions": frSpecialFunctions,
+    "tensors": frTensors,
     "units": frUnits,
   },
   ru: {
@@ -68,7 +89,10 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "math": ruMath,
     "probability": ruProbability,
     "quantifiers": ruQuantifiers,
+    "relations": ruRelations,
     "set-theory": ruSetTheory,
+    "special-functions": ruSpecialFunctions,
+    "tensors": ruTensors,
     "units": ruUnits,
   },
 };
