@@ -958,6 +958,464 @@ const fr: IntroLocale = {
         },
       ],
     },
+
+    geometry: {
+      title: "Symboles de géométrie en LaTeX : perpendiculaire, parallèle, angle et triangle",
+      intro: (
+        <IntroP>
+          Les symboles de géométrie sont pour la plupart intégrés à LaTeX. Le symbole
+          perpendiculaire, qui sert aussi pour l&rsquo;orthogonalité, est <Cmd>{"\\perp"}</Cmd> (⊥),
+          parallèle s&rsquo;écrit <Cmd>{"\\parallel"}</Cmd> (∥), un angle{" "}
+          <Cmd>{"\\angle ABC"}</Cmd> et un triangle <Cmd>{"\\triangle ABC"}</Cmd>. Isométrique
+          (congruent) s&rsquo;écrit <Cmd>{"\\cong"}</Cmd> et semblable <Cmd>{"\\sim"}</Cmd>. Un
+          segment reçoit une barre, <Cmd>{"\\overline{AB}"}</Cmd>, une demi-droite ou un vecteur une
+          flèche, <Cmd>{"\\overrightarrow{AB}"}</Cmd>, et le signe degré est un petit cercle en
+          exposant, <Cmd>{"90^\\circ"}</Cmd>. Seuls quelques extras, comme{" "}
+          <Cmd>{"\\measuredangle"}</Cmd> et <Cmd>{"\\nparallel"}</Cmd>, nécessitent amssymb. Le
+          tableau présente les symboles de géométrie les plus utilisés, avec le paquet requis pour
+          chacun ; la liste complète suit plus bas.
+        </IntroP>
+      ),
+      quickRefHeading: "Aide-mémoire : les symboles de géométrie les plus utilisés",
+      use: {
+        "\\perp": "Perpendiculaire, orthogonal",
+        "\\parallel": "Parallèle",
+        "\\nparallel": "Non parallèle",
+        "\\angle ABC": "Angle",
+        "\\measuredangle ABC": "Angle orienté (mesure d\u2019angle)",
+        "\\triangle ABC": "Triangle",
+        "\\cong": "Isométrique (congruent)",
+        "\\sim": "Semblable",
+        "\\overline{AB}": "Segment",
+        "\\overrightarrow{AB}": "Demi-droite ou vecteur",
+        "\\overleftrightarrow{AB}": "Droite passant par A et B",
+        "90^\\circ": "Signe degré",
+      },
+      faqHeading: "Questions fréquentes sur les symboles de géométrie en LaTeX",
+      faq: [
+        {
+          question: "Comment écrire le symbole perpendiculaire ou orthogonal en LaTeX ?",
+          answer:
+            "Utilisez \\perp en mode mathématique : $AB \\perp CD$ affiche AB ⊥ CD. La même commande sert pour les vecteurs orthogonaux, u \\perp v, et pour l\u2019orthogonal d\u2019un sous-espace, V^\\perp. Elle est intégrée, aucun paquet n\u2019est donc nécessaire.",
+        },
+        {
+          question: "Comment écrire un symbole de triangle en LaTeX ?",
+          answer:
+            "\\triangle affiche △, comme dans $\\triangle ABC$, et ne nécessite aucun paquet. amssymb ajoute le triangle plus petit \\vartriangle et le triangle plein \\blacktriangle.",
+        },
+        {
+          question: "Comment écrire le symbole degré en LaTeX ?",
+          answer:
+            "En mode mathématique, écrivez un petit cercle en exposant : $90^\\circ$. En mode texte, \\textdegree affiche °, et le paquet siunitx donne un rendu homogène avec \\ang{45} ou \\qty{90}{\\degree}.",
+        },
+      ],
+    },
+
+    "graph-theory": {
+      title: "Symboles de théorie des graphes en LaTeX : sommets, arêtes, degré et coloration",
+      intro: (
+        <IntroP>
+          En LaTeX, la notation de la théorie des graphes repose surtout sur des lettres usuelles et
+          des opérateurs intégrés. Un graphe s&rsquo;écrit <Cmd>{"G = (V, E)"}</Cmd>,
+          l&rsquo;adjacence <Cmd>{"u \\sim v"}</Cmd>, le degré d&rsquo;un sommet{" "}
+          <Cmd>{"\\deg(v)"}</Cmd> (l&rsquo;opérateur <Cmd>{"\\deg"}</Cmd> est intégré), et les
+          graphes complets et bipartis complets <Cmd>{"K_n"}</Cmd> et <Cmd>{"K_{m,n}"}</Cmd>. Les
+          invariants de graphes utilisent des lettres grecques : nombre chromatique{" "}
+          <Cmd>{"\\chi(G)"}</Cmd>, nombre de clique <Cmd>{"\\omega(G)"}</Cmd>, nombre de stabilité{" "}
+          <Cmd>{"\\alpha(G)"}</Cmd>, et degrés maximal et minimal <Cmd>{"\\Delta(G)"}</Cmd> et{" "}
+          <Cmd>{"\\delta(G)"}</Cmd>. Pour dessiner le graphe lui-même, utilisez TikZ. Le tableau
+          présente les symboles de théorie des graphes les plus utilisés ; tous sont intégrés, et
+          la liste complète suit plus bas.
+        </IntroP>
+      ),
+      quickRefHeading: "Aide-mémoire : les symboles de théorie des graphes les plus utilisés",
+      use: {
+        "G = (V, E)": "Graphe d\u2019ensemble de sommets V et d\u2019ensemble d\u2019arêtes E",
+        "u \\sim v": "u est adjacent à v",
+        "\\deg(v)": "Degré d\u2019un sommet",
+        "\\deg^{+}(v)": "Degré sortant (\\deg^{-} pour le degré entrant)",
+        "N(v)": "Voisinage de v",
+        "K_n": "Graphe complet",
+        "K_{m,n}": "Graphe biparti complet",
+        "\\chi(G)": "Nombre chromatique",
+        "\\omega(G)": "Nombre de clique",
+        "\\alpha(G)": "Nombre de stabilité",
+        "\\Delta(G)": "Degré maximal (\\delta(G) pour le minimal)",
+        "G \\cong H": "Graphes isomorphes",
+      },
+      faqHeading: "Questions fréquentes sur la théorie des graphes en LaTeX",
+      faq: [
+        {
+          question: "Comment écrire le degré d\u2019un sommet en LaTeX ?",
+          answer:
+            "Utilisez l\u2019opérateur intégré \\deg, qui affiche deg en romain droit avec l\u2019espacement correct : $\\deg(v)$. Pour les graphes orientés, \\deg^{+}(v) et \\deg^{-}(v) donnent le degré sortant et le degré entrant, et le lemme des poignées de main s\u2019écrit \\sum_{v \\in V} \\deg(v) = 2|E|.",
+        },
+        {
+          question: "Comment dessiner un graphe en LaTeX ?",
+          answer:
+            "Chargez \\usepackage{tikz}, placez les sommets avec \\node[circle,draw] (a) at (0,0) {a}; et reliez-les avec \\draw (a) -- (b);. Pour des graphes plus grands, la bibliothèque graphs de TikZ et le paquet tkz-graph raccourcissent la syntaxe.",
+        },
+        {
+          question: "Comment écrire le nombre chromatique en LaTeX ?",
+          answer:
+            "Le nombre chromatique s\u2019écrit \\chi(G), avec la lettre grecque chi. L\u2019indice chromatique (nombre chromatique des arêtes) se note souvent \\chi'(G), le nombre de clique \\omega(G) et le nombre de stabilité \\alpha(G). Tous sont intégrés.",
+        },
+      ],
+    },
+
+    latin: {
+      title: "Lettres latines en LaTeX : lettres spéciales et accents",
+      intro: (
+        <IntroP>
+          Les lettres latines au-delà de A à Z, comme les ligatures æ et œ, les lettres
+          scandinaves ø et å, le ß allemand et le ł polonais, ont chacune une courte commande
+          LaTeX : <Cmd>\ae</Cmd>, <Cmd>\oe</Cmd>, <Cmd>\o</Cmd>, <Cmd>\aa</Cmd>, <Cmd>\ss</Cmd> et{" "}
+          <Cmd>\l</Cmd>, avec des versions majuscules comme <Cmd>\AE</Cmd> et <Cmd>\O</Cmd>. Les
+          lettres accentuées combinent une commande d&rsquo;accent et la lettre de base, par
+          exemple <Cmd>\&apos;e</Cmd> pour é et <Cmd>\~n</Cmd> pour ñ. Toutes ces commandes sont
+          intégrées et fonctionnent en mode texte. Le tableau présente les lettres latines les plus
+          utilisées ; la liste complète suit plus bas.
+        </IntroP>
+      ),
+      quickRefHeading: "Aide-mémoire : lettres spéciales et accents",
+      use: {
+        "\\ae": "Ligature æ (\\AE pour Æ)",
+        "\\oe": "Ligature œ, e dans l\u2019o (\\OE pour Œ)",
+        "\\o": "o barré ø (\\O pour Ø)",
+        "\\aa": "a rond en chef å (\\AA pour Å)",
+        "\\ss": "Eszett allemand ß",
+        "\\l": "ł polonais (\\L pour Ł)",
+        "\\i": "i sans point, base pour les accents",
+        "\\'e": "Accent aigu é",
+        "\\\"o": "Tréma ö",
+        "\\~n": "Tilde ñ",
+        "\\c{c}": "Cédille ç",
+        "\\v{s}": "Caron (háček) š",
+      },
+      faqHeading: "Questions fréquentes sur les lettres latines en LaTeX",
+      faq: [
+        {
+          question: "Comment taper des lettres latines spéciales comme æ, ø et ß en LaTeX ?",
+          answer:
+            "Chacune a une commande intégrée en mode texte : \\ae et \\AE pour æ et Æ, \\oe et \\OE pour œ et Œ, \\o et \\O pour ø et Ø, \\aa et \\AA pour å et Å, \\ss pour ß, et \\l et \\L pour ł et Ł. Depuis 2018, LaTeX lit aussi l\u2019UTF-8, vous pouvez donc taper ces lettres directement.",
+        },
+        {
+          question: "Comment utiliser ces caractères latins en mode mathématique ?",
+          answer:
+            "Ces commandes ne fonctionnent qu\u2019en mode texte : entourez-les de \\text{...} d\u2019amsmath, comme dans $x_{\\text{\\ae}}$. En mode mathématique, les lettres sans point ont leurs propres commandes, \\imath et \\jmath, utilisées pour les vecteurs accentués comme \\hat{\\imath}.",
+        },
+        {
+          question: "Pourquoi les lettres accentuées ne se copient-elles pas ou ne se coupent-elles pas correctement dans mon PDF ?",
+          answer:
+            "Avec le codage de police OT1 par défaut, LaTeX construit les lettres accentuées à partir de deux éléments. Ajoutez \\usepackage[T1]{fontenc} au préambule pour que é, ö et ñ deviennent des glyphes uniques, correctement coupés, recherchables et copiables.",
+        },
+      ],
+    },
+
+    "linear-algebra": {
+      title: "Symboles d\u2019algèbre linéaire en LaTeX : matrices, vecteurs, transposée et normes",
+      intro: (
+        <IntroP>
+          L&rsquo;algèbre linéaire en LaTeX commence par les environnements de matrices
+          d&rsquo;amsmath : <Cmd>{"pmatrix"}</Cmd> pour les parenthèses, <Cmd>{"bmatrix"}</Cmd> pour
+          les crochets et <Cmd>{"vmatrix"}</Cmd> pour un déterminant. Un vecteur s&rsquo;écrit{" "}
+          <Cmd>{"\\mathbf{v}"}</Cmd> ou <Cmd>{"\\vec{v}"}</Cmd>, la transposée{" "}
+          <Cmd>{"A^\\top"}</Cmd> (ou <Cmd>{"A^T"}</Cmd>), l&rsquo;inverse <Cmd>{"A^{-1}"}</Cmd>, la
+          transconjuguée <Cmd>{"A^\\dagger"}</Cmd> et la norme <Cmd>{"\\|x\\|"}</Cmd>. Le
+          déterminant <Cmd>{"\\det"}</Cmd> est intégré, tandis que la trace et le rang
+          s&rsquo;écrivent de préférence avec <Cmd>{"\\operatorname{tr}"}</Cmd> et{" "}
+          <Cmd>{"\\operatorname{rank}"}</Cmd>. Le tableau présente les symboles d&rsquo;algèbre
+          linéaire les plus utilisés, avec le paquet requis pour chacun ; la liste complète suit
+          plus bas.
+        </IntroP>
+      ),
+      quickRefHeading: "Aide-mémoire : matrices, vecteurs et opérations",
+      use: {
+        "\\begin{pmatrix} a & b \\\\ c & d \\end{pmatrix}": "Matrice entre parenthèses",
+        "\\begin{bmatrix} 1 & 0 \\\\ 0 & 1 \\end{bmatrix}": "Matrice entre crochets",
+        "\\begin{vmatrix} a & b \\\\ c & d \\end{vmatrix}": "Barres de déterminant",
+        "\\mathbf{v}": "Vecteur en gras",
+        "\\vec{v}": "Vecteur avec une flèche",
+        "A^\\top": "Transposée",
+        "A^{-1}": "Inverse",
+        "A^\\dagger": "Transconjuguée (adjointe)",
+        "\\det(A)": "Déterminant",
+        "\\operatorname{tr}(A)": "Trace",
+        "\\|x\\|_2": "Norme euclidienne",
+        "\\langle u, v \\rangle": "Produit scalaire",
+      },
+      faqHeading: "Questions fréquentes sur l\u2019algèbre linéaire en LaTeX",
+      faq: [
+        {
+          question: "Comment écrire une matrice en LaTeX ?",
+          answer:
+            "Chargez amsmath et utilisez un environnement de matrice en mode mathématique, en séparant les colonnes par & et les lignes par \\\\ : \\begin{pmatrix} a & b \\\\ c & d \\end{pmatrix}. pmatrix donne des parenthèses, bmatrix des crochets, Bmatrix des accolades, vmatrix des barres simples pour un déterminant et Vmatrix des doubles barres.",
+        },
+        {
+          question: "Comment écrire la transposée en LaTeX ?",
+          answer:
+            "Écrivez A^\\top, qui affiche un petit T, ou simplement A^T, ou encore A^\\intercal d\u2019amssymb. Choisissez une notation et tenez-vous-y ; A^\\top est courant dans les textes récents car on ne peut pas la confondre avec une variable T.",
+        },
+        {
+          question: "Comment écrire un vecteur en LaTeX ?",
+          answer:
+            "Utilisez \\mathbf{v} pour un vecteur en gras ou \\vec{v} pour un accent fléché ; \\boldsymbol{v} d\u2019amsmath fonctionne aussi pour les lettres grecques. Un vecteur colonne est une matrice à une colonne : \\begin{pmatrix} x \\\\ y \\end{pmatrix}.",
+        },
+      ],
+    },
+
+    "machine-learning": {
+      title: "Symbole du gradient en LaTeX et autres notations d\u2019apprentissage automatique",
+      intro: (
+        <IntroP>
+          Le symbole du gradient en LaTeX est <Cmd>\nabla</Cmd>, qui affiche &nabla; et ne
+          nécessite aucun paquet : écrivez <Cmd>\nabla f</Cmd> pour le gradient de <Cmd>f</Cmd>, ou{" "}
+          <Cmd>\nabla_\theta \mathcal{"{L}"}</Cmd> pour le gradient d&rsquo;une fonction de perte
+          par rapport aux paramètres. Les dérivées partielles utilisent <Cmd>\partial</Cmd>, les
+          prédictions s&rsquo;écrivent <Cmd>\hat{"{y}"}</Cmd>, l&rsquo;espérance{" "}
+          <Cmd>\mathbb{"{E}"}</Cmd> et l&rsquo;argmax <Cmd>\operatorname*{"{arg\\,max}"}</Cmd>. Le
+          tableau présente les commandes les plus utilisées pour écrire un gradient en LaTeX, avec
+          le paquet requis pour chacune ; la liste complète des symboles d&rsquo;apprentissage
+          automatique suit plus bas.
+        </IntroP>
+      ),
+      quickRefHeading: "Aide-mémoire : gradients, pertes et estimateurs",
+      use: {
+        "\\nabla": "Symbole du gradient (nabla)",
+        "\\nabla_\\theta \\mathcal{L}": "Gradient de la perte par rapport à θ",
+        "\\partial": "Dérivée partielle",
+        "\\frac{\\partial \\mathcal{L}}{\\partial w}": "Dérivée partielle de la perte",
+        "\\mathcal{L}": "Fonction de perte",
+        "\\theta": "Paramètres du modèle",
+        "\\hat{y}": "Prédiction, estimation",
+        "\\mathbb{E}": "Espérance",
+        "\\operatorname*{arg\\,max}_\\theta": "Argmax avec indice en dessous",
+        "\\operatorname*{arg\\,min}_\\theta": "Argmin avec indice en dessous",
+        "\\|w\\|_2": "Norme L2 des poids",
+        "\\odot": "Produit de Hadamard (terme à terme)",
+      },
+      faqHeading: "Questions fréquentes sur la notation d\u2019apprentissage automatique en LaTeX",
+      faq: [
+        {
+          question: "Comment écrire le symbole du gradient en LaTeX ?",
+          answer:
+            "Le symbole du gradient ∇ s\u2019écrit \\nabla ; il est intégré à LaTeX et s\u2019utilise en mode mathématique : $\\nabla f$. Placez la variable de dérivation en indice, comme dans \\nabla_\\theta \\mathcal{L}(\\theta), et écrivez le laplacien \\nabla^2 f. Aucun paquet n\u2019est nécessaire.",
+        },
+        {
+          question: "Comment écrire une dérivée partielle en LaTeX ?",
+          answer:
+            "Utilisez \\partial : \\frac{\\partial f}{\\partial x} pour une dérivée première et \\frac{\\partial^2 f}{\\partial x^2} pour une dérivée seconde. Une composante du gradient s\u2019écrit de la même façon, par exemple \\frac{\\partial \\mathcal{L}}{\\partial w_i}.",
+        },
+        {
+          question: "Comment écrire argmax et argmin en LaTeX ?",
+          answer:
+            "Avec amsmath, écrivez \\operatorname*{arg\\,max}_\\theta f(\\theta) ; l\u2019étoile place l\u2019indice en dessous en mode hors texte. Pour un usage répété, déclarez-le une fois dans le préambule avec \\DeclareMathOperator*{\\argmax}{arg\\,max}, puis écrivez \\argmax_\\theta. Le raccourci \\arg\\max_\\theta fonctionne aussi, mais l\u2019indice se place alors sous max seul et non sous l\u2019ensemble arg max.",
+        },
+        {
+          question: "Comment écrire l\u2019espérance et la fonction de perte en LaTeX ?",
+          answer:
+            "L\u2019espérance est le E ajouré \\mathbb{E}, qui nécessite \\usepackage{amssymb}, comme dans \\mathbb{E}_{x \\sim p}[f(x)]. La fonction de perte est généralement un L calligraphique, \\mathcal{L}, qui est intégré.",
+        },
+      ],
+    },
+
+    "modal-logic": {
+      title: "Symboles de logique modale en LaTeX : carré, losange et sémantique de Kripke",
+      intro: (
+        <IntroP>
+          Les deux symboles fondamentaux de la logique modale en LaTeX sont <Cmd>{"\\Box"}</Cmd>{" "}
+          pour la nécessité (□) et <Cmd>{"\\Diamond"}</Cmd> pour la possibilité (◇), tous deux
+          d&rsquo;amssymb ; <Cmd>{"\\Box p"}</Cmd> se lit « il est nécessaire que p » et{" "}
+          <Cmd>{"\\Diamond p"}</Cmd> « il est possible que p ». La sémantique de Kripke utilise{" "}
+          <Cmd>{"\\models"}</Cmd> (intégré) ou <Cmd>{"\\Vdash"}</Cmd>, comme dans{" "}
+          <Cmd>{"\\mathcal{M}, w \\models p"}</Cmd>, avec une relation d&rsquo;accessibilité{" "}
+          <Cmd>{"wRv"}</Cmd>. La logique épistémique note la connaissance <Cmd>{"K_a p"}</Cmd>, et la
+          logique temporelle ajoute <Cmd>{"\\bigcirc p"}</Cmd> pour « au prochain instant » et{" "}
+          <Cmd>{"p \\mathbin{\\mathcal{U}} q"}</Cmd> pour « jusqu&rsquo;à ». Le tableau présente les
+          symboles de logique modale les plus utilisés, avec le paquet requis pour chacun ; la liste
+          complète suit plus bas.
+        </IntroP>
+      ),
+      quickRefHeading: "Aide-mémoire : opérateurs modaux, épistémiques et temporels",
+      use: {
+        "\\Box p": "Nécessairement p",
+        "\\Diamond p": "Possiblement p",
+        "\\Box(p \\to q)": "Nécessité d\u2019une implication (axiome K)",
+        "\\neg\\Box\\neg p": "Non nécessairement non p, équivaut à \\Diamond p",
+        "\\mathcal{M}, w \\models p": "p est vrai dans le monde w",
+        "w \\Vdash p": "Forçage, satisfaction",
+        "wRv": "Relation d\u2019accessibilité",
+        "K_a p": "L\u2019agent a sait que p",
+        "B_a p": "L\u2019agent a croit que p",
+        "C_G p": "Connaissance commune dans le groupe G",
+        "\\bigcirc p": "Au prochain instant (logique temporelle)",
+        "p \\mathbin{\\mathcal{U}} q": "Jusqu\u2019à (logique temporelle)",
+      },
+      faqHeading: "Questions fréquentes sur la logique modale en LaTeX",
+      faq: [
+        {
+          question: "Comment écrire les symboles carré et losange en LaTeX ?",
+          answer:
+            "Chargez \\usepackage{amssymb} et écrivez \\Box p pour la nécessité et \\Diamond p pour la possibilité. Le paquet latexsym fournit les deux mêmes commandes. Attention : la commande intégrée \\diamond est un petit opérateur binaire, pas le losange modal.",
+        },
+        {
+          question: "Comment écrire le symbole de satisfaction (double taquet) en LaTeX ?",
+          answer:
+            "\\models est intégré et affiche ⊨, comme dans $\\mathcal{M}, w \\models \\varphi$. amssymb ajoute \\vDash (⊨), \\Vdash (⊩) pour le forçage et \\nvDash pour « ne satisfait pas » ; \\vdash (⊢), pour la prouvabilité, est intégré.",
+        },
+        {
+          question: "Comment écrire « jusqu\u2019à » et « au prochain instant » en logique temporelle en LaTeX ?",
+          answer:
+            "Utilisez \\bigcirc p pour « au prochain instant », et faites du U calligraphique un opérateur binaire pour « jusqu\u2019à » : p \\mathbin{\\mathcal{U}} q, qui donne l\u2019espacement correct. « Toujours » et « un jour » s\u2019écrivent généralement \\Box p et \\Diamond p, ou \\mathbf{G} p et \\mathbf{F} p.",
+        },
+      ],
+    },
+
+    "number-theory": {
+      title: "Symboles de théorie des nombres en LaTeX",
+      intro: (
+        <IntroP>
+          Le modulo et la valeur absolue s&rsquo;écrivent de plusieurs façons en LaTeX :{" "}
+          <Cmd>\bmod</Cmd> pour un reste, <Cmd>\pmod{"{n}"}</Cmd> après une congruence, et{" "}
+          <Cmd>\lvert z \rvert</Cmd> pour le module (valeur absolue) d&rsquo;un nombre. Le tableau
+          présente les huit commandes les plus utilisées, avec le paquet requis pour chacune ; la
+          liste complète des symboles de théorie des nombres suit plus bas.
+        </IntroP>
+      ),
+      quickRefHeading: "Aide-mémoire : congruences, divisibilité et PGCD",
+      use: {
+        "a \\bmod n": "Modulo comme opération binaire",
+        "a \\equiv b \\pmod{n}": "Congruence avec (mod n)",
+        "a \\equiv b \\mod{n}": "Congruence sans parenthèses",
+        "\\lvert z \\rvert": "Module / valeur absolue",
+        "a \\mid b": "a divise b",
+        "a \\nmid b": "a ne divise pas b",
+        "\\gcd(a, b)": "Plus grand commun diviseur (PGCD)",
+        "\\operatorname{lcm}(a, b)": "Plus petit commun multiple (PPCM)",
+      },
+      faqHeading: "Questions fréquentes sur la théorie des nombres en LaTeX",
+      faq: [
+        {
+          question: "Comment écrire mod (modulo) en LaTeX ?",
+          answer:
+            "Utilisez \\bmod pour l\u2019opération binaire, comme dans a \\bmod n, et \\pmod{n} après une congruence : a \\equiv b \\pmod{n} ajoute les parenthèses et l\u2019espacement à votre place. amsmath fournit aussi \\mod{n} (sans parenthèses) et \\pod{n} (parenthèses sans le mot mod).",
+        },
+        {
+          question: "Comment écrire le module (valeur absolue) en LaTeX ?",
+          answer:
+            "Écrivez \\lvert z \\rvert avec amsmath, ou \\left| z \\right| quand les barres doivent grandir avec un contenu haut. Pour un usage fréquent, mathtools permet de déclarer \\DeclarePairedDelimiter{\\abs}{\\lvert}{\\rvert}, puis d\u2019écrire \\abs{z}.",
+        },
+        {
+          question: "Comment écrire « divise » en LaTeX ?",
+          answer:
+            "Utilisez \\mid, comme dans a \\mid b, que LaTeX espace comme une relation ; un simple | est trop serré. La négation \\nmid (a ne divise pas b) nécessite \\usepackage{amssymb}. En français, le PGCD s\u2019écrit souvent \\operatorname{pgcd}(a, b), tandis que \\gcd est intégré.",
+        },
+      ],
+    },
+
+    operators: {
+      title: "Opérateurs en LaTeX : plus cerclé, fois, point et grands opérateurs",
+      intro: (
+        <IntroP>
+          Les opérateurs de LaTeX se répartissent en deux groupes. Les opérateurs binaires se
+          placent entre deux termes avec un espacement moyen : <Cmd>{"\\times"}</Cmd>,{" "}
+          <Cmd>{"\\cdot"}</Cmd>, <Cmd>{"\\ast"}</Cmd>, <Cmd>{"\\circ"}</Cmd>, et la famille des
+          symboles cerclés <Cmd>{"\\oplus"}</Cmd> (plus cerclé, ⊕), <Cmd>{"\\otimes"}</Cmd> (⊗),{" "}
+          <Cmd>{"\\odot"}</Cmd> (⊙) et <Cmd>{"\\ominus"}</Cmd>. Les grands opérateurs prennent des
+          bornes et grandissent en mode hors texte : <Cmd>{"\\sum"}</Cmd>, <Cmd>{"\\prod"}</Cmd>,{" "}
+          <Cmd>{"\\bigoplus"}</Cmd>, <Cmd>{"\\bigotimes"}</Cmd> et <Cmd>{"\\bigcup"}</Cmd>. Tous
+          sont intégrés. Les opérateurs nommés comme <Cmd>{"\\max"}</Cmd>, <Cmd>{"\\sin"}</Cmd> et{" "}
+          <Cmd>{"\\det"}</Cmd> sont prédéfinis, et vous pouvez déclarer les vôtres avec{" "}
+          <Cmd>{"\\DeclareMathOperator"}</Cmd> d&rsquo;amsmath. Le tableau présente les opérateurs
+          LaTeX les plus utilisés ; la liste complète suit plus bas.
+        </IntroP>
+      ),
+      quickRefHeading: "Aide-mémoire : opérateurs binaires et grands opérateurs",
+      use: {
+        "\\oplus": "Plus cerclé : somme directe, XOR",
+        "\\otimes": "Fois cerclé : produit tensoriel",
+        "\\odot": "Point cerclé : produit de Hadamard",
+        "\\ominus": "Moins cerclé",
+        "\\oslash": "Barre oblique cerclée",
+        "\\times": "Produit vectoriel, multiplication",
+        "\\cdot": "Point centré",
+        "\\ast": "Opérateur astérisque, convolution",
+        "\\circ": "Composition",
+        "\\star": "Opérateur étoile",
+        "\\bigoplus_{i=1}^{n} V_i": "Somme directe indexée",
+        "\\bigotimes_{i=1}^{n} V_i": "Produit tensoriel indexé",
+      },
+      faqHeading: "Questions fréquentes sur les opérateurs en LaTeX",
+      faq: [
+        {
+          question: "Comment écrire un plus cerclé en LaTeX ?",
+          answer:
+            "Utilisez \\oplus pour ⊕, le plus cerclé employé pour les sommes directes et le XOR. C\u2019est un opérateur binaire intégré : $A \\oplus B$. Pour une somme directe de nombreux termes, utilisez le grand opérateur \\bigoplus_{i=1}^{n} V_i.",
+        },
+        {
+          question: "Comment écrire l\u2019opérateur point cerclé (odot) en LaTeX ?",
+          answer:
+            "\\odot affiche ⊙ et sert pour le produit de Hadamard (terme à terme), $A \\odot B$. La grande version est \\bigodot. Les deux sont intégrés.",
+        },
+        {
+          question: "Comment définir un nouvel opérateur en LaTeX ?",
+          answer:
+            "Chargez amsmath et écrivez \\DeclareMathOperator{\\Tr}{Tr} dans le préambule ; \\Tr(A) affiche alors Tr en romain droit avec l\u2019espacement d\u2019un opérateur. Utilisez \\DeclareMathOperator* lorsque les bornes doivent se placer en dessous, comme pour \\argmax. Pour un usage ponctuel, \\operatorname{Tr} fait la même chose directement dans la formule.",
+        },
+      ],
+    },
+
+    optimization: {
+      title: "Symboles d\u2019optimisation en LaTeX : argmax, argmin et contraintes",
+      intro: (
+        <IntroP>
+          En LaTeX, la notation de l&rsquo;optimisation s&rsquo;articule autour de{" "}
+          <Cmd>{"\\min"}</Cmd>, <Cmd>{"\\max"}</Cmd> et de leurs versions arg.{" "}
+          <Cmd>{"\\min_{x}"}</Cmd> et <Cmd>{"\\max_{x}"}</Cmd> sont intégrés et placent la variable
+          sous l&rsquo;opérateur en mode hors texte, mais il n&rsquo;existe pas de{" "}
+          <Cmd>{"\\argmax"}</Cmd> intégré : écrivez <Cmd>{"\\operatorname*{arg\\,max}_x"}</Cmd> ou
+          déclarez <Cmd>{"\\argmax"}</Cmd> une fois avec <Cmd>{"\\DeclareMathOperator*"}</Cmd>{" "}
+          d&rsquo;amsmath. Les contraintes suivent <Cmd>{"\\text{s.t.}"}</Cmd> (« sous contraintes »),
+          le lagrangien s&rsquo;écrit <Cmd>{"\\mathcal{L}(x, \\lambda)"}</Cmd>, l&rsquo;optimum{" "}
+          <Cmd>{"x^*"}</Cmd>, et les contraintes semi-définies utilisent <Cmd>{"\\succeq 0"}</Cmd>.
+          Le tableau présente les symboles d&rsquo;optimisation les plus utilisés, avec le paquet
+          requis pour chacun ; la liste complète suit plus bas.
+        </IntroP>
+      ),
+      quickRefHeading: "Aide-mémoire : objectifs, contraintes et optimalité",
+      use: {
+        "\\operatorname*{arg\\,max}_{x} f(x)": "Argmax avec la variable en dessous",
+        "\\operatorname*{arg\\,min}_{x} f(x)": "Argmin avec la variable en dessous",
+        "\\min_{x \\in \\mathcal{X}} f(x)": "Minimiser sur un ensemble",
+        "\\max_{x} f(x)": "Maximiser",
+        "\\text{s.t.}": "Sous contraintes (abréviation anglaise s.t.)",
+        "g_i(x) \\leq 0": "Contrainte d\u2019inégalité",
+        "h_j(x) = 0": "Contrainte d\u2019égalité",
+        "\\mathcal{L}(x, \\lambda)": "Lagrangien",
+        "\\nabla f(x^*) = 0": "Condition d\u2019optimalité du premier ordre",
+        "\\nabla^2 f(x)": "Matrice hessienne",
+        "X \\succeq 0": "Semi-définie positive",
+        "\\lambda_i \\geq 0": "Variables duales (multiplicateurs)",
+      },
+      faqHeading: "Questions fréquentes sur l\u2019optimisation en LaTeX",
+      faq: [
+        {
+          question: "Comment écrire argmax en LaTeX ?",
+          answer:
+            "Écrivez \\operatorname*{arg\\,max}_{x} f(x) avec amsmath ; l\u2019étoile place x sous l\u2019opérateur en mode hors texte. Pour le réutiliser, ajoutez \\DeclareMathOperator*{\\argmax}{arg\\,max} au préambule et écrivez \\argmax_x f(x). \\arg\\max affiche aussi arg max, mais son indice ne s\u2019attache qu\u2019à max.",
+        },
+        {
+          question: "Comment écrire un problème d\u2019optimisation sous contraintes en LaTeX ?",
+          answer:
+            "Placez l\u2019objectif et les contraintes dans un environnement aligned : \\min_{x} \\quad & f(x) \\\\ \\text{s.c.} \\quad & g(x) \\leq 0. Le paquet optidef fournit les environnements mini et maxi, qui alignent l\u2019objectif et les contraintes pour vous.",
+        },
+        {
+          question: "Comment écrire « sous contraintes » en LaTeX ?",
+          answer:
+            "Utilisez \\text{s.c.} ou \\text{sous contraintes} (\\text{s.t.} dans un texte en anglais) avec amsmath, pour que les mots soient composés en romain droit avec un espacement normal. Écrire s.c. directement en mode mathématique affiche les variables italiques s et c.",
+        },
+      ],
+    },
   },
 };
 

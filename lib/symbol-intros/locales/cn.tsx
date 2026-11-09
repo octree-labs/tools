@@ -839,6 +839,410 @@ const cn: IntroLocale = {
         },
       ],
     },
+    geometry: {
+      title: "LaTeX 中的几何符号：垂直、平行、角与三角形",
+      intro: (
+        <IntroP>
+          LaTeX 中的几何符号大多是内置的。垂直（也是正交符号）是 <Cmd>{"\\perp"}</Cmd>（⊥），平行是{" "}
+          <Cmd>{"\\parallel"}</Cmd>（∥），角是 <Cmd>{"\\angle ABC"}</Cmd>，三角形是 <Cmd>{"\\triangle ABC"}</Cmd>。全等是{" "}
+          <Cmd>{"\\cong"}</Cmd>，相似是 <Cmd>{"\\sim"}</Cmd>。线段上方加横线，即 <Cmd>{"\\overline{AB}"}</Cmd>；射线或向量上方加箭头，即{" "}
+          <Cmd>{"\\overrightarrow{AB}"}</Cmd>；度数符号是上标圆圈，即 <Cmd>{"90^\\circ"}</Cmd>。只有少数几个额外符号，如{" "}
+          <Cmd>{"\\measuredangle"}</Cmd> 和 <Cmd>{"\\nparallel"}</Cmd>，需要 amssymb。下表列出了最常用的几何符号及各自所需的宏包；完整列表见页面下方。
+        </IntroP>
+      ),
+      quickRefHeading: "速查表：最常用的几何符号",
+      use: {
+        "\\perp": "垂直、正交",
+        "\\parallel": "平行",
+        "\\nparallel": "不平行",
+        "\\angle ABC": "角",
+        "\\measuredangle ABC": "有向角（角的度量）",
+        "\\triangle ABC": "三角形",
+        "\\cong": "全等",
+        "\\sim": "相似",
+        "\\overline{AB}": "线段",
+        "\\overrightarrow{AB}": "射线或向量",
+        "\\overleftrightarrow{AB}": "过 A、B 两点的直线",
+        "90^\\circ": "度数符号",
+      },
+      faqHeading: "LaTeX 几何符号常见问题",
+      faq: [
+        {
+          question: "如何在 LaTeX 中输入垂直或正交符号？",
+          answer:
+            "在数学模式中使用 \\perp：$AB \\perp CD$ 输出 AB ⊥ CD。正交向量 u \\perp v 和正交补 V^\\perp 也用同一个命令。它是内置命令，不需要任何宏包。",
+        },
+        {
+          question: "如何在 LaTeX 中输入三角形符号？",
+          answer:
+            "\\triangle 输出 △，例如 $\\triangle ABC$，不需要宏包。amssymb 还提供了较小的 \\vartriangle 和实心的 \\blacktriangle。",
+        },
+        {
+          question: "如何在 LaTeX 中输入度数符号？",
+          answer:
+            "在数学模式中写上标圆圈：$90^\\circ$。在文本中，\\textdegree 输出 °；siunitx 宏包的 \\ang{45} 或 \\qty{90}{\\degree} 能保证输出格式一致。",
+        },
+      ],
+    },
+    "graph-theory": {
+      title: "LaTeX 中的图论符号：顶点、边、度与着色",
+      intro: (
+        <IntroP>
+          LaTeX 中的图论记号大多是标准字母和内置运算符。图写作 <Cmd>{"G = (V, E)"}</Cmd>，相邻关系是{" "}
+          <Cmd>{"u \\sim v"}</Cmd>，顶点的度是 <Cmd>{"\\deg(v)"}</Cmd>（<Cmd>{"\\deg"}</Cmd> 运算符是内置的），完全图和完全二部图分别是{" "}
+          <Cmd>{"K_n"}</Cmd> 和 <Cmd>{"K_{m,n}"}</Cmd>。图的不变量使用希腊字母：色数 <Cmd>{"\\chi(G)"}</Cmd>、团数{" "}
+          <Cmd>{"\\omega(G)"}</Cmd>、独立数 <Cmd>{"\\alpha(G)"}</Cmd>，以及最大度和最小度 <Cmd>{"\\Delta(G)"}</Cmd> 和{" "}
+          <Cmd>{"\\delta(G)"}</Cmd>。要画出图本身，请使用 TikZ。下表列出了最常用的图论符号，它们全部是内置命令；完整列表见页面下方。
+        </IntroP>
+      ),
+      quickRefHeading: "速查表：最常用的图论符号",
+      use: {
+        "G = (V, E)": "顶点集为 V、边集为 E 的图",
+        "u \\sim v": "u 与 v 相邻",
+        "\\deg(v)": "顶点的度",
+        "\\deg^{+}(v)": "出度（入度用 \\deg^{-}）",
+        "N(v)": "v 的邻域",
+        "K_n": "完全图",
+        "K_{m,n}": "完全二部图",
+        "\\chi(G)": "色数",
+        "\\omega(G)": "团数",
+        "\\alpha(G)": "独立数",
+        "\\Delta(G)": "最大度（最小度用 \\delta(G)）",
+        "G \\cong H": "同构的图",
+      },
+      faqHeading: "LaTeX 图论符号常见问题",
+      faq: [
+        {
+          question: "如何在 LaTeX 中输入顶点的度？",
+          answer:
+            "使用内置运算符 \\deg，它会以正确的间距输出直立体的 deg：$\\deg(v)$。对于有向图，\\deg^{+}(v) 和 \\deg^{-}(v) 分别表示出度和入度；握手定理写作 \\sum_{v \\in V} \\deg(v) = 2|E|。",
+        },
+        {
+          question: "如何在 LaTeX 中画图？",
+          answer:
+            "加载 \\usepackage{tikz}，用 \\node[circle,draw] (a) at (0,0) {a}; 放置顶点，再用 \\draw (a) -- (b); 把它们连接起来。对于较大的图，TikZ 的 graphs 库和 tkz-graph 宏包可以简化语法。",
+        },
+        {
+          question: "如何在 LaTeX 中输入色数？",
+          answer:
+            "色数写作 \\chi(G)，即希腊字母 chi。边色数常写作 \\chi'(G)，团数写作 \\omega(G)，独立数写作 \\alpha(G)。这些都是内置命令。",
+        },
+      ],
+    },
+    latin: {
+      title: "LaTeX 中的拉丁字母：特殊字母与重音符号",
+      intro: (
+        <IntroP>
+          A 到 Z 之外的拉丁字母，例如连字 æ 和 œ、北欧语言的 ø 和 å、德语的 ß 以及波兰语的 ł，都有对应的简短 LaTeX 命令：
+          <Cmd>{"\\ae"}</Cmd>、<Cmd>{"\\oe"}</Cmd>、<Cmd>{"\\o"}</Cmd>、<Cmd>{"\\aa"}</Cmd>、<Cmd>{"\\ss"}</Cmd> 和{" "}
+          <Cmd>{"\\l"}</Cmd>，大写形式如 <Cmd>{"\\AE"}</Cmd> 和 <Cmd>{"\\O"}</Cmd>。带重音的字母由重音命令加基础字母组成，例如{" "}
+          <Cmd>{"\\'e"}</Cmd> 得到 é，<Cmd>{"\\~n"}</Cmd> 得到 ñ。这些命令都是内置的，用于文本模式。下表列出了最常用的拉丁字母符号；完整列表见页面下方。
+        </IntroP>
+      ),
+      quickRefHeading: "速查表：最常用的特殊字母与重音",
+      use: {
+        "\\ae": "连字 æ（\\AE 得到 Æ）",
+        "\\oe": "连字 œ（\\OE 得到 Œ）",
+        "\\o": "带斜线的 o，即 ø（\\O 得到 Ø）",
+        "\\aa": "带圆圈的 a，即 å（\\AA 得到 Å）",
+        "\\ss": "德语 ß",
+        "\\l": "波兰语 ł（\\L 得到 Ł）",
+        "\\i": "无点 i，用作重音的基础字母",
+        "\\'e": "尖音符 é",
+        "\\\"o": "分音符（变音）ö",
+        "\\~n": "波浪符 ñ",
+        "\\c{c}": "软音符 ç",
+        "\\v{s}": "抑扬符（háček）š",
+      },
+      faqHeading: "LaTeX 拉丁字母常见问题",
+      faq: [
+        {
+          question: "如何在 LaTeX 中输入 æ、ø、ß 等特殊拉丁字母？",
+          answer:
+            "每个字母都有内置的文本模式命令：\\ae 和 \\AE 对应 æ 和 Æ，\\oe 和 \\OE 对应 œ 和 Œ，\\o 和 \\O 对应 ø 和 Ø，\\aa 和 \\AA 对应 å 和 Å，\\ss 对应 ß，\\l 和 \\L 对应 ł 和 Ł。自 2018 年起 LaTeX 也默认读取 UTF-8，因此可以直接输入这些字母。",
+        },
+        {
+          question: "如何在数学模式中使用这些拉丁字母？",
+          answer:
+            "这些命令只能用于文本模式，所以要用 amsmath 的 \\text{...} 包裹，例如 $x_{\\text{\\ae}}$。在数学模式中，无点字母有专门的命令 \\imath 和 \\jmath，用于带重音的向量，例如 \\hat{\\imath}。",
+        },
+        {
+          question: "为什么 PDF 中带重音的字母无法正确复制或断词？",
+          answer:
+            "在默认的 OT1 字体编码下，LaTeX 用两个部分拼出带重音的字母。在导言区加入 \\usepackage[T1]{fontenc}，é、ö 和 ñ 就会变成单个字形，能够正确断词、搜索和复制。",
+        },
+      ],
+    },
+    "linear-algebra": {
+      title: "LaTeX 中的线性代数符号：矩阵、向量、转置与范数",
+      intro: (
+        <IntroP>
+          在 LaTeX 中书写线性代数，首先要用到 amsmath 的矩阵环境：<Cmd>{"pmatrix"}</Cmd> 用圆括号，<Cmd>{"bmatrix"}</Cmd> 用方括号，
+          <Cmd>{"vmatrix"}</Cmd> 用于行列式。向量写作 <Cmd>{"\\mathbf{v}"}</Cmd> 或 <Cmd>{"\\vec{v}"}</Cmd>，转置是{" "}
+          <Cmd>{"A^\\top"}</Cmd>（或 <Cmd>{"A^T"}</Cmd>），逆矩阵是 <Cmd>{"A^{-1}"}</Cmd>，共轭转置是{" "}
+          <Cmd>{"A^\\dagger"}</Cmd>，范数是 <Cmd>{"\\|x\\|"}</Cmd>。行列式 <Cmd>{"\\det"}</Cmd> 是内置的，而迹和秩最好写作{" "}
+          <Cmd>{"\\operatorname{tr}"}</Cmd> 和 <Cmd>{"\\operatorname{rank}"}</Cmd>。下表列出了最常用的线性代数符号及各自所需的宏包；完整列表见页面下方。
+        </IntroP>
+      ),
+      quickRefHeading: "速查表：矩阵、向量与运算",
+      use: {
+        "\\begin{pmatrix} a & b \\\\ c & d \\end{pmatrix}": "圆括号矩阵",
+        "\\begin{bmatrix} 1 & 0 \\\\ 0 & 1 \\end{bmatrix}": "方括号矩阵",
+        "\\begin{vmatrix} a & b \\\\ c & d \\end{vmatrix}": "行列式竖线",
+        "\\mathbf{v}": "粗体向量",
+        "\\vec{v}": "带箭头的向量",
+        "A^\\top": "转置",
+        "A^{-1}": "逆矩阵",
+        "A^\\dagger": "共轭转置",
+        "\\det(A)": "行列式",
+        "\\operatorname{tr}(A)": "迹",
+        "\\|x\\|_2": "欧几里得范数",
+        "\\langle u, v \\rangle": "内积",
+      },
+      faqHeading: "LaTeX 线性代数符号常见问题",
+      faq: [
+        {
+          question: "如何在 LaTeX 中输入矩阵？",
+          answer:
+            "加载 amsmath，在数学模式中使用矩阵环境，用 & 分隔列、用 \\\\ 分隔行：\\begin{pmatrix} a & b \\\\ c & d \\end{pmatrix}。pmatrix 输出圆括号，bmatrix 输出方括号，Bmatrix 输出花括号，vmatrix 输出表示行列式的单竖线，Vmatrix 输出双竖线。",
+        },
+        {
+          question: "如何在 LaTeX 中输入转置？",
+          answer:
+            "写 A^\\top，它会输出一个小号的 T；也可以直接写 A^T，或使用 amssymb 的 A^\\intercal。选定一种后请保持一致；A^\\top 在现代教材中很常见，因为它不会与变量 T 混淆。",
+        },
+        {
+          question: "如何在 LaTeX 中输入向量？",
+          answer:
+            "粗体向量用 \\mathbf{v}，带箭头的向量用 \\vec{v}；amsmath 的 \\boldsymbol{v} 也适用于希腊字母。列向量就是只有一列的矩阵：\\begin{pmatrix} x \\\\ y \\end{pmatrix}。",
+        },
+      ],
+    },
+    "machine-learning": {
+      title: "LaTeX 中的梯度符号及其他机器学习记号",
+      intro: (
+        <IntroP>
+          LaTeX 中的梯度符号是 <Cmd>{"\\nabla"}</Cmd>，输出 &nabla;，不需要宏包：<Cmd>{"\\nabla f"}</Cmd> 表示{" "}
+          <Cmd>{"f"}</Cmd> 的梯度，<Cmd>{"\\nabla_\\theta \\mathcal{L}"}</Cmd> 表示损失函数对参数的梯度。偏导数使用{" "}
+          <Cmd>{"\\partial"}</Cmd>，预测值是 <Cmd>{"\\hat{y}"}</Cmd>，期望是 <Cmd>{"\\mathbb{E}"}</Cmd>，argmax 写作{" "}
+          <Cmd>{"\\operatorname*{arg\\,max}"}</Cmd>。下表列出了在 LaTeX 中书写梯度时最常用的命令及各自所需的宏包；完整的机器学习符号列表见页面下方。
+        </IntroP>
+      ),
+      quickRefHeading: "速查表：梯度、损失与期望",
+      use: {
+        "\\nabla": "梯度符号（nabla 算子）",
+        "\\nabla_\\theta \\mathcal{L}": "损失函数对 θ 的梯度",
+        "\\partial": "偏导数",
+        "\\frac{\\partial \\mathcal{L}}{\\partial w}": "损失函数的偏导数",
+        "\\mathcal{L}": "损失函数",
+        "\\theta": "模型参数",
+        "\\hat{y}": "预测值、估计值",
+        "\\mathbb{E}": "期望",
+        "\\operatorname*{arg\\,max}_\\theta": "下方带变量的 argmax",
+        "\\operatorname*{arg\\,min}_\\theta": "下方带变量的 argmin",
+        "\\|w\\|_2": "权重的 L2 范数",
+        "\\odot": "哈达玛积（逐元素乘积）",
+      },
+      faqHeading: "LaTeX 机器学习符号常见问题",
+      faq: [
+        {
+          question: "如何在 LaTeX 中输入梯度符号？",
+          answer:
+            "梯度符号 ∇ 是 \\nabla，它是 LaTeX 内置命令，用于数学模式：$\\nabla f$。把求导所针对的变量写成下标，例如 \\nabla_\\theta \\mathcal{L}(\\theta)；拉普拉斯算子写作 \\nabla^2 f。不需要任何宏包。",
+        },
+        {
+          question: "如何在 LaTeX 中输入偏导数？",
+          answer:
+            "使用 \\partial：一阶偏导数写 \\frac{\\partial f}{\\partial x}，二阶偏导数写 \\frac{\\partial^2 f}{\\partial x^2}。梯度的单个分量也用同样的写法，例如 \\frac{\\partial \\mathcal{L}}{\\partial w_i}。",
+        },
+        {
+          question: "如何在 LaTeX 中输入 argmax 和 argmin？",
+          answer:
+            "借助 amsmath 写 \\operatorname*{arg\\,max}_\\theta f(\\theta)；星号会让下标在独立公式中位于运算符正下方。如需反复使用，可在导言区用 \\DeclareMathOperator*{\\argmax}{arg\\,max} 声明一次，之后写 \\argmax_\\theta。简写 \\arg\\max_\\theta 也能用，但下标只会位于 max 下方，而不是整个 arg max 下方。",
+        },
+        {
+          question: "如何在 LaTeX 中输入期望和损失函数？",
+          answer:
+            "期望用黑板粗体 \\mathbb{E}，需要 \\usepackage{amssymb}，例如 \\mathbb{E}_{x \\sim p}[f(x)]。损失函数通常用花体 L，即内置的 \\mathcal{L}。",
+        },
+      ],
+    },
+    "modal-logic": {
+      title: "LaTeX 中的模态逻辑符号：方框、菱形与克里普克语义",
+      intro: (
+        <IntroP>
+          LaTeX 中两个核心的模态逻辑符号是表示必然的 <Cmd>{"\\Box"}</Cmd>（□）和表示可能的{" "}
+          <Cmd>{"\\Diamond"}</Cmd>（◇），二者都来自 amssymb；<Cmd>{"\\Box p"}</Cmd> 读作“p 是必然的”，
+          <Cmd>{"\\Diamond p"}</Cmd> 读作“p 是可能的”。克里普克语义使用 <Cmd>{"\\models"}</Cmd>（内置）或{" "}
+          <Cmd>{"\\Vdash"}</Cmd>，例如 <Cmd>{"\\mathcal{M}, w \\models p"}</Cmd>，可达关系写作 <Cmd>{"wRv"}</Cmd>。认知逻辑把知识写作{" "}
+          <Cmd>{"K_a p"}</Cmd>，时态逻辑还用 <Cmd>{"\\bigcirc p"}</Cmd> 表示“下一时刻”，用{" "}
+          <Cmd>{"p \\mathbin{\\mathcal{U}} q"}</Cmd> 表示“直到”。下表列出了最常用的模态逻辑符号及各自所需的宏包；完整列表见页面下方。
+        </IntroP>
+      ),
+      quickRefHeading: "速查表：模态、认知与时态算子",
+      use: {
+        "\\Box p": "必然 p",
+        "\\Diamond p": "可能 p",
+        "\\Box(p \\to q)": "蕴含式的必然性（公理 K）",
+        "\\neg\\Box\\neg p": "并非必然非 p，等同于 \\Diamond p",
+        "\\mathcal{M}, w \\models p": "p 在世界 w 中为真",
+        "w \\Vdash p": "力迫、满足",
+        "wRv": "可达关系",
+        "K_a p": "主体 a 知道 p",
+        "B_a p": "主体 a 相信 p",
+        "C_G p": "群体 G 中的公共知识",
+        "\\bigcirc p": "下一时刻（时态逻辑）",
+        "p \\mathbin{\\mathcal{U}} q": "直到（时态逻辑）",
+      },
+      faqHeading: "LaTeX 模态逻辑符号常见问题",
+      faq: [
+        {
+          question: "如何在 LaTeX 中输入方框和菱形符号？",
+          answer:
+            "加载 \\usepackage{amssymb}，必然性写 \\Box p，可能性写 \\Diamond p。latexsym 宏包也提供这两个命令。注意内置的 \\diamond 是一个小型二元运算符，并不是模态菱形。",
+        },
+        {
+          question: "如何在 LaTeX 中输入满足（双十字转门）符号？",
+          answer:
+            "\\models 是内置命令，输出 ⊨，例如 $\\mathcal{M}, w \\models \\varphi$。amssymb 另外提供 \\vDash（⊨）、表示力迫的 \\Vdash（⊩）以及表示“不满足”的 \\nvDash；表示可证的 \\vdash（⊢）是内置的。",
+        },
+        {
+          question: "如何在 LaTeX 中输入时态逻辑的“直到”和“下一时刻”？",
+          answer:
+            "“下一时刻”用 \\bigcirc p；“直到”则把花体 U 包装成二元运算符：p \\mathbin{\\mathcal{U}} q，这样间距才正确。“总是”和“最终”通常写作 \\Box p 和 \\Diamond p，或 \\mathbf{G} p 和 \\mathbf{F} p。",
+        },
+      ],
+    },
+    "number-theory": {
+      title: "LaTeX 中的数论符号",
+      intro: (
+        <IntroP>
+          LaTeX 中的取模和模有几种写法：<Cmd>{"\\bmod"}</Cmd> 表示求余，<Cmd>{"\\pmod{n}"}</Cmd> 用在同余式之后，
+          <Cmd>{"\\lvert z \\rvert"}</Cmd> 表示数的模（绝对值）。下表列出了最常用的 8 个命令及各自所需的宏包；完整的数论符号列表见页面下方。
+        </IntroP>
+      ),
+      quickRefHeading: "速查表：取模、整除与最大公约数",
+      use: {
+        "a \\bmod n": "作为二元运算的取模",
+        "a \\equiv b \\pmod{n}": "带 (mod n) 的同余",
+        "a \\equiv b \\mod{n}": "不带圆括号的同余",
+        "\\lvert z \\rvert": "模 / 绝对值",
+        "a \\mid b": "a 整除 b",
+        "a \\nmid b": "a 不整除 b",
+        "\\gcd(a, b)": "最大公约数",
+        "\\operatorname{lcm}(a, b)": "最小公倍数",
+      },
+      faqHeading: "LaTeX 数论符号常见问题",
+      faq: [
+        {
+          question: "如何在 LaTeX 中输入取模 mod？",
+          answer:
+            "二元运算用 \\bmod，例如 a \\bmod n；同余式之后用 \\pmod{n}：a \\equiv b \\pmod{n} 会自动加上圆括号和间距。amsmath 还提供 \\mod{n}（不带圆括号）和 \\pod{n}（只有圆括号，没有 mod 字样）。",
+        },
+        {
+          question: "如何在 LaTeX 中输入模（绝对值）？",
+          answer:
+            "借助 amsmath 写 \\lvert z \\rvert；若竖线需要随较高的内容伸缩，则写 \\left| z \\right|。如需频繁使用，可以用 mathtools 声明 \\DeclarePairedDelimiter{\\abs}{\\lvert}{\\rvert}，然后写 \\abs{z}。",
+        },
+        {
+          question: "如何在 LaTeX 中输入整除符号？",
+          answer:
+            "使用 \\mid，例如 a \\mid b，LaTeX 会按关系符设置间距；直接输入 | 会显得太紧。其否定形式 \\nmid（a 不整除 b）需要 \\usepackage{amssymb}。",
+        },
+      ],
+    },
+    operators: {
+      title: "LaTeX 运算符：圆圈加号、乘号、点乘与大型运算符",
+      intro: (
+        <IntroP>
+          LaTeX 运算符分为两类。二元运算符位于两项之间，带有中等间距：<Cmd>{"\\times"}</Cmd>、<Cmd>{"\\cdot"}</Cmd>、
+          <Cmd>{"\\ast"}</Cmd>、<Cmd>{"\\circ"}</Cmd>，以及带圆圈的一族：<Cmd>{"\\oplus"}</Cmd>（圆圈加号，⊕）、
+          <Cmd>{"\\otimes"}</Cmd>（⊗）、<Cmd>{"\\odot"}</Cmd>（⊙）和 <Cmd>{"\\ominus"}</Cmd>。大型运算符可以带上下限，并在独立公式中变大：
+          <Cmd>{"\\sum"}</Cmd>、<Cmd>{"\\prod"}</Cmd>、<Cmd>{"\\bigoplus"}</Cmd>、<Cmd>{"\\bigotimes"}</Cmd> 和{" "}
+          <Cmd>{"\\bigcup"}</Cmd>。这些都是内置命令。<Cmd>{"\\max"}</Cmd>、<Cmd>{"\\sin"}</Cmd> 和 <Cmd>{"\\det"}</Cmd> 等命名运算符是预定义的，你也可以用 amsmath 的{" "}
+          <Cmd>{"\\DeclareMathOperator"}</Cmd> 声明自己的运算符。下表列出了最常用的 LaTeX 运算符；完整列表见页面下方。
+        </IntroP>
+      ),
+      quickRefHeading: "速查表：二元运算符与大型运算符",
+      use: {
+        "\\oplus": "圆圈加号：直和、异或",
+        "\\otimes": "圆圈乘号：张量积",
+        "\\odot": "圆圈点：哈达玛积",
+        "\\ominus": "圆圈减号",
+        "\\oslash": "圆圈斜线",
+        "\\times": "叉积、乘法",
+        "\\cdot": "居中的点",
+        "\\ast": "星号运算符、卷积",
+        "\\circ": "复合",
+        "\\star": "星形运算符",
+        "\\bigoplus_{i=1}^{n} V_i": "按指标求直和",
+        "\\bigotimes_{i=1}^{n} V_i": "按指标求张量积",
+      },
+      faqHeading: "LaTeX 运算符常见问题",
+      faq: [
+        {
+          question: "如何在 LaTeX 中输入圆圈加号？",
+          answer:
+            "使用 \\oplus 得到 ⊕，即用于直和与异或的圆圈加号。它是内置的二元运算符：$A \\oplus B$。对多项求直和时，使用大型运算符 \\bigoplus_{i=1}^{n} V_i。",
+        },
+        {
+          question: "如何在 LaTeX 中输入圆圈点（odot）运算符？",
+          answer:
+            "\\odot 输出 ⊙，用于哈达玛积（逐元素乘积），例如 $A \\odot B$。其大型版本是 \\bigodot。两者都是内置命令。",
+        },
+        {
+          question: "如何在 LaTeX 中定义新的运算符？",
+          answer:
+            "加载 amsmath，在导言区写 \\DeclareMathOperator{\\Tr}{Tr}；之后 \\Tr(A) 就会以运算符间距输出直立体的 Tr。若上下限需要放在下方（如 \\argmax），请使用 \\DeclareMathOperator*。如果只用一次，行内写 \\operatorname{Tr} 效果相同。",
+        },
+      ],
+    },
+    optimization: {
+      title: "LaTeX 中的优化符号：argmax、argmin 与约束",
+      intro: (
+        <IntroP>
+          LaTeX 中的优化记号以 <Cmd>{"\\min"}</Cmd>、<Cmd>{"\\max"}</Cmd> 及其 arg 版本为核心。<Cmd>{"\\min_{x}"}</Cmd> 和{" "}
+          <Cmd>{"\\max_{x}"}</Cmd> 是内置的，在独立公式中会把变量放在运算符下方，但 LaTeX 没有内置的{" "}
+          <Cmd>{"\\argmax"}</Cmd>：可以写 <Cmd>{"\\operatorname*{arg\\,max}_x"}</Cmd>，或用 amsmath 的{" "}
+          <Cmd>{"\\DeclareMathOperator*"}</Cmd> 一次性声明 <Cmd>{"\\argmax"}</Cmd>。约束条件写在{" "}
+          <Cmd>{"\\text{s.t.}"}</Cmd> 之后，拉格朗日函数是 <Cmd>{"\\mathcal{L}(x, \\lambda)"}</Cmd>，最优解是{" "}
+          <Cmd>{"x^*"}</Cmd>，半正定约束使用 <Cmd>{"\\succeq 0"}</Cmd>。下表列出了最常用的优化符号及各自所需的宏包；完整列表见页面下方。
+        </IntroP>
+      ),
+      quickRefHeading: "速查表：目标函数、约束与最优性",
+      use: {
+        "\\operatorname*{arg\\,max}_{x} f(x)": "变量位于下方的 argmax",
+        "\\operatorname*{arg\\,min}_{x} f(x)": "变量位于下方的 argmin",
+        "\\min_{x \\in \\mathcal{X}} f(x)": "在集合上求最小值",
+        "\\max_{x} f(x)": "求最大值",
+        "\\text{s.t.}": "约束条件（使得）",
+        "g_i(x) \\leq 0": "不等式约束",
+        "h_j(x) = 0": "等式约束",
+        "\\mathcal{L}(x, \\lambda)": "拉格朗日函数",
+        "\\nabla f(x^*) = 0": "一阶最优性条件",
+        "\\nabla^2 f(x)": "黑塞矩阵",
+        "X \\succeq 0": "半正定",
+        "\\lambda_i \\geq 0": "对偶变量（拉格朗日乘子）",
+      },
+      faqHeading: "LaTeX 优化符号常见问题",
+      faq: [
+        {
+          question: "如何在 LaTeX 中输入 argmax？",
+          answer:
+            "借助 amsmath 写 \\operatorname*{arg\\,max}_{x} f(x)；星号会让 x 在独立公式中位于运算符下方。如需重复使用，在导言区加入 \\DeclareMathOperator*{\\argmax}{arg\\,max}，然后写 \\argmax_x f(x)。\\arg\\max 也能输出 arg max，但其下标只附在 max 上。",
+        },
+        {
+          question: "如何在 LaTeX 中书写带约束的优化问题？",
+          answer:
+            "把目标函数和约束放进 aligned 环境：\\min_{x} \\quad & f(x) \\\\ \\text{s.t.} \\quad & g(x) \\leq 0。optidef 宏包提供 mini 和 maxi 环境，可以自动对齐目标函数和约束条件。",
+        },
+        {
+          question: "如何在 LaTeX 中输入“约束于”（s.t.）？",
+          answer:
+            "使用 amsmath 的 \\text{s.t.} 或 \\text{subject to}，这样文字会以直立体和正常间距排版；中文文档中也可以写 \\text{满足}。如果直接在数学模式中写 s.t.，会输出斜体的变量 s 和 t。",
+        },
+      ],
+    },
   },
 };
 
