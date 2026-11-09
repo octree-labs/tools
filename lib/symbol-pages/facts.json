@@ -1,0 +1,4095 @@
+{
+ "+": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": []
+ },
+ "-": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": []
+ },
+ "\\times": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\div": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\frac{a}{b}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\sqrt{x}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\sqrt[n]{x}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\sum_{i=1}^{n}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\prod_{i=1}^{n}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\int_{a}^{b}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\lim_{x \\to \\infty}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\infty": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\approx": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\neq": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\leq": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\geq": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\implies": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\iff": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\forall": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\exists": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb"
+  ]
+ },
+ "\\in": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb"
+  ]
+ },
+ "\\notin": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb"
+  ]
+ },
+ "\\subset": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb"
+  ]
+ },
+ "\\cup": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\cap": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\emptyset": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\partial": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\nabla": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\pm": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\cdot": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\alpha": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\beta": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\gamma": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\Gamma": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\delta": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\Delta": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\epsilon": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\varepsilon": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\zeta": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\eta": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\theta": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\Theta": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\iota": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\kappa": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\lambda": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\Lambda": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\mu": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\nu": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\xi": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\Xi": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\pi": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\Pi": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\rho": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\sigma": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\Sigma": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\tau": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\upsilon": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\Upsilon": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\phi": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\Phi": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\chi": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\psi": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\Psi": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\omega": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\Omega": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\ddot{o}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\grave{o}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\acute{o}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\hat{o}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\tilde{o}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\bar{o}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\dot{o}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\breve{o}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\check{o}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\H{o}": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\text{o̧}": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "both",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\text{ọ}": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "both",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\underline{o}": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": []
+ },
+ "o\\!\\!-\\!\\!o": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": []
+ },
+ "\\text{œ}": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "both",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\text{Œ}": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "both",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\text{æ}": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "both",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\text{Æ}": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "both",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\text{å}": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "both",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\text{Å}": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "both",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\text{ø}": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "both",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\text{Ø}": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "both",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\text{ł}": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "both",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\text{Ł}": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "both",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\imath": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\jmath": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\text{¿}": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "both",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\text{¡}": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "both",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\leftarrow": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\rightarrow": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb"
+  ]
+ },
+ "\\uparrow": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\longleftarrow": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\longrightarrow": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\downarrow": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\Leftarrow": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\Rightarrow": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\Uparrow": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\Longleftarrow": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\Longrightarrow": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\Downarrow": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\leftrightarrow": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\longleftrightarrow": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\updownarrow": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\Leftrightarrow": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\Longleftrightarrow": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\Updownarrow": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\mapsto": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb"
+  ]
+ },
+ "\\longmapsto": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\nearrow": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\hookleftarrow": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\hookrightarrow": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\searrow": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\leftharpoonup": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\rightharpoonup": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\swarrow": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\leftharpoondown": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\rightharpoondown": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\nwarrow": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\hat{x}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\widehat{xyz}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\tilde{x}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\widetilde{xyz}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb"
+  ]
+ },
+ "\\dot{x}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\ddot{x}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\dddot{x}": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\bar{x}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\overline{xyz}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\underline{xyz}": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": []
+ },
+ "\\vec{x}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\overrightarrow{AB}": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": []
+ },
+ "\\overleftarrow{AB}": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": []
+ },
+ "\\overleftrightarrow{AB}": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\acute{x}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\grave{x}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\breve{x}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\check{x}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb"
+  ]
+ },
+ "\\mathring{x}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\overbrace{x+y}^{\\text{sum}}": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\underbrace{x+y}_{\\text{sum}}": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\cancel{x}": {
+  "packages": [
+   "cancel"
+  ],
+  "mode": "both",
+  "examplePackages": [
+   "cancel"
+  ]
+ },
+ "\\boxed{x}": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "both",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\langle": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\rangle": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\langle x \\rangle": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\lceil": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\rceil": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\lceil x \\rceil": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\lfloor": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\rfloor": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\lfloor x \\rfloor": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\|": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\| x \\|": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\llbracket": {
+  "packages": [
+   "stmaryrd"
+  ],
+  "mode": "math",
+  "examplePackages": [
+   "stmaryrd"
+  ]
+ },
+ "\\rrbracket": {
+  "packages": [
+   "stmaryrd"
+  ],
+  "mode": "math",
+  "examplePackages": [
+   "stmaryrd"
+  ]
+ },
+ "\\llbracket x \\rrbracket": {
+  "packages": [
+   "stmaryrd"
+  ],
+  "mode": "math",
+  "examplePackages": [
+   "stmaryrd"
+  ]
+ },
+ "\\left( x \\right)": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\left[ x \\right]": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\left\\{ x \\right\\}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb"
+  ]
+ },
+ "\\left| x \\right|": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\Big( x \\Big)": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": []
+ },
+ "\\Bigg( x \\Bigg)": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": []
+ },
+ "\\left( x \\right.": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\left. x \\right)": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\left[ x \\right)": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "<": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ ">": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\equiv": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\propto": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\sim": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\cong": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb"
+  ]
+ },
+ "\\subseteq": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\subsetneq": {
+  "packages": [
+   "amssymb"
+  ],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb"
+  ]
+ },
+ "\\supset": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\supseteq": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\perp": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\parallel": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\nparallel": {
+  "packages": [
+   "amssymb"
+  ],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb",
+   "amsmath"
+  ]
+ },
+ "\\ll": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\gg": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\prec": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\succ": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\preceq": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\succeq": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\asymp": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ ":=": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": []
+ },
+ "\\triangleq": {
+  "packages": [
+   "amssymb"
+  ],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb"
+  ]
+ },
+ "\\oplus": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\otimes": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\odot": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\ominus": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\oslash": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\star": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\ast": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\circ": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\bullet": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\diamond": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\bigcirc": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb"
+  ]
+ },
+ "\\triangle": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\triangledown": {
+  "packages": [
+   "amssymb"
+  ],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb"
+  ]
+ },
+ "\\square": {
+  "packages": [
+   "amssymb"
+  ],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb"
+  ]
+ },
+ "\\wedge": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\vee": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\amalg": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\dagger": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\ddagger": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\wr": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb"
+  ]
+ },
+ "\\setminus": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb"
+  ]
+ },
+ "\\varnothing": {
+  "packages": [
+   "amssymb"
+  ],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb",
+   "amsmath"
+  ]
+ },
+ "\\ni": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\not\\subset": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb",
+   "amsmath"
+  ]
+ },
+ "\\bigcup": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\bigcap": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb"
+  ]
+ },
+ "\\complement": {
+  "packages": [
+   "amssymb"
+  ],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb"
+  ]
+ },
+ "\\mathbb{N}": {
+  "packages": [
+   "amssymb"
+  ],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb"
+  ]
+ },
+ "\\mathbb{Z}": {
+  "packages": [
+   "amssymb"
+  ],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb"
+  ]
+ },
+ "\\mathbb{Q}": {
+  "packages": [
+   "amssymb"
+  ],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb"
+  ]
+ },
+ "\\mathbb{R}": {
+  "packages": [
+   "amssymb"
+  ],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb"
+  ]
+ },
+ "\\mathbb{C}": {
+  "packages": [
+   "amssymb"
+  ],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb",
+   "amsmath"
+  ]
+ },
+ "\\mathcal{P}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "|A|": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": []
+ },
+ "\\aleph": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb"
+  ]
+ },
+ "\\nexists": {
+  "packages": [
+   "amssymb"
+  ],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb"
+  ]
+ },
+ "\\neg": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\land": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\lor": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\vdash": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\models": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\therefore": {
+  "packages": [
+   "amssymb"
+  ],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb"
+  ]
+ },
+ "\\because": {
+  "packages": [
+   "amssymb"
+  ],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb"
+  ]
+ },
+ "\\bot": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\top": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\not\\equiv": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\int": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\iint": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\iiint": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\oint": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\frac{d}{dx}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\frac{\\partial}{\\partial x}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\lim_{x \\to a}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\sum_{n=1}^{\\infty}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\prod_{n=1}^{\\infty}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "dx": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": []
+ },
+ "f'(x)": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": []
+ },
+ "f''(x)": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": []
+ },
+ "\\to": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\Big|_{a}^{b}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\mathbf{x}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "A^{\\top}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "A^T": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "A^{-1}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\det(A)": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\text{tr}(A)": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "both",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\text{rank}(A)": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "both",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\lVert x \\rVert": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\langle x, y \\rangle": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\delta_{ij}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "I_n": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\mathbf{0}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix}": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\begin{pmatrix} x \\\\ y \\end{pmatrix}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\mathbb{P}": {
+  "packages": [
+   "amssymb"
+  ],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb"
+  ]
+ },
+ "P(A)": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": []
+ },
+ "\\mathbb{E}[X]": {
+  "packages": [
+   "amssymb"
+  ],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb"
+  ]
+ },
+ "E[X]": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": []
+ },
+ "\\text{Var}(X)": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "both",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\text{Cov}(X,Y)": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "both",
+  "examplePackages": [
+   "amssymb",
+   "amsmath"
+  ]
+ },
+ "\\mathcal{N}(\\mu, \\sigma^2)": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\perp\\!\\!\\!\\perp": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\mid": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb"
+  ]
+ },
+ "P(A \\mid B)": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\chi^2": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\binom{n}{k}": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "n!": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\sum": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\sum_{n=0}^{\\infty}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\prod": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\coprod": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\bigcup_{i=1}^{n}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb"
+  ]
+ },
+ "\\bigcap_{i=1}^{n}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\bigwedge": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\bigvee": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\bigoplus": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\bigotimes": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb"
+  ]
+ },
+ "\\bigodot": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\bigsqcup": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb"
+  ]
+ },
+ "\\sum_{i=1}^{m} \\sum_{j=1}^{n}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\sum_{k \\in K}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "f(x)": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": []
+ },
+ "f: A \\to B": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb"
+  ]
+ },
+ "f \\circ g": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "f^{-1}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\text{Im}(f)": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "both",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\ker(f)": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\text{dom}(f)": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "both",
+  "examplePackages": [
+   "amssymb",
+   "amsmath"
+  ]
+ },
+ "\\text{cod}(f)": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "both",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\text{range}(f)": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "both",
+  "examplePackages": [
+   "amssymb",
+   "amsmath"
+  ]
+ },
+ "\\twoheadrightarrow": {
+  "packages": [
+   "amssymb"
+  ],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb"
+  ]
+ },
+ "f|_A": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "f(x) = y": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": []
+ },
+ "f(x) = \\begin{cases} a & x > 0 \\\\ b & x \\leq 0 \\end{cases}": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\sin": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\cos": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\tan": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\cot": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\sec": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\csc": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\arcsin": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\arccos": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\arctan": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\text{arccot}": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "both",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\text{arcsec}": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "both",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\text{arccsc}": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "both",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\sin^{-1}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\cos^{-1}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\tan^{-1}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\sinh": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\cosh": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\tanh": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\text{arcsinh}": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "both",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "^{\\circ}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\text{rad}": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "both",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\angle": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": []
+ },
+ "\\measuredangle": {
+  "packages": [
+   "amssymb"
+  ],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb"
+  ]
+ },
+ "\\sphericalangle": {
+  "packages": [
+   "amssymb"
+  ],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb"
+  ]
+ },
+ "\\ncong": {
+  "packages": [
+   "amssymb"
+  ],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb"
+  ]
+ },
+ "\\simeq": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\frown": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "'": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": []
+ },
+ "''": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": []
+ },
+ "\\overline{AB}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\nmid": {
+  "packages": [
+   "amssymb"
+  ],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb",
+   "amsmath"
+  ]
+ },
+ "\\gcd(a, b)": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\text{lcm}(a, b)": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "both",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\pmod{n}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\varphi(n)": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\phi(n)": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "p": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": []
+ },
+ "p_n": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\left(\\frac{a}{p}\\right)": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "[x]": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": []
+ },
+ "\\{x\\}": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": []
+ },
+ "\\sigma(n)": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\mu(n)": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "d(n)": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": []
+ },
+ "\\preccurlyeq": {
+  "packages": [
+   "amssymb"
+  ],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb",
+   "amsmath"
+  ]
+ },
+ "\\succcurlyeq": {
+  "packages": [
+   "amssymb"
+  ],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb"
+  ]
+ },
+ "\\nless": {
+  "packages": [
+   "amssymb"
+  ],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb",
+   "amsmath"
+  ]
+ },
+ "\\ngtr": {
+  "packages": [
+   "amssymb"
+  ],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb",
+   "amsmath"
+  ]
+ },
+ "\\nleq": {
+  "packages": [
+   "amssymb"
+  ],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb",
+   "amsmath"
+  ]
+ },
+ "\\ngeq": {
+  "packages": [
+   "amssymb"
+  ],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb",
+   "amsmath"
+  ]
+ },
+ "\\min": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\max": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\inf": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\sup": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\text{lub}": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "both",
+  "examplePackages": [
+   "amssymb",
+   "amsmath"
+  ]
+ },
+ "\\text{glb}": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "both",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\barwedge": {
+  "packages": [
+   "amssymb"
+  ],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb"
+  ]
+ },
+ "\\bar{\\vee}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "A \\cdot B": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "A + B": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": []
+ },
+ "\\overline{A}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "A'": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": []
+ },
+ "\\overline{A \\cdot B} = \\overline{A} + \\overline{B}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\exists!": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\forall x": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\exists x": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb"
+  ]
+ },
+ "\\forall x \\in A": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\exists x \\in A": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb"
+  ]
+ },
+ ":": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": [
+   "amssymb"
+  ]
+ },
+ "\\{ x \\mid P(x) \\}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb"
+  ]
+ },
+ "\\forall x \\exists y : P(x, y)": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb"
+  ]
+ },
+ "i": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": []
+ },
+ "j": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": []
+ },
+ "z = a + bi": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\Re(z)": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\Im(z)": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\bar{z}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "z^*": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "|z|": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\arg(z)": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb"
+  ]
+ },
+ "\\text{Arg}(z)": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "both",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "r e^{i\\theta}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "e^{i\\theta} = \\cos\\theta + i\\sin\\theta": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "e^{z}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\log z": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb"
+  ]
+ },
+ "z^w": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "|z| = 1": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": []
+ },
+ "\\mathbb{H}": {
+  "packages": [
+   "amssymb"
+  ],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb"
+  ]
+ },
+ "\\aleph_0": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb"
+  ]
+ },
+ "\\aleph_1": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\beth": {
+  "packages": [
+   "amssymb"
+  ],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb"
+  ]
+ },
+ "\\wp": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\Re": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\Im": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\mathcal{O}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "A^{\\circ}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\text{ext}(A)": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "both",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\partial A": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\varinjlim": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\varprojlim": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb",
+   "amsmath"
+  ]
+ },
+ "A / B": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": [
+   "amssymb"
+  ]
+ },
+ "\\pi_1": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb"
+  ]
+ },
+ "H_n": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "H^n": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\mathcal{C}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\mathcal{F}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\hbar": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\langle \\psi |": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "| \\psi \\rangle": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\langle \\phi | \\psi \\rangle": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\nabla^2": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\Box": {
+  "packages": [
+   "amssymb"
+  ],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb"
+  ]
+ },
+ "\\mathcal{L}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\mathcal{H}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "T^{\\mu\\nu}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\Gamma^{\\lambda}_{\\mu\\nu}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\frac{\\partial}{\\partial t}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\vec{E}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\nabla \\cdot": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\nabla \\times": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\rightleftharpoons": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\leftrightarrows": {
+  "packages": [
+   "amssymb"
+  ],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb",
+   "amsmath"
+  ]
+ },
+ "{}^{14}_{6}\\text{C}": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\text{Na}^{+}": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\text{H}_2\\text{O}": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "^{\\circ}\\text{C}": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\text{C}-\\text{C}": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "both",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\text{C}=\\text{C}": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "both",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\text{C}\\equiv\\text{C}": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\delta^{+}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "e^{-}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\text{(aq)}": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "both",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\text{(s)}": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "both",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\text{(l)}": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "both",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\text{(g)}": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "both",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\text{\\AA}": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "both",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "^{\\circ}\\text{F}": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\text{K}": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "both",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\text{m}": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "both",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\text{kg}": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "both",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\text{s}": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "both",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\text{A}": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "both",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\text{V}": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "both",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\text{W}": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "both",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\text{J}": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "both",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\text{N}": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "both",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\text{Pa}": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "both",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\text{Hz}": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "both",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "/": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "^2": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "^3": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "O(n)": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\Omega(n)": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\Theta(n)": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "o(n)": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\omega(n)": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\bmod": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\log": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\ln": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\mathbb{E}": {
+  "packages": [
+   "amssymb"
+  ],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb"
+  ]
+ },
+ "D_{\\text{KL}}(P \\| Q)": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\text{KL}(P \\| Q)": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb",
+   "amsmath"
+  ]
+ },
+ "\\arg\\max": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\arg\\min": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\arg\\max_{\\theta}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\arg\\min_{\\theta}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\text{softmax}": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "both",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\text{ReLU}": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "both",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\nabla_{\\theta} \\mathcal{L}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\frac{\\partial \\mathcal{L}}{\\partial \\theta}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\theta^*": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\mathbf{W}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\mathbf{b}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb"
+  ]
+ },
+ "H(p, q)": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "H(X)": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": []
+ },
+ "I(X; Y)": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": []
+ },
+ "\\log p(x | \\theta)": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "p(x)": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": []
+ },
+ "p(y | x)": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": []
+ },
+ "\\sum_{c=1}^{C}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\prod_{i=1}^{N}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\| \\theta \\|_1": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\| \\theta \\|_2": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\| \\mathbf{W} \\|_F": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\arg\\max_{x}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\arg\\min_{x}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\min_{x}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\max_{x}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb"
+  ]
+ },
+ "\\text{s.t.}": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "both",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "g(x) \\leq 0": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "h(x) = 0": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": []
+ },
+ "\\mathcal{L}(x, \\lambda)": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\nabla f(x)": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\nabla^2 f(x)": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "x^*": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\mathcal{X}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb"
+  ]
+ },
+ "\\nabla f + \\lambda \\nabla g = 0": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\succ 0": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\succeq 0": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\$": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": []
+ },
+ "\\text{€}": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "both",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\text{£}": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "both",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\text{¥}": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "both",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\text{₹}": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "both",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\text{₿}": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "both",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\%": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": []
+ },
+ "\\text{‰}": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "both",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\text{bp}": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "both",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\text{NPV}": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "both",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\text{IRR}": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "both",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\text{ROI}": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "both",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\sum_{t=1}^{n}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\frac{C}{(1+r)^t}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "A = P(1 + r/n)^{nt}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "A = Pe^{rt}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "v": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": []
+ },
+ "e": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": []
+ },
+ "G = (V, E)": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": []
+ },
+ "V(G)": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": []
+ },
+ "E(G)": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "u \\sim v": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\deg(v)": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\deg^{-}(v)": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\deg^{+}(v)": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "P_n": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "C_n": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "K_n": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "K_{m,n}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "A_{ij}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "B": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": []
+ },
+ "u \\leftrightarrow v": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "T": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": []
+ },
+ "F": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": []
+ },
+ "\\chi(G)": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\omega(G)": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\alpha(G)": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "M": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "G \\hookrightarrow \\mathbb{R}^2": {
+  "packages": [
+   "amssymb"
+  ],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb",
+   "amsmath"
+  ]
+ },
+ "C(n, k)": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "P(n, k)": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": []
+ },
+ "\\binom{n}{k_1, k_2, \\ldots, k_m}": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "(n)_k": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "n^{(k)}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\genfrac{[}{]}{0pt}{}{n}{k}": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\genfrac{\\{}{\\}}{0pt}{}{n}{k}": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "B_n": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "F_n": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "p(n)": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": []
+ },
+ "D_n": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "n!!": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": []
+ },
+ "!n": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": []
+ },
+ "(a)_n": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\Gamma(z)": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "B(x, y)": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": []
+ },
+ "\\zeta(s)": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\text{erf}(x)": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "both",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\text{erfc}(x)": {
+  "packages": [
+   "amsmath"
+  ],
+  "mode": "both",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "J_n(x)": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "Y_n(x)": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "I_n(x)": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "K_n(x)": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "P_n(x)": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "Q_n(x)": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "H_n(x)": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "L_n(x)": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "T_n(x)": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "U_n(x)": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "{}_2F_1(a,b;c;z)": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\psi(x)": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\psi^{(n)}(x)": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "K(k)": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": []
+ },
+ "E(k)": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": []
+ },
+ "\\delta(x)": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "H(x)": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\mathcal{M}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb"
+  ]
+ },
+ "T_p M": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "T^*_p M": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "TM": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": []
+ },
+ "T^*M": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\nabla_X Y": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\Gamma^k_{ij}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "R^l_{ijk}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "R_{ij}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "R": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": []
+ },
+ "g_{ij}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "g^{ij}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "d\\omega": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\alpha \\wedge \\beta": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\mathcal{L}_X": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "[X, Y]": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": []
+ },
+ "\\omega^i_j": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\Omega^i_j": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\gamma(t)": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "P_{\\gamma}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "T^{ij}_{kl}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "T_{ij}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb"
+  ]
+ },
+ "T^{ij}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "T^i_j": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\delta^i_j": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\epsilon_{ijk}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "A^i B_i": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "A \\otimes B": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "T^i_i": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "v_i = g_{ij} v^j": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "v^i = g^{ij} v_j": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "\\partial_i": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\nabla_i": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "T_{(ij)}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "T_{[ij]}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "(p, q)": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": []
+ },
+ "e_i": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "e^i": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "T'^{ij} = \\Lambda^i_k \\Lambda^j_l T^{kl}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\Diamond": {
+  "packages": [
+   "amssymb"
+  ],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb"
+  ]
+ },
+ "\\neg\\Box": {
+  "packages": [
+   "amssymb"
+  ],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb"
+  ]
+ },
+ "\\neg\\Diamond": {
+  "packages": [
+   "amssymb"
+  ],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb"
+  ]
+ },
+ "\\Box(p \\to q)": {
+  "packages": [
+   "amssymb"
+  ],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb"
+  ]
+ },
+ "\\Diamond(p \\land q)": {
+  "packages": [
+   "amssymb"
+  ],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb"
+  ]
+ },
+ "K_a p": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "B_a p": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "C_G p": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\Box p": {
+  "packages": [
+   "amssymb"
+  ],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb"
+  ]
+ },
+ "\\Diamond p": {
+  "packages": [
+   "amssymb"
+  ],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb"
+  ]
+ },
+ "p \\mathcal{U} q": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb"
+  ]
+ },
+ "\\bigcirc p": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb"
+  ]
+ },
+ "w R v": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": [
+   "amssymb",
+   "amsmath"
+  ]
+ },
+ "\\mathcal{M}, w \\models p": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb"
+  ]
+ },
+ "w": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": []
+ },
+ "O p": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": []
+ },
+ "P p": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": []
+ },
+ "s_i": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "S_i": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "s = (s_1, \\ldots, s_n)": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "u_i(s)": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb"
+  ]
+ },
+ "\\mathbb{E}[u_i]": {
+  "packages": [
+   "amssymb"
+  ],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb"
+  ]
+ },
+ "BR_i(s_{-i})": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amsmath"
+  ]
+ },
+ "s^* = (s_1^*, \\ldots, s_n^*)": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\sigma_i": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "\\Delta(S_i)": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "s_i^d": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "s_i \\prec s'_i": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "s^{PO}": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": [
+   "amssymb"
+  ]
+ },
+ "\\min_j \\max_i": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "u_1 + u_2 = 0": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "v(S)": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": []
+ },
+ "\\phi_i(v)": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ },
+ "SPE": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": []
+ },
+ "h": {
+  "packages": [],
+  "mode": "both",
+  "examplePackages": []
+ },
+ "a_i": {
+  "packages": [],
+  "mode": "math",
+  "examplePackages": []
+ }
+}
