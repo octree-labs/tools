@@ -6,6 +6,38 @@ import cnArrows from "./cn/arrows";
 import esArrows from "./es/arrows";
 import frArrows from "./fr/arrows";
 import ruArrows from "./ru/arrows";
+import cnFinance from "./cn/finance";
+import esFinance from "./es/finance";
+import frFinance from "./fr/finance";
+import ruFinance from "./ru/finance";
+import cnFunctions from "./cn/functions";
+import esFunctions from "./es/functions";
+import frFunctions from "./fr/functions";
+import ruFunctions from "./ru/functions";
+import cnGameTheory from "./cn/game-theory";
+import esGameTheory from "./es/game-theory";
+import frGameTheory from "./fr/game-theory";
+import ruGameTheory from "./ru/game-theory";
+import cnGeometry from "./cn/geometry";
+import esGeometry from "./es/geometry";
+import frGeometry from "./fr/geometry";
+import ruGeometry from "./ru/geometry";
+import cnGraphTheory from "./cn/graph-theory";
+import esGraphTheory from "./es/graph-theory";
+import frGraphTheory from "./fr/graph-theory";
+import ruGraphTheory from "./ru/graph-theory";
+import cnGreek from "./cn/greek";
+import esGreek from "./es/greek";
+import frGreek from "./fr/greek";
+import ruGreek from "./ru/greek";
+import cnLatin from "./cn/latin";
+import esLatin from "./es/latin";
+import frLatin from "./fr/latin";
+import ruLatin from "./ru/latin";
+import cnLinearAlgebra from "./cn/linear-algebra";
+import esLinearAlgebra from "./es/linear-algebra";
+import frLinearAlgebra from "./fr/linear-algebra";
+import ruLinearAlgebra from "./ru/linear-algebra";
 import cnMath from "./cn/math";
 import esMath from "./es/math";
 import frMath from "./fr/math";
@@ -65,6 +97,14 @@ export type { SymbolPageTranslation, SymbolPageTranslations } from "./types";
 const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
   cn: {
     "arrows": cnArrows,
+    "finance": cnFinance,
+    "functions": cnFunctions,
+    "game-theory": cnGameTheory,
+    "geometry": cnGeometry,
+    "graph-theory": cnGraphTheory,
+    "greek": cnGreek,
+    "latin": cnLatin,
+    "linear-algebra": cnLinearAlgebra,
     "math": cnMath,
     "probability": cnProbability,
     "quantifiers": cnQuantifiers,
@@ -79,6 +119,14 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
   },
   es: {
     "arrows": esArrows,
+    "finance": esFinance,
+    "functions": esFunctions,
+    "game-theory": esGameTheory,
+    "geometry": esGeometry,
+    "graph-theory": esGraphTheory,
+    "greek": esGreek,
+    "latin": esLatin,
+    "linear-algebra": esLinearAlgebra,
     "math": esMath,
     "probability": esProbability,
     "quantifiers": esQuantifiers,
@@ -93,6 +141,14 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
   },
   fr: {
     "arrows": frArrows,
+    "finance": frFinance,
+    "functions": frFunctions,
+    "game-theory": frGameTheory,
+    "geometry": frGeometry,
+    "graph-theory": frGraphTheory,
+    "greek": frGreek,
+    "latin": frLatin,
+    "linear-algebra": frLinearAlgebra,
     "math": frMath,
     "probability": frProbability,
     "quantifiers": frQuantifiers,
@@ -107,6 +163,14 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
   },
   ru: {
     "arrows": ruArrows,
+    "finance": ruFinance,
+    "functions": ruFunctions,
+    "game-theory": ruGameTheory,
+    "geometry": ruGeometry,
+    "graph-theory": ruGraphTheory,
+    "greek": ruGreek,
+    "latin": ruLatin,
+    "linear-algebra": ruLinearAlgebra,
     "math": ruMath,
     "probability": ruProbability,
     "quantifiers": ruQuantifiers,
