@@ -171,13 +171,21 @@ import ptMath from "./pt/math";
 import ruMath from "./ru/math";
 import viMath from "./vi/math";
 import cnModalLogic from "./cn/modal-logic";
+import deModalLogic from "./de/modal-logic";
 import esModalLogic from "./es/modal-logic";
 import frModalLogic from "./fr/modal-logic";
+import itModalLogic from "./it/modal-logic";
+import ptModalLogic from "./pt/modal-logic";
 import ruModalLogic from "./ru/modal-logic";
+import viModalLogic from "./vi/modal-logic";
 import cnNumberTheory from "./cn/number-theory";
+import deNumberTheory from "./de/number-theory";
 import esNumberTheory from "./es/number-theory";
 import frNumberTheory from "./fr/number-theory";
+import itNumberTheory from "./it/number-theory";
+import ptNumberTheory from "./pt/number-theory";
 import ruNumberTheory from "./ru/number-theory";
+import viNumberTheory from "./vi/number-theory";
 import cnOperators from "./cn/operators";
 import esOperators from "./es/operators";
 import frOperators from "./fr/operators";
@@ -442,6 +450,8 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "logic": deLogic,
     "machine-learning": deMachineLearning,
     "math": deMath,
+    "modal-logic": deModalLogic,
+    "number-theory": deNumberTheory,
     "physics": dePhysics,
     "probability": deProbability,
     "quantifiers": deQuantifiers,
@@ -469,6 +479,8 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "logic": itLogic,
     "machine-learning": itMachineLearning,
     "math": itMath,
+    "modal-logic": itModalLogic,
+    "number-theory": itNumberTheory,
     "physics": itPhysics,
     "probability": itProbability,
     "quantifiers": itQuantifiers,
@@ -496,6 +508,8 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "logic": ptLogic,
     "machine-learning": ptMachineLearning,
     "math": ptMath,
+    "modal-logic": ptModalLogic,
+    "number-theory": ptNumberTheory,
     "physics": ptPhysics,
     "probability": ptProbability,
     "quantifiers": ptQuantifiers,
@@ -523,6 +537,8 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "logic": viLogic,
     "machine-learning": viMachineLearning,
     "math": viMath,
+    "modal-logic": viModalLogic,
+    "number-theory": viNumberTheory,
     "physics": viPhysics,
     "probability": viProbability,
     "quantifiers": viQuantifiers,

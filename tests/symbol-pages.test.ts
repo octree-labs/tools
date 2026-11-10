@@ -276,6 +276,8 @@ const PARTIAL_CATEGORIES: string[] = [
   'logic',
   'machine-learning',
   'math',
+  'modal-logic',
+  'number-theory',
   'physics',
   'probability',
   'quantifiers',
