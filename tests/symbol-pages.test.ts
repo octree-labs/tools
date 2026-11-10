@@ -278,10 +278,20 @@ const PARTIAL_CATEGORIES: string[] = [
   'math',
   'modal-logic',
   'number-theory',
+  'operators',
+  'optimization',
+  'order',
   'physics',
   'probability',
   'quantifiers',
+  'relations',
   'set-theory',
+  'special-functions',
+  'summation',
+  'tensors',
+  'topology',
+  'trigonometry',
+  'units',
 ];
 
 /** Categories whose body copy is translated, per locale. */
@@ -311,14 +321,13 @@ test('each locale translates exactly its listed categories, in full, and nothing
   }
 });
 
-test('an untranslated category stays English, canonical to the English URL and noindex in de, it, pt and vi', () => {
-  const ref = SYMBOL_PAGES.find((r) => !PARTIAL_CATEGORIES.includes(r.category))!;
-  for (const locale of ['de', 'it', 'pt', 'vi']) {
-    assert.equal(isSymbolPageLocalized(ref.category, ref.slug, locale), false);
-    assert.deepEqual(symbolPageAlternates(ref, locale), {
-      alternates: { canonical: symbolPagePath(ref) },
-      robots: { index: false, follow: true },
-    });
+test('de, it, pt and vi translate every category, so every symbol page is indexable there', () => {
+  assert.deepEqual([...PARTIAL_CATEGORIES].sort(), [...ALL_CATEGORIES].sort());
+  for (const ref of SYMBOL_PAGES) {
+    for (const locale of ['de', 'it', 'pt', 'vi']) {
+      assert.equal(isSymbolPageLocalized(ref.category, ref.slug, locale), true, `${locale}${symbolPagePath(ref)}`);
+      assert.equal(symbolPageAlternates(ref, locale).alternates?.canonical, `/${locale}${symbolPagePath(ref)}`);
+    }
   }
 });
 

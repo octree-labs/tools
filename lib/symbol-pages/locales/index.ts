@@ -187,17 +187,29 @@ import ptNumberTheory from "./pt/number-theory";
 import ruNumberTheory from "./ru/number-theory";
 import viNumberTheory from "./vi/number-theory";
 import cnOperators from "./cn/operators";
+import deOperators from "./de/operators";
 import esOperators from "./es/operators";
 import frOperators from "./fr/operators";
+import itOperators from "./it/operators";
+import ptOperators from "./pt/operators";
 import ruOperators from "./ru/operators";
+import viOperators from "./vi/operators";
 import cnOptimization from "./cn/optimization";
+import deOptimization from "./de/optimization";
 import esOptimization from "./es/optimization";
 import frOptimization from "./fr/optimization";
+import itOptimization from "./it/optimization";
+import ptOptimization from "./pt/optimization";
 import ruOptimization from "./ru/optimization";
+import viOptimization from "./vi/optimization";
 import cnOrder from "./cn/order";
+import deOrder from "./de/order";
 import esOrder from "./es/order";
 import frOrder from "./fr/order";
+import itOrder from "./it/order";
+import ptOrder from "./pt/order";
 import ruOrder from "./ru/order";
+import viOrder from "./vi/order";
 import cnPhysics from "./cn/physics";
 import dePhysics from "./de/physics";
 import esPhysics from "./es/physics";
@@ -223,9 +235,13 @@ import ptQuantifiers from "./pt/quantifiers";
 import ruQuantifiers from "./ru/quantifiers";
 import viQuantifiers from "./vi/quantifiers";
 import cnRelations from "./cn/relations";
+import deRelations from "./de/relations";
 import esRelations from "./es/relations";
 import frRelations from "./fr/relations";
+import itRelations from "./it/relations";
+import ptRelations from "./pt/relations";
 import ruRelations from "./ru/relations";
+import viRelations from "./vi/relations";
 import cnSetTheory from "./cn/set-theory";
 import deSetTheory from "./de/set-theory";
 import esSetTheory from "./es/set-theory";
@@ -235,35 +251,59 @@ import ptSetTheory from "./pt/set-theory";
 import ruSetTheory from "./ru/set-theory";
 import viSetTheory from "./vi/set-theory";
 import cnSpecialFunctions from "./cn/special-functions";
+import deSpecialFunctions from "./de/special-functions";
 import esSpecialFunctions from "./es/special-functions";
 import frSpecialFunctions from "./fr/special-functions";
+import itSpecialFunctions from "./it/special-functions";
+import ptSpecialFunctions from "./pt/special-functions";
 import ruSpecialFunctions from "./ru/special-functions";
+import viSpecialFunctions from "./vi/special-functions";
 import cnSummation from "./cn/summation";
+import deSummation from "./de/summation";
 import esSummation from "./es/summation";
 import frSummation from "./fr/summation";
+import itSummation from "./it/summation";
+import ptSummation from "./pt/summation";
 import ruSummation from "./ru/summation";
+import viSummation from "./vi/summation";
 import cnTensors from "./cn/tensors";
+import deTensors from "./de/tensors";
 import esTensors from "./es/tensors";
 import frTensors from "./fr/tensors";
+import itTensors from "./it/tensors";
+import ptTensors from "./pt/tensors";
 import ruTensors from "./ru/tensors";
+import viTensors from "./vi/tensors";
 import cnTopology from "./cn/topology";
+import deTopology from "./de/topology";
 import esTopology from "./es/topology";
 import frTopology from "./fr/topology";
+import itTopology from "./it/topology";
+import ptTopology from "./pt/topology";
 import ruTopology from "./ru/topology";
+import viTopology from "./vi/topology";
 import cnTrigonometry from "./cn/trigonometry";
+import deTrigonometry from "./de/trigonometry";
 import esTrigonometry from "./es/trigonometry";
 import frTrigonometry from "./fr/trigonometry";
+import itTrigonometry from "./it/trigonometry";
+import ptTrigonometry from "./pt/trigonometry";
 import ruTrigonometry from "./ru/trigonometry";
+import viTrigonometry from "./vi/trigonometry";
 import cnUnits from "./cn/units";
+import deUnits from "./de/units";
 import esUnits from "./es/units";
 import frUnits from "./fr/units";
+import itUnits from "./it/units";
+import ptUnits from "./pt/units";
 import ruUnits from "./ru/units";
+import viUnits from "./vi/units";
 
 export type { SymbolPageTranslation, SymbolPageTranslations } from "./types";
 
 /**
  * locale -> category -> slug -> translated body copy. cn, es, fr and ru cover
- * every category; de, it, pt and vi cover a growing subset. A symbol page is a real
+ * every category; de, it, pt and vi cover the categories registered below. A symbol page is a real
  * alternate in a locale (self canonical, hreflang, sitemap) only when it has
  * an entry here; every other locale renders the English copy under the
  * translated chrome, canonicalises to the English URL and is noindex.
@@ -452,10 +492,20 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "math": deMath,
     "modal-logic": deModalLogic,
     "number-theory": deNumberTheory,
+    "operators": deOperators,
+    "optimization": deOptimization,
+    "order": deOrder,
     "physics": dePhysics,
     "probability": deProbability,
     "quantifiers": deQuantifiers,
+    "relations": deRelations,
     "set-theory": deSetTheory,
+    "special-functions": deSpecialFunctions,
+    "summation": deSummation,
+    "tensors": deTensors,
+    "topology": deTopology,
+    "trigonometry": deTrigonometry,
+    "units": deUnits,
   },
   it: {
     "accents": itAccents,
@@ -481,10 +531,20 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "math": itMath,
     "modal-logic": itModalLogic,
     "number-theory": itNumberTheory,
+    "operators": itOperators,
+    "optimization": itOptimization,
+    "order": itOrder,
     "physics": itPhysics,
     "probability": itProbability,
     "quantifiers": itQuantifiers,
+    "relations": itRelations,
     "set-theory": itSetTheory,
+    "special-functions": itSpecialFunctions,
+    "summation": itSummation,
+    "tensors": itTensors,
+    "topology": itTopology,
+    "trigonometry": itTrigonometry,
+    "units": itUnits,
   },
   pt: {
     "accents": ptAccents,
@@ -510,10 +570,20 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "math": ptMath,
     "modal-logic": ptModalLogic,
     "number-theory": ptNumberTheory,
+    "operators": ptOperators,
+    "optimization": ptOptimization,
+    "order": ptOrder,
     "physics": ptPhysics,
     "probability": ptProbability,
     "quantifiers": ptQuantifiers,
+    "relations": ptRelations,
     "set-theory": ptSetTheory,
+    "special-functions": ptSpecialFunctions,
+    "summation": ptSummation,
+    "tensors": ptTensors,
+    "topology": ptTopology,
+    "trigonometry": ptTrigonometry,
+    "units": ptUnits,
   },
   vi: {
     "accents": viAccents,
@@ -539,10 +609,20 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "math": viMath,
     "modal-logic": viModalLogic,
     "number-theory": viNumberTheory,
+    "operators": viOperators,
+    "optimization": viOptimization,
+    "order": viOrder,
     "physics": viPhysics,
     "probability": viProbability,
     "quantifiers": viQuantifiers,
+    "relations": viRelations,
     "set-theory": viSetTheory,
+    "special-functions": viSpecialFunctions,
+    "summation": viSummation,
+    "tensors": viTensors,
+    "topology": viTopology,
+    "trigonometry": viTrigonometry,
+    "units": viUnits,
   },
 };
 
