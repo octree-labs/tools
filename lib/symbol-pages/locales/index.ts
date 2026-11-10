@@ -83,9 +83,13 @@ import ptDifferentialGeometry from "./pt/differential-geometry";
 import ruDifferentialGeometry from "./ru/differential-geometry";
 import viDifferentialGeometry from "./vi/differential-geometry";
 import cnFinance from "./cn/finance";
+import deFinance from "./de/finance";
 import esFinance from "./es/finance";
 import frFinance from "./fr/finance";
+import itFinance from "./it/finance";
+import ptFinance from "./pt/finance";
 import ruFinance from "./ru/finance";
+import viFinance from "./vi/finance";
 import cnFunctions from "./cn/functions";
 import deFunctions from "./de/functions";
 import esFunctions from "./es/functions";
@@ -95,13 +99,21 @@ import ptFunctions from "./pt/functions";
 import ruFunctions from "./ru/functions";
 import viFunctions from "./vi/functions";
 import cnGameTheory from "./cn/game-theory";
+import deGameTheory from "./de/game-theory";
 import esGameTheory from "./es/game-theory";
 import frGameTheory from "./fr/game-theory";
+import itGameTheory from "./it/game-theory";
+import ptGameTheory from "./pt/game-theory";
 import ruGameTheory from "./ru/game-theory";
+import viGameTheory from "./vi/game-theory";
 import cnGeometry from "./cn/geometry";
+import deGeometry from "./de/geometry";
 import esGeometry from "./es/geometry";
 import frGeometry from "./fr/geometry";
+import itGeometry from "./it/geometry";
+import ptGeometry from "./pt/geometry";
 import ruGeometry from "./ru/geometry";
+import viGeometry from "./vi/geometry";
 import cnGraphTheory from "./cn/graph-theory";
 import esGraphTheory from "./es/graph-theory";
 import frGraphTheory from "./fr/graph-theory";
@@ -403,7 +415,10 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "complex": deComplex,
     "computer-science": deComputerScience,
     "differential-geometry": deDifferentialGeometry,
+    "finance": deFinance,
     "functions": deFunctions,
+    "game-theory": deGameTheory,
+    "geometry": deGeometry,
     "greek": deGreek,
     "logic": deLogic,
     "math": deMath,
@@ -423,7 +438,10 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "complex": itComplex,
     "computer-science": itComputerScience,
     "differential-geometry": itDifferentialGeometry,
+    "finance": itFinance,
     "functions": itFunctions,
+    "game-theory": itGameTheory,
+    "geometry": itGeometry,
     "greek": itGreek,
     "logic": itLogic,
     "math": itMath,
@@ -443,7 +461,10 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "complex": ptComplex,
     "computer-science": ptComputerScience,
     "differential-geometry": ptDifferentialGeometry,
+    "finance": ptFinance,
     "functions": ptFunctions,
+    "game-theory": ptGameTheory,
+    "geometry": ptGeometry,
     "greek": ptGreek,
     "logic": ptLogic,
     "math": ptMath,
@@ -463,7 +484,10 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "complex": viComplex,
     "computer-science": viComputerScience,
     "differential-geometry": viDifferentialGeometry,
+    "finance": viFinance,
     "functions": viFunctions,
+    "game-theory": viGameTheory,
+    "geometry": viGeometry,
     "greek": viGreek,
     "logic": viLogic,
     "math": viMath,
