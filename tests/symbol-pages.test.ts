@@ -263,6 +263,8 @@ const TOP_CATEGORIES: string[] = [
   'chemistry',
   'combinatorics',
   'complex',
+  'computer-science',
+  'differential-geometry',
   'functions',
   'greek',
   'logic',

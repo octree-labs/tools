@@ -67,13 +67,21 @@ import ptComplex from "./pt/complex";
 import ruComplex from "./ru/complex";
 import viComplex from "./vi/complex";
 import cnComputerScience from "./cn/computer-science";
+import deComputerScience from "./de/computer-science";
 import esComputerScience from "./es/computer-science";
 import frComputerScience from "./fr/computer-science";
+import itComputerScience from "./it/computer-science";
+import ptComputerScience from "./pt/computer-science";
 import ruComputerScience from "./ru/computer-science";
+import viComputerScience from "./vi/computer-science";
 import cnDifferentialGeometry from "./cn/differential-geometry";
+import deDifferentialGeometry from "./de/differential-geometry";
 import esDifferentialGeometry from "./es/differential-geometry";
 import frDifferentialGeometry from "./fr/differential-geometry";
+import itDifferentialGeometry from "./it/differential-geometry";
+import ptDifferentialGeometry from "./pt/differential-geometry";
 import ruDifferentialGeometry from "./ru/differential-geometry";
+import viDifferentialGeometry from "./vi/differential-geometry";
 import cnFinance from "./cn/finance";
 import esFinance from "./es/finance";
 import frFinance from "./fr/finance";
@@ -393,6 +401,8 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "chemistry": deChemistry,
     "combinatorics": deCombinatorics,
     "complex": deComplex,
+    "computer-science": deComputerScience,
+    "differential-geometry": deDifferentialGeometry,
     "functions": deFunctions,
     "greek": deGreek,
     "logic": deLogic,
@@ -411,6 +421,8 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "chemistry": itChemistry,
     "combinatorics": itCombinatorics,
     "complex": itComplex,
+    "computer-science": itComputerScience,
+    "differential-geometry": itDifferentialGeometry,
     "functions": itFunctions,
     "greek": itGreek,
     "logic": itLogic,
@@ -429,6 +441,8 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "chemistry": ptChemistry,
     "combinatorics": ptCombinatorics,
     "complex": ptComplex,
+    "computer-science": ptComputerScience,
+    "differential-geometry": ptDifferentialGeometry,
     "functions": ptFunctions,
     "greek": ptGreek,
     "logic": ptLogic,
@@ -447,6 +461,8 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "chemistry": viChemistry,
     "combinatorics": viCombinatorics,
     "complex": viComplex,
+    "computer-science": viComputerScience,
+    "differential-geometry": viDifferentialGeometry,
     "functions": viFunctions,
     "greek": viGreek,
     "logic": viLogic,
