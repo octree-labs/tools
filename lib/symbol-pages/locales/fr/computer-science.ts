@@ -9,13 +9,13 @@ const text: SymbolPageTranslations = {
   },
   "big-omega": {
     name: "Notation grand Oméga",
-    meaning: "Borne inférieure asymptotique : f(n) = Omega(n) signifie que f croît au moins aussi vite qu’une constante fois n pour n grand.",
+    meaning: "Borne inférieure asymptotique : f(n) = Ω(n) signifie que f croît au moins aussi vite qu’une constante fois n pour n grand.",
     usage: "Le oméga majuscule énonce des bornes inférieures, la plus célèbre étant qu’un tri par comparaisons demande \\Omega(n \\log n) comparaisons dans le pire cas. Il se tape avec la majuscule grecque droite \\Omega ; amsmath propose aussi \\varOmega pour une forme inclinée, que certains typographes préfèrent pour les variables mais qui paraît étrange comme opérateur. Notez que la théorie analytique des nombres utilise le sens plus ancien de Hardy et Littlewood, où \\Omega signifie que la borne n’est pas un o(g) : vérifiez quelle définition suit une source. Associez-le à O pour encadrer un temps d’exécution, et passez à \\Theta dès que les deux bornes coïncident.",
     example: "\\text{le tri par comparaisons prend un temps } \\Omega(n \\log n)",
   },
   "big-theta": {
     name: "Notation grand Thêta",
-    meaning: "Borne asymptotique exacte : f(n) = Theta(n) signifie que f est encadrée par deux multiples constants de n.",
+    meaning: "Borne asymptotique exacte : f(n) = Θ(n) signifie que f est encadrée par deux multiples constants de n.",
     usage: "Thêta est la bonne affirmation quand vous avez démontré des bornes supérieure et inférieure qui coïncident : la recherche dichotomique est en \\Theta(\\log n), et le cas intermédiaire du théorème maître donne \\Theta(n^{\\log_b a} \\log n). Formellement, f \\in \\Theta(g) exactement lorsque f \\in O(g) et f \\in \\Omega(g). Beaucoup d’articles écrivent O là où \\Theta est voulu ; les relecteurs des conférences théoriques le remarquent, donc utilisez \\Theta quand l’optimalité de la borne est le propos. La majuscule \\Theta est droite par défaut ; ne la confondez pas avec la minuscule \\theta, qui désigne généralement un angle ou un vecteur de paramètres, et évitez \\vartheta, variante de la minuscule.",
   },
   "little-o": {
@@ -26,7 +26,7 @@ const text: SymbolPageTranslations = {
   },
   "little-omega": {
     name: "Notation petit oméga",
-    meaning: "Borne inférieure asymptotique stricte : f(n) = omega(n) signifie que f(n)/n tend vers l’infini.",
+    meaning: "Borne inférieure asymptotique stricte : f(n) = ω(n) signifie que f(n)/n tend vers l’infini.",
     usage: "Le petit oméga est le symétrique du petit o : f = \\omega(g) exactement lorsque g = o(f), donc n^2 = \\omega(n) et n \\log n = \\omega(n). Il apparaît moins souvent que \\Omega, surtout dans les preuves de bornes inférieures et les algorithmes probabilistes où une quantité doit croître strictement plus vite que linéairement. Utilisez la minuscule grecque \\omega, et non le w latin, qui lui ressemble dans certaines polices. Attention, le même symbole est surchargé : en théorie des graphes, \\omega(G) est le nombre de clique, et en théorie des nombres \\omega(n) compte les facteurs premiers distincts ; définissez donc votre usage quand les contextes se mélangent.",
   },
   "modulo": {

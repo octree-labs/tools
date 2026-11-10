@@ -13,17 +13,17 @@ const text: SymbolPageTranslations = {
     usage: "Las fuentes matemáticas habituales no tienen un comando estándar para el glifo NOR, así que \\bar{\\vee} lo imita poniendo un acento sobre el símbolo de la disyunción. Un efecto secundario: un símbolo acentuado se convierte en un átomo ordinario y pierde el espaciado de operador binario que tenía \\vee, así que escribe \\mathbin{\\bar{\\vee}} para recuperarlo, idealmente dentro de un \\newcommand. La notación alternativa p \\downarrow q (flecha de Peirce) se entiende ampliamente y evita el problema. No lo confundas con \\veebar, cuya barra está debajo de la v y que normalmente significa XOR.",
   },
   "boolean-and": {
-    name: "AND booleano",
+    name: "Conjunción booleana (AND)",
     meaning: "Punto centrado entre dos variables, la notación de ingeniería para el AND booleano (conjunción lógica).",
     usage: "El álgebra de conmutación y la electrónica digital escriben la conjunción de forma multiplicativa: A \\cdot B, o simplemente AB, reflejando que AND se comporta como la multiplicación sobre 0 y 1. En lógica formal la misma operación se escribe A \\wedge B o A \\land B. \\cdot es un operador binario, así que ya recibe espaciado medio; no uses un punto, que en modo matemático funciona como signo de puntuación y se apoya en la línea base. Muchos libros omiten el punto por completo en expresiones de suma de productos como AB + \\overline{A}C y conservan \\cdot solo donde la yuxtaposición sería ambigua, por ejemplo entre nombres de señales de varias letras.",
   },
   "boolean-or": {
-    name: "OR booleano",
+    name: "Disyunción booleana (OR)",
     meaning: "Signo más usado como OR booleano en el álgebra de conmutación: la salida es 1 cuando al menos una entrada es 1.",
     usage: "Los diseñadores de circuitos escriben la disyunción como A + B, de modo que las formas de suma de productos como AB + \\overline{A}C se leen con naturalidad. Cuidado con el significado aritmético: en el álgebra de Boole 1 + 1 = 1, mientras que en el cuerpo de dos elementos el signo más significa XOR y 1 + 1 = 0, por lo que XOR suele tener su propio símbolo \\oplus. Los lógicos escriben el mismo OR como A \\vee B o A \\lor B. No hace falta ningún comando especial; el + ya lleva espaciado de operador binario, y en expresiones largas puedes cortar la línea antes de un + dentro de un entorno multline.",
   },
   "boolean-not": {
-    name: "NOT booleano",
+    name: "Negación booleana (NOT)",
     meaning: "Barra trazada sobre todo el ancho de su argumento; indica el NOT booleano en circuitos lógicos y la clausura de un conjunto en topología.",
     usage: "En lógica digital \\overline{A} es la señal invertida, y \\overline{A \\cdot B} traza una barra continua sobre toda una expresión, que es la razón visual por la que los ingenieros la prefieren a un \\neg prefijo. Los topólogos usan la misma construcción para la clausura de un conjunto. A diferencia de \\bar{A}, que es un acento de ancho fijo pensado para una sola letra, \\overline se estira para cubrir todo lo que hay entre las llaves. Las negaciones anidadas como \\overline{\\overline{A}} se apilan limpiamente. Para una barra algo más corta sobre letras sueltas, algunos autores prefieren \\bar; cualquiera de las dos sirve si eres coherente.",
   },

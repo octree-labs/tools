@@ -28,7 +28,7 @@ const text: SymbolPageTranslations = {
     usage: "Escribir \\frac{d}{dx} da la forma de operador usada en reglas como \\frac{d}{dx}\\sin x = \\cos x, mientras que \\frac{dy}{dx} designa la derivada de una variable dependiente. Muchas guías de estilo escriben la d del diferencial en redonda, como \\mathrm{d}, para distinguirla de una variable llamada d; una macro como \\newcommand{\\diff}{\\mathrm{d}} mantiene la coherencia. En el texto corrido, \\frac se reduce a un tamaño diminuto, así que allí es preferible \\tfrac o la forma con barra dy/dx. Para órdenes superiores escribe \\frac{d^2y}{dx^2}, con el exponente sobre la d en el numerador pero sobre la x en el denominador.",
   },
   "partial-derivative-operator": {
-    name: "Operador derivada parcial",
+    name: "Operador de derivada parcial",
     meaning: "Operador de la derivada parcial respecto de x, manteniendo fijas todas las demás variables.",
     usage: "El cálculo en varias variables y las EDP están llenos de él: la ecuación del calor \\frac{\\partial u}{\\partial t} = k\\frac{\\partial^2 u}{\\partial x^2}, los gradientes y las matrices jacobianas lo usan. La \\partial curva lo distingue de la d ordinaria de \\frac{d}{dx}, reservada a funciones de una variable. Las derivadas parciales cruzadas se escriben \\frac{\\partial^2 f}{\\partial x\\,\\partial y}, con un espacio fino entre los factores del denominador. Cuando las fracciones se amontonan, la abreviatura con subíndice \\partial_x f o f_x es una alternativa compacta, habitual en física y en sistemas largos de EDP donde las fracciones apiladas dispararían la altura de línea.",
   },

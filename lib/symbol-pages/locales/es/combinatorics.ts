@@ -8,9 +8,9 @@ const text: SymbolPageTranslations = {
     usage: "Su valor es C(n, k) = \\frac{n!}{k!(n-k)!}, idéntico al coeficiente binomial \\binom{n}{k}, que es la notación preferida en la mayor parte de las matemáticas. \\binom adapta su tamaño al contexto; \\dbinom fuerza el tamaño de presentación y \\tbinom el de texto. Evita en LaTeX la sintaxis de TeX simple {n \\choose k}, contra la que advierte amsmath. Otras notaciones son nCr, {}^nC_k y C^k_n, esta última común en textos franceses con los índices intercambiados, así que comprueba la convención. La regla de Pascal, C(n, k) = C(n-1, k-1) + C(n-1, k), genera el triángulo de Pascal.",
   },
   "permutation-npr": {
-    name: "Permutación (nPr)",
-    meaning: "Número de disposiciones ordenadas de k elementos elegidos entre n elementos distintos; se lee «permutaciones de n tomadas de k en k».",
-    usage: "Las permutaciones cuentan selecciones ordenadas: P(n, k) = \\frac{n!}{(n-k)!} = n(n-1)\\cdots(n-k+1), así que P(5, 2) = 20. Es igual al factorial descendente (n)_k o n^{\\underline{k}}, y se relaciona con las combinaciones mediante P(n, k) = k!\\,C(n, k). Otras notaciones que verás son nPr, {}^nP_k y A^k_n (arreglos) en textos franceses y chinos. Como P(\\cdot) también denota probabilidad, el lector puede malinterpretar P(n, k) en un capítulo de probabilidad; cambiar a (n)_k o n^{\\underline{k}} lo evita. Usa \\cdots entre los factores de un producto.",
+    name: "Variación (nPr)",
+    meaning: "Número de disposiciones ordenadas de k elementos elegidos entre n elementos distintos; se lee «variaciones de n elementos tomados de k en k» (también «permutaciones de n tomadas de k en k»).",
+    usage: "Las variaciones (sin repetición) cuentan selecciones ordenadas: P(n, k) = \\frac{n!}{(n-k)!} = n(n-1)\\cdots(n-k+1), así que P(5, 2) = 20. Es igual al factorial descendente (n)_k o n^{\\underline{k}}, y se relaciona con las combinaciones mediante P(n, k) = k!\\,C(n, k). Otras notaciones que verás son nPr, {}^nP_k y A^k_n (arreglos) en textos franceses y chinos. Como P(\\cdot) también denota probabilidad, el lector puede malinterpretar P(n, k) en un capítulo de probabilidad; cambiar a (n)_k o n^{\\underline{k}} lo evita. Usa \\cdots entre los factores de un producto.",
   },
   "multinomial": {
     name: "Coeficiente multinomial",

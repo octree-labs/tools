@@ -9,13 +9,13 @@ const text: SymbolPageTranslations = {
   },
   "big-omega": {
     name: "Notación Omega grande",
-    meaning: "Cota inferior asintótica: f(n) = Omega(n) significa que f crece al menos tan rápido como una constante por n para n grande.",
+    meaning: "Cota inferior asintótica: f(n) = Ω(n) significa que f crece al menos tan rápido como una constante por n para n grande.",
     usage: "La omega mayúscula expresa cotas inferiores; la más famosa es que cualquier ordenación por comparaciones necesita \\Omega(n \\log n) comparaciones en el peor caso. Se escribe con la mayúscula griega recta \\Omega; amsmath ofrece también \\varOmega para una forma inclinada, que algunos tipógrafos prefieren para variables pero que resulta extraña como operador. Ten en cuenta que la teoría analítica de números usa el significado más antiguo de Hardy y Littlewood, en el que \\Omega indica que la cota no es o(g), así que comprueba qué definición sigue cada fuente. Combínala con O para acotar un tiempo de ejecución por ambos lados y pasa a \\Theta cuando las dos cotas coincidan.",
     example: "\\text{ordenar por comparaciones cuesta un tiempo } \\Omega(n \\log n)",
   },
   "big-theta": {
     name: "Notación Theta grande",
-    meaning: "Cota asintótica ajustada: f(n) = Theta(n) significa que f está acotada por arriba y por abajo por múltiplos constantes de n.",
+    meaning: "Cota asintótica ajustada: f(n) = Θ(n) significa que f está acotada por arriba y por abajo por múltiplos constantes de n.",
     usage: "Theta es la afirmación correcta cuando has demostrado cotas superior e inferior que coinciden: la búsqueda binaria es \\Theta(\\log n), y el caso intermedio del teorema maestro da \\Theta(n^{\\log_b a} \\log n). Formalmente, f \\in \\Theta(g) exactamente cuando f \\in O(g) y f \\in \\Omega(g). Muchos artículos escriben O donde quieren decir \\Theta; los revisores de congresos de teoría lo notan, así que usa \\Theta cuando lo importante es que la cota sea ajustada. La mayúscula \\Theta es recta por defecto; no la confundas con la minúscula \\theta, que suele nombrar un ángulo o un vector de parámetros, y evita \\vartheta, una variante de la minúscula.",
   },
   "little-o": {
@@ -26,7 +26,7 @@ const text: SymbolPageTranslations = {
   },
   "little-omega": {
     name: "Notación omega pequeña",
-    meaning: "Cota inferior asintótica estricta: f(n) = omega(n) significa que f(n)/n crece sin límite.",
+    meaning: "Cota inferior asintótica estricta: f(n) = ω(n) significa que f(n)/n crece sin límite.",
     usage: "La omega pequeña es la imagen especular de la o pequeña: f = \\omega(g) exactamente cuando g = o(f), así que n^2 = \\omega(n) y n \\log n = \\omega(n). Aparece con menos frecuencia que \\Omega, sobre todo en demostraciones de cotas inferiores y en algoritmos aleatorizados donde una cantidad debe crecer estrictamente más rápido que de forma lineal. Usa la minúscula griega \\omega, no la w latina, que se le parece en algunas fuentes. Ten en cuenta que el mismo símbolo está sobrecargado: en teoría de grafos \\omega(G) es el número de clique y en teoría de números \\omega(n) cuenta los factores primos distintos, así que define tu uso cuando se mezclen contextos.",
   },
   "modulo": {
