@@ -283,13 +283,21 @@ import ptTopology from "./pt/topology";
 import ruTopology from "./ru/topology";
 import viTopology from "./vi/topology";
 import cnTrigonometry from "./cn/trigonometry";
+import deTrigonometry from "./de/trigonometry";
 import esTrigonometry from "./es/trigonometry";
 import frTrigonometry from "./fr/trigonometry";
+import itTrigonometry from "./it/trigonometry";
+import ptTrigonometry from "./pt/trigonometry";
 import ruTrigonometry from "./ru/trigonometry";
+import viTrigonometry from "./vi/trigonometry";
 import cnUnits from "./cn/units";
+import deUnits from "./de/units";
 import esUnits from "./es/units";
 import frUnits from "./fr/units";
+import itUnits from "./it/units";
+import ptUnits from "./pt/units";
 import ruUnits from "./ru/units";
+import viUnits from "./vi/units";
 
 export type { SymbolPageTranslation, SymbolPageTranslations } from "./types";
 
@@ -496,6 +504,8 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "summation": deSummation,
     "tensors": deTensors,
     "topology": deTopology,
+    "trigonometry": deTrigonometry,
+    "units": deUnits,
   },
   it: {
     "accents": itAccents,
@@ -533,6 +543,8 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "summation": itSummation,
     "tensors": itTensors,
     "topology": itTopology,
+    "trigonometry": itTrigonometry,
+    "units": itUnits,
   },
   pt: {
     "accents": ptAccents,
@@ -570,6 +582,8 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "summation": ptSummation,
     "tensors": ptTensors,
     "topology": ptTopology,
+    "trigonometry": ptTrigonometry,
+    "units": ptUnits,
   },
   vi: {
     "accents": viAccents,
@@ -607,6 +621,8 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "summation": viSummation,
     "tensors": viTensors,
     "topology": viTopology,
+    "trigonometry": viTrigonometry,
+    "units": viUnits,
   },
 };
 

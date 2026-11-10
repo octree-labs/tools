@@ -290,6 +290,8 @@ const PARTIAL_CATEGORIES: string[] = [
   'summation',
   'tensors',
   'topology',
+  'trigonometry',
+  'units',
 ];
 
 /** Categories whose body copy is translated, per locale. */
