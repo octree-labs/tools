@@ -211,7 +211,16 @@ test('locales without any translated symbol copy stay noindex everywhere', () =>
 
 /** Categories whose body copy is translated in every SYMBOL_PAGE_TEXT_LOCALES locale. */
 const TRANSLATED_CATEGORIES: string[] = [
+  'accents',
   'arrows',
+  'boolean',
+  'brackets',
+  'calculus',
+  'chemistry',
+  'combinatorics',
+  'complex',
+  'computer-science',
+  'differential-geometry',
   'finance',
   'functions',
   'game-theory',

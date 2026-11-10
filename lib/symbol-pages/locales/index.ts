@@ -2,10 +2,46 @@ import { DEFAULT_LOCALE, LOCALES } from "@/lib/i18n/config";
 import { getSymbolCopy } from "../content";
 import { getSymbolPageRef, type SymbolPageRef } from "../index";
 import type { SymbolPageTranslation, SymbolPageTranslations } from "./types";
+import cnAccents from "./cn/accents";
+import esAccents from "./es/accents";
+import frAccents from "./fr/accents";
+import ruAccents from "./ru/accents";
 import cnArrows from "./cn/arrows";
 import esArrows from "./es/arrows";
 import frArrows from "./fr/arrows";
 import ruArrows from "./ru/arrows";
+import cnBoolean from "./cn/boolean";
+import esBoolean from "./es/boolean";
+import frBoolean from "./fr/boolean";
+import ruBoolean from "./ru/boolean";
+import cnBrackets from "./cn/brackets";
+import esBrackets from "./es/brackets";
+import frBrackets from "./fr/brackets";
+import ruBrackets from "./ru/brackets";
+import cnCalculus from "./cn/calculus";
+import esCalculus from "./es/calculus";
+import frCalculus from "./fr/calculus";
+import ruCalculus from "./ru/calculus";
+import cnChemistry from "./cn/chemistry";
+import esChemistry from "./es/chemistry";
+import frChemistry from "./fr/chemistry";
+import ruChemistry from "./ru/chemistry";
+import cnCombinatorics from "./cn/combinatorics";
+import esCombinatorics from "./es/combinatorics";
+import frCombinatorics from "./fr/combinatorics";
+import ruCombinatorics from "./ru/combinatorics";
+import cnComplex from "./cn/complex";
+import esComplex from "./es/complex";
+import frComplex from "./fr/complex";
+import ruComplex from "./ru/complex";
+import cnComputerScience from "./cn/computer-science";
+import esComputerScience from "./es/computer-science";
+import frComputerScience from "./fr/computer-science";
+import ruComputerScience from "./ru/computer-science";
+import cnDifferentialGeometry from "./cn/differential-geometry";
+import esDifferentialGeometry from "./es/differential-geometry";
+import frDifferentialGeometry from "./fr/differential-geometry";
+import ruDifferentialGeometry from "./ru/differential-geometry";
 import cnFinance from "./cn/finance";
 import esFinance from "./es/finance";
 import frFinance from "./fr/finance";
@@ -128,7 +164,16 @@ export type { SymbolPageTranslation, SymbolPageTranslations } from "./types";
  */
 const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
   cn: {
+    "accents": cnAccents,
     "arrows": cnArrows,
+    "boolean": cnBoolean,
+    "brackets": cnBrackets,
+    "calculus": cnCalculus,
+    "chemistry": cnChemistry,
+    "combinatorics": cnCombinatorics,
+    "complex": cnComplex,
+    "computer-science": cnComputerScience,
+    "differential-geometry": cnDifferentialGeometry,
     "finance": cnFinance,
     "functions": cnFunctions,
     "game-theory": cnGameTheory,
@@ -158,7 +203,16 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "units": cnUnits,
   },
   es: {
+    "accents": esAccents,
     "arrows": esArrows,
+    "boolean": esBoolean,
+    "brackets": esBrackets,
+    "calculus": esCalculus,
+    "chemistry": esChemistry,
+    "combinatorics": esCombinatorics,
+    "complex": esComplex,
+    "computer-science": esComputerScience,
+    "differential-geometry": esDifferentialGeometry,
     "finance": esFinance,
     "functions": esFunctions,
     "game-theory": esGameTheory,
@@ -188,7 +242,16 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "units": esUnits,
   },
   fr: {
+    "accents": frAccents,
     "arrows": frArrows,
+    "boolean": frBoolean,
+    "brackets": frBrackets,
+    "calculus": frCalculus,
+    "chemistry": frChemistry,
+    "combinatorics": frCombinatorics,
+    "complex": frComplex,
+    "computer-science": frComputerScience,
+    "differential-geometry": frDifferentialGeometry,
     "finance": frFinance,
     "functions": frFunctions,
     "game-theory": frGameTheory,
@@ -218,7 +281,16 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "units": frUnits,
   },
   ru: {
+    "accents": ruAccents,
     "arrows": ruArrows,
+    "boolean": ruBoolean,
+    "brackets": ruBrackets,
+    "calculus": ruCalculus,
+    "chemistry": ruChemistry,
+    "combinatorics": ruCombinatorics,
+    "complex": ruComplex,
+    "computer-science": ruComputerScience,
+    "differential-geometry": ruDifferentialGeometry,
     "finance": ruFinance,
     "functions": ruFunctions,
     "game-theory": ruGameTheory,
