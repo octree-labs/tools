@@ -27,9 +27,13 @@ import esCalculus from "./es/calculus";
 import frCalculus from "./fr/calculus";
 import ruCalculus from "./ru/calculus";
 import cnChemistry from "./cn/chemistry";
+import deChemistry from "./de/chemistry";
 import esChemistry from "./es/chemistry";
 import frChemistry from "./fr/chemistry";
+import itChemistry from "./it/chemistry";
+import ptChemistry from "./pt/chemistry";
 import ruChemistry from "./ru/chemistry";
+import viChemistry from "./vi/chemistry";
 import cnCombinatorics from "./cn/combinatorics";
 import esCombinatorics from "./es/combinatorics";
 import frCombinatorics from "./fr/combinatorics";
@@ -131,9 +135,13 @@ import ptPhysics from "./pt/physics";
 import ruPhysics from "./ru/physics";
 import viPhysics from "./vi/physics";
 import cnProbability from "./cn/probability";
+import deProbability from "./de/probability";
 import esProbability from "./es/probability";
 import frProbability from "./fr/probability";
+import itProbability from "./it/probability";
+import ptProbability from "./pt/probability";
 import ruProbability from "./ru/probability";
+import viProbability from "./vi/probability";
 import cnQuantifiers from "./cn/quantifiers";
 import deQuantifiers from "./de/quantifiers";
 import esQuantifiers from "./es/quantifiers";
@@ -350,37 +358,45 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
   },
   de: {
     "arrows": deArrows,
+    "chemistry": deChemistry,
     "functions": deFunctions,
     "logic": deLogic,
     "math": deMath,
     "physics": dePhysics,
+    "probability": deProbability,
     "quantifiers": deQuantifiers,
     "set-theory": deSetTheory,
   },
   it: {
     "arrows": itArrows,
+    "chemistry": itChemistry,
     "functions": itFunctions,
     "logic": itLogic,
     "math": itMath,
     "physics": itPhysics,
+    "probability": itProbability,
     "quantifiers": itQuantifiers,
     "set-theory": itSetTheory,
   },
   pt: {
     "arrows": ptArrows,
+    "chemistry": ptChemistry,
     "functions": ptFunctions,
     "logic": ptLogic,
     "math": ptMath,
     "physics": ptPhysics,
+    "probability": ptProbability,
     "quantifiers": ptQuantifiers,
     "set-theory": ptSetTheory,
   },
   vi: {
     "arrows": viArrows,
+    "chemistry": viChemistry,
     "functions": viFunctions,
     "logic": viLogic,
     "math": viMath,
     "physics": viPhysics,
+    "probability": viProbability,
     "quantifiers": viQuantifiers,
     "set-theory": viSetTheory,
   },
