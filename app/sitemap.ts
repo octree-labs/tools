@@ -11,11 +11,11 @@ export const SITEMAP_BASE_URL = 'https://tools.useoctree.com'
 /**
  * Symbol pages per sitemap file. Each page is listed in English plus the
  * locales its body copy is translated into (lib/symbol-pages/locales), so a
- * file holds at most 5 URLs per page. Keep each
- * file well under Vercel's 20 MB prerender limit and the 50k-URL cap if
- * locales are added.
+ * file holds at most 9 URLs per page (en, cn, es, fr, ru, de, it, pt, vi),
+ * 4,500 per file. Keep each file well under Vercel's 20 MB prerender limit
+ * and the 50k-URL cap if locales are added.
  */
-const SYMBOL_PAGES_PER_SITEMAP = 1000
+const SYMBOL_PAGES_PER_SITEMAP = 500
 
 /** Sitemap ids: 0 is every non-symbol-page URL, 1..n are symbol pages. */
 export function sitemapIds(): number[] {
