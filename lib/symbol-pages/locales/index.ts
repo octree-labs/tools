@@ -115,9 +115,13 @@ import ptGeometry from "./pt/geometry";
 import ruGeometry from "./ru/geometry";
 import viGeometry from "./vi/geometry";
 import cnGraphTheory from "./cn/graph-theory";
+import deGraphTheory from "./de/graph-theory";
 import esGraphTheory from "./es/graph-theory";
 import frGraphTheory from "./fr/graph-theory";
+import itGraphTheory from "./it/graph-theory";
+import ptGraphTheory from "./pt/graph-theory";
 import ruGraphTheory from "./ru/graph-theory";
+import viGraphTheory from "./vi/graph-theory";
 import cnGreek from "./cn/greek";
 import deGreek from "./de/greek";
 import esGreek from "./es/greek";
@@ -127,9 +131,13 @@ import ptGreek from "./pt/greek";
 import ruGreek from "./ru/greek";
 import viGreek from "./vi/greek";
 import cnLatin from "./cn/latin";
+import deLatin from "./de/latin";
 import esLatin from "./es/latin";
 import frLatin from "./fr/latin";
+import itLatin from "./it/latin";
+import ptLatin from "./pt/latin";
 import ruLatin from "./ru/latin";
+import viLatin from "./vi/latin";
 import cnLinearAlgebra from "./cn/linear-algebra";
 import esLinearAlgebra from "./es/linear-algebra";
 import frLinearAlgebra from "./fr/linear-algebra";
@@ -419,7 +427,9 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "functions": deFunctions,
     "game-theory": deGameTheory,
     "geometry": deGeometry,
+    "graph-theory": deGraphTheory,
     "greek": deGreek,
+    "latin": deLatin,
     "logic": deLogic,
     "math": deMath,
     "physics": dePhysics,
@@ -442,7 +452,9 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "functions": itFunctions,
     "game-theory": itGameTheory,
     "geometry": itGeometry,
+    "graph-theory": itGraphTheory,
     "greek": itGreek,
+    "latin": itLatin,
     "logic": itLogic,
     "math": itMath,
     "physics": itPhysics,
@@ -465,7 +477,9 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "functions": ptFunctions,
     "game-theory": ptGameTheory,
     "geometry": ptGeometry,
+    "graph-theory": ptGraphTheory,
     "greek": ptGreek,
+    "latin": ptLatin,
     "logic": ptLogic,
     "math": ptMath,
     "physics": ptPhysics,
@@ -488,7 +502,9 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "functions": viFunctions,
     "game-theory": viGameTheory,
     "geometry": viGeometry,
+    "graph-theory": viGraphTheory,
     "greek": viGreek,
+    "latin": viLatin,
     "logic": viLogic,
     "math": viMath,
     "physics": viPhysics,
