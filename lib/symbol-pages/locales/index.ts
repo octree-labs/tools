@@ -3,9 +3,13 @@ import { getSymbolCopy } from "../content";
 import { getSymbolPageRef, type SymbolPageRef } from "../index";
 import type { SymbolPageTranslation, SymbolPageTranslations } from "./types";
 import cnAccents from "./cn/accents";
+import deAccents from "./de/accents";
 import esAccents from "./es/accents";
 import frAccents from "./fr/accents";
+import itAccents from "./it/accents";
+import ptAccents from "./pt/accents";
 import ruAccents from "./ru/accents";
+import viAccents from "./vi/accents";
 import cnArrows from "./cn/arrows";
 import deArrows from "./de/arrows";
 import esArrows from "./es/arrows";
@@ -15,17 +19,29 @@ import ptArrows from "./pt/arrows";
 import ruArrows from "./ru/arrows";
 import viArrows from "./vi/arrows";
 import cnBoolean from "./cn/boolean";
+import deBoolean from "./de/boolean";
 import esBoolean from "./es/boolean";
 import frBoolean from "./fr/boolean";
+import itBoolean from "./it/boolean";
+import ptBoolean from "./pt/boolean";
 import ruBoolean from "./ru/boolean";
+import viBoolean from "./vi/boolean";
 import cnBrackets from "./cn/brackets";
+import deBrackets from "./de/brackets";
 import esBrackets from "./es/brackets";
 import frBrackets from "./fr/brackets";
+import itBrackets from "./it/brackets";
+import ptBrackets from "./pt/brackets";
 import ruBrackets from "./ru/brackets";
+import viBrackets from "./vi/brackets";
 import cnCalculus from "./cn/calculus";
+import deCalculus from "./de/calculus";
 import esCalculus from "./es/calculus";
 import frCalculus from "./fr/calculus";
+import itCalculus from "./it/calculus";
+import ptCalculus from "./pt/calculus";
 import ruCalculus from "./ru/calculus";
+import viCalculus from "./vi/calculus";
 import cnChemistry from "./cn/chemistry";
 import deChemistry from "./de/chemistry";
 import esChemistry from "./es/chemistry";
@@ -35,21 +51,37 @@ import ptChemistry from "./pt/chemistry";
 import ruChemistry from "./ru/chemistry";
 import viChemistry from "./vi/chemistry";
 import cnCombinatorics from "./cn/combinatorics";
+import deCombinatorics from "./de/combinatorics";
 import esCombinatorics from "./es/combinatorics";
 import frCombinatorics from "./fr/combinatorics";
+import itCombinatorics from "./it/combinatorics";
+import ptCombinatorics from "./pt/combinatorics";
 import ruCombinatorics from "./ru/combinatorics";
+import viCombinatorics from "./vi/combinatorics";
 import cnComplex from "./cn/complex";
+import deComplex from "./de/complex";
 import esComplex from "./es/complex";
 import frComplex from "./fr/complex";
+import itComplex from "./it/complex";
+import ptComplex from "./pt/complex";
 import ruComplex from "./ru/complex";
+import viComplex from "./vi/complex";
 import cnComputerScience from "./cn/computer-science";
+import deComputerScience from "./de/computer-science";
 import esComputerScience from "./es/computer-science";
 import frComputerScience from "./fr/computer-science";
+import itComputerScience from "./it/computer-science";
+import ptComputerScience from "./pt/computer-science";
 import ruComputerScience from "./ru/computer-science";
+import viComputerScience from "./vi/computer-science";
 import cnDifferentialGeometry from "./cn/differential-geometry";
+import deDifferentialGeometry from "./de/differential-geometry";
 import esDifferentialGeometry from "./es/differential-geometry";
 import frDifferentialGeometry from "./fr/differential-geometry";
+import itDifferentialGeometry from "./it/differential-geometry";
+import ptDifferentialGeometry from "./pt/differential-geometry";
 import ruDifferentialGeometry from "./ru/differential-geometry";
+import viDifferentialGeometry from "./vi/differential-geometry";
 import cnFinance from "./cn/finance";
 import esFinance from "./es/finance";
 import frFinance from "./fr/finance";
@@ -195,7 +227,7 @@ export type { SymbolPageTranslation, SymbolPageTranslations } from "./types";
 
 /**
  * locale -> category -> slug -> translated body copy. cn, es, fr and ru cover
- * every category; de, it, pt and vi cover the ten with the most traffic. A symbol page is a real
+ * every category; de, it, pt and vi cover a growing subset. A symbol page is a real
  * alternate in a locale (self canonical, hreflang, sitemap) only when it has
  * an entry here; every other locale renders the English copy under the
  * translated chrome, canonicalises to the English URL and is noindex.
@@ -361,8 +393,16 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "units": ruUnits,
   },
   de: {
+    "accents": deAccents,
     "arrows": deArrows,
+    "boolean": deBoolean,
+    "brackets": deBrackets,
+    "calculus": deCalculus,
     "chemistry": deChemistry,
+    "combinatorics": deCombinatorics,
+    "complex": deComplex,
+    "computer-science": deComputerScience,
+    "differential-geometry": deDifferentialGeometry,
     "functions": deFunctions,
     "greek": deGreek,
     "logic": deLogic,
@@ -373,8 +413,16 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "set-theory": deSetTheory,
   },
   it: {
+    "accents": itAccents,
     "arrows": itArrows,
+    "boolean": itBoolean,
+    "brackets": itBrackets,
+    "calculus": itCalculus,
     "chemistry": itChemistry,
+    "combinatorics": itCombinatorics,
+    "complex": itComplex,
+    "computer-science": itComputerScience,
+    "differential-geometry": itDifferentialGeometry,
     "functions": itFunctions,
     "greek": itGreek,
     "logic": itLogic,
@@ -385,8 +433,16 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "set-theory": itSetTheory,
   },
   pt: {
+    "accents": ptAccents,
     "arrows": ptArrows,
+    "boolean": ptBoolean,
+    "brackets": ptBrackets,
+    "calculus": ptCalculus,
     "chemistry": ptChemistry,
+    "combinatorics": ptCombinatorics,
+    "complex": ptComplex,
+    "computer-science": ptComputerScience,
+    "differential-geometry": ptDifferentialGeometry,
     "functions": ptFunctions,
     "greek": ptGreek,
     "logic": ptLogic,
@@ -397,8 +453,16 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "set-theory": ptSetTheory,
   },
   vi: {
+    "accents": viAccents,
     "arrows": viArrows,
+    "boolean": viBoolean,
+    "brackets": viBrackets,
+    "calculus": viCalculus,
     "chemistry": viChemistry,
+    "combinatorics": viCombinatorics,
+    "complex": viComplex,
+    "computer-science": viComputerScience,
+    "differential-geometry": viDifferentialGeometry,
     "functions": viFunctions,
     "greek": viGreek,
     "logic": viLogic,

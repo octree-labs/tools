@@ -253,10 +253,18 @@ const ALL_CATEGORIES: string[] = [] = [
   'units',
 ];
 
-/** The ten categories with the most traffic: translated in de, it, pt and vi. */
+/** Categories translated in de, it, pt and vi (the rest stay English there). */
 const TOP_CATEGORIES: string[] = [
+  'accents',
   'arrows',
+  'boolean',
+  'brackets',
+  'calculus',
   'chemistry',
+  'combinatorics',
+  'complex',
+  'computer-science',
+  'differential-geometry',
   'functions',
   'greek',
   'logic',
