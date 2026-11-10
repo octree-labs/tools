@@ -64,7 +64,7 @@ const text: SymbolPageTranslations = {
   },
   "exterior-derivative": {
     name: "Đạo hàm ngoài",
-    meaning: "Đạo hàm ngoài của dạng vi phân \\omega, tăng bậc của nó lên một và tổng quát hóa gradient, rota và divergence.",
+    meaning: "Đạo hàm ngoài của dạng vi phân \\omega, tăng bậc của nó lên một và tổng quát hóa gradien, rôta và đive.",
     usage: "Toán tử này thỏa mãn d \\circ d = 0 và quy tắc Leibniz phân bậc d(\\alpha \\wedge \\beta) = d\\alpha \\wedge \\beta + (-1)^k \\alpha \\wedge d\\beta với \\alpha là một k-dạng. Định lý Stokes trở thành \\int_M d\\omega = \\int_{\\partial M} \\omega, và một dạng là đóng khi d\\omega = 0 và khớp khi \\omega = d\\eta. Nhiều quy chuẩn đặt toán tử bằng chữ đứng \\mathrm{d}\\omega để phân biệt với một biến d; dù chọn cách nào, hãy dùng nhất quán, kể cả trong tích phân như \\int f\\, dx.",
   },
   "wedge-product": {

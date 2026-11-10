@@ -5,12 +5,12 @@ const text: SymbolPageTranslations = {
   "nand": {
     name: "NAND",
     meaning: "Cuneo con una barra sopra, usato come connettivo NAND (barra di Sheffer): vero tranne quando entrambi gli ingressi sono veri.",
-    usage: "Il NAND è funzionalmente completo, quindi ogni funzione booleana si può costruire solo con p \\barwedge q, ed è proprio per questo che i progettisti digitali lo usano. I logici scrivono la barra di Sheffer anche come barra verticale, p \\mid q o p \\uparrow q, quindi dichiarate la vostra notazione una volta. \\barwedge è un operatore binario e riceve uno spazio medio su ciascun lato. Non confondetelo con \\veebar, che ha la barra sotto una vee e di solito indica l'or esclusivo, né con \\doublebarwedge, che porta due barre. La sua tavola di verità è il complemento di quella di \\wedge.",
+    usage: "Il NAND è funzionalmente completo, quindi ogni funzione booleana si può costruire solo con p \\barwedge q, ed è proprio per questo che i progettisti digitali lo usano. I logici scrivono la barra di Sheffer anche come barra verticale, p \\mid q o p \\uparrow q, quindi dichiarate la vostra notazione una volta. \\barwedge è un operatore binario e riceve uno spazio medio su ciascun lato. Non confondetelo con \\veebar, che ha la barra sotto il simbolo di disgiunzione e di solito indica l'or esclusivo, né con \\doublebarwedge, che porta due barre. La sua tavola di verità è il complemento di quella di \\wedge.",
   },
   "nor-operator-bar-over-vee": {
     name: "Operatore NOR (OR negato)",
     meaning: "Un simbolo di disgiunzione (\\vee) con un accento a barra sopra, costruito a mano per rappresentare il NOR (freccia di Peirce): vero solo quando entrambi gli ingressi sono falsi.",
-    usage: "Nei font matematici comuni non esiste un singolo comando standard per il glifo NOR, quindi \\bar{\\vee} lo simula ponendo un accento sopra il simbolo di or. Un effetto collaterale: un simbolo accentato diventa un atomo ordinario e perde la spaziatura da operatore binario che aveva \\vee, quindi scrivete \\mathbin{\\bar{\\vee}} per ripristinarla, idealmente dentro un \\newcommand. La notazione alternativa p \\downarrow q (freccia di Peirce) è ampiamente compresa ed evita il problema. Non confondetelo con \\veebar, la cui barra sta sotto la vee e normalmente significa XOR.",
+    usage: "Nei font matematici comuni non esiste un singolo comando standard per il glifo NOR, quindi \\bar{\\vee} lo simula ponendo un accento sopra il simbolo di or. Un effetto collaterale: un simbolo accentato diventa un atomo ordinario e perde la spaziatura da operatore binario che aveva \\vee, quindi scrivete \\mathbin{\\bar{\\vee}} per ripristinarla, idealmente dentro un \\newcommand. La notazione alternativa p \\downarrow q (freccia di Peirce) è ampiamente compresa ed evita il problema. Non confondetelo con \\veebar, la cui barra sta sotto il simbolo di disgiunzione e normalmente significa XOR.",
   },
   "boolean-and": {
     name: "AND booleano",

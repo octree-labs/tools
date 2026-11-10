@@ -70,7 +70,7 @@ const text: SymbolPageTranslations = {
   "wedge-product": {
     name: "Prodotto esterno",
     meaning: "Prodotto esterno (wedge) di due forme differenziali, un prodotto antisimmetrico che costruisce forme di grado superiore.",
-    usage: "Per una k-forma \\alpha e una l-forma \\beta è commutativo in senso graduato, \\alpha \\wedge \\beta = (-1)^{kl} \\beta \\wedge \\alpha, quindi una 1-forma moltiplicata esternamente per se stessa dà zero. Le forme di volume si scrivono dx^1 \\wedge \\cdots \\wedge dx^n. \\wedge è un operatore binario, quindi TeX aggiunge uno spazio medio su entrambi i lati; \\land produce lo stesso identico glifo ed è meglio riservarlo all'and logico. Per la potenza esterna o per un grande wedge su un insieme di indici, usate \\bigwedge, come in \\bigwedge^k V.",
+    usage: "Per una k-forma \\alpha e una l-forma \\beta è commutativo in senso graduato, \\alpha \\wedge \\beta = (-1)^{kl} \\beta \\wedge \\alpha, quindi una 1-forma moltiplicata esternamente per se stessa dà zero. Le forme di volume si scrivono dx^1 \\wedge \\cdots \\wedge dx^n. \\wedge è un operatore binario, quindi TeX aggiunge uno spazio medio su entrambi i lati; \\land produce lo stesso identico glifo ed è meglio riservarlo all'and logico. Per la potenza esterna o per un prodotto esterno grande su un insieme di indici, usate \\bigwedge, come in \\bigwedge^k V.",
   },
   "lie-derivative": {
     name: "Derivata di Lie",

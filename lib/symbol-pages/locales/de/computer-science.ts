@@ -25,9 +25,9 @@ const text: SymbolPageTranslations = {
     example: "\\log n = o(n) \\quad \\text{da} \\quad \\lim_{n\\to\\infty} \\frac{\\log n}{n} = 0",
   },
   "little-omega": {
-    name: "Klein-omega",
+    name: "Klein-Omega",
     meaning: "Strikte asymptotische untere Schranke: f(n) = omega(n) bedeutet, dass f(n)/n unbeschränkt wächst.",
-    usage: "Klein-omega ist das Spiegelbild von Klein-o: f = \\omega(g) genau dann, wenn g = o(f), also n^2 = \\omega(n) und n \\log n = \\omega(n). Es kommt seltener vor als \\Omega, vor allem in Beweisen unterer Schranken und bei randomisierten Algorithmen, wo eine Größe echt schneller als linear wachsen muss. Verwenden Sie das kleine griechische \\omega, nicht das lateinische w, das in manchen Schriften ähnlich aussieht. Beachten Sie, dass dasselbe Symbol mehrfach belegt ist: In der Graphentheorie ist \\omega(G) die Cliquenzahl, und in der Zahlentheorie zählt \\omega(n) die verschiedenen Primfaktoren; definieren Sie Ihre Verwendung also bei gemischtem Kontext.",
+    usage: "Klein-Omega ist das Spiegelbild von Klein-o: f = \\omega(g) genau dann, wenn g = o(f), also n^2 = \\omega(n) und n \\log n = \\omega(n). Es kommt seltener vor als \\Omega, vor allem in Beweisen unterer Schranken und bei randomisierten Algorithmen, wo eine Größe echt schneller als linear wachsen muss. Verwenden Sie das kleine griechische \\omega, nicht das lateinische w, das in manchen Schriften ähnlich aussieht. Beachten Sie, dass dasselbe Symbol mehrfach belegt ist: In der Graphentheorie ist \\omega(G) die Cliquenzahl, und in der Zahlentheorie zählt \\omega(n) die verschiedenen Primfaktoren; definieren Sie Ihre Verwendung also bei gemischtem Kontext.",
   },
   "modulo": {
     name: "Modulo",
