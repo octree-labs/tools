@@ -20,12 +20,12 @@ const text: SymbolPageTranslations = {
   "for-all-in-set": {
     name: "Cuantificador universal acotado",
     meaning: "Cuantificador universal acotado: el enunciado debe cumplirse para todo elemento x del conjunto A.",
-    usage: "Restringir el cuantificador a un conjunto, como en \\forall x \\in A, abrevia \\forall x\\,(x \\in A \\to P(x)) y es como escriben realmente la mayoría de los matemáticos. \\in tiene espaciado de relación, así que la expresión se espacia sola; basta con separarla del predicado con una coma, dos puntos o \; para facilitar la lectura. Con varias variables puedes escribir \\forall x, y \\in A en lugar de repetir el cuantificador. No confundas \\in con \\epsilon o \\varepsilon, que se parecen en algunas fuentes pero son letras, no la relación de pertenencia.",
+    usage: "Restringir el cuantificador a un conjunto, como en \\forall x \\in A, abrevia \\forall x\\,(x \\in A \\to P(x)) y es como escriben realmente la mayoría de los matemáticos. \\in tiene espaciado de relación, así que la expresión se espacia sola; basta con separarla del predicado con una coma, dos puntos o \\; para facilitar la lectura. Con varias variables puedes escribir \\forall x, y \\in A en lugar de repetir el cuantificador. No confundas \\in con \\epsilon o \\varepsilon, que se parecen en algunas fuentes pero son letras, no la relación de pertenencia.",
   },
   "exists-in-set": {
     name: "Cuantificador existencial acotado",
     meaning: "Cuantificador existencial acotado: algún elemento x de A cumple la condición que sigue.",
-    usage: "Esta forma compacta sustituye a \\exists x\\,(x \\in A \\wedge P(x)) y aparece continuamente en análisis, por ejemplo en la densidad de los racionales: entre dos reales cualesquiera \\exists q \\in \\mathbb{Q}. La negación de \\exists x \\in A\\, P(x) es \\forall x \\in A\\, \\neg P(x), una regla que conviene tener presente al negar definiciones. Usa \\nexists x \\in A para «ningún elemento de A». Pon dos puntos, «tal que» o \; antes del predicado para que el lector vea dónde termina el cuantificador.",
+    usage: "Esta forma compacta sustituye a \\exists x\\,(x \\in A \\wedge P(x)) y aparece continuamente en análisis, por ejemplo en la densidad de los racionales: entre dos reales cualesquiera \\exists q \\in \\mathbb{Q}. La negación de \\exists x \\in A\\, P(x) es \\forall x \\in A\\, \\neg P(x), una regla que conviene tener presente al negar definiciones. Usa \\nexists x \\in A para «ningún elemento de A». Pon dos puntos, «tal que» o \\; antes del predicado para que el lector vea dónde termina el cuantificador.",
   },
   "such-that-colon": {
     name: "Dos puntos de «tal que»",
@@ -35,7 +35,7 @@ const text: SymbolPageTranslations = {
   "set-builder": {
     name: "Notación por comprensión",
     meaning: "Notación por comprensión: el conjunto de todos los x para los que se cumple la propiedad P(x), escrito con llaves y un separador.",
-    usage: "En modo matemático las llaves deben escaparse como \\{ y \\}; de lo contrario solo agrupan y desaparecen del resultado. \\mid es una relación, así que recibe el espacio adecuado a ambos lados, a diferencia de una | sola, que es un símbolo ordinario y apiña las letras. Cuando la condición contiene fracciones o material alto, ajusta el tamaño de todo a la vez: \\left\\{ x \;\\middle|\; \\frac{x}{2} \\in \\mathbb{Z} \\right\\}. Los dos puntos funcionan igual de bien como separador y evitan confusiones cuando la propia condición contiene valores absolutos.",
+    usage: "En modo matemático las llaves deben escaparse como \\{ y \\}; de lo contrario solo agrupan y desaparecen del resultado. \\mid es una relación, así que recibe el espacio adecuado a ambos lados, a diferencia de una | sola, que es un símbolo ordinario y apiña las letras. Cuando la condición contiene fracciones o material alto, ajusta el tamaño de todo a la vez: \\left\\{ x \\;\\middle|\\; \\frac{x}{2} \\in \\mathbb{Z} \\right\\}. Los dos puntos funcionan igual de bien como separador y evitan confusiones cuando la propia condición contiene valores absolutos.",
   },
   "quantified-statement": {
     name: "Enunciado con cuantificadores anidados",
