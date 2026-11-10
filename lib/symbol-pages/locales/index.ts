@@ -303,7 +303,7 @@ export type { SymbolPageTranslation, SymbolPageTranslations } from "./types";
 
 /**
  * locale -> category -> slug -> translated body copy. cn, es, fr and ru cover
- * every category; de, it, pt and vi cover a growing subset. A symbol page is a real
+ * every category; de, it, pt and vi cover the categories registered below. A symbol page is a real
  * alternate in a locale (self canonical, hreflang, sitemap) only when it has
  * an entry here; every other locale renders the English copy under the
  * translated chrome, canonicalises to the English URL and is noindex.
