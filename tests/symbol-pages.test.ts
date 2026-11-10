@@ -332,9 +332,9 @@ test('de, it, pt and vi translate every category, so every symbol page is indexa
 });
 
 test('de, it, pt and vi have their own symbolPage messages (no English labels)', () => {
-  const en_ = (en as Record<string, Record<string, string>>).symbolPage;
+  const en_ = (en as unknown as Record<string, Record<string, string>>).symbolPage;
   for (const [locale, messages] of Object.entries({ de, it, pt, vi })) {
-    const local = (messages as Record<string, Record<string, string>>).symbolPage;
+    const local = (messages as unknown as Record<string, Record<string, string>>).symbolPage;
     assert.ok(local, `messages/${locale}.json has no symbolPage section`);
     assert.deepEqual(Object.keys(local).sort(), Object.keys(en_).sort(), locale);
     for (const key of ['faqHowQ', 'related', 'example', 'packageLabel', 'faqHeading', 'whereUsed']) {
