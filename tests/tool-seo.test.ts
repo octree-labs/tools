@@ -8,11 +8,13 @@ import de from '../lib/tool-seo/locales/de';
 import es from '../lib/tool-seo/locales/es';
 import fr from '../lib/tool-seo/locales/fr';
 import it from '../lib/tool-seo/locales/it';
+import pt from '../lib/tool-seo/locales/pt';
 import ru from '../lib/tool-seo/locales/ru';
+import vi from '../lib/tool-seo/locales/vi';
 import { getToolSeoTranslation } from '../lib/tool-seo';
 import { toLanguageTag } from '../lib/seo';
 
-const locales = { cn, de, es, fr, it, ru };
+const locales = { cn, de, es, fr, it, pt, ru, vi };
 // Every tool page with an SEO block (app/[locale]/tools/<slug>/seo-content.tsx)
 // must have a translation in every locale file.
 const toolsDir = join(__dirname, '..', 'app', '[locale]', 'tools');
@@ -67,4 +69,11 @@ test('locale files never lose a LaTeX backslash to a JS escape', () => {
     }
   }
   assert.deepEqual(bad, []);
+});
+
+test('pt and vi tool pages render their translated block', () => {
+  assert.equal(getToolSeoTranslation('latex-preview', 'pt')?.heading.startsWith('Editor LaTeX online'), true);
+  assert.equal(getToolSeoTranslation('latex-preview', 'vi')?.heading.startsWith('Trình soạn thảo LaTeX online'), true);
+  assert.equal(toLanguageTag('pt'), 'pt');
+  assert.equal(toLanguageTag('vi'), 'vi');
 });
