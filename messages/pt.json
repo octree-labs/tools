@@ -1086,6 +1086,41 @@
         "contentGoesHere": "O conteúdo vai aqui.",
         "summaryOfKeyPoints": "Resumo dos pontos principais."
       }
-    }
+    },
+  "symbolPage": {
+    "breadcrumbSymbols": "Símbolos",
+    "title": "{name} em LaTeX ({command})",
+    "metaDescription": "{meaning} Copie {command}, veja qual pacote ele exige e cole um exemplo compilável.",
+    "commandLabel": "Comando LaTeX",
+    "packageLabel": "Pacote",
+    "packageNone": "Nenhum pacote necessário: nativo do LaTeX",
+    "packageNeeded": "Adicione ao preâmbulo",
+    "unicodeLabel": "Copiar o caractere Unicode",
+    "modeLabel": "Modo",
+    "modeMath": "Somente modo matemático",
+    "modeText": "Somente modo texto",
+    "modeBoth": "Modo texto e modo matemático",
+    "whereUsed": "Onde é usado",
+    "alsoListed": "Também aparece em",
+    "example": "Exemplo mínimo compilável",
+    "exampleIntro": "Cole isto em um arquivo .tex vazio e compile com pdfLaTeX, XeLaTeX ou LuaLaTeX.",
+    "exampleIntroUnicode": "Cole isto em um arquivo .tex vazio e compile com XeLaTeX ou LuaLaTeX (contém um caractere Unicode).",
+    "openExample": "Abrir este exemplo no Octree",
+    "related": "Símbolos relacionados",
+    "allInCategory": "Todos os símbolos: {category}",
+    "faqHeading": "Perguntas frequentes",
+    "faqHowQ": "Como escrever {name} em LaTeX?",
+    "faqHowA": "Digite {command} no modo matemático, por exemplo ${example}$. {packageSentence}",
+    "faqHowAText": "Digite {command} no texto corrido, por exemplo {example}. {packageSentence}",
+    "faqHowNoPkg": "Funciona no LaTeX padrão sem carregar nenhum pacote.",
+    "faqHowPkg": "Carregue antes {packages} com {usepackage}.",
+    "faqPkgQ": "Qual pacote é necessário para {command}?",
+    "faqPkgNone": "Nenhum. {command} faz parte do LaTeX padrão, então compila só com a classe do documento no preâmbulo.",
+    "faqPkg": "{command} precisa de {packages}: adicione {usepackage} ao preâmbulo antes do início do documento.",
+    "faqModeQ": "Posso usar {command} no modo texto ou só no modo matemático?",
+    "faqModeMath": "Só no modo matemático. Fora de $...$ o LaTeX para com \"Missing $ inserted\", então no texto escreva ${command}$.",
+    "faqModeMathUnicode": "Se você só precisa do glifo no texto, cole o caractere Unicode {char} (com XeLaTeX ou LuaLaTeX e uma fonte que o tenha).",
+    "faqModeTextOnly": "{command} é um comando de modo texto: use-o no texto corrido ou coloque-o dentro de \\text em uma fórmula.",
+    "faqModeBoth": "Nos dois. {command} compila no texto corrido e dentro de $...$; em uma fórmula, mantenha-o no modo matemático para que use as fontes e o espaçamento matemáticos."
   }
-  
+}
