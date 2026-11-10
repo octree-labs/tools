@@ -97,7 +97,7 @@ const translations: ToolSeoLocale = {
           "Mặc định là pdfLaTeX. Dịch vụ biên dịch chuyển sang XeLaTeX khi tài liệu nạp fontspec, polyglossia, unicode-math hoặc xeCJK, và sang LuaLaTeX khi tài liệu dùng \\directlua hoặc luacode.",
       },
       {
-        question: "Có thể tải lên hình ảnh hoặc thư mục tài liệu tham khảo .bib không?",
+        question: "Có thể tải lên hình ảnh hoặc danh mục tài liệu tham khảo .bib không?",
         answer:
           "Không phải trên trang này: trang chỉ biên dịch một tệp main.tex. Môi trường thebibliography vẫn dùng được, nhưng tệp hình ảnh và tệp .bib cần đến trình soạn thảo Octree, nơi hỗ trợ dự án nhiều tệp.",
       },
@@ -758,7 +758,7 @@ const translations: ToolSeoLocale = {
       <>
         <p>
           Phần lớn bài báo trên arXiv được viết bằng LaTeX, và arXiv lưu giữ mã nguồn mà tác giả
-          đã nộp: các tệp .tex, thư mục tài liệu tham khảo, tệp style và hình vẽ. Công cụ này lấy
+          đã nộp: các tệp .tex, danh mục tài liệu tham khảo, tệp style và hình vẽ. Công cụ này lấy
           mã nguồn LaTeX đó từ arXiv cho bạn. Dán một mã định danh hoặc liên kết để duyệt các tệp,
           đọc tệp .tex chính và tải mã nguồn arXiv xuống dạng .zip, không phải tự giải nén tệp
           .tar.gz.
@@ -793,7 +793,7 @@ const translations: ToolSeoLocale = {
           "Dán mã định danh hoặc URL arXiv của bài báo vào công cụ trên trang này. Công cụ lấy mã nguồn tác giả đã nộp từ arXiv, liệt kê mọi tệp, hiển thị tệp .tex chính và cho phép tải tất cả xuống dạng .zip. Trên arxiv.org, các tệp này nằm sau liên kết “TeX Source” trên trang tóm tắt của bài báo, dưới dạng tệp .tar.gz.",
       },
       {
-        question: "Vì sao một bài báo báo rằng không có mã nguồn LaTeX?",
+        question: "Vì sao một số bài báo không có mã nguồn LaTeX?",
         answer:
           "Một số tác giả chỉ nộp PDF lên arXiv, nên không có tệp .tex nào để tải. Với những bài báo này, công cụ chuyển PDF sang LaTeX có thể dựng lại văn bản và công thức thành LaTeX chỉnh sửa được, nhưng không khôi phục được mã nguồn gốc.",
       },
@@ -1568,7 +1568,7 @@ $\\displaystyle \\hat{H}\\psi = E\\psi$
     steps: [
       {
         title: "Dán mã nguồn LaTeX của bạn",
-        body: "Dán vào trình soạn thảo toàn bộ tệp .tex, kể cả phần preamble, hoặc chỉ mục bạn muốn đếm.",
+        body: "Dán vào trình soạn thảo toàn bộ tệp .tex, kể cả phần preamble, hoặc chỉ phần bạn muốn đếm.",
       },
       {
         title: "Để công cụ tự đếm",
