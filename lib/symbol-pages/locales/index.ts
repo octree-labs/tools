@@ -51,9 +51,13 @@ import esFinance from "./es/finance";
 import frFinance from "./fr/finance";
 import ruFinance from "./ru/finance";
 import cnFunctions from "./cn/functions";
+import deFunctions from "./de/functions";
 import esFunctions from "./es/functions";
 import frFunctions from "./fr/functions";
+import itFunctions from "./it/functions";
+import ptFunctions from "./pt/functions";
 import ruFunctions from "./ru/functions";
+import viFunctions from "./vi/functions";
 import cnGameTheory from "./cn/game-theory";
 import esGameTheory from "./es/game-theory";
 import frGameTheory from "./fr/game-theory";
@@ -119,9 +123,13 @@ import esOrder from "./es/order";
 import frOrder from "./fr/order";
 import ruOrder from "./ru/order";
 import cnPhysics from "./cn/physics";
+import dePhysics from "./de/physics";
 import esPhysics from "./es/physics";
 import frPhysics from "./fr/physics";
+import itPhysics from "./it/physics";
+import ptPhysics from "./pt/physics";
 import ruPhysics from "./ru/physics";
+import viPhysics from "./vi/physics";
 import cnProbability from "./cn/probability";
 import esProbability from "./es/probability";
 import frProbability from "./fr/probability";
@@ -342,29 +350,37 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
   },
   de: {
     "arrows": deArrows,
+    "functions": deFunctions,
     "logic": deLogic,
     "math": deMath,
+    "physics": dePhysics,
     "quantifiers": deQuantifiers,
     "set-theory": deSetTheory,
   },
   it: {
     "arrows": itArrows,
+    "functions": itFunctions,
     "logic": itLogic,
     "math": itMath,
+    "physics": itPhysics,
     "quantifiers": itQuantifiers,
     "set-theory": itSetTheory,
   },
   pt: {
     "arrows": ptArrows,
+    "functions": ptFunctions,
     "logic": ptLogic,
     "math": ptMath,
+    "physics": ptPhysics,
     "quantifiers": ptQuantifiers,
     "set-theory": ptSetTheory,
   },
   vi: {
     "arrows": viArrows,
+    "functions": viFunctions,
     "logic": viLogic,
     "math": viMath,
+    "physics": viPhysics,
     "quantifiers": viQuantifiers,
     "set-theory": viSetTheory,
   },
