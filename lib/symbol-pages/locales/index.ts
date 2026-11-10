@@ -2,6 +2,10 @@ import { DEFAULT_LOCALE, LOCALES } from "@/lib/i18n/config";
 import { getSymbolCopy } from "../content";
 import { getSymbolPageRef, type SymbolPageRef } from "../index";
 import type { SymbolPageTranslation, SymbolPageTranslations } from "./types";
+import cnAccents from "./cn/accents";
+import esAccents from "./es/accents";
+import frAccents from "./fr/accents";
+import ruAccents from "./ru/accents";
 import cnArrows from "./cn/arrows";
 import esArrows from "./es/arrows";
 import frArrows from "./fr/arrows";
@@ -10,6 +14,14 @@ import cnBoolean from "./cn/boolean";
 import esBoolean from "./es/boolean";
 import frBoolean from "./fr/boolean";
 import ruBoolean from "./ru/boolean";
+import cnBrackets from "./cn/brackets";
+import esBrackets from "./es/brackets";
+import frBrackets from "./fr/brackets";
+import ruBrackets from "./ru/brackets";
+import cnCalculus from "./cn/calculus";
+import esCalculus from "./es/calculus";
+import frCalculus from "./fr/calculus";
+import ruCalculus from "./ru/calculus";
 import cnChemistry from "./cn/chemistry";
 import esChemistry from "./es/chemistry";
 import frChemistry from "./fr/chemistry";
@@ -152,8 +164,11 @@ export type { SymbolPageTranslation, SymbolPageTranslations } from "./types";
  */
 const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
   cn: {
+    "accents": cnAccents,
     "arrows": cnArrows,
     "boolean": cnBoolean,
+    "brackets": cnBrackets,
+    "calculus": cnCalculus,
     "chemistry": cnChemistry,
     "combinatorics": cnCombinatorics,
     "complex": cnComplex,
@@ -188,8 +203,11 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "units": cnUnits,
   },
   es: {
+    "accents": esAccents,
     "arrows": esArrows,
     "boolean": esBoolean,
+    "brackets": esBrackets,
+    "calculus": esCalculus,
     "chemistry": esChemistry,
     "combinatorics": esCombinatorics,
     "complex": esComplex,
@@ -224,8 +242,11 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "units": esUnits,
   },
   fr: {
+    "accents": frAccents,
     "arrows": frArrows,
     "boolean": frBoolean,
+    "brackets": frBrackets,
+    "calculus": frCalculus,
     "chemistry": frChemistry,
     "combinatorics": frCombinatorics,
     "complex": frComplex,
@@ -260,8 +281,11 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "units": frUnits,
   },
   ru: {
+    "accents": ruAccents,
     "arrows": ruArrows,
     "boolean": ruBoolean,
+    "brackets": ruBrackets,
+    "calculus": ruCalculus,
     "chemistry": ruChemistry,
     "combinatorics": ruCombinatorics,
     "complex": ruComplex,
