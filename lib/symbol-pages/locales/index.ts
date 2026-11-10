@@ -79,9 +79,13 @@ import esLinearAlgebra from "./es/linear-algebra";
 import frLinearAlgebra from "./fr/linear-algebra";
 import ruLinearAlgebra from "./ru/linear-algebra";
 import cnLogic from "./cn/logic";
+import deLogic from "./de/logic";
 import esLogic from "./es/logic";
 import frLogic from "./fr/logic";
+import itLogic from "./it/logic";
+import ptLogic from "./pt/logic";
 import ruLogic from "./ru/logic";
+import viLogic from "./vi/logic";
 import cnMachineLearning from "./cn/machine-learning";
 import esMachineLearning from "./es/machine-learning";
 import frMachineLearning from "./fr/machine-learning";
@@ -123,9 +127,13 @@ import esProbability from "./es/probability";
 import frProbability from "./fr/probability";
 import ruProbability from "./ru/probability";
 import cnQuantifiers from "./cn/quantifiers";
+import deQuantifiers from "./de/quantifiers";
 import esQuantifiers from "./es/quantifiers";
 import frQuantifiers from "./fr/quantifiers";
+import itQuantifiers from "./it/quantifiers";
+import ptQuantifiers from "./pt/quantifiers";
 import ruQuantifiers from "./ru/quantifiers";
+import viQuantifiers from "./vi/quantifiers";
 import cnRelations from "./cn/relations";
 import esRelations from "./es/relations";
 import frRelations from "./fr/relations";
@@ -334,22 +342,30 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
   },
   de: {
     "arrows": deArrows,
+    "logic": deLogic,
     "math": deMath,
+    "quantifiers": deQuantifiers,
     "set-theory": deSetTheory,
   },
   it: {
     "arrows": itArrows,
+    "logic": itLogic,
     "math": itMath,
+    "quantifiers": itQuantifiers,
     "set-theory": itSetTheory,
   },
   pt: {
     "arrows": ptArrows,
+    "logic": ptLogic,
     "math": ptMath,
+    "quantifiers": ptQuantifiers,
     "set-theory": ptSetTheory,
   },
   vi: {
     "arrows": viArrows,
+    "logic": viLogic,
     "math": viMath,
+    "quantifiers": viQuantifiers,
     "set-theory": viSetTheory,
   },
 };
