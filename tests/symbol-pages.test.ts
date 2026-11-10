@@ -406,3 +406,21 @@ test('translated pairs render their own language; untranslated pairs fall back t
     }
   }
 });
+
+test('locale source files never lose a LaTeX spacing command to a JS escape', () => {
+  // "\;" inside a TS string literal is just ";" (unknown escapes are dropped),
+  // so a thin space written with one backslash renders as a bare semicolon.
+  const root = path.join(__dirname, '..', 'lib', 'symbol-pages', 'locales');
+  const bad: string[] = [];
+  for (const locale of fs.readdirSync(root)) {
+    const dir = path.join(root, locale);
+    if (!fs.statSync(dir).isDirectory()) continue;
+    for (const file of fs.readdirSync(dir)) {
+      const lines = fs.readFileSync(path.join(dir, file), 'utf8').split('\n');
+      lines.forEach((line, i) => {
+        if (/(^|[^\\])\\[;,:!>|]/.test(line)) bad.push(`${locale}/${file}:${i + 1}`);
+      });
+    }
+  }
+  assert.deepEqual(bad, []);
+});

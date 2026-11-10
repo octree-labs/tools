@@ -20,12 +20,12 @@ const text: SymbolPageTranslations = {
   "for-all-in-set": {
     name: "Quantificateur universel borné",
     meaning: "Quantificateur universel borné : l’énoncé doit être vrai pour tout élément x de l’ensemble A.",
-    usage: "Restreindre le quantificateur à un ensemble, comme dans \\forall x \\in A, est un raccourci pour \\forall x\\,(x \\in A \\to P(x)), et c’est ainsi qu’écrivent en pratique la plupart des mathématiciens. \\in a l’espacement d’une relation, donc l’expression s’espace d’elle-même ; séparez-la simplement du prédicat par une virgule, un deux-points ou \; pour la lisibilité. Avec plusieurs variables, on peut écrire \\forall x, y \\in A au lieu de répéter le quantificateur. Ne confondez pas \\in avec \\epsilon ou \\varepsilon, qui se ressemblent dans certaines polices mais sont des lettres, et non la relation d’appartenance.",
+    usage: "Restreindre le quantificateur à un ensemble, comme dans \\forall x \\in A, est un raccourci pour \\forall x\\,(x \\in A \\to P(x)), et c’est ainsi qu’écrivent en pratique la plupart des mathématiciens. \\in a l’espacement d’une relation, donc l’expression s’espace d’elle-même ; séparez-la simplement du prédicat par une virgule, un deux-points ou \\; pour la lisibilité. Avec plusieurs variables, on peut écrire \\forall x, y \\in A au lieu de répéter le quantificateur. Ne confondez pas \\in avec \\epsilon ou \\varepsilon, qui se ressemblent dans certaines polices mais sont des lettres, et non la relation d’appartenance.",
   },
   "exists-in-set": {
     name: "Quantificateur existentiel borné",
     meaning: "Quantificateur existentiel borné : un certain élément x de A vérifie la condition qui suit.",
-    usage: "Cette forme compacte remplace \\exists x\\,(x \\in A \\wedge P(x)) et revient sans cesse en analyse, par exemple pour la densité des rationnels : entre deux réels quelconques, \\exists q \\in \\mathbb{Q}. La négation de \\exists x \\in A\\, P(x) est \\forall x \\in A\\, \\neg P(x), une règle à garder en tête quand on nie des définitions. Utilisez \\nexists x \\in A pour « aucun élément de A ». Placez un deux-points, « tel que » ou \; avant le prédicat pour que le lecteur voie où s’arrête le quantificateur.",
+    usage: "Cette forme compacte remplace \\exists x\\,(x \\in A \\wedge P(x)) et revient sans cesse en analyse, par exemple pour la densité des rationnels : entre deux réels quelconques, \\exists q \\in \\mathbb{Q}. La négation de \\exists x \\in A\\, P(x) est \\forall x \\in A\\, \\neg P(x), une règle à garder en tête quand on nie des définitions. Utilisez \\nexists x \\in A pour « aucun élément de A ». Placez un deux-points, « tel que » ou \\; avant le prédicat pour que le lecteur voie où s’arrête le quantificateur.",
   },
   "such-that-colon": {
     name: "Deux-points « tel que »",
@@ -35,7 +35,7 @@ const text: SymbolPageTranslations = {
   "set-builder": {
     name: "Notation en compréhension",
     meaning: "Notation en compréhension : l’ensemble de tous les x pour lesquels la propriété P(x) est vraie, écrit avec des accolades et un séparateur.",
-    usage: "En mode mathématique, les accolades doivent être échappées en \\{ et \\}, sinon elles ne font que grouper et disparaissent du résultat. \\mid est une relation et reçoit donc l’espace voulue des deux côtés, contrairement à une | seule, qui est un symbole ordinaire et tasse les lettres. Lorsque la condition contient des fractions ou des éléments hauts, dimensionnez le tout ensemble : \\left\\{ x \;\\middle|\; \\frac{x}{2} \\in \\mathbb{Z} \\right\\}. Le deux-points fonctionne tout aussi bien comme séparateur et évite toute confusion lorsque la condition elle-même contient des valeurs absolues.",
+    usage: "En mode mathématique, les accolades doivent être échappées en \\{ et \\}, sinon elles ne font que grouper et disparaissent du résultat. \\mid est une relation et reçoit donc l’espace voulue des deux côtés, contrairement à une | seule, qui est un symbole ordinaire et tasse les lettres. Lorsque la condition contient des fractions ou des éléments hauts, dimensionnez le tout ensemble : \\left\\{ x \\;\\middle|\\; \\frac{x}{2} \\in \\mathbb{Z} \\right\\}. Le deux-points fonctionne tout aussi bien comme séparateur et évite toute confusion lorsque la condition elle-même contient des valeurs absolues.",
   },
   "quantified-statement": {
     name: "Énoncé à quantificateurs imbriqués",
