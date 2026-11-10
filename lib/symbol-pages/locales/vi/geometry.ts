@@ -19,7 +19,7 @@ const text: SymbolPageTranslations = {
   },
   "not-congruent": {
     name: "Ký hiệu không bằng nhau",
-    meaning: "Dấu bằng nhau (đồng dạng hoàn toàn) bị gạch chéo: hai hình hoặc hai đối tượng không bằng nhau hoặc không đẳng cấu.",
+    meaning: "Ký hiệu bằng nhau (tương đẳng) bị gạch chéo: hai hình hoặc hai đối tượng không bằng nhau hoặc không đẳng cấu.",
     usage: "Trong hình học, \\triangle ABC \\ncong \\triangle DEF nói rằng hai tam giác không bằng nhau; trong đại số, \\cong thường có nghĩa là đẳng cấu, nên G \\ncong H nói rằng hai nhóm không đẳng cấu. Đây là một quan hệ, nên khoảng cách được đặt tự động. Hãy ưu tiên glyph dựng sẵn này hơn \\not\\cong, vốn chồng một gạch chéo chung lên và có thể lệch khỏi tâm ký hiệu. Các quan hệ phủ định liên quan gồm \\neq và \\nsim. Khi dùng \\cong cho đẳng cấu, hãy nêu phạm trù hoặc cấu trúc nếu không hiển nhiên, vì các không gian có thể đồng phôi mà không đẳng cấu như các nhóm.",
   },
   "similar-or-equal": {

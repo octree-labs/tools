@@ -10,7 +10,7 @@ const text: SymbolPageTranslations = {
   "gcd": {
     name: "Massimo comune divisore",
     meaning: "Massimo comune divisore di a e b, il più grande intero che li divide entrambi.",
-    usage: "\\gcd è un operatore predefinito, quindi viene stampato in tondo e, come \\lim, accetta limiti posti sotto di sé in stile display. L'identità di Bézout afferma che \\gcd(a, b) = ax + by per opportuni interi x e y, e a e b sono coprimi quando \\gcd(a, b) = 1. Molti articoli di teoria dei numeri omettono il nome e scrivono (a, b), notazione compatta ma in conflitto con le coppie ordinate e gli intervalli aperti. L'algoritmo di Euclide si basa su \\gcd(a, b) = \\gcd(b, a \\bmod b), dove \\bmod fornisce la spaziatura da operatore binario. Non esiste un comando predefinito corrispondente per il minimo comune multiplo.",
+    usage: "\\gcd è un operatore predefinito, quindi viene stampato in tondo e, come \\lim, accetta limiti posti sotto di sé in stile display. L'identità di Bézout afferma che \\gcd(a, b) = ax + by per opportuni interi x e y, e a e b sono coprimi quando \\gcd(a, b) = 1. Nei testi italiani si scrive spesso anche MCD(a, b). Molti articoli di teoria dei numeri omettono il nome e scrivono (a, b), notazione compatta ma in conflitto con le coppie ordinate e gli intervalli aperti. L'algoritmo di Euclide si basa su \\gcd(a, b) = \\gcd(b, a \\bmod b), dove \\bmod fornisce la spaziatura da operatore binario. Non esiste un comando predefinito corrispondente per il minimo comune multiplo.",
   },
   "lcm": {
     name: "Minimo comune multiplo",

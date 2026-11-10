@@ -80,11 +80,11 @@ const text: SymbolPageTranslations = {
   "oe-ligature-uppercase": {
     name: "Chữ ghép OE (chữ hoa)",
     meaning: "Viết chữ ghép hoa Œ dùng trong tiếng Pháp, như trong Œuvres complètes; trong LaTeX là \\OE.",
-    usage: "Chữ Œ hoa xuất hiện ở đầu các từ tiếng Pháp và trong tiêu đề viết hoa toàn bộ, nên viết ŒUVRES chứ không phải OEUVRES. Hãy gõ trực tiếp ký tự hoặc dùng \\OE trong chế độ văn bản; trong công thức, nó phải nằm trong \\text. Trong tiêu đề chữ hoa nhỏ hoặc viết hoa, hãy kiểm tra rằng \\MakeUppercase chuyển \\oe thành \\OE, điều LaTeX làm đúng. Tránh nhầm với Æ, chữ ash, vốn dùng a thay vì o. Các cách viết tiếng Anh cũ như Œdipus cũng dùng chữ này.",
+    usage: "Chữ Œ hoa xuất hiện ở đầu các từ tiếng Pháp và trong tiêu đề viết hoa toàn bộ, nên viết ŒUVRES chứ không phải OEUVRES. Hãy gõ trực tiếp ký tự hoặc dùng \\OE trong chế độ văn bản; trong công thức, nó phải nằm trong \\text. Trong tiêu đề chữ hoa nhỏ hoặc viết hoa, hãy kiểm tra rằng \\MakeUppercase chuyển \\oe thành \\OE, điều LaTeX làm đúng. Tránh nhầm với Æ, chữ æsc, vốn dùng a thay vì o. Các cách viết tiếng Anh cũ như Œdipus cũng dùng chữ này.",
   },
   "ae-ligature-lowercase-ash": {
     name: "Chữ ghép ae (chữ thường)",
-    meaning: "Viết chữ æ thường, gọi là ash, một chữ cái của tiếng Đan Mạch, Na Uy, Iceland và tiếng Anh cổ; trong LaTeX là \\ae.",
+    meaning: "Viết chữ æ thường, gọi là æsc (tiếng Anh: ash), một chữ cái của tiếng Đan Mạch, Na Uy, Iceland và tiếng Anh cổ; trong LaTeX là \\ae.",
     usage: "Trong tiếng Đan Mạch và Na Uy, æ là một chữ cái đầy đủ trong bảng chữ cái, xếp sau z, nên không bao giờ được thay bằng ae trong tên riêng. Tiếng Anh dùng nó trong các cách viết cách điệu như encyclopædia và Cæsar, và ký hiệu IPA æ chỉ nguyên âm trong từ cat. Trong LaTeX hãy dùng \\ae hoặc gõ trực tiếp æ; đây là lệnh văn bản, nên hãy bọc nó trong \\text bên trong công thức. Tách chữ cái theo sau bằng ngoặc nhọn hoặc khoảng trắng, như trong \\ae{}ble. Nó khác với œ, chữ ghép o và e.",
   },
   "ae-ligature-uppercase": {

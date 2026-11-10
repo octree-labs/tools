@@ -84,11 +84,11 @@ const text: SymbolPageTranslations = {
   "oe-ligature-uppercase": {
     name: "Ligadura OE (maiúscula)",
     meaning: "Escreve a ligadura maiúscula Œ, usada em francês, como em Œuvres complètes; no LaTeX, é \\OE.",
-    usage: "O Œ maiúsculo aparece no início de palavras francesas e em títulos em caixa-alta, então se escreve ŒUVRES, e não OEUVRES. Digite o caractere diretamente ou use \\OE no modo texto; dentro da matemática, ele precisa estar em \\text. Em versaletes ou títulos em maiúsculas, verifique se \\MakeUppercase transforma \\oe em \\OE, o que o LaTeX faz corretamente. Não o confunda com Æ, o ash, que usa um a em vez de um o. Grafias inglesas antigas, como Œdipus, também o usam.",
+    usage: "O Œ maiúsculo aparece no início de palavras francesas e em títulos em caixa-alta, então se escreve ŒUVRES, e não OEUVRES. Digite o caractere diretamente ou use \\OE no modo texto; dentro da matemática, ele precisa estar em \\text. Em versaletes ou títulos em maiúsculas, verifique se \\MakeUppercase transforma \\oe em \\OE, o que o LaTeX faz corretamente. Não o confunda com Æ, o æsc, que usa um a em vez de um o. Grafias inglesas antigas, como Œdipus, também o usam.",
   },
   "ae-ligature-lowercase-ash": {
     name: "Ligadura ae (minúscula)",
-    meaning: "Escreve o æ minúsculo, chamado ash, uma letra do dinamarquês, do norueguês, do islandês e do inglês antigo; no LaTeX, é \\ae.",
+    meaning: "Escreve o æ minúsculo, chamado æsc (ash, em inglês), uma letra do dinamarquês, do norueguês, do islandês e do inglês antigo; no LaTeX, é \\ae.",
     usage: "Em dinamarquês e norueguês, æ é uma letra plena do alfabeto, ordenada depois do z, então nunca deve ser substituída por ae em nomes. O inglês o usa em grafias estilizadas como encyclopædia e Cæsar, e o símbolo æ do AFI marca a vogal de cat. No LaTeX, use \\ae ou digite æ diretamente; é um comando de texto, então envolva-o em \\text dentro da matemática. Separe uma letra seguinte com chaves ou um espaço, como em \\ae{}ble. Ele é distinto de œ, que junta o e e.",
   },
   "ae-ligature-uppercase": {

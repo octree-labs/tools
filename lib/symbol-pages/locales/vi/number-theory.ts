@@ -10,7 +10,7 @@ const text: SymbolPageTranslations = {
   "gcd": {
     name: "Ước chung lớn nhất",
     meaning: "Ước chung lớn nhất của a và b, số nguyên lớn nhất chia hết cả hai.",
-    usage: "\\gcd là toán tử được định nghĩa sẵn, nên nó in chữ đứng, và giống như \\lim, nó nhận cận đặt bên dưới ở chế độ hiển thị. Đẳng thức Bézout nói rằng \\gcd(a, b) = ax + by với các số nguyên x và y nào đó, và a và b nguyên tố cùng nhau khi \\gcd(a, b) = 1. Nhiều bài báo số học bỏ tên hàm và viết (a, b), gọn nhưng trùng với cặp có thứ tự và khoảng mở. Thuật toán Euclid dựa trên \\gcd(a, b) = \\gcd(b, a \\bmod b), trong đó \\bmod cho khoảng cách toán tử hai ngôi. Không có lệnh dựng sẵn tương ứng cho bội chung nhỏ nhất.",
+    usage: "\\gcd là toán tử được định nghĩa sẵn, nên nó in chữ đứng, và giống như \\lim, nó nhận cận đặt bên dưới ở chế độ hiển thị. Đẳng thức Bézout nói rằng \\gcd(a, b) = ax + by với các số nguyên x và y nào đó, và a và b nguyên tố cùng nhau khi \\gcd(a, b) = 1. Sách giáo khoa Việt Nam cũng thường viết ƯCLN(a, b). Nhiều bài báo số học bỏ tên hàm và viết (a, b), gọn nhưng trùng với cặp có thứ tự và khoảng mở. Thuật toán Euclid dựa trên \\gcd(a, b) = \\gcd(b, a \\bmod b), trong đó \\bmod cho khoảng cách toán tử hai ngôi. Không có lệnh dựng sẵn tương ứng cho bội chung nhỏ nhất.",
   },
   "lcm": {
     name: "Bội chung nhỏ nhất",

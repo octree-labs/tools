@@ -84,11 +84,11 @@ const text: SymbolPageTranslations = {
   "oe-ligature-uppercase": {
     name: "Legatura OE (maiuscola)",
     meaning: "Scrive la legatura maiuscola Œ usata in francese, come in Œuvres complètes; in LaTeX è \\OE.",
-    usage: "La Œ maiuscola compare all'inizio delle parole francesi e nei titoli tutti in maiuscolo, quindi ŒUVRES e non OEUVRES. Digitate il carattere direttamente o usate \\OE in modalità testo; in matematica deve stare dentro \\text. Nel maiuscoletto o nei titoli in maiuscolo verificate che \\MakeUppercase trasformi \\oe in \\OE, cosa che LaTeX fa correttamente. Non confondetela con Æ, l'ash, che usa una a invece di una o. Anche grafie inglesi antiche come Œdipus la usano.",
+    usage: "La Œ maiuscola compare all'inizio delle parole francesi e nei titoli tutti in maiuscolo, quindi ŒUVRES e non OEUVRES. Digitate il carattere direttamente o usate \\OE in modalità testo; in matematica deve stare dentro \\text. Nel maiuscoletto o nei titoli in maiuscolo verificate che \\MakeUppercase trasformi \\oe in \\OE, cosa che LaTeX fa correttamente. Non confondetela con Æ, l'æsc, che usa una a invece di una o. Anche grafie inglesi antiche come Œdipus la usano.",
   },
   "ae-ligature-lowercase-ash": {
     name: "Legatura AE (minuscola)",
-    meaning: "Scrive la æ minuscola, chiamata ash, lettera del danese, del norvegese, dell'islandese e dell'inglese antico; in LaTeX è \\ae.",
+    meaning: "Scrive la æ minuscola, chiamata æsc (in inglese ash), lettera del danese, del norvegese, dell'islandese e dell'inglese antico; in LaTeX è \\ae.",
     usage: "In danese e in norvegese æ è una lettera a pieno titolo dell'alfabeto, ordinata dopo la z, quindi nei nomi non va mai sostituita con ae. L'inglese la usa in grafie stilizzate come encyclopædia e Cæsar, e il simbolo IPA æ indica la vocale di cat. In LaTeX usate \\ae o digitate æ direttamente; è un comando testuale, quindi in matematica racchiudetelo in \\text. Separate la lettera successiva con graffe o uno spazio, come in \\ae{}ble. È distinta da œ, che unisce o ed e.",
   },
   "ae-ligature-uppercase": {

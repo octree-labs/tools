@@ -10,7 +10,7 @@ const text: SymbolPageTranslations = {
   "gcd": {
     name: "Máximo divisor comum",
     meaning: "Máximo divisor comum de a e b, o maior inteiro que divide ambos.",
-    usage: "\\gcd é um operador predefinido, por isso sai em fonte reta e, assim como \\lim, aceita limites embaixo no modo display. A identidade de Bézout diz que \\gcd(a, b) = ax + by para certos inteiros x e y, e a e b são primos entre si quando \\gcd(a, b) = 1. Muitos artigos de teoria dos números omitem o nome e escrevem (a, b), o que é compacto, mas conflita com pares ordenados e intervalos abertos. O algoritmo de Euclides se apoia em \\gcd(a, b) = \\gcd(b, a \\bmod b), em que \\bmod dá o espaçamento de operador binário. Não existe um comando embutido correspondente para o mínimo múltiplo comum.",
+    usage: "\\gcd é um operador predefinido, por isso sai em fonte reta e, assim como \\lim, aceita limites embaixo no modo display. A identidade de Bézout diz que \\gcd(a, b) = ax + by para certos inteiros x e y, e a e b são primos entre si quando \\gcd(a, b) = 1. Em textos em português também é comum escrever mdc(a, b) ou MDC(a, b). Muitos artigos de teoria dos números omitem o nome e escrevem (a, b), o que é compacto, mas conflita com pares ordenados e intervalos abertos. O algoritmo de Euclides se apoia em \\gcd(a, b) = \\gcd(b, a \\bmod b), em que \\bmod dá o espaçamento de operador binário. Não existe um comando embutido correspondente para o mínimo múltiplo comum.",
   },
   "lcm": {
     name: "Mínimo múltiplo comum",
