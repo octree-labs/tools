@@ -83,9 +83,13 @@ import ptDifferentialGeometry from "./pt/differential-geometry";
 import ruDifferentialGeometry from "./ru/differential-geometry";
 import viDifferentialGeometry from "./vi/differential-geometry";
 import cnFinance from "./cn/finance";
+import deFinance from "./de/finance";
 import esFinance from "./es/finance";
 import frFinance from "./fr/finance";
+import itFinance from "./it/finance";
+import ptFinance from "./pt/finance";
 import ruFinance from "./ru/finance";
+import viFinance from "./vi/finance";
 import cnFunctions from "./cn/functions";
 import deFunctions from "./de/functions";
 import esFunctions from "./es/functions";
@@ -95,17 +99,29 @@ import ptFunctions from "./pt/functions";
 import ruFunctions from "./ru/functions";
 import viFunctions from "./vi/functions";
 import cnGameTheory from "./cn/game-theory";
+import deGameTheory from "./de/game-theory";
 import esGameTheory from "./es/game-theory";
 import frGameTheory from "./fr/game-theory";
+import itGameTheory from "./it/game-theory";
+import ptGameTheory from "./pt/game-theory";
 import ruGameTheory from "./ru/game-theory";
+import viGameTheory from "./vi/game-theory";
 import cnGeometry from "./cn/geometry";
+import deGeometry from "./de/geometry";
 import esGeometry from "./es/geometry";
 import frGeometry from "./fr/geometry";
+import itGeometry from "./it/geometry";
+import ptGeometry from "./pt/geometry";
 import ruGeometry from "./ru/geometry";
+import viGeometry from "./vi/geometry";
 import cnGraphTheory from "./cn/graph-theory";
+import deGraphTheory from "./de/graph-theory";
 import esGraphTheory from "./es/graph-theory";
 import frGraphTheory from "./fr/graph-theory";
+import itGraphTheory from "./it/graph-theory";
+import ptGraphTheory from "./pt/graph-theory";
 import ruGraphTheory from "./ru/graph-theory";
+import viGraphTheory from "./vi/graph-theory";
 import cnGreek from "./cn/greek";
 import deGreek from "./de/greek";
 import esGreek from "./es/greek";
@@ -115,13 +131,21 @@ import ptGreek from "./pt/greek";
 import ruGreek from "./ru/greek";
 import viGreek from "./vi/greek";
 import cnLatin from "./cn/latin";
+import deLatin from "./de/latin";
 import esLatin from "./es/latin";
 import frLatin from "./fr/latin";
+import itLatin from "./it/latin";
+import ptLatin from "./pt/latin";
 import ruLatin from "./ru/latin";
+import viLatin from "./vi/latin";
 import cnLinearAlgebra from "./cn/linear-algebra";
+import deLinearAlgebra from "./de/linear-algebra";
 import esLinearAlgebra from "./es/linear-algebra";
 import frLinearAlgebra from "./fr/linear-algebra";
+import itLinearAlgebra from "./it/linear-algebra";
+import ptLinearAlgebra from "./pt/linear-algebra";
 import ruLinearAlgebra from "./ru/linear-algebra";
+import viLinearAlgebra from "./vi/linear-algebra";
 import cnLogic from "./cn/logic";
 import deLogic from "./de/logic";
 import esLogic from "./es/logic";
@@ -131,9 +155,13 @@ import ptLogic from "./pt/logic";
 import ruLogic from "./ru/logic";
 import viLogic from "./vi/logic";
 import cnMachineLearning from "./cn/machine-learning";
+import deMachineLearning from "./de/machine-learning";
 import esMachineLearning from "./es/machine-learning";
 import frMachineLearning from "./fr/machine-learning";
+import itMachineLearning from "./it/machine-learning";
+import ptMachineLearning from "./pt/machine-learning";
 import ruMachineLearning from "./ru/machine-learning";
+import viMachineLearning from "./vi/machine-learning";
 import cnMath from "./cn/math";
 import deMath from "./de/math";
 import esMath from "./es/math";
@@ -143,13 +171,21 @@ import ptMath from "./pt/math";
 import ruMath from "./ru/math";
 import viMath from "./vi/math";
 import cnModalLogic from "./cn/modal-logic";
+import deModalLogic from "./de/modal-logic";
 import esModalLogic from "./es/modal-logic";
 import frModalLogic from "./fr/modal-logic";
+import itModalLogic from "./it/modal-logic";
+import ptModalLogic from "./pt/modal-logic";
 import ruModalLogic from "./ru/modal-logic";
+import viModalLogic from "./vi/modal-logic";
 import cnNumberTheory from "./cn/number-theory";
+import deNumberTheory from "./de/number-theory";
 import esNumberTheory from "./es/number-theory";
 import frNumberTheory from "./fr/number-theory";
+import itNumberTheory from "./it/number-theory";
+import ptNumberTheory from "./pt/number-theory";
 import ruNumberTheory from "./ru/number-theory";
+import viNumberTheory from "./vi/number-theory";
 import cnOperators from "./cn/operators";
 import esOperators from "./es/operators";
 import frOperators from "./fr/operators";
@@ -403,10 +439,19 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "complex": deComplex,
     "computer-science": deComputerScience,
     "differential-geometry": deDifferentialGeometry,
+    "finance": deFinance,
     "functions": deFunctions,
+    "game-theory": deGameTheory,
+    "geometry": deGeometry,
+    "graph-theory": deGraphTheory,
     "greek": deGreek,
+    "latin": deLatin,
+    "linear-algebra": deLinearAlgebra,
     "logic": deLogic,
+    "machine-learning": deMachineLearning,
     "math": deMath,
+    "modal-logic": deModalLogic,
+    "number-theory": deNumberTheory,
     "physics": dePhysics,
     "probability": deProbability,
     "quantifiers": deQuantifiers,
@@ -423,10 +468,19 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "complex": itComplex,
     "computer-science": itComputerScience,
     "differential-geometry": itDifferentialGeometry,
+    "finance": itFinance,
     "functions": itFunctions,
+    "game-theory": itGameTheory,
+    "geometry": itGeometry,
+    "graph-theory": itGraphTheory,
     "greek": itGreek,
+    "latin": itLatin,
+    "linear-algebra": itLinearAlgebra,
     "logic": itLogic,
+    "machine-learning": itMachineLearning,
     "math": itMath,
+    "modal-logic": itModalLogic,
+    "number-theory": itNumberTheory,
     "physics": itPhysics,
     "probability": itProbability,
     "quantifiers": itQuantifiers,
@@ -443,10 +497,19 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "complex": ptComplex,
     "computer-science": ptComputerScience,
     "differential-geometry": ptDifferentialGeometry,
+    "finance": ptFinance,
     "functions": ptFunctions,
+    "game-theory": ptGameTheory,
+    "geometry": ptGeometry,
+    "graph-theory": ptGraphTheory,
     "greek": ptGreek,
+    "latin": ptLatin,
+    "linear-algebra": ptLinearAlgebra,
     "logic": ptLogic,
+    "machine-learning": ptMachineLearning,
     "math": ptMath,
+    "modal-logic": ptModalLogic,
+    "number-theory": ptNumberTheory,
     "physics": ptPhysics,
     "probability": ptProbability,
     "quantifiers": ptQuantifiers,
@@ -463,10 +526,19 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "complex": viComplex,
     "computer-science": viComputerScience,
     "differential-geometry": viDifferentialGeometry,
+    "finance": viFinance,
     "functions": viFunctions,
+    "game-theory": viGameTheory,
+    "geometry": viGeometry,
+    "graph-theory": viGraphTheory,
     "greek": viGreek,
+    "latin": viLatin,
+    "linear-algebra": viLinearAlgebra,
     "logic": viLogic,
+    "machine-learning": viMachineLearning,
     "math": viMath,
+    "modal-logic": viModalLogic,
+    "number-theory": viNumberTheory,
     "physics": viPhysics,
     "probability": viProbability,
     "quantifiers": viQuantifiers,

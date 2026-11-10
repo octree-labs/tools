@@ -253,8 +253,8 @@ const ALL_CATEGORIES: string[] = [] = [
   'units',
 ];
 
-/** Categories translated in de, it, pt and vi (the rest stay English there). */
-const TOP_CATEGORIES: string[] = [
+/** Categories translated in de, it, pt and vi. */
+const PARTIAL_CATEGORIES: string[] = [
   'accents',
   'arrows',
   'boolean',
@@ -265,10 +265,19 @@ const TOP_CATEGORIES: string[] = [
   'complex',
   'computer-science',
   'differential-geometry',
+  'finance',
   'functions',
+  'game-theory',
+  'geometry',
+  'graph-theory',
   'greek',
+  'latin',
+  'linear-algebra',
   'logic',
+  'machine-learning',
   'math',
+  'modal-logic',
+  'number-theory',
   'physics',
   'probability',
   'quantifiers',
@@ -281,10 +290,10 @@ const TRANSLATED_CATEGORIES: Record<string, string[]> = {
   es: ALL_CATEGORIES,
   fr: ALL_CATEGORIES,
   ru: ALL_CATEGORIES,
-  de: TOP_CATEGORIES,
-  it: TOP_CATEGORIES,
-  pt: TOP_CATEGORIES,
-  vi: TOP_CATEGORIES,
+  de: PARTIAL_CATEGORIES,
+  it: PARTIAL_CATEGORIES,
+  pt: PARTIAL_CATEGORIES,
+  vi: PARTIAL_CATEGORIES,
 };
 
 test('each locale translates exactly its listed categories, in full, and nothing else', () => {
@@ -303,7 +312,7 @@ test('each locale translates exactly its listed categories, in full, and nothing
 });
 
 test('an untranslated category stays English, canonical to the English URL and noindex in de, it, pt and vi', () => {
-  const ref = SYMBOL_PAGES.find((r) => !TOP_CATEGORIES.includes(r.category))!;
+  const ref = SYMBOL_PAGES.find((r) => !PARTIAL_CATEGORIES.includes(r.category))!;
   for (const locale of ['de', 'it', 'pt', 'vi']) {
     assert.equal(isSymbolPageLocalized(ref.category, ref.slug, locale), false);
     assert.deepEqual(symbolPageAlternates(ref, locale), {
