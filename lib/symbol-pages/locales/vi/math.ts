@@ -93,7 +93,7 @@ const text: SymbolPageTranslations = {
     usage: "\\iff tạo ra \\Longleftrightarrow với khoảng trắng dày bổ sung ở hai bên. Nó nối hai mệnh đề kéo theo lẫn nhau, như trong một định lý dạng n \\text{ is even} \\iff n^2 \\text{ is even}. Sách logic thường ưa dùng \\leftrightarrow hoặc \\Leftrightarrow cho phép tương đương bên trong công thức, và dành \\iff cho các mệnh đề trong văn xuôi. Do phần đệm đó, \\iff trông quá thưa trong chỉ số dưới gọn hoặc điều kiện của tập hợp. Đừng nhầm nó với \\equiv, nghĩa là đồng nhất bằng nhau hoặc đồng dư modulo n.",
   },
   "for-all": {
-    name: "Lượng từ với mọi",
+    name: "Lượng từ phổ quát (với mọi)",
     meaning: "Cho lượng từ với mọi ∀, đọc là “với mọi” hoặc “với mỗi”.",
     usage: "\\forall mở đầu các mệnh đề có lượng từ phổ quát, như trong định nghĩa epsilon-delta \\forall \\varepsilon > 0\\ \\exists \\delta > 0. TeX coi nó là ký hiệu thường, nên không có khoảng trắng tự động sau biến bị ràng buộc; hãy thêm \\, hoặc \\ hay một dấu phân cách như dấu hai chấm hoặc dấu chấm tùy quy ước của bạn. Trong các chứng minh nhiều văn xuôi, nhiều hướng dẫn trình bày khuyên viết “với mọi” bằng chữ thay vì \\forall. Trong phép tính lambda có kiểu và lý thuyết kiểu, nó còn dùng để đưa vào kiểu đa hình, ví dụ \\forall \\alpha.\\, \\alpha \\to \\alpha.",
   },

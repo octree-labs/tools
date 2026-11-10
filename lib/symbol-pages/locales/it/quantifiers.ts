@@ -33,7 +33,7 @@ const text: SymbolPageTranslations = {
     usage: "In modalità matematica i due punti semplici sono trattati come relazione e ricevono lo stesso spazio ampio su entrambi i lati, il che va bene per \\{x : x > 0\\} e \\forall x : P(x). Per la segnatura di una funzione usate invece \\colon, che ha la spaziatura della punteggiatura: f\\colon A \\to B rende bene, mentre f : A \\to B lascia un vuoto prima dei due punti. Per le definizioni, := composto da due caratteri può risultare disallineato verticalmente; un simbolo di definizione dedicato, fornito da un pacchetto di estensione, risolve il problema. Alcuni autori preferiscono \\mid o una barra verticale nella notazione insiemistica; sceglietene una e siate coerenti.",
   },
   "set-builder": {
-    name: "Notazione per caratteristica (set-builder)",
+    name: "Notazione insiemistica per caratteristica",
     meaning: "Notazione per caratteristica: l'insieme di tutti gli x per cui vale la proprietà P(x), scritto con parentesi graffe e un separatore.",
     usage: "In modalità matematica le graffe vanno precedute da backslash, \\{ e \\}, altrimenti servono solo a raggruppare e spariscono dall'output. \\mid è una relazione, quindi riceve lo spazio corretto su entrambi i lati, a differenza di una | semplice, che è un simbolo ordinario e schiaccia le lettere. Quando la condizione contiene frazioni o materiale alto, dimensionate tutto insieme: \\left\\{ x \\;\\middle|\\; \\frac{x}{2} \\in \\mathbb{Z} \\right\\}. Anche i due punti funzionano bene come separatore ed evitano confusioni quando la condizione stessa contiene valori assoluti.",
   },

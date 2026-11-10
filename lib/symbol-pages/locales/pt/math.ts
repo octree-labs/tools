@@ -68,7 +68,7 @@ const text: SymbolPageTranslations = {
     usage: "Use \\approx para aproximações numéricas como \\pi \\approx 3.14159 e para expansões de primeira ordem como \\sin x \\approx x para x pequeno. É uma relação, então o TeX lhe dá o espaçamento largo do =. Vários símbolos parecidos têm outros significados: \\simeq costuma indicar assintoticamente igual ou isomorfo, \\sim indica assintótico ou “tem distribuição”, \\cong denota congruência ou isomorfismo, e \\approxeq é uma variante mais rara. Em textos de finanças e engenharia, \\approx em geral marca resultados arredondados; informe a precisão, por exemplo com três casas decimais, para que o leitor saiba quão grosseira é a estimativa.",
   },
   "not-equal": {
-    name: "Diferente",
+    name: "Sinal de diferente",
     meaning: "Diz que duas quantidades não são iguais; é a negação do sinal de igual.",
     usage: "\\neq e seu atalho curto \\ne produzem o mesmo sinal de igual cortado, e qualquer um pode ser usado. Ele aparece em condições como x \\neq 0, em afirmações de distinção i \\neq j e, em artigos voltados à programação, como o teste de desigualdade. Escrever \\not= também funciona, mas a posição do traço pode diferir um pouco do glifo dedicado. Em textos de computação, evite digitar != no modo matemático; isso imprime um ponto de exclamação seguido de um sinal de igual. Para “não equivalente” ou “não congruente”, use \\not\\equiv ou \\ncong em vez de \\neq.",
   },
@@ -83,33 +83,33 @@ const text: SymbolPageTranslations = {
     usage: "\\geq e seu atalho \\ge são intercambiáveis. Digitar >= no modo matemático imprime dois caracteres separados, então use o comando. Contextos comuns são cotas inferiores como n \\geq 1, a desigualdade entre as médias aritmética e geométrica e restrições de otimização como x_i \\geq 0. A forma inclinada \\geqslant é preferida por algumas revistas, e \\geqq tem barra dupla. Em teoria da ordem, a relação inversa \\succeq generaliza \\geq. Sempre que possível, mantenha uma cadeia de desigualdades apontando para um só lado, pois a \\leq b \\leq c se lê mais facilmente do que misturar \\leq e \\geq.",
   },
   "implies": {
-    name: "Implica",
+    name: "Implicação",
     meaning: "Escreve uma seta dupla longa para a implicação lógica, indicando que o enunciado da esquerda implica o da direita.",
     usage: "\\implies produz \\Longrightarrow cercado de espaçamento extra largo, adequado para implicações entre enunciados inteiros, como em x > 2 \\implies x^2 > 4. Para a implicação entre fórmulas dentro de uma expressão lógica, muitos lógicos preferem as setas mais curtas \\Rightarrow ou \\to, sem o espaço amplo. A recíproca é \\impliedby. Em demonstrações, evite empilhar vários \\implies seguidos ao longo da página; frases completas com “portanto” costumam ficar mais legíveis. Na notação da lógica proposicional, p \\to q é mais comum que p \\implies q.",
     example: "x^2 = 4 \\implies x = 2 \\text{ ou } x = -2",
   },
   "if-and-only-if": {
-    name: "Se e somente se",
+    name: "Equivalência (se e somente se)",
     meaning: "Escreve uma seta dupla longa com duas pontas para a equivalência lógica, lida “se e somente se”.",
     usage: "\\iff produz \\Longleftrightarrow com espaçamento extra largo dos dois lados. Ele liga dois enunciados que se implicam mutuamente, como num teorema do tipo n \\text{ é par} \\iff n^2 \\text{ é par}. Textos de lógica costumam preferir \\leftrightarrow ou \\Leftrightarrow para o bicondicional dentro de fórmulas, reservando \\iff para enunciados em prosa. Por causa desse espaçamento, \\iff fica folgado demais dentro de subscritos compactos ou de condições na notação de conjuntos. Não o confunda com \\equiv, que significa identicamente igual ou côngruo módulo n.",
   },
   "for-all": {
-    name: "Para todo",
+    name: "Quantificador universal",
     meaning: "Produz o quantificador universal ∀, lido “para todo” ou “para cada”.",
     usage: "\\forall inicia enunciados quantificados universalmente, como na definição épsilon-delta \\forall \\varepsilon > 0\\ \\exists \\delta > 0. O TeX o trata como um símbolo comum, então não há espaço automático depois da variável ligada; acrescente \\, ou \\ ou um separador como dois-pontos ou ponto, conforme a sua convenção. Em demonstrações com muito texto, muitos guias de estilo preferem escrever “para todo” por extenso em vez de \\forall. No cálculo lambda tipado e na teoria de tipos, ele também introduz tipos polimórficos, por exemplo \\forall \\alpha.\\, \\alpha \\to \\alpha.",
   },
   "exists": {
-    name: "Existe",
+    name: "Quantificador existencial",
     meaning: "Produz o quantificador existencial ∃, lido “existe” ou “para algum”.",
     usage: "\\exists afirma que pelo menos um elemento satisfaz uma propriedade, como em \\exists x \\in \\mathbb{R} : x^2 = 2. A unicidade se escreve \\exists! (existe exatamente um), e \\nexists dá o símbolo negado, “não existe”. Assim como \\forall, é um símbolo comum, então insira um espaço fino ou dois-pontos depois da variável ligada para facilitar a leitura. A ordem dos quantificadores importa: \\forall x\\, \\exists y é diferente de \\exists y\\, \\forall x, então mantenha-os na sequência pretendida. Em textos de lógica formal, parênteses em torno do escopo, \\exists x\\,(P(x)), evitam ambiguidade.",
   },
   "element-of": {
-    name: "Pertence",
+    name: "Pertinência",
     meaning: "Indica pertinência: o elemento à esquerda pertence ao conjunto à direita.",
     usage: "\\in é a relação básica de pertinência, como em x \\in \\mathbb{R} ou n \\in \\mathbb{N}, e recebe espaçamento de relação. Seu espelho \\ni se lê “contém como elemento”, e \\notin é a negação. Não o confunda com \\epsilon nem com \\varepsilon, letras gregas de aparência semelhante mas com espaçamento e significado diferentes. Em somatórios e na notação de conjuntos por compreensão, ele liga o índice, como em \\sum_{x \\in S} f(x) ou \\{x \\in X : f(x) > 0\\}. Para relações de inclusão entre dois conjuntos, use \\subseteq, e não \\in.",
   },
   "not-element-of": {
-    name: "Não pertence",
+    name: "Não pertinência",
     meaning: "Indica não pertinência: o elemento à esquerda não pertence ao conjunto dado.",
     usage: "\\notin é uma versão cortada própria de \\in, composta como relação, como em \\sqrt{2} \\notin \\mathbb{Q}. Escrever \\not\\in dá um resultado parecido, mas \\notin posiciona melhor o traço e é a escolha padrão. Seus companheiros naturais são \\in e \\ni, e para inclusões negadas você usaria \\not\\subset ou \\nsubseteq. Frases típicas incluem demonstrações por absurdo e descrições de complementares, como x \\in A^c \\iff x \\notin A. Em quantificadores, \\forall x \\notin S é uma abreviação aceitável, mas explicitar o domínio é mais claro.",
   },

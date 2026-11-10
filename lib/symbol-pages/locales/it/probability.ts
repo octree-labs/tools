@@ -3,7 +3,7 @@ import type { SymbolPageTranslations } from "../types";
 /** Italian copy for /it/symbols/probability/<slug>. */
 const text: SymbolPageTranslations = {
   probability: {
-    name: "Probabilità (P blackboard)",
+    name: "Misura di probabilità",
     meaning: "P in grassetto da lavagna (blackboard bold), la misura di probabilità applicata agli eventi.",
     usage: "La probabilità in chiave di teoria della misura scrive \\mathbb{P}(A) per la probabilità dell'evento A, con assiomi come \\mathbb{P}(\\Omega) = 1. Lo stile blackboard distingue la misura da una P semplice che potrebbe indicare una matrice, un polinomio o una partizione. Con i font standard \\mathbb funziona solo sulle lettere maiuscole, quindi un input minuscolo produce glifi sbagliati. Abbinatela a \\mathbb{E} e a un Var in tondo per uno stile coerente. Uno spazio di probabilità è la terna (\\Omega, \\mathcal{F}, \\mathbb{P}), con la F calligrafica per la sigma-algebra. Alcuni autori usano invece \\Pr, un operatore predefinito in tondo.",
   },

@@ -93,7 +93,7 @@ const text: SymbolPageTranslations = {
     usage: "\\Updownarrow chủ yếu dùng trong bố cục dọc, như hai mệnh đề tương đương xếp chồng trong một array, nơi nó đóng vai trò \\Leftrightarrow xoay đứng. Là dấu phân cách, các phiên bản \\Big\\Updownarrow và \\left ... \\right giãn theo chiều dọc. Ngoài các sơ đồ như vậy, nó không có nghĩa nào được thừa nhận rộng rãi. Nếu cần phiên bản thân đơn, dùng \\updownarrow. Một array đơn giản với cột căn giữa giữ cho các mệnh đề và mũi tên thẳng hàng. Trong slide bài giảng, nó cũng có thể cho thấy hai định nghĩa xếp chồng là thay thế được cho nhau. Hãy ghép nó với \\Leftrightarrow khi cùng phép tương đương đó cũng xuất hiện theo chiều ngang ở chỗ khác.",
   },
   "maps-to": {
-    name: "Mũi tên ánh xạ (maps to)",
+    name: "Mũi tên ánh xạ",
     meaning: "Vẽ mũi tên có gạch ở đuôi, chỉ nơi một hàm số đưa một phần tử riêng lẻ tới, như x ↦ x².",
     usage: "Dùng \\mapsto cho phần tử và \\to cho tập hợp: f : \\mathbb{R} \\to \\mathbb{R},\\ x \\mapsto x^2 nêu cùng lúc tập xác định, tập đích và quy tắc. Các bài báo về phép tính lambda và lập trình hàm dùng nó cho hàm vô danh, còn ngữ nghĩa học viết phép thế hoặc cập nhật môi trường là [x \\mapsto v]. Nó chỉ khác \\to ở gạch nhỏ nơi đuôi, nên hãy chắc chắn nó hiển thị rõ ở cỡ chữ nhỏ. Với biểu thức dài, dùng \\longmapsto. Trong sơ đồ giao hoán, các mũi tên ở cấp phần tử cũng được vẽ với đuôi kiểu mapsto.",
   },
