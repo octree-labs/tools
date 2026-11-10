@@ -35,9 +35,13 @@ import ptBrackets from "./pt/brackets";
 import ruBrackets from "./ru/brackets";
 import viBrackets from "./vi/brackets";
 import cnCalculus from "./cn/calculus";
+import deCalculus from "./de/calculus";
 import esCalculus from "./es/calculus";
 import frCalculus from "./fr/calculus";
+import itCalculus from "./it/calculus";
+import ptCalculus from "./pt/calculus";
 import ruCalculus from "./ru/calculus";
+import viCalculus from "./vi/calculus";
 import cnChemistry from "./cn/chemistry";
 import deChemistry from "./de/chemistry";
 import esChemistry from "./es/chemistry";
@@ -47,13 +51,21 @@ import ptChemistry from "./pt/chemistry";
 import ruChemistry from "./ru/chemistry";
 import viChemistry from "./vi/chemistry";
 import cnCombinatorics from "./cn/combinatorics";
+import deCombinatorics from "./de/combinatorics";
 import esCombinatorics from "./es/combinatorics";
 import frCombinatorics from "./fr/combinatorics";
+import itCombinatorics from "./it/combinatorics";
+import ptCombinatorics from "./pt/combinatorics";
 import ruCombinatorics from "./ru/combinatorics";
+import viCombinatorics from "./vi/combinatorics";
 import cnComplex from "./cn/complex";
+import deComplex from "./de/complex";
 import esComplex from "./es/complex";
 import frComplex from "./fr/complex";
+import itComplex from "./it/complex";
+import ptComplex from "./pt/complex";
 import ruComplex from "./ru/complex";
+import viComplex from "./vi/complex";
 import cnComputerScience from "./cn/computer-science";
 import esComputerScience from "./es/computer-science";
 import frComputerScience from "./fr/computer-science";
@@ -377,7 +389,10 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "arrows": deArrows,
     "boolean": deBoolean,
     "brackets": deBrackets,
+    "calculus": deCalculus,
     "chemistry": deChemistry,
+    "combinatorics": deCombinatorics,
+    "complex": deComplex,
     "functions": deFunctions,
     "greek": deGreek,
     "logic": deLogic,
@@ -392,7 +407,10 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "arrows": itArrows,
     "boolean": itBoolean,
     "brackets": itBrackets,
+    "calculus": itCalculus,
     "chemistry": itChemistry,
+    "combinatorics": itCombinatorics,
+    "complex": itComplex,
     "functions": itFunctions,
     "greek": itGreek,
     "logic": itLogic,
@@ -407,7 +425,10 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "arrows": ptArrows,
     "boolean": ptBoolean,
     "brackets": ptBrackets,
+    "calculus": ptCalculus,
     "chemistry": ptChemistry,
+    "combinatorics": ptCombinatorics,
+    "complex": ptComplex,
     "functions": ptFunctions,
     "greek": ptGreek,
     "logic": ptLogic,
@@ -422,7 +443,10 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "arrows": viArrows,
     "boolean": viBoolean,
     "brackets": viBrackets,
+    "calculus": viCalculus,
     "chemistry": viChemistry,
+    "combinatorics": viCombinatorics,
+    "complex": viComplex,
     "functions": viFunctions,
     "greek": viGreek,
     "logic": viLogic,
