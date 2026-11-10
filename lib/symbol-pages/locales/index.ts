@@ -3,9 +3,13 @@ import { getSymbolCopy } from "../content";
 import { getSymbolPageRef, type SymbolPageRef } from "../index";
 import type { SymbolPageTranslation, SymbolPageTranslations } from "./types";
 import cnAccents from "./cn/accents";
+import deAccents from "./de/accents";
 import esAccents from "./es/accents";
 import frAccents from "./fr/accents";
+import itAccents from "./it/accents";
+import ptAccents from "./pt/accents";
 import ruAccents from "./ru/accents";
+import viAccents from "./vi/accents";
 import cnArrows from "./cn/arrows";
 import deArrows from "./de/arrows";
 import esArrows from "./es/arrows";
@@ -15,13 +19,21 @@ import ptArrows from "./pt/arrows";
 import ruArrows from "./ru/arrows";
 import viArrows from "./vi/arrows";
 import cnBoolean from "./cn/boolean";
+import deBoolean from "./de/boolean";
 import esBoolean from "./es/boolean";
 import frBoolean from "./fr/boolean";
+import itBoolean from "./it/boolean";
+import ptBoolean from "./pt/boolean";
 import ruBoolean from "./ru/boolean";
+import viBoolean from "./vi/boolean";
 import cnBrackets from "./cn/brackets";
+import deBrackets from "./de/brackets";
 import esBrackets from "./es/brackets";
 import frBrackets from "./fr/brackets";
+import itBrackets from "./it/brackets";
+import ptBrackets from "./pt/brackets";
 import ruBrackets from "./ru/brackets";
+import viBrackets from "./vi/brackets";
 import cnCalculus from "./cn/calculus";
 import esCalculus from "./es/calculus";
 import frCalculus from "./fr/calculus";
@@ -195,7 +207,7 @@ export type { SymbolPageTranslation, SymbolPageTranslations } from "./types";
 
 /**
  * locale -> category -> slug -> translated body copy. cn, es, fr and ru cover
- * every category; de, it, pt and vi cover the ten with the most traffic. A symbol page is a real
+ * every category; de, it, pt and vi cover a growing subset. A symbol page is a real
  * alternate in a locale (self canonical, hreflang, sitemap) only when it has
  * an entry here; every other locale renders the English copy under the
  * translated chrome, canonicalises to the English URL and is noindex.
@@ -361,7 +373,10 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "units": ruUnits,
   },
   de: {
+    "accents": deAccents,
     "arrows": deArrows,
+    "boolean": deBoolean,
+    "brackets": deBrackets,
     "chemistry": deChemistry,
     "functions": deFunctions,
     "greek": deGreek,
@@ -373,7 +388,10 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "set-theory": deSetTheory,
   },
   it: {
+    "accents": itAccents,
     "arrows": itArrows,
+    "boolean": itBoolean,
+    "brackets": itBrackets,
     "chemistry": itChemistry,
     "functions": itFunctions,
     "greek": itGreek,
@@ -385,7 +403,10 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "set-theory": itSetTheory,
   },
   pt: {
+    "accents": ptAccents,
     "arrows": ptArrows,
+    "boolean": ptBoolean,
+    "brackets": ptBrackets,
     "chemistry": ptChemistry,
     "functions": ptFunctions,
     "greek": ptGreek,
@@ -397,7 +418,10 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "set-theory": ptSetTheory,
   },
   vi: {
+    "accents": viAccents,
     "arrows": viArrows,
+    "boolean": viBoolean,
+    "brackets": viBrackets,
     "chemistry": viChemistry,
     "functions": viFunctions,
     "greek": viGreek,
