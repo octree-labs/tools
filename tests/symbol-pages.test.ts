@@ -288,6 +288,8 @@ const PARTIAL_CATEGORIES: string[] = [
   'set-theory',
   'special-functions',
   'summation',
+  'tensors',
+  'topology',
 ];
 
 /** Categories whose body copy is translated, per locale. */

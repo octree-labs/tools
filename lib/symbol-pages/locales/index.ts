@@ -267,13 +267,21 @@ import ptSummation from "./pt/summation";
 import ruSummation from "./ru/summation";
 import viSummation from "./vi/summation";
 import cnTensors from "./cn/tensors";
+import deTensors from "./de/tensors";
 import esTensors from "./es/tensors";
 import frTensors from "./fr/tensors";
+import itTensors from "./it/tensors";
+import ptTensors from "./pt/tensors";
 import ruTensors from "./ru/tensors";
+import viTensors from "./vi/tensors";
 import cnTopology from "./cn/topology";
+import deTopology from "./de/topology";
 import esTopology from "./es/topology";
 import frTopology from "./fr/topology";
+import itTopology from "./it/topology";
+import ptTopology from "./pt/topology";
 import ruTopology from "./ru/topology";
+import viTopology from "./vi/topology";
 import cnTrigonometry from "./cn/trigonometry";
 import esTrigonometry from "./es/trigonometry";
 import frTrigonometry from "./fr/trigonometry";
@@ -486,6 +494,8 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "set-theory": deSetTheory,
     "special-functions": deSpecialFunctions,
     "summation": deSummation,
+    "tensors": deTensors,
+    "topology": deTopology,
   },
   it: {
     "accents": itAccents,
@@ -521,6 +531,8 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "set-theory": itSetTheory,
     "special-functions": itSpecialFunctions,
     "summation": itSummation,
+    "tensors": itTensors,
+    "topology": itTopology,
   },
   pt: {
     "accents": ptAccents,
@@ -556,6 +568,8 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "set-theory": ptSetTheory,
     "special-functions": ptSpecialFunctions,
     "summation": ptSummation,
+    "tensors": ptTensors,
+    "topology": ptTopology,
   },
   vi: {
     "accents": viAccents,
@@ -591,6 +605,8 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "set-theory": viSetTheory,
     "special-functions": viSpecialFunctions,
     "summation": viSummation,
+    "tensors": viTensors,
+    "topology": viTopology,
   },
 };
 
