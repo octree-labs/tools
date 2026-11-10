@@ -5,7 +5,7 @@ const text: SymbolPageTranslations = {
   "curly-precedes": {
     name: "Quan hệ đứng trước cong",
     meaning: "Quan hệ “đứng trước hoặc bằng” dạng cong, dùng cho các thứ tự không chặt và quan hệ ưu tiên không phải ≤ thông thường của số.",
-    usage: "Các nhà lý thuyết thứ tự và kinh tế học dùng \\preccurlyeq khi một tiền thứ tự trừu tượng cần ký hiệu khác hẳn \\leq, chẳng hạn sự ưu tiên yếu của người tiêu dùng x \\preccurlyeq y hoặc thứ tự trội trên các phân hoạch. Quan hệ chặt tương ứng là \\prec, và ký hiệu đối xứng là \\succcurlyeq. Đừng nhầm nó với \\preceq, có vạch thẳng bên dưới thay cho vạch cong; một số tác giả dùng cả hai trong một bài để chỉ hai thứ tự khác nhau. Vì đây là quan hệ, TeX tự động bao quanh nó bằng khoảng trắng rộng, nên đừng bao giờ đệm thêm bằng tay bằng \\, hay \;.",
+    usage: "Các nhà lý thuyết thứ tự và kinh tế học dùng \\preccurlyeq khi một tiền thứ tự trừu tượng cần ký hiệu khác hẳn \\leq, chẳng hạn sự ưu tiên yếu của người tiêu dùng x \\preccurlyeq y hoặc thứ tự trội trên các phân hoạch. Quan hệ chặt tương ứng là \\prec, và ký hiệu đối xứng là \\succcurlyeq. Đừng nhầm nó với \\preceq, có vạch thẳng bên dưới thay cho vạch cong; một số tác giả dùng cả hai trong một bài để chỉ hai thứ tự khác nhau. Vì đây là quan hệ, TeX tự động bao quanh nó bằng khoảng trắng rộng, nên đừng bao giờ đệm thêm bằng tay bằng \\, hay \\;.",
   },
   "curly-succeeds": {
     name: "Quan hệ đứng sau cong",

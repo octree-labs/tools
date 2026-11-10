@@ -5,7 +5,7 @@ const text: SymbolPageTranslations = {
   "curly-precedes": {
     name: "Relazione “precede o uguale” curva",
     meaning: "Relazione curva “precede o uguale”, usata per ordini non stretti e relazioni di preferenza diverse dal consueto ≤ numerico.",
-    usage: "Chi si occupa di teoria degli ordini o di economia ricorre a \\preccurlyeq quando un preordine astratto richiede un simbolo visibilmente diverso da \\leq, per esempio la preferenza debole di un consumatore x \\preccurlyeq y o l'ordine di dominanza sulle partizioni. Il suo corrispondente stretto è \\prec e il suo speculare è \\succcurlyeq. Non confondetelo con \\preceq, che ha sotto una barra diritta invece di quella curva; alcuni autori usano entrambi nello stesso articolo per indicare due ordini distinti. Essendo una relazione, TeX lo circonda automaticamente di spazi spessi, quindi non aggiungete mai a mano comandi \\, o \;.",
+    usage: "Chi si occupa di teoria degli ordini o di economia ricorre a \\preccurlyeq quando un preordine astratto richiede un simbolo visibilmente diverso da \\leq, per esempio la preferenza debole di un consumatore x \\preccurlyeq y o l'ordine di dominanza sulle partizioni. Il suo corrispondente stretto è \\prec e il suo speculare è \\succcurlyeq. Non confondetelo con \\preceq, che ha sotto una barra diritta invece di quella curva; alcuni autori usano entrambi nello stesso articolo per indicare due ordini distinti. Essendo una relazione, TeX lo circonda automaticamente di spazi spessi, quindi non aggiungete mai a mano comandi \\, o \\;.",
     example: "x \\preccurlyeq y \\text{ e } y \\preccurlyeq z \\implies x \\preccurlyeq z",
   },
   "curly-succeeds": {

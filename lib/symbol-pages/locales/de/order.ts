@@ -5,7 +5,7 @@ const text: SymbolPageTranslations = {
   "curly-precedes": {
     name: "Geschwungenes Vorgängerzeichen",
     meaning: "Geschwungene Relation „vorangehend oder gleich“, verwendet für nicht strikte Ordnungen und Präferenzrelationen, die nicht das übliche numerische ≤ sind.",
-    usage: "Ordnungstheoretiker und Ökonomen greifen zu \\preccurlyeq, wenn eine abstrakte Präordnung ein Symbol braucht, das sich sichtbar von \\leq unterscheidet, etwa die schwache Präferenz eines Konsumenten x \\preccurlyeq y oder die Dominanzordnung auf Partitionen. Das strikte Gegenstück ist \\prec, das Spiegelbild \\succcurlyeq. Verwechseln Sie es nicht mit \\preceq, das darunter einen geraden statt eines gebogenen Strichs hat; manche Autoren verwenden beide in einer Arbeit, um zwei verschiedene Ordnungen zu kennzeichnen. Da es eine Relation ist, umgibt TeX es automatisch mit breiten Abständen, ergänzen Sie also nie manuell \\, oder \;.",
+    usage: "Ordnungstheoretiker und Ökonomen greifen zu \\preccurlyeq, wenn eine abstrakte Präordnung ein Symbol braucht, das sich sichtbar von \\leq unterscheidet, etwa die schwache Präferenz eines Konsumenten x \\preccurlyeq y oder die Dominanzordnung auf Partitionen. Das strikte Gegenstück ist \\prec, das Spiegelbild \\succcurlyeq. Verwechseln Sie es nicht mit \\preceq, das darunter einen geraden statt eines gebogenen Strichs hat; manche Autoren verwenden beide in einer Arbeit, um zwei verschiedene Ordnungen zu kennzeichnen. Da es eine Relation ist, umgibt TeX es automatisch mit breiten Abständen, ergänzen Sie also nie manuell \\, oder \\;.",
     example: "x \\preccurlyeq y \\text{ und } y \\preccurlyeq z \\implies x \\preccurlyeq z",
   },
   "curly-succeeds": {

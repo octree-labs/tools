@@ -23,7 +23,7 @@ const text: SymbolPageTranslations = {
     usage: "A física escreve F \\propto 1/r^2 para leis do inverso do quadrado, e a estatística bayesiana depende dele o tempo todo: p(\\theta \\mid x) \\propto p(x \\mid \\theta)\\, p(\\theta), descartando a constante de normalização. É uma relação, então o espaçamento é automático. Não o confunda com a letra grega \\alpha, que se parece com ele em algumas fontes mas não tem espaçamento de relação. Uma variante, \\varpropto, tem forma ligeiramente diferente. Para o crescimento na análise de algoritmos, \\sim ou \\Theta costumam ser mais claros. Explicite a constante apenas quando ela importar; caso contrário, a graça de \\propto é justamente escondê-la.",
   },
   "similar-to": {
-    name: "Til de relação",
+    name: "Sinal de semelhança (til)",
     meaning: "Relação em forma de til para “tem distribuição”, “assintoticamente igual”, “semelhante” ou “equivalente segundo uma relação”.",
     usage: "Em probabilidade, X \\sim \\mathcal{N}(0, 1) se lê “X tem distribuição normal padrão”. Em assintótica, f \\sim g significa f/g \\to 1, como na fórmula de Stirling. A álgebra usa x \\sim y para uma relação de equivalência, e a geometria o usa para triângulos semelhantes. Como relação, tem espaço dos dois lados; para um til como acento sobre uma letra, use \\tilde{x}. Parentes próximos são \\simeq (assintoticamente igual ou equivalente por homotopia), \\approx (aproximadamente) e \\thicksim, uma versão mais grossa. Como prefixo com o sentido de “aproximadamente”, em \\sim 10^3, o espaçamento pode ficar estranho; escreva {\\sim}10^3.",
   },

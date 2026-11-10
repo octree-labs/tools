@@ -50,7 +50,7 @@ const text: SymbolPageTranslations = {
   "boundary-operator": {
     name: "Toán tử biên",
     meaning: "Biên của A: các điểm mà mọi lân cận của chúng đều giao với cả A và phần bù của A.",
-    usage: "Biên của một hình tròn là đường tròn của nó, và biên của tập số hữu tỉ trong tập số thực là toàn bộ, \\partial \\mathbb{Q} = \\mathbb{R}. Cùng ký hiệu \\partial là toán tử bờ trong tô pô đại số, \\partial_n : C_n \\to C_{n-1} với \\partial \\circ \\partial = 0, và xuất hiện trong định lý Stokes \\int_{\\partial M} \\omega = \\int_M d\\omega. Một số sách viết \\operatorname{Fr} A hoặc \\operatorname{bd} A thay thế. Vì \\partial là một ký hiệu thông thường, không có gì tách nó khỏi tên tập hợp; dáng viết sát nhau đó chính là quy ước mong muốn.",
+    usage: "Biên của một hình tròn là đường tròn của nó, và biên của tập số hữu tỉ trong tập số thực là toàn bộ, \\partial \\mathbb{Q} = \\mathbb{R}. Cùng ký hiệu \\partial là toán tử biên trong tô pô đại số, \\partial_n : C_n \\to C_{n-1} với \\partial \\circ \\partial = 0, và xuất hiện trong định lý Stokes \\int_{\\partial M} \\omega = \\int_M d\\omega. Một số sách viết \\operatorname{Fr} A hoặc \\operatorname{bd} A thay thế. Vì \\partial là một ký hiệu thông thường, không có gì tách nó khỏi tên tập hợp; dáng viết sát nhau đó chính là quy ước mong muốn.",
   },
   "direct-limit": {
     name: "Giới hạn thuận",

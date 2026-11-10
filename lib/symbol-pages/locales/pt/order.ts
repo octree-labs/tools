@@ -5,7 +5,7 @@ const text: SymbolPageTranslations = {
   "curly-precedes": {
     name: "Precedência curva",
     meaning: "Relação curva “precede ou é igual a”, usada em ordens não estritas e em relações de preferência que não são o ≤ numérico usual.",
-    usage: "Teóricos da ordem e economistas recorrem a \\preccurlyeq quando uma pré-ordem abstrata precisa de um símbolo visivelmente diferente de \\leq, por exemplo a preferência fraca de um consumidor x \\preccurlyeq y ou a ordem de dominância em partições. Sua versão estrita é \\prec, e seu espelho é \\succcurlyeq. Não o confunda com \\preceq, que tem um traço reto embaixo em vez do curvo; alguns autores usam os dois no mesmo artigo para marcar duas ordens distintas. Como é uma relação, o TeX o cerca automaticamente de espaços grossos, então nunca o acolchoe manualmente com \\, ou \;.",
+    usage: "Teóricos da ordem e economistas recorrem a \\preccurlyeq quando uma pré-ordem abstrata precisa de um símbolo visivelmente diferente de \\leq, por exemplo a preferência fraca de um consumidor x \\preccurlyeq y ou a ordem de dominância em partições. Sua versão estrita é \\prec, e seu espelho é \\succcurlyeq. Não o confunda com \\preceq, que tem um traço reto embaixo em vez do curvo; alguns autores usam os dois no mesmo artigo para marcar duas ordens distintas. Como é uma relação, o TeX o cerca automaticamente de espaços grossos, então nunca o acolchoe manualmente com \\, ou \\;.",
     example: "x \\preccurlyeq y \\text{ e } y \\preccurlyeq z \\implies x \\preccurlyeq z",
   },
   "curly-succeeds": {
@@ -17,7 +17,7 @@ const text: SymbolPageTranslations = {
     name: "Sinal de não menor que",
     meaning: "Sinal de menor que negado: afirma que uma quantidade não é estritamente menor que outra.",
     usage: "Escrever a \\nless b equivale logicamente a a \\geq b numa ordem total, mas numa ordem parcial as duas coisas dizem coisas diferentes, e é justamente aí que \\nless se justifica: dois elementos incomparáveis satisfazem tanto a \\nless b quanto b \\nless a. O glifo é um único símbolo pré-composto com uma barra, por isso fica mais limpo que \\not<, cuja barra pode ficar descentralizada. Seu companheiro para o outro sentido é \\ngtr. Para as versões não estritas negadas, use \\nleq ou \\nleqslant em vez de empilhar \\not.",
-    example: "a \\nless b \\text{ e } b \\nless a \\text{ (incomparaveis)}",
+    example: "a \\nless b \\text{ e } b \\nless a \\text{ (incompar\\'aveis)}",
   },
   "not-greater-than": {
     name: "Sinal de não maior que",

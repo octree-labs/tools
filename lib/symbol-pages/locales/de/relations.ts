@@ -23,12 +23,12 @@ const text: SymbolPageTranslations = {
     usage: "Die Physik schreibt F \\propto 1/r^2 für Abstandsquadratgesetze, und die bayessche Statistik stützt sich ständig darauf: p(\\theta \\mid x) \\propto p(x \\mid \\theta)\\, p(\\theta), wobei die Normierungskonstante entfällt. Es ist eine Relation, der Abstand wird also automatisch gesetzt. Verwechseln Sie es nicht mit dem griechischen Buchstaben \\alpha, der in manchen Schriften ähnlich aussieht, aber keinen Relationsabstand hat. Eine Variante, \\varpropto, hat eine leicht andere Form. Für das Skalierungsverhalten in der Algorithmenanalyse sind \\sim oder \\Theta meist klarer. Ergänzen Sie eine Konstante nur, wenn sie wichtig ist; ansonsten besteht der Sinn von \\propto gerade darin, sie zu verbergen.",
   },
   "similar-to": {
-    name: "Tilde-Relation",
+    name: "Ähnlichkeitszeichen (Tilde)",
     meaning: "Tilde als Relation für „verteilt wie“, „asymptotisch gleich“, „ähnlich“ oder „äquivalent bezüglich einer Relation“.",
     usage: "In der Wahrscheinlichkeitstheorie liest man X \\sim \\mathcal{N}(0, 1) als „X ist standardnormalverteilt“. In der Asymptotik bedeutet f \\sim g, dass f/g \\to 1, wie in der Stirlingformel. Die Algebra verwendet x \\sim y für eine Äquivalenzrelation, die Geometrie für ähnliche Dreiecke. Als Relation hat es beidseitig Abstand; für eine Tilde als Akzent auf einem Buchstaben verwenden Sie \\tilde{x}. Nahe Verwandte sind \\simeq (asymptotisch gleich oder homotopieäquivalent), \\approx (ungefähr) und \\thicksim, eine kräftigere Version. Als vorangestelltes „ungefähr“, wie in \\sim 10^3, kann der Abstand seltsam wirken; schreiben Sie {\\sim}10^3.",
   },
   "congruent": {
-    name: "Isomorphiezeichen",
+    name: "Kongruenzzeichen",
     meaning: "Tilde über einem Gleichheitszeichen, das die Isomorphie von Strukturen oder die Kongruenz geometrischer Figuren bezeichnet.",
     usage: "Algebraiker schreiben G \\cong H für isomorphe Gruppen und V \\cong V^{**} für endlichdimensionale Räume, während die Geometrie \\triangle ABC \\cong \\triangle DEF für kongruente Dreiecke verwendet. Manche Texte aus Physik und Technik verwenden es für „ungefähr gleich“, dafür ist \\approx jedoch klarer. Es unterscheidet sich von \\simeq (ein einzelner Strich, verwendet für Homotopieäquivalenz oder asymptotische Gleichheit) und von \\equiv (drei Striche). Um die Abbildung anzugeben, setzen Sie sie mit \\overset{\\phi}{\\cong} über das Symbol oder verwenden einen Pfeil wie \\xrightarrow{\\sim}.",
   },

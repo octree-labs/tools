@@ -13,20 +13,20 @@ const text: SymbolPageTranslations = {
     usage: "Diese Form definiert die Lösung eines Minimierungsproblems, etwa beim proximalen Operator \\operatorname{prox}_f(v) = \\arg\\min_x \\big(f(x) + \\frac{1}{2}\\|x - v\\|_2^2\\big). Da \\arg keine Grenzen annehmen kann, gehört der Index zu \\min, das ihn nur im Display-Modus unter min zentriert; \\operatorname*{arg\\,min} korrigiert die Platzierung. Nebenbedingungen können in den Index, \\arg\\min_{x \\in C}, oder bei mehreren Zeilen in \\substack. Unterscheiden Sie argmin, das einen Punkt oder eine Menge liefert, von \\min, das den Wert liefert; beides zu vermischen ist ein häufiger Fehler in studentischen Ausarbeitungen.",
   },
   "minimize": {
-    name: "Minimum",
+    name: "Minimierung",
     meaning: "Minimum über x: der kleinste Wert, den ein Ausdruck annimmt, wenn x variiert, mit x unter min geschrieben.",
     usage: "\\min ist ein vordefinierter Operator, der Grenzen annimmt, im Display-Modus setzt \\min_{x} das x also unter das Wort, im Fließtext erscheint es als Index rechts daneben. Dies ist die erste Zeile eines Standard-Optimierungsproblems: \\min_x f(x) unter Nebenbedingungen. Wenn das Minimum nicht angenommen werden muss, wie bei offenen Mengen, verwenden Sie stattdessen \\inf. Um die Display-Platzierung im Fließtext zu erzwingen, schreiben Sie \\min\\limits_{x}. Für mehrzeilige Bedingungen unter min verwenden Sie \\substack{x \\in \\mathbb{R}^n \\\\ Ax = b}. Der bezeichnete Wert ist eine Zahl, anders als argmin, das die Minimalstelle liefert.",
   },
   "maximize": {
-    name: "Maximum",
+    name: "Maximierung",
     meaning: "Maximum über x: der größte Wert, den der Ausdruck annimmt, wenn x seinen Definitionsbereich durchläuft.",
-    usage: "\\max_{x} funktioniert wie \\min_{x}: Der vordefinierte Operator setzt Grenzen im Display-Stil darunter und im Fließtext daneben. Typische Anwendungen sind die duale Funktion, Minimax-Probleme wie \\min_G \\max_D beim Training von GANs und die Maximierung des Randabstands bei SVMs. Wenn das Supremum nicht angenommen werden muss, ist \\sup der korrekte Operator. Operatoren zu kombinieren ist üblich, und TeX setzt gestapelte Grenzen an benachbarten \\min und \\max sauber. Die Platzierung lässt sich mit \\limits oder \\nolimits überschreiben, und vor der Zielfunktion schafft \\, oder \; in langen Ausdrücken etwas Luft.",
+    usage: "\\max_{x} funktioniert wie \\min_{x}: Der vordefinierte Operator setzt Grenzen im Display-Stil darunter und im Fließtext daneben. Typische Anwendungen sind die duale Funktion, Minimax-Probleme wie \\min_G \\max_D beim Training von GANs und die Maximierung des Randabstands bei SVMs. Wenn das Supremum nicht angenommen werden muss, ist \\sup der korrekte Operator. Operatoren zu kombinieren ist üblich, und TeX setzt gestapelte Grenzen an benachbarten \\min und \\max sauber. Die Platzierung lässt sich mit \\limits oder \\nolimits überschreiben, und vor der Zielfunktion schafft \\, oder \\; in langen Ausdrücken etwas Luft.",
   },
   "subject-to": {
     name: "Unter der Nebenbedingung",
     meaning: "Abkürzung, die die Nebenbedingungen eines Optimierungsproblems einleitet; im Englischen „s.t.“, im Deutschen meist „u.d.N.“.",
     usage: "In einer Problemformulierung trennt die Abkürzung die Zielfunktion von den Nebenbedingungen: \\min_x f(x) \\quad \\text{s.t.} \\quad g_i(x) \\leq 0. Verwenden Sie \\text, damit die Buchstaben aufrecht stehen und der Punkt erhalten bleibt, und umgeben Sie es beidseitig mit \\quad, denn \\text fügt selbst keinen Abstand ein. Viele Stilrichtlinien bevorzugen die ausgeschriebene Formulierung, etwa \\text{unter der Nebenbedingung}, besonders in abgesetzten Formulierungen mit der align-Umgebung, in denen die Nebenbedingungen in den folgenden Zeilen unter der ersten stehen. Tippen Sie die Abkürzung nicht direkt im Mathematikmodus; sonst erscheinen kursive Buchstaben als Variablen mit einem Punkt.",
-    example: "\\min_{x} f(x) \\quad \\text{u.d.N.} \\quad Ax = b, \; x \\geq 0",
+    example: "\\min_{x} f(x) \\quad \\text{u.d.N.} \\quad Ax = b, \\; x \\geq 0",
   },
   "constraint": {
     name: "Ungleichungsnebenbedingung",

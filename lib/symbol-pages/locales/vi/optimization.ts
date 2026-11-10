@@ -20,7 +20,7 @@ const text: SymbolPageTranslations = {
   "maximize": {
     name: "Cực đại hóa",
     meaning: "Giá trị lớn nhất theo x: giá trị lớn nhất mà biểu thức đạt được khi x chạy trên miền xác định.",
-    usage: "\\max_{x} hoạt động như \\min_{x}: toán tử định nghĩa sẵn đặt cận bên dưới ở kiểu hiển thị và bên cạnh trong dòng. Các ứng dụng điển hình là hàm đối ngẫu, bài toán minimax như \\min_G \\max_D khi huấn luyện GAN, và cực đại hóa lề trong SVM. Khi cận trên đúng có thể không đạt được, \\sup là toán tử đúng. Kết hợp các toán tử là chuyện thường, và TeX xử lý tốt các cận xếp chồng trên \\min và \\max kề nhau. Bạn có thể ghi đè vị trí bằng \\limits hoặc \\nolimits, và thêm \\, hoặc \; trước hàm mục tiêu cho thoáng trong các biểu thức dài.",
+    usage: "\\max_{x} hoạt động như \\min_{x}: toán tử định nghĩa sẵn đặt cận bên dưới ở kiểu hiển thị và bên cạnh trong dòng. Các ứng dụng điển hình là hàm đối ngẫu, bài toán minimax như \\min_G \\max_D khi huấn luyện GAN, và cực đại hóa lề trong SVM. Khi cận trên đúng có thể không đạt được, \\sup là toán tử đúng. Kết hợp các toán tử là chuyện thường, và TeX xử lý tốt các cận xếp chồng trên \\min và \\max kề nhau. Bạn có thể ghi đè vị trí bằng \\limits hoặc \\nolimits, và thêm \\, hoặc \\; trước hàm mục tiêu cho thoáng trong các biểu thức dài.",
   },
   "subject-to": {
     name: "Ký hiệu “với điều kiện” (s.t.)",

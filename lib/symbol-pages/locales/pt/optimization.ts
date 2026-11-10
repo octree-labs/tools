@@ -20,7 +20,7 @@ const text: SymbolPageTranslations = {
   "maximize": {
     name: "Maximização",
     meaning: "Máximo em x: o maior valor que a expressão atinge quando x percorre seu domínio.",
-    usage: "\\max_{x} funciona como \\min_{x}: o operador predefinido coloca os limites embaixo no estilo de exibição e ao lado no texto corrido. Usos típicos são a função dual, problemas minimax como \\min_G \\max_D no treinamento de GANs e a maximização da margem em SVMs. Quando o supremo pode não ser atingido, \\sup é o operador correto. Combinar operadores é comum, e o TeX lida bem com limites empilhados em \\min e \\max adjacentes. É possível mudar o posicionamento com \\limits ou \\nolimits e acrescentar \\, ou \; antes do objetivo para dar respiro em expressões longas.",
+    usage: "\\max_{x} funciona como \\min_{x}: o operador predefinido coloca os limites embaixo no estilo de exibição e ao lado no texto corrido. Usos típicos são a função dual, problemas minimax como \\min_G \\max_D no treinamento de GANs e a maximização da margem em SVMs. Quando o supremo pode não ser atingido, \\sup é o operador correto. Combinar operadores é comum, e o TeX lida bem com limites empilhados em \\min e \\max adjacentes. É possível mudar o posicionamento com \\limits ou \\nolimits e acrescentar \\, ou \\; antes do objetivo para dar respiro em expressões longas.",
   },
   "subject-to": {
     name: "Abreviatura s.t. (sujeito a)",
