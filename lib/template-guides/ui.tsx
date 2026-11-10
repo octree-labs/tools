@@ -130,11 +130,15 @@ export interface GuideFaqItem {
   answer: string;
 }
 
-/** Renders a FAQ list plus the matching schema.org FAQPage JSON-LD. */
-export function GuideFaq({ items }: { items: GuideFaqItem[] }) {
+/**
+ * Renders a FAQ list plus the matching schema.org FAQPage JSON-LD.
+ * Translated guides pass the BCP 47 tag of their language as `inLanguage`.
+ */
+export function GuideFaq({ items, inLanguage }: { items: GuideFaqItem[]; inLanguage?: string }) {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
+    ...(inLanguage ? { inLanguage } : {}),
     mainEntity: items.map((item) => ({
       "@type": "Question",
       name: item.question,
