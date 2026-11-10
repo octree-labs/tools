@@ -1,0 +1,137 @@
+# Octree LaTeX Tools
+
+> Free online LaTeX converters, generators, a PDF preview editor, templates and symbol references.
+
+This inventory covers the English tool routes. It is not an exhaustive export of every template, symbol page or translation. AI-generated output should be checked against the source before use.
+
+## Tool summaries and limitations
+
+### AI LaTeX Generator
+
+URL: https://tools.useoctree.com/tools/ai-latex-generator
+
+Generate a LaTeX document from a plain-language description. Describe an article, report, presentation or table. Review and compile the generated source before using it.
+
+### arXiv to LaTeX
+
+URL: https://tools.useoctree.com/tools/arxiv-to-latex
+
+Retrieve the source authors uploaded to arXiv. Paste an arXiv ID or link to browse source files and download a ZIP. This retrieves available source rather than reconstructing it from the PDF.
+
+### Citation Generator
+
+URL: https://tools.useoctree.com/tools/citation-generator
+
+Turn reference details into BibTeX entries. Paste structured fields or a reference. Check authors, publication details and identifiers against the original source before citing.
+
+### Equation to LaTeX
+
+URL: https://tools.useoctree.com/tools/equation-to-latex
+
+Convert typed descriptions or equation images into LaTeX. Type an equation in plain language, paste notation or upload a picture. Check the rendered preview against the original formula.
+
+### HTML to LaTeX
+
+URL: https://tools.useoctree.com/tools/html-to-latex
+
+Convert HTML markup into a LaTeX document. Paste headings, lists, tables, formatting and links. Review the resulting LaTeX and PDF; this is not a browser screenshot converter.
+
+### Image to TikZ
+
+URL: https://tools.useoctree.com/tools/image-to-tikz
+
+Recreate diagram images as editable TikZ code. Upload a flowchart, tree, graph or sketch. AI reconstructs nodes, paths and labels; inspect geometry and labels before publication.
+
+### LaTeX Converter
+
+URL: https://tools.useoctree.com/tools/latex-converter
+
+Find the right converter for moving content into or out of LaTeX. This is a directory of conversion tools, not a single universal file converter. Choose a tool matching the input and output formats.
+
+### LaTeX Preview
+
+URL: https://tools.useoctree.com/tools/latex-preview
+
+Edit LaTeX source and compile it to a PDF preview. Use the online editor to test documents without installing TeX locally. Compilation runs on the Octree compile service.
+
+### LaTeX to Markdown
+
+URL: https://tools.useoctree.com/tools/latex-to-markdown
+
+Convert LaTeX documents or snippets into Markdown. Headings, lists, tables and formatting become Markdown. Math remains LaTeX between dollar delimiters and needs a compatible math renderer.
+
+### LaTeX to PNG
+
+URL: https://tools.useoctree.com/tools/latex-to-png
+
+Render LaTeX equations, diagrams or a document's first page as PNG. The service compiles a PDF, then the browser rasterises its first page at the selected DPI. Choose a transparent or white background; this is not a multi-page image export.
+
+### LaTeX to Word
+
+URL: https://tools.useoctree.com/tools/latex-to-word
+
+Convert LaTeX source to an editable Word .docx file. Headings, lists, tables and text formatting are retained. Equations become readable text rather than native Word equations; figures become captions. Input is limited to 60,000 characters.
+
+### LaTeX Word Counter
+
+URL: https://tools.useoctree.com/tools/latex-word-counter
+
+Count words in LaTeX source with texcount. Paste source to see separate body, heading and caption counts. Commands, comments, citation keys and math do not count as prose words.
+
+### Markdown to LaTeX
+
+URL: https://tools.useoctree.com/tools/markdown-to-latex
+
+Convert Markdown text into a compilable LaTeX document. Paste headings, lists, tables, code blocks and links. Inline and display math remain LaTeX math; review the output before compiling.
+
+### Math to LaTeX
+
+URL: https://tools.useoctree.com/tools/math-to-latex
+
+Transcribe handwritten or printed math images into LaTeX. Upload a photo, scan or screenshot of an equation. Inspect fractions, symbols and subscripts against the original image.
+
+### MathML to LaTeX
+
+URL: https://tools.useoctree.com/tools/mathml-to-latex
+
+Convert MathML markup into LaTeX math. Paste a MathML math element to translate fractions, roots, scripts and matrices into LaTeX notation.
+
+### Mermaid to LaTeX
+
+URL: https://tools.useoctree.com/tools/mermaid-to-latex
+
+Convert Mermaid diagram definitions into TikZ. Paste Mermaid source to generate a LaTeX diagram. Review node placement, labels and arrows in the compiled preview.
+
+### PDF to LaTeX
+
+URL: https://tools.useoctree.com/tools/pdf-to-latex
+
+Reconstruct editable LaTeX from PDF content. A PDF does not contain its original LaTeX source. For arXiv papers, try the source downloader first; otherwise review the AI reconstruction for missing text, equations and layout differences.
+
+### PGFPlots Generator
+
+URL: https://tools.useoctree.com/tools/pgfplots-generator
+
+Generate pgfplots chart code from a description. Describe a function, data points or chart type, with labels and ranges. Verify the generated data and axes before using the figure.
+
+### Table to LaTeX
+
+URL: https://tools.useoctree.com/tools/table-to-latex
+
+Convert CSV table data into a LaTeX table. Export Excel or Google Sheets data as CSV first: this tool does not read .xlsx directly. Review headers, alignment and values in the generated table.
+
+### TikZ Generator
+
+URL: https://tools.useoctree.com/tools/tikz-generator
+
+Generate TikZ diagrams from plain-language descriptions. Describe the nodes, relationships and layout you need. The result is a LaTeX starting point to compile, inspect and refine.
+
+## Public resources
+
+- [Templates](https://tools.useoctree.com/templates): Browse LaTeX document templates.
+- [Symbols](https://tools.useoctree.com/symbols): Browse LaTeX commands and symbol references.
+- [Conference deadlines](https://tools.useoctree.com/conference-deadlines): Browse conference deadline listings; verify dates with the conference organizer.
+- [Learn LaTeX](https://www.useoctree.com/learn): Guides and examples.
+- [Octree](https://www.useoctree.com): Product information and current plans.
+- [Editor login](https://app.useoctree.com/auth/login): Sign in to the Octree editor.
+- [Developer documentation](https://www.useoctree.com/developers): The hosted LaTeX compile API and MCP server, separate from these browser tools.
