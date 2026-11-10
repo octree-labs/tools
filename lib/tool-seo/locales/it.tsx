@@ -1390,7 +1390,7 @@ $\\displaystyle \\hat{H}\\psi = E\\psi$
           fuori da LaTeX. Verso LaTeX: Markdown, HTML, MathML e diagrammi Mermaid, tabelle CSV da
           Excel o Google Sheets, PDF, foto di equazioni, immagini di schemi e articoli arXiv. Da
           LaTeX: Markdown per GitHub e Notion, Word .docx per revisori e piattaforme di
-          sottomissione, immagini PNG per le slide e PDF tramite l’editor LaTeX online.
+          invio degli articoli, immagini PNG per le slide e PDF tramite l’editor LaTeX online.
         </p>
         <p>
           Ogni convertitore è gratuito, funziona nel browser e non richiede alcun account. La
@@ -1631,7 +1631,7 @@ $\\displaystyle \\hat{H}\\psi = E\\psi$
           "No. La matematica in linea come $E = mc^2$ e le equazioni in display sono trattate come formule e non come parole, quindi non vengono aggiunte al conteggio.",
       },
       {
-        question: "Come si confronta con texcount e con il conteggio parole di Overleaf?",
+        question: "Come si colloca rispetto a texcount e al conteggio parole di Overleaf?",
         answer:
           "Esegue texcount, lo script Perl incluso in TeX Live e MiKTeX, quindi i numeri corrispondono a texcount -total sul tuo computer. Anche il conteggio parole di Overleaf si basa su texcount, quindi i totali dovrebbero essere molto vicini. La differenza è che non ti servono né un’installazione TeX locale né un account.",
       },
@@ -1644,8 +1644,8 @@ $\\displaystyle \\hat{H}\\psi = E\\psi$
     related: (
       <>
         Ti serve il documento in un altro formato? Prova il{" "}
-        <IntroLink href="/tools/latex-to-word">convertitore da LaTeX a Word</IntroLink> se la tua
-        sottomissione richiede un .docx, oppure sfoglia il{" "}
+        <IntroLink href="/tools/latex-to-word">convertitore da LaTeX a Word</IntroLink> se la rivista
+        o l’ente a cui invii il lavoro richiede un .docx, oppure sfoglia il{" "}
         <IntroLink href="/symbols">riferimento dei simboli LaTeX</IntroLink>.
       </>
     ),

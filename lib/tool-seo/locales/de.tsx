@@ -691,7 +691,7 @@ const translations: ToolSeoLocale = {
         Sie direkt in einen Artikel, eine Hausaufgabe oder Vorlesungsnotizen einfügen können.
       </p>
     ),
-    stepsHeading: "Gleichung in LaTeX umwandeln in drei Schritten",
+    stepsHeading: "In drei Schritten eine Gleichung in LaTeX umwandeln",
     steps: [
       {
         title: "Geben Sie Ihre Gleichung ein oder laden Sie sie hoch",
@@ -1604,7 +1604,7 @@ $\\displaystyle \\hat{H}\\psi = E\\psi$
       },
       {
         title: "Lesen Sie die Aufschlüsselung",
-        body: "Sehen Sie sich die Gesamtwortzahl sowie die getrennten Zahlen für Fließtext, Überschriften und Bildunterschriften an, und verwenden Sie die Zahl, die Ihre Zeitschrift, Ihr Kurs oder Ihre Graduiertenschule verlangt.",
+        body: "Sehen Sie sich die Gesamtwortzahl sowie die getrennten Zahlen für Fließtext, Überschriften und Bildunterschriften an, und verwenden Sie die Zahl, die Ihre Zeitschrift, Ihr Kurs oder Ihre Hochschule verlangt.",
       },
     ],
     tipsHeading: "Was gezählt wird",
@@ -1639,7 +1639,7 @@ $\\displaystyle \\hat{H}\\psi = E\\psi$
           "Nein. Inline-Mathematik wie $E = mc^2$ und abgesetzte Gleichungen werden als Formeln und nicht als Wörter behandelt: Sie werden nicht zur Wortzahl addiert.",
       },
       {
-        question: "Wie verhält er sich zu texcount und zur Wortzählung von Overleaf?",
+        question: "Wie verhält sich der Wortzähler zu texcount und zur Wortzählung von Overleaf?",
         answer:
           "Er führt texcount aus, das Perl-Skript, das mit TeX Live und MiKTeX ausgeliefert wird: Die Zahlen entsprechen daher texcount -total auf Ihrem Rechner. Auch die Wortzählung von Overleaf basiert auf texcount, die Summen sollten also sehr nah beieinanderliegen. Der Unterschied: Sie brauchen weder eine lokale TeX-Installation noch ein Konto.",
       },
