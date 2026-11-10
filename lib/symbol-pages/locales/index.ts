@@ -187,17 +187,29 @@ import ptNumberTheory from "./pt/number-theory";
 import ruNumberTheory from "./ru/number-theory";
 import viNumberTheory from "./vi/number-theory";
 import cnOperators from "./cn/operators";
+import deOperators from "./de/operators";
 import esOperators from "./es/operators";
 import frOperators from "./fr/operators";
+import itOperators from "./it/operators";
+import ptOperators from "./pt/operators";
 import ruOperators from "./ru/operators";
+import viOperators from "./vi/operators";
 import cnOptimization from "./cn/optimization";
+import deOptimization from "./de/optimization";
 import esOptimization from "./es/optimization";
 import frOptimization from "./fr/optimization";
+import itOptimization from "./it/optimization";
+import ptOptimization from "./pt/optimization";
 import ruOptimization from "./ru/optimization";
+import viOptimization from "./vi/optimization";
 import cnOrder from "./cn/order";
+import deOrder from "./de/order";
 import esOrder from "./es/order";
 import frOrder from "./fr/order";
+import itOrder from "./it/order";
+import ptOrder from "./pt/order";
 import ruOrder from "./ru/order";
+import viOrder from "./vi/order";
 import cnPhysics from "./cn/physics";
 import dePhysics from "./de/physics";
 import esPhysics from "./es/physics";
@@ -452,6 +464,9 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "math": deMath,
     "modal-logic": deModalLogic,
     "number-theory": deNumberTheory,
+    "operators": deOperators,
+    "optimization": deOptimization,
+    "order": deOrder,
     "physics": dePhysics,
     "probability": deProbability,
     "quantifiers": deQuantifiers,
@@ -481,6 +496,9 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "math": itMath,
     "modal-logic": itModalLogic,
     "number-theory": itNumberTheory,
+    "operators": itOperators,
+    "optimization": itOptimization,
+    "order": itOrder,
     "physics": itPhysics,
     "probability": itProbability,
     "quantifiers": itQuantifiers,
@@ -510,6 +528,9 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "math": ptMath,
     "modal-logic": ptModalLogic,
     "number-theory": ptNumberTheory,
+    "operators": ptOperators,
+    "optimization": ptOptimization,
+    "order": ptOrder,
     "physics": ptPhysics,
     "probability": ptProbability,
     "quantifiers": ptQuantifiers,
@@ -539,6 +560,9 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "math": viMath,
     "modal-logic": viModalLogic,
     "number-theory": viNumberTheory,
+    "operators": viOperators,
+    "optimization": viOptimization,
+    "order": viOrder,
     "physics": viPhysics,
     "probability": viProbability,
     "quantifiers": viQuantifiers,
