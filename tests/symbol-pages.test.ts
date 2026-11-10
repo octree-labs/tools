@@ -9,6 +9,9 @@ import es from '../messages/es.json';
 import fr from '../messages/fr.json';
 import ru from '../messages/ru.json';
 import de from '../messages/de.json';
+import it from '../messages/it.json';
+import pt from '../messages/pt.json';
+import vi from '../messages/vi.json';
 import * as symbols from '../lib/symbols';
 import { toLanguageTag } from '../lib/seo';
 import {
@@ -42,7 +45,7 @@ function translator(messages: Record<string, unknown>, locale: string): SymbolPa
   };
 }
 
-const locales: Record<string, Record<string, unknown>> = { en, cn, es, fr, ru, de };
+const locales: Record<string, Record<string, unknown>> = { en, cn, es, fr, ru, de, it, pt, vi };
 
 function models(locale: string): SymbolPageModel[] {
   const t = translator(locales[locale], locale);
@@ -209,8 +212,8 @@ test('locales without any translated symbol copy stay noindex everywhere', () =>
   }
 });
 
-/** Categories whose body copy is translated in every SYMBOL_PAGE_TEXT_LOCALES locale. */
-const TRANSLATED_CATEGORIES: string[] = [
+/** Every category: translated in full in cn, es, fr and ru. */
+const ALL_CATEGORIES: string[] = [] = [
   'accents',
   'arrows',
   'boolean',
@@ -250,17 +253,67 @@ const TRANSLATED_CATEGORIES: string[] = [
   'units',
 ];
 
-test('translated categories are complete in cn, es, fr and ru, and nothing else is', () => {
-  assert.deepEqual([...SYMBOL_PAGE_TEXT_LOCALES].sort(), ['cn', 'es', 'fr', 'ru']);
+/** The ten categories with the most traffic: translated in de, it, pt and vi. */
+const TOP_CATEGORIES: string[] = [
+  'arrows',
+  'chemistry',
+  'functions',
+  'greek',
+  'logic',
+  'math',
+  'physics',
+  'probability',
+  'quantifiers',
+  'set-theory',
+];
+
+/** Categories whose body copy is translated, per locale. */
+const TRANSLATED_CATEGORIES: Record<string, string[]> = {
+  cn: ALL_CATEGORIES,
+  es: ALL_CATEGORIES,
+  fr: ALL_CATEGORIES,
+  ru: ALL_CATEGORIES,
+  de: TOP_CATEGORIES,
+  it: TOP_CATEGORIES,
+  pt: TOP_CATEGORIES,
+  vi: TOP_CATEGORIES,
+};
+
+test('each locale translates exactly its listed categories, in full, and nothing else', () => {
+  assert.deepEqual([...SYMBOL_PAGE_TEXT_LOCALES].sort(), Object.keys(TRANSLATED_CATEGORIES).sort());
   for (const locale of SYMBOL_PAGE_TEXT_LOCALES) {
-    assert.deepEqual(translatedSymbolCategories(locale).sort(), [...TRANSLATED_CATEGORIES].sort(), locale);
+    const expected = [...TRANSLATED_CATEGORIES[locale]].sort();
+    assert.deepEqual(translatedSymbolCategories(locale).sort(), expected, locale);
     const dir = path.join('lib/symbol-pages/locales', locale);
     const files = fs.existsSync(dir) ? fs.readdirSync(dir).map((f) => f.replace(/\.ts$/, '')).sort() : [];
-    assert.deepEqual(files, [...TRANSLATED_CATEGORIES].sort(), `${dir}: every category file is registered`);
+    assert.deepEqual(files, expected, `${dir}: every category file is registered`);
   }
   for (const ref of SYMBOL_PAGES) {
-    const expected = TRANSLATED_CATEGORIES.includes(ref.category) ? ['en', 'fr', 'es', 'cn', 'ru'] : ['en'];
+    const expected = LOCALES.filter((l) => l === 'en' || TRANSLATED_CATEGORIES[l]?.includes(ref.category));
     assert.deepEqual(symbolPageLocales(ref), expected, symbolPagePath(ref));
+  }
+});
+
+test('an untranslated category stays English, canonical to the English URL and noindex in de, it, pt and vi', () => {
+  const ref = SYMBOL_PAGES.find((r) => !TOP_CATEGORIES.includes(r.category))!;
+  for (const locale of ['de', 'it', 'pt', 'vi']) {
+    assert.equal(isSymbolPageLocalized(ref.category, ref.slug, locale), false);
+    assert.deepEqual(symbolPageAlternates(ref, locale), {
+      alternates: { canonical: symbolPagePath(ref) },
+      robots: { index: false, follow: true },
+    });
+  }
+});
+
+test('de, it, pt and vi have their own symbolPage messages (no English labels)', () => {
+  const en_ = (en as Record<string, Record<string, string>>).symbolPage;
+  for (const [locale, messages] of Object.entries({ de, it, pt, vi })) {
+    const local = (messages as Record<string, Record<string, string>>).symbolPage;
+    assert.ok(local, `messages/${locale}.json has no symbolPage section`);
+    assert.deepEqual(Object.keys(local).sort(), Object.keys(en_).sort(), locale);
+    for (const key of ['faqHowQ', 'related', 'example', 'packageLabel', 'faqHeading', 'whereUsed']) {
+      assert.notEqual(local[key], en_[key], `${locale}: symbolPage.${key} is English`);
+    }
   }
 });
 
