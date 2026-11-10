@@ -235,9 +235,13 @@ import ptQuantifiers from "./pt/quantifiers";
 import ruQuantifiers from "./ru/quantifiers";
 import viQuantifiers from "./vi/quantifiers";
 import cnRelations from "./cn/relations";
+import deRelations from "./de/relations";
 import esRelations from "./es/relations";
 import frRelations from "./fr/relations";
+import itRelations from "./it/relations";
+import ptRelations from "./pt/relations";
 import ruRelations from "./ru/relations";
+import viRelations from "./vi/relations";
 import cnSetTheory from "./cn/set-theory";
 import deSetTheory from "./de/set-theory";
 import esSetTheory from "./es/set-theory";
@@ -247,13 +251,21 @@ import ptSetTheory from "./pt/set-theory";
 import ruSetTheory from "./ru/set-theory";
 import viSetTheory from "./vi/set-theory";
 import cnSpecialFunctions from "./cn/special-functions";
+import deSpecialFunctions from "./de/special-functions";
 import esSpecialFunctions from "./es/special-functions";
 import frSpecialFunctions from "./fr/special-functions";
+import itSpecialFunctions from "./it/special-functions";
+import ptSpecialFunctions from "./pt/special-functions";
 import ruSpecialFunctions from "./ru/special-functions";
+import viSpecialFunctions from "./vi/special-functions";
 import cnSummation from "./cn/summation";
+import deSummation from "./de/summation";
 import esSummation from "./es/summation";
 import frSummation from "./fr/summation";
+import itSummation from "./it/summation";
+import ptSummation from "./pt/summation";
 import ruSummation from "./ru/summation";
+import viSummation from "./vi/summation";
 import cnTensors from "./cn/tensors";
 import esTensors from "./es/tensors";
 import frTensors from "./fr/tensors";
@@ -470,7 +482,10 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "physics": dePhysics,
     "probability": deProbability,
     "quantifiers": deQuantifiers,
+    "relations": deRelations,
     "set-theory": deSetTheory,
+    "special-functions": deSpecialFunctions,
+    "summation": deSummation,
   },
   it: {
     "accents": itAccents,
@@ -502,7 +517,10 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "physics": itPhysics,
     "probability": itProbability,
     "quantifiers": itQuantifiers,
+    "relations": itRelations,
     "set-theory": itSetTheory,
+    "special-functions": itSpecialFunctions,
+    "summation": itSummation,
   },
   pt: {
     "accents": ptAccents,
@@ -534,7 +552,10 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "physics": ptPhysics,
     "probability": ptProbability,
     "quantifiers": ptQuantifiers,
+    "relations": ptRelations,
     "set-theory": ptSetTheory,
+    "special-functions": ptSpecialFunctions,
+    "summation": ptSummation,
   },
   vi: {
     "accents": viAccents,
@@ -566,7 +587,10 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "physics": viPhysics,
     "probability": viProbability,
     "quantifiers": viQuantifiers,
+    "relations": viRelations,
     "set-theory": viSetTheory,
+    "special-functions": viSpecialFunctions,
+    "summation": viSummation,
   },
 };
 

@@ -284,7 +284,10 @@ const PARTIAL_CATEGORIES: string[] = [
   'physics',
   'probability',
   'quantifiers',
+  'relations',
   'set-theory',
+  'special-functions',
+  'summation',
 ];
 
 /** Categories whose body copy is translated, per locale. */
