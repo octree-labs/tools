@@ -75,9 +75,13 @@ import esGraphTheory from "./es/graph-theory";
 import frGraphTheory from "./fr/graph-theory";
 import ruGraphTheory from "./ru/graph-theory";
 import cnGreek from "./cn/greek";
+import deGreek from "./de/greek";
 import esGreek from "./es/greek";
 import frGreek from "./fr/greek";
+import itGreek from "./it/greek";
+import ptGreek from "./pt/greek";
 import ruGreek from "./ru/greek";
+import viGreek from "./vi/greek";
 import cnLatin from "./cn/latin";
 import esLatin from "./es/latin";
 import frLatin from "./fr/latin";
@@ -360,6 +364,7 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "arrows": deArrows,
     "chemistry": deChemistry,
     "functions": deFunctions,
+    "greek": deGreek,
     "logic": deLogic,
     "math": deMath,
     "physics": dePhysics,
@@ -371,6 +376,7 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "arrows": itArrows,
     "chemistry": itChemistry,
     "functions": itFunctions,
+    "greek": itGreek,
     "logic": itLogic,
     "math": itMath,
     "physics": itPhysics,
@@ -382,6 +388,7 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "arrows": ptArrows,
     "chemistry": ptChemistry,
     "functions": ptFunctions,
+    "greek": ptGreek,
     "logic": ptLogic,
     "math": ptMath,
     "physics": ptPhysics,
@@ -393,6 +400,7 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "arrows": viArrows,
     "chemistry": viChemistry,
     "functions": viFunctions,
+    "greek": viGreek,
     "logic": viLogic,
     "math": viMath,
     "physics": viPhysics,
