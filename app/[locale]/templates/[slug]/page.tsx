@@ -13,7 +13,7 @@ import { getTemplateJsonLd } from "@/lib/json-ld";
 import { getTemplateGuide } from "@/lib/template-guides";
 import { OctreeCTA } from "@/components/OctreeCTA";
 import { Button } from "@/components/ui/button";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 const PDFPreview = dynamic(() => import("@/components/PDFPreview"), {
   ssr: false,
@@ -57,6 +57,7 @@ export default function TemplatePage({
   params: Promise<{ slug: string }>;
 }) {
   const t = useTranslations('templates');
+  const locale = useLocale();
   const tTemplatesList = useTranslations('templatesList');
   const tCategories = useTranslations('categories');
   const tCta = useTranslations('cta');
@@ -116,7 +117,7 @@ export default function TemplatePage({
   const translatedDescription = getTemplateDescription(slug, template.description);
   const tags = getTags(template.title, template.category);
   const abstract = abstracts[slug] || translatedDescription;
-  const Guide = getTemplateGuide(slug);
+  const Guide = getTemplateGuide(slug, locale);
 
   return (
     <>

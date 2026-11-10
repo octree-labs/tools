@@ -1,4 +1,5 @@
 import type { ComponentType } from "react";
+import { templateGuideLocales } from "./locales";
 import Aaai2026Guide from "./aaai-2026";
 import Aaai2027Guide from "./aaai-2027";
 import AcademicCvGuide from "./academic-cv";
@@ -89,9 +90,10 @@ import Www2026Guide from "./www-2026";
 /**
  * Long-form guides rendered below the preview on template pages.
  *
- * Guides are English-only editorial content aimed at search terms; they render
- * in every locale. Add a new guide by creating `lib/template-guides/<slug>.tsx`
- * and registering it here.
+ * Guides are editorial content aimed at search terms. The English guide here
+ * renders in every locale unless `./locales` has a translation for that
+ * locale. Add a new guide by creating `lib/template-guides/<slug>.tsx` and
+ * registering it here.
  */
 const templateGuides: Record<string, ComponentType> = {
   "aaai-2026": Aaai2026Guide,
@@ -182,6 +184,17 @@ const templateGuides: Record<string, ComponentType> = {
   "www-2026": Www2026Guide,
 };
 
-export function getTemplateGuide(slug: string): ComponentType | undefined {
-  return templateGuides[slug];
+/** The guide for a template in a route locale, falling back to English. */
+export function getTemplateGuide(slug: string, locale = "en"): ComponentType | undefined {
+  return templateGuideLocales[locale]?.[slug] ?? templateGuides[slug];
+}
+
+/** Whether a template has a guide written in the given route locale. */
+export function isTemplateGuideLocalized(slug: string, locale: string): boolean {
+  return templateGuideLocales[locale]?.[slug] !== undefined;
+}
+
+/** Slugs of every template that has an English guide. */
+export function getTemplateGuideSlugs(): string[] {
+  return Object.keys(templateGuides);
 }
