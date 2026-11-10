@@ -12,12 +12,20 @@ import { buildSymbolPageModel } from "./model";
 
 type Params = { locale: string; symbol: string };
 
+/**
+ * Locales whose translated pages are prerendered. de, it, pt and vi pages are
+ * translated too (indexable, in the sitemap) but render on first request and
+ * stay cached: prerendering their ~700 pages took .next/server from ~1.57 GB
+ * to ~1.73 GB.
+ */
+const PRERENDERED_TEXT_LOCALES = new Set(["cn", "es", "fr", "ru"]);
+
 
 /**
  * Route handlers shared by every app/[locale]/symbols/<category>/[symbol]
- * page. English pages, and pages translated into another locale
- * (./locales), are prerendered at build time; the untranslated pages of the
- * other locales render on first request and are then cached (ISR with no
+ * page. English pages, and pages translated into a PRERENDERED_TEXT_LOCALES
+ * locale (./locales), are prerendered at build time; every other page
+ * renders on first request and is then cached (ISR with no
  * expiry), which keeps the build far below ~10.5k pages (3.2 GB of output).
  */
 export function symbolPageRoute(category: string) {
@@ -30,7 +38,9 @@ export function symbolPageRoute(category: string) {
     // therefore prerender their translated symbols, or the category's first
     // symbol when none is translated; the rest render on first request and
     // stay cached.
-    const translated = refs.filter((ref) => isSymbolPageLocalized(category, ref.slug, params.locale));
+    const translated = PRERENDERED_TEXT_LOCALES.has(params.locale)
+      ? refs.filter((ref) => isSymbolPageLocalized(category, ref.slug, params.locale))
+      : [];
     const list = params.locale === DEFAULT_LOCALE ? refs : translated.length ? translated : refs.slice(0, 1);
     return list.map((ref) => ({ locale: params.locale, symbol: ref.slug }));
   }

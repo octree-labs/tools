@@ -97,7 +97,7 @@ const text: SymbolPageTranslations = {
     example: "\\begin{array}{c} A \\text{ vale} \\\\ \\Updownarrow \\\\ B \\text{ vale} \\end{array}",
   },
   "maps-to": {
-    name: "Freccia di applicazione (mapsto)",
+    name: "Freccia di applicazione",
     meaning: "Traccia una freccia con stanghetta che mostra dove una funzione manda un singolo elemento, come in x ↦ x².",
     usage: "Usate \\mapsto per gli elementi e \\to per gli insiemi: f : \\mathbb{R} \\to \\mathbb{R},\\ x \\mapsto x^2 indica insieme dominio, codominio e legge. Gli articoli di lambda calcolo e programmazione funzionale la usano per le funzioni anonime, e in semantica si scrivono così sostituzioni o aggiornamenti dell'ambiente, [x \\mapsto v]. Differisce da \\to solo per la piccola stanghetta in coda, quindi verificate che si veda chiaramente nei corpi piccoli. Per espressioni lunghe usate \\longmapsto. Nei diagrammi commutativi, anche le frecce a livello di elementi si disegnano con la coda a stanghetta.",
   },
