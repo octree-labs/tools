@@ -41,7 +41,9 @@ import { quickRefs } from "./quick-refs";
 import cn from "./locales/cn";
 import es from "./locales/es";
 import fr from "./locales/fr";
+import pt from "./locales/pt";
 import ru from "./locales/ru";
+import vi from "./locales/vi";
 
 /**
  * Editorial intros rendered above the symbol grid on category pages.
@@ -97,7 +99,7 @@ const symbolIntros: Record<string, ComponentType> = {
   units: UnitsIntro,
 };
 
-const introLocales: Partial<Record<string, IntroLocale>> = { cn, es, fr, ru };
+const introLocales: Partial<Record<string, IntroLocale>> = { cn, es, fr, pt, ru, vi };
 
 /**
  * The intro for a category page in the given route locale, falling back to
