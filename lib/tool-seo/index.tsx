@@ -5,7 +5,9 @@ import de from "./locales/de";
 import es from "./locales/es";
 import fr from "./locales/fr";
 import it from "./locales/it";
+import pt from "./locales/pt";
 import ru from "./locales/ru";
+import vi from "./locales/vi";
 
 /**
  * Translated SEO blocks for tool pages, one file per route locale in
@@ -20,7 +22,7 @@ import ru from "./locales/ru";
 export type ToolSeoTranslation = Omit<ToolSeoContentProps, "inLanguage">;
 export type ToolSeoLocale = Partial<Record<string, ToolSeoTranslation>>;
 
-export const toolSeoLocales: Partial<Record<string, ToolSeoLocale>> = { cn, de, es, fr, it, ru };
+export const toolSeoLocales: Partial<Record<string, ToolSeoLocale>> = { cn, de, es, fr, it, pt, ru, vi };
 
 /** The translated block for a tool in a route locale, if there is one. */
 export function getToolSeoTranslation(slug: string, locale = "en"): ToolSeoTranslation | undefined {
