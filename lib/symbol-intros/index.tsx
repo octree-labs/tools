@@ -39,8 +39,10 @@ import UnitsIntro from "./units";
 import { LocalizedIntroView, type IntroLocale } from "./localized";
 import { quickRefs } from "./quick-refs";
 import cn from "./locales/cn";
+import de from "./locales/de";
 import es from "./locales/es";
 import fr from "./locales/fr";
+import it from "./locales/it";
 import pt from "./locales/pt";
 import ru from "./locales/ru";
 import vi from "./locales/vi";
@@ -99,7 +101,7 @@ const symbolIntros: Record<string, ComponentType> = {
   units: UnitsIntro,
 };
 
-const introLocales: Partial<Record<string, IntroLocale>> = { cn, es, fr, pt, ru, vi };
+const introLocales: Partial<Record<string, IntroLocale>> = { cn, de, es, fr, it, pt, ru, vi };
 
 /**
  * The intro for a category page in the given route locale, falling back to

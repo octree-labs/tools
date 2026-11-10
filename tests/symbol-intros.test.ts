@@ -2,15 +2,17 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import './helpers/react-global';
 import cn from '../lib/symbol-intros/locales/cn';
+import de from '../lib/symbol-intros/locales/de';
 import es from '../lib/symbol-intros/locales/es';
 import fr from '../lib/symbol-intros/locales/fr';
+import it from '../lib/symbol-intros/locales/it';
 import pt from '../lib/symbol-intros/locales/pt';
 import ru from '../lib/symbol-intros/locales/ru';
 import vi from '../lib/symbol-intros/locales/vi';
 import { quickRefs } from '../lib/symbol-intros/quick-refs';
 import { toLanguageTag } from '../lib/seo';
 
-const locales = { cn, es, fr, pt, ru, vi };
+const locales = { cn, de, es, fr, it, pt, ru, vi };
 
 for (const [code, locale] of Object.entries(locales)) {
   test(`${code}: FAQPage inLanguage matches the page's hreflang tag`, () => {
