@@ -192,7 +192,7 @@ const vi: IntroLocale = {
             Các dấu suy luận <Cmd>{"\\therefore"}</Cmd> và <Cmd>{"\\because"}</Cmd> đến từ
             amssymb, giống như <Cmd>{"\\nexists"}</Cmd> và <Cmd>{"\\vDash"}</Cmd>. Sự tương đương
             logic giữa các công thức thường được viết là <Cmd>{"\\equiv"}</Cmd>, phép tuyển loại
-            trừ là <Cmd>{"\\oplus"}</Cmd> và nét Sheffer (NAND) là <Cmd>{"\\uparrow"}</Cmd>. Các
+            trừ là <Cmd>{"\\oplus"}</Cmd> và phép Sheffer (NAND) là <Cmd>{"\\uparrow"}</Cmd>. Các
             toán tử tình thái <Cmd>{"\\Box"}</Cmd> và <Cmd>{"\\Diamond"}</Cmd> nằm ở trang{" "}
             <IntroLink href="/vi/symbols/modal-logic">ký hiệu logic tình thái</IntroLink>.
           </IntroP>
@@ -688,7 +688,7 @@ const vi: IntroLocale = {
           <Cmd>{"\\bar{z}"}</Cmd> cho một chữ cái hoặc <Cmd>{"\\overline{z}"}</Cmd> cho cả một biểu
           thức, còn trong vật lý được viết là <Cmd>{"z^*"}</Cmd>. Phần thực và phần ảo là{" "}
           <Cmd>{"\\Re"}</Cmd> và <Cmd>{"\\Im"}</Cmd>, hoặc dạng thẳng đứng{" "}
-          <Cmd>{"\\operatorname{Re}"}</Cmd>; mô-đun là <Cmd>{"|z|"}</Cmd> và argument là{" "}
+          <Cmd>{"\\operatorname{Re}"}</Cmd>; mô-đun là <Cmd>{"|z|"}</Cmd> và acgumen là{" "}
           <Cmd>{"\\arg z"}</Cmd>. Bảng dưới đây liệt kê các ký hiệu số phức thông dụng nhất cùng gói
           mà mỗi ký hiệu cần; danh sách đầy đủ nằm ở phía dưới.
         </IntroP>
@@ -704,8 +704,8 @@ const vi: IntroLocale = {
         "\\Im(z)": "Phần ảo, chữ ℑ kiểu Fraktur",
         "\\operatorname{Re}(z)": "Phần thực, chữ thẳng đứng (tương tự Im)",
         "|z|": "Mô-đun (giá trị tuyệt đối)",
-        "\\arg z": "Argument",
-        "re^{i\\theta}": "Dạng lượng giác (dạng mũ)",
+        "\\arg z": "Acgumen",
+        "re^{i\\theta}": "Dạng mũ (dạng cực)",
         "\\mathrm{i}": "Đơn vị ảo viết thẳng đứng",
       },
       faqHeading: "Câu hỏi thường gặp về số phức trong LaTeX",
@@ -1368,7 +1368,7 @@ const vi: IntroLocale = {
           <Cmd>{"<"}</Cmd> và <Cmd>{">"}</Cmd>. Nhỏ hơn hoặc bằng trong LaTeX là{" "}
           <Cmd>{"\\leq"}</Cmd> (hoặc tên khác <Cmd>{"\\le"}</Cmd>), lớn hơn hoặc bằng là{" "}
           <Cmd>{"\\geq"}</Cmd> (<Cmd>{"\\ge"}</Cmd>) và khác là <Cmd>{"\\neq"}</Cmd>; cả ba đều có
-          sẵn, nên <Cmd>{"$a \\leq b$"}</Cmd> dùng được trong mọi tài liệu. Rất nhỏ hơn là{" "}
+          sẵn, nên <Cmd>{"$a \\leq b$"}</Cmd> dùng được trong mọi tài liệu. Nhỏ hơn nhiều là{" "}
           <Cmd>{"\\ll"}</Cmd>, còn các dạng nghiêng, xấp xỉ và phủ định đến từ amssymb. Bảng dưới
           đây liệt kê các ký hiệu bất đẳng thức thông dụng nhất cùng gói mà mỗi ký hiệu cần; danh
           sách đầy đủ các ký hiệu thứ tự nằm ở phía dưới.
@@ -1381,8 +1381,8 @@ const vi: IntroLocale = {
         "\\leq": "Nhỏ hơn hoặc bằng (tên khác \\le)",
         "\\geq": "Lớn hơn hoặc bằng (tên khác \\ge)",
         "\\neq": "Khác (tên khác \\ne)",
-        "\\ll": "Rất nhỏ hơn",
-        "\\gg": "Rất lớn hơn",
+        "\\ll": "Nhỏ hơn nhiều",
+        "\\gg": "Lớn hơn nhiều",
         "\\leqslant": "Nhỏ hơn hoặc bằng, dạng nghiêng",
         "\\lesssim": "Nhỏ hơn hoặc xấp xỉ bằng",
         "\\not<": "Không nhỏ hơn",
@@ -1441,7 +1441,7 @@ const vi: IntroLocale = {
         "\\sim": "Đồng dạng, “có phân phối”",
         "\\cong": "Tương đẳng, đẳng cấu",
         "\\propto": "Tỉ lệ với",
-        "\\ll": "Rất nhỏ hơn (\\gg cho rất lớn hơn)",
+        "\\ll": "Nhỏ hơn nhiều (\\gg cho lớn hơn nhiều)",
         "\\leqslant": "Nhỏ hơn hoặc bằng, dạng nghiêng",
       },
       faqHeading: "Câu hỏi thường gặp về ký hiệu quan hệ trong LaTeX",
@@ -1693,7 +1693,7 @@ const vi: IntroLocale = {
         {
           question: "Làm sao để viết sin, cos và tan trong LaTeX?",
           answer:
-            "Dùng các lệnh có sẵn trong chế độ toán: $\\sin x$, $\\cos x$, $\\tan x$, và \\cot, \\sec và \\csc cho các hàm nghịch đảo. Gõ sin không có gạch chéo ngược sẽ in ra tích in nghiêng s·i·n, và đó là lý do các lệnh này tồn tại.",
+            "Dùng các lệnh có sẵn trong chế độ toán: $\\sin x$, $\\cos x$, $\\tan x$, và \\cot, \\sec và \\csc cho cot = 1/tan, sec = 1/cos và csc = 1/sin. Gõ sin không có gạch chéo ngược sẽ in ra tích in nghiêng s·i·n, và đó là lý do các lệnh này tồn tại.",
         },
         {
           question: "Làm sao để viết hàm lượng giác ngược như arcsin trong LaTeX?",
