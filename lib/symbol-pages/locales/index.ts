@@ -139,9 +139,13 @@ import ptLatin from "./pt/latin";
 import ruLatin from "./ru/latin";
 import viLatin from "./vi/latin";
 import cnLinearAlgebra from "./cn/linear-algebra";
+import deLinearAlgebra from "./de/linear-algebra";
 import esLinearAlgebra from "./es/linear-algebra";
 import frLinearAlgebra from "./fr/linear-algebra";
+import itLinearAlgebra from "./it/linear-algebra";
+import ptLinearAlgebra from "./pt/linear-algebra";
 import ruLinearAlgebra from "./ru/linear-algebra";
+import viLinearAlgebra from "./vi/linear-algebra";
 import cnLogic from "./cn/logic";
 import deLogic from "./de/logic";
 import esLogic from "./es/logic";
@@ -151,9 +155,13 @@ import ptLogic from "./pt/logic";
 import ruLogic from "./ru/logic";
 import viLogic from "./vi/logic";
 import cnMachineLearning from "./cn/machine-learning";
+import deMachineLearning from "./de/machine-learning";
 import esMachineLearning from "./es/machine-learning";
 import frMachineLearning from "./fr/machine-learning";
+import itMachineLearning from "./it/machine-learning";
+import ptMachineLearning from "./pt/machine-learning";
 import ruMachineLearning from "./ru/machine-learning";
+import viMachineLearning from "./vi/machine-learning";
 import cnMath from "./cn/math";
 import deMath from "./de/math";
 import esMath from "./es/math";
@@ -430,7 +438,9 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "graph-theory": deGraphTheory,
     "greek": deGreek,
     "latin": deLatin,
+    "linear-algebra": deLinearAlgebra,
     "logic": deLogic,
+    "machine-learning": deMachineLearning,
     "math": deMath,
     "physics": dePhysics,
     "probability": deProbability,
@@ -455,7 +465,9 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "graph-theory": itGraphTheory,
     "greek": itGreek,
     "latin": itLatin,
+    "linear-algebra": itLinearAlgebra,
     "logic": itLogic,
+    "machine-learning": itMachineLearning,
     "math": itMath,
     "physics": itPhysics,
     "probability": itProbability,
@@ -480,7 +492,9 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "graph-theory": ptGraphTheory,
     "greek": ptGreek,
     "latin": ptLatin,
+    "linear-algebra": ptLinearAlgebra,
     "logic": ptLogic,
+    "machine-learning": ptMachineLearning,
     "math": ptMath,
     "physics": ptPhysics,
     "probability": ptProbability,
@@ -505,7 +519,9 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "graph-theory": viGraphTheory,
     "greek": viGreek,
     "latin": viLatin,
+    "linear-algebra": viLinearAlgebra,
     "logic": viLogic,
+    "machine-learning": viMachineLearning,
     "math": viMath,
     "physics": viPhysics,
     "probability": viProbability,
