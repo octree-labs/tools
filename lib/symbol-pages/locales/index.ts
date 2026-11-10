@@ -7,9 +7,13 @@ import esAccents from "./es/accents";
 import frAccents from "./fr/accents";
 import ruAccents from "./ru/accents";
 import cnArrows from "./cn/arrows";
+import deArrows from "./de/arrows";
 import esArrows from "./es/arrows";
 import frArrows from "./fr/arrows";
+import itArrows from "./it/arrows";
+import ptArrows from "./pt/arrows";
 import ruArrows from "./ru/arrows";
+import viArrows from "./vi/arrows";
 import cnBoolean from "./cn/boolean";
 import esBoolean from "./es/boolean";
 import frBoolean from "./fr/boolean";
@@ -83,9 +87,13 @@ import esMachineLearning from "./es/machine-learning";
 import frMachineLearning from "./fr/machine-learning";
 import ruMachineLearning from "./ru/machine-learning";
 import cnMath from "./cn/math";
+import deMath from "./de/math";
 import esMath from "./es/math";
 import frMath from "./fr/math";
+import itMath from "./it/math";
+import ptMath from "./pt/math";
 import ruMath from "./ru/math";
+import viMath from "./vi/math";
 import cnModalLogic from "./cn/modal-logic";
 import esModalLogic from "./es/modal-logic";
 import frModalLogic from "./fr/modal-logic";
@@ -123,9 +131,13 @@ import esRelations from "./es/relations";
 import frRelations from "./fr/relations";
 import ruRelations from "./ru/relations";
 import cnSetTheory from "./cn/set-theory";
+import deSetTheory from "./de/set-theory";
 import esSetTheory from "./es/set-theory";
 import frSetTheory from "./fr/set-theory";
+import itSetTheory from "./it/set-theory";
+import ptSetTheory from "./pt/set-theory";
 import ruSetTheory from "./ru/set-theory";
+import viSetTheory from "./vi/set-theory";
 import cnSpecialFunctions from "./cn/special-functions";
 import esSpecialFunctions from "./es/special-functions";
 import frSpecialFunctions from "./fr/special-functions";
@@ -154,7 +166,8 @@ import ruUnits from "./ru/units";
 export type { SymbolPageTranslation, SymbolPageTranslations } from "./types";
 
 /**
- * locale -> category -> slug -> translated body copy. A symbol page is a real
+ * locale -> category -> slug -> translated body copy. cn, es, fr and ru cover
+ * every category; de, it, pt and vi cover the ten with the most traffic. A symbol page is a real
  * alternate in a locale (self canonical, hreflang, sitemap) only when it has
  * an entry here; every other locale renders the English copy under the
  * translated chrome, canonicalises to the English URL and is noindex.
@@ -318,6 +331,26 @@ const TRANSLATIONS: Record<string, Record<string, SymbolPageTranslations>> = {
     "topology": ruTopology,
     "trigonometry": ruTrigonometry,
     "units": ruUnits,
+  },
+  de: {
+    "arrows": deArrows,
+    "math": deMath,
+    "set-theory": deSetTheory,
+  },
+  it: {
+    "arrows": itArrows,
+    "math": itMath,
+    "set-theory": itSetTheory,
+  },
+  pt: {
+    "arrows": ptArrows,
+    "math": ptMath,
+    "set-theory": ptSetTheory,
+  },
+  vi: {
+    "arrows": viArrows,
+    "math": viMath,
+    "set-theory": viSetTheory,
   },
 };
 
