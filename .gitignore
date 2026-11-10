@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Paradev personal overrides (never committed)
+.paradev/config.local.toml
