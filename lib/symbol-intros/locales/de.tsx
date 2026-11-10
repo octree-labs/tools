@@ -377,7 +377,7 @@ const de: IntroLocale = {
         "\\operatorname{Var}(X)": "Varianz",
         "\\operatorname{Cov}(X, Y)": "Kovarianz",
         "P(A \\mid B)": "Bedingte Wahrscheinlichkeit",
-        "X \\sim \\mathcal{N}(\\mu, \\sigma^2)": "Ist verteilt wie (normal)",
+        "X \\sim \\mathcal{N}(\\mu, \\sigma^2)": "Ist verteilt nach (Normalverteilung)",
         "\\binom{n}{k}": "Binomialkoeffizient",
       },
       faqHeading: "Häufige Fragen",
@@ -1358,7 +1358,7 @@ const de: IntroLocale = {
       use: {
         "\\operatorname*{arg\\,max}_{x} f(x)": "Argmax mit der Variablen darunter",
         "\\operatorname*{arg\\,min}_{x} f(x)": "Argmin mit der Variablen darunter",
-        "\\min_{x \\in \\mathcal{X}} f(x)": "Minimieren über einer Menge",
+        "\\min_{x \\in \\mathcal{X}} f(x)": "Minimieren über eine Menge",
         "\\max_{x} f(x)": "Maximieren",
         "\\text{s.t.}": "Unter den Nebenbedingungen (deutsch auch \\text{u.d.N.})",
         "g_i(x) \\leq 0": "Ungleichungsnebenbedingung",
@@ -1806,7 +1806,7 @@ const de: IntroLocale = {
             <Cmd>{"\\H{o}"}</Cmd> (ő), Punkt darüber <Cmd>{"\\.z"}</Cmd> (ż), Makron{" "}
             <Cmd>{"\\=a"}</Cmd> (ā), Punkt darunter <Cmd>{"\\d{a}"}</Cmd>, Strich darunter{" "}
             <Cmd>{"\\b{a}"}</Cmd>, Ring <Cmd>{"\\r{a}"}</Cmd> (å) und Ogonek{" "}
-            <Cmd>{"\\k{e}"}</Cmd> (ę). Einige vollständige Buchstaben haben einen eigenen Befehl:{" "}
+            <Cmd>{"\\k{e}"}</Cmd> (ę). Einige Buchstaben haben einen eigenen Befehl:{" "}
             <Cmd>{"\\l"}</Cmd> (ł), <Cmd>{"\\o"}</Cmd> (ø), <Cmd>{"\\ae"}</Cmd> (æ) und{" "}
             <Cmd>{"\\ss"}</Cmd> (ß). Um ein i oder j mit Akzent zu versehen, verwenden Sie die
             punktlosen Formen <Cmd>{"\\i"}</Cmd> und <Cmd>{"\\j"}</Cmd>, wie in{" "}
@@ -1829,14 +1829,15 @@ const de: IntroLocale = {
             <Cmd>{"\\usepackage[utf8]{inputenc}"}</Cmd>). Fügen Sie{" "}
             <Cmd>{"\\usepackage[T1]{fontenc}"}</Cmd> hinzu, damit Buchstaben mit Akzent einzelne
             Glyphen sind, die korrekt getrennt und kopiert werden, statt aus zwei Teilen
-            zusammengesetzt zu sein. Ein praktisches Beispiel finden Sie in unserem Leitfaden zu{" "}
+            zusammengesetzt zu sein. Ein praktisches Beispiel finden Sie in unserem
+            englischsprachigen Leitfaden zu{" "}
             <IntroLink
               href="https://www.useoctree.com/blog/spanish-characters-latex-accents-special-letters"
               external
             >
               spanischen Zeichen und Akzenten in LaTeX
-            </IntroLink>
-            , oder in der Einführung in{" "}
+            </IntroLink>{" "}
+            oder in der (ebenfalls englischen) Einführung in{" "}
             <IntroLink href="https://www.useoctree.com/learn/special-characters" external>
               Sonderzeichen in LaTeX
             </IntroLink>

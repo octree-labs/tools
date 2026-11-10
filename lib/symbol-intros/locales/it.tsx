@@ -1820,14 +1820,14 @@ const it: IntroLocale = {
             <Cmd>{"\\usepackage[utf8]{inputenc}"}</Cmd>). Aggiungi{" "}
             <Cmd>{"\\usepackage[T1]{fontenc}"}</Cmd> perché le lettere accentate siano glifi singoli
             che si sillabano e si copiano correttamente, invece di essere composte da due pezzi. Per
-            un esempio pratico, consulta la nostra guida ai{" "}
+            un esempio pratico, consulta la nostra guida in inglese ai{" "}
             <IntroLink
               href="https://www.useoctree.com/blog/spanish-characters-latex-accents-special-letters"
               external
             >
               caratteri spagnoli e accenti in LaTeX
             </IntroLink>
-            , oppure la panoramica sui{" "}
+            , oppure la panoramica (anch&rsquo;essa in inglese) sui{" "}
             <IntroLink href="https://www.useoctree.com/learn/special-characters" external>
               caratteri speciali in LaTeX
             </IntroLink>
