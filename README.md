@@ -2,12 +2,14 @@
 
 Free online conversion tools for LaTeX, HTML, and Math powered by AI.
 
+Use the [live tools](https://tools.useoctree.com), browse the [tool inventory](https://tools.useoctree.com/llms.txt), or open the [Octree editor](https://app.useoctree.com). See the [Octree website](https://www.useoctree.com) for product information and the [developer documentation](https://www.useoctree.com/developers) for the compilation API and MCP server.
+
 ## Tools
 
 - **Image to LaTeX** - Convert images of handwritten math and equations to clean LaTeX code using GPT-4o-mini
 - **PDF to LaTeX** - Convert PDF documents with mathematical content to clean LaTeX code using GPT-4o-mini
 - **Excel to LaTeX** - Convert CSV, JSON, and Excel tables to clean LaTeX code using GPT-4o-mini
-- **TikZ Generator** - Generate TikZ diagrams and graphics from text descriptions using GPT-4o-mini
+- **TikZ Generator** - Generate TikZ diagrams and graphics from text descriptions
 - **LaTeX Preview** - Live LaTeX editor with instant PDF preview
 - **Markdown to LaTeX** - Convert Markdown documents to clean LaTeX code using GPT-4o-mini
 - **Citation Generator** - Generate BibTeX citations from DOIs, article details, or URLs using GPT-4o-mini
@@ -44,7 +46,7 @@ Open [http://localhost:3000](http://localhost:3000) to view the tools.
 
 ## AI Features
 
-All converters use **GPT-4o-mini** to process different file types:
+AI converters use OpenAI models to process different file types; the model varies by tool:
 
 ### Image to LaTeX
 - Drag and drop images (JPEG, PNG) or click to upload
