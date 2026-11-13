@@ -46,7 +46,7 @@ Open [http://localhost:3000](http://localhost:3000) to view the tools.
 
 ## AI Features
 
-All converters use **GPT-4o-mini** to process different file types:
+AI converters use OpenAI models to process different file types; the model varies by tool:
 
 ### Image to LaTeX
 - Drag and drop images (JPEG, PNG) or click to upload
