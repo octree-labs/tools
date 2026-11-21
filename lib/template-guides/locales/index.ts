@@ -1,4 +1,5 @@
 import type { ComponentType } from "react";
+import { deTemplateGuides } from "./de";
 
 /**
  * Translated template guides, one map per route locale (`cn` is Simplified
@@ -11,4 +12,6 @@ import type { ComponentType } from "react";
  * here. Translated guides pass `inLanguage` to `GuideFaq` so the FAQPage
  * JSON-LD carries the page language.
  */
-export const templateGuideLocales: Partial<Record<string, Record<string, ComponentType>>> = {};
+export const templateGuideLocales: Partial<Record<string, Record<string, ComponentType>>> = {
+  de: deTemplateGuides,
+};
