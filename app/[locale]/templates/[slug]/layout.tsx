@@ -1,6 +1,8 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import { getTranslations } from 'next-intl/server';
 import { templates } from '@/lib/templates';
+import { serializeJsonLd, templateJsonLdName } from '@/lib/json-ld';
 import { generateAlternates, withDefaultOgImage } from '@/lib/seo';
 
 /**
@@ -979,6 +981,12 @@ export default async function TemplateLayout({
 
   if (!template) notFound();
 
+  const t = await getTranslations({ locale, namespace: 'templatesList' });
+  const title = t.has(`${slug}.title`) ? t(`${slug}.title`) : template.title;
+  const description = t.has(`${slug}.description`)
+    ? t(`${slug}.description`)
+    : template.description;
+
   const templateUrl = locale === 'en'
     ? `https://tools.useoctree.com/templates/${slug}`
     : `https://tools.useoctree.com/${locale}/templates/${slug}`;
@@ -986,8 +994,8 @@ export default async function TemplateLayout({
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'SoftwareSourceCode',
-    name: `${template.title} LaTeX Template`,
-    description: template.description,
+    name: templateJsonLdName(title),
+    description,
     programmingLanguage: 'LaTeX',
     codeRepository: templateUrl,
     author: {
@@ -995,7 +1003,6 @@ export default async function TemplateLayout({
       name: 'Octree',
       url: 'https://useoctree.com',
     },
-    license: 'https://creativecommons.org/publicdomain/zero/1.0/',
     keywords: [
       template.title.toLowerCase(),
       'latex template',
@@ -1014,7 +1021,7 @@ export default async function TemplateLayout({
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLd) }}
       />
       {children}
     </>
