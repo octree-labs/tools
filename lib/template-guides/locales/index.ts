@@ -1,4 +1,5 @@
 import type { ComponentType } from "react";
+import { cnTemplateGuides } from "./cn";
 import { itTemplateGuides } from "./it";
 
 /**
@@ -13,5 +14,6 @@ import { itTemplateGuides } from "./it";
  * JSON-LD carries the page language.
  */
 export const templateGuideLocales: Partial<Record<string, Record<string, ComponentType>>> = {
+  cn: cnTemplateGuides,
   it: itTemplateGuides,
 };

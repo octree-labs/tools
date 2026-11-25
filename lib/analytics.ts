@@ -12,9 +12,12 @@ import posthog, { type CaptureOptions } from 'posthog-js';
  *   (drafts); `tools:<tool>:cta` / `tools:templates:<slug>:cta` for the
  *   OctreeCTA card and `tools:header` (links). cta_impression and
  *   open_in_octree_clicked share it.
- * - `source`: equal to `placement` on every click today (callers may pass a
- *   distinct placement to openInOctree, but none do). Link clicks never reuse
- *   a draft source, so source-grouped draft queries are not inflated.
+ * - `source`: equal to `placement`, except on symbol pages: the card under
+ *   the command (`tools:symbols:<category>:<slug>`) and the example button
+ *   (`...:<slug>:example`) send the same draft source with their own
+ *   placements; category indexes use `tools:symbols:<category>:index`. Link
+ *   clicks never reuse a draft source, so source-grouped draft queries are
+ *   not inflated.
  * - `kind` (open_in_octree_clicked only): `draft` = form POST of LaTeX to
  *   /api/drafts, `link` = plain navigation to the app.
  * - Every app URL carries utm_source=tools, utm_medium=cta|nav|draft and

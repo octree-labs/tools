@@ -3,6 +3,7 @@ import { DEFAULT_LOCALE } from "@/lib/i18n/config";
 import { getSymbolFacts, type SymbolCopy, type SymbolFacts } from "./content";
 import { relatedSymbolPages, type SymbolPageRef } from "./index";
 import { getSymbolPageText } from "./locales";
+import { buildSymbolStarterDocument } from "./starter";
 import { unicodeFor } from "./unicode";
 
 /** Message lookup for the `symbolPage` namespace (next-intl translator or a test stub). */
@@ -22,6 +23,10 @@ export interface SymbolPageModel {
   /** e.g. \usepackage{amssymb}; empty when the command is built in. */
   usepackage: string;
   exampleDocument: string;
+  /** The richer document the "Open in Octree" card sends (see ./starter). */
+  starterDocument: string;
+  /** Draft title for that document, in the page's locale ("<name> in LaTeX"). */
+  starterTitle: string;
   /** The command or example contains a non-ASCII character (needs XeLaTeX/LuaLaTeX). */
   needsUnicodeEngine: boolean;
   /** The Unicode character for the "copy the Unicode character" line, when there is one. */
@@ -110,6 +115,8 @@ export function buildSymbolPageModel(
     metaDescription: t("metaDescription", { meaning: copy.meaning, command }),
     usepackage,
     exampleDocument: buildExampleDocument(ref, copy, facts),
+    starterDocument: buildSymbolStarterDocument(ref, copy, facts).latex,
+    starterTitle: t("tryTitle", { name }),
     unicode,
     needsUnicodeEngine: NON_ASCII.test(ref.latex) || NON_ASCII.test(copy.example),
     related: relatedSymbolPages(ref, 6).map((rel) => ({

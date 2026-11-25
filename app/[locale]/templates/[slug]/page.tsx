@@ -9,7 +9,6 @@ import { openInOctree } from "@/lib/open-in-octree";
 import { templateFiles } from "@/lib/template-files";
 import { EVENTS, track } from "@/lib/analytics";
 import { useCtaImpression } from "@/hooks/use-cta-impression";
-import { getTemplateJsonLd } from "@/lib/json-ld";
 import { getTemplateGuide } from "@/lib/template-guides";
 import { OctreeCTA } from "@/components/OctreeCTA";
 import { Button } from "@/components/ui/button";
@@ -269,14 +268,6 @@ export default function TemplatePage({
         </div>
       </div>
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(
-            getTemplateJsonLd(translatedTitle, translatedDescription)
-          ),
-        }}
-      />
     </>
   );
 }

@@ -598,6 +598,10 @@
     "backToSymbols": "العودة إلى الرموز",
     "symbolCount": "{count} رمز",
     "symbolsCount": "{count} رموز",
+    "tryHeading": "استخدم هذه الرموز في مستند حقيقي",
+    "tryBody": "افتح مستندًا مبدئيًا يحتوي على بعضها جاهزًا مع تحميل الحزم اللازمة. حرّره في Octree وشاهد ملف PDF دون أي تثبيت.",
+    "tryButton": "فتح في Octree",
+    "tryTitle": "{category} في LaTeX",
     "categories": {
       "math": { "title": "الرموز الرياضية", "description": "العوامل الرياضية الشائعة والعلاقات والأسهم.", "subtitle": "العوامل الرياضية الشائعة" },
       "greek": { "title": "الرموز اليونانية", "description": "قائمة كاملة بالحروف اليونانية وأوامر LaTeX الخاصة بها.", "subtitle": "الحروف اليونانية والمتغيرات" },
