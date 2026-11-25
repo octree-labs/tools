@@ -11,6 +11,7 @@ import { symbolPagePath } from "@/lib/symbol-pages";
 import { getSymbolPageT } from "@/lib/symbol-pages/i18n";
 import type { SymbolPageModel } from "@/lib/symbol-pages/model";
 import { OpenExampleButton } from "./OpenExampleButton";
+import { TryInOctreeCard } from "./TryInOctreeCard";
 
 const SITE = "https://tools.useoctree.com";
 
@@ -115,6 +116,15 @@ export async function SymbolPageView({ model, locale }: { model: SymbolPageModel
             </>
           )}
         </dl>
+        <TryInOctreeCard
+          className="mt-6"
+          latex={model.starterDocument}
+          title={model.starterTitle}
+          source={source}
+          heading={t("tryHeading", { name: model.name })}
+          body={t("tryBody", { command: ref.latex })}
+          label={t("tryButton")}
+        />
       </div>
 
       <Section title={t("whereUsed")}>
@@ -150,6 +160,7 @@ export async function SymbolPageView({ model, locale }: { model: SymbolPageModel
           latex={model.exampleDocument}
           title={model.title}
           source={source}
+          placement={`${source}:example`}
           label={t("openExample")}
         />
       </Section>
