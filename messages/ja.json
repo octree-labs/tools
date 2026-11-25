@@ -866,6 +866,10 @@
     "backToSymbols": "シンボルに戻る",
     "symbolCount": "{count}件のシンボル",
     "symbolsCount": "{count}件のシンボル",
+    "tryHeading": "これらの記号を実際の文書で使う",
+    "tryBody": "いくつかの記号を組版済みで、必要なパッケージも読み込んだスターター文書を開きます。Octreeで編集してPDFを確認でき、インストールは不要です。",
+    "tryButton": "Octreeで開く",
+    "tryTitle": "LaTeXの{category}",
     "categories": {
       "math": {
         "title": "数学シンボル",

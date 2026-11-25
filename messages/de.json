@@ -866,6 +866,10 @@
     "backToSymbols": "Zurück zu Symbolen",
     "symbolCount": "{count} Symbol",
     "symbolsCount": "{count} Symbole",
+    "tryHeading": "Diese Symbole in einem echten Dokument verwenden",
+    "tryBody": "Öffne ein Startdokument, in dem einige davon bereits gesetzt und ihre Pakete geladen sind. Bearbeite es in Octree und sieh das PDF, ganz ohne Installation.",
+    "tryButton": "In Octree öffnen",
+    "tryTitle": "{category} in LaTeX",
     "categories": {
       "math": {
         "title": "Mathematische Symbole",
@@ -1520,6 +1524,10 @@
     "exampleIntro": "Fügen Sie dies in eine leere .tex-Datei ein und kompilieren Sie mit pdfLaTeX, XeLaTeX oder LuaLaTeX.",
     "exampleIntroUnicode": "Fügen Sie dies in eine leere .tex-Datei ein und kompilieren Sie mit XeLaTeX oder LuaLaTeX (es enthält ein Unicode-Zeichen).",
     "openExample": "Dieses Beispiel in Octree öffnen",
+    "tryHeading": "{name} in einem echten LaTeX-Dokument ausprobieren",
+    "tryBody": "Öffne ein kompilierbares Dokument, das {command} bereits verwendet und die nötigen Pakete lädt. Bearbeite es und sieh das PDF, ganz ohne Installation.",
+    "tryButton": "In Octree öffnen",
+    "tryTitle": "{name} in LaTeX",
     "related": "Verwandte Symbole",
     "allInCategory": "Alle Symbole: {category}",
     "faqHeading": "Häufige Fragen",

@@ -557,6 +557,10 @@
     "backToSymbols": "기호로 돌아가기",
     "symbolCount": "{count}개 기호",
     "symbolsCount": "{count}개 기호",
+    "tryHeading": "이 기호들을 실제 문서에서 사용해 보세요",
+    "tryBody": "몇 가지 기호가 이미 조판되고 필요한 패키지가 불러와진 시작 문서를 엽니다. Octree에서 편집하고 PDF를 바로 확인하세요. 설치가 필요 없습니다.",
+    "tryButton": "Octree에서 열기",
+    "tryTitle": "LaTeX의 {category}",
     "categories": {
       "math": { "title": "수학 기호", "description": "일반적인 수학 연산자, 관계 및 화살표.", "subtitle": "일반 수학 연산자" },
       "greek": { "title": "그리스 기호", "description": "그리스 문자와 LaTeX 명령어 전체 목록.", "subtitle": "그리스 문자 및 변형" },

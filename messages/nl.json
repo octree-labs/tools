@@ -557,6 +557,10 @@
     "backToSymbols": "Terug naar Symbolen",
     "symbolCount": "{count} symbool",
     "symbolsCount": "{count} symbolen",
+    "tryHeading": "Gebruik deze symbolen in een echt document",
+    "tryBody": "Open een startdocument waarin er al een paar zijn gezet en de pakketten zijn geladen. Bewerk het in Octree en bekijk de PDF, zonder installatie.",
+    "tryButton": "Openen in Octree",
+    "tryTitle": "{category} in LaTeX",
     "categories": {
       "math": { "title": "Wiskundige Symbolen", "description": "Veelgebruikte wiskundige operatoren, relaties en pijlen.", "subtitle": "Veelgebruikte Wiskundige Operatoren" },
       "greek": { "title": "Griekse Symbolen", "description": "Volledige lijst van Griekse letters en hun LaTeX-commando's.", "subtitle": "Griekse Letters en Varianten" },
