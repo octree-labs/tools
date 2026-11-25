@@ -866,6 +866,10 @@
     "backToSymbols": "Kembali ke Simbol",
     "symbolCount": "{count} simbol",
     "symbolsCount": "{count} simbol",
+    "tryHeading": "Gunakan simbol ini di dokumen sungguhan",
+    "tryBody": "Buka dokumen awal yang sudah memuat beberapa simbol ini beserta paketnya. Edit di Octree dan lihat PDF-nya, tanpa instalasi.",
+    "tryButton": "Buka di Octree",
+    "tryTitle": "{category} di LaTeX",
     "categories": {
       "math": {
         "title": "Simbol Matematika",

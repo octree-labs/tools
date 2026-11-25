@@ -866,6 +866,10 @@
     "backToSymbols": "Back to Symbols",
     "symbolCount": "{count} symbol",
     "symbolsCount": "{count} symbols",
+    "tryHeading": "Use these symbols in a real document",
+    "tryBody": "Open a starter document with a few of them already typeset and their packages loaded. Edit it in Octree and see the PDF, no install needed.",
+    "tryButton": "Open in Octree",
+    "tryTitle": "{category} in LaTeX",
     "categories": {
       "math": {
         "title": "Math Symbols",
@@ -1520,6 +1524,10 @@
     "exampleIntro": "Paste this into an empty .tex file and compile it with pdfLaTeX, XeLaTeX or LuaLaTeX.",
     "exampleIntroUnicode": "Paste this into an empty .tex file and compile it with XeLaTeX or LuaLaTeX (it contains a Unicode character).",
     "openExample": "Open this example in Octree",
+    "tryHeading": "Try {name} in a real LaTeX document",
+    "tryBody": "Open a ready-to-compile document that already uses {command}, with the right packages loaded. Edit it and see the PDF, no install needed.",
+    "tryButton": "Open in Octree",
+    "tryTitle": "{name} in LaTeX",
     "related": "Related symbols",
     "allInCategory": "All {category}",
     "faqHeading": "Frequently asked questions",

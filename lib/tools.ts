@@ -164,4 +164,11 @@ export const tools: Tool[] = [
     href: "/tools/latex-converter",
     icon: ArrowLeftRight,
   },
+  {
+    id: 20,
+    title: "PDF to LaTeX",
+    description: "Convert PDF documents into LaTeX with AI",
+    href: "/tools/pdf-to-latex",
+    icon: FileText,
+  },
 ];
