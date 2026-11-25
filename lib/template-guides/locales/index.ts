@@ -1,5 +1,6 @@
 import type { ComponentType } from "react";
 import { cnTemplateGuides } from "./cn";
+import { deTemplateGuides } from "./de";
 import { esTemplateGuides } from "./es";
 
 /**
@@ -15,5 +16,6 @@ import { esTemplateGuides } from "./es";
  */
 export const templateGuideLocales: Partial<Record<string, Record<string, ComponentType>>> = {
   cn: cnTemplateGuides,
+  de: deTemplateGuides,
   es: esTemplateGuides,
 };
