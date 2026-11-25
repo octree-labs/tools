@@ -6,6 +6,7 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useTranslations, useLocale } from 'next-intl';
 import type { Locale } from '@/lib/i18n/config';
+import { localizedPath } from '@/lib/seo';
 
 import {
   Pagination,
@@ -125,14 +126,16 @@ export default function TemplatesPage() {
     name: "Free LaTeX Templates",
     description:
       "Professional LaTeX templates for research papers, presentations, CVs, and more",
-    url: "https://tools.useoctree.com/templates",
+    url: `https://tools.useoctree.com${localizedPath('/templates', locale)}`,
     mainEntity: {
       "@type": "ItemList",
+      numberOfItems: templates.length,
       itemListElement: templates.map((template, index) => ({
         "@type": "ListItem",
         position: index + 1,
         item: {
           "@type": "SoftwareSourceCode",
+          url: `https://tools.useoctree.com${localizedPath(`/templates/${template.slug}`, locale)}`,
           name: template.title,
           description: template.description,
           codeSampleType: "full",

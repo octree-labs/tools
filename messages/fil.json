@@ -866,6 +866,10 @@
     "backToSymbols": "Bumalik sa mga Simbolo",
     "symbolCount": "{count} simbolo",
     "symbolsCount": "{count} mga simbolo",
+    "tryHeading": "Gamitin ang mga simbolong ito sa totoong dokumento",
+    "tryBody": "Magbukas ng panimulang dokumento na may ilan na sa mga ito at naka-load na ang mga package. I-edit sa Octree at tingnan ang PDF, walang kailangang i-install.",
+    "tryButton": "Buksan sa Octree",
+    "tryTitle": "{category} sa LaTeX",
     "categories": {
       "math": {
         "title": "Mga Simbolo ng Math",
