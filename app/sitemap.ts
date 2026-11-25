@@ -5,6 +5,7 @@ import { toLanguageTag } from '@/lib/seo'
 import { SYMBOL_PAGES, symbolPagePath } from '@/lib/symbol-pages'
 import { symbolPageLocales } from '@/lib/symbol-pages/locales'
 import { notFound } from 'next/navigation'
+import { TOOL_SLUGS } from '@/lib/discovery/tools'
 
 export const SITEMAP_BASE_URL = 'https://tools.useoctree.com'
 
@@ -35,29 +36,8 @@ export default async function sitemap({ id }: { id: number | string }): Promise<
   if (!sitemapIds().includes(index)) notFound()
   const baseUrl = SITEMAP_BASE_URL
   
-  // All tool routes
-  const tools = [
-    'ai-latex-generator',
-    'citation-generator',
-    'equation-to-latex',
-    'html-to-latex',
-    'image-to-tikz',
-    'latex-preview',
-    'latex-to-markdown',
-    'latex-word-counter',
-    'markdown-to-latex',
-    'math-to-latex',
-    'mathml-to-latex',
-    'mermaid-to-latex',
-    'pdf-to-latex',
-    'pgfplots-generator',
-    'table-to-latex',
-    'tikz-generator',
-    'arxiv-to-latex',
-    'latex-to-png',
-    'latex-to-word',
-    'latex-converter',
-  ]
+  // All tool routes (lib/discovery/tools.ts)
+  const tools = TOOL_SLUGS
 
   // All symbol category routes
   const symbols = [
