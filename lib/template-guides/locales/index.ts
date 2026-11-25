@@ -1,5 +1,6 @@
 import type { ComponentType } from "react";
 import { cnTemplateGuides } from "./cn";
+import { deTemplateGuides } from "./de";
 
 /**
  * Translated template guides, one map per route locale (`cn` is Simplified
@@ -14,4 +15,5 @@ import { cnTemplateGuides } from "./cn";
  */
 export const templateGuideLocales: Partial<Record<string, Record<string, ComponentType>>> = {
   cn: cnTemplateGuides,
+  de: deTemplateGuides,
 };
